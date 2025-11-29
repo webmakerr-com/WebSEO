@@ -8,12 +8,33 @@ defined('ABSPATH') || exit;
 class InspectUrlGoogle {
     protected $service = null;
 
+    private function requireAutoload() {
+        $autoload_paths = [
+            WEBSEO_PRO_PLUGIN_DIR_PATH . 'vendor/autoload.php',
+        ];
+
+        if (defined('WP_PLUGIN_DIR')) {
+            $autoload_paths[] = rtrim(WP_PLUGIN_DIR, '/\\') . '/wp-seopress-pro/vendor/autoload.php';
+        }
+
+        foreach ($autoload_paths as $autoload_path) {
+            if (is_readable($autoload_path)) {
+                require_once $autoload_path;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function getService() {
         return $this->service;
     }
 
     public function setupService() {
-        require_once WEBSEO_PRO_PLUGIN_DIR_PATH . 'vendor/autoload.php';
+        if ( ! $this->requireAutoload()) {
+            return false;
+        }
 
         $client = new \Google_Client();
 
@@ -124,7 +145,9 @@ class InspectUrlGoogle {
     }
 
     public function handle($postId) {
-        require_once WEBSEO_PRO_PLUGIN_DIR_PATH . 'vendor/autoload.php';
+        if ( ! $this->requireAutoload()) {
+            return [];
+        }
 
         $data = [];
 

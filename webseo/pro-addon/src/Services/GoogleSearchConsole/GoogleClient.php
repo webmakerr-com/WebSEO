@@ -7,6 +7,25 @@ defined('ABSPATH') || exit;
 class GoogleClient {
     protected $client = null;
 
+    private function requireAutoload() {
+        $autoload_paths = [
+            WEBSEO_PRO_PLUGIN_DIR_PATH . 'vendor/autoload.php',
+        ];
+
+        if (defined('WP_PLUGIN_DIR')) {
+            $autoload_paths[] = rtrim(WP_PLUGIN_DIR, '/\\') . '/wp-seopress-pro/vendor/autoload.php';
+        }
+
+        foreach ($autoload_paths as $autoload_path) {
+            if (is_readable($autoload_path)) {
+                require_once $autoload_path;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function getClient() {
         if($this->client === null){
             $this->setup();
@@ -16,7 +35,9 @@ class GoogleClient {
     }
 
     public function setup() {
-        require_once WEBSEO_PRO_PLUGIN_DIR_PATH . 'vendor/autoload.php';
+        if ( ! $this->requireAutoload()) {
+            return false;
+        }
 
         $client = new \Google_Client();
 
