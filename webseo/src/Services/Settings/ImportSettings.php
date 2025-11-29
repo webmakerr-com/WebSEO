@@ -13,9 +13,12 @@ class ImportSettings {
 	 * @param array $data The data.
 	 */
 	public function handle( $data = array() ) {
-		if ( isset( $data['seopress_activated'] ) && false !== $data['seopress_activated'] ) {
-			update_option( 'seopress_activated', $data['seopress_activated'], false );
-		}
+                $activation_flag = $data['webseo_activated'] ?? $data['seopress_activated'] ?? false;
+
+                if ( false !== $activation_flag ) {
+                        update_option( 'webseo_activated', $activation_flag, false );
+                        delete_option( 'seopress_activated' );
+                }
 
 		if ( isset( $data['seopress_titles_option_name'] ) && false !== $data['seopress_titles_option_name'] ) {
 			update_option( 'seopress_titles_option_name', $data['seopress_titles_option_name'], false );

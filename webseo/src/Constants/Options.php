@@ -26,7 +26,7 @@ abstract class Options {
 	 *
 	 * @var string
 	 */
-	const KEY_OPTION_NOTICE = 'seopress_notices';
+    const KEY_OPTION_NOTICE = 'webseo_notices';
 
 	/**
 	 * The key dashboard option.

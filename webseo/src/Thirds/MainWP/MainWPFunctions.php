@@ -14,7 +14,14 @@ if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) && defined( 'SEOPRES
 	function seopress_return_settings() {
 		$settings = array();
 
-		$settings['seopress_activated']                         = get_option( 'seopress_activated' );
+                $activation_flag                                        = get_option( 'webseo_activated' );
+
+                if ( false === $activation_flag ) {
+                        $activation_flag = get_option( 'seopress_activated' );
+                }
+
+                $settings['webseo_activated']                           = $activation_flag;
+                $settings['seopress_activated']                         = $activation_flag;
 		$settings['seopress_titles_option_name']                = get_option( 'seopress_titles_option_name' );
 		$settings['seopress_social_option_name']                = get_option( 'seopress_social_option_name' );
 		$settings['seopress_google_analytics_option_name']      = get_option( 'seopress_google_analytics_option_name' );
@@ -42,9 +49,13 @@ if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) && defined( 'SEOPRES
 	 * @return void
 	 */
 	function seopress_do_import_settings( $settings ) {
-		if ( false !== $settings['seopress_activated'] ) {
-			update_option( 'seopress_activated', $settings['seopress_activated'], false );
-		}
+                if ( isset( $settings['webseo_activated'] ) && false !== $settings['webseo_activated'] ) {
+                        update_option( 'webseo_activated', $settings['webseo_activated'], false );
+                        delete_option( 'seopress_activated' );
+                } elseif ( false !== $settings['seopress_activated'] ) {
+                        update_option( 'webseo_activated', $settings['seopress_activated'], false );
+                        delete_option( 'seopress_activated' );
+                }
 		if ( false !== $settings['seopress_titles_option_name'] ) {
 			update_option( 'seopress_titles_option_name', $settings['seopress_titles_option_name'], false );
 		}

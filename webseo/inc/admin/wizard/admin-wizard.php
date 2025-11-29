@@ -47,16 +47,23 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 *
 	 * @var string
 	 */
-	public $plugin_slug = 'seopress-setup';
+        public $plugin_slug = 'webseo-setup';
+
+        /**
+         * Legacy plugin slug identifier used for backward compatibility.
+         *
+         * @var string
+         */
+        public $legacy_plugin_slug = 'seopress-setup';
 
 	/**
 	 * Hook in tabs.
 	 */
 	public function __construct() {
-		if ( apply_filters( 'seopress_enable_setup_wizard', true ) && current_user_can( seopress_capability( 'manage_options', 'Admin_Setup_Wizard' ) ) ) {
-			add_action( 'admin_menu', array( $this, 'load_wizard' ), 20 );
+                if ( webseo_apply_filters_compat( 'webseo_enable_setup_wizard', 'seopress_enable_setup_wizard', true ) && current_user_can( seopress_capability( 'manage_options', 'Admin_Setup_Wizard' ) ) ) {
+                        add_action( 'admin_menu', array( $this, 'load_wizard' ), 20 );
 
-			add_action( 'admin_head', array( $this, 'hide_from_menus' ), 20 );
+                        add_action( 'admin_head', array( $this, 'hide_from_menus' ), 20 );
 
 			// Remove notices.
 			remove_all_actions( 'admin_notices' );
@@ -74,9 +81,10 @@ class SEOPRESS_Admin_Setup_Wizard {
 	/**
 	 * Add dashboard page.
 	 */
-	public function load_wizard() {
-		add_submenu_page( 'seopress-option', __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->plugin_slug, array( $this, 'setup_wizard' ), 10 );
-	}
+        public function load_wizard() {
+                add_submenu_page( 'seopress-option', __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->plugin_slug, array( $this, 'setup_wizard' ), 10 );
+                add_submenu_page( 'seopress-option', __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->legacy_plugin_slug, array( $this, 'setup_wizard' ), 10 );
+        }
 
 	/**
 	 * Hide Wizard item from SEO menu.
@@ -88,10 +96,10 @@ class SEOPRESS_Admin_Setup_Wizard {
 			foreach ( $submenu as $key => $value ) {
 				if ( 'seopress-option' === $key ) {
 					foreach ( $value as $_key => $_value ) {
-						if ( $this->plugin_slug === $_value[2] ) {
-							unset( $submenu[ $key ][ $_key ] );
-						}
-					}
+                                                if ( in_array( $_value[2], array( $this->plugin_slug, $this->legacy_plugin_slug ), true ) ) {
+                                                        unset( $submenu[ $key ][ $_key ] );
+                                                }
+                                        }
 				}
 			}
 		}
@@ -101,9 +109,9 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Show the setup wizard.
 	 */
 	public function setup_wizard() {
-		if ( empty( $_GET['page'] ) || 'seopress-setup' !== $_GET['page'] ) {
-			return;
-		}
+                if ( empty( $_GET['page'] ) || ! in_array( sanitize_text_field( wp_unslash( $_GET['page'] ) ), array( $this->plugin_slug, $this->legacy_plugin_slug ), true ) ) {
+                        return;
+                }
 
 		$default_steps = array(
 			'welcome'             => array(
@@ -378,7 +386,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 					foreach ( $output_steps[ $current_step ]['sub_steps'] as $key => $value ) {
 						$class = $key === $current_step ? 'nav-tab-active' : '';
 						?>
-							<a <?php echo 'class="nav-tab ' . esc_attr( $class ) . '"'; ?> href="<?php echo esc_url( admin_url( 'admin.php?page=seopress-setup&step=' . $key . '&parent=' . $parent ) ); ?>">
+                                                    <a <?php echo 'class="nav-tab ' . esc_attr( $class ) . '"'; ?> href="<?php echo esc_url( admin_url( 'admin.php?page=' . $this->plugin_slug . '&step=' . $key . '&parent=' . $parent ) ); ?>">
 							<?php echo esc_html( $value ); ?>
 							</a>
 						<?php
@@ -1668,10 +1676,15 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 */
 	public function seopress_setup_ready() {
 		// Remove SEOPress notice.
-		$seopress_notices = get_option( 'seopress_notices', array() );
+                $seopress_notices = get_option( 'webseo_notices', array() );
 
-		$seopress_notices['notice-wizard'] = '1';
-		update_option( 'seopress_notices', $seopress_notices, false );
+                if ( empty( $seopress_notices ) ) {
+                        $seopress_notices = get_option( 'seopress_notices', array() );
+                }
+
+                $seopress_notices['notice-wizard'] = '1';
+                update_option( 'webseo_notices', $seopress_notices, false );
+                delete_option( 'seopress_notices' );
 
 		$docs = seopress_get_docs_links();
 
@@ -1847,12 +1860,12 @@ class SEOPRESS_Admin_Setup_Wizard {
 			}
 		}
 		if ( ! empty( $email_routine ) ) {
-			wp_safe_redirect( esc_url_raw( 'admin.php?page=seopress-setup&step=ready&parent&sub_routine=1' ) );
-			exit;
-		} else {
-			wp_safe_redirect( esc_url_raw( 'admin.php?page=seopress-setup&step=ready&parent&sub=1' ) );
-			exit;
-		}
+                        wp_safe_redirect( esc_url_raw( 'admin.php?page=' . $this->plugin_slug . '&step=ready&parent&sub_routine=1' ) );
+                        exit;
+                } else {
+                        wp_safe_redirect( esc_url_raw( 'admin.php?page=' . $this->plugin_slug . '&step=ready&parent&sub=1' ) );
+                        exit;
+                }
 	}
 }
 new SEOPRESS_Admin_Setup_Wizard();

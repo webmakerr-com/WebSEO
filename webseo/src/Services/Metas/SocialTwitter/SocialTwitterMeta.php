@@ -61,7 +61,7 @@ class SocialTwitterMeta {
 	 */
 	protected function getMetasForPost( $context ) { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
 
-		$variables = apply_filters( 'seopress_dyn_variables_fn', array() );
+            $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', array() );
 
 		$post = $variables['post'] ?? $context['post'];
 

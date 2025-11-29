@@ -128,7 +128,8 @@ function seopress_reset_notices_settings() {
 
 	global $wpdb;
 
-	$wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'seopress_notices' " );
+    $wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'seopress_notices' " );
+    $wpdb->query( "DELETE FROM $wpdb->options WHERE option_name LIKE 'webseo_notices' " );
 
 	wp_safe_redirect( admin_url( 'admin.php?page=seopress-import-export' ) );
 	exit;

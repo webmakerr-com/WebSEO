@@ -81,7 +81,11 @@ class DashboardSettings implements ExecuteHooks {
 	public function processGet( \WP_REST_Request $request ) {
 		$options = get_option( 'seopress_dashboard_option_name' );
 		$toggles = get_option( 'seopress_toggle' );
-		$notices = get_option( 'seopress_notices' );
+            $notices = get_option( 'webseo_notices' );
+
+            if ( false === $notices ) {
+                    $notices = get_option( 'seopress_notices' );
+            }
 
 		if ( empty( $options ) && empty( $toggles ) && empty( $notices ) ) {
 			return;

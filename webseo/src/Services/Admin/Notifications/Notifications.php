@@ -150,7 +150,7 @@ class Notifications {
 				'info' => __( 'Wizard', 'wp-seopress' ),
 			),
 			'link'       => array(
-				'en'       => admin_url( 'admin.php?page=seopress-setup&step=welcome&parent=welcome' ),
+                            'en'       => admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ),
 				'title'    => __( 'Start the wizard', 'wp-seopress' ),
 				'external' => false,
 			),

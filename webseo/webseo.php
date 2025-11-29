@@ -115,29 +115,134 @@ if ( file_exists( WEBSEO_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php' ) ) {
 }
 
 /**
+ * Apply a filter with a new namespace while keeping the legacy hook available.
+ *
+ * @param string $new_hook New hook name.
+ * @param string $legacy_hook Deprecated legacy hook name.
+ * @param mixed  $value Value to filter.
+ * @param mixed  ...$args Additional arguments to pass to the filters.
+ * @return mixed
+ */
+function webseo_apply_filters_compat( $new_hook, $legacy_hook, $value, ...$args ) {
+        $filtered = apply_filters( $new_hook, $value, ...$args );
+
+        if ( has_filter( $legacy_hook ) ) {
+                $filtered = apply_filters_deprecated( $legacy_hook, array_merge( array( $filtered ), $args ), WEBSEO_VERSION, $new_hook );
+        }
+
+        return $filtered;
+}
+
+/**
+ * Trigger an action with a new namespace while keeping the legacy hook available.
+ *
+ * @param string $new_hook New hook name.
+ * @param string $legacy_hook Deprecated legacy hook name.
+ * @param mixed  ...$args Arguments to pass to the actions.
+ * @return void
+ */
+function webseo_do_action_compat( $new_hook, $legacy_hook, ...$args ) {
+        do_action( $new_hook, ...$args );
+        do_action_deprecated( $legacy_hook, $args, WEBSEO_VERSION, $new_hook );
+}
+
+/**
+ * Copy an option value from an old key to a new key and remove the legacy entry when successful.
+ *
+ * @param string $old_key Legacy option key.
+ * @param string $new_key New option key.
+ * @return bool True when the migration for this key is completed.
+ */
+function webseo_migrate_option_key( $old_key, $new_key ) {
+        $old_value = get_option( $old_key, null );
+        $new_value = get_option( $new_key, null );
+
+        if ( null !== $new_value ) {
+                if ( null !== $old_value ) {
+                        delete_option( $old_key );
+                }
+
+                return true;
+        }
+
+        if ( null === $old_value ) {
+                return true;
+        }
+
+        $updated = update_option( $new_key, $old_value, false );
+
+        if ( $updated ) {
+                delete_option( $old_key );
+        }
+
+        return (bool) $updated;
+}
+
+/**
+ * Run migrations for renamed options and transients.
+ *
+ * @return void
+ */
+function webseo_run_option_migrations() {
+        $completed_migrations = get_option( 'webseo_completed_migrations', array() );
+
+        if ( ! empty( $completed_migrations['webseo_option_rename'] ) ) {
+                return;
+        }
+
+        $migrations_success = webseo_migrate_option_key( 'seopress_activated', 'webseo_activated' );
+        $migrations_success = webseo_migrate_option_key( 'seopress_notices', 'webseo_notices' ) && $migrations_success;
+
+        if ( $migrations_success ) {
+                $completed_migrations['webseo_option_rename'] = true;
+                update_option( 'webseo_completed_migrations', $completed_migrations, false );
+        }
+}
+add_action( 'plugins_loaded', 'webseo_run_option_migrations', 5 );
+
+/**
  * Activation hook
  *
  * @return void
  */
-function seopress_activation() {
-	add_option( 'seopress_activated', 'yes' );
-	flush_rewrite_rules( false );
+function webseo_activation() {
+        add_option( 'webseo_activated', 'yes' );
+        flush_rewrite_rules( false );
 
-	do_action( 'seopress_activation' );
+        webseo_do_action_compat( 'webseo_activation', 'seopress_activation' );
 }
-register_activation_hook( __FILE__, 'seopress_activation' );
+register_activation_hook( __FILE__, 'webseo_activation' );
+
+/**
+ * Backward compatibility wrapper for legacy activation hook consumers.
+ *
+ * @return void
+ */
+function seopress_activation() {
+        webseo_activation();
+}
 
 /**
  * Deactivation hook
  *
  * @return void
  */
-function seopress_deactivation() {
+function webseo_deactivation() {
+        delete_option( 'webseo_activated' );
         delete_option( 'seopress_activated' );
         flush_rewrite_rules( false );
-        do_action( 'seopress_deactivation' );
+        webseo_do_action_compat( 'webseo_deactivation', 'seopress_deactivation' );
 }
-register_deactivation_hook( __FILE__, 'seopress_deactivation' );
+register_deactivation_hook( __FILE__, 'webseo_deactivation' );
+
+/**
+ * Backward compatibility wrapper for legacy deactivation hook consumers.
+ *
+ * @return void
+ */
+function seopress_deactivation() {
+        webseo_deactivation();
+}
 
 /**
  * Redirect User After Plugin Activation
@@ -145,25 +250,36 @@ register_deactivation_hook( __FILE__, 'seopress_deactivation' );
  * @return void
  */
 function seopress_redirect_after_activation() {
-	// Do not redirect if WP is doing AJAX requests OR multisite page OR incorrect user permissions.
-	if ( wp_doing_ajax() || is_network_admin() || ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
+        // Do not redirect if WP is doing AJAX requests OR multisite page OR incorrect user permissions.
+        if ( wp_doing_ajax() || is_network_admin() || ! current_user_can( 'manage_options' ) ) {
+                return;
+        }
 
-	// Check if the plugin was activated.
-	if ( get_option( 'seopress_activated' ) === 'yes' ) {
+        // Check if the plugin was activated.
+        $webseo_activation_flag = get_option( 'webseo_activated', null );
 
-		// Delete the activation flag.
-		delete_option( 'seopress_activated' );
+        if ( null === $webseo_activation_flag ) {
+                $webseo_activation_flag = get_option( 'seopress_activated', null );
+        }
 
-		// If the wizard has already been completed, do not redirect the user.
-		$seopress_notices = get_option( 'seopress_notices', array() );
+        if ( 'yes' === $webseo_activation_flag ) {
 
-		if ( empty( $seopress_notices ) || ! isset( $seopress_notices['notice-wizard'] ) ) {
-			wp_safe_redirect( esc_url_raw( admin_url( 'admin.php?page=seopress-setup&step=welcome&parent=welcome' ) ) );
-			exit();
-		}
-	}
+                // Delete the activation flag.
+                delete_option( 'webseo_activated' );
+                delete_option( 'seopress_activated' );
+
+                // If the wizard has already been completed, do not redirect the user.
+                $seopress_notices = get_option( 'webseo_notices', array() );
+
+                if ( empty( $seopress_notices ) ) {
+                        $seopress_notices = get_option( 'seopress_notices', array() );
+                }
+
+                if ( empty( $seopress_notices ) || ! isset( $seopress_notices['notice-wizard'] ) ) {
+                        wp_safe_redirect( esc_url_raw( admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ) ) );
+                        exit();
+                }
+        }
 }
 add_action( 'admin_init', 'seopress_redirect_after_activation' );
 
@@ -202,9 +318,9 @@ function seopress_plugins_loaded( $hook ) {
 	require_once $plugin_dir . 'inc/admin/admin-bar/admin-bar.php';
 
 	// Load integrations conditionally.
-	if ( did_action( 'elementor/loaded' ) && apply_filters( 'seopress_elementor_integration_enabled', true ) ) {
-		include_once $plugin_dir . 'inc/admin/page-builders/elementor/elementor-addon.php';
-	}
+        if ( did_action( 'elementor/loaded' ) && webseo_apply_filters_compat( 'webseo_elementor_integration_enabled', 'seopress_elementor_integration_enabled', true ) ) {
+                include_once $plugin_dir . 'inc/admin/page-builders/elementor/elementor-addon.php';
+        }
 
 	if ( version_compare( $wp_version, '5.0', '>=' ) ) {
 		include_once $plugin_dir . 'inc/admin/page-builders/gutenberg/blocks.php';
@@ -245,9 +361,9 @@ function seopress_dyn_variables_init( $variables, $post = '', $is_oembed = false
 	}
 
 	// Use memoized function for dynamic variable retrieval.
-	return WebSEO\Helpers\CachedMemoizeFunctions::memoize( 'seopress_get_dynamic_variables' )( $variables, $post, $is_oembed );
+        return WebSEO\Helpers\CachedMemoizeFunctions::memoize( 'seopress_get_dynamic_variables' )( $variables, $post, $is_oembed );
 }
-add_filter( 'seopress_dyn_variables_fn', 'seopress_dyn_variables_init', 10, 3 );
+add_filter( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_init', 10, 3 );
 
 /**
  * Loads the JS/CSS in admin
@@ -677,7 +793,7 @@ function seopress_plugin_action_links( $links, $file ) {
 	if ( $file === $this_plugin ) {
 		// Define action links.
 		$settings_link = '<a href="' . admin_url( 'admin.php?page=seopress-option' ) . '">' . __( 'Settings', 'webseo' ) . '</a>';
-		$wizard_link   = '<a href="' . admin_url( 'admin.php?page=seopress-setup&step=welcome&parent=welcome' ) . '">' . __( 'Configuration Wizard', 'webseo' ) . '</a>';
+            $wizard_link   = '<a href="' . admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ) . '">' . __( 'Configuration Wizard', 'webseo' ) . '</a>';
 		$website_link  = '<a href="https://www.seopress.org/support/" target="_blank">' . __( 'Docs', 'webseo' ) . '</a>';
 
 		// Add "GO PRO!" link for non-PRO users.

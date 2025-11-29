@@ -13,7 +13,13 @@ class NoticeOption
      */
     public function getOption()
     {
-        return get_option('seopress_notices');
+        $notices = get_option('webseo_notices');
+
+        if (false === $notices) {
+            $notices = get_option('seopress_notices');
+        }
+
+        return $notices;
     }
 
     /**
