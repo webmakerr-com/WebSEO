@@ -98,29 +98,41 @@ class SEOPRESS_Uninstall {
 		//phpcs:ignore
 		$wpdb->query( $sql );
 
-		// Delete global settings.
-		//phpcs:ignore
-		$options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name LIKE 'seopress_%'" );
-		array_map( 'delete_option', $options );
+// Delete global settings.
+//phpcs:ignore
+$options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name LIKE 'seopress_%'" );
+array_map( 'delete_option', $options );
+//phpcs:ignore
+$options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name LIKE 'webseo_%'" );
+array_map( 'delete_option', $options );
 
-		// Delete widget options.
-		//phpcs:ignore
-		$options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name LIKE 'widget_seopress_%'" );
-		array_map( 'delete_option', $options );
+// Delete widget options.
+//phpcs:ignore
+$options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name LIKE 'widget_seopress_%'" );
+array_map( 'delete_option', $options );
+//phpcs:ignore
+$options = $wpdb->get_col( "SELECT option_name FROM $wpdb->options WHERE option_name LIKE 'widget_webseo_%'" );
+array_map( 'delete_option', $options );
 
-		// Delete transients.
-		delete_transient( '_seopress_sitemap_ids_video' );
-		delete_transient( 'seopress_results_page_speed' );
-		delete_transient( 'seopress_results_page_speed_desktop' );
-		delete_transient( 'seopress_results_google_analytics' );
-		delete_transient( 'seopress_results_matomo' );
-		delete_transient( 'seopress_prevent_title_redirection_already_exist' );
+// Delete transients.
+delete_transient( '_seopress_sitemap_ids_video' );
+delete_transient( '_webseo_sitemap_ids_video' );
+delete_transient( 'seopress_results_page_speed' );
+delete_transient( 'seopress_results_page_speed_desktop' );
+delete_transient( 'webseo_results_page_speed' );
+delete_transient( 'webseo_results_page_speed_desktop' );
+delete_transient( 'seopress_results_google_analytics' );
+delete_transient( 'seopress_results_matomo' );
+delete_transient( 'webseo_results_google_analytics' );
+delete_transient( 'webseo_results_matomo' );
+delete_transient( 'seopress_prevent_title_redirection_already_exist' );
+delete_transient( 'webseo_prevent_title_redirection_already_exist' );
 
                 // Delete custom tables.
                 //phpcs:ignore
-                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_significant_keywords" );
-                //phpcs:ignore
-                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}webseo_significant_keywords" );
+$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_significant_keywords" );
+//phpcs:ignore
+$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}webseo_significant_keywords" );
                 //phpcs:ignore
                 $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_content_analysis" );
                 //phpcs:ignore

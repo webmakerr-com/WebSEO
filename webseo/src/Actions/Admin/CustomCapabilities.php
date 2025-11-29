@@ -21,25 +21,38 @@ class CustomCapabilities implements ExecuteHooksBackend {
 	 *
 	 * @return void
 	 */
-	public function hooks() {
-		if ( '1' === seopress_get_toggle_option( 'advanced' ) ) {
+        public function hooks() {
+                if ( '1' === seopress_get_toggle_option( 'advanced' ) ) {
                         add_filter( 'webseo_capability', array( $this, 'custom' ), 9999, 2 );
-			add_filter( 'option_page_capability_seopress_titles_option_group', array( $this, 'capabilitySaveTitlesMetas' ) );
-			add_filter( 'option_page_capability_seopress_xml_sitemap_option_group', array( $this, 'capabilitySaveXmlSitemap' ) );
-			add_filter( 'option_page_capability_seopress_social_option_group', array( $this, 'capabilitySaveSocial' ) );
-			add_filter( 'option_page_capability_seopress_google_analytics_option_group', array( $this, 'capabilitySaveAnalytics' ) );
-			add_filter( 'option_page_capability_seopress_instant_indexing_option_group', array( $this, 'capabilitySaveInstantIndexing' ) );
-			add_filter( 'option_page_capability_seopress_advanced_option_group', array( $this, 'capabilitySaveAdvanced' ) );
-			add_filter( 'option_page_capability_seopress_tools_option_group', array( $this, 'capabilitySaveTools' ) );
-			add_filter( 'option_page_capability_seopress_import_export_option_group', array( $this, 'capabilitySaveImportExport' ) );
+                        add_filter( 'option_page_capability_webseo_titles_option_group', array( $this, 'capabilitySaveTitlesMetas' ) );
+                        add_filter( 'option_page_capability_webseo_xml_sitemap_option_group', array( $this, 'capabilitySaveXmlSitemap' ) );
+                        add_filter( 'option_page_capability_webseo_social_option_group', array( $this, 'capabilitySaveSocial' ) );
+                        add_filter( 'option_page_capability_webseo_google_analytics_option_group', array( $this, 'capabilitySaveAnalytics' ) );
+                        add_filter( 'option_page_capability_webseo_instant_indexing_option_group', array( $this, 'capabilitySaveInstantIndexing' ) );
+                        add_filter( 'option_page_capability_webseo_advanced_option_group', array( $this, 'capabilitySaveAdvanced' ) );
+                        add_filter( 'option_page_capability_webseo_tools_option_group', array( $this, 'capabilitySaveTools' ) );
+                        add_filter( 'option_page_capability_webseo_import_export_option_group', array( $this, 'capabilitySaveImportExport' ) );
 
-			add_filter( 'option_page_capability_seopress_pro_mu_option_group', array( $this, 'capabilitySavePro' ) );
-			add_filter( 'option_page_capability_seopress_pro_option_group', array( $this, 'capabilitySavePro' ) );
-			add_filter( 'option_page_capability_seopress_bot_option_group', array( $this, 'capabilitySaveBot' ) );
+                        add_filter( 'option_page_capability_webseo_pro_mu_option_group', array( $this, 'capabilitySavePro' ) );
+                        add_filter( 'option_page_capability_webseo_pro_option_group', array( $this, 'capabilitySavePro' ) );
+                        add_filter( 'option_page_capability_webseo_bot_option_group', array( $this, 'capabilitySaveBot' ) );
 
-			add_action( 'init', array( $this, 'addCapabilities' ) );
-		}
-	}
+                        add_filter( 'option_page_capability_seopress_titles_option_group', array( $this, 'capabilitySaveTitlesMetas' ) );
+                        add_filter( 'option_page_capability_seopress_xml_sitemap_option_group', array( $this, 'capabilitySaveXmlSitemap' ) );
+                        add_filter( 'option_page_capability_seopress_social_option_group', array( $this, 'capabilitySaveSocial' ) );
+                        add_filter( 'option_page_capability_seopress_google_analytics_option_group', array( $this, 'capabilitySaveAnalytics' ) );
+                        add_filter( 'option_page_capability_seopress_instant_indexing_option_group', array( $this, 'capabilitySaveInstantIndexing' ) );
+                        add_filter( 'option_page_capability_seopress_advanced_option_group', array( $this, 'capabilitySaveAdvanced' ) );
+                        add_filter( 'option_page_capability_seopress_tools_option_group', array( $this, 'capabilitySaveTools' ) );
+                        add_filter( 'option_page_capability_seopress_import_export_option_group', array( $this, 'capabilitySaveImportExport' ) );
+
+                        add_filter( 'option_page_capability_seopress_pro_mu_option_group', array( $this, 'capabilitySavePro' ) );
+                        add_filter( 'option_page_capability_seopress_pro_option_group', array( $this, 'capabilitySavePro' ) );
+                        add_filter( 'option_page_capability_seopress_bot_option_group', array( $this, 'capabilitySaveBot' ) );
+
+                        add_action( 'init', array( $this, 'addCapabilities' ) );
+                }
+        }
 
 	/**
 	 * Add capabilities.
@@ -49,15 +62,15 @@ class CustomCapabilities implements ExecuteHooksBackend {
 	 * @return void
 	 */
 	public function addCapabilities() {
-		$roles = wp_roles();
-		$pages = PagesAdmin::getPages();
+                $roles = wp_roles();
+                $pages = PagesAdmin::getPages();
 
-		if ( isset( $roles->role_objects['administrator'] ) ) {
-			$role = $roles->role_objects['administrator'];
-			foreach ( $pages as $value ) {
-				$role->add_cap( \sprintf( 'seopress_manage_%s', $value ), true );
-			}
-		}
+                if ( isset( $roles->role_objects['administrator'] ) ) {
+                        $role = $roles->role_objects['administrator'];
+                        foreach ( $pages as $value ) {
+                                $role->add_cap( PagesAdmin::getCustomCapability( $value ), true );
+                        }
+                }
 
 		$options = seopress_get_service( 'AdvancedOption' )->getOption();
 		if ( ! $options ) {
@@ -69,31 +82,34 @@ class CustomCapabilities implements ExecuteHooksBackend {
 			$page_for_capability = PagesAdmin::getPageByCapability( $page_value );
 			$capability          = PagesAdmin::getCapabilityByPage( $page_for_capability );
 
-			$option_key = sprintf( '%s_%s', $needle, $page_for_capability );
-			if ( ! \array_key_exists( $option_key, $options ) ) {
-				// Remove all cap for a specific role if option not set.
-				foreach ( $roles->role_objects as $key_role => $role ) {
-					if ( 'administrator' === $key_role ) {
-						continue;
-					}
+                        $option_key = sprintf( '%s_%s', $needle, $page_for_capability );
+                        if ( ! \array_key_exists( $option_key, $options ) ) {
+                                // Remove all cap for a specific role if option not set.
+                                foreach ( $roles->role_objects as $key_role => $role ) {
+                                        if ( 'administrator' === $key_role ) {
+                                                continue;
+                                        }
 
-					if ( null === $capability ) {
-						continue;
-					}
+                                        if ( null === $capability ) {
+                                                continue;
+                                        }
 
-					$role->remove_cap( \sprintf( 'seopress_manage_%s', $capability ) );
-				}
-			} else {
-				foreach ( $roles->role_objects as $key_role => $role ) {
-					if ( ! \array_key_exists( $role->name, $options[ $option_key ] ) && 'administrator' !== $key_role ) {
-						$role->remove_cap( \sprintf( 'seopress_manage_%s', $capability ) );
-					} else {
-						$role->add_cap( \sprintf( 'seopress_manage_%s', $capability ), true );
-					}
-				}
-			}
-		}
-	}
+                                        $role->remove_cap( PagesAdmin::getCustomCapability( $capability ) );
+                                        $role->remove_cap( PagesAdmin::getLegacyCapability( $capability ) );
+                                }
+                        } else {
+                                foreach ( $roles->role_objects as $key_role => $role ) {
+                                        if ( ! \array_key_exists( $role->name, $options[ $option_key ] ) && 'administrator' !== $key_role ) {
+                                                $role->remove_cap( PagesAdmin::getCustomCapability( $capability ) );
+                                                $role->remove_cap( PagesAdmin::getLegacyCapability( $capability ) );
+                                        } else {
+                                                $role->add_cap( PagesAdmin::getCustomCapability( $capability ), true );
+                                                $role->remove_cap( PagesAdmin::getLegacyCapability( $capability ) );
+                                        }
+                                }
+                        }
+                }
+        }
 
 	/**
 	 * Custom capabilities.
