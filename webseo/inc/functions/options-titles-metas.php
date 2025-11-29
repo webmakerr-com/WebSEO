@@ -17,7 +17,7 @@ require_once ABSPATH . 'wp-admin/includes/plugin.php';
 function seopress_titles_the_title() {
 
 	$variables = null;
-	$variables = apply_filters( 'seopress_dyn_variables_fn', $variables );
+    $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables );
 
 	$post                                     = $variables['post'];
 	$term                                     = $variables['term'];
@@ -349,7 +349,7 @@ if ( apply_filters( 'seopress_old_pre_get_document_title', true ) ) {
  */
 function seopress_titles_the_description_content() {
 	$variables = null;
-	$variables = apply_filters( 'seopress_dyn_variables_fn', $variables );
+    $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables );
 
 	$post                                     = $variables['post'];
 	$term                                     = $variables['term'];

@@ -19,7 +19,7 @@ if ( '1' !== seopress_get_service( 'TitleOption' )->getNoSiteLinksSearchBox() ) 
 		$site_desc      = ! empty( seopress_get_service( 'TitleOption' )->getHomeDescriptionTitle() ) ? seopress_get_service( 'TitleOption' )->getHomeDescriptionTitle() : get_bloginfo( 'description' );
 
 		$variables = null;
-		$variables = apply_filters( 'seopress_dyn_variables_fn', $variables );
+            $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables );
 
 		$seopress_titles_template_variables_array = $variables['seopress_titles_template_variables_array'];
 		$seopress_titles_template_replace_array   = $variables['seopress_titles_template_replace_array'];
@@ -360,7 +360,7 @@ function seopress_social_fb_title_hook() {
 		global $post;
 
 		$variables               = null;
-		$variables               = apply_filters( 'seopress_dyn_variables_fn', $variables );
+            $variables               = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables );
 		$seopress_excerpt_length = $variables['seopress_excerpt_length'];
 
 		$seopress_titles_template_variables_array = $variables['seopress_titles_template_variables_array'];
@@ -494,7 +494,7 @@ function seopress_social_fb_desc_hook() {
 		$seopress_social_og_desc = '';
 
 		$variables               = null;
-		$variables               = apply_filters( 'seopress_dyn_variables_fn', $variables );
+            $variables               = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables );
 		$seopress_excerpt_length = $variables['seopress_excerpt_length'];
 
 		$seopress_titles_template_variables_array = $variables['seopress_titles_template_variables_array'];
@@ -913,7 +913,7 @@ function seopress_social_twitter_title_hook() {
 		global $post;
 
 		$variables               = null;
-		$variables               = apply_filters( 'seopress_dyn_variables_fn', $variables );
+            $variables               = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables );
 		$seopress_excerpt_length = $variables['seopress_excerpt_length'];
 
 		$seopress_titles_template_variables_array = $variables['seopress_titles_template_variables_array'];
@@ -1050,7 +1050,7 @@ function seopress_social_twitter_desc_hook() {
 		$seopress_social_twitter_card_desc = '';
 
 		$variables = null;
-		$variables = apply_filters( 'seopress_dyn_variables_fn', $variables );
+           $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables );
 
 		$seopress_excerpt_length = $variables['seopress_excerpt_length'];
 

@@ -21,7 +21,7 @@ function seopress_oembed_title_hook( $post ) {
 	$seopress_oembed_title = '';
 
 	$variables = null;
-	$variables = apply_filters( 'seopress_dyn_variables_fn', $variables, $post, true );
+    $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables, $post, true );
 
 	$seopress_titles_template_variables_array = $variables['seopress_titles_template_variables_array'];
 	$seopress_titles_template_replace_array   = $variables['seopress_titles_template_replace_array'];

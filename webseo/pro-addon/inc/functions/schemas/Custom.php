@@ -9,7 +9,7 @@ function seopress_automatic_rich_snippets_custom_option($schema_datas) {
         $custom 							= $schema_datas['custom'];
 
         $variables = null;
-        $variables = apply_filters('seopress_dyn_variables_fn', $variables);
+        $variables = webseo_apply_filters_compat('webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', $variables);
 
         $post                                     = $variables['post'];
         $term                                     = $variables['term'];

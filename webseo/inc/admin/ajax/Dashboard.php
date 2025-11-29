@@ -100,7 +100,11 @@ function seopress_hide_notices() {
 
 	if ( current_user_can( seopress_capability( 'manage_options', 'dashboard' ) ) && is_admin() ) {
 		if ( isset( $_POST['notice'] ) && isset( $_POST['notice_value'] ) ) {
-			$seopress_notices_options = get_option( 'seopress_notices', array() );
+                        $seopress_notices_options = get_option( 'webseo_notices', array() );
+
+                        if ( empty( $seopress_notices_options ) ) {
+                                $seopress_notices_options = get_option( 'seopress_notices', array() );
+                        }
 
 			$notice       = sanitize_text_field( wp_unslash( $_POST['notice'] ) );
 			$notice_value = sanitize_text_field( wp_unslash( $_POST['notice_value'] ) );
@@ -108,8 +112,9 @@ function seopress_hide_notices() {
 			if ( false !== $notice && false !== $notice_value ) {
 				$seopress_notices_options[ $notice ] = $notice_value;
 			}
-			update_option( 'seopress_notices', $seopress_notices_options, false );
-		}
+                        update_option( 'webseo_notices', $seopress_notices_options, false );
+                        delete_option( 'seopress_notices' );
+                }
 		exit();
 	}
 }

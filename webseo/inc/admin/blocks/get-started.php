@@ -25,7 +25,7 @@ if ( ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === fal
 			<p><?php esc_attr_e( 'Launch our installation wizard to quickly and easily configure the basic SEO settings for your site.', 'wp-seopress' ); ?></p>
 
 			<p class="seopress-card-actions">
-				<a href="<?php echo esc_url( admin_url( 'admin.php?page=seopress-setup&step=welcome&parent=welcome' ) ); ?>" class="seopress-btn seopress-btn-primary">
+                            <a href="<?php echo esc_url( admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ) ); ?>" class="seopress-btn seopress-btn-primary">
 				<?php esc_attr_e( 'Setup in 5 mins!', 'wp-seopress' ); ?>
 				</a>
 			</p>

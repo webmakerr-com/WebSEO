@@ -13,8 +13,15 @@ class ExportSettings {
 	 * @return array
 	 */
 	public function handle() {
-		$data                                = array();
-		$data['seopress_activated']          = get_option( 'seopress_activated' );
+                $data                                = array();
+                $activation_flag                     = get_option( 'webseo_activated' );
+
+                if ( false === $activation_flag ) {
+                        $activation_flag = get_option( 'seopress_activated' );
+                }
+
+                $data['webseo_activated']            = $activation_flag;
+                $data['seopress_activated']          = $activation_flag;
 		$data['seopress_titles_option_name'] = get_option( 'seopress_titles_option_name' );
 		$data['seopress_social_option_name'] = get_option( 'seopress_social_option_name' );
 		$data['seopress_google_analytics_option_name']      = get_option( 'seopress_google_analytics_option_name' );

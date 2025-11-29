@@ -64,7 +64,7 @@ class DescriptionMeta {
 	 * @return string
 	 */
 	protected function getDescriptionForPost( $context ) { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
-		$variables = apply_filters( 'seopress_dyn_variables_fn', array() );
+            $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', array() );
 
 		$post = $variables['post'] ?? $context['post'];
 
@@ -111,7 +111,7 @@ class DescriptionMeta {
 	 */
 	protected function getDescriptionForTaxonomy( $context ) { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
 
-		$variables = apply_filters( 'seopress_dyn_variables_fn', array() );
+            $variables = webseo_apply_filters_compat( 'webseo_dyn_variables_fn', 'seopress_dyn_variables_fn', array() );
 
 		$term = $context['term'] ?? get_term( $context['term_id'] );
 
