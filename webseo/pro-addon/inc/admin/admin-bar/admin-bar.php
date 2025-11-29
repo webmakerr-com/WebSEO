@@ -10,7 +10,7 @@ function seopress_pro_admin_bar_items() {
     $wp_admin_bar->add_menu([
         'parent' => $parent_id,
         'id'     => 'seopress_custom_sub_menu_pro',
-        'title'  => __('PRO', 'wp-seopress-pro'),
+        'title'  => __('PRO', 'webseo'),
         'href'   => admin_url('admin.php?page=seopress-pro-page'),
     ]);
 
@@ -18,13 +18,13 @@ function seopress_pro_admin_bar_items() {
         $wp_admin_bar->add_menu([
             'parent' => $parent_id,
             'id'     => 'seopress_custom_sub_menu_bot',
-            'title'  => __('Audit', 'wp-seopress-pro'),
+            'title'  => __('Audit', 'webseo'),
             'href'   => admin_url('admin.php?page=seopress-bot-batch'),
         ]);
         $wp_admin_bar->add_menu([
             'parent' => $parent_id,
             'id'     => 'seopress_custom_sub_menu_broken_links',
-            'title'  => __('Broken Links', 'wp-seopress-pro'),
+            'title'  => __('Broken Links', 'webseo'),
             'href'   => admin_url('edit.php?post_type=seopress_bot'),
         ]);
     }
@@ -33,7 +33,7 @@ function seopress_pro_admin_bar_items() {
         $wp_admin_bar->add_menu([
             'parent' => $parent_id,
             'id'     => 'seopress_custom_sub_menu_schemas',
-            'title'  => __('Schemas', 'wp-seopress-pro'),
+            'title'  => __('Schemas', 'webseo'),
             'href'   => admin_url('edit.php?post_type=seopress_schemas'),
         ]);
     }
@@ -42,7 +42,7 @@ function seopress_pro_admin_bar_items() {
         $wp_admin_bar->add_menu([
             'parent' => $parent_id,
             'id'     => 'seopress_custom_sub_menu_404',
-            'title'  => __('Redirections', 'wp-seopress-pro'),
+            'title'  => __('Redirections', 'webseo'),
             'href'   => admin_url('edit.php?post_type=seopress_404'),
         ]);
     }
@@ -50,7 +50,7 @@ function seopress_pro_admin_bar_items() {
     $wp_admin_bar->add_menu([
         'parent' => $parent_id,
         'id'     => 'seopress_custom_sub_menu_license',
-        'title'  => __('License', 'wp-seopress-pro'),
+        'title'  => __('License', 'webseo'),
         'href'   => admin_url('admin.php?page=seopress-license'),
     ]);
 }

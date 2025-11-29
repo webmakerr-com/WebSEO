@@ -7,7 +7,7 @@ class ACP_Column_sp_gsc_positions extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_gsc_positions' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'Position', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'Position', 'webseo' ) );
 	}
 
 	public function get_meta_key() {

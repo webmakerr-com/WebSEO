@@ -14,7 +14,7 @@ function seopress_rich_snippets_enable_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Enable Structured Data Types metabox for your posts, pages and custom post types', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Enable Structured Data Types metabox for your posts, pages and custom post types', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_rich_snippets_enable'])) {
@@ -35,8 +35,8 @@ function seopress_rich_snippets_publisher_logo_callback() {
 <input id="seopress_rich_snippets_publisher_logo_meta" autocomplete="off" type="text"
     value="<?php echo esc_attr($options_set); ?>"
     name="seopress_pro_option_name[seopress_rich_snippets_publisher_logo]"
-    aria-label="<?php esc_html_e('Upload your publisher logo', 'wp-seopress-pro'); ?>"
-    placeholder="<?php esc_html_e('Select your logo', 'wp-seopress-pro'); ?>" />
+    aria-label="<?php esc_html_e('Upload your publisher logo', 'webseo'); ?>"
+    placeholder="<?php esc_html_e('Select your logo', 'webseo'); ?>" />
 
 <input id="seopress_rich_snippets_publisher_logo_width" type="hidden"
     value="<?php echo esc_attr($options_set2); ?>"
@@ -46,15 +46,15 @@ function seopress_rich_snippets_publisher_logo_callback() {
     name="seopress_pro_option_name[seopress_rich_snippets_publisher_logo_height]" />
 
 <input id="seopress_rich_snippets_publisher_logo_upload" class="btn btnSecondary" type="button"
-    value="<?php esc_html_e('Upload an Image', 'wp-seopress-pro'); ?>" />
+    value="<?php esc_html_e('Upload an Image', 'webseo'); ?>" />
 
-<input id="seopress_rich_snippets_publisher_logo_remove" class="btn btnLink is-deletable" type="button" value="<?php esc_html_e('Remove', 'wp-seopress-pro'); ?>" />
+<input id="seopress_rich_snippets_publisher_logo_remove" class="btn btnLink is-deletable" type="button" value="<?php esc_html_e('Remove', 'webseo'); ?>" />
 
 <p class="description">
-    <?php esc_html_e('A logo that is representative of the organization. Files must be BMP, GIF, JPEG, PNG, WebP or SVG. The image must be 112x112px, at minimum.', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('A logo that is representative of the organization. Files must be BMP, GIF, JPEG, PNG, WebP or SVG. The image must be 112x112px, at minimum.', 'webseo'); ?>
 </p>
 
-<div id="seopress_rich_snippets_publisher_logo_placeholder_upload" class="seopress-img-placeholder" data_caption="<?php esc_html_e('Click to select an image', 'wp-seopress-pro'); ?>">
+<div id="seopress_rich_snippets_publisher_logo_placeholder_upload" class="seopress-img-placeholder" data_caption="<?php esc_html_e('Click to select an image', 'webseo'); ?>">
     <img id="seopress_rich_snippets_publisher_logo_placeholder_src" src="<?php echo esc_attr($options_set); ?>" />
 </div>
 

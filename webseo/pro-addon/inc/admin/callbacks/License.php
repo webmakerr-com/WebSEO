@@ -69,7 +69,7 @@ function seopress_automatic_license_activation() {
         if (is_wp_error($response)) {
             $message = $response->get_error_message();
         } else {
-            $message = __('An error occurred, please try again. Response code: ', 'wp-seopress-pro') . wp_remote_retrieve_response_code($response);
+            $message = __('An error occurred, please try again. Response code: ', 'webseo') . wp_remote_retrieve_response_code($response);
         }
     } else {
         $license_data = json_decode(wp_remote_retrieve_body($response));
@@ -77,36 +77,36 @@ function seopress_automatic_license_activation() {
             switch ($license_data->error) {
             case 'expired':
             $message = /* translators: %s: localized expiration date */ sprintf(
-                __('Your license key expired on %s.', 'wp-seopress-pro'),
+                __('Your license key expired on %s.', 'webseo'),
                 date_i18n(get_option('date_format'), strtotime($license_data->expires, current_time('timestamp')))
             );
             break;
 
             case 'disabled':
             case 'revoked':
-            $message = __('Your license key has been disabled.', 'wp-seopress-pro');
+            $message = __('Your license key has been disabled.', 'webseo');
             break;
 
             case 'missing':
-            $message = __('Invalid license.', 'wp-seopress-pro');
+            $message = __('Invalid license.', 'webseo');
             break;
 
             case 'invalid':
             case 'site_inactive':
-            $message = __('Your license is not active for this URL.', 'wp-seopress-pro');
+            $message = __('Your license is not active for this URL.', 'webseo');
             break;
 
             case 'item_name_mismatch':
             /* translators: %s: SEOPress PRO */
-            $message = sprintf(__('This appears to be an invalid license key for %s.', 'wp-seopress-pro'), ITEM_NAME_SEOPRESS);
+            $message = sprintf(__('This appears to be an invalid license key for %s.', 'webseo'), ITEM_NAME_SEOPRESS);
             break;
 
             case 'no_activations_left':
-            $message = __('Your license key has reached its activation limit.', 'wp-seopress-pro');
+            $message = __('Your license key has reached its activation limit.', 'webseo');
             break;
 
             default:
-            $message = __('An error occurred, please try again.', 'wp-seopress-pro');
+            $message = __('An error occurred, please try again.', 'webseo');
             break;
             }
         }
@@ -172,7 +172,7 @@ function seopress_activate_license()
             if (is_wp_error($response)) {
                 $message = $response->get_error_message();
             } else {
-                $message = __('An error occurred, please try again. Response code: ', 'wp-seopress-pro') . wp_remote_retrieve_response_code($response);
+                $message = __('An error occurred, please try again. Response code: ', 'webseo') . wp_remote_retrieve_response_code($response);
             }
         } else {
             $license_data = json_decode(wp_remote_retrieve_body($response));
@@ -181,36 +181,36 @@ function seopress_activate_license()
                 case 'expired':
                 $message = sprintf(
                     /* translators: %s: localized expiration date */
-                    __('Your license key expired on %s.', 'wp-seopress-pro'),
+                    __('Your license key expired on %s.', 'webseo'),
                     date_i18n(get_option('date_format'), strtotime($license_data->expires, current_time('timestamp')))
                 );
                 break;
 
                 case 'disabled':
                 case 'revoked':
-                $message = __('Your license key has been disabled.', 'wp-seopress-pro');
+                $message = __('Your license key has been disabled.', 'webseo');
                 break;
 
                 case 'missing':
-                $message = __('Invalid license.', 'wp-seopress-pro');
+                $message = __('Invalid license.', 'webseo');
                 break;
 
                 case 'invalid':
                 case 'site_inactive':
-                $message = __('Your license is not active for this URL.', 'wp-seopress-pro');
+                $message = __('Your license is not active for this URL.', 'webseo');
                 break;
 
                 case 'item_name_mismatch':
                 /* translators: %s: SEOPress PRO */
-                $message = sprintf(__('This appears to be an invalid license key for %s.', 'wp-seopress-pro'), ITEM_NAME_SEOPRESS);
+                $message = sprintf(__('This appears to be an invalid license key for %s.', 'webseo'), ITEM_NAME_SEOPRESS);
                 break;
 
                 case 'no_activations_left':
-                $message = __('Your license key has reached its activation limit.', 'wp-seopress-pro');
+                $message = __('Your license key has reached its activation limit.', 'webseo');
                 break;
 
                 default:
-                $message = __('An error occurred, please try again.', 'wp-seopress-pro');
+                $message = __('An error occurred, please try again.', 'webseo');
                 break;
                 }
             }
@@ -282,7 +282,7 @@ function seopress_deactivate_license()
             if (is_wp_error($response)) {
                 $message = $response->get_error_message();
             } else {
-                $message = __('An error occurred, please try again.', 'wp-seopress-pro');
+                $message = __('An error occurred, please try again.', 'webseo');
             }
 
             $base_url = admin_url('admin.php?page=' . SEOPRESS_LICENSE_PAGE);

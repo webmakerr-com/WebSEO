@@ -41,7 +41,7 @@ class seopress_pro_options
         $html .= '<div class="sp-components-snackbar">
                 <div class="sp-components-snackbar__content">
                     <span class="dashicons dashicons-yes"></span>
-                    ' . __('Your settings have been saved.', 'wp-seopress-pro') . '
+                    ' . __('Your settings have been saved.', 'webseo') . '
                 </div>
             </div>
         </div>';
@@ -68,11 +68,11 @@ class seopress_pro_options
             $html .= $this->feature_save();
 
             if ('1' == seopress_get_toggle_option($feature)) {
-                $html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to disable this feature', 'wp-seopress-pro') . '</span>';
-                $html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to enable this feature', 'wp-seopress-pro') . '</span>';
+                $html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to disable this feature', 'webseo') . '</span>';
+                $html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to enable this feature', 'webseo') . '</span>';
             } else {
-                $html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to enable this feature', 'wp-seopress-pro') . '</span>';
-                $html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to disable this feature', 'wp-seopress-pro') . '</span>';
+                $html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to enable this feature', 'webseo') . '</span>';
+                $html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __('Click to disable this feature', 'webseo') . '</span>';
             }
         }
 
@@ -135,27 +135,27 @@ class seopress_pro_options
             $sp_seo_admin_menu['icon'] = 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJ1dWlkLTRmNmE4YTQxLTE4ZTMtNGY3Ny1iNWE5LTRiMWIzOGFhMmRjOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODk5LjY1NSA0OTQuMzA5NCI+PHBhdGggaWQ9InV1aWQtYTE1NWMxY2EtZDg2OC00NjUzLTg0NzctOGRkODcyNDBhNzY1IiBkPSJNMzI3LjM4NDksNDM1LjEyOGwtMjk5Ljk5OTktLjI0OTdjLTE2LjI3MzUsMS4xOTM3LTI4LjQ5ODEsMTUuMzUzOC0yNy4zMDQ0LDMxLjYyNzMsMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NGwyOTkuOTk5OSwuMjQ5N2MxNi4yNzM1LTEuMTkzNywyOC40OTgxLTE1LjM1MzgsMjcuMzA0NC0zMS42MjczLTEuMDcxOC0xNC42MTI4LTEyLjY5MTYtMjYuMjMyNS0yNy4zMDQ0LTI3LjMwNDRaIiBzdHlsZT0iZmlsbDojZmZmOyIvPjxwYXRoIGlkPSJ1dWlkLWUzMGJhNGM2LTQ3NjktNDY2Yi1hMDNhLWU2NDRjNTE5OGU1NiIgZD0iTTI3LjM4NDksNTguOTMxN2wyOTkuOTk5OSwuMjQ5N2MxNi4yNzM1LTEuMTkzNywyOC40OTgxLTE1LjM1MzcsMjcuMzA0NC0zMS42MjczLTEuMDcxOC0xNC42MTI4LTEyLjY5MTYtMjYuMjMyNS0yNy4zMDQ0LTI3LjMwNDRMMjcuMzg0OSwwQzExLjExMTQsMS4xOTM3LTEuMTEzMiwxNS4zNTM3LC4wODA1LDMxLjYyNzNjMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NFoiIHN0eWxlPSJmaWxsOiNmZmY7Ii8+PHBhdGggaWQ9InV1aWQtMmJiZDUyZDYtYWVjMS00Njg5LTlkNGMtMjNjMzVkNGYyMmI4IiBkPSJNNjUyLjQ4NSwuMjg0OWMtMTI0LjkzODgsLjA2NC0yMzAuMTU1NCw5My40MTMyLTI0NS4xMDAxLDIxNy40NTVIMjcuMzg0OWMtMTYuMjczNSwxLjE5MzctMjguNDk4MSwxNS4zNTM3LTI3LjMwNDQsMzEuNjI3MiwxLjA3MTksMTQuNjEyOCwxMi42OTE2LDI2LjIzMjUsMjcuMzA0NCwyNy4zMDQ0SDQwNy4zODQ5YzE2LjIyOTgsMTM1LjQ0NTQsMTM5LjE4NywyMzIuMDg4OCwyNzQuNjMyMywyMTUuODU4OSwxMzUuNDQ1NS0xNi4yMjk4LDIzMi4wODg4LTEzOS4xODY5LDIxNS44NTg5LTI3NC42MzI0Qzg4Mi45OTIxLDkzLjY4MzQsNzc3LjU4ODQsLjIxMTIsNjUyLjQ4NSwuMjg0OVptMCw0MzMuNDIxN2MtMTAyLjk3NTQsMC0xODYuNDUzMy04My40NzgtMTg2LjQ1MzMtMTg2LjQ1MzMsMC0xMDIuOTc1Myw4My40NzgxLTE4Ni40NTMzLDE4Ni40NTMzLTE4Ni40NTMzLDEwMi45NzU0LDAsMTg2LjQ1MzMsODMuNDc4LDE4Ni40NTMzLDE4Ni40NTMzLC4wNTI0LDEwMi45NzUzLTgzLjM4MywxODYuNDk1OS0xODYuMzU4MywxODYuNTQ4My0uMDMxNiwwLS4wNjM0LDAtLjA5NTEsMHYtLjA5NVoiIHN0eWxlPSJmaWxsOiNmZmY7Ii8+PC9zdmc+';
         }
 
-        $sp_seo_admin_menu['title'] = __('SEO', 'wp-seopress-pro');
+        $sp_seo_admin_menu['title'] = __('SEO', 'webseo');
         if (has_filter('seopress_seo_admin_menu_title')) {
             $sp_seo_admin_menu['title'] = apply_filters('seopress_seo_admin_menu_title', $sp_seo_admin_menu['title']);
         }
 
-        add_menu_page(__('SEO Network settings', 'wp-seopress-pro'), $sp_seo_admin_menu['title'], seopress_capability('manage_options', 'menu'), 'seopress-network-option', [$this, 'create_network_admin_page'], $sp_seo_admin_menu['icon'], 90);
+        add_menu_page(__('SEO Network settings', 'webseo'), $sp_seo_admin_menu['title'], seopress_capability('manage_options', 'menu'), 'seopress-network-option', [$this, 'create_network_admin_page'], $sp_seo_admin_menu['icon'], 90);
     }
 
     public function add_plugin_page()
     {
-        add_submenu_page('seopress-option', __('PRO', 'wp-seopress-pro'), __('PRO', 'wp-seopress-pro'), seopress_capability('manage_options', 'pro'), 'seopress-pro-page', [$this, 'seopress_pro_page']);
+        add_submenu_page('seopress-option', __('PRO', 'webseo'), __('PRO', 'webseo'), seopress_capability('manage_options', 'pro'), 'seopress-pro-page', [$this, 'seopress_pro_page']);
         if ('1' == seopress_get_toggle_option('rich-snippets')) {
-            add_submenu_page('seopress-option', __('Schemas', 'wp-seopress-pro'), __('Schemas', 'wp-seopress-pro'), seopress_capability('edit_schemas', 'menu'), 'edit.php?post_type=seopress_schemas', null);
+            add_submenu_page('seopress-option', __('Schemas', 'webseo'), __('Schemas', 'webseo'), seopress_capability('edit_schemas', 'menu'), 'edit.php?post_type=seopress_schemas', null);
         }
         if ('1' == seopress_get_toggle_option('404')) {
-            add_submenu_page('seopress-option', __('Redirections', 'wp-seopress-pro'), __('Redirections', 'wp-seopress-pro'), seopress_capability('edit_redirections', 'menu'), 'edit.php?post_type=seopress_404', null);
+            add_submenu_page('seopress-option', __('Redirections', 'webseo'), __('Redirections', 'webseo'), seopress_capability('edit_redirections', 'menu'), 'edit.php?post_type=seopress_404', null);
         }
         if ('1' == seopress_get_toggle_option('bot')) {
-            add_submenu_page('seopress-option', __('Broken links', 'wp-seopress-pro'), __('Broken links', 'wp-seopress-pro'), seopress_capability('manage_options', 'menu'), 'edit.php?post_type=seopress_bot', null);
+            add_submenu_page('seopress-option', __('Broken links', 'webseo'), __('Broken links', 'webseo'), seopress_capability('manage_options', 'menu'), 'edit.php?post_type=seopress_bot', null);
         }
-        add_submenu_page('seopress-option', __('License', 'wp-seopress-pro'), __('License', 'wp-seopress-pro'), seopress_capability('manage_options', 'menu'), 'seopress-license', [$this, 'seopress_license_page']);
+        add_submenu_page('seopress-option', __('License', 'webseo'), __('License', 'webseo'), seopress_capability('manage_options', 'menu'), 'seopress-license', [$this, 'seopress_license_page']);
 
     }
 

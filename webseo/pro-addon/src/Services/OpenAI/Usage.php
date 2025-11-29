@@ -95,7 +95,7 @@ class Usage {
                 'code' => 'error',
                 'message' => sprintf(
                     /* translators: %s: provider name */
-                    __('Your %s API key has not been entered. Please enter your API key.', 'wp-seopress-pro'),
+                    __('Your %s API key has not been entered. Please enter your API key.', 'webseo'),
                     $provider_name
                 )
             ];
@@ -116,7 +116,7 @@ class Usage {
                 'code' => 'error',
                 'message' => sprintf(
                     /* translators: %s: provider name */
-                    __('Your %1$s API key appears to be a placeholder. Please enter your actual API key from %2$s website.', 'wp-seopress-pro'),
+                    __('Your %1$s API key appears to be a placeholder. Please enter your actual API key from %2$s website.', 'webseo'),
                     $provider_name,
                     $provider_name
                 )
@@ -151,7 +151,7 @@ class Usage {
                 'code' => 'error',
                 'message' => sprintf(
                     /* translators: %1$s: provider name, %2$s: error message */
-                    __('Failed to connect to %1$s API: %2$s', 'wp-seopress-pro'),
+                    __('Failed to connect to %1$s API: %2$s', 'webseo'),
                     $provider_name,
                     $response->get_error_message()
                 )
@@ -165,7 +165,7 @@ class Usage {
                 'code' => 'success',
                 'message' => sprintf(
                     /* translators: %s: provider name */
-                    __('Your %s API key is valid.', 'wp-seopress-pro'),
+                    __('Your %s API key is valid.', 'webseo'),
                     $provider_name
                 )
             ];
@@ -174,7 +174,7 @@ class Usage {
                 'code' => 'error',
                 'message' => sprintf(
                     /* translators: %1$s: provider name, %2$s: error code */
-                    __('Your %1$s API key is invalid or has expired. Error: %2$s', 'wp-seopress-pro'),
+                    __('Your %1$s API key is invalid or has expired. Error: %2$s', 'webseo'),
                     $provider_name,
                     esc_html($httpCode)
                 )
@@ -238,7 +238,7 @@ class Usage {
                 'code' => 'error',
                 'message' => sprintf(
                     /* translators: %1$s: provider name, %2$s: error message */
-                    __('Failed to connect to %1$s API: %2$s', 'wp-seopress-pro'),
+                    __('Failed to connect to %1$s API: %2$s', 'webseo'),
                     $provider_name,
                     $response->get_error_message()
                 )
@@ -252,7 +252,7 @@ class Usage {
                 'code' => 'success',
                 'message' => sprintf(
                     /* translators: %s: provider name */
-                    __('Your %s API key is valid.', 'wp-seopress-pro'),
+                    __('Your %s API key is valid.', 'webseo'),
                     $provider_name
                 )
             ];
@@ -261,7 +261,7 @@ class Usage {
                 'code' => 'error',
                 'message' => sprintf(
                     /* translators: %1$s: provider name, %2$s: error code, %3$s: usage url, %4$s: provider name */
-                    __('Your %1$s API key is invalid or has expired. Error: %2$s. Go to your <a href="%3$s" target="_blank">%4$s Usage page</a> to check this.', 'wp-seopress-pro'),
+                    __('Your %1$s API key is invalid or has expired. Error: %2$s. Go to your <a href="%3$s" target="_blank">%4$s Usage page</a> to check this.', 'webseo'),
                     $provider_name,
                     esc_html($httpCode),
                     $this->getProviderUsageUrl($provider),

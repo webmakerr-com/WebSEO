@@ -34,7 +34,7 @@ function seopress_google_analytics_auth_callback() {
 		$client->setPrompt('consent'); // mandatory to get this fucking refreshtoken
 	} else { ?>
 <p>
-	<?php esc_html_e('To sign in with Google Analytics, you have to set a Client and Secret ID in the fields below:', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('To sign in with Google Analytics, you have to set a Client and Secret ID in the fields below:', 'webseo'); ?>
 </p>
 <?php }
 
@@ -72,7 +72,7 @@ function seopress_google_analytics_auth_callback() {
 			<p>
 				<a class="login btn btnSecondary"
 					href="<?php echo esc_url($authUrl); ?> ">
-					<?php esc_html_e('Connect with Google Analytics', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Connect with Google Analytics', 'webseo'); ?>
 				</a>
 			</p>
 			<?php
@@ -95,7 +95,7 @@ function seopress_google_analytics_auth_callback() {
 			} ?>
 
 			<p>
-				<a class="logout btn btnSecondary" href="<?php echo esc_url(wp_nonce_url($redirect_uri . '&logout=1', 'ga-logout')); ?>"><?php esc_html_e('Log out from Google', 'wp-seopress-pro'); ?></a>
+				<a class="logout btn btnSecondary" href="<?php echo esc_url(wp_nonce_url($redirect_uri . '&logout=1', 'ga-logout')); ?>"><?php esc_html_e('Log out from Google', 'webseo'); ?></a>
 			</p>
 
 		<?php
@@ -113,15 +113,15 @@ function seopress_google_analytics_auth_client_id_callback() {
 	$selected = isset($options['seopress_google_analytics_auth_client_id']) ? $options['seopress_google_analytics_auth_client_id'] : null; ?>
 
 	<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_auth_client_id]"
-		placeholder="<?php esc_html_e('Enter your client ID', 'wp-seopress-pro'); ?>"
-		aria-label="<?php esc_html_e('Google Console Client ID', 'wp-seopress-pro'); ?>"
+		placeholder="<?php esc_html_e('Enter your client ID', 'webseo'); ?>"
+		aria-label="<?php esc_html_e('Google Console Client ID', 'webseo'); ?>"
 		value="<?php echo esc_attr($selected); ?>" />
 
 	<?php if (isset($options['seopress_google_analytics_auth_client_id'])) {
 		esc_html($options['seopress_google_analytics_auth_client_id']);
 	}
 
-	echo seopress_tooltip_link(esc_url($docs['analytics']['connect']), esc_html__('Guide to connect your WordPress site with Google Analytics - new window', 'wp-seopress-pro'));
+	echo seopress_tooltip_link(esc_url($docs['analytics']['connect']), esc_html__('Guide to connect your WordPress site with Google Analytics - new window', 'webseo'));
 }
 
 function seopress_google_analytics_auth_secret_id_callback() {
@@ -130,8 +130,8 @@ function seopress_google_analytics_auth_secret_id_callback() {
 	$selected = isset($options['seopress_google_analytics_auth_secret_id']) ? $options['seopress_google_analytics_auth_secret_id'] : null; ?>
 
 	<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_auth_secret_id]"
-		placeholder="<?php esc_html_e('Enter your secret ID', 'wp-seopress-pro'); ?>"
-		aria-label="<?php esc_html_e('Google Console Secret ID', 'wp-seopress-pro'); ?>"
+		placeholder="<?php esc_html_e('Enter your secret ID', 'webseo'); ?>"
+		aria-label="<?php esc_html_e('Google Console Secret ID', 'webseo'); ?>"
 		value="<?php echo esc_attr($selected); ?>" />
 
 	<?php if (isset($options['seopress_google_analytics_auth_secret_id'])) {
@@ -152,7 +152,7 @@ function seopress_google_analytics_ga4_property_id_callback() {
 				<div class="seopress-notice is-warning">
 					<p>
 						<?php
-							echo wp_kses_post(sprintf(/* translators: %s documentation URL */ __('To get your Google Analytics stats in dashboard, your <strong>GA4 property ID must NOT be equals to your GA4 measurement ID</strong>. <a class="seopress-help" href="%s" target="_blank">Find my property ID</a><span class="seopress-help dashicons dashicons-external"></span>', 'wp-seopress-pro'), esc_url($docs['analytics']['ga4_property'])));
+							echo wp_kses_post(sprintf(/* translators: %s documentation URL */ __('To get your Google Analytics stats in dashboard, your <strong>GA4 property ID must NOT be equals to your GA4 measurement ID</strong>. <a class="seopress-help" href="%s" target="_blank">Find my property ID</a><span class="seopress-help dashicons dashicons-external"></span>', 'webseo'), esc_url($docs['analytics']['ga4_property'])));
 						?>
 					</p>
 				</div>
@@ -162,8 +162,8 @@ function seopress_google_analytics_ga4_property_id_callback() {
 	?>
 
 	<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_ga4_property_id]"
-		placeholder="<?php esc_html_e('Enter your Google Analytics v4 property ID', 'wp-seopress-pro'); ?>"
-		aria-label="<?php esc_html_e('GA4 property ID', 'wp-seopress-pro'); ?>"
+		placeholder="<?php esc_html_e('Enter your Google Analytics v4 property ID', 'webseo'); ?>"
+		aria-label="<?php esc_html_e('GA4 property ID', 'webseo'); ?>"
 		value="<?php echo esc_attr($selected); ?>" />
 
 	<?php if (isset($options['seopress_google_analytics_ga4_property_id'])) {
@@ -172,7 +172,7 @@ function seopress_google_analytics_ga4_property_id_callback() {
 
 	<p class="description">
 		<a class="seopress-help" href="<?php echo esc_url($docs['analytics']['ga4_property']); ?>" target="_blank">
-			<?php esc_html_e('Find my property ID', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Find my property ID', 'webseo'); ?>
 		</a>
 		<span class="seopress-help dashicons dashicons-external"></span>
 	</p>
@@ -192,7 +192,7 @@ function seopress_google_analytics_dashboard_widget_callback() {
 		<?php } ?>
 		value="1"/>
 
-		<?php esc_html_e('Remove Google Analytics stats widget from WordPress dashboard', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('Remove Google Analytics stats widget from WordPress dashboard', 'webseo'); ?>
 	</label>
 
 	<?php if (isset($options['seopress_google_analytics_dashboard_widget'])) {
@@ -204,10 +204,10 @@ function seopress_print_section_info_google_analytics_logs() {
 	?>
 	<hr>
 	<h3 id="seopress-google-analytics-logs">
-		<?php esc_html_e('Google Analytics Logs', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('Google Analytics Logs', 'webseo'); ?>
 	</h3>
 
-	<p><?php esc_html_e('Below is the latest error message obtained from the Google Analytics API:', 'wp-seopress-pro'); ?></p>
+	<p><?php esc_html_e('Below is the latest error message obtained from the Google Analytics API:', 'webseo'); ?></p>
 
 	<?php
 	//Logs
@@ -224,7 +224,7 @@ function seopress_print_section_info_google_analytics_logs() {
 	?>
 <?php
 	} else {
-		esc_html_e('Currently no errors logged.', 'wp-seopress-pro');
+		esc_html_e('Currently no errors logged.', 'webseo');
 	}
 	echo '</pre>';
 }

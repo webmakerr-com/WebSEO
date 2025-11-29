@@ -7,7 +7,7 @@
  * Author: The SEO Folks at WebSEO
  * Author URI: https://www.webseo.com/wordpress-seo-plugins/pro/
  * License: GPLv3 or later
- * Text Domain: wp-seopress-pro
+ * Text Domain: webseo
  * Domain Path: /languages
  * Requires PHP: 7.4
  * Requires at least: 5.0
@@ -102,7 +102,7 @@ if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . '/vendor/autoload.php' ) && def
         Kernel::execute(
                 array(
                         'file'      => __FILE__,
-                        'slug'      => 'wp-seopress-pro',
+                        'slug'      => 'webseo',
                         'main_file' => 'seopress-pro',
                         'root'      => __DIR__,
                 )
@@ -405,15 +405,13 @@ add_action( 'plugins_loaded', 'seopress_pro_plugins_loaded', 999 );
  * @return void
  */
 function seopress_pro_init_t15s() {
-	// i18n.
-	load_plugin_textdomain( 'wp-seopress-pro', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
-	if ( class_exists( 'SEOPRESS_Language_Packs' ) ) {
-		$t15s_updater = new SEOPRESS_Language_Packs(
-			'wp-seopress-pro',
-			'https://packages.translationspress.com/seopress/wp-seopress-pro/packages.json'
-		);
-	}
+        // i18n is loaded by the core WebSEO plugin to keep a single text domain.
+        if ( class_exists( 'SEOPRESS_Language_Packs' ) ) {
+                $t15s_updater = new SEOPRESS_Language_Packs(
+                        'webseo',
+                        'https://packages.translationspress.com/seopress/wp-seopress-pro/packages.json'
+                );
+        }
 }
 add_action( 'init', 'seopress_pro_init_t15s' );
 
@@ -433,7 +431,7 @@ function seopress_pro_admin_scripts() {
 		'seopress_nonce'                => wp_create_nonce( 'seopress_ai_generate_seo_meta_nonce' ),
 		'seopress_ai_generate_seo_meta' => admin_url( 'admin-ajax.php' ),
 		'i18n'                          => array(
-			'alt_text_not_found' => __( 'Alternative text input could not be found.', 'wp-seopress-pro' ),
+			'alt_text_not_found' => __( 'Alternative text input could not be found.', 'webseo' ),
 		),
 	);
 
@@ -563,9 +561,9 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 			'seopress_search_console_batch_process' => apply_filters( 'seopress_search_console_batch_process', 20 ),
 			'i18n'                                  => array(
 				/* translators: %s number of posts */
-				'progress_matches' => __( '%s matches.', 'wp-seopress-pro' ),
+				'progress_matches' => __( '%s matches.', 'webseo' ),
 				/* translators: %s number of posts URL */
-				'finish_matches' => __( 'The analysis is complete. We have matched %s urls. Go to post / page or post types list to see your metrics.', 'wp-seopress-pro' ),
+				'finish_matches' => __( 'The analysis is complete. We have matched %s urls. Go to post / page or post types list to see your metrics.', 'webseo' ),
 			),
 		);
 		wp_localize_script( 'seopress-pro-search-console', 'seopressAjaxGSC', $search_console );
@@ -597,10 +595,10 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 			'seopress_nonce'                => wp_create_nonce( 'seopress_ai_check_license_key_nonce' ),
 			'seopress_ai_check_license_key' => admin_url( 'admin-ajax.php' ),
 			'i18n'                          => array(
-				'connection_error'   => __( 'Connection error. Please try again.', 'wp-seopress-pro' ),
-				'network_error'      => __( 'Network error. Please check your connection and try again.', 'wp-seopress-pro' ),
-				'alt_text_not_found' => __( 'Alternative text input could not be found.', 'wp-seopress-pro' ),
-				'log_div_not_found'  => __( 'Log div not found! Looking for:', 'wp-seopress-pro' ),
+				'connection_error'   => __( 'Connection error. Please try again.', 'webseo' ),
+				'network_error'      => __( 'Network error. Please check your connection and try again.', 'webseo' ),
+				'alt_text_not_found' => __( 'Alternative text input could not be found.', 'webseo' ),
+				'log_div_not_found'  => __( 'Log div not found! Looking for:', 'webseo' ),
 			),
 		);
 
@@ -652,7 +650,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 				'seopress_nonce' => wp_create_nonce( 'seopress_ai_generate_seo_meta_nonce' ),
 				'seopress_ai_generate_seo_meta' => admin_url( 'admin-ajax.php' ),
 				'i18n' => array(
-					'alt_text_not_found' => __( 'Alternative text input could not be found.', 'wp-seopress-pro' ),
+					'alt_text_not_found' => __( 'Alternative text input could not be found.', 'webseo' ),
 				),
 			);
 
@@ -671,7 +669,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 			'seopress_nonce'            => wp_create_nonce( 'seopress_video_regenerate_nonce' ),
 			'seopress_video_regenerate' => admin_url( 'admin-ajax.php' ),
 			'i18n'                      => array(
-				'video' => __( 'Regeneration completed!', 'wp-seopress-pro' ),
+				'video' => __( 'Regeneration completed!', 'webseo' ),
 			),
 		);
 		wp_localize_script( 'seopress-pro-video-sitemap-ajax', 'seopressAjaxVdeoRegenerate', $seopress_video_regenerate );
@@ -703,7 +701,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 		}
 		if ( 1 === $display_livechat && 1 === $is_seopress_page ) {
 			wp_enqueue_script( 'seopress-pro-chatbot', plugins_url( 'assets/js/seopress-pro-chatbot.min.js', __FILE__ ), array(), SEOPRESS_PRO_VERSION, true );
-			wp_add_inline_style( 'seopress-pro-admin', '#chatbase-bubble-button::after {content: " ' . esc_html__( 'Help?', 'wp-seopress-pro' ) . '";}' );
+			wp_add_inline_style( 'seopress-pro-admin', '#chatbase-bubble-button::after {content: " ' . esc_html__( 'Help?', 'webseo' ) . '";}' );
 		}
 	}
 }
@@ -724,9 +722,9 @@ function seopress_pro_admin_notices() {
 		?>
 		<div class="notice error">
 			<p>
-                        <?php echo wp_kses_post( __( 'Please enable <strong>WebSEO</strong> in order to use WEBSEO PRO.', 'wp-seopress-pro' ) ); ?>
+                        <?php echo wp_kses_post( __( 'Please enable <strong>WebSEO</strong> in order to use WEBSEO PRO.', 'webseo' ) ); ?>
 				<a href="<?php echo esc_url( admin_url( 'plugin-install.php?tab=plugin-information&plugin=wp-seopress&TB_iframe=true&width=600&height=550' ) ); ?>" class="thickbox btn btnPrimary" target="_blank">
-					<?php esc_html_e( 'Enable / Download now!', 'wp-seopress-pro' ); ?>
+					<?php esc_html_e( 'Enable / Download now!', 'webseo' ); ?>
 				</a>
 			</p>
 		</div>
@@ -748,11 +746,11 @@ function seopress_pro_admin_notices() {
 
 				$class = 'seopress-notice is-error';
 
-				$message = '<p><strong>' . esc_html__( 'Welcome to SEOPRESS PRO!', 'wp-seopress-pro' ) . '</strong></p>';
+				$message = '<p><strong>' . esc_html__( 'Welcome to SEOPRESS PRO!', 'webseo' ) . '</strong></p>';
 
-				$message .= '<p>' . esc_html__( 'Please activate your license to receive automatic updates and get premium support.', 'wp-seopress-pro' ) . '</p>';
+				$message .= '<p>' . esc_html__( 'Please activate your license to receive automatic updates and get premium support.', 'webseo' ) . '</p>';
 
-				$message .= '<p><a class="btn btnPrimary" href="' . esc_url( admin_url( 'admin.php?page=seopress-license' ) ) . '">' . esc_html__( 'Activate License', 'wp-seopress-pro' ) . '</a></p>';
+				$message .= '<p><a class="btn btnPrimary" href="' . esc_url( admin_url( 'admin.php?page=seopress-license' ) ) . '">' . esc_html__( 'Activate License', 'webseo' ) . '</a></p>';
 
 				printf( '<div class="%1$s">%2$s</div>', esc_attr( $class ), wp_kses_post( $message ) );
 			}
@@ -776,8 +774,8 @@ function seopress_pro_plugin_action_links( $links, $file ) {
 	}
 
 	if ( $file === $this_plugin ) {
-		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=seopress-pro-page' ) ) . '">' . esc_html__( 'Settings', 'wp-seopress-pro' ) . '</a>';
-		$website_link  = '<a href="https://www.webseo.com/support/" target="_blank">' . esc_html__( 'Support', 'wp-seopress-pro' ) . '</a>';
+		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=seopress-pro-page' ) ) . '">' . esc_html__( 'Settings', 'webseo' ) . '</a>';
+		$website_link  = '<a href="https://www.webseo.com/support/" target="_blank">' . esc_html__( 'Support', 'webseo' ) . '</a>';
 
 		// Combine license link logic to reduce function calls.
 		$license_status = get_option( 'seopress_pro_license_status' );
@@ -785,7 +783,7 @@ function seopress_pro_plugin_action_links( $links, $file ) {
 
 		if ( ! is_multisite() ) {
 			$license_link  = '<a href="' . esc_url( admin_url( 'admin.php?page=seopress-license' ) ) . '">';
-			$license_link .= ( 'valid' !== $license_status ) ? '<span style="color:red;font-weight:bold">' . esc_html__( 'Activate your license', 'wp-seopress-pro' ) . '</span>' : esc_html__( 'License', 'wp-seopress-pro' );
+			$license_link .= ( 'valid' !== $license_status ) ? '<span style="color:red;font-weight:bold">' . esc_html__( 'Activate your license', 'webseo' ) . '</span>' : esc_html__( 'License', 'webseo' );
 			$license_link .= '</a>';
 		}
 

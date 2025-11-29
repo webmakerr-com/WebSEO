@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_404_enable', // ID
-    __('404 log', 'wp-seopress-pro'), // Title
+    __('404 log', 'webseo'), // Title
     'seopress_404_enable_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -21,7 +21,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_cleaning', // ID
-    __('404 cleaning', 'wp-seopress-pro'), // Title
+    __('404 cleaning', 'webseo'), // Title
     'seopress_404_cleaning_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -29,7 +29,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_redirect_home', // ID
-    __('Redirect 404 to', 'wp-seopress-pro'), // Title
+    __('Redirect 404 to', 'webseo'), // Title
     'seopress_404_redirect_home_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -37,7 +37,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_redirect_custom_url', // ID
-    __('Redirect to specific URL', 'wp-seopress-pro'), // Title
+    __('Redirect to specific URL', 'webseo'), // Title
     'seopress_404_redirect_custom_url_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -45,7 +45,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_redirect_status_code', // ID
-    __('Status code of redirections', 'wp-seopress-pro'), // Title
+    __('Status code of redirections', 'webseo'), // Title
     'seopress_404_redirect_status_code_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -54,7 +54,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_enable_mails', // ID
-    __('Email notifications', 'wp-seopress-pro'), // Title
+    __('Email notifications', 'webseo'), // Title
     'seopress_404_enable_mails_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -62,7 +62,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_enable_mails_from', // ID
-    __('Send emails to', 'wp-seopress-pro'), // Title
+    __('Send emails to', 'webseo'), // Title
     'seopress_404_enable_mails_from_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -70,7 +70,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_disable_automatic_redirects', // ID
-    __('Disable redirect suggestions', 'wp-seopress-pro'), // Title
+    __('Disable redirect suggestions', 'webseo'), // Title
     'seopress_404_disable_automatic_redirects_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section
@@ -78,7 +78,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_404_disable_guess_automatic_redirects_404', // ID
-    __('Disable guess redirect url for 404', 'wp-seopress-pro'), // Title
+    __('Disable guess redirect url for 404', 'webseo'), // Title
     'seopress_404_disable_guess_automatic_redirects_404_callback', // Callback
     'seopress-settings-admin-monitor-404', // Page
     'seopress_setting_section_monitor_404' // Section

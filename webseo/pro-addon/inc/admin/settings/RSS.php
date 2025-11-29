@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_rss_before_html', // ID
-    __('Display content before each post', 'wp-seopress-pro'), // Title
+    __('Display content before each post', 'webseo'), // Title
     'seopress_rss_before_html_callback', // Callback
     'seopress-settings-admin-rss', // Page
     'seopress_setting_section_rss' // Section
@@ -21,7 +21,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_rss_after_html', // ID
-    __('Display content after each post', 'wp-seopress-pro'), // Title
+    __('Display content after each post', 'webseo'), // Title
     'seopress_rss_after_html_callback', // Callback
     'seopress-settings-admin-rss', // Page
     'seopress_setting_section_rss' // Section
@@ -29,7 +29,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_rss_post_thumbnail', // ID
-    __('Add post thumbnail', 'wp-seopress-pro'), // Title
+    __('Add post thumbnail', 'webseo'), // Title
     'seopress_rss_post_thumbnail_callback', // Callback
     'seopress-settings-admin-rss', // Page
     'seopress_setting_section_rss' // Section
@@ -37,7 +37,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_rss_disable_comments_feed', // ID
-    __('Disable comments RSS feed', 'wp-seopress-pro'), // Title
+    __('Disable comments RSS feed', 'webseo'), // Title
     'seopress_rss_disable_comments_feed_callback', // Callback
     'seopress-settings-admin-rss', // Page
     'seopress_setting_section_rss' // Section
@@ -45,7 +45,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_rss_disable_posts_feed', // ID
-    __('Disable posts RSS feed', 'wp-seopress-pro'), // Title
+    __('Disable posts RSS feed', 'webseo'), // Title
     'seopress_rss_disable_posts_feed_callback', // Callback
     'seopress-settings-admin-rss', // Page
     'seopress_setting_section_rss' // Section
@@ -53,7 +53,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_rss_disable_extra_feed', // ID
-    __('Disable extra RSS feed', 'wp-seopress-pro'), // Title
+    __('Disable extra RSS feed', 'webseo'), // Title
     'seopress_rss_disable_extra_feed_callback', // Callback
     'seopress-settings-admin-rss', // Page
     'seopress_setting_section_rss' // Section
@@ -61,7 +61,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_rss_disable_all_feeds', // ID
-    __('Disable all RSS feeds', 'wp-seopress-pro'), // Title
+    __('Disable all RSS feeds', 'webseo'), // Title
     'seopress_rss_disable_all_feeds_callback', // Callback
     'seopress-settings-admin-rss', // Page
     'seopress_setting_section_rss' // Section

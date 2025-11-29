@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_pro_inspect_url_api', // ID
-    __('Google Search Console API key (JSON file)', 'wp-seopress-pro'), // Title
+    __('Google Search Console API key (JSON file)', 'webseo'), // Title
     'seopress_pro_inspect_url_api_callback', // Callback
     'seopress-settings-admin-inspect-url', // Page
     'seopress_setting_section_inspect_url' // Section
@@ -21,7 +21,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_gsc_domain_property', // ID
-    __('Domain property', 'wp-seopress-pro'), // Title
+    __('Domain property', 'webseo'), // Title
     'seopress_gsc_domain_property_callback', // Callback
     'seopress-settings-admin-inspect-url', // Page
     'seopress_setting_section_inspect_url' // Section
@@ -29,7 +29,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_gsc_date_range', // ID
-    __('Date range', 'wp-seopress-pro'), // Title
+    __('Date range', 'webseo'), // Title
     'seopress_gsc_date_range_callback', // Callback
     'seopress-settings-admin-inspect-url', // Page
     'seopress_setting_section_inspect_url' // Section

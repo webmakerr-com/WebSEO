@@ -19,20 +19,20 @@ trait FieldOpeningHoursSeparator {
             class="seopress-admin-select">
             
             <option value=":" <?php selected($value, ':', true); ?>>
-                <?php esc_html_e('Colon (:)', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Colon (:)', 'webseo'); ?>
             </option>
             
             <option value="." <?php selected($value, '.'); ?>>
-                <?php esc_html_e('Dot (.)', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Dot (.)', 'webseo'); ?>
             </option>
             
             <option value=" " <?php selected($value, ' '); ?>>
-                <?php esc_html_e('Space ( )', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Space ( )', 'webseo'); ?>
             </option>
         </select>
         
         <p class="description">
-            <?php esc_html_e('Choose the separator between hours and minutes in time display.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Choose the separator between hours and minutes in time display.', 'webseo'); ?>
         </p>
 
         <?php

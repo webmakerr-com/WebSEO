@@ -106,7 +106,7 @@ class GoogleNewsSettings implements ExecuteHooks {
                 'use_default'        => '',
                 'default'            => '',
                 'value'              => !empty(get_post_meta($id, '_seopress_news_disabled', true)),
-                'label'              => __(' Exclude this post from Google News Sitemap?', 'wp-seopress-pro'),
+                'label'              => __(' Exclude this post from Google News Sitemap?', 'webseo'),
                 'visible'            => true,
                 'description'        => '',
             ]

@@ -7,7 +7,7 @@ class ACP_Column_sp_gsc_ctr extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_gsc_ctr' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'CTR', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'CTR', 'webseo' ) );
 	}
 
 	public function get_meta_key() {

@@ -7,7 +7,7 @@ class ACP_Column_sp_target_kw extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_target_kw' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'Target keywords', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'Target keywords', 'webseo' ) );
 	}
 
 	public function get_meta_key() {

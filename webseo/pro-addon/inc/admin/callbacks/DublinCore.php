@@ -14,7 +14,7 @@ function seopress_dublin_core_enable_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Enable Dublin Core meta tags (dc.title, dc.description, dc.source, dc.language, dc.relation, dc.subject)', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Enable Dublin Core meta tags (dc.title, dc.description, dc.source, dc.language, dc.relation, dc.subject)', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_dublin_core_enable'])) {

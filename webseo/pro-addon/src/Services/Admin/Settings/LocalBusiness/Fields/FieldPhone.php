@@ -15,12 +15,12 @@ trait FieldPhone {
         <input
             type="text"
             name="seopress_pro_option_name[seopress_local_business_phone]"
-            placeholder="<?php esc_attr_e('e.g. +33501020304', 'wp-seopress-pro'); ?>"
-            aria-label="<?php esc_attr_e('Telephone', 'wp-seopress-pro'); ?>"
+            placeholder="<?php esc_attr_e('e.g. +33501020304', 'webseo'); ?>"
+            aria-label="<?php esc_attr_e('Telephone', 'webseo'); ?>"
             value="<?php echo esc_attr($value); ?>"
         />
 
-        <p class="description"><?php echo wp_kses_post(__('<span class="field-recommended">Recommended</span> property by Google.', 'wp-seopress-pro')); ?></p>
+        <p class="description"><?php echo wp_kses_post(__('<span class="field-recommended">Recommended</span> property by Google.', 'webseo')); ?></p>
 
         <?php
     }

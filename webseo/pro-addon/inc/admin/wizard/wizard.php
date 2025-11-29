@@ -13,20 +13,20 @@ function seopress_pro_wizard_setup_ready()
     <?php if ('valid' != get_option('seopress_pro_license_status') && ! is_multisite()) { ?>
     <div class="seopress-wizard-next-step-description">
         <p class="next-step-heading">
-            <?php esc_html_e('Next step', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Next step', 'webseo'); ?>
         </p>
         <h3 class="next-step-description">
-            <?php /* translators: %s default: SEOPress */ printf(esc_html__('Welcome to %s!', 'wp-seopress-pro'), esc_html($seo_title)); ?>
+            <?php /* translators: %s default: SEOPress */ printf(esc_html__('Welcome to %s!', 'webseo'), esc_html($seo_title)); ?>
         </h3>
         <p class="next-step-extra-info">
-            <?php esc_html_e('Please activate your license to receive automatic updates and get premium support.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Please activate your license to receive automatic updates and get premium support.', 'webseo'); ?>
         </p>
     </div>
     <div class="seopress-wizard-next-step-action">
         <p class="seopress-setup-actions step">
             <a class="btn btnPrimary"
                 href="<?php echo esc_url(admin_url('admin.php?page=seopress-license')); ?>">
-                <?php esc_html_e('Activate License', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Activate License', 'webseo'); ?>
             </a>
         </p>
     </div>

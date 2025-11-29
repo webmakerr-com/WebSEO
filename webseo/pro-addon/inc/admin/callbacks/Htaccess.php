@@ -6,21 +6,21 @@ function seopress_htaccess_file_callback() {
         ?>
             <div class="seopress-notice is-error">
                 <p>
-                    <?php esc_html_e('Access not allowed by the PHP define.', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('Access not allowed by the PHP define.', 'webseo'); ?>
                 </p>
             </div>
         <?php
     } elseif (defined('SEOPRESS_BLOCK_HTACCESS') && SEOPRESS_BLOCK_HTACCESS === true) { ?>
         <div class="seopress-notice is-error">
             <p>
-                <?php esc_html_e('Access not allowed by the PHP define.', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Access not allowed by the PHP define.', 'webseo'); ?>
             </p>
         </div>
     <?php } else {
 		if ( ! is_network_admin() && is_multisite()) { ?>
             <div class="seopress-notice">
                 <p>
-                    <?php esc_html_e('Multisite is enabled, go to network SEO settings to manage your .htaccess file.', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('Multisite is enabled, go to network SEO settings to manage your .htaccess file.', 'webseo'); ?>
                 </p>
             </div>
             <?php } else {
@@ -32,8 +32,8 @@ function seopress_htaccess_file_callback() {
                             $htaccess = file_get_contents(get_home_path() . '/.htaccess'); ?>
 
             <textarea id="seopress_htaccess_file" name="seopress_pro_option_name[seopress_htaccess_file]" rows="25"
-                aria-label="<?php esc_html_e('Edit your htaccess file', 'wp-seopress-pro'); ?>"
-                placeholder="<?php esc_html_e('This is your htaccess file!', 'wp-seopress-pro'); ?>"><?php echo $htaccess; ?></textarea>
+                aria-label="<?php esc_html_e('Edit your htaccess file', 'webseo'); ?>"
+                placeholder="<?php esc_html_e('This is your htaccess file!', 'webseo'); ?>"><?php echo $htaccess; ?></textarea>
 
             <?php if (isset($options['seopress_htaccess_file'])) {
                 esc_html($options['seopress_htaccess_file']);
@@ -43,7 +43,7 @@ function seopress_htaccess_file_callback() {
 
                 <button type="button" class="btn btnSecondary tag-title" id="seopress-tag-htaccess-1" data-tag="Options -Indexes">
                     <span class="dashicons dashicons-plus-alt2"></span>
-                    <?php esc_html_e('Block directory browsing', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('Block directory browsing', 'webseo'); ?>
                 </button>
 
                 <button type="button" class="btn btnSecondary tag-title" id="seopress-tag-htaccess-2" data-tag="<files wp-config.php>
@@ -51,18 +51,18 @@ function seopress_htaccess_file_callback() {
             deny from all
             </files>">
                     <span class="dashicons dashicons-plus-alt2"></span>
-                    <?php esc_html_e('Protect wp-config.php file', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('Protect wp-config.php file', 'webseo'); ?>
                 </button>
 
                 <button type="button" class="btn btnSecondary tag-title" id="seopress-tag-htaccess-3" data-tag="redirect 301 /your-old-url/ https://www.example.com/your-new-url">
                     <span class="dashicons dashicons-plus-alt2"></span>
-                    <?php esc_html_e('301 redirection', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('301 redirection', 'webseo'); ?>
                 </button>
 
             </div>
 
             <button type="button" id="seopress-save-htaccess" class="btn btnTertiary">
-                <?php esc_html_e('Saves htaccess changes', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Saves htaccess changes', 'webseo'); ?>
             </button>
             <span class="spinner"></span>
             <div class="log"></div>
@@ -70,14 +70,14 @@ function seopress_htaccess_file_callback() {
             } else { ?>
                 <div class="seopress-notice is-error">
                     <p>
-                        <?php esc_html_e('You don\'t have an htaccess file on your server or it‘s not writable.', 'wp-seopress-pro'); ?>
+                        <?php esc_html_e('You don\'t have an htaccess file on your server or it‘s not writable.', 'webseo'); ?>
                     </p>
                 </div>
             <?php }
             } else { ?>
                 <div class="seopress-notice">
                     <p>
-                        <?php esc_html_e('Your server is running Nginx, you don\'t have htaccess file.', 'wp-seopress-pro'); ?>
+                        <?php esc_html_e('Your server is running Nginx, you don\'t have htaccess file.', 'webseo'); ?>
                     </p>
                 </div>
             <?php }

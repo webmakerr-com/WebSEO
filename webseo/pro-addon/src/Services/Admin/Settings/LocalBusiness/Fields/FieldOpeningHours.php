@@ -25,13 +25,13 @@ trait FieldOpeningHours {
 
 <div class="seopress-notice">
     <p>
-        <?php echo '<strong>' . esc_html__('Morning and Afternoon are just time slots', 'wp-seopress-pro') . '</strong>'; ?>
+        <?php echo '<strong>' . esc_html__('Morning and Afternoon are just time slots', 'webseo') . '</strong>'; ?>
     </p>
     <p>
-        <?php esc_html_e('e.g. if you\'re opened from 10:00 AM to 9:00 PM, check Morning and enter 10:00 / 21:00.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('e.g. if you\'re opened from 10:00 AM to 9:00 PM, check Morning and enter 10:00 / 21:00.', 'webseo'); ?>
     </p>
     <p>
-        <?php esc_html_e('If you are open non-stop, check Morning and enter 0:00 / 23:59.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('If you are open non-stop, check Morning and enter 0:00 / 23:59.', 'webseo'); ?>
     </p>
 </div>
 
@@ -53,7 +53,7 @@ trait FieldOpeningHours {
             type="checkbox" <?php checked($closedAllDay, '1'); ?>
             value="1"/>
 
-            <?php esc_html_e('Closed all the day?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Closed all the day?', 'webseo'); ?>
         </label>
         <?php foreach ($halfDay as $valueHalfDay) {
                     $open = isset($options[$key][$valueHalfDay]['open']) ? $options[$key][$valueHalfDay]['open'] : 0;
@@ -74,9 +74,9 @@ trait FieldOpeningHours {
                     />
                     <?php if ('am' === $valueHalfDay) { ?>
 
-                    <?php esc_html_e('Open in the morning?', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('Open in the morning?', 'webseo'); ?>
                     <?php } else { ?>
-                    <?php esc_html_e('Open in the afternoon?', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('Open in the afternoon?', 'webseo'); ?>
                     <?php } ?>
                 </label>
             </div>
@@ -109,7 +109,7 @@ trait FieldOpeningHours {
 
                 </select>
 
-                <span> <?php esc_html_e('to','wp-seopress-pro'); ?> </span>
+                <span> <?php esc_html_e('to','webseo'); ?> </span>
 
                 <select
                     id="seopress_pro_option_name[seopress_local_business_opening_hours][<?php echo esc_attr($key); ?>][<?php echo esc_attr($valueHalfDay); ?>][end][hours]"

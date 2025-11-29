@@ -26,27 +26,27 @@ function seopress_pro_dashboard_tasks($tasks)
         [
             'done' => ('valid' === get_option('seopress_pro_license_status') && ! is_multisite()) ? 'done' : '',
             'link' => admin_url('admin.php?page=seopress-license'),
-            'label' => __('Activate your license key', 'wp-seopress-pro'),
+            'label' => __('Activate your license key', 'webseo'),
         ],
         [
             'done' => seopress_tasks_sitemaps(),
             'link' => admin_url('admin.php?page=seopress-xml-sitemap'),
-            'label' => __('Generate XML sitemaps', 'wp-seopress-pro'),
+            'label' => __('Generate XML sitemaps', 'webseo'),
         ],
         [
             'done' => seopress_tasks_social_networks(),
             'link' => admin_url('admin.php?page=seopress-social'),
-            'label' => __('Be social', 'wp-seopress-pro'),
+            'label' => __('Be social', 'webseo'),
         ],
         [
             'done' => (seopress_get_toggle_option('local-business') === '1') ? 'done' : '',
             'link' => admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_local_business'),
-            'label' => __('Improve Local SEO', 'wp-seopress-pro'),
+            'label' => __('Improve Local SEO', 'webseo'),
         ],
         [
             'done' => seopress_tasks_schemas(),
             'link' => admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_rich_snippets'),
-            'label' => __('Add Structured Data Types to increase visibility in SERPs', 'wp-seopress-pro'),
+            'label' => __('Add Structured Data Types to increase visibility in SERPs', 'webseo'),
         ]
     ];
 

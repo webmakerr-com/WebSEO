@@ -15,15 +15,15 @@ function seopress_google_analytics_purchases_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Measure purchases', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Measure purchases', 'webseo'); ?>
 </label>
 
 <p class="description">
-	<?php echo wp_kses_post(__('Only orders with <code>completed</code> or <code>processing</code> status will be tracked.','wp-seopress-pro')); ?>
+	<?php echo wp_kses_post(__('Only orders with <code>completed</code> or <code>processing</code> status will be tracked.','webseo')); ?>
 </p>
 <p class="description seopress-help">
 	<a href="<?php echo esc_url($docs['analytics']['ga_ecommerce']['ev_purchase']); ?>" target="_blank">
-		<?php esc_html_e('You can change this behavior with this hook.', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('You can change this behavior with this hook.', 'webseo'); ?>
 	</a>
 	<span class="dashicons dashicons-external"></span>
 </p>
@@ -46,7 +46,7 @@ function seopress_google_analytics_view_product_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Measure product views', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Measure product views', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_google_analytics_add_to_cart'])) {
@@ -66,7 +66,7 @@ function seopress_google_analytics_add_to_cart_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Measure additions to shopping carts', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Measure additions to shopping carts', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_google_analytics_add_to_cart'])) {
@@ -86,7 +86,7 @@ function seopress_google_analytics_remove_from_cart_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Measure removals from shopping carts', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Measure removals from shopping carts', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_google_analytics_remove_from_cart'])) {

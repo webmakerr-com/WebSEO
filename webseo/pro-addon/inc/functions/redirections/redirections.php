@@ -446,7 +446,7 @@ function seopress_notice_prevent_create_title_redirection() {
 	$message  = '<p>';
 	$message .= sprintf(
 		/* translators: %1$s: post name (slug) %2$s: url redirect */
-		__( 'We were unable to create the redirection you requested (<code>%1$s</code> to <code>%2$s</code>).', 'wp-seopress-pro' ),
+		__( 'We were unable to create the redirection you requested (<code>%1$s</code> to <code>%2$s</code>).', 'webseo' ),
 		$transient['insert_post']->post_name,
 		$transient['seopress_redirections_value']
 	);
@@ -455,7 +455,7 @@ function seopress_notice_prevent_create_title_redirection() {
 	$message .= '<p>';
 	$message .= sprintf(
 		/* translators: %1$s: get_edit_post_link() %2$s: post name (slug) */
-		__( 'This URL is already listed as a redirection or a 404 error. Click this link to edit it: <a href="%1$s">%2$s</a> </p>', 'wp-seopress-pro' ),
+		__( 'This URL is already listed as a redirection or a 404 error. Click this link to edit it: <a href="%1$s">%2$s</a> </p>', 'webseo' ),
 		$edit_post_link,
 		$transient['post_exist']->post_name
 	);

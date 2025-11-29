@@ -30,7 +30,7 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 						global $pagenow;
 						?>
 						<a class="<?php if ('index.php' == $pagenow) { echo 'button'; } else { echo 'seopress-btn'; }; ?>" href="<?php echo esc_url(admin_url('admin.php?page=seopress-google-analytics#tab=tab_seopress_google_analytics_enable')); ?>">
-							<?php esc_html_e('Check error logs', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Check error logs', 'webseo'); ?>
 						</a>
 						<span class="spinner"></span>
 						<?php
@@ -50,7 +50,7 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 								<!-- //Sessions -->
 								<div class="seopress-summary-item">
 									<div class="seopress-summary-item-label">
-										<?php esc_html_e('Sessions', 'wp-seopress-pro'); ?>
+										<?php esc_html_e('Sessions', 'webseo'); ?>
 									</div>
 									<div id="seopress-ga-sessions" class="seopress-summary-item-data"></div>
 								</div>
@@ -58,7 +58,7 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 								<!-- //Users -->
 								<div class="seopress-summary-item">
 									<div class="seopress-summary-item-label">
-										<?php esc_html_e('Users', 'wp-seopress-pro'); ?>
+										<?php esc_html_e('Users', 'webseo'); ?>
 									</div>
 									<div id="seopress-ga-users" class="seopress-summary-item-data"></div>
 								</div>
@@ -66,7 +66,7 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 								<!-- //Page -->
 								<div class="seopress-summary-item">
 									<div class="seopress-summary-item-label">
-										<?php esc_html_e('Page Views', 'wp-seopress-pro'); ?>
+										<?php esc_html_e('Page Views', 'webseo'); ?>
 									</div>
 									<div id="seopress-ga-pageviews" class="seopress-summary-item-data"></div>
 								</div>
@@ -74,7 +74,7 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 								<!-- //Average session duration -->
 								<div class="seopress-summary-item">
 									<div class="seopress-summary-item-label">
-										<?php esc_html_e('Average session duration', 'wp-seopress-pro'); ?>
+										<?php esc_html_e('Average session duration', 'webseo'); ?>
 									</div>
 									<div id="seopress-ga-avgSessionDuration" class="seopress-summary-item-data"></div>
 								</div>
@@ -88,11 +88,11 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 				?>
 				<div class="seopress-tools-card">
 					<p>
-						<?php esc_html_e('You need to login to Google Analytics.', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('You need to login to Google Analytics.', 'webseo'); ?>
 					</p>
 
 					<p>
-					<?php echo wp_kses_post( __( 'Make sure you have enabled these 2 APIs from <strong>Google Cloud Console</strong>:', 'wp-seopress-pro' ) ); ?>
+					<?php echo wp_kses_post( __( 'Make sure you have enabled these 2 APIs from <strong>Google Cloud Console</strong>:', 'webseo' ) ); ?>
 
 					</p>
 
@@ -103,7 +103,7 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 
 					<p>
 						<a class="<?php if ('index.php' == $pagenow) { echo 'button'; } else { echo 'seopress-btn'; }; ?>" href="<?php echo esc_url(admin_url('admin.php?page=seopress-google-analytics#tab=tab_seopress_google_analytics_enable')); ?>">
-							<?php esc_html_e('Authenticate', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Authenticate', 'webseo'); ?>
 						</a>
 					</p>
 
@@ -137,16 +137,16 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 			}
 
 			$select = [
-				'today' => esc_html__('Today', 'wp-seopress-pro'),
-				'yesterday' => esc_html__('Yesterday', 'wp-seopress-pro'),
-				'7daysAgo' => esc_html__('7 days ago', 'wp-seopress-pro'),
-				'30daysAgo' => esc_html__('30 days ago', 'wp-seopress-pro'),
-				'90daysAgo' => esc_html__('90 days ago', 'wp-seopress-pro'),
-				'180daysAgo' => esc_html__('180 days ago', 'wp-seopress-pro'),
-				'360daysAgo' => esc_html__('360 days ago', 'wp-seopress-pro'),
+				'today' => esc_html__('Today', 'webseo'),
+				'yesterday' => esc_html__('Yesterday', 'webseo'),
+				'7daysAgo' => esc_html__('7 days ago', 'webseo'),
+				'30daysAgo' => esc_html__('30 days ago', 'webseo'),
+				'90daysAgo' => esc_html__('90 days ago', 'webseo'),
+				'180daysAgo' => esc_html__('180 days ago', 'webseo'),
+				'360daysAgo' => esc_html__('360 days ago', 'webseo'),
 			]; ?>
 
-			<p><strong><?php esc_html_e('Period', 'wp-seopress-pro'); ?></strong></p>
+			<p><strong><?php esc_html_e('Period', 'webseo'); ?></strong></p>
 
 			<p>
 				<select id="period" name="seopress_ga_dashboard_widget_options[period]">
@@ -166,13 +166,13 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 				}
 
 				$select = [
-					'ga_sessions' => esc_html__('Sessions', 'wp-seopress-pro'),
-					'ga_users' => esc_html__('Users', 'wp-seopress-pro'),
-					'ga_pageviews' => esc_html__('Page views', 'wp-seopress-pro'),
-					'ga_pageviewsPerSession' => esc_html__('Page views per session', 'wp-seopress-pro'),
-					'ga_avgSessionDuration' => esc_html__('Average session duration', 'wp-seopress-pro'),
-					'ga_bounceRate' => esc_html__('Bounce rate', 'wp-seopress-pro'),
-					'ga_percentNewSessions' => esc_html__('New Sessions', 'wp-seopress-pro'),
+					'ga_sessions' => esc_html__('Sessions', 'webseo'),
+					'ga_users' => esc_html__('Users', 'webseo'),
+					'ga_pageviews' => esc_html__('Page views', 'webseo'),
+					'ga_pageviewsPerSession' => esc_html__('Page views per session', 'webseo'),
+					'ga_avgSessionDuration' => esc_html__('Average session duration', 'webseo'),
+					'ga_bounceRate' => esc_html__('Bounce rate', 'webseo'),
+					'ga_percentNewSessions' => esc_html__('New Sessions', 'webseo'),
 				];
 				if (!empty(seopress_get_service('GoogleAnalyticsOption')->getGA4PropertId())) {
 					unset($select['ga_bounceRate']);
@@ -180,7 +180,7 @@ if ('1' == seopress_get_toggle_option('google-analytics') && '1' !== seopress_pr
 					unset($select['ga_pageviewsPerSession']);
 				} ?>
 
-				<p><strong><?php esc_html_e('Stats', 'wp-seopress-pro'); ?></strong></p>
+				<p><strong><?php esc_html_e('Stats', 'webseo'); ?></strong></p>
 
 				<p>
 					<select id="type" name="seopress_ga_dashboard_widget_options[type]">

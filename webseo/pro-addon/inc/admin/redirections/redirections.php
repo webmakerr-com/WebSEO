@@ -78,35 +78,35 @@ add_filter('wp_insert_post_data', 'seopress_filter_post_title', '99', 2);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function seopress_404_fn() {
 	$labels = [
-		'name' => _x('Redirections', 'Post Type General Name', 'wp-seopress-pro'),
-		'singular_name' => _x('Redirections', 'Post Type Singular Name', 'wp-seopress-pro'),
-		'menu_name' => esc_html__('Redirections', 'wp-seopress-pro'),
-		'name_admin_bar' => esc_html__('Redirections', 'wp-seopress-pro'),
-		'archives' => esc_html__('Item Archives', 'wp-seopress-pro'),
-		'parent_item_colon' => esc_html__('Parent Item:', 'wp-seopress-pro'),
-		'all_items' => esc_html__('All redirections', 'wp-seopress-pro'),
-		'add_new_item' => esc_html__('Add New redirection', 'wp-seopress-pro'),
-		'add_new' => esc_html__('Add redirection', 'wp-seopress-pro'),
-		'new_item' => esc_html__('New redirection', 'wp-seopress-pro'),
-		'edit_item' => esc_html__('Edit redirection', 'wp-seopress-pro'),
-		'update_item' => esc_html__('Update redirection', 'wp-seopress-pro'),
-		'view_item' => esc_html__('View redirection', 'wp-seopress-pro'),
-		'search_items' => esc_html__('Search redirection', 'wp-seopress-pro'),
-		'not_found' => esc_html__('Not found', 'wp-seopress-pro'),
-		'not_found_in_trash' => esc_html__('Not found in Trash', 'wp-seopress-pro'),
-		'featured_image' => esc_html__('Featured Image', 'wp-seopress-pro'),
-		'set_featured_image' => esc_html__('Set featured image', 'wp-seopress-pro'),
-		'remove_featured_image' => esc_html__('Remove featured image', 'wp-seopress-pro'),
-		'use_featured_image' => esc_html__('Use as featured image', 'wp-seopress-pro'),
-		'insert_into_item' => esc_html__('Insert into item', 'wp-seopress-pro'),
-		'uploaded_to_this_item' => esc_html__('Uploaded to this item', 'wp-seopress-pro'),
-		'items_list' => esc_html__('Redirections list', 'wp-seopress-pro'),
-		'items_list_navigation' => esc_html__('Redirections list navigation', 'wp-seopress-pro'),
-		'filter_items_list' => esc_html__('Filter redirections list', 'wp-seopress-pro'),
+		'name' => _x('Redirections', 'Post Type General Name', 'webseo'),
+		'singular_name' => _x('Redirections', 'Post Type Singular Name', 'webseo'),
+		'menu_name' => esc_html__('Redirections', 'webseo'),
+		'name_admin_bar' => esc_html__('Redirections', 'webseo'),
+		'archives' => esc_html__('Item Archives', 'webseo'),
+		'parent_item_colon' => esc_html__('Parent Item:', 'webseo'),
+		'all_items' => esc_html__('All redirections', 'webseo'),
+		'add_new_item' => esc_html__('Add New redirection', 'webseo'),
+		'add_new' => esc_html__('Add redirection', 'webseo'),
+		'new_item' => esc_html__('New redirection', 'webseo'),
+		'edit_item' => esc_html__('Edit redirection', 'webseo'),
+		'update_item' => esc_html__('Update redirection', 'webseo'),
+		'view_item' => esc_html__('View redirection', 'webseo'),
+		'search_items' => esc_html__('Search redirection', 'webseo'),
+		'not_found' => esc_html__('Not found', 'webseo'),
+		'not_found_in_trash' => esc_html__('Not found in Trash', 'webseo'),
+		'featured_image' => esc_html__('Featured Image', 'webseo'),
+		'set_featured_image' => esc_html__('Set featured image', 'webseo'),
+		'remove_featured_image' => esc_html__('Remove featured image', 'webseo'),
+		'use_featured_image' => esc_html__('Use as featured image', 'webseo'),
+		'insert_into_item' => esc_html__('Insert into item', 'webseo'),
+		'uploaded_to_this_item' => esc_html__('Uploaded to this item', 'webseo'),
+		'items_list' => esc_html__('Redirections list', 'webseo'),
+		'items_list_navigation' => esc_html__('Redirections list navigation', 'webseo'),
+		'filter_items_list' => esc_html__('Filter redirections list', 'webseo'),
 	];
 	$args = [
-		'label' => esc_html__('Redirections', 'wp-seopress-pro'),
-		'description' => esc_html__('Redirections and Monitoring 404', 'wp-seopress-pro'),
+		'label' => esc_html__('Redirections', 'webseo'),
+		'description' => esc_html__('Redirections and Monitoring 404', 'webseo'),
 		'labels' => $labels,
 		'supports' => ['title'],
 		'hierarchical' => false,
@@ -188,26 +188,26 @@ function seopress_404_map_meta_cap($caps, $cap, $user_id, $args) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function seopress_404_cat_fn() {
 	$labels = [
-		'name' => _x('Categories', 'Taxonomy General Name', 'wp-seopress-pro'),
-		'singular_name' => _x('Category', 'Taxonomy Singular Name', 'wp-seopress-pro'),
-		'menu_name' => esc_html__('Categories', 'wp-seopress-pro'),
-		'all_items' => esc_html__('All Categories', 'wp-seopress-pro'),
-		'parent_item' => esc_html__('Parent Category', 'wp-seopress-pro'),
-		'parent_item_colon' => esc_html__('Parent Category:', 'wp-seopress-pro'),
-		'new_item_name' => esc_html__('New Category Name', 'wp-seopress-pro'),
-		'add_new_item' => esc_html__('Add New Category', 'wp-seopress-pro'),
-		'edit_item' => esc_html__('Edit Category', 'wp-seopress-pro'),
-		'update_item' => esc_html__('Update Category', 'wp-seopress-pro'),
-		'view_item' => esc_html__('View Category', 'wp-seopress-pro'),
-		'separate_items_with_commas' => esc_html__('Separate categories with commas', 'wp-seopress-pro'),
-		'add_or_remove_items' => esc_html__('Add or remove categories', 'wp-seopress-pro'),
-		'choose_from_most_used' => esc_html__('Choose from the most used', 'wp-seopress-pro'),
-		'popular_items' => esc_html__('Popular Categories', 'wp-seopress-pro'),
-		'search_items' => esc_html__('Search Categories', 'wp-seopress-pro'),
-		'not_found' => esc_html__('Not Found', 'wp-seopress-pro'),
-		'no_terms' => esc_html__('No items', 'wp-seopress-pro'),
-		'items_list' => esc_html__('Categories list', 'wp-seopress-pro'),
-		'items_list_navigation' => esc_html__('Categories list navigation', 'wp-seopress-pro'),
+		'name' => _x('Categories', 'Taxonomy General Name', 'webseo'),
+		'singular_name' => _x('Category', 'Taxonomy Singular Name', 'webseo'),
+		'menu_name' => esc_html__('Categories', 'webseo'),
+		'all_items' => esc_html__('All Categories', 'webseo'),
+		'parent_item' => esc_html__('Parent Category', 'webseo'),
+		'parent_item_colon' => esc_html__('Parent Category:', 'webseo'),
+		'new_item_name' => esc_html__('New Category Name', 'webseo'),
+		'add_new_item' => esc_html__('Add New Category', 'webseo'),
+		'edit_item' => esc_html__('Edit Category', 'webseo'),
+		'update_item' => esc_html__('Update Category', 'webseo'),
+		'view_item' => esc_html__('View Category', 'webseo'),
+		'separate_items_with_commas' => esc_html__('Separate categories with commas', 'webseo'),
+		'add_or_remove_items' => esc_html__('Add or remove categories', 'webseo'),
+		'choose_from_most_used' => esc_html__('Choose from the most used', 'webseo'),
+		'popular_items' => esc_html__('Popular Categories', 'webseo'),
+		'search_items' => esc_html__('Search Categories', 'webseo'),
+		'not_found' => esc_html__('Not Found', 'webseo'),
+		'no_terms' => esc_html__('No items', 'webseo'),
+		'items_list' => esc_html__('Categories list', 'webseo'),
+		'items_list_navigation' => esc_html__('Categories list navigation', 'webseo'),
 	];
 	$args = [
 		'labels' => $labels,
@@ -234,7 +234,7 @@ function seopress_404_btn_cpt() {
 <script>
     jQuery(function() {
         jQuery("body.post-type-seopress_404 .wrap h1").after(
-            '<a href="<?php echo esc_url(admin_url('edit.php?post_type=seopress_404')); ?>" id="seopress-all-redirects" class="page-title-action"><?php esc_html_e('All redirects', 'wp-seopress-pro'); ?></a>'
+            '<a href="<?php echo esc_url(admin_url('edit.php?post_type=seopress_404')); ?>" id="seopress-all-redirects" class="page-title-action"><?php esc_html_e('All redirects', 'webseo'); ?></a>'
         );
     });
 </script>
@@ -245,19 +245,19 @@ function seopress_404_btn_cpt() {
 jQuery(function() {
 
 jQuery("body.post-type-seopress_404 .wrap h1 ~ a").after(
-	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>" id="seopress-import-redirects" class="page-title-action"><?php esc_html_e('Import / Export redirects', 'wp-seopress-pro'); ?></a>'
+	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>" id="seopress-import-redirects" class="page-title-action"><?php esc_html_e('Import / Export redirects', 'webseo'); ?></a>'
 );
 
 jQuery("body.post-type-seopress_404 .wrap h1 ~ #seopress-import-redirects").after(
-	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_404')); ?>" id="seopress-redirections-settings" class="page-title-action"><?php esc_html_e('Settings', 'wp-seopress-pro'); ?></a>'
+	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_404')); ?>" id="seopress-redirections-settings" class="page-title-action"><?php esc_html_e('Settings', 'webseo'); ?></a>'
 );
 
 jQuery("body.post-type-seopress_404 .wrap h1 ~ #seopress-redirections-settings").after(
-	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>" id="seopress-clean-404" class="page-title-action"><?php esc_html_e('Clean your 404', 'wp-seopress-pro'); ?></a>'
+	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>" id="seopress-clean-404" class="page-title-action"><?php esc_html_e('Clean your 404', 'webseo'); ?></a>'
 );
 
 jQuery("body.post-type-seopress_404 .wrap h1 ~ #seopress-clean-404").after(
-	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>" id="seopress-clean-redirects" class="page-title-action"><?php esc_html_e('Clean all entries', 'wp-seopress-pro'); ?></a>'
+	'<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>" id="seopress-clean-redirects" class="page-title-action"><?php esc_html_e('Clean all entries', 'webseo'); ?></a>'
 );
 });
 </script>
@@ -271,15 +271,15 @@ function seopress_404_render_blank_state() { ?>
 <div class="seopress-BlankState">
 
 <h2 class="seopress-BlankState-message">
-<?php esc_html_e('Your redirections and 404 errors will appear here.', 'wp-seopress-pro'); ?>
+<?php esc_html_e('Your redirections and 404 errors will appear here.', 'webseo'); ?>
 </h2>
 
 <div class="seopress-BlankState-buttons">
 
 <a class="seopress-BlankState-cta btn btnPrimary"
-	href="<?php echo esc_url(admin_url('post-new.php?post_type=seopress_404')); ?>"><?php esc_html_e('Create a redirect', 'wp-seopress-pro'); ?></a>
+	href="<?php echo esc_url(admin_url('post-new.php?post_type=seopress_404')); ?>"><?php esc_html_e('Create a redirect', 'webseo'); ?></a>
 <a class="seopress-BlankState-cta btn btnTertiary"
-	href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>"><?php esc_html_e('Start Import', 'wp-seopress-pro'); ?></a>
+	href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>"><?php esc_html_e('Start Import', 'webseo'); ?></a>
 
 </div>
 
@@ -322,7 +322,7 @@ function seopress_404_row_actions($actions, $post) {
 			}
 
 			if ('yes' !== get_post_meta(get_the_ID(), '_seopress_redirections_enabled_regex', true)) {
-				$actions['seopress_404_test'] = "<a href='" . $home_url . '/' . esc_html(get_post(get_the_ID())->post_title) . "' target='_blank'>" . esc_html__('Test redirection', 'wp-seopress-pro') . '</a>';
+				$actions['seopress_404_test'] = "<a href='" . $home_url . '/' . esc_html(get_post(get_the_ID())->post_title) . "' target='_blank'>" . esc_html__('Test redirection', 'webseo') . '</a>';
 			}
 		}
 
@@ -347,33 +347,33 @@ function seopress_404_filter_views_cpt($views) {
 	$views = [
 		'redirects' => [
 			'href' => admin_url('edit.php?post_type=seopress_404&post_status=redirects'),
-			'i18n' => __('Redirects','wp-seopress-pro')
+			'i18n' => __('Redirects','webseo')
 		],
 		'404' => [
 			'href' => admin_url('edit.php?post_type=seopress_404&action=-1&m=0&redirect-cat=0&redirection-type=404&redirection-enabled&filter_action=Filter&paged=1&action2=-1&post_status=404'),
-			'i18n' => __('404 errors','wp-seopress-pro')
+			'i18n' => __('404 errors','webseo')
 		],
 		'all' => [
 			'href' => admin_url('edit.php?post_type=seopress_404&post_status=all'),
-			'i18n' => __('All','wp-seopress-pro'),
+			'i18n' => __('All','webseo'),
 			'sub_links' => [
 				0 => [
 					'href' => admin_url('edit.php?post_status=pending&post_type=seopress_404'),
-					'i18n' => __('Pending','wp-seopress-pro')
+					'i18n' => __('Pending','webseo')
 				],
 				1 => [
 					'href' => admin_url('edit.php?post_status=draft&post_type=seopress_404'),
-					'i18n' => __('Draft','wp-seopress-pro')
+					'i18n' => __('Draft','webseo')
 				],
 				2 => [
 					'href' => admin_url('edit.php?post_status=trash&post_type=seopress_404'),
-					'i18n' => __('Trash','wp-seopress-pro')
+					'i18n' => __('Trash','webseo')
 				]
 			]
 		],
 		'categories' => [
 			'href' => admin_url('edit-tags.php?taxonomy=seopress_404_cat&post_type=seopress_404'),
-			'i18n' => esc_html__('Categories','wp-seopress-pro')
+			'i18n' => esc_html__('Categories','webseo')
 		],
 	];
 
@@ -422,7 +422,7 @@ function seopress_404_filters_cpt() {
 
 	if ('seopress_404' == $typenow) {
 		$args = [
-			'show_option_all' => __('All categories', 'wp-seopress-pro'),
+			'show_option_all' => __('All categories', 'webseo'),
 			'show_option_none' => '',
 			'option_none_value' => '-1',
 			'orderby' => 'ID',
@@ -450,14 +450,14 @@ function seopress_404_filters_cpt() {
 		$redirections_enabled = ['yes' => 'Enabled', 'no' => 'Disabled'];
 
 		echo "<select name='redirection-type' id='redirection-type' class='postform'>";
-		echo "<option value=''>" . esc_html__('Show All', 'wp-seopress-pro') . '</option>';
+		echo "<option value=''>" . esc_html__('Show All', 'webseo') . '</option>';
 		foreach ($redirections_type as $type) {
 			echo '<option value=' . esc_attr($type), isset($_GET[$type]) == $type ? ' selected="selected"' : '','>' . esc_html($type) . '</option>';
 		}
 		echo '</select>';
 
 		echo "<select name='redirection-enabled' id='redirection-enabled' class='postform'>";
-		echo "<option value=''>" . esc_html__('All status', 'wp-seopress-pro') . '</option>';
+		echo "<option value=''>" . esc_html__('All status', 'webseo') . '</option>';
 		foreach ($redirections_enabled as $enabled => $value) {
 			echo '<option value=' . esc_attr($enabled), isset($_GET[$enabled]) == $enabled ? ' selected="selected"' : '','>' . esc_html($value) . '</option>';
 		}
@@ -580,7 +580,7 @@ function seopress_404_filters_action($query) {
 //Bulk actions
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function seopress_bulk_actions_enable($bulk_actions) {
-	$bulk_actions['seopress_enable'] = esc_html__('Enable redirection', 'wp-seopress-pro');
+	$bulk_actions['seopress_enable'] = esc_html__('Enable redirection', 'webseo');
 
 	return $bulk_actions;
 }
@@ -602,12 +602,12 @@ function seopress_bulk_action_enable_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_enable_posts'])) {
 		$enable_count = $_REQUEST['bulk_enable_posts'];
 		/* translators: %s number of redirections enabled */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' . _n( '%s redirection enabled.', '%s redirections enabled.', $enable_count, 'wp-seopress-pro' ) . '</p></div>', intval($enable_count)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' . _n( '%s redirection enabled.', '%s redirections enabled.', $enable_count, 'webseo' ) . '</p></div>', intval($enable_count)));
 	}
 }
 
 function seopress_bulk_actions_disable($bulk_actions) {
-	$bulk_actions['seopress_disable'] = esc_html__('Disable redirection', 'wp-seopress-pro');
+	$bulk_actions['seopress_disable'] = esc_html__('Disable redirection', 'webseo');
 
 	return $bulk_actions;
 }
@@ -629,12 +629,12 @@ function seopress_bulk_action_disable_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_disable_posts'])) {
 		$disable_count = $_REQUEST['bulk_disable_posts'];
 		/* translators: %s number of redirections disabled */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' . _n( '%s redirection disabled.', '%s redirections disabled.', $disable_count, 'wp-seopress-pro') . '</p></div>', intval($disable_count)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' . _n( '%s redirection disabled.', '%s redirections disabled.', $disable_count, 'webseo') . '</p></div>', intval($disable_count)));
 	}
 }
 
 function seopress_bulk_actions_enable_regex($bulk_actions) {
-	$bulk_actions['seopress_enable_regex'] = esc_html__('Enable regex', 'wp-seopress-pro');
+	$bulk_actions['seopress_enable_regex'] = esc_html__('Enable regex', 'webseo');
 
 	return $bulk_actions;
 }
@@ -656,12 +656,12 @@ function seopress_bulk_action_enable_regex_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_enable_regex_posts'])) {
 		$enable_regex_count = $_REQUEST['bulk_enable_regex_posts'];
 		/* translators: %s number of redirections with regex enabled */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' . _n( '%s redirection with regex enabled.', '%s redirections with regex enabled.', $enable_regex_count, 'wp-seopress-pro') . '</p></div>', intval($enable_regex_count)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' . _n( '%s redirection with regex enabled.', '%s redirections with regex enabled.', $enable_regex_count, 'webseo') . '</p></div>', intval($enable_regex_count)));
 	}
 }
 
 function seopress_bulk_actions_disable_regex($bulk_actions) {
-	$bulk_actions['seopress_disable_regex'] = esc_html__('Disable regex', 'wp-seopress-pro');
+	$bulk_actions['seopress_disable_regex'] = esc_html__('Disable regex', 'webseo');
 
 	return $bulk_actions;
 }
@@ -683,12 +683,12 @@ function seopress_bulk_action_disable_regex_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_disable_regex_posts'])) {
 		$disable_count = $_REQUEST['bulk_disable_regex_posts'];
 		/* translators: %s number of redirections with regex disabled */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s redirection with regex disabled.', '%s redirections with regex disabled.', $disable_count, 'wp-seopress-pro') . '</p></div>', intval($disable_count)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s redirection with regex disabled.', '%s redirections with regex disabled.', $disable_count, 'webseo') . '</p></div>', intval($disable_count)));
 	}
 }
 
 function seopress_bulk_actions_redirect_301($bulk_actions) {
-	$bulk_actions['seopress_redirect_301'] = esc_html__('Mark as 301', 'wp-seopress-pro');
+	$bulk_actions['seopress_redirect_301'] = esc_html__('Mark as 301', 'webseo');
 
 	return $bulk_actions;
 }
@@ -710,12 +710,12 @@ function seopress_bulk_action_redirect_301_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_301_redirects_posts'])) {
 		$count_301 = $_REQUEST['bulk_301_redirects_posts'];
 		/* translators: %s number of redirections marked as 301 */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 301 redirect.', '%s marked as 301 redirect.', $count_301,'wp-seopress-pro') . '</p></div>', intval($count_301)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 301 redirect.', '%s marked as 301 redirect.', $count_301,'webseo') . '</p></div>', intval($count_301)));
 	}
 }
 
 function seopress_bulk_actions_redirect_302($bulk_actions) {
-	$bulk_actions['seopress_redirect_302'] = esc_html__('Mark as 302', 'wp-seopress-pro');
+	$bulk_actions['seopress_redirect_302'] = esc_html__('Mark as 302', 'webseo');
 
 	return $bulk_actions;
 }
@@ -737,12 +737,12 @@ function seopress_bulk_action_redirect_302_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_302_redirects_posts'])) {
 		$count_302 = $_REQUEST['bulk_302_redirects_posts'];
 		/* translators: %s number of redirections marked as 302 */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 302 redirect.', '%s marked as 302 redirect.', $count_302, 'wp-seopress-pro') . '</p></div>', intval($count_302)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 302 redirect.', '%s marked as 302 redirect.', $count_302, 'webseo') . '</p></div>', intval($count_302)));
 	}
 }
 
 function seopress_bulk_actions_redirect_307($bulk_actions) {
-	$bulk_actions['seopress_redirect_307'] = esc_html__('Mark as 307', 'wp-seopress-pro');
+	$bulk_actions['seopress_redirect_307'] = esc_html__('Mark as 307', 'webseo');
 
 	return $bulk_actions;
 }
@@ -764,12 +764,12 @@ function seopress_bulk_action_redirect_307_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_307_redirects_posts'])) {
 		$count_307 = $_REQUEST['bulk_307_redirects_posts'];
 		/* translators: %s number of redirections marked as 307 */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 307 redirect.', '%s marked as 307 redirect.', $count_307, 'wp-seopress-pro') . '</p></div>', intval($count_307)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 307 redirect.', '%s marked as 307 redirect.', $count_307, 'webseo') . '</p></div>', intval($count_307)));
 	}
 }
 
 function seopress_bulk_actions_redirect_410($bulk_actions) {
-	$bulk_actions['seopress_redirect_410'] = esc_html__('Mark as 410', 'wp-seopress-pro');
+	$bulk_actions['seopress_redirect_410'] = esc_html__('Mark as 410', 'webseo');
 
 	return $bulk_actions;
 }
@@ -791,12 +791,12 @@ function seopress_bulk_action_redirect_410_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_410_redirects_posts'])) {
 		$count_410 = $_REQUEST['bulk_410_redirects_posts'];
 		/* translators: %s number of redirections marked as 410 */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 410 redirect.', '%s marked as 410 redirect.', $count_410, 'wp-seopress-pro') . '</p></div>', intval($count_410)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 410 redirect.', '%s marked as 410 redirect.', $count_410, 'webseo') . '</p></div>', intval($count_410)));
 	}
 }
 
 function seopress_bulk_actions_redirect_451($bulk_actions) {
-	$bulk_actions['seopress_redirect_451'] = esc_html__('Mark as 451', 'wp-seopress-pro');
+	$bulk_actions['seopress_redirect_451'] = esc_html__('Mark as 451', 'webseo');
 
 	return $bulk_actions;
 }
@@ -818,7 +818,7 @@ function seopress_bulk_action_redirect_451_admin_notice() {
 	if ( ! empty($_REQUEST['bulk_451_redirects_posts'])) {
 		$count_451 = $_REQUEST['bulk_451_redirects_posts'];
 		/* translators: %s number of redirections marked as 451 */
-		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 451 redirect.', '%s marked as 451 redirect.', $count_451, 'wp-seopress-pro') . '</p></div>', intval($count_451)));
+		echo wp_kses_post(sprintf('<div id="message" class="updated fade"><p>' ._n('%s marked as 451 redirect.', '%s marked as 451 redirect.', $count_451, 'webseo') . '</p></div>', intval($count_451)));
 	}
 }
 
@@ -829,7 +829,7 @@ function seopress_404_cpt_title($title) {
 	if (function_exists('get_current_screen')) {
 		$screen = get_current_screen();
 		if ('seopress_404' == $screen->post_type) {
-			$title = esc_html__('Enter the old URL here without domain name', 'wp-seopress-pro');
+			$title = esc_html__('Enter the old URL here without domain name', 'webseo');
 		}
 
 		return $title;
@@ -844,9 +844,9 @@ function seopress_301_after_title() {
 	if (isset($typenow) && 'seopress_404' == $typenow) {
 		?>
 		<p>
-			<?php echo wp_kses_post(__('Enter your <strong>relative</strong> URL above. Do not use anchors, they are not sent by your browser.', 'wp-seopress-pro')); ?>
+			<?php echo wp_kses_post(__('Enter your <strong>relative</strong> URL above. Do not use anchors, they are not sent by your browser.', 'webseo')); ?>
 			<br>
-			<?php echo wp_kses_post(__('e.g. <code>my-custom-permalink</code>. If you have a permalink structure like <code>/%category%/%postname%/</code>, make sure to include the categories: <code>category/sub-category/my-custom-permalink</code>.', 'wp-seopress-pro')); ?>
+			<?php echo wp_kses_post(__('e.g. <code>my-custom-permalink</code>. If you have a permalink structure like <code>/%category%/%postname%/</code>, make sure to include the categories: <code>category/sub-category/my-custom-permalink</code>.', 'webseo')); ?>
 		</p>
 		<?php
 	}
@@ -876,7 +876,7 @@ function seopress_404_set_messages($messages) {
 			}
 
 			if ('yes' !== get_post_meta(get_the_ID(), '_seopress_redirections_enabled_regex', true)) {
-				$seopress_404_test = "<a href='" . $home_url . '/' . esc_html(get_post(get_the_ID())->post_title) . "' target='_blank'>" . esc_html__('Test redirection', 'wp-seopress-pro') . "</a><span class='dashicons dashicons-external'></span>";
+				$seopress_404_test = "<a href='" . $home_url . '/' . esc_html(get_post(get_the_ID())->post_title) . "' target='_blank'>" . esc_html__('Test redirection', 'webseo') . "</a><span class='dashicons dashicons-external'></span>";
 			}
 		}
 
@@ -884,46 +884,46 @@ function seopress_404_set_messages($messages) {
 			0 => '', // Unused. Messages start at index 1.
 			1 => sprintf(
 				/* translators: %1$s singular name of the post type, %2$s button to test the redirect */
-				esc_html__('%1$s updated. %2$s', 'wp-seopress-pro'), 
+				esc_html__('%1$s updated. %2$s', 'webseo'), 
 				esc_html($singular), 
 				$seopress_404_test
 			),
-			2 => esc_html__('Custom field updated.', 'wp-seopress-pro'),
-			3 => esc_html__('Custom field deleted.', 'wp-seopress-pro'),
+			2 => esc_html__('Custom field updated.', 'webseo'),
+			3 => esc_html__('Custom field deleted.', 'webseo'),
 			4 => sprintf(
 				/* translators: %1$s singular name of the post type, %2$s button to test the redirect */
-				esc_html__('%1$s updated. %2$s', 'wp-seopress-pro'), 
+				esc_html__('%1$s updated. %2$s', 'webseo'), 
 				esc_html($singular), 
 				$seopress_404_test
 			),
 			5 => isset($_GET['revision']) ? sprintf(
 				/* translators: %1$s singular name of the post type, %2$s title of the revision */
-				esc_html__('%1$s restored to revision from %2$s', 'wp-seopress-pro'), 
+				esc_html__('%1$s restored to revision from %2$s', 'webseo'), 
 				esc_html($singular), 
 				wp_post_revision_title((int) $_GET['revision'], false)
 			) : false,
 			6 => sprintf(
 				/* translators: %1$s singular name of the post type, %2$s button to test the redirect */
-				esc_html__('%1$s published. %2$s', 'wp-seopress-pro'), 
+				esc_html__('%1$s published. %2$s', 'webseo'), 
 				esc_html($singular), 
 				$seopress_404_test
 			),
-			7 => esc_html__('Redirection saved.', 'wp-seopress-pro'),
+			7 => esc_html__('Redirection saved.', 'webseo'),
 			8 => sprintf(
 				/* translators: %s singular name of the post type */
-				esc_html__('%s submitted.', 'wp-seopress-pro'), 
+				esc_html__('%s submitted.', 'webseo'), 
 				esc_html($singular)
 			),
 			9 => sprintf(
 				/* translators: %1$s singular name of the post type, %2$s scheduled date */
-				esc_html__('%1$s scheduled for: <strong>%2$s</strong>. ', 'wp-seopress-pro'), 
+				esc_html__('%1$s scheduled for: <strong>%2$s</strong>. ', 'webseo'), 
 				esc_html($singular), 
-				date_i18n(esc_html__('M j, Y @ G:i', 'wp-seopress-pro'), strtotime($post->post_date)), 
+				date_i18n(esc_html__('M j, Y @ G:i', 'webseo'), strtotime($post->post_date)), 
 				esc_url(get_permalink($post_ID))
 			),
 			10 => sprintf(
 				/* translators: %s singular name of the post type */
-				esc_html__('%s draft updated.', 'wp-seopress-pro'), 
+				esc_html__('%s draft updated.', 'webseo'), 
 				esc_html($singular)
 			),
 		];
@@ -936,11 +936,11 @@ function seopress_404_set_messages($messages) {
 
 function seopress_404_set_messages_list($bulk_messages, $bulk_counts) {
 	$bulk_messages['seopress_404'] = [
-		'updated' => /* translators: %d number of redirections */ _n('%d redirection updated.', '%d redirections updated.', $bulk_counts['updated'], 'wp-seopress-pro'),
-		'locked' => /* translators: %d number of redirections */ _n('%d redirection not updated, somebody is editing it.', '%d redirections not updated, somebody is editing them.', $bulk_counts['locked'], 'wp-seopress-pro'),
-		'deleted' => /* translators: %d number of redirections */ _n('%d redirection permanently deleted.', '%d redirections permanently deleted.', $bulk_counts['deleted'], 'wp-seopress-pro'),
-		'trashed' => /* translators: %d number of redirections */ _n('%d redirection moved to the Trash.', '%d redirections moved to the Trash.', $bulk_counts['trashed'], 'wp-seopress-pro'),
-		'untrashed' => /* translators: %d number of redirections */ _n('%d redirection restored from the Trash.', '%d redirections restored from the Trash.', $bulk_counts['untrashed'], 'wp-seopress-pro'),
+		'updated' => /* translators: %d number of redirections */ _n('%d redirection updated.', '%d redirections updated.', $bulk_counts['updated'], 'webseo'),
+		'locked' => /* translators: %d number of redirections */ _n('%d redirection not updated, somebody is editing it.', '%d redirections not updated, somebody is editing them.', $bulk_counts['locked'], 'webseo'),
+		'deleted' => /* translators: %d number of redirections */ _n('%d redirection permanently deleted.', '%d redirections permanently deleted.', $bulk_counts['deleted'], 'webseo'),
+		'trashed' => /* translators: %d number of redirections */ _n('%d redirection moved to the Trash.', '%d redirections moved to the Trash.', $bulk_counts['trashed'], 'webseo'),
+		'untrashed' => /* translators: %d number of redirections */ _n('%d redirection restored from the Trash.', '%d redirections restored from the Trash.', $bulk_counts['untrashed'], 'webseo'),
 	];
 
 	return $bulk_messages;
@@ -967,17 +967,17 @@ function seopress_404_count_columns($columns) {
 	unset($columns['date']);
 	unset($columns['taxonomy-seopress_404_cat']);
 
-	$columns['seopress_404_redirect_enable'] = esc_html__('On?', 'wp-seopress-pro');
-	$columns['title'] = esc_html__('Origin URL', 'wp-seopress-pro');
-	$columns['seopress_404_redirect_value'] = esc_html__('Destination URL', 'wp-seopress-pro');
-	$columns['seopress_404_redirect_type'] = esc_html__('Type', 'wp-seopress-pro');
-	$columns['seopress_404'] = esc_html__('Hits', 'wp-seopress-pro');
-	$columns['seopress_404_redirect_regex_enable'] = esc_html__('Regex?', 'wp-seopress-pro');
-	$columns['seopress_404_date'] = esc_html__('Date', 'wp-seopress-pro');
-	$columns['taxonomy-seopress_404_cat'] = esc_html__('Categories', 'wp-seopress-pro');
-	$columns['seopress_404_redirect_date_request'] = esc_html__('Last time loaded', 'wp-seopress-pro');
-	$columns['seopress_404_redirect_ua'] = esc_html__('User agent', 'wp-seopress-pro');
-	$columns['seopress_404_redirect_referer'] = esc_html__('Full Origin', 'wp-seopress-pro');
+	$columns['seopress_404_redirect_enable'] = esc_html__('On?', 'webseo');
+	$columns['title'] = esc_html__('Origin URL', 'webseo');
+	$columns['seopress_404_redirect_value'] = esc_html__('Destination URL', 'webseo');
+	$columns['seopress_404_redirect_type'] = esc_html__('Type', 'webseo');
+	$columns['seopress_404'] = esc_html__('Hits', 'webseo');
+	$columns['seopress_404_redirect_regex_enable'] = esc_html__('Regex?', 'webseo');
+	$columns['seopress_404_date'] = esc_html__('Date', 'webseo');
+	$columns['taxonomy-seopress_404_cat'] = esc_html__('Categories', 'webseo');
+	$columns['seopress_404_redirect_date_request'] = esc_html__('Last time loaded', 'webseo');
+	$columns['seopress_404_redirect_ua'] = esc_html__('User agent', 'webseo');
+	$columns['seopress_404_redirect_referer'] = esc_html__('Full Origin', 'webseo');
 
 	return $columns;
 }
@@ -1004,27 +1004,27 @@ function seopress_404_count_display_column($column, $post_id) {
 		switch ($seopress_redirections_type) {
 
 		case '301':
-			echo '<span class="seopress_redirection_301 seopress_redirection_status" title="' . esc_html__('Moved permanently','wp-seopress-pro') . '">' . absint($seopress_redirections_type) . '</span>';
+			echo '<span class="seopress_redirection_301 seopress_redirection_status" title="' . esc_html__('Moved permanently','webseo') . '">' . absint($seopress_redirections_type) . '</span>';
 			break;
 
 		case '302':
-			echo '<span class="seopress_redirection_302 seopress_redirection_status" title="' . esc_html__('302 Found / Moved Temporarily','wp-seopress-pro') . '">' . absint($seopress_redirections_type) . '</span>';
+			echo '<span class="seopress_redirection_302 seopress_redirection_status" title="' . esc_html__('302 Found / Moved Temporarily','webseo') . '">' . absint($seopress_redirections_type) . '</span>';
 			break;
 
 		case '307':
-			echo '<span class="seopress_redirection_307 seopress_redirection_status" title="' . esc_html__('307 Moved Temporarily','wp-seopress-pro') . '">' . absint($seopress_redirections_type) . '</span>';
+			echo '<span class="seopress_redirection_307 seopress_redirection_status" title="' . esc_html__('307 Moved Temporarily','webseo') . '">' . absint($seopress_redirections_type) . '</span>';
 			break;
 
 		case '410':
-			echo '<span class="seopress_redirection_410 seopress_redirection_status" title="' . esc_html__('410 Gone','wp-seopress-pro') . '">' . absint($seopress_redirections_type) . '</span>';
+			echo '<span class="seopress_redirection_410 seopress_redirection_status" title="' . esc_html__('410 Gone','webseo') . '">' . absint($seopress_redirections_type) . '</span>';
 			break;
 
 		case '451':
-			echo '<span class="seopress_redirection_451 seopress_redirection_status" title="' . esc_html__('451 Unavailable For Legal Reasons','wp-seopress-pro') . '">' . absint($seopress_redirections_type) . '</span>';
+			echo '<span class="seopress_redirection_451 seopress_redirection_status" title="' . esc_html__('451 Unavailable For Legal Reasons','webseo') . '">' . absint($seopress_redirections_type) . '</span>';
 			break;
 
 		default:
-			echo '<span class="seopress_redirection_default seopress_redirection_status" title="' . esc_html__('404 not found','wp-seopress-pro') . '">404</span>';
+			echo '<span class="seopress_redirection_default seopress_redirection_status" title="' . esc_html__('404 not found','webseo') . '">404</span>';
 			break;
 		}
 	}
@@ -1189,7 +1189,7 @@ function seopress_bulk_quick_edit_301_custom_box($column_name) {
     case 'seopress_404_redirect_value':
 ?>
 <label class="inline-edit-group">
-	<span class="title"><?php esc_html_e('New URL', 'wp-seopress-pro'); ?></span>
+	<span class="title"><?php esc_html_e('New URL', 'webseo'); ?></span>
 	<span class="input-text-wrap">
 		<input type="text" name="seopress_redirections_value" />
 	</span>
@@ -1199,17 +1199,17 @@ function seopress_bulk_quick_edit_301_custom_box($column_name) {
 				case 'seopress_404_redirect_type':
 				?>
 <label class="alignleft">
-	<span class="title"><?php esc_html_e('Redirection type', 'wp-seopress-pro'); ?></span>
+	<span class="title"><?php esc_html_e('Redirection type', 'webseo'); ?></span>
 	<select name="seopress_redirections_type">
-		<option value="301"><?php esc_html_e('301 Moved Permanently', 'wp-seopress-pro'); ?>
+		<option value="301"><?php esc_html_e('301 Moved Permanently', 'webseo'); ?>
 		</option>
-		<option value="302"><?php esc_html_e('302 Found / Moved Temporarily', 'wp-seopress-pro'); ?>
+		<option value="302"><?php esc_html_e('302 Found / Moved Temporarily', 'webseo'); ?>
 		</option>
-		<option value="307"><?php esc_html_e('307 Moved Temporarily', 'wp-seopress-pro'); ?>
+		<option value="307"><?php esc_html_e('307 Moved Temporarily', 'webseo'); ?>
 		</option>
-		<option value="410"><?php esc_html_e('410 Gone', 'wp-seopress-pro'); ?>
+		<option value="410"><?php esc_html_e('410 Gone', 'webseo'); ?>
 		</option>
-		<option value="451"><?php esc_html_e('451 Unavailable For Legal Reasons', 'wp-seopress-pro'); ?>
+		<option value="451"><?php esc_html_e('451 Unavailable For Legal Reasons', 'webseo'); ?>
 		</option>
 	</select>
 </label>
@@ -1217,11 +1217,11 @@ function seopress_bulk_quick_edit_301_custom_box($column_name) {
 				break;
 				case 'seopress_404_redirect_enable':
 				?>
-<h4><?php esc_html_e('Redirection settings', 'wp-seopress-pro'); ?>
+<h4><?php esc_html_e('Redirection settings', 'webseo'); ?>
 </h4>
 <label class="alignleft">
 	<input type="checkbox" name="seopress_redirections_enabled" value="yes">
-	<span class="checkbox-title"><?php esc_html_e('Enable redirection?', 'wp-seopress-pro'); ?></span>
+	<span class="checkbox-title"><?php esc_html_e('Enable redirection?', 'webseo'); ?></span>
 </label>
 <?php
 				break;
@@ -1229,7 +1229,7 @@ function seopress_bulk_quick_edit_301_custom_box($column_name) {
 				?>
 <label class="alignleft">
 	<input type="checkbox" name="seopress_redirections_enabled_regex" value="yes">
-	<span class="checkbox-title"><?php esc_html_e('Regex?', 'wp-seopress-pro'); ?></span>
+	<span class="checkbox-title"><?php esc_html_e('Regex?', 'webseo'); ?></span>
 </label>
 <?php
 				break;

@@ -14,7 +14,7 @@ function seopress_news_enable_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Enable Google News Sitemap', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Enable Google News Sitemap', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_news_enable'])) {
@@ -27,7 +27,7 @@ function seopress_news_name_callback() {
     $check   = isset($options['seopress_news_name']) ? $options['seopress_news_name'] : null;
 
     printf(
-    '<input type="text" name="seopress_pro_option_name[seopress_news_name]" aria-label="' . esc_html__('Publication Name (must be the same as used in Google News)', 'wp-seopress-pro') . '" placeholder="' . esc_html__('Enter your Google News Publication Name', 'wp-seopress-pro') . '" value="%s"></textarea>',
+    '<input type="text" name="seopress_pro_option_name[seopress_news_name]" aria-label="' . esc_html__('Publication Name (must be the same as used in Google News)', 'webseo') . '" placeholder="' . esc_html__('Enter your Google News Publication Name', 'webseo') . '" value="%s"></textarea>',
     esc_html($check)
     );
 }

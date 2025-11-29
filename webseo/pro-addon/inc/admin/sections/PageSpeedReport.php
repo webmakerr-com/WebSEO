@@ -15,15 +15,15 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 				$perf_score = seopress_pro_get_ps_score($json, true);
 				$perf_score_desktop = seopress_pro_get_ps_score($json_desktop);
 				$core_web_vitals_score = seopress_pro_get_cwv_score($json);
-				$cwv_svg = '<img src="' . SEOPRESS_PRO_ASSETS_DIR . '/img/cwv.svg" alt="' . esc_attr__('Core Web Vitals', 'wp-seopress-pro') . '" width="15" height="15" style="vertical-align:middle;margin:0">';
+				$cwv_svg = '<img src="' . SEOPRESS_PRO_ASSETS_DIR . '/img/cwv.svg" alt="' . esc_attr__('Core Web Vitals', 'webseo') . '" width="15" height="15" style="vertical-align:middle;margin:0">';
 
 				$loading_experience_scores = [
-					__('Performance', 'wp-seopress-pro') => [
+					__('Performance', 'webseo') => [
 						'score' => $json['lighthouseResult']['categories']['seo']['score'] ? $perf_score : 0,
 						'score_desktop' => $json['lighthouseResult']['categories']['performance']['score'] ? $perf_score_desktop : 0,
-						'unit' => '<p class="wrap-scale">' . __('<span><span class="score red"></span>0-49</span><span><span class="score yellow"></span>50-89</span><span><span class="score green"></span>90-100</span>', 'wp-seopress-pro') . '</p>'
+						'unit' => '<p class="wrap-scale">' . __('<span><span class="score red"></span>0-49</span><span><span class="score yellow"></span>50-89</span><span><span class="score green"></span>90-100</span>', 'webseo') . '</p>'
 					],
-					__('Screenshot', 'wp-seopress-pro') => [
+					__('Screenshot', 'webseo') => [
 						'score' => $json['lighthouseResult']['audits']['final-screenshot']['details']['data'] ? '<div class="your-screenshot"><img height="300" src="' . $json['lighthouseResult']['audits']['final-screenshot']['details']['data'] . '"/></div>' : ''
 					],
 				];
@@ -31,7 +31,7 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 				if (isset($json['loadingExperience'])) {
 					if (isset($json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS'])) {
 						$loading_experience_scores['First Contentful Paint (FCP)'] = [
-							'score' => $json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['percentile'] ? round((($json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['percentile']) / 1000), 2) : __('N/A', 'wp-seopress-pro'),
+							'score' => $json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['percentile'] ? round((($json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['percentile']) / 1000), 2) : __('N/A', 'webseo'),
 							'unit' => 's',
 							'distribution' => $json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['distributions'] ? $json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['distributions'] : '',
 							'category' => $json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['category'] ? $json['loadingExperience']['metrics']['FIRST_CONTENTFUL_PAINT_MS']['category'] : '',
@@ -40,7 +40,7 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 					}
 					if (isset($json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS'])) {
 						$loading_experience_scores['First Input Delay (FID)'] = [
-							'score' => $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['percentile'] ? $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['percentile'] : __('N/A', 'wp-seopress-pro'),
+							'score' => $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['percentile'] ? $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['percentile'] : __('N/A', 'webseo'),
 							'unit' => 'ms',
 							'distribution' => $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['distributions'] ? $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['distributions'] : '',
 							'category' => $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['category'] ? $json['loadingExperience']['metrics']['FIRST_INPUT_DELAY_MS']['category'] : '',
@@ -49,7 +49,7 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 					}
 					if (isset($json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS'])) {
 						$loading_experience_scores['Largest Contentful Paint (LCP)'] = [
-							'score' => $json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['percentile'] ? round((($json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['percentile']) / 1000), 2) : __('N/A', 'wp-seopress-pro'),
+							'score' => $json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['percentile'] ? round((($json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['percentile']) / 1000), 2) : __('N/A', 'webseo'),
 							'unit' => 's',
 							'distribution' => $json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['distributions'] ? $json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['distributions'] : '',
 							'category' => $json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['category'] ? $json['loadingExperience']['metrics']['LARGEST_CONTENTFUL_PAINT_MS']['category'] : '',
@@ -58,7 +58,7 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 					}
 					if (isset($json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE'])) {
 						$loading_experience_scores['Cumulative Layout Shift (CLS)'] = [
-							'score' => $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['percentile'] ? $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['percentile'] : __('N/A', 'wp-seopress-pro'),
+							'score' => $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['percentile'] ? $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['percentile'] : __('N/A', 'webseo'),
 							'distribution' => $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['distributions'] ? $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['distributions'] : '',
 							'category' => $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['category'] ? $json['loadingExperience']['metrics']['CUMULATIVE_LAYOUT_SHIFT_SCORE']['category'] : '',
 							'web_vitals' => true
@@ -77,36 +77,36 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 			<?php } ?>
 			<div>
 				<h3>
-					<?php esc_html_e('Core Web Vitals Assessment: ', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Core Web Vitals Assessment: ', 'webseo'); ?>
 
 					<?php if ($core_web_vitals_score === true) { ?>
-					<span class="green"><?php esc_html_e('Passed', 'wp-seopress-pro'); ?></span>
+					<span class="green"><?php esc_html_e('Passed', 'webseo'); ?></span>
 					<?php } elseif ($core_web_vitals_score === null) { ?>
-					<span class="red"><?php esc_html_e('No data found', 'wp-seopress-pro'); ?></span>
+					<span class="red"><?php esc_html_e('No data found', 'webseo'); ?></span>
 					<?php } else { ?>
-					<span class="red"><?php esc_html_e('Failed', 'wp-seopress-pro'); ?></span>
+					<span class="red"><?php esc_html_e('Failed', 'webseo'); ?></span>
 					<?php } ?>
 				</h3>
 				<p>
 					<?php
 						printf(
 							/* translators: %s SVG icon */
-							__('Computed from the %s Core Web Vitals metrics over the latest 28-day collection period.', 'wp-seopress-pro'),
+							__('Computed from the %s Core Web Vitals metrics over the latest 28-day collection period.', 'webseo'),
 							wp_kses_post($cwv_svg)
 						);
 					?>
 				</p>
 				<p>
-					<?php esc_html_e('The Core Web Vitals metrics are FID, LCP, and CLS. For aggregations with sufficient data in all three metrics, the aggregation passes the Core Web Vitals assessment if the 75th percentiles of all three metrics are Good. Otherwise, the aggregation does not pass the assessment. If the aggregation has insufficient data for FID, then it will pass the assessment if both the 75th percentiles of LCP and CLS are Good.', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('The Core Web Vitals metrics are FID, LCP, and CLS. For aggregations with sufficient data in all three metrics, the aggregation passes the Core Web Vitals assessment if the 75th percentiles of all three metrics are Good. Otherwise, the aggregation does not pass the assessment. If the aggregation has insufficient data for FID, then it will pass the assessment if both the 75th percentiles of LCP and CLS are Good.', 'webseo'); ?>
 				</p>
 				<p>
 					<a href="<?php echo esc_url($docs['page_speed']['cwv']); ?>" target="_blank" class="seopress-help">
-						<?php esc_html_e('Learn more about Core Web Vitals', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Learn more about Core Web Vitals', 'webseo'); ?>
 					</a>
 					<span class="seopress-help dashicons dashicons-external"></span>
 					 - 
 					<a href="https://pagespeed.web.dev/report?url=<?php echo esc_url(get_home_url()); ?>" target="_blank">
-						<?php esc_html_e('Full report on Google Page Speed website', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Full report on Google Page Speed website', 'webseo'); ?>
 					</a>
 					<span class="dashicons dashicons-external"></span>
 				</p>
@@ -174,7 +174,7 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 					foreach ($screenshot_thumbnails as $value) {
 						echo '<li>';
 						echo '<img src="' . $value['data'] . '"/>';
-						echo '<span>' . round($value['timing'] / 1000, 2) . /* translators: s means seconds */ __(' s', 'wp-seopress-pro') . '</span>';
+						echo '<span>' . round($value['timing'] / 1000, 2) . /* translators: s means seconds */ __(' s', 'webseo') . '</span>';
 						echo '</li>';
 					}
 					echo '</ul>';
@@ -226,13 +226,13 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 					$count = ! empty(count($cats)) ? ' (' . count($cats) . ')' : '';
 					switch ($key) {
 						case 'opportunities':
-							$title = __('Opportunities', 'wp-seopress-pro');
+							$title = __('Opportunities', 'webseo');
 							break;
 						case 'diagnostics':
-							$title = __('Diagnostics', 'wp-seopress-pro');
+							$title = __('Diagnostics', 'webseo');
 							break;
 						case 'passed':
-							$title = __('Passed audits', 'wp-seopress-pro');
+							$title = __('Passed audits', 'webseo');
 							break;
 					}
 
@@ -266,7 +266,7 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 					</p>
 					<?php preg_match('/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/', trim($_value['description'], ').'), $matches);
 			if ( ! empty($matches[0])) {
-				echo '<p class="learn-more"><a class="seopress-help" target="_blank" rel="noopener noreferrer nofollow" href="' . $matches[0] . '">' . esc_html__('Learn more', 'wp-seopress-pro') . '</a><span class="seopress-help dashicons dashicons-external"></span></p>';
+				echo '<p class="learn-more"><a class="seopress-help" target="_blank" rel="noopener noreferrer nofollow" href="' . $matches[0] . '">' . esc_html__('Learn more', 'webseo') . '</a><span class="seopress-help dashicons dashicons-external"></span></p>';
 			} ?>
 				</div>
 				<?php }
@@ -282,7 +282,7 @@ $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() :
 			<?php if ($json['lighthouseResult']['fetchTime']) {
 					$fetchTime = $json['lighthouseResult']['fetchTime']; ?>
 			<p>
-				<strong><?php esc_html_e('Captured at ', 'wp-seopress-pro'); ?></strong>
+				<strong><?php esc_html_e('Captured at ', 'webseo'); ?></strong>
 				<?php echo date_i18n(get_option('date_format'), strtotime($fetchTime)); ?>,
 				<?php echo date('H:i', strtotime($fetchTime)); ?>
 			</p>

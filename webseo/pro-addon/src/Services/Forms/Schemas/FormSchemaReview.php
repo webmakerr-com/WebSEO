@@ -27,41 +27,41 @@ class FormSchemaReview extends FormApi {
     protected function getLabelByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_review_item':
-                return __('Review item name', 'wp-seopress-pro');
+                return __('Review item name', 'webseo');
             case '_seopress_pro_rich_snippets_review_item_type':
-                return __('Review item type', 'wp-seopress-pro');
+                return __('Review item type', 'webseo');
             case '_seopress_pro_rich_snippets_review_img':
-                return __('Review item image', 'wp-seopress-pro');
+                return __('Review item image', 'webseo');
             case '_seopress_pro_rich_snippets_review_rating':
-                return __('Your rating', 'wp-seopress-pro');
+                return __('Your rating', 'webseo');
             case '_seopress_pro_rich_snippets_review_max_rating':
-                return __('Max best rating', 'wp-seopress-pro');
+                return __('Max best rating', 'webseo');
             case '_seopress_pro_rich_snippets_review_body':
-                return __('Review body', 'wp-seopress-pro');
+                return __('Review body', 'webseo');
         }
     }
 
     protected function getPlaceholderByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_review_item':
-                return __('The item name reviewed', 'wp-seopress-pro');
+                return __('The item name reviewed', 'webseo');
             case '_seopress_pro_rich_snippets_review_img':
-                return __('Select your image', 'wp-seopress-pro');
+                return __('Select your image', 'webseo');
             case '_seopress_pro_rich_snippets_review_rating':
-                return __('The item rating', 'wp-seopress-pro');
+                return __('The item rating', 'webseo');
             case '_seopress_pro_rich_snippets_review_max_rating':
-                return __('Max best rating', 'wp-seopress-pro');
+                return __('Max best rating', 'webseo');
             case '_seopress_pro_rich_snippets_review_body':
-                return __('Enter your review body', 'wp-seopress-pro');
+                return __('Enter your review body', 'webseo');
         }
     }
 
     protected function getDescriptionByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_review_rating':
-                return __('Your rating: scale from 1 to 5.', 'wp-seopress-pro');
+                return __('Your rating: scale from 1 to 5.', 'webseo');
             case '_seopress_pro_rich_snippets_review_max_rating':
-                return __('Only required if your scale is different from 1 to 5.', 'wp-seopress-pro');
+                return __('Only required if your scale is different from 1 to 5.', 'webseo');
         }
     }
 
@@ -69,14 +69,14 @@ class FormSchemaReview extends FormApi {
         switch ($field) {
             case '_seopress_pro_rich_snippets_review_item_type':
                 return [
-                    ['value' => 'CreativeWorkSeason', 'label' => __('CreativeWorkSeason', 'wp-seopress-pro')],
-                    ['value' => 'CreativeWorkSeries', 'label' => __('CreativeWorkSeries', 'wp-seopress-pro')],
-                    ['value' => 'Episode', 'label' => __('Episode', 'wp-seopress-pro')],
-                    ['value' => 'Game', 'label' => __('Game', 'wp-seopress-pro')],
-                    ['value' => 'MediaObject', 'label' => __('MediaObject', 'wp-seopress-pro')],
-                    ['value' => 'MusicPlaylist', 'label' => __('MusicPlaylist', 'wp-seopress-pro')],
-                    ['value' => 'MusicRecording', 'label' => __('MusicRecording', 'wp-seopress-pro')],
-                    ['value' => 'Organization', 'label' => __('Organization', 'wp-seopress-pro')],
+                    ['value' => 'CreativeWorkSeason', 'label' => __('CreativeWorkSeason', 'webseo')],
+                    ['value' => 'CreativeWorkSeries', 'label' => __('CreativeWorkSeries', 'webseo')],
+                    ['value' => 'Episode', 'label' => __('Episode', 'webseo')],
+                    ['value' => 'Game', 'label' => __('Game', 'webseo')],
+                    ['value' => 'MediaObject', 'label' => __('MediaObject', 'webseo')],
+                    ['value' => 'MusicPlaylist', 'label' => __('MusicPlaylist', 'webseo')],
+                    ['value' => 'MusicRecording', 'label' => __('MusicRecording', 'webseo')],
+                    ['value' => 'Organization', 'label' => __('Organization', 'webseo')],
                 ];
         }
     }

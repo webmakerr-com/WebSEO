@@ -44,7 +44,7 @@ function seopress_pro_local_business_field_block($attributes, $content, $block)
             $tag = 'div';
             break;
     }
-    $html = ! empty($value) ? sprintf('<%1$s %2$s>%3$s</%1$s>', $tag, $attr, wp_kses_post($value)) : sprintf('<p style="color:red">%s</p>', __('This value is missing from your Local Business settings', 'wp-seopress-pro'));
+    $html = ! empty($value) ? sprintf('<%1$s %2$s>%3$s</%1$s>', $tag, $attr, wp_kses_post($value)) : sprintf('<p style="color:red">%s</p>', __('This value is missing from your Local Business settings', 'webseo'));
     return apply_filters('seopress_local_business_field_block_html', $html, $attributes, $content, $block);
 }
 
@@ -70,14 +70,14 @@ function seopress_pro_get_local_business_map_link($external = false)
         $map_url = add_query_arg('query', urlencode($lat . ',' . $lon), $map_url);
         $display = true;
     }
-    $title = $external ? __('View this local business on Google Maps (new window)', 'wp-seopress-pro') : __('View this local business on Google Maps', 'wp-seopress-pro');
+    $title = $external ? __('View this local business on Google Maps (new window)', 'webseo') : __('View this local business on Google Maps', 'webseo');
     if ($display) {
         $html = sprintf(
             '<a href="%1$s" title="%2$s"%3$s>%4$s</a>',
             esc_url($map_url),
             esc_attr($title),
             (bool) $external ? ' target="_blank"' : '',
-            esc_html__('View on Google Maps', 'wp-seopress-pro')
+            esc_html__('View on Google Maps', 'webseo')
         );
     }
     return apply_filters('seopress_pro_local_business_map_link', $html);
@@ -144,7 +144,7 @@ function seopress_pro_get_local_business_opening_hours($hide_closed_days = false
                 if ($hide_closed_days) {
                     continue;
                 }
-                $html .= sprintf('<tr class="sp-lb-closed"><th scope="row">%s</th><td colspan="2" class="sp-lb-closed sp-lb-closed-all-day">%s</td></tr>', esc_html($days[$index]), esc_html(__('Closed', 'wp-seopress-pro')));
+                $html .= sprintf('<tr class="sp-lb-closed"><th scope="row">%s</th><td colspan="2" class="sp-lb-closed sp-lb-closed-all-day">%s</td></tr>', esc_html($days[$index]), esc_html(__('Closed', 'webseo')));
             } else {
                 $html .= sprintf('<tr><th scope="row">%s</th>%s%s</tr>', esc_html($days[$index]), $am_cell, $pm_cell);
             }
@@ -162,12 +162,12 @@ function seopress_pro_get_local_business_opening_hours($hide_closed_days = false
 function seopress_pro_get_weekdays()
 {
     return [
-        __('Monday', 'wp-seopress-pro'),
-        __('Tuesday', 'wp-seopress-pro'),
-        __('Wednesday', 'wp-seopress-pro'),
-        __('Thursday', 'wp-seopress-pro'),
-        __('Friday', 'wp-seopress-pro'),
-        __('Saturday', 'wp-seopress-pro'),
-        __('Sunday', 'wp-seopress-pro'),
+        __('Monday', 'webseo'),
+        __('Tuesday', 'webseo'),
+        __('Wednesday', 'webseo'),
+        __('Thursday', 'webseo'),
+        __('Friday', 'webseo'),
+        __('Saturday', 'webseo'),
+        __('Sunday', 'webseo'),
     ];
 }

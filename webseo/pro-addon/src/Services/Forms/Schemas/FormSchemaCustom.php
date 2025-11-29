@@ -17,7 +17,7 @@ class FormSchemaCustom extends FormApi {
     protected function getLabelByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_custom':
-                return __('Custom schema', 'wp-seopress-pro');
+                return __('Custom schema', 'webseo');
         }
     }
 
@@ -56,7 +56,7 @@ class FormSchemaCustom extends FormApi {
                     "@type": "Organization",
                     "name": "Washington Times"
                     }
-                }</script>', 'wp-seopress-pro');
+                }</script>', 'webseo');
         }
     }
 
@@ -69,12 +69,12 @@ class FormSchemaCustom extends FormApi {
                 }
 
                 $html = '<p class="description">';
-                $html .= esc_html__('⚠ Make sure to open and close the script tag.', 'wp-seopress-pro');
+                $html .= esc_html__('⚠ Make sure to open and close the script tag.', 'webseo');
                 $html .= '</p>';
                 $html .= '<p class="description">';
                 $html .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" style="vertical-align: middle;"><path d="M19.5 4.5h-7V6h4.44l-5.97 5.97 1.06 1.06L18 7.06v4.44h1.5v-7Zm-13 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3H17v3a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h3V5.5h-3Z"></path></svg>';
                 /* translators: %s: documentation link */
-                $html .= sprintf(__('<a href="%s" target="_blank">You can use dynamic variables in your schema.</a>', 'wp-seopress-pro'), $docs['schemas']['dynamic']);
+                $html .= sprintf(__('<a href="%s" target="_blank">You can use dynamic variables in your schema.</a>', 'webseo'), $docs['schemas']['dynamic']);
                 $html .= '</p>';
                 
                 return $html;

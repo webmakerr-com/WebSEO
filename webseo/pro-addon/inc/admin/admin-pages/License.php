@@ -20,48 +20,48 @@ if (is_plugin_active('webseo/webseo.php')) {
 		<div class="seopress-tab active">
 			<?php settings_fields('seopress_license'); ?>
 			<p>
-				<?php esc_html_e('The license key is used to access automatic updates and support.', 'wp-seopress-pro'); ?>
+				<?php esc_html_e('The license key is used to access automatic updates and support.', 'webseo'); ?>
 			</p>
 
 			<p>
 				<a href="<?php echo esc_url($docs['license']['account']); ?>"
 					class="btn btnTertiary" target="_blank">
-					<?php esc_html_e('View my account', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('View my account', 'webseo'); ?>
 				</a>
 				<button type="button" id="seopress_pro_license_reset" class="btn btnTertiary">
-					<?php esc_html_e( 'Reset your license', 'wp-seopress-pro' ); ?>
+					<?php esc_html_e( 'Reset your license', 'webseo' ); ?>
 				</button>
 			</p>
 
 			<div class="seopress-notice">
 				<p>
-					<strong><?php esc_html_e( 'Steps to follow to activate your license:', 'wp-seopress-pro' ); ?></strong>
+					<strong><?php esc_html_e( 'Steps to follow to activate your license:', 'webseo' ); ?></strong>
 				</p>
 
 				<ol>
-					<li><?php esc_html_e( 'Paste your license key', 'wp-seopress-pro' ); ?>
+					<li><?php esc_html_e( 'Paste your license key', 'webseo' ); ?>
 					</li>
-					<li><?php esc_html_e( 'Save changes', 'wp-seopress-pro' ); ?>
+					<li><?php esc_html_e( 'Save changes', 'webseo' ); ?>
 					</li>
-					<li><?php esc_html_e( 'Activate License', 'wp-seopress-pro' ); ?>
+					<li><?php esc_html_e( 'Activate License', 'webseo' ); ?>
 					</li>
 				</ol>
 
 				<p>
-					<?php esc_html_e( 'That\'s it!', 'wp-seopress-pro' ); ?>
+					<?php esc_html_e( 'That\'s it!', 'webseo' ); ?>
 				</p>
 
 				<p>
 					<?php
 						/* translators: %1$s displays the define SEOPRESS_LICENSE_KEY, %2$s documentation URL */
-						echo wp_kses_post( sprintf( __( 'You can also use the define %1$s to automatically activate your license key. <a href="%2$s" target="_blank" class="seopress-help">Learn more</a>', 'wp-seopress-pro' ), '<code>SEOPRESS_LICENSE_KEY</code>', esc_url( $docs['license']['license_define'] ) ) );
+						echo wp_kses_post( sprintf( __( 'You can also use the define %1$s to automatically activate your license key. <a href="%2$s" target="_blank" class="seopress-help">Learn more</a>', 'webseo' ), '<code>SEOPRESS_LICENSE_KEY</code>', esc_url( $docs['license']['license_define'] ) ) );
 					?>
 					<span class="seopress-help dashicons dashicons-external"></span>
 				</p>
 
 				<p>
 					<a class="seopress-help" href="<?php echo esc_url( $docs['license']['license_errors'] ); ?>" target="_blank">
-						<?php esc_html_e( 'Download unauthorized? - Can‘t activate?', 'wp-seopress-pro' ); ?>
+						<?php esc_html_e( 'Download unauthorized? - Can‘t activate?', 'webseo' ); ?>
 					</a>
 					<span class="seopress-help dashicons dashicons-external"></span>
 				</p>
@@ -79,17 +79,17 @@ if (is_plugin_active('webseo/webseo.php')) {
 				<tbody>
 					<tr valign="top">
 						<th scope="row">
-							<?php esc_html_e( 'License Key', 'wp-seopress-pro' ); ?>
+							<?php esc_html_e( 'License Key', 'webseo' ); ?>
 						</th>
 
 						<td valign="top">
 							<input id="seopress_pro_license_key" name="seopress_pro_license_key" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" class="regular-text" value="<?php echo esc_attr($selected); ?>" />
 							<p class="description">
-								<?php esc_html_e( 'Enter your license key', 'wp-seopress-pro' ); ?>
+								<?php esc_html_e( 'Enter your license key', 'webseo' ); ?>
 							</p>
 							<?php if (defined('SEOPRESS_LICENSE_KEY') && ! empty(SEOPRESS_LICENSE_KEY) && is_string(SEOPRESS_LICENSE_KEY)) { ?>
 							<p class="seopress-notice">
-								<?php esc_html_e( 'Your license key is defined in wp-config.php.', 'wp-seopress-pro' ); ?>
+								<?php esc_html_e( 'Your license key is defined in wp-config.php.', 'webseo' ); ?>
 							</p>
 							<?php } ?>
 						</td>
@@ -97,24 +97,24 @@ if (is_plugin_active('webseo/webseo.php')) {
 					<?php if (false !== $license) { ?>
 					<tr valign="top">
 						<th scope="row">
-							<?php esc_html_e('Activate License', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Activate License', 'webseo'); ?>
 						</th>
 
 						<td scope="row" valign="top">
 							<?php if (false !== $status && 'valid' == $status) { ?>
 							<div class="seopress-notice is-success">
 								<p>
-									<?php esc_html_e('active', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('active', 'webseo'); ?>
 								</p>
 							</div>
 							<?php wp_nonce_field('seopress_nonce', 'seopress_nonce'); ?>
 
-							<input id="seopress-edd-license-btn" type="submit" class="btn btnSecondary" name="seopress_license_deactivate" value="<?php esc_html_e('Deactivate License', 'wp-seopress-pro'); ?>" />
+							<input id="seopress-edd-license-btn" type="submit" class="btn btnSecondary" name="seopress_license_deactivate" value="<?php esc_html_e('Deactivate License', 'webseo'); ?>" />
 							<div class="spinner"></div>
 
 							<?php } else {
 								wp_nonce_field('seopress_nonce', 'seopress_nonce'); ?>
-								<input id="seopress-edd-license-btn" type="submit" class="btn btnSecondary" name="seopress_license_activate" value="<?php esc_html_e('Activate License', 'wp-seopress-pro'); ?>" />
+								<input id="seopress-edd-license-btn" type="submit" class="btn btnSecondary" name="seopress_license_activate" value="<?php esc_html_e('Activate License', 'webseo'); ?>" />
 								<div class="spinner"></div>
 							<?php
 							} ?>
@@ -124,7 +124,7 @@ if (is_plugin_active('webseo/webseo.php')) {
 					<?php if (isset($_GET['sl_activation']) && ! empty($_GET['message'])) { ?>
 					<tr valign="top">
 						<th scope="row">
-							<?php esc_html_e('License status', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('License status', 'webseo'); ?>
 						</th>
 
 						<td scope="row" valign="top">
@@ -138,10 +138,10 @@ if (is_plugin_active('webseo/webseo.php')) {
 							</p>
 							<div class="seopress-notice">
 								<p>
-									<?php echo wp_kses_post(__('Click <strong>Reset license</strong> button above, enter your <strong>license key</strong>, <strong>save changes</strong>, and click <strong>Activate</strong>.', 'wp-seopress-pro')); ?>
+									<?php echo wp_kses_post(__('Click <strong>Reset license</strong> button above, enter your <strong>license key</strong>, <strong>save changes</strong>, and click <strong>Activate</strong>.', 'webseo')); ?>
 								</p>
 								<p>
-									<?php esc_html_e('Still can\'t activate your license? Please contact us, thank you!', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('Still can\'t activate your license? Please contact us, thank you!', 'webseo'); ?>
 								</p>
 							</div>
 							<?php
@@ -150,7 +150,7 @@ if (is_plugin_active('webseo/webseo.php')) {
 							default:
 								?>
 							<div class="seopress-notice is-success">
-								<p><?php esc_html_e('Your license has been successfully activated!', 'wp-seopress-pro'); ?>
+								<p><?php esc_html_e('Your license has been successfully activated!', 'webseo'); ?>
 								</p>
 							</div>
 							<?php
@@ -165,7 +165,7 @@ if (is_plugin_active('webseo/webseo.php')) {
 			<?php if (false !== $status && 'valid' == $status) {
 				//do nothing
 			} else {
-				sp_submit_button(esc_html__('Save changes', 'wp-seopress-pro'));
+				sp_submit_button(esc_html__('Save changes', 'webseo'));
 			} ?>
 		</div>
 	</div>

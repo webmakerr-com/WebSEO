@@ -12,7 +12,7 @@ class Local_Business_Widget extends WP_Widget {
         parent::__construct(
             'seopress_pro_lb_widget', // Base ID
             'Local Business', // Name
-            ['description' => esc_html__('Display local business informations', 'wp-seopress-pro')] // Args
+            ['description' => esc_html__('Display local business informations', 'webseo')] // Args
         );
     }
 
@@ -76,7 +76,7 @@ class Local_Business_Widget extends WP_Widget {
             if (!empty(seopress_pro_get_service('OptionPro')->getLocalBusinessPlaceId())) {
                 $place_id = '&query_place_id=' . seopress_pro_get_service('OptionPro')->getLocalBusinessPlaceId();
             }
-            $map = '<a href="https://www.google.com/maps/search/?api=1' . $place_id . '&query=' . seopress_pro_get_service('OptionPro')->getLocalBusinessLatitude() . ',' . seopress_pro_get_service('OptionPro')->getLocalBusinessLongitude() . '" title="' . esc_attr__('View this local business on Google Maps (new window)', 'wp-seopress-pro') . '" target="_blank">' . esc_attr__('View on Google Maps', 'wp-seopress-pro') . '</a>';
+            $map = '<a href="https://www.google.com/maps/search/?api=1' . $place_id . '&query=' . seopress_pro_get_service('OptionPro')->getLocalBusinessLatitude() . ',' . seopress_pro_get_service('OptionPro')->getLocalBusinessLongitude() . '" title="' . esc_attr__('View this local business on Google Maps (new window)', 'webseo') . '" target="_blank">' . esc_attr__('View on Google Maps', 'webseo') . '</a>';
         }
         $map = apply_filters('seopress_lb_widget_map', $map);
 
@@ -187,25 +187,25 @@ class Local_Business_Widget extends WP_Widget {
                 if ( ! empty($days)) {
                     switch ($key) {
                             case 0:
-                                $day = esc_html__('Monday', 'wp-seopress-pro');
+                                $day = esc_html__('Monday', 'webseo');
                                 break;
                             case 1:
-                                $day = esc_html__('Tuesday', 'wp-seopress-pro');
+                                $day = esc_html__('Tuesday', 'webseo');
                                 break;
                             case 2:
-                                $day = esc_html__('Wednesday', 'wp-seopress-pro');
+                                $day = esc_html__('Wednesday', 'webseo');
                                 break;
                             case 3:
-                                $day = esc_html__('Thursday', 'wp-seopress-pro');
+                                $day = esc_html__('Thursday', 'webseo');
                                 break;
                             case 4:
-                                $day = esc_html__('Friday', 'wp-seopress-pro');
+                                $day = esc_html__('Friday', 'webseo');
                                 break;
                             case 5:
-                                $day = esc_html__('Saturday', 'wp-seopress-pro');
+                                $day = esc_html__('Saturday', 'webseo');
                                 break;
                             case 6:
-                                $day = esc_html__('Sunday', 'wp-seopress-pro');
+                                $day = esc_html__('Sunday', 'webseo');
                                 break;
                         }
 
@@ -233,7 +233,7 @@ class Local_Business_Widget extends WP_Widget {
                     if ( ! empty($days['open']) && '1' == $days['open']) {
                         if (empty($hide_opening_hours)) {
                             $hours .= '<td colspan="2" class="sp-lb-closed sp-lb-closed-all-day">';
-                            $hours .= esc_html__('Closed', 'wp-seopress-pro');
+                            $hours .= esc_html__('Closed', 'webseo');
                             $hours .= '</td>';
                         }
                     } else {
@@ -250,7 +250,7 @@ class Local_Business_Widget extends WP_Widget {
                                 $hours .= $format_time($valueHalfDay['start']['hours'], $valueHalfDay['start']['mins']);
                             }
                             if ( ! empty($valueHalfDay['end']) && isset($valueHalfDay['open']) && '1' === $valueHalfDay['open']) {
-                                $hours .= esc_html__(' - ', 'wp-seopress-pro');
+                                $hours .= esc_html__(' - ', 'webseo');
                                 $hours .= $format_time($valueHalfDay['end']['hours'], $valueHalfDay['end']['mins']);
                             }
 
@@ -332,11 +332,11 @@ class Local_Business_Widget extends WP_Widget {
     <p>
         <?php
         /* translators: %s: link documentation */
-        printf('<a href="%s">' . esc_html__('Edit your Local Business information here', 'wp-seopress-pro') . '</a>', esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_local_business'))); ?>
+        printf('<a href="%s">' . esc_html__('Edit your Local Business information here', 'webseo') . '</a>', esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_local_business'))); ?>
     </p>
     <p>
         <?php
-            echo wp_kses_post(__('<strong>Drag and drop fields</strong> to change their order in front-end.', 'wp-seopress-pro')); ?>
+            echo wp_kses_post(__('<strong>Drag and drop fields</strong> to change their order in front-end.', 'webseo')); ?>
     </p>
     <?php foreach ($order as $item) {
                 switch ($item) {
@@ -346,7 +346,7 @@ class Local_Business_Widget extends WP_Widget {
     <p data-id="1">
         <span class="dashicons dashicons-sort"></span>
         <label
-            for="<?php echo esc_attr($this->get_field_name('title')); ?>"><?php esc_html_e('Title:', 'wp-seopress-pro'); ?></label>
+            for="<?php echo esc_attr($this->get_field_name('title')); ?>"><?php esc_html_e('Title:', 'webseo'); ?></label>
         <input class="widefat title-data"
             id="<?php echo esc_attr($this->get_field_name('title')); ?>"
             name="<?php echo esc_attr($this->get_field_name('title')); ?>"
@@ -360,13 +360,13 @@ break;
     <p data-id="2">
         <span class="dashicons dashicons-sort"></span>
         <label
-            for="<?php echo esc_attr($this->get_field_name('desc')); ?>"><?php esc_html_e('Description:', 'wp-seopress-pro'); ?></label>
+            for="<?php echo esc_attr($this->get_field_name('desc')); ?>"><?php esc_html_e('Description:', 'webseo'); ?></label>
         <textarea rows="12" class="widefat content"
             id="<?php echo esc_attr($this->get_field_name('desc')); ?>"
             name="<?php echo esc_attr($this->get_field_name('desc')); ?>"
             type="text"
-            aria-label="<?php esc_attr_e('Description about your local business', 'wp-seopress-pro'); ?>"
-            placeholder="<?php esc_attr_e('Add additional information here.', 'wp-seopress-pro'); ?>"><?php echo esc_html($desc); ?></textarea>
+            aria-label="<?php esc_attr_e('Description about your local business', 'webseo'); ?>"
+            placeholder="<?php esc_attr_e('Add additional information here.', 'webseo'); ?>"><?php echo esc_html($desc); ?></textarea>
     </p>
     <?php
 break;
@@ -383,7 +383,7 @@ break;
                 type="checkbox" <?php if ('1' == $street) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show street address?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show street address?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -401,7 +401,7 @@ break;
                 type="checkbox" <?php if ('1' == $city) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show city?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show city?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -419,7 +419,7 @@ break;
                 type="checkbox" <?php if ('1' == $state) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show state?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show state?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -437,7 +437,7 @@ break;
                 type="checkbox" <?php if ('1' == $code) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show postal code?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show postal code?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -455,7 +455,7 @@ break;
                 type="checkbox" <?php if ('1' == $country) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show country?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show country?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -473,7 +473,7 @@ break;
                 type="checkbox" <?php if ('1' == $map) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show map link (new window)?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show map link (new window)?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -491,7 +491,7 @@ break;
                 type="checkbox" <?php if ('1' == $phone) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show phone number?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show phone number?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -509,7 +509,7 @@ break;
                 type="checkbox" <?php if ('1' == $opening_hours) {
                         echo 'checked="yes"';
                     } ?> value="1"/>
-            <?php esc_html_e('Show opening hours?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Show opening hours?', 'webseo'); ?>
         </label>
     </p>
     <?php
@@ -528,7 +528,7 @@ break;
             type="checkbox" <?php if ('1' == $hide_opening_hours) {
                 echo 'checked="yes"';
             } ?> value="1"/>
-        <?php esc_html_e('Hide closed days?', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('Hide closed days?', 'webseo'); ?>
     </label>
 </p>
 

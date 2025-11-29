@@ -26,7 +26,7 @@ class GoogleClient {
 
         //Check we have setup at least one API key
         if (empty($google_api_key)) {
-            $data['inspect_url']['status'] = __('No API key defined from the settings tab', 'wp-seopress-pro');
+            $data['inspect_url']['status'] = __('No API key defined from the settings tab', 'webseo');
             update_post_meta($postId, '_seopress_gsc_inspect_url_data', $data);
             return false;
         }

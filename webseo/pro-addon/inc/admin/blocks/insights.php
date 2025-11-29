@@ -15,17 +15,17 @@ function seopress_pro_dashboard_insights($current_tab)
 		class="seopress-card<?php echo esc_attr($class); ?>"
 		style="display: none">
 		<div class="seopress-card-title">
-			<h2><?php esc_html_e('Site overview', 'wp-seopress-pro'); ?>
+			<h2><?php esc_html_e('Site overview', 'webseo'); ?>
 			</h2>
 		</div>
 		<div class="seopress-card-content">
 			<div id="seopress-admin-tabs" class="wrap">
 				<?php
 					$dashboard_settings_tabs = [
-						'tab_seopress_analytics' => esc_html__('Google Analytics', 'wp-seopress-pro'),
-						'tab_seopress_matomo' => esc_html__('Matomo Analytics', 'wp-seopress-pro'),
-						'tab_seopress_ps' => esc_html__('PageSpeed', 'wp-seopress-pro'),
-						'tab_seopress_gsc' => esc_html__('Search Console', 'wp-seopress-pro'),
+						'tab_seopress_analytics' => esc_html__('Google Analytics', 'webseo'),
+						'tab_seopress_matomo' => esc_html__('Matomo Analytics', 'webseo'),
+						'tab_seopress_ps' => esc_html__('PageSpeed', 'webseo'),
+						'tab_seopress_gsc' => esc_html__('Search Console', 'webseo'),
 					];
 
 			//GA
@@ -102,11 +102,11 @@ function seopress_pro_dashboard_insights($current_tab)
 					<div id="tab_seopress_ps" class="seopress-tab seopress-page-speed inside<?php if ('tab_seopress_ps' == $current_tab) { echo 'active'; }?>">
 						<div class="seopress-tools-card">
 							<h3>
-								<?php esc_html_e('Google Page Speed Score', 'wp-seopress-pro'); ?>
+								<?php esc_html_e('Google Page Speed Score', 'webseo'); ?>
 							</h3>
 
 							<p>
-								<?php esc_html_e('Learn how your site has performed, based on data from your actual users around the world.', 'wp-seopress-pro'); ?>
+								<?php esc_html_e('Learn how your site has performed, based on data from your actual users around the world.', 'webseo'); ?>
 							</p>
 
 							<?php if ($ps_score && $ps_score_desktop) { ?>
@@ -127,37 +127,37 @@ function seopress_pro_dashboard_insights($current_tab)
 									<?php } ?>
 									<div>
 										<h3>
-											<?php esc_html_e('Core Web Vitals Assessment: ', 'wp-seopress-pro'); ?>
+											<?php esc_html_e('Core Web Vitals Assessment: ', 'webseo'); ?>
 
 											<?php if ($core_web_vitals_score === true) { ?>
 											<span
-												class="green"><?php esc_html_e('Passed', 'wp-seopress-pro'); ?></span>
+												class="green"><?php esc_html_e('Passed', 'webseo'); ?></span>
 											<?php } elseif ($core_web_vitals_score === null) { ?>
 											<span
-												class="red"><?php esc_html_e('No data found', 'wp-seopress-pro'); ?></span>
+												class="red"><?php esc_html_e('No data found', 'webseo'); ?></span>
 											<?php } else { ?>
 											<span
-												class="red"><?php esc_html_e('Failed', 'wp-seopress-pro'); ?></span>
+												class="red"><?php esc_html_e('Failed', 'webseo'); ?></span>
 											<?php } ?>
 										</h3>
 										<p>
 											<?php
 												/* translators: %s outputs an SVG icon */
-												printf(esc_html__('Computed from the %s Core Web Vitals metrics over the latest 28-day collection period.', 'wp-seopress-pro'), $cwv_svg);
+												printf(esc_html__('Computed from the %s Core Web Vitals metrics over the latest 28-day collection period.', 'webseo'), $cwv_svg);
 											?>
 										</p>
 									</div>
 								</div>
 							<?php } else {  ?>
 								<p>
-									<?php esc_html_e('No data available.', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('No data available.', 'webseo'); ?>
 								</p>
 								<span class="dashicons dashicons-performance seopress-bg-icon"></span>
 							<?php } ?>
 							<p>
 								<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_page_speed')); ?>"
 									class="seopress-btn">
-									<?php esc_html_e('See full report', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('See full report', 'webseo'); ?>
 								</a>
 							</p>
 						</div>
@@ -173,12 +173,12 @@ function seopress_pro_dashboard_insights($current_tab)
                                         global $pagenow;
                                         ?>
                                         <p>
-                                            <?php esc_html_e('You need to login to Google Search Console to get your data.', 'wp-seopress-pro'); ?>
+                                            <?php esc_html_e('You need to login to Google Search Console to get your data.', 'webseo'); ?>
                                         </p>
 
                                         <p>
                                             <a class="<?php if ('index.php' == $pagenow) { echo 'button'; } else { echo 'seopress-btn'; }; ?>" href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_inspect_url')); ?>">
-                                                <?php esc_html_e('Authenticate', 'wp-seopress-pro'); ?>
+                                                <?php esc_html_e('Authenticate', 'webseo'); ?>
                                             </a>
                                         </p>
                                         <span class="dashicons dashicons-google seopress-bg-icon"></span>
@@ -195,10 +195,10 @@ function seopress_pro_dashboard_insights($current_tab)
                                                 </div>
                                                 <div>
                                                     <h3>
-                                                        <?php esc_html_e('Most searched queries', 'wp-seopress-pro'); ?>
+                                                        <?php esc_html_e('Most searched queries', 'webseo'); ?>
                                                     </h3>
                                                     <p>
-                                                        <?php printf(esc_html__('How visitors find your site on Google', 'wp-seopress-pro'), esc_html($date_range)); ?>
+                                                        <?php printf(esc_html__('How visitors find your site on Google', 'webseo'), esc_html($date_range)); ?>
                                                     </p>
                                                 </div>
                                             </div>
@@ -215,11 +215,11 @@ function seopress_pro_dashboard_insights($current_tab)
                                                                                 <?php echo esc_html($keyword['keyword']); ?>
                                                                             </div>
                                                                             <div class="seopress-summary-item-label">
-                                                                                <?php /* translators: %s keyword position, eg: 12 */ printf( esc_html__('Avg. position:  %s', 'wp-seopress-pro'), round($keyword['position'], 1) );
+                                                                                <?php /* translators: %s keyword position, eg: 12 */ printf( esc_html__('Avg. position:  %s', 'webseo'), round($keyword['position'], 1) );
 
                                                                                 if ($keyword['position'] <= 5) { ?>
                                                                                     <span class="top-results">
-                                                                                        <?php esc_html_e('Top 5 results', 'wp-seopress-pro'); ?>
+                                                                                        <?php esc_html_e('Top 5 results', 'webseo'); ?>
                                                                                     </span>
                                                                                     <?php
                                                                                 } ?>
@@ -228,7 +228,7 @@ function seopress_pro_dashboard_insights($current_tab)
                                                                         <div>
                                                                             <div class="seopress-summary-item">
                                                                                 <div class="seopress-summary-item-label">
-                                                                                    <?php esc_html_e(' Clicks', 'wp-seopress-pro'); ?>
+                                                                                    <?php esc_html_e(' Clicks', 'webseo'); ?>
                                                                                 </div>
                                                                                 <div class="seopress-summary-item-data">
                                                                                     <?php echo esc_html($keyword['clicks']); ?>
@@ -251,12 +251,12 @@ function seopress_pro_dashboard_insights($current_tab)
                                             </div>
                                             <div>
                                                 <h3>
-                                                    <?php esc_html_e('Your most popular content', 'wp-seopress-pro'); ?>
+                                                    <?php esc_html_e('Your most popular content', 'webseo'); ?>
                                                 </h3>
                                                 <p>
                                                     <?php
                                                         /* translators: %s date range, eg: - 3 months */
-                                                        printf(esc_html__('By clicks in the past %s', 'wp-seopress-pro'), esc_html($date_range));
+                                                        printf(esc_html__('By clicks in the past %s', 'webseo'), esc_html($date_range));
                                                     ?>
                                                 </p>
                                             </div>
@@ -298,14 +298,14 @@ function seopress_pro_dashboard_insights($current_tab)
 																<li>
 																	<div class="gsc-item">
 																		<div>
-																			<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>" title="<?php esc_html_e('Open in a new tab', 'wp-seopress-pro'); ?>" target="_blank">
+																			<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>" title="<?php esc_html_e('Open in a new tab', 'webseo'); ?>" target="_blank">
 																				<?php echo esc_html(get_the_title($post_id)); ?>
 																			</a>
 																		</div>
 																		<div>
 																			<div class="seopress-summary-item">
 																				<div class="seopress-summary-item-label">
-																					<?php esc_html_e(' Clicks', 'wp-seopress-pro'); ?>
+																					<?php esc_html_e(' Clicks', 'webseo'); ?>
 																				</div>
 																				<div class="seopress-summary-item-data">
 																					<?php echo esc_html(get_post_meta($post_id, '_seopress_search_console_analysis_clicks', true)); ?>

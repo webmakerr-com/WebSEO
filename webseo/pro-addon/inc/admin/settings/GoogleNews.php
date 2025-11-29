@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_news_enable', // ID
-    __('Enable Google News Sitemap', 'wp-seopress-pro'), // Title
+    __('Enable Google News Sitemap', 'webseo'), // Title
     'seopress_news_enable_callback', // Callback
     'seopress-settings-admin-news', // Page
     'seopress_setting_section_news' // Section
@@ -21,7 +21,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_news_name', // ID
-    __('Publication Name (must be the same as used in Google News)', 'wp-seopress-pro'), // Title
+    __('Publication Name (must be the same as used in Google News)', 'webseo'), // Title
     'seopress_news_name_callback', // Callback
     'seopress-settings-admin-news', // Page
     'seopress_setting_section_news' // Section
@@ -29,7 +29,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_news_name_post_types_list', // ID
-    __('Select your Custom Post Type to INCLUDE in your Google News Sitemap', 'wp-seopress-pro'), // Title
+    __('Select your Custom Post Type to INCLUDE in your Google News Sitemap', 'webseo'), // Title
     'seopress_news_name_post_types_list_callback', // Callback
     'seopress-settings-admin-news', // Page
     'seopress_setting_section_news' // Section

@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_dublin_core_enable', // ID
-    __('Enable Dublin Core', 'wp-seopress-pro'), // Title
+    __('Enable Dublin Core', 'webseo'), // Title
     'seopress_dublin_core_enable_callback', // Callback
     'seopress-settings-admin-dublin-core', // Page
     'seopress_setting_section_dublin_core' // Section

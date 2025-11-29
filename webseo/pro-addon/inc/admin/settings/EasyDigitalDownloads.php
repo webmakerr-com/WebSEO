@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_edd_product_og_price', // ID
-    __('OG Price', 'wp-seopress-pro'), // Title
+    __('OG Price', 'webseo'), // Title
     'seopress_edd_product_og_price_callback', // Callback
     'seopress-settings-admin-edd', // Page
     'seopress_setting_section_edd' // Section
@@ -21,7 +21,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_edd_product_og_currency', // ID
-    __('OG Currency', 'wp-seopress-pro'), // Title
+    __('OG Currency', 'webseo'), // Title
     'seopress_edd_product_og_currency_callback', // Callback
     'seopress-settings-admin-edd', // Page
     'seopress_setting_section_edd' // Section
@@ -29,7 +29,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_edd_meta_generator', // ID
-    __('Remove Easy Digital Downloads generator tag in your head', 'wp-seopress-pro'), // Title
+    __('Remove Easy Digital Downloads generator tag in your head', 'webseo'), // Title
     'seopress_edd_meta_generator_callback', // Callback
     'seopress-settings-admin-edd', // Page
     'seopress_setting_section_edd' // Section

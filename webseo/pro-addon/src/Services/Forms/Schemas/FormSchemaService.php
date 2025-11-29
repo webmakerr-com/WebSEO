@@ -36,93 +36,93 @@ class FormSchemaService extends FormApi {
     protected function getLabelByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_service_name':
-                return __('Service name', 'wp-seopress-pro');
+                return __('Service name', 'webseo');
             case '_seopress_pro_rich_snippets_service_type':
-                return __('Service type', 'wp-seopress-pro');
+                return __('Service type', 'webseo');
             case '_seopress_pro_rich_snippets_service_description':
-                return __('Service description', 'wp-seopress-pro');
+                return __('Service description', 'webseo');
             case '_seopress_pro_rich_snippets_service_img':
-                return __('Thumbnail', 'wp-seopress-pro');
+                return __('Thumbnail', 'webseo');
             case '_seopress_pro_rich_snippets_service_area':
-                return __('Area served', 'wp-seopress-pro');
+                return __('Area served', 'webseo');
             case '_seopress_pro_rich_snippets_service_provider_name':
-                return __('Provider name', 'wp-seopress-pro');
+                return __('Provider name', 'webseo');
             case '_seopress_pro_rich_snippets_service_lb_img':
-                return __('Location image', 'wp-seopress-pro');
+                return __('Location image', 'webseo');
             case '_seopress_pro_rich_snippets_service_provider_mobility':
-                return __('Provider mobility (static or dynamic)', 'wp-seopress-pro');
+                return __('Provider mobility (static or dynamic)', 'webseo');
             case '_seopress_pro_rich_snippets_service_slogan':
-                return __('Slogan', 'wp-seopress-pro');
+                return __('Slogan', 'webseo');
             case '_seopress_pro_rich_snippets_service_street_addr':
-                return __('Street Address', 'wp-seopress-pro');
+                return __('Street Address', 'webseo');
             case '_seopress_pro_rich_snippets_service_city':
-                return __('City', 'wp-seopress-pro');
+                return __('City', 'webseo');
             case '_seopress_pro_rich_snippets_service_state':
-                return __('State', 'wp-seopress-pro');
+                return __('State', 'webseo');
             case '_seopress_pro_rich_snippets_service_pc':
-                return __('Postal code', 'wp-seopress-pro');
+                return __('Postal code', 'webseo');
             case '_seopress_pro_rich_snippets_service_country':
-                return __('Country', 'wp-seopress-pro');
+                return __('Country', 'webseo');
             case '_seopress_pro_rich_snippets_service_lat':
-                return __('Latitude', 'wp-seopress-pro');
+                return __('Latitude', 'webseo');
             case '_seopress_pro_rich_snippets_service_lon':
-                return __('Longitude', 'wp-seopress-pro');
+                return __('Longitude', 'webseo');
             case '_seopress_pro_rich_snippets_service_tel':
-                return __('Telephone', 'wp-seopress-pro');
+                return __('Telephone', 'webseo');
             case '_seopress_pro_rich_snippets_service_price':
-                return __('Price range', 'wp-seopress-pro');
+                return __('Price range', 'webseo');
         }
     }
 
     protected function getPlaceholderByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_service_name':
-                return __('The name of your service', 'wp-seopress-pro');
+                return __('The name of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_type':
-                return __('The type of your service', 'wp-seopress-pro');
+                return __('The type of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_description':
-                return __('The description of your service', 'wp-seopress-pro');
+                return __('The description of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_img':
-                return __('Select your image', 'wp-seopress-pro');
+                return __('Select your image', 'webseo');
             case '_seopress_pro_rich_snippets_service_area':
-                return __('The area served by your service', 'wp-seopress-pro');
+                return __('The area served by your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_provider_name':
-                return __('The provider name of your service', 'wp-seopress-pro');
+                return __('The provider name of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_lb_img':
-                return __('Select your location image', 'wp-seopress-pro');
+                return __('Select your location image', 'webseo');
             case '_seopress_pro_rich_snippets_service_provider_mobility':
-                return __('The provider mobility of your service', 'wp-seopress-pro');
+                return __('The provider mobility of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_slogan':
-                return __('The slogan of your service', 'wp-seopress-pro');
+                return __('The slogan of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_street_addr':
-                return __('The street address of your service', 'wp-seopress-pro');
+                return __('The street address of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_city':
-                return __('The city of your service', 'wp-seopress-pro');
+                return __('The city of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_state':
-                return __('The state of your service', 'wp-seopress-pro');
+                return __('The state of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_pc':
-                return __('The postal code of your service', 'wp-seopress-pro');
+                return __('The postal code of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_country':
-                return __('The country of your service (ISO format)', 'wp-seopress-pro');
+                return __('The country of your service (ISO format)', 'webseo');
             case '_seopress_pro_rich_snippets_service_lat':
-                return __('The latitude of your service', 'wp-seopress-pro');
+                return __('The latitude of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_lon':
-                return __('The longitude of your service', 'wp-seopress-pro');
+                return __('The longitude of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_tel':
-                return __('The telephone of your service', 'wp-seopress-pro');
+                return __('The telephone of your service', 'webseo');
             case '_seopress_pro_rich_snippets_service_price':
-                return __('The price range of your service', 'wp-seopress-pro');
+                return __('The price range of your service', 'webseo');
         }
     }
 
     protected function getDescriptionByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_service_name':
-                return __('Default: post title', 'wp-seopress-pro');
+                return __('Default: post title', 'webseo');
             case '_seopress_pro_rich_snippets_service_description':
-                return __('Default: post excerpt', 'wp-seopress-pro');
+                return __('Default: post excerpt', 'webseo');
             case '_seopress_pro_rich_snippets_service_img':
-                return __('Default: post thumbnail', 'wp-seopress-pro');
+                return __('Default: post thumbnail', 'webseo');
         }
     }
 

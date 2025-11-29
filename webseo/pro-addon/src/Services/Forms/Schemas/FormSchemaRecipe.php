@@ -32,69 +32,69 @@ class FormSchemaRecipe extends FormApi {
     protected function getLabelByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_recipes_name':
-                return __('Recipe name', 'wp-seopress-pro');
+                return __('Recipe name', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_desc':
-                return __('Short recipe description', 'wp-seopress-pro');
+                return __('Short recipe description', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_cat':
-                return __('Recipe category', 'wp-seopress-pro');
+                return __('Recipe category', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_img':
-                return __('Image', 'wp-seopress-pro');
+                return __('Image', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_video':
-                return __('Video URL of the recipe', 'wp-seopress-pro');
+                return __('Video URL of the recipe', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_prep_time':
-                return __('Preparation time (in minutes)', 'wp-seopress-pro');
+                return __('Preparation time (in minutes)', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_cook_time':
-                return __('Cooking time (in minutes)', 'wp-seopress-pro');
+                return __('Cooking time (in minutes)', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_calories':
-                return __('Calories', 'wp-seopress-pro');
+                return __('Calories', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_yield':
-                return __('Recipe yield', 'wp-seopress-pro');
+                return __('Recipe yield', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_keywords':
-                return __('Keywords', 'wp-seopress-pro');
+                return __('Keywords', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_cuisine':
-                return __('Recipe cuisine', 'wp-seopress-pro');
+                return __('Recipe cuisine', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_ingredient':
-                return __('Recipe ingredients', 'wp-seopress-pro');
+                return __('Recipe ingredients', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_instructions':
-                return __('Recipe instructions', 'wp-seopress-pro');
+                return __('Recipe instructions', 'webseo');
         }
     }
 
     protected function getDescriptionByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_recipes_img':
-                return __('Minimum size: 185px by 185px, aspect ratio 1:1', 'wp-seopress-pro');
+                return __('Minimum size: 185px by 185px, aspect ratio 1:1', 'webseo');
         }
     }
 
     protected function getPlaceholderByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_recipes_name':
-                return __('The name of your dish', 'wp-seopress-pro');
+                return __('The name of your dish', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_desc':
-                return __('A short summary describing the dish.', 'wp-seopress-pro');
+                return __('A short summary describing the dish.', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_cat':
-                return __('e.g. appetizer, entree, or dessert', 'wp-seopress-pro');
+                return __('e.g. appetizer, entree, or dessert', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_img':
-                return __('Select your image', 'wp-seopress-pro');
+                return __('Select your image', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_video':
-                return __('e.g. https://www.youtube.com/watch?v=p6v9Jd5lRIU', 'wp-seopress-pro');
+                return __('e.g. https://www.youtube.com/watch?v=p6v9Jd5lRIU', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_prep_time':
-                return __('e.g. 30 min', 'wp-seopress-pro');
+                return __('e.g. 30 min', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_cook_time':
-                return __('e.g. 45 min', 'wp-seopress-pro');
+                return __('e.g. 45 min', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_calories':
-                return __('Number of calories', 'wp-seopress-pro');
+                return __('Number of calories', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_yield':
-                return __('e.g. number of people served, or number of servings', 'wp-seopress-pro');
+                return __('e.g. number of people served, or number of servings', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_keywords':
-                return __('e.g. winter apple pie, nutmeg crust (NOT recommended: dessert, American)', 'wp-seopress-pro');
+                return __('e.g. winter apple pie, nutmeg crust (NOT recommended: dessert, American)', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_cuisine':
-                return __('The region associated with your recipe. For example, "French", Mediterranean", or "American"', 'wp-seopress-pro');
+                return __('The region associated with your recipe. For example, "French", Mediterranean", or "American"', 'webseo');
             case '_seopress_pro_rich_snippets_recipes_ingredient':
-                return __("Ingredients used in the recipe. One ingredient per line. Include only the ingredient text that is necessary for making the recipe. Don't include unnecessary information, such as a definition of the ingredient.", 'wp-seopress-pro');
+                return __("Ingredients used in the recipe. One ingredient per line. Include only the ingredient text that is necessary for making the recipe. Don't include unnecessary information, such as a definition of the ingredient.", 'webseo');
             case '_seopress_pro_rich_snippets_recipes_instructions':
-                return __('e.g. Heat oven to 425°F. Include only text on how to make the recipe and don\'t include other text such as "Directions", "Watch the video", "Step 1".', 'wp-seopress-pro');
+                return __('e.g. Heat oven to 425°F. Include only text on how to make the recipe and don\'t include other text such as "Directions", "Watch the video", "Step 1".', 'webseo');
             default:
                 return '';
         }

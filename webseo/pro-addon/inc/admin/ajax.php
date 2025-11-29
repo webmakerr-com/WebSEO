@@ -114,7 +114,7 @@ function seopress_request_bot() {
 
                             //Check for error
                             if (is_wp_error($response) || '404' === wp_remote_retrieve_response_code($response)) {
-                                $data['post_title'] = __('Unable to request page: ', 'wp-seopress-pro') . get_the_title($post);
+                                $data['post_title'] = __('Unable to request page: ', 'webseo') . get_the_title($post);
                             } else {
                                 $response = wp_remote_retrieve_body($response);
                             }
@@ -162,7 +162,7 @@ function seopress_request_bot() {
                                                     $bot_status_code = wp_remote_retrieve_response_code($response);
 
                                                     if ( ! $bot_status_code) {
-                                                        $bot_status_code = __('domain not found', 'wp-seopress-pro');
+                                                        $bot_status_code = __('domain not found', 'webseo');
                                                     }
 
                                                     if ('1' === seopress_pro_get_service('OptionBot')->getBotScanSettingsType()) {
@@ -355,7 +355,7 @@ function seopress_save_htaccess() {
     $filename = get_home_path() . '/.htaccess';
 
     if (!file_exists(get_home_path() . '/.htaccess')) {
-        $msg = __('Impossible to open file: ', 'wp-seopress-pro') . $filename;
+        $msg = __('Impossible to open file: ', 'webseo') . $filename;
         $class = 'is-error';
     }
     $old_htaccess = file_get_contents($filename);
@@ -366,12 +366,12 @@ function seopress_save_htaccess() {
 
     if (is_writable($filename)) {
         if ( ! $handle = fopen($filename, 'w')) {
-            $msg = __('Impossible to open file: ', 'wp-seopress-pro') . $filename;
+            $msg = __('Impossible to open file: ', 'webseo') . $filename;
             $class = 'is-error';
         }
 
         if (false === fwrite($handle, $current_htaccess)) {
-            $msg = __('Impossible to write in file: ', 'wp-seopress-pro') . $filename;
+            $msg = __('Impossible to write in file: ', 'webseo') . $filename;
             $class = 'is-error';
         }
 
@@ -389,15 +389,15 @@ function seopress_save_htaccess() {
             fwrite($handle, $old_htaccess);
             fclose($handle);
 
-            $msg = __('.htaccess not updated due to a syntax error!', 'wp-seopress-pro');
+            $msg = __('.htaccess not updated due to a syntax error!', 'webseo');
             $class = 'is-error';
         } else {
-            $msg = __('.htaccess successfully updated!', 'wp-seopress-pro');
+            $msg = __('.htaccess successfully updated!', 'webseo');
             $class = 'is-success';
         }
 
     } else {
-        $msg = __('Your .htaccess is not writable.', 'wp-seopress-pro');
+        $msg = __('Your .htaccess is not writable.', 'webseo');
         $class = 'is-error';
     }
 
@@ -575,7 +575,7 @@ function seopress_ai_check_license_key() {
     check_ajax_referer('seopress_ai_check_license_key_nonce');
 
     if ( ! current_user_can('manage_options') && ! is_admin()) {
-        wp_send_json_error(['message' => __('Permission denied.', 'wp-seopress-pro')]);
+        wp_send_json_error(['message' => __('Permission denied.', 'webseo')]);
         return;
     }
 
@@ -608,7 +608,7 @@ function seopress_ai_check_license_key() {
 
     $usage_service = seopress_pro_get_service('Usage');
     if ($usage_service === null) {
-        wp_send_json_error(['message' => __('Service not available.', 'wp-seopress-pro')]);
+        wp_send_json_error(['message' => __('Service not available.', 'webseo')]);
         return;
     }
 

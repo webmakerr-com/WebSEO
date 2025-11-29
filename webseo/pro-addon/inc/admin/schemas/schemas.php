@@ -12,7 +12,7 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
  * @return (array)
  **/
 function seopress_get_schemas_conditions() {
-    return ['equal' => __('is equal to', 'wp-seopress-pro'), 'not_equal' => __('is NOT equal to', 'wp-seopress-pro')];
+    return ['equal' => __('is equal to', 'webseo'), 'not_equal' => __('is NOT equal to', 'webseo')];
 }
 
 /**
@@ -26,9 +26,9 @@ function seopress_get_schemas_conditions() {
  **/
 function seopress_get_schemas_filters() {
     return [
-        'post_type' => __('Post Type', 'wp-seopress-pro'),
-        'taxonomy' => __('Term Taxonomy', 'wp-seopress-pro'),
-        'postId' => __('Post ID', 'wp-seopress-pro'),
+        'post_type' => __('Post Type', 'webseo'),
+        'taxonomy' => __('Term Taxonomy', 'webseo'),
+        'postId' => __('Post ID', 'webseo'),
     ];
 }
 
@@ -60,35 +60,35 @@ function seopress_get_default_schemas_rules($rule) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function seopress_schemas_fn() {
     $labels = [
-        'name' => _x('Schemas', 'Post Type General Name', 'wp-seopress-pro'),
-        'singular_name' => _x('Schema', 'Post Type Singular Name', 'wp-seopress-pro'),
-        'menu_name' => __('Schemas', 'wp-seopress-pro'),
-        'name_admin_bar' => __('Schemas', 'wp-seopress-pro'),
-        'archives' => __('Item Archives', 'wp-seopress-pro'),
-        'parent_item_colon' => __('Parent Item:', 'wp-seopress-pro'),
-        'all_items' => __('All schemas', 'wp-seopress-pro'),
-        'add_new_item' => __('Add New schema', 'wp-seopress-pro'),
-        'add_new' => __('Add schema', 'wp-seopress-pro'),
-        'new_item' => __('New schema', 'wp-seopress-pro'),
-        'edit_item' => __('Edit schema', 'wp-seopress-pro'),
-        'update_item' => __('Update schema', 'wp-seopress-pro'),
-        'view_item' => __('View schema', 'wp-seopress-pro'),
-        'search_items' => __('Search schema', 'wp-seopress-pro'),
-        'not_found' => __('Not found', 'wp-seopress-pro'),
-        'not_found_in_trash' => __('Not found in Trash', 'wp-seopress-pro'),
-        'featured_image' => __('Featured Image', 'wp-seopress-pro'),
-        'set_featured_image' => __('Set featured image', 'wp-seopress-pro'),
-        'remove_featured_image' => __('Remove featured image', 'wp-seopress-pro'),
-        'use_featured_image' => __('Use as featured image', 'wp-seopress-pro'),
-        'insert_into_item' => __('Insert into item', 'wp-seopress-pro'),
-        'uploaded_to_this_item' => __('Uploaded to this item', 'wp-seopress-pro'),
-        'items_list' => __('Schemas list', 'wp-seopress-pro'),
-        'items_list_navigation' => __('Schemas list navigation', 'wp-seopress-pro'),
-        'filter_items_list' => __('Filter schema list', 'wp-seopress-pro'),
+        'name' => _x('Schemas', 'Post Type General Name', 'webseo'),
+        'singular_name' => _x('Schema', 'Post Type Singular Name', 'webseo'),
+        'menu_name' => __('Schemas', 'webseo'),
+        'name_admin_bar' => __('Schemas', 'webseo'),
+        'archives' => __('Item Archives', 'webseo'),
+        'parent_item_colon' => __('Parent Item:', 'webseo'),
+        'all_items' => __('All schemas', 'webseo'),
+        'add_new_item' => __('Add New schema', 'webseo'),
+        'add_new' => __('Add schema', 'webseo'),
+        'new_item' => __('New schema', 'webseo'),
+        'edit_item' => __('Edit schema', 'webseo'),
+        'update_item' => __('Update schema', 'webseo'),
+        'view_item' => __('View schema', 'webseo'),
+        'search_items' => __('Search schema', 'webseo'),
+        'not_found' => __('Not found', 'webseo'),
+        'not_found_in_trash' => __('Not found in Trash', 'webseo'),
+        'featured_image' => __('Featured Image', 'webseo'),
+        'set_featured_image' => __('Set featured image', 'webseo'),
+        'remove_featured_image' => __('Remove featured image', 'webseo'),
+        'use_featured_image' => __('Use as featured image', 'webseo'),
+        'insert_into_item' => __('Insert into item', 'webseo'),
+        'uploaded_to_this_item' => __('Uploaded to this item', 'webseo'),
+        'items_list' => __('Schemas list', 'webseo'),
+        'items_list_navigation' => __('Schemas list navigation', 'webseo'),
+        'filter_items_list' => __('Filter schema list', 'webseo'),
     ];
     $args = [
-        'label' => __('Schemas', 'wp-seopress-pro'),
-        'description' => __('List of Schemas', 'wp-seopress-pro'),
+        'label' => __('Schemas', 'webseo'),
+        'description' => __('List of Schemas', 'webseo'),
         'labels' => $labels,
         'supports' => ['title'],
         'hierarchical' => false,
@@ -172,7 +172,7 @@ function seopress_schemas_map_meta_cap($caps, $cap, $user_id, $args) {
 function seopress_schemas_cpt_title($title) {
     $screen = get_current_screen();
     if ('seopress_schemas' == $screen->post_type) {
-        $title = esc_html__('Enter the name of your schema', 'wp-seopress-pro');
+        $title = esc_html__('Enter the name of your schema', 'webseo');
     }
 
     return $title;
@@ -191,7 +191,7 @@ function seopress_schemas_btn_cpt() {
 <script>
     jQuery(function() {
         jQuery("body.post-type-seopress_schemas .wrap h1 ~ a").after(
-            '<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_rich_snippets')); ?>" id="seopress-schemas-settings" class="page-title-action"><?php esc_html_e('Settings', 'wp-seopress-pro'); ?></a>'
+            '<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_rich_snippets')); ?>" id="seopress-schemas-settings" class="page-title-action"><?php esc_html_e('Settings', 'webseo'); ?></a>'
         );
     });
 </script>
@@ -210,20 +210,20 @@ function seopress_schemas_render_blank_state() {
 <div class="seopress-BlankState">
 
     <h2 class="seopress-BlankState-message">
-        <?php esc_html_e('Boost your visibility in search results and increase your traffic and conversions.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('Boost your visibility in search results and increase your traffic and conversions.', 'webseo'); ?>
     </h2>
 
     <div class="seopress-BlankState-buttons">
 
         <a class="seopress-BlankState-cta btn btnPrimary"
             href="<?php echo esc_url(admin_url('post-new.php?post_type=seopress_schemas')); ?>">
-            <?php esc_html_e('Create a schema', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Create a schema', 'webseo'); ?>
         </a>
 
         <a class="seopress-BlankState-cta btn btnTertiary"
             href="<?php echo esc_url($docs['schemas']['add']); ?>"
             target="_blank">
-            <?php esc_html_e('Learn more about schemas', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Learn more about schemas', 'webseo'); ?>
         </a>
 
     </div>
@@ -283,42 +283,42 @@ function seopress_schemas_set_messages($messages) {
             0 => '', // Unused. Messages start at index 1.
             1 => sprintf(
                 /* translators: %s schema name */ 
-                esc_html__('%s updated.', 'wp-seopress-pro'), $singular),
-            2 => esc_html__('Custom field updated.', 'wp-seopress-pro'),
-            3 => esc_html__('Custom field deleted.', 'wp-seopress-pro'),
+                esc_html__('%s updated.', 'webseo'), $singular),
+            2 => esc_html__('Custom field updated.', 'webseo'),
+            3 => esc_html__('Custom field deleted.', 'webseo'),
             4 => sprintf(
                 /* translators: %s schema name */ 
-                esc_html__('%s updated.', 'wp-seopress-pro'), 
+                esc_html__('%s updated.', 'webseo'), 
                 $singular
             ),
             5 => isset($_GET['revision']) ? sprintf(
                 /* translators: %1$s schema name, %2$s schema name */ 
-                esc_html__('%1$s restored to revision from %2$s', 'wp-seopress-pro'), 
+                esc_html__('%1$s restored to revision from %2$s', 'webseo'), 
                 wp_post_revision_title((int) $_GET['revision'], false), 
                 $singular
             ) : false,
             6 => sprintf(
                 /* translators: %s schema name */ 
-                esc_html__('%s published.', 'wp-seopress-pro'),
+                esc_html__('%s published.', 'webseo'),
                 $singular
             ),
             7 => sprintf(/* translators: %s schema name */ 
-                esc_html__('%s saved.', 'wp-seopress-pro'), 
+                esc_html__('%s saved.', 'webseo'), 
                 $singular
             ),
             8 => sprintf(
                 /* translators: %s schema name */ 
-                esc_html__('%s submitted.', 'wp-seopress-pro'), 
+                esc_html__('%s submitted.', 'webseo'), 
                 $singular
             ),
             9 => sprintf(/* translators: %1$s schema name, %2$s date */ 
-                esc_html__('%1$s scheduled for: <strong>%2$s</strong>. ', 'wp-seopress-pro'), 
+                esc_html__('%1$s scheduled for: <strong>%2$s</strong>. ', 'webseo'), 
                 $singular, 
-                date_i18n(esc_html__('M j, Y @ G:i', 'wp-seopress-pro'), strtotime($post->post_date))
+                date_i18n(esc_html__('M j, Y @ G:i', 'webseo'), strtotime($post->post_date))
             ),
             10 => sprintf(
                 /* translators: %s schema name */ 
-                esc_html__('%s draft updated.', 'wp-seopress-pro'), 
+                esc_html__('%s draft updated.', 'webseo'), 
                 $singular
             ),
         ];
@@ -333,11 +333,11 @@ add_filter('post_updated_messages', 'seopress_schemas_set_messages');
 
 function seopress_schemas_set_messages_list($bulk_messages, $bulk_counts) {
     $bulk_messages['seopress_schemas'] = [
-        'updated' => /* translators: %s schema name */ _n('%s schema updated.', '%s schemas updated.', $bulk_counts['updated'], 'wp-seopress-pro'),
-        'locked' => /* translators: %s schema name */ _n('%s schema not updated, somebody is editing it.', '%s schemas not updated, somebody is editing them.', $bulk_counts['locked'], 'wp-seopress-pro'),
-        'deleted' => /* translators: %s schema name */ _n('%s schema permanently deleted.', '%s schemas permanently deleted.', $bulk_counts['deleted'], 'wp-seopress-pro'),
-        'trashed' => /* translators: %s schema name */ _n('%s schema moved to the Trash.', '%s schemas moved to the Trash.', $bulk_counts['trashed'], 'wp-seopress-pro'),
-        'untrashed' => /* translators: %s schema name */ _n('%s schema restored from the Trash.', '%s schemas restored from the Trash.', $bulk_counts['untrashed'], 'wp-seopress-pro'),
+        'updated' => /* translators: %s schema name */ _n('%s schema updated.', '%s schemas updated.', $bulk_counts['updated'], 'webseo'),
+        'locked' => /* translators: %s schema name */ _n('%s schema not updated, somebody is editing it.', '%s schemas not updated, somebody is editing them.', $bulk_counts['locked'], 'webseo'),
+        'deleted' => /* translators: %s schema name */ _n('%s schema permanently deleted.', '%s schemas permanently deleted.', $bulk_counts['deleted'], 'webseo'),
+        'trashed' => /* translators: %s schema name */ _n('%s schema moved to the Trash.', '%s schemas moved to the Trash.', $bulk_counts['trashed'], 'webseo'),
+        'untrashed' => /* translators: %s schema name */ _n('%s schema restored from the Trash.', '%s schemas restored from the Trash.', $bulk_counts['untrashed'], 'webseo'),
     ];
 
     return $bulk_messages;
@@ -352,8 +352,8 @@ add_filter('manage_edit-seopress_schemas_columns', 'seopress_schemas_columns');
 add_action('manage_seopress_schemas_posts_custom_column', 'seopress_schemas_display_column', 10, 2);
 
 function seopress_schemas_columns($columns) {
-    $columns['seopress_schemas_type'] = __('Data type', 'wp-seopress-pro');
-    $columns['seopress_schemas_cpt'] = __('Post type', 'wp-seopress-pro');
+    $columns['seopress_schemas_type'] = __('Data type', 'webseo');
+    $columns['seopress_schemas_cpt'] = __('Post type', 'webseo');
     unset($columns['date']);
 
     return $columns;
@@ -393,18 +393,18 @@ function seopress_schemas_display_column($column, $post_id) {
                         $label = esc_html($value['postId']);
                         $html .= " <strong>$filter</strong> <em>$cond</em> \"$label\" ";
                     }
-                    $html .= esc_html__('and', 'wp-seopress-pro');
+                    $html .= esc_html__('and', 'webseo');
                     ++$n;
                     if (3 === $n) {
-                        $html = trim($html, esc_html__('and', 'wp-seopress-pro') . ' ');
+                        $html = trim($html, esc_html__('and', 'webseo') . ' ');
                         $html .= '&hellip;';
                         continue 2;
                     }
                 }
-                $html = trim($html, esc_html__('and', 'wp-seopress-pro'));
-                $html .= esc_html__('or', 'wp-seopress-pro');
+                $html = trim($html, esc_html__('and', 'webseo'));
+                $html .= esc_html__('or', 'webseo');
             }
-            $html = trim($html, esc_html__('or', 'wp-seopress-pro'));
+            $html = trim($html, esc_html__('or', 'webseo'));
             echo $html;
         }
     }
@@ -415,7 +415,7 @@ function seopress_schemas_display_column($column, $post_id) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 add_action('add_meta_boxes', 'seopress_schemas_init_metabox');
 function seopress_schemas_init_metabox() {
-    add_meta_box('seopress_schemas', esc_html__('Your schema', 'wp-seopress-pro'), 'seopress_schemas_cpt', 'seopress_schemas', 'normal', 'default');
+    add_meta_box('seopress_schemas', esc_html__('Your schema', 'webseo'), 'seopress_schemas_cpt', 'seopress_schemas', 'normal', 'default');
 }
 
 function seopress_schemas_cpt($post) {
@@ -464,39 +464,39 @@ function seopress_schemas_cpt($post) {
 
         //init default case array
         $seopress_schemas_mapping_case = [
-            'Select an option' => ['none' => esc_html__('None', 'wp-seopress-pro')],
+            'Select an option' => ['none' => esc_html__('None', 'webseo')],
             'Site Meta' => [
-                'site_title' => esc_html__('Site Title', 'wp-seopress-pro'),
-                'tagline' => esc_html__('Tagline', 'wp-seopress-pro'),
-                'site_url' => esc_html__('Site URL', 'wp-seopress-pro'),
+                'site_title' => esc_html__('Site Title', 'webseo'),
+                'tagline' => esc_html__('Tagline', 'webseo'),
+                'site_url' => esc_html__('Site URL', 'webseo'),
             ],
             'Post Meta' => [
-                'post_id' => esc_html__('Post / Product ID', 'wp-seopress-pro'),
-                'post_title' => __('Post Title / Product title', 'wp-seopress-pro'),
-                'post_excerpt' => esc_html__('Excerpt / Product short description', 'wp-seopress-pro'),
-                'post_content' => esc_html__('Content', 'wp-seopress-pro'),
-                'post_permalink' => esc_html__('Permalink', 'wp-seopress-pro'),
-                'post_author_name' => esc_html__('Author', 'wp-seopress-pro'),
-                'post_date' => esc_html__('Publish date', 'wp-seopress-pro'),
-                'post_updated' => esc_html__('Last update', 'wp-seopress-pro'),
+                'post_id' => esc_html__('Post / Product ID', 'webseo'),
+                'post_title' => __('Post Title / Product title', 'webseo'),
+                'post_excerpt' => esc_html__('Excerpt / Product short description', 'webseo'),
+                'post_content' => esc_html__('Content', 'webseo'),
+                'post_permalink' => esc_html__('Permalink', 'webseo'),
+                'post_author_name' => esc_html__('Author', 'webseo'),
+                'post_date' => esc_html__('Publish date', 'webseo'),
+                'post_updated' => esc_html__('Last update', 'webseo'),
             ],
             'Product meta (WooCommerce)' => [
-                'product_regular_price' => esc_html__('Regular Price', 'wp-seopress-pro'),
-                'product_sale_price' => esc_html__('Sale Price', 'wp-seopress-pro'),
-                'product_price_with_tax' => esc_html__('Sales price, including tax', 'wp-seopress-pro'),
-                'product_date_from' => esc_html__('Sale price dates "From"', 'wp-seopress-pro'),
-                'product_date_to' => esc_html__('Sale price dates "To"', 'wp-seopress-pro'),
-                'product_sku' => esc_html__('SKU', 'wp-seopress-pro'),
-                'product_barcode_type' => esc_html__('Product Global Identifier type', 'wp-seopress-pro'),
-                'product_barcode' => esc_html__('Product Global Identifier', 'wp-seopress-pro'),
-                'product_category' => esc_html__('Product category', 'wp-seopress-pro'),
-                'product_stock' => esc_html__('Product availability', 'wp-seopress-pro'),
+                'product_regular_price' => esc_html__('Regular Price', 'webseo'),
+                'product_sale_price' => esc_html__('Sale Price', 'webseo'),
+                'product_price_with_tax' => esc_html__('Sales price, including tax', 'webseo'),
+                'product_date_from' => esc_html__('Sale price dates "From"', 'webseo'),
+                'product_date_to' => esc_html__('Sale price dates "To"', 'webseo'),
+                'product_sku' => esc_html__('SKU', 'webseo'),
+                'product_barcode_type' => esc_html__('Product Global Identifier type', 'webseo'),
+                'product_barcode' => esc_html__('Product Global Identifier', 'webseo'),
+                'product_category' => esc_html__('Product category', 'webseo'),
+                'product_stock' => esc_html__('Product availability', 'webseo'),
             ],
             'Custom taxonomy / Product attribute (WooCommerce)' => [
-                'custom_taxonomy' => esc_html__('Select your custom taxonomy / product attribute', 'wp-seopress-pro'),
+                'custom_taxonomy' => esc_html__('Select your custom taxonomy / product attribute', 'webseo'),
             ],
             'Custom fields' => [
-                'custom_fields' => esc_html__('Select your custom field', 'wp-seopress-pro'),
+                'custom_fields' => esc_html__('Select your custom field', 'webseo'),
             ],
         ];
 
@@ -549,28 +549,28 @@ function seopress_schemas_cpt($post) {
             switch ($case) {
                 case 'default':
                     $seopress_schemas_mapping_case['Manual'] = [
-                        'manual_global' => esc_html__('Manual text', 'wp-seopress-pro'),
-                        'manual_single' => esc_html__('Manual text on each post', 'wp-seopress-pro'),
+                        'manual_global' => esc_html__('Manual text', 'webseo'),
+                        'manual_single' => esc_html__('Manual text on each post', 'webseo'),
                     ];
 
                     $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_global', true);
 
-                    $seopress_schemas_manual_global = '<input type="text" id="' . $post_meta_name . '_manual_global" name="' . $post_meta_name . '_manual_global" class="manual_global" placeholder="' . esc_html__('Enter a global value here', 'wp-seopress-pro') . '" aria-label="' . __('Manual value', 'wp-seopress-pro') . '" value="' . $post_meta_value . '" />';
+                    $seopress_schemas_manual_global = '<input type="text" id="' . $post_meta_name . '_manual_global" name="' . $post_meta_name . '_manual_global" class="manual_global" placeholder="' . esc_html__('Enter a global value here', 'webseo') . '" aria-label="' . __('Manual value', 'webseo') . '" value="' . $post_meta_value . '" />';
 
                     break;
                 case 'lb':
                     $seopress_schemas_mapping_case['Manual'] = [
-                        'manual_global' => esc_html__('Manual text', 'wp-seopress-pro'),
-                        'manual_single' => esc_html__('Manual text on each post', 'wp-seopress-pro'),
+                        'manual_global' => esc_html__('Manual text', 'webseo'),
+                        'manual_single' => esc_html__('Manual text on each post', 'webseo'),
                     ];
 
                     $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_global', true);
 
-                    $seopress_schemas_manual_global = '<input type="text" id="' . $post_meta_name . '_manual_global" name="' . $post_meta_name . '_manual_global" class="manual_global" placeholder="' . esc_html__('Enter a global value here', 'wp-seopress-pro') . '" aria-label="' . __('Manual value', 'wp-seopress-pro') . '" value="' . $post_meta_value . '" />';
+                    $seopress_schemas_manual_global = '<input type="text" id="' . $post_meta_name . '_manual_global" name="' . $post_meta_name . '_manual_global" class="manual_global" placeholder="' . esc_html__('Enter a global value here', 'webseo') . '" aria-label="' . __('Manual value', 'webseo') . '" value="' . $post_meta_value . '" />';
 
                     //lb types case
                     $seopress_schemas_mapping_case['Local Business'] = [
-                        'manual_lb_global' => esc_html__('Local Business type', 'wp-seopress-pro'),
+                        'manual_lb_global' => esc_html__('Local Business type', 'webseo'),
                     ];
 
                     $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_lb_global', true);
@@ -578,55 +578,55 @@ function seopress_schemas_cpt($post) {
                     break;
                 case 'image':
                         $seopress_schemas_mapping_case = [
-                            'Select an option' => ['none' => esc_html__('None', 'wp-seopress-pro')],
+                            'Select an option' => ['none' => esc_html__('None', 'webseo')],
                             'Site Meta' => [
-                                'knowledge_graph_logo' => esc_html__('Knowledge Graph logo (SEO > Social)', 'wp-seopress-pro'),
+                                'knowledge_graph_logo' => esc_html__('Knowledge Graph logo (SEO > Social)', 'webseo'),
                             ],
                             'Post Meta' => [
-                                'post_thumbnail' => esc_html__('Featured image / Product image', 'wp-seopress-pro'),
-                                'post_author_picture' => esc_html__('Post author picture', 'wp-seopress-pro'),
+                                'post_thumbnail' => esc_html__('Featured image / Product image', 'webseo'),
+                                'post_author_picture' => esc_html__('Post author picture', 'webseo'),
                             ],
                             'Custom fields' => [
-                                'custom_fields' => esc_html__('Select your custom field', 'wp-seopress-pro'),
+                                'custom_fields' => esc_html__('Select your custom field', 'webseo'),
                             ],
                             'Manual' => [
-                                'manual_img_global' => esc_html__('Manual Image URL', 'wp-seopress-pro'),
-                                'manual_img_library_global' => esc_html__('Manual Image from Library', 'wp-seopress-pro'),
-                                'manual_img_single' => esc_html__('Manual text on each post', 'wp-seopress-pro'),
+                                'manual_img_global' => esc_html__('Manual Image URL', 'webseo'),
+                                'manual_img_library_global' => esc_html__('Manual Image from Library', 'webseo'),
+                                'manual_img_single' => esc_html__('Manual text on each post', 'webseo'),
                             ],
                         ];
 
                         $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_img_global', true);
 
-                        $seopress_schemas_manual_img_global = '<input type="text" id="' . $post_meta_name . '_manual_img_global" name="' . $post_meta_name . '_manual_img_global" class="manual_img_global" placeholder="' . esc_html__('Enter a global value here', 'wp-seopress-pro') . '" aria-label="' . __('Manual Image URL', 'wp-seopress-pro') . '" value="' . $post_meta_value . '" />';
+                        $seopress_schemas_manual_img_global = '<input type="text" id="' . $post_meta_name . '_manual_img_global" name="' . $post_meta_name . '_manual_img_global" class="manual_img_global" placeholder="' . esc_html__('Enter a global value here', 'webseo') . '" aria-label="' . __('Manual Image URL', 'webseo') . '" value="' . $post_meta_value . '" />';
 
                         $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_img_library_global', true);
                         $post_meta_value2 = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_img_library_global_width', true);
                         $post_meta_value3 = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_img_library_global_height', true);
 
-                        $seopress_schemas_manual_img_library_global = '<input type="text" id="' . $post_meta_name . '_manual_img_library_global" name="' . $post_meta_name . '_manual_img_library_global" class="manual_img_library_global" placeholder="' . esc_html__('Select your global image from the media library', 'wp-seopress-pro') . '" aria-label="' . __('Manual Image URL', 'wp-seopress-pro') . '" value="' . $post_meta_value . '" />
+                        $seopress_schemas_manual_img_library_global = '<input type="text" id="' . $post_meta_name . '_manual_img_library_global" name="' . $post_meta_name . '_manual_img_library_global" class="manual_img_library_global" placeholder="' . esc_html__('Select your global image from the media library', 'webseo') . '" aria-label="' . __('Manual Image URL', 'webseo') . '" value="' . $post_meta_value . '" />
 
 						<input id="' . $post_meta_name . '_manual_img_library_global_width" type="hidden" name="' . $post_meta_name . '_manual_img_library_global_width" class="manual_img_library_global_width" value="' . $post_meta_value2 . '" />
 
 						<input id="' . $post_meta_name . '_manual_img_library_global_height" type="hidden" name="' . $post_meta_name . '_manual_img_library_global_height" class="manual_img_library_global_height" value="' . $post_meta_value3 . '" />
 
-						<input id="' . $post_meta_name . '_manual_img_library_global_btn" class="btn btnSecondary manual_img_library_global" type="button" value="' . esc_html__('Upload an Image', 'wp-seopress-pro') . '" />';
+						<input id="' . $post_meta_name . '_manual_img_library_global_btn" class="btn btnSecondary manual_img_library_global" type="button" value="' . esc_html__('Upload an Image', 'webseo') . '" />';
 
                     break;
                 case 'events':
                         //Events Calendar
                         if (is_plugin_active('the-events-calendar/the-events-calendar.php')) {
                             $seopress_schemas_mapping_case['Events Calendar'] = [
-                                'events_start_date' => esc_html__('Start date', 'wp-seopress-pro'),
-                                'events_start_date_timezone' => esc_html__('Timezone start date', 'wp-seopress-pro'),
-                                'events_start_time' => esc_html__('Start time', 'wp-seopress-pro'),
-                                'events_end_date' => esc_html__('End date', 'wp-seopress-pro'),
-                                'events_end_time' => esc_html__('End time', 'wp-seopress-pro'),
-                                'events_location_name' => esc_html__('Event location name', 'wp-seopress-pro'),
-                                'events_location_address' => esc_html__('Event location address', 'wp-seopress-pro'),
-                                'events_website' => esc_html__('Event website', 'wp-seopress-pro'),
-                                'events_cost' => esc_html__('Event cost', 'wp-seopress-pro'),
-                                'events_currency' => esc_html__('Event currency', 'wp-seopress-pro'),
+                                'events_start_date' => esc_html__('Start date', 'webseo'),
+                                'events_start_date_timezone' => esc_html__('Timezone start date', 'webseo'),
+                                'events_start_time' => esc_html__('Start time', 'webseo'),
+                                'events_end_date' => esc_html__('End date', 'webseo'),
+                                'events_end_time' => esc_html__('End time', 'webseo'),
+                                'events_location_name' => esc_html__('Event location name', 'webseo'),
+                                'events_location_address' => esc_html__('Event location address', 'webseo'),
+                                'events_website' => esc_html__('Event website', 'webseo'),
+                                'events_cost' => esc_html__('Event cost', 'webseo'),
+                                'events_currency' => esc_html__('Event currency', 'webseo'),
                             ];
                         }
 
@@ -634,47 +634,47 @@ function seopress_schemas_cpt($post) {
                 case 'date':
                         //date case
                         $seopress_schemas_mapping_case['Manual'] = [
-                            'manual_date_global' => esc_html__('Manual date', 'wp-seopress-pro'),
-                            'manual_date_single' => esc_html__('Manual date on each post', 'wp-seopress-pro'),
+                            'manual_date_global' => esc_html__('Manual date', 'webseo'),
+                            'manual_date_single' => esc_html__('Manual date on each post', 'webseo'),
                         ];
 
                         $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_date_global', true);
 
-                        $seopress_schemas_manual_date_global = '<input type="text" class="seopress-date-picker manual_date_global" autocomplete="false" name="' . $post_meta_name . '_manual_date_global" class="manual_global" placeholder="' . esc_html__('e.g. YYYY-MM-DD', 'wp-seopress-pro') . '" aria-label="' . esc_html__('Global date', 'wp-seopress-pro') . '" value="' . $post_meta_value . '" />';
+                        $seopress_schemas_manual_date_global = '<input type="text" class="seopress-date-picker manual_date_global" autocomplete="false" name="' . $post_meta_name . '_manual_date_global" class="manual_global" placeholder="' . esc_html__('e.g. YYYY-MM-DD', 'webseo') . '" aria-label="' . esc_html__('Global date', 'webseo') . '" value="' . $post_meta_value . '" />';
                     break;
                 case 'time':
                         //time case
                         $seopress_schemas_mapping_case['Manual'] = [
-                            'manual_time_global' => esc_html__('Manual time', 'wp-seopress-pro'),
-                            'manual_time_single' => esc_html__('Manual time on each post', 'wp-seopress-pro'),
+                            'manual_time_global' => esc_html__('Manual time', 'webseo'),
+                            'manual_time_single' => esc_html__('Manual time on each post', 'webseo'),
                         ];
 
                         $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_time_global', true);
 
-                        $seopress_schemas_manual_time_global = '<input type="time" step="2" placeholder="' . esc_html__('HH:MM', 'wp-seopress-pro') . '" id="' . $post_meta_name . '_manual_time_global" name="' . $post_meta_name . '_manual_time_global" class="manual_time_global" aria-label="' . esc_html__('Time', 'wp-seopress-pro') . '" value="' . $post_meta_value . '" />';
+                        $seopress_schemas_manual_time_global = '<input type="time" step="2" placeholder="' . esc_html__('HH:MM', 'webseo') . '" id="' . $post_meta_name . '_manual_time_global" name="' . $post_meta_name . '_manual_time_global" class="manual_time_global" aria-label="' . esc_html__('Time', 'webseo') . '" value="' . $post_meta_value . '" />';
                     break;
                 case 'rating':
                         //rating case
                         $seopress_schemas_mapping_case['Manual'] = [
-                            'manual_rating_global' => esc_html__('Manual rating', 'wp-seopress-pro'),
-                            'manual_rating_single' => esc_html__('Manual rating on each post', 'wp-seopress-pro'),
+                            'manual_rating_global' => esc_html__('Manual rating', 'webseo'),
+                            'manual_rating_single' => esc_html__('Manual rating on each post', 'webseo'),
                         ];
 
                         $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_rating_global', true);
 
-                        $seopress_schemas_manual_rating_global = '<input type="number" id="' . $post_meta_name . '_manual_rating_global" name="' . $post_meta_name . '_manual_rating_global" min="1" step="0.1" class="manual_rating_global" aria-label="' . esc_html__('Rating', 'wp-seopress-pro') . '" value="' . $post_meta_value . '" />';
+                        $seopress_schemas_manual_rating_global = '<input type="number" id="' . $post_meta_name . '_manual_rating_global" name="' . $post_meta_name . '_manual_rating_global" min="1" step="0.1" class="manual_rating_global" aria-label="' . esc_html__('Rating', 'webseo') . '" value="' . $post_meta_value . '" />';
                     break;
                 case 'custom':
                         //custom case
                         $seopress_schemas_mapping_case = [];
                         $seopress_schemas_mapping_case['custom'] = [
-                            'manual_custom_global' => esc_html__('Manual custom schema', 'wp-seopress-pro'),
-                            'manual_custom_single' => esc_html__('Manual custom schema on each post', 'wp-seopress-pro'),
+                            'manual_custom_global' => esc_html__('Manual custom schema', 'webseo'),
+                            'manual_custom_single' => esc_html__('Manual custom schema on each post', 'webseo'),
                         ];
 
                         $post_meta_value = get_post_meta($post->ID, '_' . $post_meta_name . '_manual_custom_global', true);
 
-                        $seopress_schemas_manual_custom_global = '<textarea rows="25" id="' . $post_meta_name . '_manual_custom_global" name="' . $post_meta_name . '_manual_custom_global" class="manual_custom_global" aria-label="' . __('Custom schema', 'wp-seopress-pro') . '" value="' . htmlspecialchars($post_meta_value) . '" placeholder="' . esc_html__('e.g. <script type="application/ld+json">{
+                        $seopress_schemas_manual_custom_global = '<textarea rows="25" id="' . $post_meta_name . '_manual_custom_global" name="' . $post_meta_name . '_manual_custom_global" class="manual_custom_global" aria-label="' . __('Custom schema', 'webseo') . '" value="' . htmlspecialchars($post_meta_value) . '" placeholder="' . esc_html__('e.g. <script type="application/ld+json">{
                             "@context": "https://schema.org/",
                             "@type": "Review",
                             "itemReviewed": {
@@ -706,7 +706,7 @@ function seopress_schemas_cpt($post) {
                             "@type": "Organization",
                             "name": "Washington Times"
                             }
-                        }</script>', 'wp-seopress-pro') . '">' . htmlspecialchars($post_meta_value) . '</textarea>';
+                        }</script>', 'webseo') . '">' . htmlspecialchars($post_meta_value) . '</textarea>';
                     break;
             }
         }
@@ -777,96 +777,96 @@ function seopress_schemas_cpt($post) {
                         <div class="wrap-rich-snippets-type">
                             <p>
                                 <strong>
-                                    <?php esc_html_e('Schema Type', 'wp-seopress-pro'); ?>
+                                    <?php esc_html_e('Schema Type', 'webseo'); ?>
                                 </strong>
-                                <span class="description"><?php esc_html_e('Select the type of structured data you want to add to your content', 'wp-seopress-pro'); ?></span>
+                                <span class="description"><?php esc_html_e('Select the type of structured data you want to add to your content', 'webseo'); ?></span>
                             </p>
                             <div class="seopress-schema-type-grid">
                             <?php
                             $schema_types = [
                                 [
                                     'value' => 'none',
-                                    'label' => esc_html__('None', 'wp-seopress-pro'),
+                                    'label' => esc_html__('None', 'webseo'),
                                     'icon'  => 'dashicons-no',
-                                    'desc'  => esc_html__('No schema will be added.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('No schema will be added.', 'webseo')
                                 ],
                                 [
                                     'value' => 'articles',
-                                    'label' => esc_html__('Article (WebPage)', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Article (WebPage)', 'webseo'),
                                     'icon'  => 'dashicons-media-text',
-                                    'desc'  => esc_html__('For blog posts, news, and articles.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For blog posts, news, and articles.', 'webseo')
                                 ],
                                 [
                                     'value' => 'localbusiness',
-                                    'label' => esc_html__('Local Business', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Local Business', 'webseo'),
                                     'icon'  => 'dashicons-store',
-                                    'desc'  => esc_html__('For local businesses and organizations.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For local businesses and organizations.', 'webseo')
                                 ],
                                 [
                                     'value' => 'faq',
-                                    'label' => esc_html__('FAQ', 'wp-seopress-pro'),
+                                    'label' => esc_html__('FAQ', 'webseo'),
                                     'icon'  => 'dashicons-editor-help',
-                                    'desc'  => esc_html__('For frequently asked questions.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For frequently asked questions.', 'webseo')
                                 ],
                                 [
                                     'value' => 'courses',
-                                    'label' => esc_html__('Course', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Course', 'webseo'),
                                     'icon'  => 'dashicons-welcome-learn-more',
-                                    'desc'  => esc_html__('For educational courses.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For educational courses.', 'webseo')
                                 ],
                                 [
                                     'value' => 'recipes',
-                                    'label' => esc_html__('Recipe', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Recipe', 'webseo'),
                                     'icon'  => 'dashicons-carrot',
-                                    'desc'  => esc_html__('For food and recipe content.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For food and recipe content.', 'webseo')
                                 ],
                                 [
                                     'value' => 'jobs',
-                                    'label' => esc_html__('Job', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Job', 'webseo'),
                                     'icon'  => 'dashicons-businessman',
-                                    'desc'  => esc_html__('For job postings.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For job postings.', 'webseo')
                                 ],
                                 [
                                     'value' => 'videos',
-                                    'label' => esc_html__('Video', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Video', 'webseo'),
                                     'icon'  => 'dashicons-format-video',
-                                    'desc'  => esc_html__('For video content.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For video content.', 'webseo')
                                 ],
                                 [
                                     'value' => 'events',
-                                    'label' => esc_html__('Event', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Event', 'webseo'),
                                     'icon'  => 'dashicons-calendar-alt',
-                                    'desc'  => esc_html__('For events and happenings.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For events and happenings.', 'webseo')
                                 ],
                                 [
                                     'value' => 'products',
-                                    'label' => esc_html__('Product', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Product', 'webseo'),
                                     'icon'  => 'dashicons-cart',
-                                    'desc'  => esc_html__('For products and e-commerce.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For products and e-commerce.', 'webseo')
                                 ],
                                 [
                                     'value' => 'services',
-                                    'label' => esc_html__('Service', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Service', 'webseo'),
                                     'icon'  => 'dashicons-hammer',
-                                    'desc'  => esc_html__('For service offerings.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For service offerings.', 'webseo')
                                 ],
                                 [
                                     'value' => 'softwareapp',
-                                    'label' => esc_html__('Software Application', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Software Application', 'webseo'),
                                     'icon'  => 'dashicons-admin-generic',
-                                    'desc'  => esc_html__('For software and apps.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For software and apps.', 'webseo')
                                 ],
                                 [
                                     'value' => 'review',
-                                    'label' => esc_html__('Review', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Review', 'webseo'),
                                     'icon'  => 'dashicons-star-filled',
-                                    'desc'  => esc_html__('For reviews and ratings.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('For reviews and ratings.', 'webseo')
                                 ],
                                 [
                                     'value' => 'custom',
-                                    'label' => esc_html__('Custom', 'wp-seopress-pro'),
+                                    'label' => esc_html__('Custom', 'webseo'),
                                     'icon'  => 'dashicons-editor-code',
-                                    'desc'  => esc_html__('Add your own custom schema.', 'wp-seopress-pro')
+                                    'desc'  => esc_html__('Add your own custom schema.', 'webseo')
                                 ],
                             ];
                             $selected = isset($seopress_pro_rich_snippets_type) ? $seopress_pro_rich_snippets_type : 'none';
@@ -884,7 +884,7 @@ function seopress_schemas_cpt($post) {
                         </div>
                         <div class="wrap-rich-snippets-rules schema-steps">
                             <p>
-                                <label for="seopress_pro_rich_snippets_rules_meta"><?php esc_html_e('Show this schema if your singular post, page or post type has:', 'wp-seopress-pro'); ?></label>
+                                <label for="seopress_pro_rich_snippets_rules_meta"><?php esc_html_e('Show this schema if your singular post, page or post type has:', 'webseo'); ?></label>
                                 <?php
     $_id_name_for = 'seopress_pro_rich_snippets_rules';
     $snippets_rules = get_post_meta($post->ID, '_seopress_pro_rich_snippets_rules', true);
@@ -953,17 +953,17 @@ function seopress_schemas_cpt($post) {
             echo '</p>';
         }
         echo '</div>';
-        echo '<p class="separat_or"><strong>' . esc_html__('or', 'wp-seopress-pro') . '</strong></p>';
+        echo '<p class="separat_or"><strong>' . esc_html__('or', 'webseo') . '</strong></p>';
     } ?>
                             <p>
                                 <button type="button" class="button button-secondary"
                                     id="<?php echo $_id_name_for; ?>_add">
-                                    <?php esc_html_e('Add a rule', 'wp-seopress-pro'); ?>
+                                    <?php esc_html_e('Add a rule', 'webseo'); ?>
                                 </button>
                             </p>
                         </div>
                         <p>
-                            <label><?php esc_html_e('Map all schema properties to a value:', 'wp-seopress-pro'); ?></label>
+                            <label><?php esc_html_e('Map all schema properties to a value:', 'webseo'); ?></label>
                         </p>
 
                         <?php
@@ -982,11 +982,11 @@ function seopress_schemas_cpt($post) {
     require_once dirname(__FILE__) . '/automatic/Custom.php'; ?>
                     </div>
                     <div class="seopress-notice seopress-help">
-                        <h3><?php esc_html_e('Common issues','wp-seopress-pro'); ?></h3>
+                        <h3><?php esc_html_e('Common issues','webseo'); ?></h3>
                         <p>
                             <?php
                                 /* translators: %s documentation URL */
-                                printf(__('How to add your own <a href="%s" target="_blank">predefined dynamic variables</a>.','wp-seopress-pro'), esc_url($docs['schemas']['variables']));
+                                printf(__('How to add your own <a href="%s" target="_blank">predefined dynamic variables</a>.','webseo'), esc_url($docs['schemas']['variables']));
                             ?>
                             <span class="seopress-help dashicons dashicons-external"></span>
                         </p>
@@ -994,7 +994,7 @@ function seopress_schemas_cpt($post) {
                         <p>
                             <?php
                                 /* translators: %s documentation URL */
-                                printf(__('I don’t see <a href="%s" target="_blank">all my custom fields from the list</a>!','wp-seopress-pro'), esc_url($docs['schemas']['custom_fields']));
+                                printf(__('I don’t see <a href="%s" target="_blank">all my custom fields from the list</a>!','webseo'), esc_url($docs['schemas']['custom_fields']));
                             ?>
                             <span class="seopress-help dashicons dashicons-external"></span>
                         </p>

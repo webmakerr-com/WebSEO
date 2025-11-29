@@ -41,7 +41,7 @@ class SEOPress_breadcrumbs_Widget extends Widget_Base
      */
     public function get_title()
     {
-        return __('Breadcrumbs', 'wp-seopress-pro');
+        return __('Breadcrumbs', 'webseo');
     }
 
     /**
@@ -87,7 +87,7 @@ class SEOPress_breadcrumbs_Widget extends Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __('Content', 'wp-seopress-pro'),
+                'label' => __('Content', 'webseo'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -95,19 +95,19 @@ class SEOPress_breadcrumbs_Widget extends Widget_Base
         $this->add_responsive_control(
             'alignment',
             [
-                'label' => __('Alignment', 'wp-seopress-pro'),
+                'label' => __('Alignment', 'webseo'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => __('Left', 'wp-seopress-pro'),
+                        'title' => __('Left', 'webseo'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => __('Center', 'wp-seopress-pro'),
+                        'title' => __('Center', 'webseo'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => __('Right', 'wp-seopress-pro'),
+                        'title' => __('Right', 'webseo'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
@@ -123,7 +123,7 @@ class SEOPress_breadcrumbs_Widget extends Widget_Base
         $this->start_controls_section(
             'style_section',
             [
-                'label' => __('Style', 'wp-seopress-pro'),
+                'label' => __('Style', 'webseo'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -139,7 +139,7 @@ class SEOPress_breadcrumbs_Widget extends Widget_Base
         $this->add_control(
             'text_color',
             [
-                'label' => __('Text Color', 'wp-seopress-pro'),
+                'label' => __('Text Color', 'webseo'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .breadcrumb' => 'color: {{VALUE}}',
@@ -150,7 +150,7 @@ class SEOPress_breadcrumbs_Widget extends Widget_Base
         $this->add_control(
             'link_color',
             [
-                'label' => __('Link Color', 'wp-seopress-pro'),
+                'label' => __('Link Color', 'webseo'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .breadcrumb a' => 'color: {{VALUE}}',
@@ -161,7 +161,7 @@ class SEOPress_breadcrumbs_Widget extends Widget_Base
         $this->add_control(
             'link_hover_color',
             [
-                'label' => __('Link hover Color', 'wp-seopress-pro'),
+                'label' => __('Link hover Color', 'webseo'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .breadcrumb a:hover' => 'color: {{VALUE}}',

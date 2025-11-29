@@ -16,8 +16,8 @@ function seopress_pro_xml_sitemap_video_enable_callback()
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_html_e('Enable Video Sitemap', 'wp-seopress-pro'); ?>
-	<?php echo seopress_tooltip_link(esc_url($docs['sitemaps']['video']), esc_html__('Guide to enable XML video sitemap - new window', 'wp-seopress-pro')); ?>
+	<?php esc_html_e('Enable Video Sitemap', 'webseo'); ?>
+	<?php echo seopress_tooltip_link(esc_url($docs['sitemaps']['video']), esc_html__('Guide to enable XML video sitemap - new window', 'webseo')); ?>
 </label>
 
 <?php if ('1' == $check) { ?>
@@ -27,18 +27,18 @@ function seopress_pro_xml_sitemap_video_enable_callback()
 <p class="description seopress-help">
 	<?php
 		/* translators: %s: documentation URL */
-		echo wp_kses_post(sprintf(__('Your video sitemap is empty? Read our guide to learn more about <a href="%s" target="_blank">adding videos to your sitemap.</a>', 'wp-seopress-pro'), esc_url($docs['sitemaps']['video'])));
+		echo wp_kses_post(sprintf(__('Your video sitemap is empty? Read our guide to learn more about <a href="%s" target="_blank">adding videos to your sitemap.</a>', 'webseo'), esc_url($docs['sitemaps']['video'])));
 	?>
 </p>
 
 <p class="description">
-	<?php esc_html_e('YouTube videos are automatically added when you create / save a post, page or post type.', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('YouTube videos are automatically added when you create / save a post, page or post type.', 'webseo'); ?>
 </p>
 
 <p class="description">
 	<?php
 		/* translators: %s: documentation URL */
-		echo wp_kses_post(sprintf(__('<a href="%s">Regenerate automatic XML Video sitemap for YouTube?</a>', 'wp-seopress-pro'), esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_video'))));
+		echo wp_kses_post(sprintf(__('<a href="%s">Regenerate automatic XML Video sitemap for YouTube?</a>', 'webseo'), esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_video'))));
 	?>
 </p>
 

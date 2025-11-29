@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_htaccess_file', // ID
-    __('Edit your htaccess file', 'wp-seopress-pro'), // Title
+    __('Edit your htaccess file', 'webseo'), // Title
     'seopress_htaccess_file_callback', // Callback
     'seopress-settings-admin-htaccess', // Page
     'seopress_setting_section_htaccess' // Section

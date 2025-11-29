@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WebSEO 9.3.0.4\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-seopress-pro\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/webseo\n"
 "Last-Translator: WebSEO Team <contact@webseo.com>\n"
 "Language-Team: WebSEO Team <contact@webseo.com>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2025-11-10T13:29:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
-"X-Domain: wp-seopress-pro\n"
+"X-Domain: webseo\n"
 
 #. Plugin Name of the plugin
 #: seopress-pro.php

@@ -11,35 +11,35 @@ if ('1' !== seopress_get_toggle_option('bot')) {
  */
 function seopress_bot_fn() {
 	$labels = [
-		'name'                  => _x('Broken links', 'Post Type General Name', 'wp-seopress-pro'),
-		'singular_name'         => _x('Broken links', 'Post Type Singular Name', 'wp-seopress-pro'),
-		'menu_name'             => __('Broken links', 'wp-seopress-pro'),
-		'name_admin_bar'        => __('Broken links', 'wp-seopress-pro'),
-		'archives'              => __('Item Links', 'wp-seopress-pro'),
-		'parent_item_colon'     => __('Parent Link:', 'wp-seopress-pro'),
-		'all_items'             => __('All Broken links', 'wp-seopress-pro'),
-		'add_new_item'          => __('Add New Link', 'wp-seopress-pro'),
-		'add_new'               => __('Add link', 'wp-seopress-pro'),
-		'new_item'              => __('New link', 'wp-seopress-pro'),
-		'edit_item'             => __('Edit link', 'wp-seopress-pro'),
-		'update_item'           => __('Update Link', 'wp-seopress-pro'),
-		'view_item'             => __('View Link', 'wp-seopress-pro'),
-		'search_items'          => __('Search Link', 'wp-seopress-pro'),
-		'not_found'             => __('Not found', 'wp-seopress-pro'),
-		'not_found_in_trash'    => __('Not found in Trash', 'wp-seopress-pro'),
-		'featured_image'        => __('Featured Image', 'wp-seopress-pro'),
-		'set_featured_image'    => __('Set featured image', 'wp-seopress-pro'),
-		'remove_featured_image' => __('Remove featured image', 'wp-seopress-pro'),
-		'use_featured_image'    => __('Use as featured image', 'wp-seopress-pro'),
-		'insert_into_item'      => __('Insert into item', 'wp-seopress-pro'),
-		'uploaded_to_this_item' => __('Uploaded to this item', 'wp-seopress-pro'),
-		'items_list'            => __('Redirections list', 'wp-seopress-pro'),
-		'items_list_navigation' => __('Redirections list navigation', 'wp-seopress-pro'),
-		'filter_items_list'     => __('Filter redirections list', 'wp-seopress-pro'),
+		'name'                  => _x('Broken links', 'Post Type General Name', 'webseo'),
+		'singular_name'         => _x('Broken links', 'Post Type Singular Name', 'webseo'),
+		'menu_name'             => __('Broken links', 'webseo'),
+		'name_admin_bar'        => __('Broken links', 'webseo'),
+		'archives'              => __('Item Links', 'webseo'),
+		'parent_item_colon'     => __('Parent Link:', 'webseo'),
+		'all_items'             => __('All Broken links', 'webseo'),
+		'add_new_item'          => __('Add New Link', 'webseo'),
+		'add_new'               => __('Add link', 'webseo'),
+		'new_item'              => __('New link', 'webseo'),
+		'edit_item'             => __('Edit link', 'webseo'),
+		'update_item'           => __('Update Link', 'webseo'),
+		'view_item'             => __('View Link', 'webseo'),
+		'search_items'          => __('Search Link', 'webseo'),
+		'not_found'             => __('Not found', 'webseo'),
+		'not_found_in_trash'    => __('Not found in Trash', 'webseo'),
+		'featured_image'        => __('Featured Image', 'webseo'),
+		'set_featured_image'    => __('Set featured image', 'webseo'),
+		'remove_featured_image' => __('Remove featured image', 'webseo'),
+		'use_featured_image'    => __('Use as featured image', 'webseo'),
+		'insert_into_item'      => __('Insert into item', 'webseo'),
+		'uploaded_to_this_item' => __('Uploaded to this item', 'webseo'),
+		'items_list'            => __('Redirections list', 'webseo'),
+		'items_list_navigation' => __('Redirections list navigation', 'webseo'),
+		'filter_items_list'     => __('Filter redirections list', 'webseo'),
 	];
 	$args = [
-		'label'                 => __('Broken links', 'wp-seopress-pro'),
-		'description'           => __('List of broken links', 'wp-seopress-pro'),
+		'label'                 => __('Broken links', 'webseo'),
+		'description'           => __('List of broken links', 'webseo'),
 		'labels'                => $labels,
 		'supports'              => ['title', 'editor', 'custom-fields'],
 		'hierarchical'          => false,
@@ -79,7 +79,7 @@ function seopress_bot_bulk_inline_actions($actions, $post) {
 		$actions   = [
 			'edit' => sprintf('<a href="%1$s">%2$s</a>',
 			esc_url($edit_link),
-			esc_html(__('Edit source to fix link', 'wp-seopress-pro'))),
+			esc_html(__('Edit source to fix link', 'webseo'))),
 		];
 
 		$actions['trash']=$trash;
@@ -107,7 +107,7 @@ function seopress_bot_filters_cpt() {
 		$status = ['200', '301', '302', '307', '400', '401', '402', '403', '404', '410', '451', '500'];
 
 		echo "<select name='bot-status' id='bot-status' class='postform'>";
-		echo "<option value=''>" . esc_html__('Show All', 'wp-seopress-pro') . '</option>';
+		echo "<option value=''>" . esc_html__('Show All', 'webseo') . '</option>';
 		foreach ($status as $code) {
 			echo '<option value=' . absint($code), isset($_GET[$code]) === $code ? ' selected="selected"' : '','>' . absint($code) . '</option>';
 		}
@@ -145,16 +145,16 @@ function seopress_bot_set_messages($messages) {
 
 	$messages[$post_type] = [
 		0  => '', // Unused. Messages start at index 1.
-		1  => /* translators: %s singular name of the post type */ sprintf(__('%s updated.', 'wp-seopress-pro'), esc_html($singular)),
-		2  => __('Custom field updated.', 'wp-seopress-pro'),
-		3  => __('Custom field deleted.', 'wp-seopress-pro'),
-		4  => /* translators: %s singular name of the post type */ sprintf(__('%s updated.', 'wp-seopress-pro'), esc_html($singular)),
-		5  => isset($_GET['revision']) ? /* translators: %1$s singular name of the post type, %2$s title of the revision */ sprintf(__('%1$s restored to revision from %2$s', 'wp-seopress-pro'), esc_html($singular), wp_post_revision_title((int) $_GET['revision'], false)) : false,
-		6  => /* translators: %s singular name of the post type */ sprintf(__('%s published.', 'wp-seopress-pro'), esc_html($singular)),
-		7  => __('Page saved.', 'wp-seopress-pro'),
-		8  => /* translators: %s singular name of the post type */ sprintf(__('%s submitted.', 'wp-seopress-pro'), esc_html($singular)),
-		9  => /* translators: %1$s singular name of the post type, %2$s scheduled date */ sprintf(__('%1$s scheduled for: <strong>%2$s</strong>. ', 'wp-seopress-pro'), esc_html($singular), date_i18n(__('M j, Y @ G:i', 'wp-seopress-pro'), strtotime($post->post_date)), esc_url(get_permalink($post_ID))),
-		10 => /* translators: %s singular name of the post type */ sprintf(__('%s draft updated.', 'wp-seopress-pro'), esc_html($singular)),
+		1  => /* translators: %s singular name of the post type */ sprintf(__('%s updated.', 'webseo'), esc_html($singular)),
+		2  => __('Custom field updated.', 'webseo'),
+		3  => __('Custom field deleted.', 'webseo'),
+		4  => /* translators: %s singular name of the post type */ sprintf(__('%s updated.', 'webseo'), esc_html($singular)),
+		5  => isset($_GET['revision']) ? /* translators: %1$s singular name of the post type, %2$s title of the revision */ sprintf(__('%1$s restored to revision from %2$s', 'webseo'), esc_html($singular), wp_post_revision_title((int) $_GET['revision'], false)) : false,
+		6  => /* translators: %s singular name of the post type */ sprintf(__('%s published.', 'webseo'), esc_html($singular)),
+		7  => __('Page saved.', 'webseo'),
+		8  => /* translators: %s singular name of the post type */ sprintf(__('%s submitted.', 'webseo'), esc_html($singular)),
+		9  => /* translators: %1$s singular name of the post type, %2$s scheduled date */ sprintf(__('%1$s scheduled for: <strong>%2$s</strong>. ', 'webseo'), esc_html($singular), date_i18n(__('M j, Y @ G:i', 'webseo'), strtotime($post->post_date)), esc_url(get_permalink($post_ID))),
+		10 => /* translators: %s singular name of the post type */ sprintf(__('%s draft updated.', 'webseo'), esc_html($singular)),
 	];
 
 	return $messages;
@@ -164,11 +164,11 @@ add_filter('post_updated_messages', 'seopress_bot_set_messages');
 
 function seopress_bot_set_messages_list($bulk_messages, $bulk_counts) {
 	$bulk_messages['seopress_bot'] = [
-		'updated'   => /* translators: %d number of entries updated */ _n('%d broken link updated.', '%d broken links updated.', $bulk_counts['updated'], 'wp-seopress-pro'),
-		'locked'    => /* translators: %d number of entries updated */ _n('%d broken link not updated, somebody is editing it.', '%d broken links not updated, somebody is editing them.', $bulk_counts['locked'], 'wp-seopress-pro'),
-		'deleted'   => /* translators: %d number of entries deleted */ _n('%d broken link permanently deleted.', '%d broken links permanently deleted.', $bulk_counts['deleted'], 'wp-seopress-pro'),
-		'trashed'   => /* translators: %d number of entries trashed */ _n('%d broken link moved to the Trash.', '%d broken links moved to the Trash.', $bulk_counts['trashed'], 'wp-seopress-pro'),
-		'untrashed' => /* translators: %d number of entries untrashed */ _n('%d broken link restored from the Trash.', '%d broken links restored from the Trash.', $bulk_counts['untrashed'], 'wp-seopress-pro'),
+		'updated'   => /* translators: %d number of entries updated */ _n('%d broken link updated.', '%d broken links updated.', $bulk_counts['updated'], 'webseo'),
+		'locked'    => /* translators: %d number of entries updated */ _n('%d broken link not updated, somebody is editing it.', '%d broken links not updated, somebody is editing them.', $bulk_counts['locked'], 'webseo'),
+		'deleted'   => /* translators: %d number of entries deleted */ _n('%d broken link permanently deleted.', '%d broken links permanently deleted.', $bulk_counts['deleted'], 'webseo'),
+		'trashed'   => /* translators: %d number of entries trashed */ _n('%d broken link moved to the Trash.', '%d broken links moved to the Trash.', $bulk_counts['trashed'], 'webseo'),
+		'untrashed' => /* translators: %d number of entries untrashed */ _n('%d broken link restored from the Trash.', '%d broken links restored from the Trash.', $bulk_counts['untrashed'], 'webseo'),
 	];
 
 	return $bulk_messages;
@@ -186,7 +186,7 @@ function seopress_bot_btn() {
 		?>
 		<script>
 		jQuery(function(){
-			jQuery("body.post-type-seopress_bot .wrap h1").append('<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-bot-batch#tab=tab_seopress_scan')); ?>" class="page-title-action"><?php esc_attr_e('Scan broken links', 'wp-seopress-pro'); ?></a> <a href="<?php echo esc_url(admin_url('admin.php?page=seopress-bot-batch')); ?>" class="page-title-action"><?php esc_attr_e('Export to CSV', 'wp-seopress-pro'); ?></a>');
+			jQuery("body.post-type-seopress_bot .wrap h1").append('<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-bot-batch#tab=tab_seopress_scan')); ?>" class="page-title-action"><?php esc_attr_e('Scan broken links', 'webseo'); ?></a> <a href="<?php echo esc_url(admin_url('admin.php?page=seopress-bot-batch')); ?>" class="page-title-action"><?php esc_attr_e('Export to CSV', 'webseo'); ?></a>');
 		});
 		</script>
 	<?php
@@ -204,13 +204,13 @@ add_filter('manage_edit-seopress_bot_columns', 'seopress_bot_count_columns');
 add_action('manage_seopress_bot_posts_custom_column', 'seopress_bot_count_display_column', 10, 2);
 
 function seopress_bot_count_columns($columns) {
-	$columns['seopress_bot_broken_link']    = __('Broken link', 'wp-seopress-pro');
-	$columns['seopress_bot_count']          = __('Count', 'wp-seopress-pro');
-	$columns['seopress_bot_status']         = __('Status', 'wp-seopress-pro');
-	$columns['seopress_bot_type']           = __('Type', 'wp-seopress-pro');
-	$columns['seopress_bot_anchor']         = __('Anchor text', 'wp-seopress-pro');
-	$columns['seopress_bot_source']         = __('Source', 'wp-seopress-pro');
-	$columns['seopress_bot_cpt']            = __('Post type', 'wp-seopress-pro');
+	$columns['seopress_bot_broken_link']    = __('Broken link', 'webseo');
+	$columns['seopress_bot_count']          = __('Count', 'webseo');
+	$columns['seopress_bot_status']         = __('Status', 'webseo');
+	$columns['seopress_bot_type']           = __('Type', 'webseo');
+	$columns['seopress_bot_anchor']         = __('Anchor text', 'webseo');
+	$columns['seopress_bot_source']         = __('Source', 'webseo');
+	$columns['seopress_bot_cpt']            = __('Post type', 'webseo');
 	unset($columns['date']);
 	unset($columns['title']);
 

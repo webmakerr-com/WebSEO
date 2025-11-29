@@ -12,7 +12,7 @@ function seopress_get_schema_metaboxe_faq($seopress_pro_rich_snippets_data, $key
 <div class="wrap-rich-snippets-item wrap-rich-snippets-faq">
 	<div class="seopress-notice">
 		<p>
-			<?php esc_html_e('Mark up your Frequently Asked Questions page with JSON-LD to try to get the position 0 in search results. ', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Mark up your Frequently Asked Questions page with JSON-LD to try to get the position 0 in search results. ', 'webseo'); ?>
 		</p>
 	</div>
 	<?php //Init $seopress_faq array if empty
@@ -32,7 +32,7 @@ function seopress_get_schema_metaboxe_faq($seopress_pro_rich_snippets_data, $key
 			<h3 class="accordion-section-title" tabindex="0">
 				<?php if (empty($check_question)) { ?>
 					<span style="color:red">
-					<?php esc_html_e('Empty Question', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Empty Question', 'webseo'); ?>
 					</span>
 				<?php } else {
 					echo esc_attr($check_question);
@@ -41,7 +41,7 @@ function seopress_get_schema_metaboxe_faq($seopress_pro_rich_snippets_data, $key
 				if (empty($check_answer)) {
 					echo ' - '; ?>
 					<span style="color:red">
-						<?php esc_html_e('Empty Answer', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Empty Answer', 'webseo'); ?>
 					</span>
 					<?php
 				} ?>
@@ -51,32 +51,32 @@ function seopress_get_schema_metaboxe_faq($seopress_pro_rich_snippets_data, $key
 					<p>
 						<label
 							for="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][<?php echo esc_attr($key); ?>][question]">
-							<?php esc_html_e('Question (required)', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Question (required)', 'webseo'); ?>
 						</label>
 						<input
 							id="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][<?php echo esc_attr($key); ?>][question]"
 							type="text"
 							name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][<?php echo esc_attr($key); ?>][question]"
-							placeholder="<?php esc_html_e('Enter your question', 'wp-seopress-pro'); ?>"
-							aria-label="<?php esc_html_e('Question', 'wp-seopress-pro'); ?>"
+							placeholder="<?php esc_html_e('Enter your question', 'webseo'); ?>"
+							aria-label="<?php esc_html_e('Question', 'webseo'); ?>"
 							value="<?php echo esc_attr($check_question); ?>" />
 					</p>
 					<p>
 						<label
 							for="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][<?php echo esc_attr($key); ?>][answer]">
-							<?php esc_html_e('Answer (required)', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Answer (required)', 'webseo'); ?>
 						</label>
 						<textarea
 							id="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][<?php echo esc_attr($key); ?>][answer]"
 							name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][<?php echo esc_attr($key); ?>][answer]"
-							placeholder="<?php esc_html_e('Enter your answer', 'wp-seopress-pro'); ?>"
-							aria-label="<?php esc_html_e('Answer', 'wp-seopress-pro'); ?>"
+							placeholder="<?php esc_html_e('Enter your answer', 'webseo'); ?>"
+							aria-label="<?php esc_html_e('Answer', 'webseo'); ?>"
 							rows="8"><?php echo esc_textarea($check_answer); ?></textarea>
 					</p>
 
 					<p>
 						<a href="#" class="remove-faq button">
-							<?php esc_html_e('Remove question', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Remove question', 'webseo'); ?>
 						</a>
 					</p>
 				</div>
@@ -90,39 +90,39 @@ function seopress_get_schema_metaboxe_faq($seopress_pro_rich_snippets_data, $key
 	<div id="wrap-faq" data-count="1">
 		<div class="faq">
 			<h3 class="accordion-section-title" tabindex="0">
-				<?php esc_html_e('Question', 'wp-seopress-pro'); ?>
+				<?php esc_html_e('Question', 'webseo'); ?>
 			</h3>
 			<div class="accordion-section-content">
 				<div class="inside">
 					<p>
 						<label
 							for="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][0][question]">
-							<?php esc_html_e('Question (required)', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Question (required)', 'webseo'); ?>
 						</label>
 						<input
 							id="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][0][question]"
 							type="text"
 							name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][0][question]"
-							placeholder="<?php esc_html_e('Enter your question', 'wp-seopress-pro'); ?>"
-							aria-label="<?php esc_html_e('Question', 'wp-seopress-pro'); ?>"
+							placeholder="<?php esc_html_e('Enter your question', 'webseo'); ?>"
+							aria-label="<?php esc_html_e('Question', 'webseo'); ?>"
 							value="" />
 					</p>
 					<p>
 						<label
 							for="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][0][answer]">
-							<?php esc_html_e('Answer (required)', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Answer (required)', 'webseo'); ?>
 						</label>
 						<textarea
 							id="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][0][answer]"
 							name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_faq][0][answer]"
-							placeholder="<?php esc_html_e('Enter your answer', 'wp-seopress-pro'); ?>"
-							aria-label="<?php esc_html_e('Answer', 'wp-seopress-pro'); ?>"
+							placeholder="<?php esc_html_e('Enter your answer', 'webseo'); ?>"
+							aria-label="<?php esc_html_e('Answer', 'webseo'); ?>"
 							rows="8"></textarea>
 					</p>
 
 					<p>
 						<a href="#" class="remove-faq button">
-							<?php esc_html_e('Remove question', 'wp-seopress-pro'); ?>
+							<?php esc_html_e('Remove question', 'webseo'); ?>
 						</a>
 					</p>
 				</div>
@@ -132,7 +132,7 @@ function seopress_get_schema_metaboxe_faq($seopress_pro_rich_snippets_data, $key
 	<?php } ?>
 	<p>
 		<a href="#" id="add-faq" class="add-faq <?php echo esc_attr(seopress_btn_secondary_classes()); ?>">
-			<?php esc_html_e('Add question', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Add question', 'webseo'); ?>
 		</a>
 	</p>
 </div>

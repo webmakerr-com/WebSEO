@@ -121,25 +121,25 @@ class VideoSitemap implements ExecuteHooks {
     protected function getLabelByField($field){
         switch($field){
             case 'url':
-                return __('Video URL (required)', 'wp-seopress-pro');
+                return __('Video URL (required)', 'webseo');
             case 'title':
-                return __('Video Title (required)', 'wp-seopress-pro');
+                return __('Video Title (required)', 'webseo');
             case 'desc':
-                return __('Video Description (required)', 'wp-seopress-pro');
+                return __('Video Description (required)', 'webseo');
             case 'thumbnail':
-                return __('Video Thumbnail (required)', 'wp-seopress-pro');
+                return __('Video Thumbnail (required)', 'webseo');
             case 'tag':
-                return __('Video tags', 'wp-seopress-pro');
+                return __('Video tags', 'webseo');
             case 'family_friendly';
-                return __('NOT family friendly?', 'wp-seopress-pro');
+                return __('NOT family friendly?', 'webseo');
             case 'internal_video';
-                return __('NOT an external video (e.g. video hosting on YouTube, Vimeo, Wistia...)? Check this if your video is hosting on this server.', 'wp-seopress-pro');
+                return __('NOT an external video (e.g. video hosting on YouTube, Vimeo, Wistia...)? Check this if your video is hosting on this server.', 'webseo');
             case 'duration':
-                return __("Video Duration (recommended)", 'wp-seopress-pro');
+                return __("Video Duration (recommended)", 'webseo');
             case 'rating':
-                return __("Video Rating", 'wp-seopress-pro');
+                return __("Video Rating", 'webseo');
             case 'view_count':
-                return __("View count", 'wp-seopress-pro');
+                return __("View count", 'webseo');
 
         }
     }
@@ -150,19 +150,19 @@ class VideoSitemap implements ExecuteHooks {
             case 'view_count':
                 return '';
             case 'title':
-                return __('Default: title tag, if not available, post title.', 'wp-seopress-pro');
+                return __('Default: title tag, if not available, post title.', 'webseo');
             case 'desc':
-                return __('2048 characters max.; default: meta description. If not available, use the beginning of the post content.', 'wp-seopress-pro');
+                return __('2048 characters max.; default: meta description. If not available, use the beginning of the post content.', 'webseo');
             case 'thumbnail':
-                return __('Minimum size: 160x90px (1920x1080 max), JPG, PNG or GIF formats. Default: your post featured image.', 'wp-seopress-pro');
+                return __('Minimum size: 160x90px (1920x1080 max), JPG, PNG or GIF formats. Default: your post featured image.', 'webseo');
             case 'tag':
-                return __('32 tags max., separate tags with commas. Default: target keywords + post tags if available.', 'wp-seopress-pro');
+                return __('32 tags max., separate tags with commas. Default: target keywords + post tags if available.', 'webseo');
             case 'internal_video_meta';
-                return __('The video will be available only to users with SafeSearch turned off.?', 'wp-seopress-pro');
+                return __('The video will be available only to users with SafeSearch turned off.?', 'webseo');
             case 'duration':
-                return __("The duration of the video in seconds. Value must be between 0 and 28800 (8 hours).", 'wp-seopress-pro');
+                return __("The duration of the video in seconds. Value must be between 0 and 28800 (8 hours).", 'webseo');
             case 'rating':
-                return __("Allowed values are float numbers in the range 0.0 to 5.0.", 'wp-seopress-pro');
+                return __("Allowed values are float numbers in the range 0.0 to 5.0.", 'webseo');
 
         }
     }
@@ -243,9 +243,9 @@ class VideoSitemap implements ExecuteHooks {
                 'use_default'        => '',
                 'default'            => '',
                 'value'              => !empty(get_post_meta($id, '_seopress_video_disabled', true)),
-                'label'              => __('Exclude this post from Video Sitemap?', 'wp-seopress-pro'),
+                'label'              => __('Exclude this post from Video Sitemap?', 'webseo'),
                 'visible'            => true,
-                'description'        => __('YouTube videos are automatically added when you create / save a post, page or post type. If your post is set to noindex, it will be automatically excluded from the sitemap.', 'wp-seopress-pro'),
+                'description'        => __('YouTube videos are automatically added when you create / save a post, page or post type. If your post is set to noindex, it will be automatically excluded from the sitemap.', 'webseo'),
             ],
             [
                 'key' => 'videos',

@@ -24,7 +24,7 @@ if (!function_exists('seopress_get_default_email_template')) {
             'header_image' => '',
             'footer_text'  => sprintf(
                 /* translators: %s: Site name */
-                esc_html__('Sent from %s', 'wp-seopress-pro'),
+                esc_html__('Sent from %s', 'webseo'),
                 get_bloginfo('name')
             ),
             'text_color'   => '#444444',

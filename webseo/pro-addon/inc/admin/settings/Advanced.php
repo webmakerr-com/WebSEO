@@ -5,7 +5,7 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 //Advanced SECTION=========================================================================
 add_settings_field(
     'seopress_advanced_appearance_ps_col', // ID
-    __('Show Google Page Speed column in post types', 'wp-seopress-pro'), // Title
+    __('Show Google Page Speed column in post types', 'webseo'), // Title
     'seopress_pro_advanced_appearance_ps_col_callback', // Callback
     'seopress-settings-admin-advanced-appearance', // Page
     'seopress_setting_section_advanced_appearance_col' // Section
@@ -13,7 +13,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_advanced_appearance_search_console', // ID
-    __('Show search console data', 'wp-seopress-pro'), // Title
+    __('Show search console data', 'webseo'), // Title
     'seopress_pro_advanced_appearance_search_console_callback', // Callback
     'seopress-settings-admin-advanced-appearance', // Page
     'seopress_setting_section_advanced_appearance_col' // Section
@@ -51,7 +51,7 @@ function seopress_pro_settings_advanced_url_rewriting()
 {
     add_settings_field(
         'seopress_rewrite_search', // ID
-        __('Custom URL for search results', 'wp-seopress-pro'), // Title
+        __('Custom URL for search results', 'webseo'), // Title
         'seopress_rewrite_search_callback', // Callback
         'seopress-settings-admin-advanced-advanced', // Page
         'seopress_setting_section_advanced_advanced_crawling' // Section
@@ -60,7 +60,7 @@ function seopress_pro_settings_advanced_url_rewriting()
 
 add_settings_field(
     'seopress_advanced_appearance_dashboard_livechat', // ID
-    __('Disable Live Chat', 'wp-seopress-pro'), // Title
+    __('Disable Live Chat', 'webseo'), // Title
     'seopress_advanced_appearance_dashboard_livechat_callback', // Callback
     'seopress-settings-admin-advanced-appearance', // Page
     'seopress_setting_section_advanced_appearance_dashboard' // Section

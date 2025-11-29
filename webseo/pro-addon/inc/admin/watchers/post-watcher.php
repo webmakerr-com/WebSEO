@@ -12,8 +12,8 @@ function seopress_pro_post_watcher_scripts(){
 		wp_enqueue_script( 'seopress-pro-post-watcher', SEOPRESS_PRO_PUBLIC_URL . '/editor/post-watcher/post-watcher.js', ['wp-data'], SEOPRESS_PRO_VERSION, true );
 
 		$noticeData = [
-			'message'     => __( 'We have detected that you have changed the slug of this post. We suggest you to redirect this URL.', 'wp-seopress-pro'),
-			'actionLabel' => __('Create a redirection (new window)', 'wp-seopress-pro'),
+			'message'     => __( 'We have detected that you have changed the slug of this post. We suggest you to redirect this URL.', 'webseo'),
+			'actionLabel' => __('Create a redirection (new window)', 'webseo'),
 			'actionUrl'   => admin_url( 'post-new.php?post_type=seopress_404&prepare_redirect=1' ),
 		];
 
@@ -79,10 +79,10 @@ function seopress_watcher_post_trash($post_id)
 	/* translators: %s: post permalink */
 	$message = '<p>';
     /* translators: %s URL of the post deleted */
-	$message .= sprintf( __('We have detected that you have deleted a post (<code>%s</code>).', 'wp-seopress-pro'), $url);
+	$message .= sprintf( __('We have detected that you have deleted a post (<code>%s</code>).', 'webseo'), $url);
 	$message .= '</p>';
 
-	$message .= '<p>' . __('We suggest you to redirect this URL to avoid any SEO issues, and keep an optimal user experience.', 'wp-seopress-pro') . '</p>';
+	$message .= '<p>' . __('We suggest you to redirect this URL to avoid any SEO issues, and keep an optimal user experience.', 'webseo') . '</p>';
 
 	seopress_create_notification_for_redirect([
 		"id" => uniqid('', true),
@@ -165,13 +165,13 @@ function seopress_watcher_slug_change( $post_id, $post, $post_before ){
 	$message = '<p>';
 	$message .= sprintf(
 		/* translators: %s: post name (slug) %s: url redirect */
-		__('We have detected that you have changed a slug (<code>%s</code>) to (<code>%s</code>).', 'wp-seopress-pro'),
+		__('We have detected that you have changed a slug (<code>%s</code>) to (<code>%s</code>).', 'webseo'),
 		$url_post_before,
 		$url_post
 	);
 	$message .= '</p>';
 
-	$message .= '<p>' . __('We suggest you to redirect this URL.', 'wp-seopress-pro') . '</p>';
+	$message .= '<p>' . __('We suggest you to redirect this URL.', 'webseo') . '</p>';
 
 	seopress_create_notification_for_redirect([
 		"id" => uniqid('', true),

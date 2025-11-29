@@ -7,17 +7,17 @@ add_action('seopress_ca_tab_before', 'seopress_pro_ca_tab_before');
 function seopress_pro_ca_tab_before() {
     ?>
     <ul class="wrap-ca-list">
-        <li><a href="#seopress-ca-tabs-2"><?php esc_html_e('Overview', 'wp-seopress-pro'); ?></a></li>
+        <li><a href="#seopress-ca-tabs-2"><?php esc_html_e('Overview', 'webseo'); ?></a></li>
         <?php
         if (version_compare(SEOPRESS_PRO_VERSION, '5.7', '>=')) { ?>
                 <?php if (seopress_get_toggle_option('inspect-url') ==='1') { ?>
-                    <li><a href="#seopress-ca-tabs-1"><?php esc_html_e('Inspect with Google', 'wp-seopress-pro'); ?></a></li>
+                    <li><a href="#seopress-ca-tabs-1"><?php esc_html_e('Inspect with Google', 'webseo'); ?></a></li>
                 <?php } ?>
 
         <?php
     }
     ?>
-        <li><a href="#seopress-ca-tabs-3"><?php esc_html_e('Internal Linking', 'wp-seopress-pro'); ?></a></li>
+        <li><a href="#seopress-ca-tabs-3"><?php esc_html_e('Internal Linking', 'webseo'); ?></a></li>
     </ul>
     <?php
 }
@@ -29,17 +29,17 @@ function seopress_pro_ca_before() {
     <div class="col-right">
         <p>
             <label for="seopress_google_suggest_kw_meta">
-                <?php esc_html_e('Google suggestions', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Google suggestions', 'webseo'); ?>
             </label>
-            <span class="description"><?php esc_html_e('Enter a keyword, or a phrase, to find the top 10 Google suggestions instantly. This is useful if you want to work with the long tail technique.', 'wp-seopress-pro'); ?></span>
+            <span class="description"><?php esc_html_e('Enter a keyword, or a phrase, to find the top 10 Google suggestions instantly. This is useful if you want to work with the long tail technique.', 'webseo'); ?></span>
             <input id="seopress_google_suggest_kw_meta" type="text" name="seopress_google_suggest_kw"
-                placeholder="<?php esc_html_e('Get suggestions from Google', 'wp-seopress-pro'); ?>"
+                placeholder="<?php esc_html_e('Get suggestions from Google', 'webseo'); ?>"
                 aria-label="Google suggestions" value="">
-            <span class="description"><?php esc_html_e('Click on a suggestion below to add it as a target keyword.', 'wp-seopress-pro'); ?></span>
+            <span class="description"><?php esc_html_e('Click on a suggestion below to add it as a target keyword.', 'webseo'); ?></span>
         </p>
         <button id="seopress_get_suggestions" type="button"
             class="<?php echo seopress_btn_secondary_classes(); ?>">
-            <?php esc_html_e('Get suggestions!', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Get suggestions!', 'webseo'); ?>
         </button>
 
         <ul id='seopress_suggestions'></ul>

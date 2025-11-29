@@ -7,7 +7,7 @@ class ACP_Column_sp_canonical extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_canonical' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'Canonical', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'Canonical', 'webseo' ) );
 	}
 
 	public function get_meta_key() {

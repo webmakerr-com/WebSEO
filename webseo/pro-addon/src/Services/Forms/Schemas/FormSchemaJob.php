@@ -44,103 +44,103 @@ class FormSchemaJob extends FormApi {
     protected function getLabelByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_jobs_name':
-                return __('Job title', 'wp-seopress-pro');
+                return __('Job title', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_desc':
-                return __('Job description', 'wp-seopress-pro');
+                return __('Job description', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_date_posted':
-                return __('Published date', 'wp-seopress-pro');
+                return __('Published date', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_valid_through':
-                return __('Expiration date', 'wp-seopress-pro');
+                return __('Expiration date', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_employment_type':
-                return __('Type of employment', 'wp-seopress-pro');
+                return __('Type of employment', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_identifier_name':
-                return __('Identifier name', 'wp-seopress-pro');
+                return __('Identifier name', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_identifier_value':
-                return __('Identifier value', 'wp-seopress-pro');
+                return __('Identifier value', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_organization':
-                return __('Organization that hires', 'wp-seopress-pro');
+                return __('Organization that hires', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_same_as':
-                return __('Organization website', 'wp-seopress-pro');
+                return __('Organization website', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_logo':
-                return __('Organization logo', 'wp-seopress-pro');
+                return __('Organization logo', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_address_street':
-                return __('Street address', 'wp-seopress-pro');
+                return __('Street address', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_address_locality':
-                return __('Locality address', 'wp-seopress-pro');
+                return __('Locality address', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_address_region':
-                return __('Region', 'wp-seopress-pro');
+                return __('Region', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_postal_code':
-                return __('Postal code', 'wp-seopress-pro');
+                return __('Postal code', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_country':
-                return __('Country', 'wp-seopress-pro');
+                return __('Country', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_remote':
-                return __('Remote job', 'wp-seopress-pro');
+                return __('Remote job', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_direct_apply':
-                return __('Direct apply', 'wp-seopress-pro');
+                return __('Direct apply', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_salary':
-                return __('Salary', 'wp-seopress-pro');
+                return __('Salary', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_salary_currency':
-                return __('Currency', 'wp-seopress-pro');
+                return __('Currency', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_salary_unit':
-                return __('Select your unit text', 'wp-seopress-pro');
+                return __('Select your unit text', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_location_requirement':
-                return __('Location requirement for remote job', 'wp-seopress-pro');
+                return __('Location requirement for remote job', 'webseo');
         }
     }
 
     protected function getPlaceholderByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_jobs_name':
-                return __('The title of the job (not the title of the posting). For example, "Software Engineer" or "Barista".', 'wp-seopress-pro');
+                return __('The title of the job (not the title of the posting). For example, "Software Engineer" or "Barista".', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_desc':
-                return __('The full description of the job in HTML format.', 'wp-seopress-pro');
+                return __('The full description of the job in HTML format.', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_date_posted':
             case '_seopress_pro_rich_snippets_jobs_valid_through':
-                return __('The original date that employer posted the job in ISO 8601 format. For example, "2017-01-24" or "2017-01-24T19:33:17+00:00".', 'wp-seopress-pro');
+                return __('The original date that employer posted the job in ISO 8601 format. For example, "2017-01-24" or "2017-01-24T19:33:17+00:00".', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_valid_through':
-                return __('The date when the job posting will expire in ISO 8601 format. For example, "2017-02-24" or "2017-02-24T19:33:17+00:00".', 'wp-seopress-pro');
+                return __('The date when the job posting will expire in ISO 8601 format. For example, "2017-02-24" or "2017-02-24T19:33:17+00:00".', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_employment_type':
-                return __('Type of employment, You can include more than one employmentType property.', 'wp-seopress-pro');
+                return __('Type of employment, You can include more than one employmentType property.', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_identifier_name':
-                return __("The hiring organization's unique identifier name for the job", 'wp-seopress-pro');
+                return __("The hiring organization's unique identifier name for the job", 'webseo');
             case '_seopress_pro_rich_snippets_jobs_identifier_value':
-                return __("The hiring organization's value identifier value for the job", 'wp-seopress-pro');
+                return __("The hiring organization's value identifier value for the job", 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_organization':
-                return __('The organization offering the job position. This should be the name of the company.', 'wp-seopress-pro');
+                return __('The organization offering the job position. This should be the name of the company.', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_same_as':
-                return __('The organization website URL offering the job position.', 'wp-seopress-pro');
+                return __('The organization website URL offering the job position.', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_logo':
-                return __('Select your image', 'wp-seopress-pro');
+                return __('Select your image', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_address_street':
-                return __('Street address', 'wp-seopress-pro');
+                return __('Street address', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_address_locality':
-                return __('Locality address', 'wp-seopress-pro');
+                return __('Locality address', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_address_region':
-                return __('Region', 'wp-seopress-pro');
+                return __('Region', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_postal_code':
-                return __('Postal code', 'wp-seopress-pro');
+                return __('Postal code', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_country':
-                return __('Country', 'wp-seopress-pro');
+                return __('Country', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_direct_apply':
                 /* translators: do not translate expected values, true / false  */
-                return __('Indicates whether the URL that\'s associated with this job posting enables direct application for the job. Expected value: "true" or "false".', 'wp-seopress-pro');
+                return __('Indicates whether the URL that\'s associated with this job posting enables direct application for the job. Expected value: "true" or "false".', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_salary':
-                return __('e.g. 50.00', 'wp-seopress-pro');
+                return __('e.g. 50.00', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_salary_currency':
-                return __('e.g. USD', 'wp-seopress-pro');
+                return __('e.g. USD', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_location_requirement':
-                return __('e.g. FR for France', 'wp-seopress-pro');
+                return __('e.g. FR for France', 'webseo');
         }
     }
 
     protected function getDescriptionByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_jobs_hiring_organization':
-                return __('Default: Organization name from your Knowledge Graph (SEO > Social Networks > Knowledge Graph)', 'wp-seopress-pro');
+                return __('Default: Organization name from your Knowledge Graph (SEO > Social Networks > Knowledge Graph)', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_same_as':
-                return __('Default: URL of your site', 'wp-seopress-pro');
+                return __('Default: URL of your site', 'webseo');
             case '_seopress_pro_rich_snippets_jobs_hiring_logo':
-                return __('Default: Logo from your Knowledge Graph (SEO > Social Networks > Knowledge Graph)', 'wp-seopress-pro');
+                return __('Default: Logo from your Knowledge Graph (SEO > Social Networks > Knowledge Graph)', 'webseo');
         }
     }
 
@@ -148,11 +148,11 @@ class FormSchemaJob extends FormApi {
         switch ($field) {
             case '_seopress_pro_rich_snippets_jobs_salary_unit':
                 return [
-                    ['value' => 'HOUR', 'label' => __('HOUR', 'wp-seopress-pro')],
-                    ['value' => 'DAY', 'label' => __('DAY', 'wp-seopress-pro')],
-                    ['value' => 'WEEK', 'label' => __('WEEK', 'wp-seopress-pro')],
-                    ['value' => 'MONTH', 'label' => __('MONTH', 'wp-seopress-pro')],
-                    ['value' => 'YEAR', 'label' => __('YEAR', 'wp-seopress-pro')],
+                    ['value' => 'HOUR', 'label' => __('HOUR', 'webseo')],
+                    ['value' => 'DAY', 'label' => __('DAY', 'webseo')],
+                    ['value' => 'WEEK', 'label' => __('WEEK', 'webseo')],
+                    ['value' => 'MONTH', 'label' => __('MONTH', 'webseo')],
+                    ['value' => 'YEAR', 'label' => __('YEAR', 'webseo')],
                 ];
         }
     }

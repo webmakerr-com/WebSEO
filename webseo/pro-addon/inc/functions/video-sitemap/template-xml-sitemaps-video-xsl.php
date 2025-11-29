@@ -98,26 +98,26 @@ function seopress_xml_sitemap_index_xsl() {
 	$seopress_sitemaps_xsl .='</head>';
 	$seopress_sitemaps_xsl .='<body>';
 	$seopress_sitemaps_xsl .='<div id="main">';
-	$seopress_sitemaps_xsl .='<h1>'.__('XML Sitemaps','wp-seopress-pro').'</h1>';
+	$seopress_sitemaps_xsl .='<h1>'.__('XML Sitemaps','webseo').'</h1>';
 	$seopress_sitemaps_xsl .='<p><a href="'.$home_url.'sitemaps.xml">Index sitemaps</a></p>';
 	$seopress_sitemaps_xsl .='<xsl:if test="sitemap:urlset/sitemap:url">';
-	$seopress_sitemaps_xsl .='<p>'. /* translators: %s number of videos */ sprintf(__('This XML Sitemap contains %s videos.','wp-seopress-pro'),'<xsl:value-of select="count(sitemap:urlset/sitemap:url/video:video)"/>').'</p>';
+	$seopress_sitemaps_xsl .='<p>'. /* translators: %s number of videos */ sprintf(__('This XML Sitemap contains %s videos.','webseo'),'<xsl:value-of select="count(sitemap:urlset/sitemap:url/video:video)"/>').'</p>';
 	$seopress_sitemaps_xsl .='</xsl:if>';
 	$seopress_sitemaps_xsl .='<div id="sitemaps">';
 
     $seopress_sitemaps_xsl .='<table><thead>';
 
 	$seopress_sitemaps_xsl .='<td class="col" width="20%">';
-	$seopress_sitemaps_xsl .=__('Thumbnail','wp-seopress-pro');
+	$seopress_sitemaps_xsl .=__('Thumbnail','webseo');
 	$seopress_sitemaps_xsl .='</td>';
 	$seopress_sitemaps_xsl .='<td class="col" width="40%">';
-	$seopress_sitemaps_xsl .=__('Title','wp-seopress-pro');
+	$seopress_sitemaps_xsl .=__('Title','webseo');
 	$seopress_sitemaps_xsl .='</td>';
     $seopress_sitemaps_xsl .='<td class="col" width="15%" style="text-align:center">';
-	$seopress_sitemaps_xsl .=__('Duration (sec)','wp-seopress-pro');
+	$seopress_sitemaps_xsl .=__('Duration (sec)','webseo');
 	$seopress_sitemaps_xsl .='</td>';
     $seopress_sitemaps_xsl .='<td class="col" width="25%" style="text-align:center">';
-	$seopress_sitemaps_xsl .=__('Publication Date','wp-seopress-pro');
+	$seopress_sitemaps_xsl .=__('Publication Date','webseo');
 	$seopress_sitemaps_xsl .='</td>';
 
 	$seopress_sitemaps_xsl .='</thead><tbody>';

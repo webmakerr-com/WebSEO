@@ -22,7 +22,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_breadcrumbs_enable', // ID
-    __('Enable Breadcrumbs', 'wp-seopress-pro'), // Title
+    __('Enable Breadcrumbs', 'webseo'), // Title
     'seopress_breadcrumbs_enable_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_enable' // Section
@@ -30,7 +30,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_enable_json', // ID
-    __('Enable JSON-LD Breadcrumbs', 'wp-seopress-pro'), // Title
+    __('Enable JSON-LD Breadcrumbs', 'webseo'), // Title
     'seopress_breadcrumbs_enable_json_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_enable' // Section
@@ -47,7 +47,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_breadcrumbs_separator', // ID
-    __('Breadcrumbs Separator', 'wp-seopress-pro'), // Title
+    __('Breadcrumbs Separator', 'webseo'), // Title
     'seopress_breadcrumbs_separator_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_customize' // Section
@@ -55,7 +55,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_cpt', // ID
-    __('Post type to show in Breadcrumbs', 'wp-seopress-pro'), // Title
+    __('Post type to show in Breadcrumbs', 'webseo'), // Title
     'seopress_breadcrumbs_cpt_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_customize' // Section
@@ -63,7 +63,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_tax', // ID
-    __('Taxonomy to show in Breadcrumbs', 'wp-seopress-pro'), // Title
+    __('Taxonomy to show in Breadcrumbs', 'webseo'), // Title
     'seopress_breadcrumbs_tax_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_customize' // Section
@@ -71,7 +71,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_remove_blog_page', // ID
-    __('Remove Posts page', 'wp-seopress-pro'), // Title
+    __('Remove Posts page', 'webseo'), // Title
     'seopress_breadcrumbs_remove_blog_page_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_customize' // Section
@@ -79,7 +79,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_remove_shop_page', // ID
-    __('Remove Shop page', 'wp-seopress-pro'), // Title
+    __('Remove Shop page', 'webseo'), // Title
     'seopress_breadcrumbs_remove_shop_page_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_customize' // Section
@@ -96,7 +96,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_breadcrumbs_i18n_here', // ID
-    __('Display a text before the breadcrumbs', 'wp-seopress-pro'), // Title
+    __('Display a text before the breadcrumbs', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_here_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
@@ -104,7 +104,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_i18n_home', // ID
-    __('Translation for homepage', 'wp-seopress-pro'), // Title
+    __('Translation for homepage', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_home_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
@@ -112,7 +112,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_i18n_author', // ID
-    __('Translation for "Author:"', 'wp-seopress-pro'), // Title
+    __('Translation for "Author:"', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_author_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
@@ -120,7 +120,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_i18n_404', // ID
-    __('Translation for "Error 404"', 'wp-seopress-pro'), // Title
+    __('Translation for "Error 404"', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_404_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
@@ -128,7 +128,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_i18n_search', // ID
-    __('Translation for "Search results for"', 'wp-seopress-pro'), // Title
+    __('Translation for "Search results for"', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_search_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
@@ -136,21 +136,21 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_i18n_no_results', // ID
-    __('Translation for "No results"', 'wp-seopress-pro'), // Title
+    __('Translation for "No results"', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_no_results_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
 );
 add_settings_field(
     'seopress_breadcrumbs_i18n_attachments', // ID
-    __('Translation for "Attachments"', 'wp-seopress-pro'), // Title
+    __('Translation for "Attachments"', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_attachments_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
 );
 add_settings_field(
     'seopress_breadcrumbs_i18n_paged', // ID
-    __('Translation for "Page "', 'wp-seopress-pro'), // Title
+    __('Translation for "Page "', 'webseo'), // Title
     'seopress_breadcrumbs_i18n_paged_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_i18n' // Section
@@ -167,7 +167,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_breadcrumbs_separator_disable', // ID
-    __('Disable default breadcrumbs separator', 'wp-seopress-pro'), // Title
+    __('Disable default breadcrumbs separator', 'webseo'), // Title
     'seopress_breadcrumbs_separator_disable_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_misc' // Section
@@ -175,7 +175,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_breadcrumbs_storefront', // ID
-    __('Storefront compatibility', 'wp-seopress-pro'), // Title
+    __('Storefront compatibility', 'webseo'), // Title
     'seopress_breadcrumbs_storefront_callback', // Callback
     'seopress-settings-admin-breadcrumbs', // Page
     'seopress_setting_section_breadcrumbs_misc' // Section

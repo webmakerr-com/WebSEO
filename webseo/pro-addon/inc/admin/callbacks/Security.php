@@ -34,7 +34,7 @@ function seopress_advanced_security_metaboxe_sdt_role_callback() {
             esc_attr($options['seopress_advanced_security_metaboxe_sdt_role'][$key]);
         }
     }
-echo seopress_tooltip_link($docs['security']['metaboxe_data_types'], esc_html__('Hook to filter Structured data types metabox call by post type - new window', 'wp-seopress-pro'));
+echo seopress_tooltip_link($docs['security']['metaboxe_data_types'], esc_html__('Hook to filter Structured data types metabox call by post type - new window', 'webseo'));
 }
 
 
@@ -70,7 +70,7 @@ function seopress_advanced_security_ga_widget_role_callback() {
             esc_attr($options['seopress_advanced_security_ga_widget_role'][$key]);
         }
     }
-    echo seopress_tooltip_link($docs['security']['ga_widget'], esc_html__('Hook to filter user capability for GA stats in dashboard widget - new window', 'wp-seopress-pro'));
+    echo seopress_tooltip_link($docs['security']['ga_widget'], esc_html__('Hook to filter user capability for GA stats in dashboard widget - new window', 'webseo'));
 }
 
 function seopress_advanced_security_matomo_widget_role_callback() {
@@ -105,5 +105,5 @@ function seopress_advanced_security_matomo_widget_role_callback() {
             esc_attr($options['seopress_advanced_security_matomo_widget_role'][$key]);
         }
     }
-    echo seopress_tooltip_link($docs['security']['matomo_widget'], esc_html__('Hook to filter user capability for Matomo stats in dashboard widget - new window', 'wp-seopress-pro'));
+    echo seopress_tooltip_link($docs['security']['matomo_widget'], esc_html__('Hook to filter user capability for Matomo stats in dashboard widget - new window', 'webseo'));
 }

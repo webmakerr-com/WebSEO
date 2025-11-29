@@ -15,11 +15,11 @@ function seopress_woocommerce_cart_page_no_index_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('noindex', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('noindex', 'webseo'); ?>
 </label>
 
 <p class="description">
-    <?php esc_html_e('If your theme or plugin displays the cart across your entire WordPress site, don\'t enable this option.', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('If your theme or plugin displays the cart across your entire WordPress site, don\'t enable this option.', 'webseo'); ?>
 </p>
 
 <?php if (isset($options['seopress_woocommerce_cart_page_no_index'])) {
@@ -39,7 +39,7 @@ function seopress_woocommerce_checkout_page_no_index_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('noindex', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('noindex', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_woocommerce_checkout_page_no_index'])) {
@@ -59,7 +59,7 @@ function seopress_woocommerce_customer_account_page_no_index_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('noindex', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('noindex', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_woocommerce_customer_account_page_no_index'])) {
@@ -78,7 +78,7 @@ function seopress_woocommerce_product_og_price_callback() {
     checked="yes"
     <?php } ?>
     value="1"/>
-    <?php esc_html_e('Add product:price:amount meta for product', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Add product:price:amount meta for product', 'webseo'); ?>
 </label>
 
 <pre><?php echo esc_html('<meta property="product:price:amount" content="99" />'); ?></pre>
@@ -99,7 +99,7 @@ function seopress_woocommerce_product_og_currency_callback() {
     checked="yes"
     <?php } ?>
     value="1"/>
-    <?php esc_html_e('Add product:price:currency meta for product', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Add product:price:currency meta for product', 'webseo'); ?>
 </label>
 
 <pre><?php echo esc_html('<meta property="product:price:currency" content="EUR" />'); ?></pre>
@@ -121,7 +121,7 @@ function seopress_woocommerce_meta_generator_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Remove WooCommerce meta generator', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Remove WooCommerce meta generator', 'webseo'); ?>
 </label>
 
 <pre><?php echo esc_html('<meta name="generator" content="WooCommerce 7.5" />'); ?></pre>
@@ -143,13 +143,13 @@ function seopress_woocommerce_schema_output_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Remove default JSON-LD structured data (WooCommerce 3+)', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Remove default JSON-LD structured data (WooCommerce 3+)', 'webseo'); ?>
 </label>
 
 <p class="description">
     <?php
         /* translators: %s: admin URL of schemas post type */
-        echo wp_kses_post(sprintf(__('The default product schema added by WooCommerce generates errors in Google Search Console. Disable it and create your own <a href="%s">automatic product schema</a>.', 'wp-seopress-pro'), esc_url(admin_url('edit.php?post_type=seopress_schemas'))));
+        echo wp_kses_post(sprintf(__('The default product schema added by WooCommerce generates errors in Google Search Console. Disable it and create your own <a href="%s">automatic product schema</a>.', 'webseo'), esc_url(admin_url('edit.php?post_type=seopress_schemas'))));
     ?>
 </p>
 
@@ -170,11 +170,11 @@ function seopress_woocommerce_schema_breadcrumbs_output_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Remove default breadcrumbs JSON-LD structured data (WooCommerce 3+)', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Remove default breadcrumbs JSON-LD structured data (WooCommerce 3+)', 'webseo'); ?>
 </label>
 
 <p class="description">
-    <?php esc_html_e('If "Remove default JSON-LD structured data (WooCommerce 3+)" option is already checked, the breadcrumbs schema is already removed from your source code.', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('If "Remove default JSON-LD structured data (WooCommerce 3+)" option is already checked, the breadcrumbs schema is already removed from your source code.', 'webseo'); ?>
 </p>
 
 <?php if (isset($options['seopress_woocommerce_schema_breadcrumbs_output'])) {

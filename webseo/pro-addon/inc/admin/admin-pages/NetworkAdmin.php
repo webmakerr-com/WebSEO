@@ -17,7 +17,7 @@ if (is_plugin_active('webseo/webseo.php')) {
             <div class="sp-components-snackbar">
                 <div class="sp-components-snackbar__content">
                     <span class="dashicons dashicons-yes"></span>
-                    <?php esc_html_e('Your settings have been saved.', 'wp-seopress-pro'); ?>
+                    <?php esc_html_e('Your settings have been saved.', 'webseo'); ?>
                 </div>
             </div>
         </div>
@@ -37,9 +37,9 @@ if (is_plugin_active('webseo/webseo.php')) {
     <div id="seopress-tabs" class="wrap">
         <?php
 			$plugin_settings_tabs = [
-				'tab_seopress_robots'      => esc_html__('robots.txt', 'wp-seopress-pro'),
-				'tab_seopress_htaccess'    => esc_html__('.htaccess', 'wp-seopress-pro'),
-				'tab_seopress_white_label' => esc_html__('White Label', 'wp-seopress-pro'),
+				'tab_seopress_robots'      => esc_html__('robots.txt', 'webseo'),
+				'tab_seopress_htaccess'    => esc_html__('.htaccess', 'webseo'),
+				'tab_seopress_white_label' => esc_html__('White Label', 'webseo'),
 			];
 
     if ( ! is_network_admin() && is_multisite()) {
@@ -80,7 +80,7 @@ if (is_plugin_active('webseo/webseo.php')) {
     <!--seopress-tabs-->
     <?php echo $this->feature_save(); ?>
 
-    <?php sp_submit_button(__('Save changes', 'wp-seopress-pro')); ?>
+    <?php sp_submit_button(__('Save changes', 'webseo')); ?>
 </form>
 <?php
 }

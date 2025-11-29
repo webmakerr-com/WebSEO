@@ -10,7 +10,7 @@ class ACP_Column_sp_noindex extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_noindex' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'noindex?', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'noindex?', 'webseo' ) );
 	}
 
 	public function get_meta_key() {

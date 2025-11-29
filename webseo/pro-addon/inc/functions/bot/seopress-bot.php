@@ -70,7 +70,7 @@ class Bot {
      */
     public function menu() {
         if ('1' == seopress_get_toggle_option('bot')) {
-            add_submenu_page('seopress-option', __('Audit', 'wp-seopress-pro'), __('Audit', 'wp-seopress-pro'), seopress_capability('manage_options', 'bot'), $this->plugin_slug, [$this, 'menu_cb'], 9);
+            add_submenu_page('seopress-option', __('Audit', 'webseo'), __('Audit', 'webseo'), seopress_capability('manage_options', 'bot'), $this->plugin_slug, [$this, 'menu_cb'], 9);
         }
     }
 
@@ -91,9 +91,9 @@ class Bot {
             <div id="seopress-tabs" class="wrap">
                 <?php
                     $plugin_settings_tabs = [
-                        'tab_seopress_audit'         => __('Site Audit', 'wp-seopress-pro'),
-                        'tab_seopress_scan'          => __('Scan Broken Links', 'wp-seopress-pro'),
-                        'tab_seopress_scan_settings' => __('Settings', 'wp-seopress-pro'),
+                        'tab_seopress_audit'         => __('Site Audit', 'webseo'),
+                        'tab_seopress_scan'          => __('Scan Broken Links', 'webseo'),
+                        'tab_seopress_scan_settings' => __('Settings', 'webseo'),
                     ];
 
         echo '<div class="nav-tab-wrapper">';
@@ -113,7 +113,7 @@ class Bot {
 
                     <hr>
                     <h3>
-                        <?php esc_html_e('Issues', 'wp-seopress-pro'); ?>
+                        <?php esc_html_e('Issues', 'webseo'); ?>
                     </h3>
                     <div id="seopress_site_audit_analysis" class="wrap-site-audit">
                         <?php
@@ -126,7 +126,7 @@ class Bot {
                                 ?>
                                 <div class="seopress-notice">
                                     <p>
-                                        <?php esc_html_e('Currently no content analysis found. Go back later!', 'wp-seopress-pro'); ?>
+                                        <?php esc_html_e('Currently no content analysis found. Go back later!', 'webseo'); ?>
                                     </p>
                                 </div>
                                 <?php
@@ -144,14 +144,14 @@ class Bot {
                     <?php if ('' != get_option('seopress_bot_log')) { ?>
                         <p>
                             <strong>
-                                <?php esc_html_e('Latest scan: ', 'wp-seopress-pro'); ?>
+                                <?php esc_html_e('Latest scan: ', 'webseo'); ?>
                             </strong>
                             <?php echo esc_html(get_option('seopress_bot_log')); ?>
                         </p>
 
                         <p>
                             <strong>
-                                <?php esc_html_e('Links found: ', 'wp-seopress-pro'); ?>
+                                <?php esc_html_e('Links found: ', 'webseo'); ?>
                             </strong>
                             <?php echo esc_html(wp_count_posts('seopress_bot')->publish); ?>
                         </p>
@@ -160,22 +160,22 @@ class Bot {
                             <input type="hidden" name="seopress_action" value="export_csv_links_settings" />
                             <p>
                                 <?php wp_nonce_field('seopress_export_csv_links_nonce', 'seopress_export_csv_links_nonce'); ?>
-                                <input type="submit" class="btn btnSecondary" value="<?php esc_html_e('Export CSV', 'wp-seopress-pro'); ?>">
+                                <input type="submit" class="btn btnSecondary" value="<?php esc_html_e('Export CSV', 'webseo'); ?>">
                             </p>
                         </form>
                     <?php
                     } else {
-                        esc_html_e('No scan', 'wp-seopress-pro');
+                        esc_html_e('No scan', 'webseo');
                     } ?>
                     <p>
                         <div id="seopress_launch_bot" class="btn btnPrimary">
-                            <?php esc_html_e('Launch the bot!', 'wp-seopress-pro'); ?>
+                            <?php esc_html_e('Launch the bot!', 'webseo'); ?>
                         </div>
 
                         <span class="spinner"></span>
                     </p>
 
-                    <textarea id="seopress_bot_log" rows="10" width="100%" style="max-width: inherit;" readonly style="display:none"><?php esc_html_e('---Click Launch the bot! button to run the scan (don\'t close this window)---', 'wp-seopress-pro'); ?></textarea>
+                    <textarea id="seopress_bot_log" rows="10" width="100%" style="max-width: inherit;" readonly style="display:none"><?php esc_html_e('---Click Launch the bot! button to run the scan (don\'t close this window)---', 'webseo'); ?></textarea>
                 </div><!--end .wrap-bot-form-->
 
 
@@ -186,7 +186,7 @@ class Bot {
                     <form method="post" action="<?php echo esc_url(admin_url('options.php')); ?>">
                         <?php settings_fields('seopress_bot_option_group'); ?>
                         <?php do_settings_sections('seopress-settings-admin-bot-settings'); ?>
-                        <?php sp_submit_button(esc_html__('Save changes', 'wp-seopress-pro')); ?>
+                        <?php sp_submit_button(esc_html__('Save changes', 'webseo')); ?>
                     </form>
                 </div>
         </div><!--seopress-tabs-->

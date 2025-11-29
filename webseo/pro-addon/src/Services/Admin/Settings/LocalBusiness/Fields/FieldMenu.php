@@ -14,13 +14,13 @@ trait FieldMenu {
 <input type="text" name="seopress_pro_option_name[seopress_local_business_menu]"
     placeholder="<?php printf(
         /* translators: 1: home URL */
-        esc_html__('e.g. %s', 'wp-seopress-pro'),
+        esc_html__('e.g. %s', 'webseo'),
         get_home_url()
     ); ?>"
-    aria-label="<?php esc_attr_e('The URL of the menu.', 'wp-seopress-pro'); ?>"
+    aria-label="<?php esc_attr_e('The URL of the menu.', 'webseo'); ?>"
     value="<?php echo esc_attr($value); ?>" />
 
-<p class="description"><?php echo wp_kses_post(__('<span class="field-recommended">Recommended</span> property by Google.', 'wp-seopress-pro')); ?>
+<p class="description"><?php echo wp_kses_post(__('<span class="field-recommended">Recommended</span> property by Google.', 'webseo')); ?>
 </p>
 
 <?php

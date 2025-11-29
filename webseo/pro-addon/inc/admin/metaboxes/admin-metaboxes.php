@@ -757,7 +757,7 @@ function seopress_pro_admin_std_metaboxe_display() {
 
 		if ( ! empty($seopress_get_post_types)) {
 			foreach ($seopress_get_post_types as $key => $value) {
-				add_meta_box('seopress_pro_cpt', esc_html__('Structured Data Types', 'wp-seopress-pro'), 'seopress_pro_cpt', $key, 'normal', $metaboxe_position);
+				add_meta_box('seopress_pro_cpt', esc_html__('Structured Data Types', 'webseo'), 'seopress_pro_cpt', $key, 'normal', $metaboxe_position);
 			}
 		}
 	}
@@ -767,85 +767,85 @@ function seopress_pro_admin_std_metaboxe_display() {
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Article.php',
 				'value' => 'articles',
-				'label' => esc_html__('Article (WebPage)', 'wp-seopress-pro'),
+				'label' => esc_html__('Article (WebPage)', 'webseo'),
 				'key_html_part' => 'article',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/LocalBusiness.php',
 				'value' => 'localbusiness',
-				'label' => esc_html__('Local Business', 'wp-seopress-pro'),
+				'label' => esc_html__('Local Business', 'webseo'),
 				'key_html_part' => 'local-business',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Faq.php',
 				'value' => 'faq',
-				'label' => esc_html__('FAQ', 'wp-seopress-pro'),
+				'label' => esc_html__('FAQ', 'webseo'),
 				'key_html_part' => 'faq',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/HowTo.php',
 				'value' => 'howto',
-				'label' => esc_html__('How-to', 'wp-seopress-pro'),
+				'label' => esc_html__('How-to', 'webseo'),
 				'key_html_part' => 'how-to',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Course.php',
 				'value' => 'courses',
-				'label' => esc_html__('Course', 'wp-seopress-pro'),
+				'label' => esc_html__('Course', 'webseo'),
 				'key_html_part' => 'course',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Recipe.php',
 				'value' => 'recipes',
-				'label' => esc_html__('Recipe', 'wp-seopress-pro'),
+				'label' => esc_html__('Recipe', 'webseo'),
 				'key_html_part' => 'recipe',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Job.php',
 				'value' => 'jobs',
-				'label' => esc_html__('Job', 'wp-seopress-pro'),
+				'label' => esc_html__('Job', 'webseo'),
 				'key_html_part' => 'jobs',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Video.php',
 				'value' => 'videos',
-				'label' => esc_html__('Video', 'wp-seopress-pro'),
+				'label' => esc_html__('Video', 'webseo'),
 				'key_html_part' => 'video',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Event.php',
 				'value' => 'events',
-				'label' => esc_html__('Event', 'wp-seopress-pro'),
+				'label' => esc_html__('Event', 'webseo'),
 				'key_html_part' => 'event',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Product.php',
 				'value' => 'products',
-				'label' => esc_html__('Product', 'wp-seopress-pro'),
+				'label' => esc_html__('Product', 'webseo'),
 				'key_html_part' => 'product',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/SoftwareApp.php',
 				'value' => 'softwareapp',
-				'label' => esc_html__('Software Application', 'wp-seopress-pro'),
+				'label' => esc_html__('Software Application', 'webseo'),
 				'key_html_part' => 'software',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Service.php',
 				'value' => 'services',
-				'label' => esc_html__('Service', 'wp-seopress-pro'),
+				'label' => esc_html__('Service', 'webseo'),
 				'key_html_part' => 'service',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Review.php',
 				'value' => 'review',
-				'label' => esc_html__('Review', 'wp-seopress-pro'),
+				'label' => esc_html__('Review', 'webseo'),
 				'key_html_part' => 'review',
 			],
 			[
 				'file' => dirname(__DIR__) . '/schemas/manual/Custom.php',
 				'value' => 'custom',
-				'label' => esc_html__('Custom', 'wp-seopress-pro'),
+				'label' => esc_html__('Custom', 'webseo'),
 				'key_html_part' => 'custom',
 			],
 		];
@@ -865,11 +865,11 @@ function seopress_pro_admin_std_metaboxe_display() {
 
 		$seopress_pro_rich_snippets_data = get_post_meta($post->ID, '_seopress_pro_schemas_manual', true);
 
-		$tab1 = '<li><a href="#seopress-schemas-tabs-2">' . esc_html__('Automatic', 'wp-seopress-pro') . '</a></li>';
+		$tab1 = '<li><a href="#seopress-schemas-tabs-2">' . esc_html__('Automatic', 'webseo') . '</a></li>';
 		$tab2 = '';
 
 		if ( ! seopress_get_service('EnqueueModuleMetabox')->canEnqueue()) {
-			$tab2 = '<li><a href="#seopress-schemas-tabs-1">' . esc_html__('Manual', 'wp-seopress-pro') . '</a></li>';
+			$tab2 = '<li><a href="#seopress-schemas-tabs-1">' . esc_html__('Manual', 'webseo') . '</a></li>';
 		}
 		$tabs = $tab1 . $tab2;
 		if (function_exists('seopress_advanced_appearance_schema_default_tab_option') && seopress_advanced_appearance_schema_default_tab_option()) {
@@ -888,10 +888,10 @@ function seopress_pro_admin_std_metaboxe_display() {
 <div id="seopress-schemas-tabs">
 	<ul class="wrap-schemas-list">
 		<?php if ( ! seopress_get_service('EnqueueModuleMetabox')->canEnqueue()) { ?>
-		<li><a href="#seopress-schemas-tabs-1"><?php esc_html_e('Manual', 'wp-seopress-pro'); ?></a>
+		<li><a href="#seopress-schemas-tabs-1"><?php esc_html_e('Manual', 'webseo'); ?></a>
 		</li>
 		<?php } ?>
-		<li><a id="sp-automatic-tab" href="#seopress-schemas-tabs-2"><?php esc_html_e('Automatic', 'wp-seopress-pro'); ?><span></span></a>
+		<li><a id="sp-automatic-tab" href="#seopress-schemas-tabs-2"><?php esc_html_e('Automatic', 'webseo'); ?><span></span></a>
 		</li>
 	</ul>
 	<input type="hidden" name="can_enqueue_seopress_metabox"
@@ -906,7 +906,7 @@ function seopress_pro_admin_std_metaboxe_display() {
                     </button>
 					<select id="seopress_pro_rich_snippets_type" class="js-select_seopress_pro_rich_snippets_type"
 						name="seopress_pro_rich_snippets_data[X][seopress_pro_rich_snippets_type]">
-						<option value="none"><?php esc_html_e('None', 'wp-seopress-pro'); ?>
+						<option value="none"><?php esc_html_e('None', 'webseo'); ?>
 						</option>
 						<?php foreach ($options_schemas_available as $item) { ?>
 						<option
@@ -919,7 +919,7 @@ function seopress_pro_admin_std_metaboxe_display() {
 				<a href="#"
 					class="js-delete-schema-manual <?php echo $btn_classes_tertiary; ?> is-destructive"
 					data-key="[X]">
-					<?php esc_html_e('Delete schema', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Delete schema', 'webseo'); ?>
 				</a>
 			</div>
 		</div>
@@ -939,7 +939,7 @@ function seopress_pro_admin_std_metaboxe_display() {
                     </button>
 					<select id="seopress_pro_rich_snippets_type" class="js-select_seopress_pro_rich_snippets_type"
 						name="seopress_pro_rich_snippets_data[X][seopress_pro_rich_snippets_type]">
-						<option value="none"><?php esc_html_e('None', 'wp-seopress-pro'); ?>
+						<option value="none"><?php esc_html_e('None', 'webseo'); ?>
 						</option>
 						<?php foreach ($options_schemas_available as $item) { ?>
 						<option
@@ -952,7 +952,7 @@ function seopress_pro_admin_std_metaboxe_display() {
 				<a href="#"
 					class="js-delete-schema-manual <?php echo $btn_classes_tertiary; ?> is-destructive"
 					data-key="[X]">
-					<?php esc_html_e('Delete schema', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Delete schema', 'webseo'); ?>
 				</a>
 			</div>
 		</div>
@@ -967,19 +967,19 @@ function seopress_pro_admin_std_metaboxe_display() {
 						d="M12 15.8c-3.7 0-6.8-3-6.8-6.8s3-6.8 6.8-6.8c3.7 0 6.8 3 6.8 6.8s-3.1 6.8-6.8 6.8zm0-12C9.1 3.8 6.8 6.1 6.8 9s2.4 5.2 5.2 5.2c2.9 0 5.2-2.4 5.2-5.2S14.9 3.8 12 3.8zM8 17.5h8V19H8zM10 20.5h4V22h-4z">
 					</path>
 				</svg>
-				<?php esc_html_e('It is recommended to enter as many properties as possible to maximize the chances of getting a rich snippet in Google search results.', 'wp-seopress-pro'); ?>
+				<?php esc_html_e('It is recommended to enter as many properties as possible to maximize the chances of getting a rich snippet in Google search results.', 'webseo'); ?>
 			</p>
 
 			<div class="schemas-bar-new">
 				<p>
 					<a href="#" id="js-add-schema-manual"
 						class="<?php echo seopress_btn_secondary_classes(); ?>">
-						<?php esc_html_e('Add a schema', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Add a schema', 'webseo'); ?>
 					</a>
 				</p>
 				<p>
-					<a href="#" class="js-expand-all components-button is-link"><?php esc_html_e('Expand', 'wp-seopress-pro'); ?></a>&nbsp;/&nbsp;<a
-						href="#" class="js-close-all components-button is-link"><?php esc_html_e('Close', 'wp-seopress-pro'); ?></a>
+					<a href="#" class="js-expand-all components-button is-link"><?php esc_html_e('Expand', 'webseo'); ?></a>&nbsp;/&nbsp;<a
+						href="#" class="js-close-all components-button is-link"><?php esc_html_e('Close', 'webseo'); ?></a>
 				</p>
 			</div>
 
@@ -1004,7 +1004,7 @@ function seopress_pro_admin_std_metaboxe_display() {
 										class="js-select_seopress_pro_rich_snippets_type"
 										name="seopress_pro_rich_snippets_data[<?php echo $key; ?>][seopress_pro_rich_snippets_type]">
 										<option <?php echo selected('none', $seopress_pro_rich_snippets_type); ?>
-											value="none"><?php esc_html_e('None', 'wp-seopress-pro'); ?>
+											value="none"><?php esc_html_e('None', 'webseo'); ?>
 										</option>
 										<?php foreach ($options_schemas_available as $item) { ?>
 										<option <?php echo selected($item['value'], $seopress_pro_rich_snippets_type); ?>
@@ -1017,7 +1017,7 @@ function seopress_pro_admin_std_metaboxe_display() {
 								<a href="#"
 									class="js-delete-schema-manual <?php echo $btn_classes_tertiary; ?> is-destructive"
 									data-key="<?php echo $key; ?>">
-									<?php esc_html_e('Delete schema', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('Delete schema', 'webseo'); ?>
 								</a>
 							</div>
 							<?php
@@ -1037,7 +1037,7 @@ function seopress_pro_admin_std_metaboxe_display() {
 				<a href="https://search.google.com/test/rich-results?url=<?php echo get_permalink(); ?>"
 					target="_blank"
 					class="<?php echo seopress_btn_secondary_classes(); ?>">
-					<?php esc_html_e('Validate my schema', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Validate my schema', 'webseo'); ?>
 				</a>
 			</p>
 		</div>

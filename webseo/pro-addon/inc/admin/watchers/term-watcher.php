@@ -67,12 +67,12 @@ function seopress_watcher_term_trash($termId)
     $message = '<p>';
     $message .= sprintf(
         /* translators: %s: term permalink */
-        __('We have detected that you have deleted a term (<code>%s</code>).', 'wp-seopress-pro'),
+        __('We have detected that you have deleted a term (<code>%s</code>).', 'webseo'),
         $url
     );
     $message .= '</p>';
 
-    $message .= '<p>' . esc_html__('We suggest you to redirect this URL to avoid any SEO issues, and keep an optimal user experience.', 'wp-seopress-pro') . '</p>';
+    $message .= '<p>' . esc_html__('We suggest you to redirect this URL to avoid any SEO issues, and keep an optimal user experience.', 'webseo') . '</p>';
 
     seopress_create_notification_for_redirect([
         "id" => uniqid('', true),
@@ -164,12 +164,12 @@ function seopress_watcher_term_slug_change($termId, $tt_id, $taxonomy)
     $message = '<p>';
     $message .= sprintf(
         /* translators: %s: post name (slug) %s: url redirect */
-        __('We have detected that you have changed a slug (<code>%s</code>) to (<code>%s</code>).', 'wp-seopress-pro'),
+        __('We have detected that you have changed a slug (<code>%s</code>) to (<code>%s</code>).', 'webseo'),
         $url_term_before,
         $url
     );
     $message .= '</p>';
-    $message .= '<p>' . esc_html__('We suggest you to redirect this URL.', 'wp-seopress-pro') . '</p>';
+    $message .= '<p>' . esc_html__('We suggest you to redirect this URL.', 'webseo') . '</p>';
 
     seopress_create_notification_for_redirect([
         "id" => uniqid('', true),

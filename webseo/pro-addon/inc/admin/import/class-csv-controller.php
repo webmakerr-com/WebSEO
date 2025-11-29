@@ -119,22 +119,22 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
     {
         $default_steps = [
             'upload' => [
-                'name' => esc_html__('Upload CSV file', 'wp-seopress-pro'),
+                'name' => esc_html__('Upload CSV file', 'webseo'),
                 'view' => [$this, 'upload_form'],
                 'handler' => [$this, 'upload_form_handler'],
             ],
             'mapping' => [
-                'name' => esc_html__('Column mapping', 'wp-seopress-pro'),
+                'name' => esc_html__('Column mapping', 'webseo'),
                 'view' => [$this, 'mapping_form'],
                 'handler' => '',
             ],
             'import' => [
-                'name' => esc_html__('Import', 'wp-seopress-pro'),
+                'name' => esc_html__('Import', 'webseo'),
                 'view' => [$this, 'import'],
                 'handler' => '',
             ],
             'done' => [
-                'name' => esc_html__('Done!', 'wp-seopress-pro'),
+                'name' => esc_html__('Done!', 'webseo'),
                 'view' => [$this, 'done'],
                 'handler' => '',
             ],
@@ -335,18 +335,18 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         $upload_dir = wp_upload_dir(); ?>
 
 <h1>
-    <?php esc_html_e('Import metadata from a CSV file', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Import metadata from a CSV file', 'webseo'); ?>
 </h1>
 <form method="post" enctype="multipart/form-data">
     <div class="seopress-notice">
         <p>
-            <?php esc_html_e('This tool allows you to import SEO metadata to your site from a CSV file.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('This tool allows you to import SEO metadata to your site from a CSV file.', 'webseo'); ?>
         </p>
         <p>
-            <?php esc_html_e('Existing posts / terms that match by ID will be updated.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Existing posts / terms that match by ID will be updated.', 'webseo'); ?>
         </p>
         <p>
-            <?php esc_html_e('Posts, pages, custom post types or term taxonomies that do not exist will be skipped.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Posts, pages, custom post types or term taxonomies that do not exist will be skipped.', 'webseo'); ?>
         </p>
     </div>
 
@@ -355,7 +355,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
             ?>
     <div class="inline error">
         <p>
-            <?php esc_html_e('Before you can upload your import file, you will need to fix the following error:', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Before you can upload your import file, you will need to fix the following error:', 'webseo'); ?>
         </p>
         <p>
             <strong><?php echo esc_html($upload_dir['error']); ?></strong>
@@ -365,25 +365,25 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         } else { ?>
     <p>
         <strong>
-            <?php esc_html_e('Select your separator:', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Select your separator:', 'webseo'); ?>
         </strong>
     </p>
     <p>
         <label for="import_sep_comma">
             <input id="import_sep_comma" name="delimiter" type="radio" value="comma" />
-            <?php echo wp_kses_post(__('Comma separator: <code>,</code>', 'wp-seopress-pro')); ?>
+            <?php echo wp_kses_post(__('Comma separator: <code>,</code>', 'webseo')); ?>
         </label>
     </p>
     <p>
         <label for="import_sep_semicolon">
             <input id="import_sep_semicolon" name="delimiter" type="radio" value="semicolon" />
-            <?php echo wp_kses_post(__('Semicolon separator: <code>;</code>', 'wp-seopress-pro')); ?>
+            <?php echo wp_kses_post(__('Semicolon separator: <code>;</code>', 'webseo')); ?>
         </label>
     </p>
     <p>
         <strong>
             <label
-                for="import_file"><?php esc_html_e('Choose a CSV file from your computer:', 'wp-seopress-pro'); ?></label>
+                for="import_file"><?php esc_html_e('Choose a CSV file from your computer:', 'webseo'); ?></label>
         </strong>
     </p>
     <p>
@@ -399,7 +399,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
             $upload_dir = wp_upload_dir();
             printf(
                 /* translators: %s: maximum upload size */
-                esc_html__('Maximum size: %s', 'wp-seopress-pro'),
+                esc_html__('Maximum size: %s', 'webseo'),
                 esc_html($size)
             );
             ?>
@@ -407,22 +407,22 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
     </p>
     <p>
         <strong>
-            <?php esc_html_e('Ignore existing values?', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Ignore existing values?', 'webseo'); ?>
         </strong>
     </p>
     <p>
         <label for="import_ignore_metadata">
             <input id="import_ignore_metadata" name="import_ignore_metadata" type="checkbox" value="1" />
-            <?php esc_html_e('Existing post and term metas will not be updated. Only empty values will be filled.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Existing post and term metas will not be updated. Only empty values will be filled.', 'webseo'); ?>
         </label>
     </p>
     <?php
         } ?>
     <p class="seopress-setup-actions step">
         <button type="submit" class="btn btnPrimary"
-            value="<?php esc_attr_e('Next step', 'wp-seopress-pro'); ?>"
+            value="<?php esc_attr_e('Next step', 'webseo'); ?>"
             name="save_step">
-            <?php esc_html_e('Next step', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Next step', 'webseo'); ?>
         </button>
         <?php wp_nonce_field('seopress-csv-importer'); ?>
     </p>
@@ -463,11 +463,11 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
 
         if (empty($file_url)) {
             if ( ! isset($_FILES['import'])) {
-                return new WP_Error('seopress_metadata_csv_importer_upload_file_empty', esc_html__('File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.', 'wp-seopress-pro'));
+                return new WP_Error('seopress_metadata_csv_importer_upload_file_empty', esc_html__('File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.', 'webseo'));
             }
 
             if ( ! self::is_file_valid_csv(sanitize_text_field(wp_unslash($_FILES['import']['name'])), false)) {
-                return new WP_Error('seopress_metadata_csv_importer_upload_file_invalid', esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'wp-seopress-pro'));
+                return new WP_Error('seopress_metadata_csv_importer_upload_file_invalid', esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'webseo'));
             }
 
             $overrides = [
@@ -503,13 +503,13 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
             return $upload['file'];
         } elseif (file_exists(ABSPATH . $file_url)) {
             if ( ! self::is_file_valid_csv(ABSPATH . $file_url)) {
-                return new WP_Error('seopress_metadata_csv_importer_upload_file_invalid', esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'wp-seopress-pro'));
+                return new WP_Error('seopress_metadata_csv_importer_upload_file_invalid', esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'webseo'));
             }
 
             return ABSPATH . $file_url;
         }
 
-        return new WP_Error('seopress_metadata_csv_importer_upload_invalid_file', esc_html__('Please upload or provide the link to a valid CSV file.', 'wp-seopress-pro'));
+        return new WP_Error('seopress_metadata_csv_importer_upload_invalid_file', esc_html__('Please upload or provide the link to a valid CSV file.', 'webseo'));
     }
 
     /**
@@ -530,11 +530,11 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
 
         if (empty($sample)) {
             $this->add_error(
-                esc_html__('The file is empty or using a different encoding than UTF-8, please try again with a new file.', 'wp-seopress-pro'),
+                esc_html__('The file is empty or using a different encoding than UTF-8, please try again with a new file.', 'webseo'),
                 [
                     [
                         'url' => admin_url('admin.php?page=seopress_csv_importer'),
-                        'label' => esc_html__('Upload a new file', 'wp-seopress-pro'),
+                        'label' => esc_html__('Upload a new file', 'webseo'),
                     ],
                 ]
             );
@@ -545,12 +545,12 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
             return;
         } ?>
 <h1>
-    <?php esc_html_e('Map CSV fields to post metas', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Map CSV fields to post metas', 'webseo'); ?>
 </h1>
 <form method="post"
     action="<?php echo esc_url($this->get_next_step_link()); ?>">
     <p>
-        <?php esc_html_e('Select fields from your CSV file to map against posts / terms fields, or to ignore during import.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('Select fields from your CSV file to map against posts / terms fields, or to ignore during import.', 'webseo'); ?>
     </p>
 
     <section class="seopress-importer-mapping-table-wrapper">
@@ -558,10 +558,10 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
             <thead>
                 <tr>
                     <th>
-                        <?php esc_html_e('Column name', 'wp-seopress-pro'); ?>
+                        <?php esc_html_e('Column name', 'webseo'); ?>
                     </th>
                     <th>
-                        <?php esc_html_e('Map to field', 'wp-seopress-pro'); ?>
+                        <?php esc_html_e('Map to field', 'webseo'); ?>
                     </th>
                 </tr>
             </thead>
@@ -575,7 +575,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
                         <?php echo esc_html($name); ?>
                         <?php if ( ! empty($sample[$index])) { ?>
                         <span
-                            class="description"><?php esc_html_e('Sample:', 'wp-seopress-pro'); ?>
+                            class="description"><?php esc_html_e('Sample:', 'webseo'); ?>
                             <code><?php echo esc_html($sample[$index]); ?></code></span>
                         <?php } ?>
                     </td>
@@ -586,7 +586,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
                         <select
                             name="map_to[<?php echo esc_attr($index); ?>]">
                             <option value="">
-                                <?php esc_html_e('Do not import', 'wp-seopress-pro'); ?>
+                                <?php esc_html_e('Do not import', 'webseo'); ?>
                             </option>
                             <option value="">--------------</option>
                             <?php foreach ($this->get_mapping_options($mapped_value) as $key => $value) { ?>
@@ -605,9 +605,9 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
 
     <p class="seopress-setup-actions step">
         <button type="submit" class="btn btnPrimary"
-            value="<?php esc_attr_e('Run the importer', 'wp-seopress-pro'); ?>"
+            value="<?php esc_attr_e('Run the importer', 'webseo'); ?>"
             name="save_step">
-            <?php esc_html_e('Run the importer', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Run the importer', 'webseo'); ?>
         </button>
         <input type="hidden" name="file"
             value="<?php echo esc_attr($this->file); ?>" />
@@ -631,14 +631,14 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         check_admin_referer('seopress-csv-importer');
 
         if ( ! self::is_file_valid_csv($this->file)) {
-            $this->add_error(esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'wp-seopress-pro'));
+            $this->add_error(esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'webseo'));
             $this->output_errors();
 
             return;
         }
 
         if ( ! is_file($this->file)) {
-            $this->add_error(esc_html__('The file does not exist, please try again.', 'wp-seopress-pro'));
+            $this->add_error(esc_html__('The file does not exist, please try again.', 'webseo'));
             $this->output_errors();
 
             return;
@@ -668,10 +668,10 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         //wp_print_scripts( 'seopress-csv-import' );
         wp_enqueue_script('seopress-csv-import'); ?>
 <h1>
-    <?php esc_html_e('Importing', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Importing', 'webseo'); ?>
 </h1>
 <p>
-    <?php esc_html_e('Your metadata are now being imported...', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Your metadata are now being imported...', 'webseo'); ?>
 </p>
 <div class="seopress-progress-form-content seopress-importer seopress-importer__importing">
     <section>
@@ -694,7 +694,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         $skipped = isset($_GET['metadatas-skipped']) ? absint($_GET['metadatas-skipped']) : 0;
         $errors = array_filter((array) get_user_option('seopress_import_error_log')); ?>
 <h2>
-    <?php esc_html_e('Import complete!', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Import complete!', 'webseo'); ?>
 </h2>
 
 <div class="seopress-progress-form-content seopress-importer">
@@ -705,7 +705,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         if (0 < $imported) {
             $results[] = sprintf(
                 /* translators: %s: posts count */
-                _n('%s post or term imported.', '%s posts / terms imported.', $imported, 'wp-seopress-pro'),
+                _n('%s post or term imported.', '%s posts / terms imported.', $imported, 'webseo'),
                 '<strong>' . number_format_i18n($imported) . '</strong>'
             );
         }
@@ -713,7 +713,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         if (0 < $updated) {
             $results[] = sprintf(
                 /* translators: %s: posts count */
-                _n('%s post or term updated.', '%s posts / terms updated.', $updated, 'wp-seopress-pro'),
+                _n('%s post or term updated.', '%s posts / terms updated.', $updated, 'webseo'),
                 '<strong>' . number_format_i18n($updated) . '</strong>'
             );
         }
@@ -721,7 +721,7 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         if (0 < $skipped) {
             $results[] = sprintf(
                 /* translators: %s: posts count */
-                _n('%s post or term was skipped.', '%s posts / terms were skipped.', $skipped, 'wp-seopress-pro'),
+                _n('%s post or term was skipped.', '%s posts / terms were skipped.', $skipped, 'webseo'),
                 '<strong>' . number_format_i18n($skipped) . '</strong>'
             );
         }
@@ -729,13 +729,13 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         if (0 < $failed) {
             $results[] = sprintf(
                 /* translators: %s: posts count */
-                _n('Failed to import %s post or term.', 'Failed to import %s posts / terms.', $failed, 'wp-seopress-pro'),
+                _n('Failed to import %s post or term.', 'Failed to import %s posts / terms.', $failed, 'webseo'),
                 '<strong>' . number_format_i18n($failed) . '</strong>'
             );
         }
 
         if (0 < $failed || 0 < $skipped) {
-            $results['log'] = '<a href="#" class="seopress-importer-done-view-errors">' . esc_html__('View import log', 'wp-seopress-pro') . '</a>';
+            $results['log'] = '<a href="#" class="seopress-importer-done-view-errors">' . esc_html__('View import log', 'webseo') . '</a>';
         }
 
         if ( ! empty($results)) {
@@ -755,9 +755,9 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
         <table class="widefat seopress-importer-error-log-table">
             <thead>
                 <tr>
-                    <th><?php esc_html_e('Post', 'wp-seopress-pro'); ?>
+                    <th><?php esc_html_e('Post', 'webseo'); ?>
                     </th>
-                    <th><?php esc_html_e('Reason for failure', 'wp-seopress-pro'); ?>
+                    <th><?php esc_html_e('Reason for failure', 'webseo'); ?>
                     </th>
                 </tr>
             </thead>
@@ -792,10 +792,10 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
     <div class="seopress-actions">
         <p>
             <a class="btn btnPrimary"
-                href="<?php echo esc_url(admin_url('edit.php')); ?>"><?php esc_html_e('View posts', 'wp-seopress-pro'); ?></a>
+                href="<?php echo esc_url(admin_url('edit.php')); ?>"><?php esc_html_e('View posts', 'webseo'); ?></a>
             <a class="btn btnSecondary"
                 href="<?php echo esc_url(admin_url('admin.php?page=seopress_csv_importer&step=upload')); ?>">
-                <?php esc_html_e('Make another import', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('Make another import', 'webseo'); ?>
             </a>
         </p>
     </div>
@@ -835,30 +835,30 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
             apply_filters(
                 'seopress_csv_metadata_import_mapping_default_columns',
                 [
-                    esc_html__('ID', 'wp-seopress-pro') => 'id',
-                    esc_html__('Post / term title', 'wp-seopress-pro') => 'post_title',
-                    esc_html__('Slug', 'wp-seopress-pro') => 'slug',
-                    esc_html__('Taxonomy', 'wp-seopress-pro') => 'taxonomy',
-                    esc_html__('Post Type', 'wp-seopress-pro') => 'post_type',
-                    esc_html__('Meta Title', 'wp-seopress-pro') => 'meta_title',
-                    esc_html__('Meta description', 'wp-seopress-pro') => 'meta_desc',
-                    esc_html__('Facebook title', 'wp-seopress-pro') => 'fb_title',
-                    esc_html__('Facebook description', 'wp-seopress-pro') => 'fb_desc',
-                    esc_html__('Facebook thumbnail', 'wp-seopress-pro') => 'fb_img',
-                    esc_html__('X title', 'wp-seopress-pro') => 'tw_title',
-                    esc_html__('X description', 'wp-seopress-pro') => 'tw_desc',
-                    esc_html__('X thumbnail', 'wp-seopress-pro') => 'tw_img',
-                    esc_html__('noindex', 'wp-seopress-pro') => 'noindex',
-                    esc_html__('nofollow', 'wp-seopress-pro') => 'nofollow',
-                    esc_html__('noimageindex', 'wp-seopress-pro') => 'noimageindex',
-                    esc_html__('nosnippet', 'wp-seopress-pro') => 'nosnippet',
-                    esc_html__('Canonical URL', 'wp-seopress-pro') => 'canonical_url',
-                    esc_html__('Primary category', 'wp-seopress-pro') => 'primary_cat',
-                    esc_html__('Active redirect', 'wp-seopress-pro') => 'redirect_active',
-                    esc_html__('Redirect status', 'wp-seopress-pro') => 'redirect_status',
-                    esc_html__('Redirection type', 'wp-seopress-pro') => 'redirect_type',
-                    esc_html__('URL redirect', 'wp-seopress-pro') => 'redirect_url',
-                    esc_html__('Target Keyword', 'wp-seopress-pro') => 'target_kw',
+                    esc_html__('ID', 'webseo') => 'id',
+                    esc_html__('Post / term title', 'webseo') => 'post_title',
+                    esc_html__('Slug', 'webseo') => 'slug',
+                    esc_html__('Taxonomy', 'webseo') => 'taxonomy',
+                    esc_html__('Post Type', 'webseo') => 'post_type',
+                    esc_html__('Meta Title', 'webseo') => 'meta_title',
+                    esc_html__('Meta description', 'webseo') => 'meta_desc',
+                    esc_html__('Facebook title', 'webseo') => 'fb_title',
+                    esc_html__('Facebook description', 'webseo') => 'fb_desc',
+                    esc_html__('Facebook thumbnail', 'webseo') => 'fb_img',
+                    esc_html__('X title', 'webseo') => 'tw_title',
+                    esc_html__('X description', 'webseo') => 'tw_desc',
+                    esc_html__('X thumbnail', 'webseo') => 'tw_img',
+                    esc_html__('noindex', 'webseo') => 'noindex',
+                    esc_html__('nofollow', 'webseo') => 'nofollow',
+                    esc_html__('noimageindex', 'webseo') => 'noimageindex',
+                    esc_html__('nosnippet', 'webseo') => 'nosnippet',
+                    esc_html__('Canonical URL', 'webseo') => 'canonical_url',
+                    esc_html__('Primary category', 'webseo') => 'primary_cat',
+                    esc_html__('Active redirect', 'webseo') => 'redirect_active',
+                    esc_html__('Redirect status', 'webseo') => 'redirect_status',
+                    esc_html__('Redirection type', 'webseo') => 'redirect_type',
+                    esc_html__('URL redirect', 'webseo') => 'redirect_url',
+                    esc_html__('Target Keyword', 'webseo') => 'target_kw',
                 ],
                 $raw_headers
             )
@@ -889,30 +889,30 @@ class SEOPRESS_CSV_Setup_Wizard_Controller
     {
         // Available options.
         $options = [
-            'id' => esc_html__('ID', 'wp-seopress-pro'),
-            'post_title' => esc_html__('Post / term title', 'wp-seopress-pro'),
-            'slug' => esc_html__('Slug', 'wp-seopress-pro'),
-            'taxonomy' => esc_html__('Taxonomy', 'wp-seopress-pro'),
-            'post_type' => esc_html__('Post Type', 'wp-seopress-pro'),
-            'meta_title' => esc_html__('Meta Title', 'wp-seopress-pro'),
-            'meta_desc' => esc_html__('Meta description', 'wp-seopress-pro'),
-            'fb_title' => esc_html__('Facebook title', 'wp-seopress-pro'),
-            'fb_desc' => esc_html__('Facebook description', 'wp-seopress-pro'),
-            'fb_img' => esc_html__('Facebook thumbnail', 'wp-seopress-pro'),
-            'tw_title' => esc_html__('X title', 'wp-seopress-pro'),
-            'tw_desc' => esc_html__('X description', 'wp-seopress-pro'),
-            'tw_img' => esc_html__('X thumbnail', 'wp-seopress-pro'),
-            'noindex' => esc_html__('noindex? (yes)', 'wp-seopress-pro'),
-            'nofollow' => esc_html__('nofollow? (yes)', 'wp-seopress-pro'),
-            'noimageindex' => esc_html__('noimageindex? (yes)', 'wp-seopress-pro'),
-            'nosnippet' => esc_html__('nosnippet? (yes)', 'wp-seopress-pro'),
-            'canonical_url' => esc_html__('Canonical URL', 'wp-seopress-pro'),
-            'primary_cat' => esc_html__('Primary category', 'wp-seopress-pro'),
-            'redirect_active' => esc_html__('Active redirect', 'wp-seopress-pro'),
-            'redirect_status' => esc_html__('Redirect status', 'wp-seopress-pro'),
-            'redirect_type' => esc_html__('Redirection type', 'wp-seopress-pro'),
-            'redirect_url' => esc_html__('URL redirect', 'wp-seopress-pro'),
-            'target_kw' => esc_html__('Target Keyword', 'wp-seopress-pro'),
+            'id' => esc_html__('ID', 'webseo'),
+            'post_title' => esc_html__('Post / term title', 'webseo'),
+            'slug' => esc_html__('Slug', 'webseo'),
+            'taxonomy' => esc_html__('Taxonomy', 'webseo'),
+            'post_type' => esc_html__('Post Type', 'webseo'),
+            'meta_title' => esc_html__('Meta Title', 'webseo'),
+            'meta_desc' => esc_html__('Meta description', 'webseo'),
+            'fb_title' => esc_html__('Facebook title', 'webseo'),
+            'fb_desc' => esc_html__('Facebook description', 'webseo'),
+            'fb_img' => esc_html__('Facebook thumbnail', 'webseo'),
+            'tw_title' => esc_html__('X title', 'webseo'),
+            'tw_desc' => esc_html__('X description', 'webseo'),
+            'tw_img' => esc_html__('X thumbnail', 'webseo'),
+            'noindex' => esc_html__('noindex? (yes)', 'webseo'),
+            'nofollow' => esc_html__('nofollow? (yes)', 'webseo'),
+            'noimageindex' => esc_html__('noimageindex? (yes)', 'webseo'),
+            'nosnippet' => esc_html__('nosnippet? (yes)', 'webseo'),
+            'canonical_url' => esc_html__('Canonical URL', 'webseo'),
+            'primary_cat' => esc_html__('Primary category', 'webseo'),
+            'redirect_active' => esc_html__('Active redirect', 'webseo'),
+            'redirect_status' => esc_html__('Redirect status', 'webseo'),
+            'redirect_type' => esc_html__('Redirection type', 'webseo'),
+            'redirect_url' => esc_html__('URL redirect', 'webseo'),
+            'target_kw' => esc_html__('Target Keyword', 'webseo'),
         ];
 
         return apply_filters('seopress_csv_metadata_import_mapping_options', $options, $item);

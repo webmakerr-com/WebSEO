@@ -14,7 +14,7 @@ function seopress_edd_product_og_price_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Add product:price:amount meta for product', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Add product:price:amount meta for product', 'webseo'); ?>
 </label>
 
 <pre><?php echo esc_html('<meta property="product:price:amount" content="99" />'); ?></pre>
@@ -36,7 +36,7 @@ function seopress_edd_product_og_currency_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Add product:price:currency meta for product', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Add product:price:currency meta for product', 'webseo'); ?>
 </label>
 
 <pre><?php echo esc_html('<meta property="product:price:currency" content="EUR" />'); ?></pre>
@@ -58,7 +58,7 @@ function seopress_edd_meta_generator_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Remove EDD meta generator', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Remove EDD meta generator', 'webseo'); ?>
 </label>
 
 <pre><?php echo esc_html('<meta name="generator" content="Easy Digital Downloads v3.0" />'); ?></pre>

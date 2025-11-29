@@ -10,7 +10,7 @@ class ACP_Column_sp_nofollow extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_nofollow' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'nofollow?', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'nofollow?', 'webseo' ) );
 	}
 
 	public function get_meta_key() {

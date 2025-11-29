@@ -306,7 +306,7 @@ class Completions {
 		$post_id = absint($post_id);
 		if (!$post_id || !get_post($post_id)) {
 			return [
-				'message' => __('Invalid post ID provided.', 'wp-seopress-pro'),
+				'message' => __('Invalid post ID provided.', 'webseo'),
 				'title' => '',
 				'desc' => ''
 			];
@@ -315,7 +315,7 @@ class Completions {
 		// Verify nonce if provided (for admin requests)
 		if ($nonce !== null && !wp_verify_nonce($nonce, 'seopress_ai_generate_' . $post_id)) {
 			return [
-				'message' => __('Security check failed.', 'wp-seopress-pro'),
+				'message' => __('Security check failed.', 'webseo'),
 				'title' => '',
 				'desc' => ''
 			];
@@ -410,7 +410,7 @@ class Completions {
 		//Prompt for meta title
 		$prompt_title = sprintf(
 			/* translators: 1: language, 2: target keywords, 3: content */
-			__('Generate, in this language %1$s, an engaging SEO title metadata in one sentence of sixty characters maximum, with at least one of these keywords in the prompt response: "%2$s", based on this content: %3$s.', 'wp-seopress-pro'),
+			__('Generate, in this language %1$s, an engaging SEO title metadata in one sentence of sixty characters maximum, with at least one of these keywords in the prompt response: "%2$s", based on this content: %3$s.', 'webseo'),
 			esc_attr($language),
 			esc_html($target_keywords),
 			esc_html($content)
@@ -425,7 +425,7 @@ class Completions {
 		//Prompt for meta description
 		$prompt_desc = sprintf(
 			/* translators: 1: language, 2: target keywords, 3: content */
-			__('Generate, in this language %1$s, an engaging SEO meta description in less than 160 characters, with at least one of these keywords in the prompt response: "%2$s", based on this content: %3$s.', 'wp-seopress-pro'),
+			__('Generate, in this language %1$s, an engaging SEO meta description in less than 160 characters, with at least one of these keywords in the prompt response: "%2$s", based on this content: %3$s.', 'webseo'),
 			esc_attr($language),
 			esc_html($target_keywords),
 			esc_html($content)
@@ -477,7 +477,7 @@ class Completions {
 				$response_body = wp_remote_retrieve_body($response);
 				$message = sprintf(
 					/* translators: 1: provider name, 2: response code */
-					__('An error occurred with %1$s API, please try again. Response code: %2$s', 'wp-seopress-pro'),
+					__('An error occurred with %1$s API, please try again. Response code: %2$s', 'webseo'),
 					$this->getProviderName($provider),
 					$response_code
 				);
@@ -556,7 +556,7 @@ class Completions {
 		$post_id = absint($post_id);
 		if (!$post_id || !get_post($post_id)) {
 			return [
-				'message' => __('Invalid post ID provided.', 'wp-seopress-pro'),
+				'message' => __('Invalid post ID provided.', 'webseo'),
 				'alt_text' => ''
 			];
 		}
@@ -571,7 +571,7 @@ class Completions {
 			return [
 				'message' => sprintf(
 					/* translators: 1: provider name */
-					__('Image alt text generation is not supported by %1$s. Please use OpenAI or another provider that supports multimodal content.', 'wp-seopress-pro'),
+					__('Image alt text generation is not supported by %1$s. Please use OpenAI or another provider that supports multimodal content.', 'webseo'),
 					$this->getProviderName($provider)
 				),
 				'alt_text' => '',
@@ -615,7 +615,7 @@ class Completions {
 		//Prompt for alt text
 		$prompt_alt_text = sprintf(
 			/* translators: %s: language */
-			esc_html__('Write in less than 10 words an alternative text to improve accessibility and SEO, in this language %s.', 'wp-seopress-pro'), 
+			esc_html__('Write in less than 10 words an alternative text to improve accessibility and SEO, in this language %s.', 'webseo'), 
 			esc_attr($language)
 		);
 
@@ -623,9 +623,9 @@ class Completions {
 
 		// For providers that don't support response_format, we need to be more explicit about JSON formatting
 		if ($this->supportsResponseFormat($provider)) {
-			$prompt_alt_text .= esc_html__('Return the answer in JSON. The key containing the alternative text must be called alt_text.', 'wp-seopress-pro');
+			$prompt_alt_text .= esc_html__('Return the answer in JSON. The key containing the alternative text must be called alt_text.', 'webseo');
 		} else {
-			$prompt_alt_text .= esc_html__('You must respond with ONLY a valid JSON object. The JSON must have exactly one key: "alt_text" containing the alternative text. Format: {"alt_text": "your alt text here"}', 'wp-seopress-pro');
+			$prompt_alt_text .= esc_html__('You must respond with ONLY a valid JSON object. The JSON must have exactly one key: "alt_text" containing the alternative text. Format: {"alt_text": "your alt text here"}', 'webseo');
 		}
 
 		$body = [
@@ -691,7 +691,7 @@ class Completions {
 				$response_body = wp_remote_retrieve_body($response);
 				$message = sprintf(
 					/* translators: 1: provider name, 2: response code */
-					__('An error occurred with %1$s API, please try again. Response code: %2$s', 'wp-seopress-pro'),
+					__('An error occurred with %1$s API, please try again. Response code: %2$s', 'webseo'),
 					$this->getProviderName($provider),
 					$response_code
 				);
@@ -717,7 +717,7 @@ class Completions {
 			if (json_last_error() !== JSON_ERROR_NONE) {
 				$message = sprintf(
 					/* translators: 1: provider name, 2: error message */
-					__('Invalid JSON response from %1$s API: %2$s', 'wp-seopress-pro'),
+					__('Invalid JSON response from %1$s API: %2$s', 'webseo'),
 					$this->getProviderName($provider),
 					json_last_error_msg()
 				);
@@ -734,7 +734,7 @@ class Completions {
 					
 					// Check if content is null (AI refused to process)
 					if ($result === null) {
-						$refusal_message = isset($data->choices[0]->message->refusal) ? $data->choices[0]->message->refusal : __('AI refused to describe this image.', 'wp-seopress-pro');
+						$refusal_message = isset($data->choices[0]->message->refusal) ? $data->choices[0]->message->refusal : __('AI refused to describe this image.', 'webseo');
 						$message = $refusal_message;
 						$result = '';
 					} else {
@@ -753,7 +753,7 @@ class Completions {
 					}
 				} else {
 					$result = '';
-					$message = __('Unable to extract content from AI response.', 'wp-seopress-pro');
+					$message = __('Unable to extract content from AI response.', 'webseo');
 				}
 
 				$alt_text = esc_attr(trim(stripslashes_deep(wp_filter_nohtml_kses(wp_strip_all_tags(strip_shortcodes($result)))), '"'));

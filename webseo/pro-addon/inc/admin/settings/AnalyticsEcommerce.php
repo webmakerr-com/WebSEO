@@ -12,28 +12,28 @@ add_settings_section(
 );
 add_settings_field(
     'seopress_google_analytics_purchases', // ID
-    __('Measure purchases', 'wp-seopress-pro'), // Title
+    __('Measure purchases', 'webseo'), // Title
     'seopress_google_analytics_purchases_callback', // Callback
     'seopress-settings-admin-google-analytics-ecommerce', // Page
     'seopress_setting_section_google_analytics_ecommerce' // Section
 );
 add_settings_field(
     'seopress_google_analytics_view_product', // ID
-    __('View item details', 'wp-seopress-pro'), // Title
+    __('View item details', 'webseo'), // Title
     'seopress_google_analytics_view_product_callback', // Callback
     'seopress-settings-admin-google-analytics-ecommerce', // Page
     'seopress_setting_section_google_analytics_ecommerce' // Section
 );
 add_settings_field(
     'seopress_google_analytics_add_to_cart', // ID
-    __('Add to cart event', 'wp-seopress-pro'), // Title
+    __('Add to cart event', 'webseo'), // Title
     'seopress_google_analytics_add_to_cart_callback', // Callback
     'seopress-settings-admin-google-analytics-ecommerce', // Page
     'seopress_setting_section_google_analytics_ecommerce' // Section
 );
 add_settings_field(
     'seopress_google_analytics_remove_from_cart', // ID
-    __('Remove from cart event', 'wp-seopress-pro'), // Title
+    __('Remove from cart event', 'webseo'), // Title
     'seopress_google_analytics_remove_from_cart_callback', // Callback
     'seopress-settings-admin-google-analytics-ecommerce', // Page
     'seopress_setting_section_google_analytics_ecommerce' // Section

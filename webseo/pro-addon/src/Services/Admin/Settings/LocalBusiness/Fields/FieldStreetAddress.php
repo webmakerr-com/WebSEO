@@ -15,11 +15,11 @@ trait FieldStreetAddress {
         <input
             type="text"
             name="seopress_pro_option_name[seopress_local_business_street_address]"
-            placeholder="<?php esc_attr_e('e.g. Place Bellevue', 'wp-seopress-pro'); ?>"
-            aria-label="<?php esc_attr_e('Street Address', 'wp-seopress-pro'); ?>"
+            placeholder="<?php esc_attr_e('e.g. Place Bellevue', 'webseo'); ?>"
+            aria-label="<?php esc_attr_e('Street Address', 'webseo'); ?>"
             value="<?php echo esc_attr($check); ?>" />
 
-            <p class="description"><?php echo wp_kses_post(__('<span class="field-required">Required</span> property by Google.', 'wp-seopress-pro')); ?></p>
+            <p class="description"><?php echo wp_kses_post(__('<span class="field-required">Required</span> property by Google.', 'webseo')); ?></p>
         <?php
     }
 }

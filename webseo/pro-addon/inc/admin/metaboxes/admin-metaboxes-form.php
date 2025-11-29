@@ -21,7 +21,7 @@ function seopress_pro_titles_title_input_before($pagenow) {
 			<span class="spinner"></span>
 			<button class="seopress_ai_generate_seo_meta <?php echo esc_attr(seopress_btn_secondary_classes()); ?>" data-lang="<?php if (function_exists('seopress_get_current_lang')) { echo seopress_get_current_lang(); }; ?>" data_meta="title" type="button">
                 <svg role="img" xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="max-width: inherit;margin-right:10px" viewBox="0 0 128 128" fill="currentColor"><defs><style>.cls-1{stroke-width:0,fill="currentColor"}</style></defs><path class="cls-1" d="M111.33 29.51c-3.95 0-7.17-3.21-7.17-7.17v-12.1h-3.05v12.1c0 3.95-3.22 7.17-7.17 7.17h-8.9v3.05h8.9c3.95 0 7.17 3.22 7.17 7.17v12.1h3.05v-12.1c0-3.95 3.21-7.17 7.17-7.17h8.9v-3.05h-8.9ZM100.5 59.84c-2.3 0-4.17-1.87-4.17-4.17v-7.03h-1.78v7.03c0 2.3-1.87 4.17-4.17 4.17h-5.17v1.78h5.17c2.3 0 4.17 1.87 4.17 4.17v7.03h1.78v-7.03c0-2.3 1.87-4.17 4.17-4.17h5.17v-1.78h-5.17ZM77.48 23.19c-1.94 0-3.52-1.58-3.52-3.52v-5.95h-1.5v5.95c0 1.94-1.58 3.52-3.52 3.52h-4.37v1.5h4.37c1.94 0 3.52 1.58 3.52 3.52v5.95h1.5v-5.95c0-1.94 1.58-3.52 3.52-3.52h4.37v-1.5h-4.37ZM74.1 59.13l-8.69-8.59 11.32-11.32 8.7 8.58L74.1 59.13zM7.77 109.18l52.55-53.54 8.69 8.58-52.55 53.54"/></svg>
-				<?php esc_html_e('Generate meta title with AI','wp-seopress-pro'); ?>
+				<?php esc_html_e('Generate meta title with AI','webseo'); ?>
 			</button>
 		</span>
 	<?php }
@@ -37,7 +37,7 @@ function seopress_pro_titles_meta_desc_input_before($pagenow) {
 			<span class="spinner"></span>
 			<button class="seopress_ai_generate_seo_meta <?php echo esc_attr(seopress_btn_secondary_classes()); ?>" data-lang="<?php if (function_exists('seopress_get_current_lang')) { echo seopress_get_current_lang(); }; ?>" data_meta="desc" type="button">
                 <svg role="img" xmlns="http://www.w3.org/2000/svg" width="22" height="22" style="max-width: inherit;margin-right:10px" viewBox="0 0 128 128" fill="currentColor"><defs><style>.cls-1{stroke-width:0,fill="currentColor"}</style></defs><path class="cls-1" d="M111.33 29.51c-3.95 0-7.17-3.21-7.17-7.17v-12.1h-3.05v12.1c0 3.95-3.22 7.17-7.17 7.17h-8.9v3.05h8.9c3.95 0 7.17 3.22 7.17 7.17v12.1h3.05v-12.1c0-3.95 3.21-7.17 7.17-7.17h8.9v-3.05h-8.9ZM100.5 59.84c-2.3 0-4.17-1.87-4.17-4.17v-7.03h-1.78v7.03c0 2.3-1.87 4.17-4.17 4.17h-5.17v1.78h5.17c2.3 0 4.17 1.87 4.17 4.17v7.03h1.78v-7.03c0-2.3 1.87-4.17 4.17-4.17h5.17v-1.78h-5.17ZM77.48 23.19c-1.94 0-3.52-1.58-3.52-3.52v-5.95h-1.5v5.95c0 1.94-1.58 3.52-3.52 3.52h-4.37v1.5h4.37c1.94 0 3.52 1.58 3.52 3.52v5.95h1.5v-5.95c0-1.94 1.58-3.52 3.52-3.52h4.37v-1.5h-4.37ZM74.1 59.13l-8.69-8.59 11.32-11.32 8.7 8.58L74.1 59.13zM7.77 109.18l52.55-53.54 8.69 8.58-52.55 53.54"/></svg>
-                <?php esc_html_e('Generate meta description with AI','wp-seopress-pro'); ?>
+                <?php esc_html_e('Generate meta description with AI','webseo'); ?>
 			</button>
 		</span>
 	<?php }
@@ -50,14 +50,14 @@ function seopress_pro_metabox_seo_tabs($seo_tabs, $typenow ='', $pagenow ='') {
 	if (function_exists('seopress_get_toggle_option') && '1' == seopress_get_toggle_option('news')) {
 		if ('post-new.php' == $pagenow || 'post.php' == $pagenow) {
 			if ('seopress_404' != $typenow) {
-				$seo_tabs['news-tab'] = '<li><a href="#tabs-5">' . esc_html__('Google News', 'wp-seopress-pro') . '</a></li>';
+				$seo_tabs['news-tab'] = '<li><a href="#tabs-5">' . esc_html__('Google News', 'webseo') . '</a></li>';
 			}
 		}
 	}
 	if (function_exists('seopress_get_toggle_option') && '1' == seopress_get_toggle_option('xml-sitemap') && '1' === seopress_pro_get_service('SitemapOptionPro')->getSitemapVideoEnable()) {
 		if ('post-new.php' == $pagenow || 'post.php' == $pagenow) {
 			if ('seopress_404' != $typenow) {
-				$seo_tabs['video-tab'] = '<li><a href="#tabs-6">' . esc_html__('Video Sitemap', 'wp-seopress-pro') . '</a></li>';
+				$seo_tabs['video-tab'] = '<li><a href="#tabs-6">' . esc_html__('Video Sitemap', 'webseo') . '</a></li>';
 			}
 		}
 	}
@@ -81,7 +81,7 @@ function seopress_pro_seo_metabox_after_content($typenow, $pagenow, $data_attr, 
 						<input type="checkbox" name="seopress_news_disabled" id="seopress_news_disabled_meta"
 							value="yes" <?php echo checked($seopress_news_disabled, 'yes', false); ?>
 						/>
-						<?php esc_html_e('Exclude this post from Google News Sitemap?', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Exclude this post from Google News Sitemap?', 'webseo'); ?>
 					</label>
 				</p>
 			</div>
@@ -108,16 +108,16 @@ function seopress_pro_seo_metabox_after_content($typenow, $pagenow, $data_attr, 
 				if (array_key_exists('video-tab', $seo_tabs)) { ?>
 			<div id="tabs-6">
 				<p>
-					<?php esc_html_e('YouTube videos are automatically added when you create / save a post, page or post type.','wp-seopress-pro'); ?>
+					<?php esc_html_e('YouTube videos are automatically added when you create / save a post, page or post type.','webseo'); ?>
 				</p>
 				<p>
 					<label for="seopress_video_disabled_meta" id="seopress_video_disabled">
 						<input type="checkbox" name="seopress_video_disabled" id="seopress_video_disabled_meta"
 							value="yes" <?php echo checked($seopress_video_disabled, 'yes', false); ?>
 						/>
-						<?php esc_html_e('Exclude this post from Video Sitemap?', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Exclude this post from Video Sitemap?', 'webseo'); ?>
 					</label>
-					<span class="description"><?php esc_html_e('If your post is set to noindex, it will be automatically excluded from the sitemap.', 'wp-seopress-pro'); ?></span>
+					<span class="description"><?php esc_html_e('If your post is set to noindex, it will be automatically excluded from the sitemap.', 'webseo'); ?></span>
 				</p>
 				<div id="wrap-videos"
 					data-count="<?php echo $total; ?>">
@@ -134,19 +134,19 @@ function seopress_pro_seo_metabox_after_content($typenow, $pagenow, $data_attr, 
 					$check_family_friendly = isset($seopress_video[0][$key]['family_friendly']) ? $seopress_video[0][$key]['family_friendly'] : null; ?>
 
 					<div class="video">
-						<h3 class="accordion-section-title" tabindex="0"><?php esc_html_e('Video ', 'wp-seopress-pro'); ?>
+						<h3 class="accordion-section-title" tabindex="0"><?php esc_html_e('Video ', 'webseo'); ?>
 							<?php echo esc_html($check_title); ?>
 						</h3>
 						<div class="accordion-section-content">
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][url_meta]"><?php esc_html_e('Video URL (required)', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][url_meta]"><?php esc_html_e('Video URL (required)', 'webseo'); ?></label>
 								<input
 									id="seopress_video[<?php echo esc_attr($key); ?>][url_meta]"
 									type="text" class="components-text-control__input"
 									name="seopress_video[<?php echo esc_attr($key); ?>][url]"
-									placeholder="<?php esc_html_e('Enter your video URL', 'wp-seopress-pro'); ?>"
-									aria-label="<?php esc_html_e('Video URL', 'wp-seopress-pro'); ?>"
+									placeholder="<?php esc_html_e('Enter your video URL', 'webseo'); ?>"
+									aria-label="<?php esc_html_e('Video URL', 'webseo'); ?>"
 									value="<?php echo esc_url($check_url); ?>" />
 							</p>
 							<p class="internal_video">
@@ -158,100 +158,100 @@ function seopress_pro_seo_metabox_after_content($typenow, $pagenow, $data_attr, 
 										id="seopress_video[<?php echo esc_attr($key); ?>][internal_video_meta]"
 										value="yes" <?php echo checked($check_internal_video, 'yes', false); ?>
 									/>
-									<?php esc_html_e('NOT an external video (e.g. video hosting on YouTube, Vimeo, Wistia...)? Check this if your video is hosting on this server.', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('NOT an external video (e.g. video hosting on YouTube, Vimeo, Wistia...)? Check this if your video is hosting on this server.', 'webseo'); ?>
 								</label>
 							</p>
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][title_meta]"><?php esc_html_e('Video Title (required)', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][title_meta]"><?php esc_html_e('Video Title (required)', 'webseo'); ?></label>
 								<input
 									id="seopress_video[<?php echo esc_attr($key); ?>][title_meta]"
 									type="text" class="components-text-control__input"
 									name="seopress_video[<?php echo esc_attr($key); ?>][title]"
-									placeholder="<?php esc_html_e('Enter your video title', 'wp-seopress-pro'); ?>"
-									aria-label="<?php esc_html_e('Video title', 'wp-seopress-pro'); ?>"
+									placeholder="<?php esc_html_e('Enter your video title', 'webseo'); ?>"
+									aria-label="<?php esc_html_e('Video title', 'webseo'); ?>"
 									value="<?php echo esc_attr($check_title); ?>" />
-								<span class="description"><?php esc_html_e('Default: title tag, if not available, post title.', 'wp-seopress-pro'); ?></span>
+								<span class="description"><?php esc_html_e('Default: title tag, if not available, post title.', 'webseo'); ?></span>
 							</p>
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][desc_meta]"><?php esc_html_e('Video Description (required)', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][desc_meta]"><?php esc_html_e('Video Description (required)', 'webseo'); ?></label>
 								<textarea
 									id="seopress_video[<?php echo esc_attr($key); ?>][desc_meta]"
 									name="seopress_video[<?php echo esc_attr($key); ?>][desc]"
 									class="components-text-control__input"
-									placeholder="<?php esc_html_e('Enter your video description', 'wp-seopress-pro'); ?>"
-									aria-label="<?php esc_html_e('Video description', 'wp-seopress-pro'); ?>"><?php echo esc_html($check_desc); ?></textarea>
-								<span class="description"><?php esc_html_e('2048 characters max.; default: meta description. If not available, use the beginning of the post content.', 'wp-seopress-pro'); ?></span>
+									placeholder="<?php esc_html_e('Enter your video description', 'webseo'); ?>"
+									aria-label="<?php esc_html_e('Video description', 'webseo'); ?>"><?php echo esc_html($check_desc); ?></textarea>
+								<span class="description"><?php esc_html_e('2048 characters max.; default: meta description. If not available, use the beginning of the post content.', 'webseo'); ?></span>
 							</p>
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][thumbnail_meta]"><?php esc_html_e('Video Thumbnail (required)', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][thumbnail_meta]"><?php esc_html_e('Video Thumbnail (required)', 'webseo'); ?></label>
 
 								<input
 									id="seopress_video[<?php echo esc_attr($key); ?>][thumbnail_meta]"
 									class="seopress_video_thumbnail_meta components-text-control__input"
 									type="text"
 									name="seopress_video[<?php echo esc_attr($key); ?>][thumbnail]"
-									placeholder="<?php esc_html_e('Select your video thumbnail', 'wp-seopress-pro'); ?>"
+									placeholder="<?php esc_html_e('Select your video thumbnail', 'webseo'); ?>"
 									value="<?php echo esc_url($check_thumbnail); ?>" />
 
 
 								<input
 									class="<?php echo esc_attr(seopress_btn_secondary_classes()); ?> seopress_video_thumbnail_upload seopress_media_upload"
 									type="button"
-									aria-label="<?php esc_html_e('Video Thumbnail', 'wp-seopress-pro'); ?>"
-									value="<?php esc_html_e('Upload an Image', 'wp-seopress-pro'); ?>" />
+									aria-label="<?php esc_html_e('Video Thumbnail', 'webseo'); ?>"
+									value="<?php esc_html_e('Upload an Image', 'webseo'); ?>" />
 								<span class="description">
-									<?php esc_html_e('Minimum size: 160x90px (1920x1080 max), JPG, PNG or GIF formats. Default: your post featured image.', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('Minimum size: 160x90px (1920x1080 max), JPG, PNG or GIF formats. Default: your post featured image.', 'webseo'); ?>
 								</span>
 							</p>
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][duration_meta]"><?php esc_html_e('Video Duration (recommended)', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][duration_meta]"><?php esc_html_e('Video Duration (recommended)', 'webseo'); ?></label>
 								<input
 									id="seopress_video[<?php echo esc_attr($key); ?>][duration_meta]"
 									type="number" step="1" min="0" max="28800"
 									name="seopress_video[<?php echo esc_attr($key); ?>][duration]"
-									placeholder="<?php esc_html_e('Duration in seconds', 'wp-seopress-pro'); ?>"
-									aria-label="<?php esc_html_e('Video duration', 'wp-seopress-pro'); ?>"
+									placeholder="<?php esc_html_e('Duration in seconds', 'webseo'); ?>"
+									aria-label="<?php esc_html_e('Video duration', 'webseo'); ?>"
 									value="<?php echo esc_attr($check_duration); ?>" />
-								<span class="description"><?php esc_html_e('The duration of the video in seconds. Value must be between 0 and 28800 (8 hours).', 'wp-seopress-pro'); ?></span>
+								<span class="description"><?php esc_html_e('The duration of the video in seconds. Value must be between 0 and 28800 (8 hours).', 'webseo'); ?></span>
 							</p>
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][rating_meta]"><?php esc_html_e('Video Rating', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][rating_meta]"><?php esc_html_e('Video Rating', 'webseo'); ?></label>
 								<input
 									id="seopress_video[<?php echo esc_attr($key); ?>][rating_meta]"
 									type="number" step="0.1" min="0" max="5"
 									name="seopress_video[<?php echo esc_attr($key); ?>][rating]"
-									placeholder="<?php esc_html_e('Video rating', 'wp-seopress-pro'); ?>"
-									aria-label="<?php esc_html_e('Video rating', 'wp-seopress-pro'); ?>"
+									placeholder="<?php esc_html_e('Video rating', 'webseo'); ?>"
+									aria-label="<?php esc_html_e('Video rating', 'webseo'); ?>"
 									value="<?php echo esc_attr($check_rating); ?>" />
-								<span class="description"><?php esc_html_e('Allowed values are float numbers in the range 0.0 to 5.0.', 'wp-seopress-pro'); ?></span>
+								<span class="description"><?php esc_html_e('Allowed values are float numbers in the range 0.0 to 5.0.', 'webseo'); ?></span>
 							</p>
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][view_count_meta]"><?php esc_html_e('View count', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][view_count_meta]"><?php esc_html_e('View count', 'webseo'); ?></label>
 								<input
 									id="seopress_video[<?php echo esc_attr($key); ?>][view_count_meta]"
 									type="number"
 									name="seopress_video[<?php echo esc_attr($key); ?>][view_count]"
-									placeholder="<?php esc_html_e('Number of views', 'wp-seopress-pro'); ?>"
-									aria-label="<?php esc_html_e('View count', 'wp-seopress-pro'); ?>"
+									placeholder="<?php esc_html_e('Number of views', 'webseo'); ?>"
+									aria-label="<?php esc_html_e('View count', 'webseo'); ?>"
 									value="<?php echo esc_attr($check_view_count); ?>" />
 							</p>
 							<p>
 								<label
-									for="seopress_video[<?php echo esc_attr($key); ?>][tag_meta]"><?php esc_html_e('Video tags', 'wp-seopress-pro'); ?></label>
+									for="seopress_video[<?php echo esc_attr($key); ?>][tag_meta]"><?php esc_html_e('Video tags', 'webseo'); ?></label>
 								<input
 									id="seopress_video[<?php echo esc_attr($key); ?>][tag_meta]"
 									type="text" class="components-text-control__input"
 									name="seopress_video[<?php echo esc_attr($key); ?>][tag]"
-									placeholder="<?php esc_html_e('Enter your video tags', 'wp-seopress-pro'); ?>"
-									aria-label="<?php esc_html_e('Video tags', 'wp-seopress-pro'); ?>"
+									placeholder="<?php esc_html_e('Enter your video tags', 'webseo'); ?>"
+									aria-label="<?php esc_html_e('Video tags', 'webseo'); ?>"
 									value="<?php echo esc_attr($check_tag); ?>" />
-								<span class="description"><?php esc_html_e('32 tags max., separate tags with commas. Default: target keywords + post tags if available.', 'wp-seopress-pro'); ?></span>
+								<span class="description"><?php esc_html_e('32 tags max., separate tags with commas. Default: target keywords + post tags if available.', 'webseo'); ?></span>
 							</p>
 							<p class="family-friendly">
 								<label
@@ -262,12 +262,12 @@ function seopress_pro_seo_metabox_after_content($typenow, $pagenow, $data_attr, 
 										id="seopress_video[<?php echo esc_attr($key); ?>][family_friendly_meta]"
 										value="yes" <?php echo checked($check_family_friendly, 'yes', false); ?>
 									/>
-									<?php esc_html_e('NOT family friendly?', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('NOT family friendly?', 'webseo'); ?>
 								</label>
-								<span class="description"><?php esc_html_e('The video will be available only to users with SafeSearch turned off.', 'wp-seopress-pro'); ?></span>
+								<span class="description"><?php esc_html_e('The video will be available only to users with SafeSearch turned off.', 'webseo'); ?></span>
 							</p>
 							<p><a href="#"
-									class="remove-video components-button editor-post-trash is-tertiary is-destructive"><?php esc_html_e('Remove video', 'wp-seopress-pro'); ?></a>
+									class="remove-video components-button editor-post-trash is-tertiary is-destructive"><?php esc_html_e('Remove video', 'webseo'); ?></a>
 							</p>
 						</div>
 					</div>
@@ -276,7 +276,7 @@ function seopress_pro_seo_metabox_after_content($typenow, $pagenow, $data_attr, 
 				</div>
 				<p>
 					<a href="#" id="add-video" class="add-video <?php echo esc_attr(seopress_btn_secondary_classes()); ?>">
-						<?php esc_html_e('Add video', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Add video', 'webseo'); ?>
 					</a>
 				</p>
 			</div>
@@ -346,14 +346,14 @@ function seopress_pro_titles_title_tab_after($pagenow, $data_attr) {
 		}
 	?>
 	<p>
-		<label for="seopress_robots_breadcrumbs_meta"><?php esc_html_e('Custom breadcrumbs', 'wp-seopress-pro'); ?></label>
-		<span class="description"><?php esc_html_e('Enter a custom value, useful if your title is too long', 'wp-seopress-pro'); ?></span>
+		<label for="seopress_robots_breadcrumbs_meta"><?php esc_html_e('Custom breadcrumbs', 'webseo'); ?></label>
+		<span class="description"><?php esc_html_e('Enter a custom value, useful if your title is too long', 'webseo'); ?></span>
 	</p>
 	<p>
 		<input id="seopress_robots_breadcrumbs_meta" type="text" name="seopress_robots_breadcrumbs"
 			class="components-text-control__input"
-			placeholder="<?php /* translators: %s: default post title */ printf(esc_html__('Current breadcrumbs: %s', 'wp-seopress-pro'), esc_html($data_attr['title'])); ?>"
-			aria-label="<?php esc_html_e('Custom breadcrumbs', 'wp-seopress-pro'); ?>"
+			placeholder="<?php /* translators: %s: default post title */ printf(esc_html__('Current breadcrumbs: %s', 'webseo'), esc_html($data_attr['title'])); ?>"
+			aria-label="<?php esc_html_e('Custom breadcrumbs', 'webseo'); ?>"
 			value="<?php echo esc_html($seopress_robots_breadcrumbs); ?>" />
 	</p>
 	<?php
