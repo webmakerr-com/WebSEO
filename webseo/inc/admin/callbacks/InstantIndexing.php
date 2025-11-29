@@ -51,8 +51,8 @@ function seopress_instant_indexing_google_action_callback() {
 	$options = get_option( 'seopress_instant_indexing_option_name' );
 
 	$actions = [
-		'URL_UPDATED' => esc_attr__( 'Update URLs', 'wp-seopress' ),
-		'URL_DELETED' => esc_attr__( 'Remove URLs (URL must return a 404 or 410 status code or the page contains <meta name="robots" content="noindex" /> meta tag)', 'wp-seopress' ),
+		'URL_UPDATED' => esc_attr__( 'Update URLs', 'webseo' ),
+		'URL_DELETED' => esc_attr__( 'Remove URLs (URL must return a 404 or 410 status code or the page contains <meta name="robots" content="noindex" /> meta tag)', 'webseo' ),
 	];
 
 	foreach ( $actions as $key => $value ) {
@@ -93,7 +93,7 @@ function seopress_instant_indexing_google_action_callback() {
  * Print the instant indexing manual batch callback.
  */
 function seopress_instant_indexing_manual_batch_callback() {
-	require_once WP_PLUGIN_DIR . '/wp-seopress/vendor/autoload.php';
+    require_once WP_PLUGIN_DIR . '/webseo/vendor/autoload.php';
 	$options = get_option( 'seopress_instant_indexing_option_name' );
 	$log     = get_option( 'seopress_instant_indexing_log_option_name' );
 	$check   = isset( $options['seopress_instant_indexing_manual_batch'] ) ? esc_attr( $options['seopress_instant_indexing_manual_batch'] ) : null;
@@ -112,7 +112,7 @@ function seopress_instant_indexing_manual_batch_callback() {
 	$google_response = isset( $log['google']['response'] ) && is_array( $log['google']['response'] ) ? $log['google']['response'] : null;
 
 	printf(
-		'<textarea id="seopress_instant_indexing_manual_batch" name="seopress_instant_indexing_option_name[seopress_instant_indexing_manual_batch]" rows="35" placeholder="' . esc_html__( 'Enter one URL per line to submit them to search engines (max 100 URLs)', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Enter one URL per line to submit them to search engines (max 100 URLs)', 'wp-seopress' ) . '">%s</textarea>',
+		'<textarea id="seopress_instant_indexing_manual_batch" name="seopress_instant_indexing_option_name[seopress_instant_indexing_manual_batch]" rows="35" placeholder="' . esc_html__( 'Enter one URL per line to submit them to search engines (max 100 URLs)', 'webseo' ) . '" aria-label="' . esc_attr__( 'Enter one URL per line to submit them to search engines (max 100 URLs)', 'webseo' ) . '">%s</textarea>',
 		esc_html( $check )
 	);
 	?>
@@ -123,27 +123,27 @@ function seopress_instant_indexing_manual_batch_callback() {
 	</div>
 	<div class="wrap-seopress-counters">
 		<div id="seopress_instant_indexing_url_count"></div>
-		<strong><?php esc_attr_e( ' / 100 URLs', 'wp-seopress' ); ?></strong>
+		<strong><?php esc_attr_e( ' / 100 URLs', 'webseo' ); ?></strong>
 	</div>
 </div>
 
 <div class="seopress-notice is-warning">
 	<p>
 		<?php
-			echo wp_kses_post( __( 'The Google Indexing API should only be used to crawl pages that contain structured data of type <code>JobPosting</code> or <code>BroadcastEvent</code> in a <code>VideoObject</code> element.', 'wp-seopress' ) );
+			echo wp_kses_post( __( 'The Google Indexing API should only be used to crawl pages that contain structured data of type <code>JobPosting</code> or <code>BroadcastEvent</code> in a <code>VideoObject</code> element.', 'webseo' ) );
 		?>
 	</p>
 </div>
 
 <p>
 	<button type="button" class="seopress-instant-indexing-batch btn btnPrimary">
-		<?php esc_attr_e( 'Submit URLs to Google & Bing', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Submit URLs to Google & Bing', 'webseo' ); ?>
 	</button>
 
 	<span class="spinner"></span>
 </p>
 
-<h3><?php esc_attr_e( 'Latest indexing request', 'wp-seopress' ); ?></h3>
+<h3><?php esc_attr_e( 'Latest indexing request', 'webseo' ); ?></h3>
 <p><em><?php echo esc_html( $date ); ?></em></p>
 
 	<?php
@@ -154,7 +154,7 @@ function seopress_instant_indexing_manual_batch_callback() {
 	}
 	if ( isset( $bing_response ) && is_array( $bing_response ) && ! empty( $bing_response ) ) {
 		echo '<div class="wrap-bing-response">';
-		echo '<h4>' . esc_html__( 'Bing Response', 'wp-seopress' ) . '</h4>';
+		echo '<h4>' . esc_html__( 'Bing Response', 'webseo' ) . '</h4>';
 		if ( ! empty( $bing_response['error'] ) ) {
 			// Error case.
 			echo '<span class="indexing-log indexing-failed"></span>';
@@ -164,28 +164,28 @@ function seopress_instant_indexing_manual_batch_callback() {
 			$code = isset( $bing_response['code'] ) ? $bing_response['code'] : null;
 			switch ( $code ) {
 				case 200:
-					$msg = esc_attr__( 'URLs submitted successfully', 'wp-seopress' );
+					$msg = esc_attr__( 'URLs submitted successfully', 'webseo' );
 					break;
 				case 202:
-					$msg = esc_attr__( 'URL received. IndexNow key validation pending.', 'wp-seopress' );
+					$msg = esc_attr__( 'URL received. IndexNow key validation pending.', 'webseo' );
 					break;
 				case 400:
-					$msg = esc_attr__( 'Bad request: Invalid format', 'wp-seopress' );
+					$msg = esc_attr__( 'Bad request: Invalid format', 'webseo' );
 					break;
 				case 401:
-					$msg = esc_attr__( 'Bing API key is missing', 'wp-seopress' );
+					$msg = esc_attr__( 'Bing API key is missing', 'webseo' );
 					break;
 				case 403:
-					$msg = esc_attr__( 'Forbidden: In case of key not valid (e.g. key not found, file found but key not in the file)', 'wp-seopress' );
+					$msg = esc_attr__( 'Forbidden: In case of key not valid (e.g. key not found, file found but key not in the file)', 'webseo' );
 					break;
 				case 422:
-					$msg = esc_attr__( 'Unprocessable Entity: In case of URLs don’t belong to the host or the key is not matching the schema in the protocol', 'wp-seopress' );
+					$msg = esc_attr__( 'Unprocessable Entity: In case of URLs don’t belong to the host or the key is not matching the schema in the protocol', 'webseo' );
 					break;
 				case 429:
-					$msg = esc_attr__( 'Too Many Requests (potential Spam)', 'wp-seopress' );
+					$msg = esc_attr__( 'Too Many Requests (potential Spam)', 'webseo' );
 					break;
 				default:
-					$msg = esc_attr__( 'Something went wrong', 'wp-seopress' );
+					$msg = esc_attr__( 'Something went wrong', 'webseo' );
 			}
 			if ( 200 === $code || 202 === $code ) {
 				echo '<span class="indexing-log indexing-done"></span>';
@@ -200,7 +200,7 @@ function seopress_instant_indexing_manual_batch_callback() {
 	if ( isset( $google_response ) && is_array( $google_response ) && ! empty( $google_response ) ) {
 		?>
 		<div class="wrap-google-response">
-			<h4><?php esc_attr_e( 'Google Response', 'wp-seopress' ); ?></h4>
+			<h4><?php esc_attr_e( 'Google Response', 'webseo' ); ?></h4>
 
 			<?php
 			$google_exception = $google_response[ array_key_first( $google_response ) ];
@@ -211,7 +211,7 @@ function seopress_instant_indexing_manual_batch_callback() {
 				echo '<span class="indexing-log indexing-failed"></span><code>' . esc_html( $google_response['error']['code'] ) . ' - ' . esc_html( $google_response['error']['message'] ) . '</code>';
 			} else {
 				?>
-				<p><span class="indexing-log indexing-done"></span><code><?php esc_attr_e( 'URLs submitted successfully', 'wp-seopress' ); ?></code></p>
+				<p><span class="indexing-log indexing-done"></span><code><?php esc_attr_e( 'URLs submitted successfully', 'webseo' ); ?></code></p>
 				<ul>
 					<?php
 					foreach ( $google_response as $result ) {
@@ -252,7 +252,7 @@ function seopress_instant_indexing_manual_batch_callback() {
 	}
 	?>
 
-	<h4><?php esc_attr_e( 'Latest URLs submitted', 'wp-seopress' ); ?></h4>
+	<h4><?php esc_attr_e( 'Latest URLs submitted', 'webseo' ); ?></h4>
 	<?php if ( ! empty( $urls[0] ) ) { ?>
 		<ul>
 		<?php foreach ( $urls as $url ) { ?>
@@ -263,7 +263,7 @@ function seopress_instant_indexing_manual_batch_callback() {
 		</ul>
 		<?php
 	} else {
-		esc_attr_e( 'None', 'wp-seopress' );
+		esc_attr_e( 'None', 'webseo' );
 	}
 }
 
@@ -276,12 +276,12 @@ function seopress_instant_indexing_google_api_key_callback() {
 	$check   = isset( $options['seopress_instant_indexing_google_api_key'] ) ? esc_attr( $options['seopress_instant_indexing_google_api_key'] ) : null;
 
 	printf(
-		'<textarea id="seopress_instant_indexing_google_api_key" name="seopress_instant_indexing_option_name[seopress_instant_indexing_google_api_key]" rows="12" placeholder="' . esc_html__( 'Paste your Google JSON key file here', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Paste your Google JSON key file here', 'wp-seopress' ) . '">%s</textarea>',
+		'<textarea id="seopress_instant_indexing_google_api_key" name="seopress_instant_indexing_option_name[seopress_instant_indexing_google_api_key]" rows="12" placeholder="' . esc_html__( 'Paste your Google JSON key file here', 'webseo' ) . '" aria-label="' . esc_attr__( 'Paste your Google JSON key file here', 'webseo' ) . '">%s</textarea>',
 		esc_html( $check )
 	);
 	?>
 
-<p class="seopress-help description"><?php /* translators: %1$s documentation URL, %2$s documentation URL */ printf( wp_kses_post( __( 'To use the <a href="%1$s" target="_blank">Google Indexing API</a><span class="dashicons dashicons-external"></span> and generate your JSON key file, please <a href="%2$s" target="_blank">follow our guide</a><span class="dashicons dashicons-external"></span>.', 'wp-seopress' ) ), esc_url( $docs['indexing_api']['api'] ), esc_url( $docs['indexing_api']['google'] ) ); ?></p>
+<p class="seopress-help description"><?php /* translators: %1$s documentation URL, %2$s documentation URL */ printf( wp_kses_post( __( 'To use the <a href="%1$s" target="_blank">Google Indexing API</a><span class="dashicons dashicons-external"></span> and generate your JSON key file, please <a href="%2$s" target="_blank">follow our guide</a><span class="dashicons dashicons-external"></span>.', 'webseo' ) ), esc_url( $docs['indexing_api']['api'] ), esc_url( $docs['indexing_api']['google'] ) ); ?></p>
 
 	<?php
 }
@@ -295,14 +295,14 @@ function seopress_instant_indexing_bing_api_key_callback() {
 	?>
 
 	<input type="text" id="seopress_instant_indexing_bing_api_key" name="seopress_instant_indexing_option_name[seopress_instant_indexing_bing_api_key]"
-	placeholder="<?php esc_html_e( 'Enter your Bing Instant Indexing API', 'wp-seopress' ); ?>"
-	aria-label="<?php esc_attr_e( 'Enter your Bing Instant Indexing API', 'wp-seopress' ); ?>"
+	placeholder="<?php esc_html_e( 'Enter your Bing Instant Indexing API', 'webseo' ); ?>"
+	aria-label="<?php esc_attr_e( 'Enter your Bing Instant Indexing API', 'webseo' ); ?>"
 	value="<?php echo esc_attr( $check ); ?>" />
 
-	<button type="button" class="seopress-instant-indexing-refresh-api-key btn btnSecondary"><?php esc_attr_e( 'Generate key', 'wp-seopress' ); ?></button>
+	<button type="button" class="seopress-instant-indexing-refresh-api-key btn btnSecondary"><?php esc_attr_e( 'Generate key', 'webseo' ); ?></button>
 
-	<p class="description"><?php esc_attr_e( 'The Bing Indexing API key is automatically generated. Click Generate key if you want to recreate it, or if it\'s missing.', 'wp-seopress' ); ?></p>
-	<p class="description"><?php esc_attr_e( 'A key should look like this: ', 'wp-seopress' ); ?><code>ZjA2NWI3ZWM3MmNhNDRkODliYmY0YjljMzg5YTk2NGE=</code></p>
+	<p class="description"><?php esc_attr_e( 'The Bing Indexing API key is automatically generated. Click Generate key if you want to recreate it, or if it\'s missing.', 'webseo' ); ?></p>
+	<p class="description"><?php esc_attr_e( 'A key should look like this: ', 'webseo' ); ?><code>ZjA2NWI3ZWM3MmNhNDRkODliYmY0YjljMzg5YTk2NGE=</code></p>
 	<?php
 }
 
@@ -323,11 +323,11 @@ function seopress_instant_indexing_automate_submission_callback() {
 		}
 		?>
 		value="1"/>
-		<?php esc_attr_e( 'Enable automatic URL submission for IndexNow API', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Enable automatic URL submission for IndexNow API', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'Notify search engines using IndexNow protocol (currently Bing and Yandex) whenever a post is created, updated or deleted.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Notify search engines using IndexNow protocol (currently Bing and Yandex) whenever a post is created, updated or deleted.', 'webseo' ); ?>
 	</p>
 
 	<?php

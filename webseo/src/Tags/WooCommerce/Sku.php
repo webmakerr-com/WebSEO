@@ -20,7 +20,7 @@ class Sku implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Product SKU', 'wp-seopress' );
+		return __( 'Product SKU', 'webseo' );
 	}
 
 	/**

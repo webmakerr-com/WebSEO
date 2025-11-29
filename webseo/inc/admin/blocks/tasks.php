@@ -36,8 +36,8 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 
 	<div id="notice-tasks-alert" class="seopress-card <?php echo esc_attr( $class ); ?>" style="display: none">
 		<div class="seopress-card-title">
-			<h2><?php esc_attr_e( 'SEOPress Suite', 'wp-seopress' ); ?></h2>
-			<p><?php esc_html_e( 'From on-site to off-site SEO, our SEO plugins cover all your needs to rank higher in search engines.', 'wp-seopress' ); ?></p>
+			<h2><?php esc_attr_e( 'SEOPress Suite', 'webseo' ); ?></h2>
+			<p><?php esc_html_e( 'From on-site to off-site SEO, our SEO plugins cover all your needs to rank higher in search engines.', 'webseo' ); ?></p>
 		</div>
 		<div class="seopress-card-content">
 		<?php
@@ -77,19 +77,19 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 					// Plugin status.
 					if ( is_plugin_active( $key ) ) {
 						$status = 'status-active';
-						$label  = esc_attr__( 'Active', 'wp-seopress' );
+						$label  = esc_attr__( 'Active', 'webseo' );
 					} else {
 						$status  = 'status-inactive';
-						$label   = esc_attr__( 'Inactive', 'wp-seopress' );
+						$label   = esc_attr__( 'Inactive', 'webseo' );
 						$upgrade = true;
 					}
 					// License status.
 					if ( is_plugin_active( $key ) && isset( $product['status'] ) ) {
 						if ( true === $product['status'] ) {
-							$label = esc_attr__( 'License valid', 'wp-seopress' );
+							$label = esc_attr__( 'License valid', 'webseo' );
 						} else {
 							$status = 'status-expired';
-							$label  = esc_attr__( 'License invalid', 'wp-seopress' );
+							$label  = esc_attr__( 'License invalid', 'webseo' );
 						}
 					}
 					?>
@@ -101,14 +101,14 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 						<?php if ( true === $upgrade ) { ?>
 									<div class="status upgrade">
 										<a href="<?php echo esc_url( $url ); ?>" target="_blank">
-											<?php esc_html_e( 'Upgrade', 'wp-seopress' ); ?>
+											<?php esc_html_e( 'Upgrade', 'webseo' ); ?>
 											<span class="seopress-help dashicons dashicons-external"></span>
 										</a>
 									</div>
 								<?php } elseif ( isset( $product['status'] ) && false === $product['status'] ) { ?>
 									<div class="status upgrade">
 										<a href="<?php echo esc_url( admin_url( 'admin.php?page=webseo-license' ) ); ?>">
-											<?php esc_html_e( 'Check license', 'wp-seopress' ); ?>
+											<?php esc_html_e( 'Check license', 'webseo' ); ?>
 										</a>
 									</div>
 								<?php } ?>

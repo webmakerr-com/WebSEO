@@ -29,7 +29,7 @@ function seopress_admin_bar_links() {
 		$total = $notifications['total'];
 	}
 
-	$title = '<div id="seopress-ab-icon" class="ab-item svg seopress-logo" style="background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJ1dWlkLTRmNmE4YTQxLTE4ZTMtNGY3Ny1iNWE5LTRiMWIzOGFhMmRjOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODk5LjY1NSA0OTQuMzA5NCI+PHBhdGggaWQ9InV1aWQtYTE1NWMxY2EtZDg2OC00NjUzLTg0NzctOGRkODcyNDBhNzY1IiBkPSJNMzI3LjM4NDksNDM1LjEyOGwtMjk5Ljk5OTktLjI0OTdjLTE2LjI3MzUsMS4xOTM3LTI4LjQ5ODEsMTUuMzUzOC0yNy4zMDQ0LDMxLjYyNzMsMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NGwyOTkuOTk5OSwuMjQ5N2MxNi4yNzM1LTEuMTkzNywyOC40OTgxLTE1LjM1MzgsMjcuMzA0NC0zMS42MjczLTEuMDcxOC0xNC42MTI4LTEyLjY5MTYtMjYuMjMyNS0yNy4zMDQ0LTI3LjMwNDRaIiBzdHlsZT0iZmlsbDojYTdhYWFkIi8+PHBhdGggaWQ9InV1aWQtZTMwYmE0YzYtNDc2OS00NjZiLWEwM2EtZTY0NGM1MTk4ZTU2IiBkPSJNMjcuMzg0OSw1OC45MzE3bDI5OS45OTk5LC4yNDk3YzE2LjI3MzUtMS4xOTM3LDI4LjQ5ODEtMTUuMzUzNywyNy4zMDQ0LTMxLjYyNzMtMS4wNzE4LTE0LjYxMjgtMTIuNjkxNi0yNi4yMzI1LTI3LjMwNDQtMjcuMzA0NEwyNy4zODQ5LDBDMTEuMTExNCwxLjE5MzctMS4xMTMyLDE1LjM1MzcsLjA4MDUsMzEuNjI3M2MxLjA3MTksMTQuNjEyOCwxMi42OTE2LDI2LjIzMjUsMjcuMzA0NCwyNy4zMDQ0WiIgc3R5bGU9ImZpbGw6I2E3YWFhZCIvPjxwYXRoIGlkPSJ1dWlkLTJiYmQ1MmQ2LWFlYzEtNDY4OS05ZDRjLTIzYzM1ZDRmMjJiOCIgZD0iTTY1Mi40ODUsLjI4NDljLTEyNC45Mzg4LC4wNjQtMjMwLjE1NTQsOTMuNDEzMi0yNDUuMTAwMSwyMTcuNDU1SDI3LjM4NDljLTE2LjI3MzUsMS4xOTM3LTI4LjQ5ODEsMTUuMzUzNy0yNy4zMDQ0LDMxLjYyNzIsMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NEg0MDcuMzg0OWMxNi4yMjk4LDEzNS40NDU0LDEzOS4xODcsMjMyLjA4ODgsMjc0LjYzMjMsMjE1Ljg1ODksMTM1LjQ0NTUtMTYuMjI5OCwyMzIuMDg4OC0xMzkuMTg2OSwyMTUuODU4OS0yNzQuNjMyNEM4ODIuOTkyMSw5My42ODM0LDc3Ny41ODg0LC4yMTEyLDY1Mi40ODUsLjI4NDlabTAsNDMzLjQyMTdjLTEwMi45NzU0LDAtMTg2LjQ1MzMtODMuNDc4LTE4Ni40NTMzLTE4Ni40NTMzLDAtMTAyLjk3NTMsODMuNDc4MS0xODYuNDUzMywxODYuNDUzMy0xODYuNDUzMywxMDIuOTc1NCwwLDE4Ni40NTMzLDgzLjQ3OCwxODYuNDUzMywxODYuNDUzMywuMDUyNCwxMDIuOTc1My04My4zODMsMTg2LjQ5NTktMTg2LjM1ODMsMTg2LjU0ODMtLjAzMTYsMC0uMDYzNCwwLS4wOTUxLDB2LS4wOTVaIiBzdHlsZT0iZmlsbDojYTdhYWFkIi8+PC9zdmc+) !important"></div> ' . __( 'SEO', 'wp-seopress' );
+	$title = '<div id="seopress-ab-icon" class="ab-item svg seopress-logo" style="background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJ1dWlkLTRmNmE4YTQxLTE4ZTMtNGY3Ny1iNWE5LTRiMWIzOGFhMmRjOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODk5LjY1NSA0OTQuMzA5NCI+PHBhdGggaWQ9InV1aWQtYTE1NWMxY2EtZDg2OC00NjUzLTg0NzctOGRkODcyNDBhNzY1IiBkPSJNMzI3LjM4NDksNDM1LjEyOGwtMjk5Ljk5OTktLjI0OTdjLTE2LjI3MzUsMS4xOTM3LTI4LjQ5ODEsMTUuMzUzOC0yNy4zMDQ0LDMxLjYyNzMsMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NGwyOTkuOTk5OSwuMjQ5N2MxNi4yNzM1LTEuMTkzNywyOC40OTgxLTE1LjM1MzgsMjcuMzA0NC0zMS42MjczLTEuMDcxOC0xNC42MTI4LTEyLjY5MTYtMjYuMjMyNS0yNy4zMDQ0LTI3LjMwNDRaIiBzdHlsZT0iZmlsbDojYTdhYWFkIi8+PHBhdGggaWQ9InV1aWQtZTMwYmE0YzYtNDc2OS00NjZiLWEwM2EtZTY0NGM1MTk4ZTU2IiBkPSJNMjcuMzg0OSw1OC45MzE3bDI5OS45OTk5LC4yNDk3YzE2LjI3MzUtMS4xOTM3LDI4LjQ5ODEtMTUuMzUzNywyNy4zMDQ0LTMxLjYyNzMtMS4wNzE4LTE0LjYxMjgtMTIuNjkxNi0yNi4yMzI1LTI3LjMwNDQtMjcuMzA0NEwyNy4zODQ5LDBDMTEuMTExNCwxLjE5MzctMS4xMTMyLDE1LjM1MzcsLjA4MDUsMzEuNjI3M2MxLjA3MTksMTQuNjEyOCwxMi42OTE2LDI2LjIzMjUsMjcuMzA0NCwyNy4zMDQ0WiIgc3R5bGU9ImZpbGw6I2E3YWFhZCIvPjxwYXRoIGlkPSJ1dWlkLTJiYmQ1MmQ2LWFlYzEtNDY4OS05ZDRjLTIzYzM1ZDRmMjJiOCIgZD0iTTY1Mi40ODUsLjI4NDljLTEyNC45Mzg4LC4wNjQtMjMwLjE1NTQsOTMuNDEzMi0yNDUuMTAwMSwyMTcuNDU1SDI3LjM4NDljLTE2LjI3MzUsMS4xOTM3LTI4LjQ5ODEsMTUuMzUzNy0yNy4zMDQ0LDMxLjYyNzIsMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NEg0MDcuMzg0OWMxNi4yMjk4LDEzNS40NDU0LDEzOS4xODcsMjMyLjA4ODgsMjc0LjYzMjMsMjE1Ljg1ODksMTM1LjQ0NTUtMTYuMjI5OCwyMzIuMDg4OC0xMzkuMTg2OSwyMTUuODU4OS0yNzQuNjMyNEM4ODIuOTkyMSw5My42ODM0LDc3Ny41ODg0LC4yMTEyLDY1Mi40ODUsLjI4NDlabTAsNDMzLjQyMTdjLTEwMi45NzU0LDAtMTg2LjQ1MzMtODMuNDc4LTE4Ni40NTMzLTE4Ni40NTMzLDAtMTAyLjk3NTMsODMuNDc4MS0xODYuNDUzMywxODYuNDUzMy0xODYuNDUzMywxMDIuOTc1NCwwLDE4Ni40NTMzLDgzLjQ3OCwxODYuNDUzMywxODYuNDUzMywuMDUyNCwxMDIuOTc1My04My4zODMsMTg2LjQ5NTktMTg2LjM1ODMsMTg2LjU0ODMtLjAzMTYsMC0uMDYzNCwwLS4wOTUxLDB2LS4wOTVaIiBzdHlsZT0iZmlsbDojYTdhYWFkIi8+PC9zdmc+) !important"></div> ' . __( 'SEO', 'webseo' );
 
 	$title = apply_filters( 'seopress_adminbar_icon', $title );
 
@@ -65,7 +65,7 @@ function seopress_admin_bar_links() {
 		if ( true === $metarobots ) {
 			$noindex  = '<a class="wrap-seopress-noindex" href="' . admin_url( 'admin.php?page=webseo-titles#tab=tab_seopress_titles_advanced' ) . '">';
 			$noindex .= '<span class="ab-icon dashicons dashicons-hidden"></span>';
-			$noindex .= __( 'noindex is on!', 'wp-seopress' );
+			$noindex .= __( 'noindex is on!', 'webseo' );
 			$noindex .= '</a>';
 		}
 
@@ -99,19 +99,19 @@ function seopress_admin_bar_links() {
 
 			if ( get_current_screen()->taxonomy ) {
 				/* translators: %s taxonomy name */
-				$robots .= '<span class="wrap-seopress-cpt-seo">' . sprintf( __( 'SEO for "%s"', 'wp-seopress' ), get_current_screen()->taxonomy ) . '</span>';
+				$robots .= '<span class="wrap-seopress-cpt-seo">' . sprintf( __( 'SEO for "%s"', 'webseo' ), get_current_screen()->taxonomy ) . '</span>';
 			} else {
 				/* translators: %s custom post type name */
-				$robots .= '<span class="wrap-seopress-cpt-seo">' . sprintf( __( 'SEO for "%s"', 'wp-seopress' ), get_current_screen()->post_type ) . '</span>';
+				$robots .= '<span class="wrap-seopress-cpt-seo">' . sprintf( __( 'SEO for "%s"', 'webseo' ), get_current_screen()->post_type ) . '</span>';
 			}
 			$robots .= '<span class="wrap-seopress-cpt-noindex">';
 
 			if ( true === $noindex ) {
 				$robots .= '<span class="ab-icon dashicons dashicons-marker on"></span>';
-				$robots .= __( 'noindex is on!', 'wp-seopress' );
+				$robots .= __( 'noindex is on!', 'webseo' );
 			} else {
 				$robots .= '<span class="ab-icon dashicons dashicons-marker off"></span>';
-				$robots .= __( 'noindex is off.', 'wp-seopress' );
+				$robots .= __( 'noindex is off.', 'webseo' );
 			}
 
 			$robots .= '</span>';
@@ -120,10 +120,10 @@ function seopress_admin_bar_links() {
 
 			if ( true === $nofollow ) {
 				$robots .= '<span class="ab-icon dashicons dashicons-marker on"></span>';
-				$robots .= __( 'nofollow is on!', 'wp-seopress' );
+				$robots .= __( 'nofollow is on!', 'webseo' );
 			} else {
 				$robots .= '<span class="ab-icon dashicons dashicons-marker off"></span>';
-				$robots .= __( 'nofollow is off.', 'wp-seopress' );
+				$robots .= __( 'nofollow is off.', 'webseo' );
 			}
 
 			$robots .= '</span>';
@@ -143,7 +143,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_titles',
-			'title'  => __( 'Titles & Metas', 'wp-seopress' ),
+			'title'  => __( 'Titles & Metas', 'webseo' ),
 			'href'   => admin_url( 'admin.php?page=webseo-titles' ),
 		)
 	);
@@ -151,7 +151,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_xml_sitemap',
-			'title'  => __( 'XML - HTML Sitemap', 'wp-seopress' ),
+			'title'  => __( 'XML - HTML Sitemap', 'webseo' ),
 			'href'   => admin_url( 'admin.php?page=webseo-xml-sitemap' ),
 		)
 	);
@@ -159,7 +159,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_social',
-			'title'  => __( 'Social Networks', 'wp-seopress' ),
+			'title'  => __( 'Social Networks', 'webseo' ),
 			'href'   => admin_url( 'admin.php?page=webseo-social' ),
 		)
 	);
@@ -167,7 +167,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_google_analytics',
-			'title'  => __( 'Analytics', 'wp-seopress' ),
+			'title'  => __( 'Analytics', 'webseo' ),
 			'href'   => admin_url( 'admin.php?page=webseo-google-analytics' ),
 		)
 	);
@@ -175,7 +175,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_instant_indexing',
-			'title'  => __( 'Instant Indexing', 'wp-seopress' ),
+			'title'  => __( 'Instant Indexing', 'webseo' ),
 			'href'   => admin_url( 'admin.php?page=webseo-instant-indexing' ),
 		)
 	);
@@ -183,7 +183,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_advanced',
-			'title'  => __( 'Advanced', 'wp-seopress' ),
+			'title'  => __( 'Advanced', 'webseo' ),
 			'href'   => admin_url( 'admin.php?page=webseo-advanced' ),
 		)
 	);
@@ -191,7 +191,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_import_export',
-			'title'  => __( 'Tools', 'wp-seopress' ),
+			'title'  => __( 'Tools', 'webseo' ),
 			'href'   => admin_url( 'admin.php?page=webseo-import-export' ),
 		)
 	);
@@ -202,7 +202,7 @@ function seopress_admin_bar_links() {
 		array(
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_wizard',
-			'title'  => __( 'Configuration wizard', 'wp-seopress' ),
+			'title'  => __( 'Configuration wizard', 'webseo' ),
                     'href'   => admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ),
 		)
 	);

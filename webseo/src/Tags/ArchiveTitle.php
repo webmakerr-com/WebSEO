@@ -20,7 +20,7 @@ class ArchiveTitle implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Archive Title', 'wp-seopress' );
+		return __( 'Archive Title', 'webseo' );
 	}
 
 	/**

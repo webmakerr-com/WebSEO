@@ -1,9 +1,9 @@
-# Copyright (C) 2025 The SEO Guys at SEOPress
+# Copyright (C) 2025 WebSEO
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: SEOPress 8.3.1\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-seopress\n"
+"Project-Id-Version: WebSEO 9.3.0.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/webseo\n"
 "Last-Translator: SEOPress <contact@seopress.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,27 +12,27 @@ msgstr ""
 "POT-Creation-Date: 2025-10-06T13:25:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: wp-seopress\n"
+"X-Domain: webseo\n"
 
 #. Plugin Name of the plugin
-#: seopress.php
-msgid "SEOPress"
+#: webseo.php
+msgid "WebSEO"
 msgstr ""
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
-#: seopress.php
-msgid "https://www.seopress.org/"
+#: webseo.php
+msgid "https://www.webseo.com/"
 msgstr ""
 
 #. Description of the plugin
-#: seopress.php
-msgid "One of the best SEO plugins for WordPress."
+#: webseo.php
+msgid "All-in-one SEO plugin for WordPress."
 msgstr ""
 
 #. Author of the plugin
-#: seopress.php
-msgid "The SEO Guys at SEOPress"
+#: webseo.php
+msgid "WebSEO Team"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-bar.php:26
@@ -1364,7 +1364,7 @@ msgid "If you use a caching plugin, you have to exclude this JS file in your set
 msgstr ""
 
 #: inc/admin/callbacks/Analytics.php:104
-msgid "<code>/wp-content/plugins/wp-seopress/assets/js/seopress-cookies-ajax.js</code> and this cookie <code>seopress-user-consent-accept</code>"
+msgid "<code>/wp-content/plugins/webseo/assets/js/seopress-cookies-ajax.js</code> and this cookie <code>seopress-user-consent-accept</code>"
 msgstr ""
 
 #: inc/admin/callbacks/Analytics.php:105

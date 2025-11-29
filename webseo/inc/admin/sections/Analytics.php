@@ -14,21 +14,21 @@ function seopress_print_section_info_google_analytics_enable() {
 	?>
 	<div class="sp-section-header">
 		<h2>
-			<?php esc_attr_e( 'Google Analytics', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Google Analytics', 'webseo' ); ?>
 		</h2>
 	</div>
 
 	<div class="seopress-sub-tabs">
-		<a href="#seopress-analytics-general"><?php esc_attr_e( 'General', 'wp-seopress' ); ?></a> |
-		<a href="#seopress-analytics-events"><?php esc_attr_e( 'Events', 'wp-seopress' ); ?></a>
+		<a href="#seopress-analytics-general"><?php esc_attr_e( 'General', 'webseo' ); ?></a> |
+		<a href="#seopress-analytics-events"><?php esc_attr_e( 'Events', 'webseo' ); ?></a>
 		<?php do_action( 'seopress_analytics_settings_section' ); ?>
 	</div>
 
 	<p>
-		<?php esc_attr_e( 'Link your Google Analytics to your website. The tracking code will be automatically added to your site.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Link your Google Analytics to your website. The tracking code will be automatically added to your site.', 'webseo' ); ?>
 	</p>
 	<hr>
-	<h3 id="seopress-analytics-general"><?php esc_attr_e( 'General', 'wp-seopress' ); ?></h3>
+	<h3 id="seopress-analytics-general"><?php esc_attr_e( 'General', 'webseo' ); ?></h3>
 
 	<?php
 }
@@ -40,20 +40,20 @@ function seopress_print_section_info_google_analytics_gdpr() {
 	?>
 	<div class="sp-section-header">
 		<h2>
-			<?php esc_attr_e( 'Cookie bar / GDPR / Google Consent v2', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Cookie bar / GDPR / Google Consent v2', 'webseo' ); ?>
 		</h2>
 	</div>
 	<p>
-		<?php esc_attr_e( 'Manage user consent for GDPR and customize your cookie bar easily.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Manage user consent for GDPR and customize your cookie bar easily.', 'webseo' ); ?>
 	</p>
 
 	<p>
-		<?php echo wp_kses_post( __( 'Works with <strong>Google Analytics</strong> and <strong>Matomo</strong>.', 'wp-seopress' ) ); ?>
+		<?php echo wp_kses_post( __( 'Works with <strong>Google Analytics</strong> and <strong>Matomo</strong>.', 'webseo' ) ); ?>
 	</p>
 
 	<div class="seopress-notice">
 		<p>
-			<?php echo wp_kses_post( __( 'We automatically manage <strong>Google Consent v2</strong> with GA4 and our cookie bar.', 'wp-seopress' ) ); ?>
+			<?php echo wp_kses_post( __( 'We automatically manage <strong>Google Consent v2</strong> with GA4 and our cookie bar.', 'webseo' ) ); ?>
 		</p>
 	</div>
 
@@ -67,19 +67,19 @@ function seopress_print_section_info_google_analytics_custom_tracking() {
 	?>
 	<div class="sp-section-header">
 		<h2>
-			<?php esc_attr_e( 'Custom Tracking', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Custom Tracking', 'webseo' ); ?>
 		</h2>
 	</div>
 	<p>
-		<?php esc_attr_e( 'Add your own scripts like GTM by copy and paste the provided code to the HEAD/BODY or FOOTER.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Add your own scripts like GTM by copy and paste the provided code to the HEAD/BODY or FOOTER.', 'webseo' ); ?>
 	</p>
 
 	<div class="seopress-notice is-warning">
 		<p>
-			<?php echo wp_kses_post( __( '<strong>Excluding user roles</strong> also works with the <strong>custom tracking scripts</strong> registered below.', 'wp-seopress' ) ); ?>
+			<?php echo wp_kses_post( __( '<strong>Excluding user roles</strong> also works with the <strong>custom tracking scripts</strong> registered below.', 'webseo' ) ); ?>
 		</p>
 		<p>
-			<?php echo wp_kses_post( __( '<strong>GA4, Matomo or MS Clarity</strong> codes are <strong>automatically added to your source code</strong> if you have enter your <strong>Measurement ID, Matomo tracking ID and / or MS Clarity project ID</strong> from <strong>Google Analytics / Matomo / Clarity</strong> tabs.', 'wp-seopress' ) ); ?>
+			<?php echo wp_kses_post( __( '<strong>GA4, Matomo or MS Clarity</strong> codes are <strong>automatically added to your source code</strong> if you have enter your <strong>Measurement ID, Matomo tracking ID and / or MS Clarity project ID</strong> from <strong>Google Analytics / Matomo / Clarity</strong> tabs.', 'webseo' ) ); ?>
 		</p>
 	</div>
 	<?php
@@ -93,15 +93,15 @@ function seopress_print_section_info_google_analytics_events() {
 	?>
 	<hr>
 	<h3 id="seopress-analytics-events">
-		<?php esc_attr_e( 'Events', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Events', 'webseo' ); ?>
 	</h3>
 	<p>
-		<?php esc_attr_e( 'Track events in Google Analytics.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Track events in Google Analytics.', 'webseo' ); ?>
 	</p>
 
 	<p class="seopress-help description">
 		<a href="<?php echo esc_url( $docs['analytics']['events'] ); ?>" target="_blank">
-			<?php esc_attr_e( 'Learn how to track events with Google Analytics', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Learn how to track events with Google Analytics', 'webseo' ); ?>
 		</a>
 		<span class="dashicons dashicons-external"></span>
 	</p>
@@ -116,35 +116,35 @@ function seopress_print_section_info_google_analytics_custom_dimensions() {
 	?>
 	<div class="sp-section-header">
 		<h2>
-			<?php esc_attr_e( 'Advanced settings', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Advanced settings', 'webseo' ); ?>
 		</h2>
 	</div>
 
 	<div class="seopress-sub-tabs">
-		<a href="#seopress-analytics-cd"><?php esc_attr_e( 'Custom Dimensions', 'wp-seopress' ); ?></a> |
-		<a href="#seopress-analytics-misc"><?php esc_attr_e( 'Misc', 'wp-seopress' ); ?></a>
+		<a href="#seopress-analytics-cd"><?php esc_attr_e( 'Custom Dimensions', 'webseo' ); ?></a> |
+		<a href="#seopress-analytics-misc"><?php esc_attr_e( 'Misc', 'webseo' ); ?></a>
 	</div>
 
 	<div class="seopress-notice">
 		<p>
-			<?php echo wp_kses_post( __( 'All advanced settings work with <strong>Google Analytics</strong> and <strong>Matomo</strong> tracking codes. Excluding user roles also works with <strong>MS Clarity</strong> and <strong>Custom tracking scripts</strong>.', 'wp-seopress' ) ); ?>
+			<?php echo wp_kses_post( __( 'All advanced settings work with <strong>Google Analytics</strong> and <strong>Matomo</strong> tracking codes. Excluding user roles also works with <strong>MS Clarity</strong> and <strong>Custom tracking scripts</strong>.', 'webseo' ) ); ?>
 		</p>
 	</div>
 
 	<hr>
-	<h3 id="seopress-analytics-cd"><?php esc_attr_e( 'Custom Dimensions', 'wp-seopress' ); ?></h3>
+	<h3 id="seopress-analytics-cd"><?php esc_attr_e( 'Custom Dimensions', 'webseo' ); ?></h3>
 
 	<p>
-		<?php esc_attr_e( 'Configure your Google Analytics custom dimensions.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Configure your Google Analytics custom dimensions.', 'webseo' ); ?>
 	</p>
 	<p>
-		<?php esc_attr_e( 'Custom dimensions and custom metrics are like the default dimensions and metrics in your Analytics account, except you create them yourself.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Custom dimensions and custom metrics are like the default dimensions and metrics in your Analytics account, except you create them yourself.', 'webseo' ); ?>
 	</p>
 	<p>
-		<?php esc_attr_e( 'Use them to collect and analyze data that Analytics doesn\'t automatically track.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Use them to collect and analyze data that Analytics doesn\'t automatically track.', 'webseo' ); ?>
 	</p>
 	<p>
-		<?php esc_attr_e( 'Please note that you also have to setup your custom dimensions in your Google Analytics account.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Please note that you also have to setup your custom dimensions in your Google Analytics account.', 'webseo' ); ?>
 	</p>
 	<?php
 }
@@ -156,7 +156,7 @@ function seopress_print_section_info_google_analytics_advanced() {
 	?>
 	<br>
 	<hr>
-	<h3 id="seopress-analytics-misc"><?php esc_attr_e( 'Misc', 'wp-seopress' ); ?></h3>
+	<h3 id="seopress-analytics-misc"><?php esc_attr_e( 'Misc', 'webseo' ); ?></h3>
 
 	<?php
 }
@@ -168,27 +168,27 @@ function seopress_print_section_info_google_analytics_matomo() {
 	?>
 	<div class="sp-section-header">
 		<h2>
-			<?php esc_attr_e( 'Matomo', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Matomo', 'webseo' ); ?>
 		</h2>
 	</div>
 
 	<div class="seopress-sub-tabs">
-		<a href="#seopress-matomo-tracking"><?php esc_attr_e( 'Tracking', 'wp-seopress' ); ?></a>
+		<a href="#seopress-matomo-tracking"><?php esc_attr_e( 'Tracking', 'webseo' ); ?></a>
 		<?php do_action( 'seopress_matomo_settings_section' ); ?>
 	</div>
 
 	<p>
-		<?php esc_attr_e( 'Use Matomo to track your users with privacy in mind. We support both On Premise and Cloud installations.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Use Matomo to track your users with privacy in mind. We support both On Premise and Cloud installations.', 'webseo' ); ?>
 	</p>
 
 	<hr>
 	<h3 id="seopress-matomo-tracking">
-		<?php esc_attr_e( 'Tracking', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Tracking', 'webseo' ); ?>
 	</h3>
 
 	<div class="seopress-notice">
 		<p>
-			<?php echo wp_kses_post( __( 'Your <strong>Custom Dimensions</strong> from Advanced tab will also work with Matomo tracking code.', 'wp-seopress' ) ); ?>
+			<?php echo wp_kses_post( __( 'Your <strong>Custom Dimensions</strong> from Advanced tab will also work with Matomo tracking code.', 'webseo' ) ); ?>
 		</p>
 	</div>
 
@@ -202,23 +202,23 @@ function seopress_print_section_info_google_analytics_clarity() {
 	?>
 	<div class="sp-section-header">
 		<h2>
-			<?php esc_attr_e( 'Microsoft Clarity', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Microsoft Clarity', 'webseo' ); ?>
 		</h2>
 	</div>
 	<p>
-		<?php esc_attr_e( 'Use Microsoft Clarity to capture session recordings, get instant heatmaps and powerful Insights for Free. Know how people interact with your site to improve user experience and conversions.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Use Microsoft Clarity to capture session recordings, get instant heatmaps and powerful Insights for Free. Know how people interact with your site to improve user experience and conversions.', 'webseo' ); ?>
 	</p>
 
 	<div class="seopress-notice is-warning">
 		<p>
-			<strong><?php esc_attr_e( 'User Consent Required (Effective October 31, 2025)', 'wp-seopress' ); ?></strong>
+			<strong><?php esc_attr_e( 'User Consent Required (Effective October 31, 2025)', 'webseo' ); ?></strong>
 		</p>
 		<p>
-			<?php esc_attr_e( 'Microsoft Clarity requires explicit user consent for sessions originating from the EEA, UK, and Switzerland. Specifically, Clarity requires consent for analytics_storage and ad_storage. SEOPress automatically manages these consent signals using the Clarity Consent API.', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Microsoft Clarity requires explicit user consent for sessions originating from the EEA, UK, and Switzerland. Specifically, Clarity requires consent for analytics_storage and ad_storage. SEOPress automatically manages these consent signals using the Clarity Consent API.', 'webseo' ); ?>
 		</p>
 		<p>
 			<?php
-			echo wp_kses_post( __( 'To comply with this requirement, enable the SEOPress cookie consent bar in the <strong>Cookie bar / GDPR / Google Consent</strong> tab above. When users accept cookies via SEOPress, both analytics_storage and ad_storage consent are granted, which meets Clarity\'s requirements. You can also integrate with a third-party Consent Management Platform (CMP) that supports Google Consent Mode.', 'wp-seopress' ) );
+			echo wp_kses_post( __( 'To comply with this requirement, enable the SEOPress cookie consent bar in the <strong>Cookie bar / GDPR / Google Consent</strong> tab above. When users accept cookies via SEOPress, both analytics_storage and ad_storage consent are granted, which meets Clarity\'s requirements. You can also integrate with a third-party Consent Management Platform (CMP) that supports Google Consent Mode.', 'webseo' ) );
 			?>
 		</p>
 		<p>
@@ -226,7 +226,7 @@ function seopress_print_section_info_google_analytics_clarity() {
 			echo wp_kses_post(
 				sprintf(
 					/* translators: %s MS Clarity consent documentation URL */
-					__( 'Learn more about <a href="%s" target="_blank">Clarity consent requirements</a>.', 'wp-seopress' ),
+					__( 'Learn more about <a href="%s" target="_blank">Clarity consent requirements</a>.', 'webseo' ),
 					esc_url( 'https://learn.microsoft.com/en-us/clarity/setup-and-installation/cookie-consent' )
 				)
 			);
@@ -240,7 +240,7 @@ function seopress_print_section_info_google_analytics_clarity() {
 			echo wp_kses_post(
 				sprintf(
 					/* translators: %s MS Clarity website URL */
-					__( 'Create your first Microsoft Clarity project <a href="%s" target="_blank">here</a>.', 'wp-seopress' ),
+					__( 'Create your first Microsoft Clarity project <a href="%s" target="_blank">here</a>.', 'webseo' ),
 					esc_url( 'https://clarity.microsoft.com/' )
 				)
 			);

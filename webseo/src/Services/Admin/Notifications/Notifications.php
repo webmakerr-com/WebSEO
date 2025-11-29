@@ -52,14 +52,14 @@ class Notifications {
 		}
 		$args[] = array(
 			'id'         => 'notice-review',
-			'title'      => __( 'You like SEOPress? Please help us by rating us 5 stars!', 'wp-seopress' ),
-			'desc'       => __( 'Support the development and improvement of the plugin by taking 15 seconds of your time to leave us a user review on the official WordPress plugins repository. Thank you!', 'wp-seopress' ),
+			'title'      => __( 'You like SEOPress? Please help us by rating us 5 stars!', 'webseo' ),
+			'desc'       => __( 'Support the development and improvement of the plugin by taking 15 seconds of your time to leave us a user review on the official WordPress plugins repository. Thank you!', 'webseo' ),
 			'impact'     => array(
-				'info' => __( 'Information', 'wp-seopress' ),
+				'info' => __( 'Information', 'webseo' ),
 			),
-			'link'       => array(
-				'en'       => 'https://wordpress.org/support/view/plugin-reviews/wp-seopress?rate=5#postform',
-				'title'    => __( 'Rate us!', 'wp-seopress' ),
+'link'       => array(
+'en'       => 'https://wordpress.org/support/view/plugin-reviews/webseo?rate=5#postform',
+				'title'    => __( 'Rate us!', 'webseo' ),
 				'external' => true,
 			),
 			'deleteable' => true,
@@ -76,14 +76,14 @@ class Notifications {
 
 					$args[] = array(
 						'id'         => 'notice-bricks-seo',
-						'title'      => __( 'Bricks theme is not correctly setup for SEO!', 'wp-seopress' ),
-						'desc'       => __( 'You must disable "Bricks SEO meta tags" option from Bricks settings (Bricks, Settings page) to avoid any SEO issues.', 'wp-seopress' ),
+						'title'      => __( 'Bricks theme is not correctly setup for SEO!', 'webseo' ),
+						'desc'       => __( 'You must disable "Bricks SEO meta tags" option from Bricks settings (Bricks, Settings page) to avoid any SEO issues.', 'webseo' ),
 						'impact'     => array(
-							'high' => __( 'High impact', 'wp-seopress' ),
+							'high' => __( 'High impact', 'webseo' ),
 						),
 						'link'       => array(
 							'en'       => admin_url( 'admin.php?page=bricks-settings' ),
-							'title'    => __( 'Fix this!', 'wp-seopress' ),
+							'title'    => __( 'Fix this!', 'webseo' ),
 							'external' => false,
 						),
 						'deleteable' => false,
@@ -99,14 +99,14 @@ class Notifications {
 
 					$args[] = array(
 						'id'         => 'notice-bricks-og',
-						'title'      => __( 'Bricks theme is not correctly setup for social sharing!', 'wp-seopress' ),
-						'desc'       => __( 'You must disable "Bricks Open Graph meta tags" option from Bricks settings (Bricks, Settings page) to avoid any social sharing issues.', 'wp-seopress' ),
+						'title'      => __( 'Bricks theme is not correctly setup for social sharing!', 'webseo' ),
+						'desc'       => __( 'You must disable "Bricks Open Graph meta tags" option from Bricks settings (Bricks, Settings page) to avoid any social sharing issues.', 'webseo' ),
 						'impact'     => array(
-							'high' => __( 'High impact', 'wp-seopress' ),
+							'high' => __( 'High impact', 'webseo' ),
 						),
 						'link'       => array(
 							'en'       => admin_url( 'admin.php?page=bricks-settings' ),
-							'title'    => __( 'Fix this!', 'wp-seopress' ),
+							'title'    => __( 'Fix this!', 'webseo' ),
 							'external' => false,
 						),
 						'deleteable' => false,
@@ -123,14 +123,14 @@ class Notifications {
 		}
 		$args[] = array(
 			'id'         => 'notice-usm',
-			'title'      => __( 'Enable our universal SEO metabox for the Block Editor', 'wp-seopress' ),
-			'desc'       => __( 'By default, our new SEO metabox is disabled for Gutenberg. Test it without further delay!', 'wp-seopress' ),
+			'title'      => __( 'Enable our universal SEO metabox for the Block Editor', 'webseo' ),
+			'desc'       => __( 'By default, our new SEO metabox is disabled for Gutenberg. Test it without further delay!', 'webseo' ),
 			'impact'     => array(
-				'info' => __( 'Wizard', 'wp-seopress' ),
+				'info' => __( 'Wizard', 'webseo' ),
 			),
 			'link'       => array(
 				'en'       => admin_url( 'admin.php?page=seopress-advanced#tab=tab_seopress_advanced_appearance' ),
-				'title'    => __( 'Activate it', 'wp-seopress' ),
+				'title'    => __( 'Activate it', 'webseo' ),
 				'external' => false,
 			),
 			'deleteable' => true,
@@ -144,14 +144,14 @@ class Notifications {
 		}
 		$args[] = array(
 			'id'         => 'notice-wizard',
-			'title'      => __( 'Configure SEOPress in a few minutes with our installation wizard', 'wp-seopress' ),
-			'desc'       => __( 'The best way to quickly setup SEOPress on your site.', 'wp-seopress' ),
+			'title'      => __( 'Configure SEOPress in a few minutes with our installation wizard', 'webseo' ),
+			'desc'       => __( 'The best way to quickly setup SEOPress on your site.', 'webseo' ),
 			'impact'     => array(
-				'info' => __( 'Wizard', 'wp-seopress' ),
+				'info' => __( 'Wizard', 'webseo' ),
 			),
 			'link'       => array(
                             'en'       => admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ),
-				'title'    => __( 'Start the wizard', 'wp-seopress' ),
+				'title'    => __( 'Start the wizard', 'webseo' ),
 				'external' => false,
 			),
 			'deleteable' => true,
@@ -167,14 +167,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-amp-analytics',
-				'title'      => __( 'Use Google Analytics with AMP plugin', 'wp-seopress' ),
-				'desc'       => __( 'Your site is using the AMP official plugin. To track users with Google Analytics on AMP pages, please go to this settings page.', 'wp-seopress' ),
+				'title'      => __( 'Use Google Analytics with AMP plugin', 'webseo' ),
+				'desc'       => __( 'Your site is using the AMP official plugin. To track users with Google Analytics on AMP pages, please go to this settings page.', 'webseo' ),
 				'impact'     => array(
-					'info' => __( 'Medium impact', 'wp-seopress' ),
+					'info' => __( 'Medium impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'admin.php?page=amp-options#analytics-options' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => true,
@@ -191,14 +191,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-litespeed-cache',
-				'title'      => __( 'Fix compatibility issues with LiteSpeed caching plugin', 'wp-seopress' ),
-				'desc'       => __( 'Your site is using LiteSpeed caching plugin. If you encounter issues with some of the SEO features, like the universal SEO metabox, please read our guide to fix this.', 'wp-seopress' ),
+				'title'      => __( 'Fix compatibility issues with LiteSpeed caching plugin', 'webseo' ),
+				'desc'       => __( 'Your site is using LiteSpeed caching plugin. If you encounter issues with some of the SEO features, like the universal SEO metabox, please read our guide to fix this.', 'webseo' ),
 				'impact'     => array(
-					'medium' => __( 'Medium impact', 'wp-seopress' ),
+					'medium' => __( 'Medium impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => $docs['integrations']['litespeed']['compatibility'],
-					'title'    => __( 'Learn more', 'wp-seopress' ),
+					'title'    => __( 'Learn more', 'webseo' ),
 					'external' => true,
 				),
 				'deleteable' => true,
@@ -226,14 +226,14 @@ class Notifications {
 
 					$args[] = array(
 						'id'         => 'notice-divi-seo',
-						'title'      => __( 'We noticed that some SEO DIVI options are enabled!', 'wp-seopress' ),
-						'desc'       => __( 'To avoid any SEO conflicts, please disable every SEO option from <strong>DIVI theme options page, SEO tab</strong>.', 'wp-seopress' ),
+						'title'      => __( 'We noticed that some SEO DIVI options are enabled!', 'webseo' ),
+						'desc'       => __( 'To avoid any SEO conflicts, please disable every SEO option from <strong>DIVI theme options page, SEO tab</strong>.', 'webseo' ),
 						'impact'     => array(
-							'high' => __( 'High impact', 'wp-seopress' ),
+							'high' => __( 'High impact', 'webseo' ),
 						),
 						'link'       => array(
 							'en'       => admin_url( 'admin.php?page=et_divi_options#seo-1' ),
-							'title'    => __( 'Fix this!', 'wp-seopress' ),
+							'title'    => __( 'Fix this!', 'webseo' ),
 							'external' => false,
 						),
 						'deleteable' => false,
@@ -248,14 +248,14 @@ class Notifications {
 				++$alerts_high;
 				$args[] = array(
 					'id'         => 'notice-title-tag',
-					'title'      => __( 'Your theme doesn\'t use <strong>add_theme_support(\'title-tag\');</strong>', 'wp-seopress' ),
-					'desc'       => __( 'This error indicates that your theme uses a deprecated function to generate the title tag of your pages. SEOPress will not be able to generate your custom title tags if this error is not fixed.', 'wp-seopress' ),
+					'title'      => __( 'Your theme doesn\'t use <strong>add_theme_support(\'title-tag\');</strong>', 'webseo' ),
+					'desc'       => __( 'This error indicates that your theme uses a deprecated function to generate the title tag of your pages. SEOPress will not be able to generate your custom title tags if this error is not fixed.', 'webseo' ),
 					'impact'     => array(
-						'high' => __( 'High impact', 'wp-seopress' ),
+						'high' => __( 'High impact', 'webseo' ),
 					),
 					'link'       => array(
 						'en'       => $docs['titles']['add_theme_support'],
-						'title'    => __( 'Learn more', 'wp-seopress' ),
+						'title'    => __( 'Learn more', 'webseo' ),
 						'external' => true,
 					),
 					'deleteable' => false,
@@ -269,14 +269,14 @@ class Notifications {
 				++$alerts_high;
 				$args[] = array(
 					'id'         => 'notice-wpml-active',
-					'title'      => __( 'WPML plugin has been detected!', 'wp-seopress' ),
-					'desc'       => __( 'SEOPress is fully compatible with WPML. If you are looking to translate SEOPress global settings, read our guide by clicking the link below.', 'wp-seopress' ),
+					'title'      => __( 'WPML plugin has been detected!', 'webseo' ),
+					'desc'       => __( 'SEOPress is fully compatible with WPML. If you are looking to translate SEOPress global settings, read our guide by clicking the link below.', 'webseo' ),
 					'impact'     => array(
-						'info' => __( 'Information', 'wp-seopress' ),
+						'info' => __( 'Information', 'webseo' ),
 					),
 					'link'       => array(
 						'en'       => $docs['integrations']['wpml']['translate'],
-						'title'    => __( 'Learn more', 'wp-seopress' ),
+						'title'    => __( 'Learn more', 'webseo' ),
 						'external' => true,
 					),
 					'deleteable' => true,
@@ -291,14 +291,14 @@ class Notifications {
 					++$alerts_high;
 					$args[] = array(
 						'id'         => 'notice-swift',
-						'title'      => __( 'Your XML sitemap is cached!', 'wp-seopress' ),
-						'desc'       => __( 'Swift Performance is caching your XML sitemap. You must disable this option to prevent any compatibility issue (Swift Performance > Settings > Caching, General tab).', 'wp-seopress' ),
+						'title'      => __( 'Your XML sitemap is cached!', 'webseo' ),
+						'desc'       => __( 'Swift Performance is caching your XML sitemap. You must disable this option to prevent any compatibility issue (Swift Performance > Settings > Caching, General tab).', 'webseo' ),
 						'impact'     => array(
-							'high' => __( 'High impact', 'wp-seopress' ),
+							'high' => __( 'High impact', 'webseo' ),
 						),
 						'link'       => array(
 							'en'       => admin_url( 'tools.php?page=swift-performance' ),
-							'title'    => __( 'Fix this!', 'wp-seopress' ),
+							'title'    => __( 'Fix this!', 'webseo' ),
 							'external' => false,
 						),
 						'deleteable' => false,
@@ -328,14 +328,14 @@ class Notifications {
 				$args[]             = array(
 					'id'         => 'notice-seo-plugins',
 					/* translators: %s name of a SEO plugin (e.g. Yoast SEO) */
-					'title'      => sprintf( __( 'We noticed that you use <strong>%s</strong> plugin.', 'wp-seopress' ), $value ),
-					'desc'       => __( 'Do you want to migrate all your metadata to SEOPress? Do not use multiple SEO plugins at once to avoid conflicts!', 'wp-seopress' ),
+					'title'      => sprintf( __( 'We noticed that you use <strong>%s</strong> plugin.', 'webseo' ), $value ),
+					'desc'       => __( 'Do you want to migrate all your metadata to SEOPress? Do not use multiple SEO plugins at once to avoid conflicts!', 'webseo' ),
 					'impact'     => array(
-						'high' => __( 'High impact', 'wp-seopress' ),
+						'high' => __( 'High impact', 'webseo' ),
 					),
 					'link'       => array(
 						'en'       => admin_url( 'admin.php?page=seopress-import-export#tab=tab_seopress_tool_plugins' ),
-						'title'    => __( 'Migrate!', 'wp-seopress' ),
+						'title'    => __( 'Migrate!', 'webseo' ),
 						'external' => false,
 					),
 					'deleteable' => false,
@@ -357,14 +357,14 @@ class Notifications {
 				$args[] = array(
 					'id'         => 'notice-indexing-plugins',
 					/* translators: %s name of a WP plugin (e.g. IndexNow) */
-					'title'      => sprintf( __( 'We noticed that you use <strong>%s</strong> plugin.', 'wp-seopress' ), $value ),
-					'desc'       => __( 'To prevent any conflicts with our Indexing feature, please disable it.', 'wp-seopress' ),
+					'title'      => sprintf( __( 'We noticed that you use <strong>%s</strong> plugin.', 'webseo' ), $value ),
+					'desc'       => __( 'To prevent any conflicts with our Indexing feature, please disable it.', 'webseo' ),
 					'impact'     => array(
-						'high' => __( 'High impact', 'wp-seopress' ),
+						'high' => __( 'High impact', 'webseo' ),
 					),
 					'link'       => array(
 						'en'       => admin_url( 'plugins.php' ),
-						'title'    => __( 'Fix this!', 'wp-seopress' ),
+						'title'    => __( 'Fix this!', 'webseo' ),
 						'external' => false,
 					),
 					'deleteable' => false,
@@ -388,14 +388,14 @@ class Notifications {
 				}
 				$args[] = array(
 					'id'         => 'notice-enfold',
-					'title'      => __( 'Enfold theme is not correctly setup for SEO!', 'wp-seopress' ),
-					'desc'       => __( 'You must disable "Meta tag robots" option from Enfold settings (SEO Support tab) to avoid any SEO issues.', 'wp-seopress' ),
+					'title'      => __( 'Enfold theme is not correctly setup for SEO!', 'webseo' ),
+					'desc'       => __( 'You must disable "Meta tag robots" option from Enfold settings (SEO Support tab) to avoid any SEO issues.', 'webseo' ),
 					'impact'     => array(
-						'low' => __( 'High impact', 'wp-seopress' ),
+						'low' => __( 'High impact', 'webseo' ),
 					),
 					'link'       => array(
 						'en'       => admin_url( 'admin.php?avia_welcome=true&page=avia' ),
-						'title'    => __( 'Fix this!', 'wp-seopress' ),
+						'title'    => __( 'Fix this!', 'webseo' ),
 						'external' => false,
 					),
 					'deleteable' => true,
@@ -408,14 +408,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-cpt-empty-title',
-				'title'      => esc_html__( 'Global meta title missing for several custom post types!', 'wp-seopress' ),
+				'title'      => esc_html__( 'Global meta title missing for several custom post types!', 'webseo' ),
 				'desc'       => seopress_get_empty_templates( 'cpt', 'title', false ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_single' ),
-					'title'    => esc_html__( 'Fix this!', 'wp-seopress' ),
+					'title'    => esc_html__( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => false,
@@ -428,14 +428,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-cpt-empty-desc',
-				'title'      => __( 'Global meta description missing for several custom post types!', 'wp-seopress' ),
+				'title'      => __( 'Global meta description missing for several custom post types!', 'webseo' ),
 				'desc'       => seopress_get_empty_templates( 'cpt', 'description', false ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_single' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => false,
@@ -448,14 +448,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-tax-empty-title',
-				'title'      => __( 'Global meta title missing for several taxonomies!', 'wp-seopress' ),
+				'title'      => __( 'Global meta title missing for several taxonomies!', 'webseo' ),
 				'desc'       => seopress_get_empty_templates( 'tax', 'title', false ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_tax' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => false,
@@ -469,14 +469,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-tax-empty-templates',
-				'title'      => __( 'Global meta description missing for several taxonomies!', 'wp-seopress' ),
+				'title'      => __( 'Global meta description missing for several taxonomies!', 'webseo' ),
 				'desc'       => seopress_get_empty_templates( 'tax', 'description', false ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_tax' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => false,
@@ -493,14 +493,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-ssl',
-				'title'      => __( 'Your site doesn\'t use an SSL certificate!', 'wp-seopress' ),
-				'desc'       => __( 'Https is considered by Google as a positive signal for the ranking of your site. It also reassures your visitors for data security, and improves trust.', 'wp-seopress' ) . '</a>',
+				'title'      => __( 'Your site doesn\'t use an SSL certificate!', 'webseo' ),
+				'desc'       => __( 'Https is considered by Google as a positive signal for the ranking of your site. It also reassures your visitors for data security, and improves trust.', 'webseo' ) . '</a>',
 				'impact'     => array(
-					'medium' => __( 'Medium impact', 'wp-seopress' ),
+					'medium' => __( 'Medium impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => 'https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html',
-					'title'    => __( 'Learn more', 'wp-seopress' ),
+					'title'    => __( 'Learn more', 'webseo' ),
 					'external' => true,
 				),
 				'deleteable' => true,
@@ -512,14 +512,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-dom',
-				'title'      => __( 'PHP module "DOM" is missing on your server.', 'wp-seopress' ),
-				'desc'       => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'wp-seopress' ),
+				'title'      => __( 'PHP module "DOM" is missing on your server.', 'webseo' ),
+				'desc'       => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => $docs['get_started']['installation']['link'],
-					'title'    => __( 'Learn more', 'wp-seopress' ),
+					'title'    => __( 'Learn more', 'webseo' ),
 					'external' => true,
 				),
 				'deleteable' => false,
@@ -531,14 +531,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-mbstring',
-				'title'      => __( 'PHP module "mbstring" is missing on your server.', 'wp-seopress' ),
-				'desc'       => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'wp-seopress' ),
+				'title'      => __( 'PHP module "mbstring" is missing on your server.', 'webseo' ),
+				'desc'       => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => $docs['get_started']['installation']['link'],
-					'title'    => __( 'Learn more', 'wp-seopress' ),
+					'title'    => __( 'Learn more', 'webseo' ),
 					'external' => true,
 				),
 				'deleteable' => false,
@@ -550,14 +550,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-intl',
-				'title'      => __( 'PHP module "intl" is missing on your server.', 'wp-seopress' ),
-				'desc'       => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'wp-seopress' ),
+				'title'      => __( 'PHP module "intl" is missing on your server.', 'webseo' ),
+				'desc'       => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => $docs['get_started']['installation']['link'],
-					'title'    => __( 'Learn more', 'wp-seopress' ),
+					'title'    => __( 'Learn more', 'webseo' ),
 					'external' => true,
 				),
 				'deleteable' => false,
@@ -578,14 +578,14 @@ class Notifications {
 
 				$args[] = array(
 					'id'         => 'notice-noindex',
-					'title'      => __( 'Your site is not visible to Search Engines!', 'wp-seopress' ),
-					'desc'       => __( 'You have activated the blocking of the indexing of your site. If your site is under development, this is probably normal. Otherwise, check your settings.', 'wp-seopress' ),
+					'title'      => __( 'Your site is not visible to Search Engines!', 'webseo' ),
+					'desc'       => __( 'You have activated the blocking of the indexing of your site. If your site is under development, this is probably normal. Otherwise, check your settings.', 'webseo' ),
 					'impact'     => array(
-						'high' => __( 'High impact', 'wp-seopress' ),
+						'high' => __( 'High impact', 'webseo' ),
 					),
 					'link'       => array(
 						'en'       => $link,
-						'title'    => __( 'Fix this!', 'wp-seopress' ),
+						'title'    => __( 'Fix this!', 'webseo' ),
 						'external' => false,
 					),
 					'deleteable' => false,
@@ -598,14 +598,14 @@ class Notifications {
 			++$alerts_high;
 			$args[] = array(
 				'id'         => 'notice-title-empty',
-				'title'      => __( 'Your site title is empty!', 'wp-seopress' ),
-				'desc'       => __( 'Your Site Title is used by WordPress, your theme and your plugins including SEOPress. It is an essential component in the generation of title tags, but not only. Enter one!', 'wp-seopress' ),
+				'title'      => __( 'Your site title is empty!', 'webseo' ),
+				'desc'       => __( 'Your Site Title is used by WordPress, your theme and your plugins including SEOPress. It is an essential component in the generation of title tags, but not only. Enter one!', 'webseo' ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'options-general.php' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => false,
@@ -618,14 +618,14 @@ class Notifications {
 
 			$args[] = array(
 				'id'         => 'notice-permalinks',
-				'title'      => __( 'Your permalinks are not SEO Friendly! Enable pretty permalinks to fix this.', 'wp-seopress' ),
-				'desc'       => __( 'Why is this important? Showing only the summary of each article significantly reduces the theft of your content by third party sites. Not to mention, the increase in your traffic, your advertising revenue, conversions...', 'wp-seopress' ),
+				'title'      => __( 'Your permalinks are not SEO Friendly! Enable pretty permalinks to fix this.', 'webseo' ),
+				'desc'       => __( 'Why is this important? Showing only the summary of each article significantly reduces the theft of your content by third party sites. Not to mention, the increase in your traffic, your advertising revenue, conversions...', 'webseo' ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'options-permalink.php' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => false,
@@ -641,14 +641,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-rss-use-excerpt',
-				'title'      => __( 'Your RSS feed shows full text!', 'wp-seopress' ),
-				'desc'       => __( 'Why is this important? Showing only the summary of each article significantly reduces the theft of your content by third party sites. Not to mention, the increase in your traffic, your advertising revenue, conversions...', 'wp-seopress' ),
+				'title'      => __( 'Your RSS feed shows full text!', 'webseo' ),
+				'desc'       => __( 'Why is this important? Showing only the summary of each article significantly reduces the theft of your content by third party sites. Not to mention, the increase in your traffic, your advertising revenue, conversions...', 'webseo' ),
 				'impact'     => array(
-					'medium' => __( 'Medium impact', 'wp-seopress' ),
+					'medium' => __( 'Medium impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'options-reading.php' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => true,
@@ -664,14 +664,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-ga-ids',
-				'title'      => __( 'You have activated Google Analytics tracking without adding identifiers!', 'wp-seopress' ),
-				'desc'       => __( 'Google Analytics will not track your visitors until you finish the configuration.', 'wp-seopress' ),
+				'title'      => __( 'You have activated Google Analytics tracking without adding identifiers!', 'webseo' ),
+				'desc'       => __( 'Google Analytics will not track your visitors until you finish the configuration.', 'webseo' ),
 				'impact'     => array(
-					'medium' => __( 'Medium impact', 'wp-seopress' ),
+					'medium' => __( 'Medium impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'admin.php?page=seopress-google-analytics' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => true,
@@ -687,14 +687,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-divide-comments',
-				'title'      => __( 'Break comments into pages is ON!', 'wp-seopress' ),
-				'desc'       => __( 'Enabling this option will create duplicate content for each article beyond x comments. This can have a disastrous effect by creating a large number of poor quality pages, and slowing the Google bot unnecessarily, so your ranking in search results.', 'wp-seopress' ),
+				'title'      => __( 'Break comments into pages is ON!', 'webseo' ),
+				'desc'       => __( 'Enabling this option will create duplicate content for each article beyond x comments. This can have a disastrous effect by creating a large number of poor quality pages, and slowing the Google bot unnecessarily, so your ranking in search results.', 'webseo' ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'options-discussion.php' ),
-					'title'    => __( 'Disable this!', 'wp-seopress' ),
+					'title'    => __( 'Disable this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => true,
@@ -710,14 +710,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-posts-number',
-				'title'      => __( 'Display more posts per page on homepage and archives', 'wp-seopress' ),
-				'desc'       => __( 'To reduce the number pages search engines have to crawl to find all your articles, it is recommended displaying more posts per page. This should not be a problem for your users. Using mobile, we prefer to scroll down rather than clicking on next page links.', 'wp-seopress' ),
+				'title'      => __( 'Display more posts per page on homepage and archives', 'webseo' ),
+				'desc'       => __( 'To reduce the number pages search engines have to crawl to find all your articles, it is recommended displaying more posts per page. This should not be a problem for your users. Using mobile, we prefer to scroll down rather than clicking on next page links.', 'webseo' ),
 				'impact'     => array(
-					'medium' => __( 'Medium impact', 'wp-seopress' ),
+					'medium' => __( 'Medium impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'options-reading.php' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => true,
@@ -733,14 +733,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-xml-sitemaps',
-				'title'      => __( 'You don\'t have an XML Sitemap!', 'wp-seopress' ),
-				'desc'       => __( 'XML Sitemaps are useful to facilitate the crawling of your content by search engine robots. Indirectly, this can benefit your ranking by reducing the crawl bugdet.', 'wp-seopress' ),
+				'title'      => __( 'You don\'t have an XML Sitemap!', 'webseo' ),
+				'desc'       => __( 'XML Sitemaps are useful to facilitate the crawling of your content by search engine robots. Indirectly, this can benefit your ranking by reducing the crawl bugdet.', 'webseo' ),
 				'impact'     => array(
-					'medium' => __( 'Medium impact', 'wp-seopress' ),
+					'medium' => __( 'Medium impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => admin_url( 'admin.php?page=seopress-xml-sitemap' ),
-					'title'    => __( 'Fix this!', 'wp-seopress' ),
+					'title'    => __( 'Fix this!', 'webseo' ),
 					'external' => false,
 				),
 				'deleteable' => true,
@@ -755,14 +755,14 @@ class Notifications {
 		}
 		$args[] = array(
 			'id'         => 'notice-google-business',
-			'title'      => __( 'Do you have a Google My Business page? It\'s free!', 'wp-seopress' ),
-			'desc'       => __( 'Local Business websites should have a My Business page to improve visibility in search results. Click on the cross on the right to delete this notification if you are not concerned.', 'wp-seopress' ),
+			'title'      => __( 'Do you have a Google My Business page? It\'s free!', 'webseo' ),
+			'desc'       => __( 'Local Business websites should have a My Business page to improve visibility in search results. Click on the cross on the right to delete this notification if you are not concerned.', 'webseo' ),
 			'impact'     => array(
-				'high' => __( 'High impact', 'wp-seopress' ),
+				'high' => __( 'High impact', 'webseo' ),
 			),
 			'link'       => array(
 				'en'       => 'https://www.google.com/business/go/',
-				'title'    => __( 'Create your page now!', 'wp-seopress' ),
+				'title'    => __( 'Create your page now!', 'webseo' ),
 				'external' => true,
 			),
 			'deleteable' => true,
@@ -777,14 +777,14 @@ class Notifications {
 			}
 			$args[] = array(
 				'id'         => 'notice-search-console',
-				'title'      => __( 'Add your site to Google. It\'s free!', 'wp-seopress' ),
-				'desc'       => __( 'Is your brand new site online? So reference it as quickly as possible on Google to get your first visitors via Google Search Console. Already the case? Dismiss this alert.', 'wp-seopress' ),
+				'title'      => __( 'Add your site to Google. It\'s free!', 'webseo' ),
+				'desc'       => __( 'Is your brand new site online? So reference it as quickly as possible on Google to get your first visitors via Google Search Console. Already the case? Dismiss this alert.', 'webseo' ),
 				'impact'     => array(
-					'high' => __( 'High impact', 'wp-seopress' ),
+					'high' => __( 'High impact', 'webseo' ),
 				),
 				'link'       => array(
 					'en'       => 'https://www.google.com/webmasters/tools/home',
-					'title'    => __( 'Add your site to Search Console!', 'wp-seopress' ),
+					'title'    => __( 'Add your site to Search Console!', 'webseo' ),
 					'external' => true,
 				),
 				'deleteable' => true,
@@ -927,7 +927,7 @@ class Notifications {
 				$html .= '<a class="btn btnSecondary"' . $href . $target . ' title="' . esc_attr( $link['title'] ) . '">' . esc_html( $link['title'] ) . '</a>';
 			}
 			if ( true === $deleteable && true === $status ) {
-				$dismiss_text = __( 'Dismiss', 'wp-seopress' );
+				$dismiss_text = __( 'Dismiss', 'webseo' );
 				$html        .= '<button id="' . esc_attr( $id ) . '" name="notice-title-tag" type="button" class="btn btnLink" data-notice="' . esc_attr( $id ) . '" title="' . esc_attr( $dismiss_text ) . '">' . esc_html( $dismiss_text ) . '</button>';
 			}
 
@@ -953,7 +953,7 @@ class Notifications {
 			array(
 				'done'  => $run_migration,
 				'link'  => admin_url( 'admin.php?page=seopress-import-export#tab=tab_seopress_tool_plugins' ),
-				'label' => esc_html__( 'Migrate your SEO metadata and redirects from other plugins', 'wp-seopress' ),
+				'label' => esc_html__( 'Migrate your SEO metadata and redirects from other plugins', 'webseo' ),
 			);
 
 			array_unshift( $tasks, $new_task );

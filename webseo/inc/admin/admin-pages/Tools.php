@@ -23,9 +23,9 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 	<div id="seopress-tabs" class="wrap">
 		<?php
 			$plugin_settings_tabs = array(
-				'tab_seopress_tool_settings' => esc_html__( 'Settings', 'wp-seopress' ),
-				'tab_seopress_tool_plugins'  => esc_html__( 'Plugins', 'wp-seopress' ),
-				'tab_seopress_tool_reset'    => esc_html__( 'Reset', 'wp-seopress' ),
+				'tab_seopress_tool_settings' => esc_html__( 'Settings', 'webseo' ),
+				'tab_seopress_tool_plugins'  => esc_html__( 'Plugins', 'webseo' ),
+				'tab_seopress_tool_reset'    => esc_html__( 'Reset', 'webseo' ),
 			);
 
 			$plugin_settings_tabs = apply_filters( 'seopress_tools_tabs', $plugin_settings_tabs );
@@ -51,22 +51,22 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 			<div class="postbox section-tool">
 				<div class="sp-section-header">
 					<h2>
-						<?php esc_html_e( 'Settings', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'Settings', 'webseo' ); ?>
 					</h2>
 				</div>
 				<div class="inside">
 					<h3>
-						<span><?php esc_html_e( 'Export plugin settings', 'wp-seopress' ); ?></span>
+						<span><?php esc_html_e( 'Export plugin settings', 'webseo' ); ?></span>
 					</h3>
 
-					<p><?php esc_html_e( 'Export the plugin settings for this site as a .json file. This allows you to easily import the configuration into another site.', 'wp-seopress' ); ?></p>
+					<p><?php esc_html_e( 'Export the plugin settings for this site as a .json file. This allows you to easily import the configuration into another site.', 'webseo' ); ?></p>
 
 					<form method="post">
 						<input type="hidden" name="seopress_action" value="export_settings" />
 						<?php wp_nonce_field( 'seopress_export_nonce', 'seopress_export_nonce' ); ?>
 
 						<button id="seopress-export" type="submit" class="btn btnTertiary">
-							<?php esc_html_e( 'Export', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Export', 'webseo' ); ?>
 						</button>
 					</form>
 				</div><!-- .inside -->
@@ -75,10 +75,10 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 			<div class="postbox section-tool">
 				<div class="inside">
 					<h3>
-						<span><?php esc_html_e( 'Import plugin settings', 'wp-seopress' ); ?></span>
+						<span><?php esc_html_e( 'Import plugin settings', 'webseo' ); ?></span>
 					</h3>
 
-					<p><?php esc_html_e( 'Import the plugin settings from a .json file. This file can be obtained by exporting the settings on another site using the form above.', 'wp-seopress' ); ?></p>
+					<p><?php esc_html_e( 'Import the plugin settings from a .json file. This file can be obtained by exporting the settings on another site using the form above.', 'webseo' ); ?></p>
 
 					<form method="post" enctype="multipart/form-data">
 						<p><input type="file" name="import_file" /></p>
@@ -88,12 +88,12 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 						<?php wp_nonce_field( 'seopress_import_nonce', 'seopress_import_nonce' ); ?>
 
 						<button id="seopress-import-settings" type="submit" class="btn btnTertiary">
-							<?php esc_html_e( 'Import', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Import', 'webseo' ); ?>
 						</button>
 
 						<?php
 						if ( ! empty( $_GET['success'] ) && 'true' === htmlspecialchars( $_GET['success'] ) ) {
-							echo '<div class="log" style="display:block"><div class="seopress-notice is-success"><p>' . esc_html__( 'Import completed!', 'wp-seopress' ) . '</p></div></div>';
+							echo '<div class="log" style="display:block"><div class="seopress-notice is-success"><p>' . esc_html__( 'Import completed!', 'webseo' ) . '</p></div></div>';
 						}
 						?>
 					</form>
@@ -109,11 +109,11 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 	" id="tab_seopress_tool_plugins">
 			<div class="sp-section-header">
 				<h2>
-					<?php esc_html_e( 'Plugins', 'wp-seopress' ); ?>
+					<?php esc_html_e( 'Plugins', 'webseo' ); ?>
 				</h2>
 			</div>
 			<h3>
-				<span><?php esc_html_e( 'Import posts and terms metadata from', 'wp-seopress' ); ?></span>
+				<span><?php esc_html_e( 'Import posts and terms metadata from', 'webseo' ); ?></span>
 			</h3>
 
 			<?php
@@ -212,7 +212,7 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 			?>
 			<fieldset class="seopress-import-tools-wrapper" role="group" aria-labelledby="import-tools-legend">
 				<div class="seopress-notice">
-					<legend id="import-tools-legend"><?php esc_attr_e( 'Select an SEO plugin to migrate from (you don\'t have to enable the selected one to run the import):', 'wp-seopress' ); ?></legend>
+					<legend id="import-tools-legend"><?php esc_attr_e( 'Select an SEO plugin to migrate from (you don\'t have to enable the selected one to run the import):', 'webseo' ); ?></legend>
 				</div>
 				<div class="seopress-import-tools" role="radiogroup" aria-labelledby="import-tools-legend">
 					<?php
@@ -227,7 +227,7 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 								<label for="<?php echo esc_attr( $plugin ); ?>-migration-tool" tabindex="0">
 									<input type="radio" id="<?php echo esc_attr( $plugin ); ?>-migration-tool" name="select-wizard-import" value="<?php echo esc_attr( $plugin ); ?>-migration-tool"
 									aria-describedby="<?php echo esc_attr( $plugin ); ?>-description"
-									aria-label="<?php echo /* translators: %s: "SEO plugin name" */ esc_attr( sprintf( __( 'Select %s for migration', 'wp-seopress' ), $detail['name'] ) ); ?>"
+									aria-label="<?php echo /* translators: %s: "SEO plugin name" */ esc_attr( sprintf( __( 'Select %s for migration', 'webseo' ), $detail['name'] ) ); ?>"
 								<?php
 								if ( ! empty( $active_seo_plugins ) && in_array( $detail['slug'], $active_seo_plugins['slug'] ) ) {
 									echo 'checked';
@@ -239,7 +239,7 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 									<?php endif; ?>
 									<span><?php echo esc_html( $detail['name'] ); ?></span>
 								</label>
-								<p id="<?php echo esc_attr( $plugin ); ?>-description" class="screen-reader-text"><?php echo /* translators: %s: "SEO plugin name" */ wp_kses_post( sprintf( __( 'Import metadata from %s, including titles and meta descriptions.', 'wp-seopress' ), esc_html( $detail['name'] ) ) ); ?></p>
+								<p id="<?php echo esc_attr( $plugin ); ?>-description" class="screen-reader-text"><?php echo /* translators: %s: "SEO plugin name" */ wp_kses_post( sprintf( __( 'Import metadata from %s, including titles and meta descriptions.', 'webseo' ), esc_html( $detail['name'] ) ) ); ?></p>
 							</div>
 						<?php
 					}
@@ -270,20 +270,20 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 			<div class="postbox section-tool">
 				<div class="sp-section-header">
 					<h2>
-						<?php esc_html_e( 'Cleaning', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'Cleaning', 'webseo' ); ?>
 					</h2>
 				</div>
 				<div class="inside">
 					<h3>
-						<span><?php esc_html_e( 'Clean content scans', 'wp-seopress' ); ?></span>
+						<span><?php esc_html_e( 'Clean content scans', 'webseo' ); ?></span>
 					</h3>
 
-					<p><?php esc_html_e( 'By clicking Delete content scans, all content analysis will be deleted from your database.', 'wp-seopress' ); ?></p>
+					<p><?php esc_html_e( 'By clicking Delete content scans, all content analysis will be deleted from your database.', 'webseo' ); ?></p>
 
 					<form method="post" enctype="multipart/form-data">
 						<input type="hidden" name="seopress_action" value="clean_content_scans" />
 						<?php wp_nonce_field( 'seopress_clean_content_scans_nonce', 'seopress_clean_content_scans_nonce' ); ?>
-						<?php sp_submit_button( esc_html__( 'Delete content scans', 'wp-seopress' ), 'btn btnTertiary' ); ?>
+						<?php sp_submit_button( esc_html__( 'Delete content scans', 'webseo' ), 'btn btnTertiary' ); ?>
 					</form>
 				</div><!-- .inside -->
 			</div><!-- .postbox -->
@@ -293,36 +293,36 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 			<div class="postbox section-tool">
 				<div class="sp-section-header">
 					<h2>
-						<?php esc_html_e( 'Reset', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'Reset', 'webseo' ); ?>
 					</h2>
 				</div>
 				<div class="inside">
 					<h3>
-						<span><?php esc_html_e( 'Reset All Notices From Notifications Center', 'wp-seopress' ); ?></span>
+						<span><?php esc_html_e( 'Reset All Notices From Notifications Center', 'webseo' ); ?></span>
 					</h3>
 
-					<p><?php esc_html_e( 'By clicking Reset Notices, all notices in the notifications center will be set to their initial status.', 'wp-seopress' ); ?></p>
+					<p><?php esc_html_e( 'By clicking Reset Notices, all notices in the notifications center will be set to their initial status.', 'webseo' ); ?></p>
 
 					<form method="post" enctype="multipart/form-data">
 						<input type="hidden" name="seopress_action" value="reset_notices_settings" />
 						<?php wp_nonce_field( 'seopress_reset_notices_nonce', 'seopress_reset_notices_nonce' ); ?>
-						<?php sp_submit_button( esc_html__( 'Reset notices', 'wp-seopress' ), 'btn btnTertiary' ); ?>
+						<?php sp_submit_button( esc_html__( 'Reset notices', 'webseo' ), 'btn btnTertiary' ); ?>
 					</form>
 				</div><!-- .inside -->
 			</div><!-- .postbox -->
 
 			<div class="postbox section-tool">
 				<div class="inside">
-					<h3><?php esc_html_e( 'Reset All Settings', 'wp-seopress' ); ?></h3>
+					<h3><?php esc_html_e( 'Reset All Settings', 'webseo' ); ?></h3>
 
 					<div class="seopress-notice is-warning">
-						<p><?php echo wp_kses_post( __( '<strong>WARNING:</strong> Delete all options related to this plugin in your database.', 'wp-seopress' ) ); ?></p>
+						<p><?php echo wp_kses_post( __( '<strong>WARNING:</strong> Delete all options related to this plugin in your database.', 'webseo' ) ); ?></p>
 					</div>
 
 					<form method="post" enctype="multipart/form-data">
 						<input type="hidden" name="seopress_action" value="reset_settings" />
 						<?php wp_nonce_field( 'seopress_reset_nonce', 'seopress_reset_nonce' ); ?>
-						<?php sp_submit_button( esc_html__( 'Reset settings', 'wp-seopress' ), 'btn btnTertiary is-deletable' ); ?>
+						<?php sp_submit_button( esc_html__( 'Reset settings', 'webseo' ), 'btn btnTertiary is-deletable' ); ?>
 					</form>
 				</div><!-- .inside -->
 			</div><!-- .postbox -->

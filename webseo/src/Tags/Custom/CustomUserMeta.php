@@ -22,7 +22,7 @@ class CustomUserMeta extends AbstractCustomTagValue implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Custom User Meta', 'wp-seopress' );
+		return __( 'Custom User Meta', 'webseo' );
 	}
 
 	/**

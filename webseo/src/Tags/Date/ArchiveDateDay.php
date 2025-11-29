@@ -20,7 +20,7 @@ class ArchiveDateDay implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Day Archive Date', 'wp-seopress' );
+		return __( 'Day Archive Date', 'webseo' );
 	}
 
 	/**

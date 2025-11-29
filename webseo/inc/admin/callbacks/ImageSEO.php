@@ -22,7 +22,7 @@ function seopress_advanced_advanced_attachments_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Redirect attachment pages to post parent (or homepage if none)', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Redirect attachment pages to post parent (or homepage if none)', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -47,11 +47,11 @@ function seopress_advanced_advanced_attachments_file_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Redirect attachment pages to their file URL (https://www.example.com/my-image-file.jpg)', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Redirect attachment pages to their file URL (https://www.example.com/my-image-file.jpg)', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'If this option is checked, it will take precedence over the redirection of attachments to the post\'s parent.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'If this option is checked, it will take precedence over the redirection of attachments to the post\'s parent.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -76,11 +76,11 @@ function seopress_advanced_advanced_clean_filename_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'When upload a media, remove accents, spaces, capital letters... and force UTF-8 encoding', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'When upload a media, remove accents, spaces, capital letters... and force UTF-8 encoding', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php echo wp_kses_post( __( 'e.g. <code>ExãMple 1 cópy!.jpg</code> => <code>example-1-copy.jpg</code>', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'e.g. <code>ExãMple 1 cópy!.jpg</code> => <code>example-1-copy.jpg</code>', 'webseo' ) ); ?>
 </p>
 
 	<?php
@@ -105,11 +105,11 @@ function seopress_advanced_advanced_image_auto_title_editor_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'When uploading an image file, automatically set the title based on the filename', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'When uploading an image file, automatically set the title based on the filename', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'We use the product title for WooCommerce products.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'We use the product title for WooCommerce products.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -135,17 +135,17 @@ function seopress_advanced_advanced_image_auto_alt_editor_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'When uploading an image file, automatically set the alternative text based on the filename', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'When uploading an image file, automatically set the alternative text based on the filename', 'webseo' ); ?>
 </label>
 
 	<?php
 	if ( ! is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
 		if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false ) {
 		} else {
-			echo '<p class="seopress-help description"><a href="' . esc_url( $docs['ai']['introduction'] ) . '" target="_blank">' . esc_attr__( 'Our PRO version can optimize your image ALT texts for Search Engines using AI and Machine Learning.', 'wp-seopress' ) . '</a><span class="dashicons dashicons-external"></span></p>';
+			echo '<p class="seopress-help description"><a href="' . esc_url( $docs['ai']['introduction'] ) . '" target="_blank">' . esc_attr__( 'Our PRO version can optimize your image ALT texts for Search Engines using AI and Machine Learning.', 'webseo' ) . '</a><span class="dashicons dashicons-external"></span></p>';
 		}
 	} else {
-		echo '<p class="seopress-help description"><a href="' . esc_url( admin_url( 'admin.php?page=webseo-pro-page#tab=tab_seopress_ai' ) ) . '">' . esc_attr__( 'Use AI to automatically describe your image files.', 'wp-seopress' ) . '</a></p>';
+		echo '<p class="seopress-help description"><a href="' . esc_url( admin_url( 'admin.php?page=webseo-pro-page#tab=tab_seopress_ai' ) ) . '">' . esc_attr__( 'Use AI to automatically describe your image files.', 'webseo' ) . '</a></p>';
 	}
 
 	if ( isset( $options['seopress_advanced_advanced_image_auto_alt_editor'] ) ) {
@@ -170,11 +170,11 @@ function seopress_advanced_advanced_image_auto_alt_target_kw_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Use the target keywords if not alternative text set for the image', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Use the target keywords if not alternative text set for the image', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'This setting will be applied to images without any alt text only on frontend. This setting is retroactive. If you turn it off, alt texts that were previously empty will be empty again.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'This setting will be applied to images without any alt text only on frontend. This setting is retroactive. If you turn it off, alt texts that were previously empty will be empty again.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -200,11 +200,11 @@ function seopress_advanced_advanced_image_auto_alt_txt_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Apply the alt text defined in your media library for already inserted images', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Apply the alt text defined in your media library for already inserted images', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'By default, WordPress does not update image alt texts entered from the media library after they are inserted into the content of a post, page, or post type. By checking this box, this will be done when the page loads on the fly as long as this option remains active.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'By default, WordPress does not update image alt texts entered from the media library after they are inserted into the content of a post, page, or post type. By checking this box, this will be done when the page loads on the fly as long as this option remains active.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -230,7 +230,7 @@ function seopress_advanced_advanced_image_auto_caption_editor_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'When uploading an image file, automatically set the caption based on the filename', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'When uploading an image file, automatically set the caption based on the filename', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -254,7 +254,7 @@ function seopress_advanced_advanced_image_auto_desc_editor_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'When uploading an image file, automatically set the description based on the filename', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'When uploading an image file, automatically set the description based on the filename', 'webseo' ); ?>
 </label>
 
 	<?php

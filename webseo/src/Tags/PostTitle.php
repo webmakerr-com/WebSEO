@@ -22,7 +22,7 @@ class PostTitle implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Title', 'wp-seopress' );
+		return __( 'Post Title', 'webseo' );
 	}
 
 	/**

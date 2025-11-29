@@ -54,12 +54,12 @@ function seopress_import_settings() {
 	$extension = pathinfo( $_FILES['import_file']['name'], PATHINFO_EXTENSION );
 
 	if ( 'json' !== $extension ) {
-		wp_die( esc_html__( 'Please upload a valid .json file', 'wp-seopress' ) );
+		wp_die( esc_html__( 'Please upload a valid .json file', 'webseo' ) );
 	}
 	$import_file = $_FILES['import_file']['tmp_name'];
 
 	if ( empty( $import_file ) ) {
-		wp_die( esc_html__( 'Please upload a file to import', 'wp-seopress' ) );
+		wp_die( esc_html__( 'Please upload a file to import', 'webseo' ) );
 	}
 
 	$settings = (array) json_decode( seopress_remove_utf8_bom( file_get_contents( $import_file ) ), true );

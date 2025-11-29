@@ -22,11 +22,11 @@ function seopress_advanced_advanced_replytocom_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove ?replytocom link in source code and replace it with a simple anchor', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove ?replytocom link in source code and replace it with a simple anchor', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php echo wp_kses_post( sprintf( __( 'e.g. <code>https://www.example.com/my-blog-post/?replytocom=10#respond</code> => <code>#comment-10</code>', 'wp-seopress' ) ) ); ?>
+	<?php echo wp_kses_post( sprintf( __( 'e.g. <code>https://www.example.com/my-blog-post/?replytocom=10#respond</code> => <code>#comment-10</code>', 'webseo' ) ) ); ?>
 </p>
 
 	<?php
@@ -50,11 +50,11 @@ function seopress_advanced_advanced_noreferrer_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Remove noreferrer link attribute in source code', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove noreferrer link attribute in source code', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'Useful for affiliate links (e.g. Amazon).', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Useful for affiliate links (e.g. Amazon).', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -78,7 +78,7 @@ function seopress_advanced_advanced_tax_desc_editor_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Add TINYMCE editor to term description', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add TINYMCE editor to term description', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -108,17 +108,17 @@ function seopress_advanced_advanced_category_url_callback() {
 		$category_base = '/' . get_option( 'category_base' );
 	}
 	/* translators: %s category base, eg: /category/ */
-	echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'wp-seopress' ), esc_url( $category_base ) ) );
+	echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'webseo' ), esc_url( $category_base ) ) );
 	?>
 </label>
 
 <p class="description">
-	<?php echo wp_kses_post( sprintf( __( 'e.g. <code>https://example.com/category/my-post-category/</code> => <code>https://example.com/my-post-category/</code>', 'wp-seopress' ) ) ); ?>
+	<?php echo wp_kses_post( sprintf( __( 'e.g. <code>https://example.com/category/my-post-category/</code> => <code>https://example.com/my-post-category/</code>', 'webseo' ) ) ); ?>
 </p>
 
 <div class="seopress-notice">
 	<p>
-		<?php esc_attr_e( 'You have to flush your permalinks each time you change this setting.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'You have to flush your permalinks each time you change this setting.', 'webseo' ); ?>
 	</p>
 </div>
 
@@ -157,21 +157,21 @@ function seopress_advanced_advanced_product_cat_url_callback() {
 		}
 
 		/* translators: %s permalink category base */
-		echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'wp-seopress' ), esc_url( $category_base ) ) );
+		echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'webseo' ), esc_url( $category_base ) ) );
 		?>
 
 	</label>
 
 	<p class="description">
-		<?php echo wp_kses_post( sprintf( __( 'e.g. <code>https://example.com/product-category/my-product-category/</code> => <code>https://example.com/my-product-category/</code>', 'wp-seopress' ) ) ); ?>
+		<?php echo wp_kses_post( sprintf( __( 'e.g. <code>https://example.com/product-category/my-product-category/</code> => <code>https://example.com/my-product-category/</code>', 'webseo' ) ) ); ?>
 	</p>
 
 	<div class="seopress-notice">
 		<p>
-			<?php esc_attr_e( 'You have to flush your permalinks each time you change this setting.', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'You have to flush your permalinks each time you change this setting.', 'webseo' ); ?>
 		</p>
 		<p>
-			<?php esc_attr_e( 'Make sure you don\'t have identical URLs after activating this option to prevent conflicts.', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Make sure you don\'t have identical URLs after activating this option to prevent conflicts.', 'webseo' ); ?>
 		</p>
 	</div>
 
@@ -183,7 +183,7 @@ function seopress_advanced_advanced_product_cat_url_callback() {
 		?>
 		<div class="seopress-notice is-warning">
 			<p>
-				<?php echo wp_kses_post( __( 'You need to enable <strong>WooCommerce</strong> to apply these settings.', 'wp-seopress' ) ); ?>
+				<?php echo wp_kses_post( __( 'You need to enable <strong>WooCommerce</strong> to apply these settings.', 'webseo' ) ); ?>
 			</p>
 		</div>
 		<?php
@@ -205,7 +205,7 @@ function seopress_advanced_advanced_wp_generator_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Remove WordPress meta generator in source code', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove WordPress meta generator in source code', 'webseo' ); ?>
 </label>
 
 <pre><?php echo esc_attr( '<meta name="generator" content="WordPress 6.2" />' ); ?></pre>
@@ -232,7 +232,7 @@ function seopress_advanced_advanced_hentry_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove hentry post class to prevent Google from seeing this as structured data (schema)', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove hentry post class to prevent Google from seeing this as structured data (schema)', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -257,7 +257,7 @@ function seopress_advanced_advanced_comments_author_url_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove comment author URL in comments if the website is filled from profile page', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove comment author URL in comments if the website is filled from profile page', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -282,7 +282,7 @@ function seopress_advanced_advanced_comments_website_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove website field from comment form to reduce spam', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove website field from comment form to reduce spam', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -307,7 +307,7 @@ function seopress_advanced_advanced_comments_form_link_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Prevent search engines to follow / index the link to the comments form', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Prevent search engines to follow / index the link to the comments form', 'webseo' ); ?>
 
 </label>
 
@@ -335,7 +335,7 @@ function seopress_advanced_advanced_wp_shortlink_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove WordPress shortlink meta tag in source code', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove WordPress shortlink meta tag in source code', 'webseo' ); ?>
 </label>
 
 <pre>&lt;link rel="shortlink" href="https://www.example.com/" /&gt;</pre>
@@ -362,7 +362,7 @@ function seopress_advanced_advanced_wp_wlw_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove Windows Live Writer meta tag in source code', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove Windows Live Writer meta tag in source code', 'webseo' ); ?>
 </label>
 
 <pre>&lt;link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.example.com/wp-includes/wlwmanifest.xml" /&gt;</pre>
@@ -389,11 +389,11 @@ function seopress_advanced_advanced_wp_rsd_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove Really Simple Discovery meta tag in source code', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove Really Simple Discovery meta tag in source code', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'WordPress Site Health feature will return a HTTPS warning if you enable this option. This is a false positive of course.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'WordPress Site Health feature will return a HTTPS warning if you enable this option. This is a false positive of course.', 'webseo' ); ?>
 </p>
 
 <pre>&lt;link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.example.com/xmlrpc.php?rsd" /&gt;</pre>
@@ -420,11 +420,11 @@ function seopress_advanced_advanced_wp_oembed_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove oEmbed links in source code', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove oEmbed links in source code', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'This will prevent other blogs to embed one of your posts on their site.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'This will prevent other blogs to embed one of your posts on their site.', 'webseo' ); ?>
 </p>
 
 <pre>&lt;link rel="alternate" type="application/json+oembed" href="https://www.example.com/wp-json/oembed/1.0/embed?url=https://www.example.com/my-blog-post/" /&gt;</pre>
@@ -453,11 +453,11 @@ function seopress_advanced_advanced_wp_x_pingback_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove X-Pingback from HTTP headers', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove X-Pingback from HTTP headers', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'This will disable pingbacks/trackbacks and increase security (DDOS).', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'This will disable pingbacks/trackbacks and increase security (DDOS).', 'webseo' ); ?>
 </p>
 
 <pre>X-Pingback: https://www.example.com/xmlrpc.php</pre>
@@ -484,11 +484,11 @@ function seopress_advanced_advanced_wp_x_powered_by_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove X-Powered-By from HTTP headers', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove X-Powered-By from HTTP headers', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'By default, WordPress uses this to display your PHP version.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'By default, WordPress uses this to display your PHP version.', 'webseo' ); ?>
 </p>
 
 <pre>X-Powered-By: PHP/8.4</pre>
@@ -515,11 +515,11 @@ function seopress_advanced_advanced_emoji_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove Emoji scripts in your source code to speed up your site performance', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove Emoji scripts in your source code to speed up your site performance', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'Only older web browsers will not see your emojis.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Only older web browsers will not see your emojis.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -536,12 +536,12 @@ function seopress_advanced_advanced_google_callback() {
 	$check   = isset( $options['seopress_advanced_advanced_google'] ) ? $options['seopress_advanced_advanced_google'] : null;
 
 	printf(
-		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_google]" placeholder="' . esc_html__( 'Enter Google meta value site verification', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Google site verification', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_google]" placeholder="' . esc_html__( 'Enter Google meta value site verification', 'webseo' ) . '" aria-label="' . esc_attr__( 'Google site verification', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 <p class="description">
-	<?php echo wp_kses_post( __( 'If your site is already verified in <strong>Google Search Console</strong>, you can leave this field empty.', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'If your site is already verified in <strong>Google Search Console</strong>, you can leave this field empty.', 'webseo' ) ); ?>
 </p>
 
 	<?php
@@ -555,12 +555,12 @@ function seopress_advanced_advanced_bing_callback() {
 	$check   = isset( $options['seopress_advanced_advanced_bing'] ) ? $options['seopress_advanced_advanced_bing'] : null;
 
 	printf(
-		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_bing]" placeholder="' . esc_html__( 'Enter Bing meta value site verification', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Bing site verification', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_bing]" placeholder="' . esc_html__( 'Enter Bing meta value site verification', 'webseo' ) . '" aria-label="' . esc_attr__( 'Bing site verification', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 <p class="description">
-	<?php echo wp_kses_post( __( 'If your site is already verified in <strong>Bing Webmaster tools</strong>, you can leave this field empty.', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'If your site is already verified in <strong>Bing Webmaster tools</strong>, you can leave this field empty.', 'webseo' ) ); ?>
 </p>
 
 	<?php
@@ -574,7 +574,7 @@ function seopress_advanced_advanced_pinterest_callback() {
 	$check   = isset( $options['seopress_advanced_advanced_pinterest'] ) ? $options['seopress_advanced_advanced_pinterest'] : null;
 
 	printf(
-		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_pinterest]" placeholder="' . esc_html__( 'Enter Pinterest meta value site verification', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Pinterest site verification', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_pinterest]" placeholder="' . esc_html__( 'Enter Pinterest meta value site verification', 'webseo' ) . '" aria-label="' . esc_attr__( 'Pinterest site verification', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 }
@@ -587,7 +587,7 @@ function seopress_advanced_advanced_yandex_callback() {
 	$check   = isset( $options['seopress_advanced_advanced_yandex'] ) ? $options['seopress_advanced_advanced_yandex'] : null;
 
 	printf(
-		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_yandex]" aria-label="' . esc_attr__( 'Yandex site verification', 'wp-seopress' ) . '" placeholder="' . esc_html__( 'Enter Yandex meta value site verification', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_yandex]" aria-label="' . esc_attr__( 'Yandex site verification', 'webseo' ) . '" placeholder="' . esc_html__( 'Enter Yandex meta value site verification', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 }
@@ -600,7 +600,7 @@ function seopress_advanced_advanced_baidu_callback() {
 	$check   = isset( $options['seopress_advanced_advanced_baidu'] ) ? $options['seopress_advanced_advanced_baidu'] : null;
 
 	printf(
-		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_baidu]" aria-label="' . esc_attr__( 'Baidu site verification', 'wp-seopress' ) . '" placeholder="' . esc_html__( 'Enter Baidu meta value site verification', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_advanced_option_name[seopress_advanced_advanced_baidu]" aria-label="' . esc_attr__( 'Baidu site verification', 'webseo' ) . '" placeholder="' . esc_html__( 'Enter Baidu meta value site verification', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 }
@@ -621,7 +621,7 @@ function seopress_advanced_appearance_adminbar_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove SEO from Admin Bar in backend and frontend', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove SEO from Admin Bar in backend and frontend', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -646,7 +646,7 @@ function seopress_advanced_appearance_adminbar_counter_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove the SEO notifications counter in the Admin Bar', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove the SEO notifications counter in the Admin Bar', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -676,15 +676,15 @@ function seopress_advanced_appearance_universal_metabox_disable_callback() {
 		<?php checked( $check, '1' ); ?>
 		value="1"/>
 
-	<?php esc_attr_e( 'Disable the universal SEO metabox', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Disable the universal SEO metabox', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'Uncheck this option to edit your SEO directly from your page builder UI.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Uncheck this option to edit your SEO directly from your page builder UI.', 'webseo' ); ?>
 </p>
 <p class="description">
 	<a class="seopress-help" href="<?php echo esc_url( $docs['universal']['introduction'] ); ?>" target="_blank">
-		<?php esc_attr_e( 'Learn more about how we interface with all page builders to optimize your productivity', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Learn more about how we interface with all page builders to optimize your productivity', 'webseo' ); ?>
 	</a>
 	<span class="seopress-help dashicons dashicons-external"></span>
 </p>
@@ -715,10 +715,10 @@ function seopress_advanced_appearance_universal_metabox_callback() {
 		<?php checked( $check, '1' ); ?>
 		value="1"/>
 
-	<?php esc_attr_e( 'Enable the universal SEO metabox for the Block Editor (Gutenberg)', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable the universal SEO metabox for the Block Editor (Gutenberg)', 'webseo' ); ?>
 
-	<p class="description"><?php esc_attr_e( 'Uncheck this option to keep the old SEO metaboxes located below the post content with the Block Editor.', 'wp-seopress' ); ?></p>
-	<p class="description"><?php esc_attr_e( 'The previous option must be unchecked.', 'wp-seopress' ); ?></p>
+	<p class="description"><?php esc_attr_e( 'Uncheck this option to keep the old SEO metaboxes located below the post content with the Block Editor.', 'webseo' ); ?></p>
+	<p class="description"><?php esc_attr_e( 'The previous option must be unchecked.', 'webseo' ); ?></p>
 </label>
 
 	<?php
@@ -743,7 +743,7 @@ function seopress_advanced_appearance_adminbar_noindex_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove noindex item from Admin Bar in frontend', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove noindex item from Admin Bar in frontend', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -766,17 +766,17 @@ function seopress_advanced_appearance_metaboxe_position_callback() {
 	<option <?php if ( 'high' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="high"><?php esc_attr_e( 'High priority (top)', 'wp-seopress' ); ?>
+		value="high"><?php esc_attr_e( 'High priority (top)', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'default' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="default"><?php esc_attr_e( 'Normal priority (default)', 'wp-seopress' ); ?>
+		value="default"><?php esc_attr_e( 'Normal priority (default)', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'low' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="low"><?php esc_attr_e( 'Low priority', 'wp-seopress' ); ?>
+		value="low"><?php esc_attr_e( 'Low priority', 'webseo' ); ?>
 	</option>
 </select>
 
@@ -802,7 +802,7 @@ function seopress_advanced_appearance_title_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Add title column', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add title column', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -827,7 +827,7 @@ function seopress_advanced_appearance_meta_desc_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Add meta description column', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add meta description column', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -852,7 +852,7 @@ function seopress_advanced_appearance_redirect_enable_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Add redirection enable column', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add redirection enable column', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -877,7 +877,7 @@ function seopress_advanced_appearance_redirect_url_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Add redirection URL column', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add redirection URL column', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -902,7 +902,7 @@ function seopress_advanced_appearance_canonical_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Add canonical URL column', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add canonical URL column', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -927,7 +927,7 @@ function seopress_advanced_appearance_target_kw_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Add target keyword column', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add target keyword column', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -952,7 +952,7 @@ function seopress_advanced_appearance_noindex_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Display noindex status', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display noindex status', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -977,7 +977,7 @@ function seopress_advanced_appearance_nofollow_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Display nofollow status', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display nofollow status', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1002,7 +1002,7 @@ function seopress_advanced_appearance_inbound_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Display number of inbound links', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display number of inbound links', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1027,7 +1027,7 @@ function seopress_advanced_appearance_outbound_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Display number of outbound links', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display number of outbound links', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1052,7 +1052,7 @@ function seopress_advanced_appearance_score_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Display Content Analysis results column ("Good" or "Should be improved")', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display Content Analysis results column ("Good" or "Should be improved")', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1077,12 +1077,12 @@ function seopress_advanced_appearance_ca_metaboxe_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Remove Content Analysis Metabox', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Remove Content Analysis Metabox', 'webseo' ); ?>
 </label>
 
 
 <p class="description">
-	<?php esc_attr_e( 'By checking this option, we will no longer track the significant keywords.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'By checking this option, we will no longer track the significant keywords.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -1135,7 +1135,7 @@ function seopress_advanced_security_metaboxe_role_callback() {
 	}
 	?>
 
-	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['security']['metaboxe_seo'] ), esc_attr__( 'Hook to filter structured data types metabox call by post type - new window', 'wp-seopress' ) ) ); ?>
+	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['security']['metaboxe_seo'] ), esc_attr__( 'Hook to filter structured data types metabox call by post type - new window', 'webseo' ) ) ); ?>
 
 	<?php
 }
@@ -1181,7 +1181,7 @@ function seopress_advanced_security_metaboxe_ca_role_callback() {
 	}
 	?>
 
-	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['security']['metaboxe_ca'] ), esc_attr__( 'Hook to filter structured data types metabox call by post type - new window', 'wp-seopress' ) ) ); ?>
+	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['security']['metaboxe_ca'] ), esc_attr__( 'Hook to filter structured data types metabox call by post type - new window', 'webseo' ) ) ); ?>
 
 	<?php
 }

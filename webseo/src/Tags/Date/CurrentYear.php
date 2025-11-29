@@ -20,7 +20,7 @@ class CurrentYear implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Current Year', 'wp-seopress' );
+		return __( 'Current Year', 'webseo' );
 	}
 
 	/**

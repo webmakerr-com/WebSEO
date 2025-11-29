@@ -20,7 +20,7 @@ class CurrentTime implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Current Time', 'wp-seopress' );
+		return __( 'Current Time', 'webseo' );
 	}
 
 	/**

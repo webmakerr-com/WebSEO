@@ -20,7 +20,7 @@ class CurrentMonth implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Current Month', 'wp-seopress' );
+		return __( 'Current Month', 'webseo' );
 	}
 
 	/**

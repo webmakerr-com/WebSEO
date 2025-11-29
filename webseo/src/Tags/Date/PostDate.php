@@ -22,7 +22,7 @@ class PostDate implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Date', 'wp-seopress' );
+		return __( 'Post Date', 'webseo' );
 	}
 
 	/**

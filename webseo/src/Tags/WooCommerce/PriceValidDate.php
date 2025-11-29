@@ -20,7 +20,7 @@ class PriceValidDate implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Product Date On Sale To', 'wp-seopress' );
+		return __( 'Product Date On Sale To', 'webseo' );
 	}
 
 	/**

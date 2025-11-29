@@ -11,13 +11,13 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 <div id="seopress-page-list" class="seopress-page-list seopress-card">
 	<div class="seopress-card-title">
 		<div>
-			<h2><?php esc_attr_e( 'SEO management', 'wp-seopress' ); ?></h2>
+			<h2><?php esc_attr_e( 'SEO management', 'webseo' ); ?></h2>
 			<p>
-				<?php echo wp_kses_post( __( 'Quickly enable / disable SEO modules to fit your needs. Click the <strong>Manage settings</strong> button to configure it.', 'wp-seopress' ) ); ?>
+				<?php echo wp_kses_post( __( 'Quickly enable / disable SEO modules to fit your needs. Click the <strong>Manage settings</strong> button to configure it.', 'webseo' ) ); ?>
 			</p>
 		</div>
 		<div>
-			<button type="button" class="seopress-btn-view-switch seopress-btn" title="<?php esc_attr_e( 'Toggle simple / default view', 'wp-seopress' ); ?>">
+			<button type="button" class="seopress-btn-view-switch seopress-btn" title="<?php esc_attr_e( 'Toggle simple / default view', 'webseo' ); ?>">
 				<span class="dashicons dashicons-grid-view"></span>
 			</button>
 		</div>
@@ -29,50 +29,50 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 		$features = array(
 			'titles'            => array(
 				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-titles-metas.svg',
-				'title'       => __( 'Titles & Metas', 'wp-seopress' ),
-				'desc'        => __( 'Manage all your titles & metas for post types, taxonomies, archives...', 'wp-seopress' ),
+				'title'       => __( 'Titles & Metas', 'webseo' ),
+				'desc'        => __( 'Manage all your titles & metas for post types, taxonomies, archives...', 'webseo' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-titles' ),
 				'filter'      => 'seopress_remove_feature_titles',
 			),
 			'xml-sitemap'       => array(
 				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-sitemaps.svg',
-				'title'       => __( 'XML & HTML Sitemaps', 'wp-seopress' ),
-				'desc'        => __( 'Manage your XML - Image - Video - HTML Sitemap.', 'wp-seopress' ),
+				'title'       => __( 'XML & HTML Sitemaps', 'webseo' ),
+				'desc'        => __( 'Manage your XML - Image - Video - HTML Sitemap.', 'webseo' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-xml-sitemap' ),
 				'filter'      => 'seopress_remove_feature_xml_sitemap',
 			),
 			'social'            => array(
 				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-social-networks.svg',
-				'title'       => __( 'Social Networks', 'wp-seopress' ),
-				'desc'        => __( 'Open Graph, X Cards, Google Knowledge Graph and more...', 'wp-seopress' ),
+				'title'       => __( 'Social Networks', 'webseo' ),
+				'desc'        => __( 'Open Graph, X Cards, Google Knowledge Graph and more...', 'webseo' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-social' ),
 				'filter'      => 'seopress_remove_feature_social',
 			),
 			'google-analytics'  => array(
 				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-analytics.svg',
-				'title'       => __( 'Analytics', 'wp-seopress' ),
-				'desc'        => __( 'Track everything about your visitors with Google Analytics / Matomo / Microsoft Clarity.', 'wp-seopress' ),
+				'title'       => __( 'Analytics', 'webseo' ),
+				'desc'        => __( 'Track everything about your visitors with Google Analytics / Matomo / Microsoft Clarity.', 'webseo' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-google-analytics' ),
 				'filter'      => 'seopress_remove_feature_google_analytics',
 			),
 			'instant-indexing'  => array(
 				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-instant-indexing.svg',
-				'title'       => __( 'Instant Indexing', 'wp-seopress' ),
-				'desc'        => __( 'Ping Google & Bing to quickly index your content.', 'wp-seopress' ),
+				'title'       => __( 'Instant Indexing', 'webseo' ),
+				'desc'        => __( 'Ping Google & Bing to quickly index your content.', 'webseo' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-instant-indexing' ),
 				'filter'      => 'seopress_remove_feature_instant_indexing',
 			),
 			'advanced'          => array(
 				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-advanced.svg',
-				'title'       => __( 'Image SEO & Advanced settings', 'wp-seopress' ),
-				'desc'        => __( 'Optimize your images for SEO. Configure advanced settings.', 'wp-seopress' ),
+				'title'       => __( 'Image SEO & Advanced settings', 'webseo' ),
+				'desc'        => __( 'Optimize your images for SEO. Configure advanced settings.', 'webseo' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-advanced' ),
 				'filter'      => 'seopress_remove_feature_advanced',
 			),
 			'universal-metabox' => array(
 				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-universal-metabox.svg',
-				'title'       => __( 'Universal SEO metabox', 'wp-seopress' ),
-				'desc'        => __( 'Easily manage your SEO settings from your favorite page builder or editor.', 'wp-seopress' ),
+				'title'       => __( 'Universal SEO metabox', 'webseo' ),
+				'desc'        => __( 'Easily manage your SEO settings from your favorite page builder or editor.', 'webseo' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-advanced#tab=tab_seopress_advanced_appearance' ),
 				'filter'      => 'seopress_remove_feature_advanced',
 			),
@@ -82,8 +82,8 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 
 		$features['tools'] = array(
 			'svg'         => WEBSEO_URL_ASSETS . '/img/ico-tools.svg',
-			'title'       => __( 'Tools', 'wp-seopress' ),
-			'desc'        => __( 'Import/Export plugin settings from site to site.', 'wp-seopress' ),
+			'title'       => __( 'Tools', 'webseo' ),
+			'desc'        => __( 'Import/Export plugin settings from site to site.', 'webseo' ),
 			'btn_primary' => admin_url( 'admin.php?page=webseo-import-export' ),
 			'filter'      => 'seopress_remove_feature_tools',
 			'toggle'      => false,
@@ -159,7 +159,7 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 										<span class="screen-reader-text">
 										<?php
 											/* translators: %s name of the feature, eg: Titles and metas */
-											printf( esc_attr__( 'Toggle %s', 'wp-seopress' ), esc_attr( $title ) );
+											printf( esc_attr__( 'Toggle %s', 'webseo' ), esc_attr( $title ) );
 										?>
 											</span>
 										<input type="checkbox" name="toggle-<?php echo esc_attr( $key ); ?>" id="toggle-<?php echo esc_attr( $key ); ?>" class="toggle" data-toggle="<?php echo esc_attr( $seopress_get_toggle_option ); ?>">
@@ -170,8 +170,8 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 							<p class="item-desc"><?php echo esc_html( $desc ); ?></p>
 						</div>
 						<div class="seopress-item-footer">
-							<a href="<?php echo esc_url( $btn_primary ); ?>" class="seopress-btn" title="<?php esc_attr_e( 'Manage settings', 'wp-seopress' ); ?>">
-								<?php esc_attr_e( 'Manage settings', 'wp-seopress' ); ?>
+							<a href="<?php echo esc_url( $btn_primary ); ?>" class="seopress-btn" title="<?php esc_attr_e( 'Manage settings', 'webseo' ); ?>">
+								<?php esc_attr_e( 'Manage settings', 'webseo' ); ?>
 							</a>
 						</div>
 					</div>

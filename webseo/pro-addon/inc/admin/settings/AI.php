@@ -70,7 +70,7 @@ add_settings_field(
 add_settings_section(
     'seopress_setting_section_ai_misc', // ID
     '',
-    //__("AI Misc","wp-seopress"), // Title
+    //__("AI Misc","webseo"), // Title
     'seopress_print_section_info_ai_misc', // Callback
     'seopress-settings-admin-ai' // Page
 );
@@ -86,7 +86,7 @@ add_settings_field(
 add_settings_section(
     'seopress_setting_section_ai_logs', // ID
     '',
-    //__("AI Logs","wp-seopress"), // Title
+    //__("AI Logs","webseo"), // Title
     'seopress_print_section_info_ai_logs', // Callback
     'seopress-settings-admin-ai' // Page
 );

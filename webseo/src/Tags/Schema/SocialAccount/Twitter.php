@@ -20,7 +20,7 @@ class Twitter implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'X URL', 'wp-seopress' );
+		return __( 'X URL', 'webseo' );
 	}
 
 	/**

@@ -30,10 +30,10 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 		<?php
 			$current_tab      = '';
 		$plugin_settings_tabs = array(
-			'tab_seopress_advanced_image'      => __( 'Image SEO', 'wp-seopress' ),
-			'tab_seopress_advanced_advanced'   => __( 'Advanced', 'wp-seopress' ),
-			'tab_seopress_advanced_appearance' => __( 'Appearance', 'wp-seopress' ),
-			'tab_seopress_advanced_security'   => __( 'Security', 'wp-seopress' ),
+			'tab_seopress_advanced_image'      => __( 'Image SEO', 'webseo' ),
+			'tab_seopress_advanced_advanced'   => __( 'Advanced', 'webseo' ),
+			'tab_seopress_advanced_appearance' => __( 'Appearance', 'webseo' ),
+			'tab_seopress_advanced_security'   => __( 'Security', 'webseo' ),
 		);
 		?>
 		<div class="nav-tab-wrapper">
@@ -78,6 +78,6 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 		</div>
 	</div>
 
-	<?php sp_submit_button( esc_html__( 'Save changes', 'wp-seopress' ) ); ?>
+	<?php sp_submit_button( esc_html__( 'Save changes', 'webseo' ) ); ?>
 </form>
 <?php

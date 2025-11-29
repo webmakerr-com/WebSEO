@@ -20,7 +20,7 @@ class SingleTag implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Product Tag', 'wp-seopress' );
+		return __( 'Product Tag', 'webseo' );
 	}
 
 	/**

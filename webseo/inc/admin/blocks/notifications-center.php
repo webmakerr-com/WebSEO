@@ -33,7 +33,7 @@ $total = seopress_get_service( 'Notifications' )->getSeverityNotification( 'all'
 		<div class="seopress-notifications-none">
 			<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/ico-notifications.svg' ); ?>" width="56" height="56" alt=""/>
 			<h3>
-				<?php esc_attr_e( 'You don‘t have any notifications yet!', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'You don‘t have any notifications yet!', 'webseo' ); ?>
 			</h3>
 		</div>
 		<?php
@@ -43,7 +43,7 @@ $total = seopress_get_service( 'Notifications' )->getSeverityNotification( 'all'
 	<details class="seopress-notifications-hidden">
 		<summary class="seopress-notifications-list-title">
 			<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/ico-notifications-hidden.svg' ); ?>" alt='' width='32' height='32' />
-			<h3 id="seopress-hidden-notifications"><?php esc_attr_e( 'Hidden notifications', 'wp-seopress' ); ?></h3>
+			<h3 id="seopress-hidden-notifications"><?php esc_attr_e( 'Hidden notifications', 'webseo' ); ?></h3>
 		</summary>
 		<div class="seopress-notifications-list-content">
 			<?php
@@ -59,7 +59,7 @@ $total = seopress_get_service( 'Notifications' )->getSeverityNotification( 'all'
 			);
 
 			if ( empty( $hidden_notifications ) ) {
-				echo '<p>' . esc_html__( 'You currently have no hidden notifications.', 'wp-seopress' ) . '</p>';
+				echo '<p>' . esc_html__( 'You currently have no hidden notifications.', 'webseo' ) . '</p>';
 				return;
 			}
 

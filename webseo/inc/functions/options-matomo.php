@@ -115,7 +115,7 @@ var _paq = window._paq || [];\n";
 		$cd_author_option = seopress_get_service( 'GoogleAnalyticsOption' )->getCdAuthor();
 		if ( ! empty( $cd_author_option ) && 'none' !== $cd_author_option ) {
 			if ( is_singular() ) {
-				$seopress_matomo_event['cd_author'] = "_paq.push(['setCustomVariable', '" . substr( $cd_author_option, -1 ) . "', '" . __( 'Authors', 'wp-seopress' ) . "', '" . get_the_author() . "', 'visit']);\n";
+				$seopress_matomo_event['cd_author'] = "_paq.push(['setCustomVariable', '" . substr( $cd_author_option, -1 ) . "', '" . __( 'Authors', 'webseo' ) . "', '" . get_the_author() . "', 'visit']);\n";
 				$seopress_matomo_event['cd_author'] = apply_filters( 'seopress_matomo_cd_author_ev', $seopress_matomo_event['cd_author'] );
 			}
 		}
@@ -128,7 +128,7 @@ var _paq = window._paq || [];\n";
 				if ( ! empty( $categories ) ) {
 					$get_first_category = esc_html( $categories[0]->name );
 				}
-				$seopress_matomo_event['cd_categories'] = "_paq.push(['setCustomVariable', '" . substr( $cd_category_option, -1 ) . "', '" . __( 'Categories', 'wp-seopress' ) . "', '" . $get_first_category . "', 'visit']);\n";
+				$seopress_matomo_event['cd_categories'] = "_paq.push(['setCustomVariable', '" . substr( $cd_category_option, -1 ) . "', '" . __( 'Categories', 'webseo' ) . "', '" . $get_first_category . "', 'visit']);\n";
 				$seopress_matomo_event['cd_categories'] = apply_filters( 'seopress_matomo_cd_categories_ev', $seopress_matomo_event['cd_categories'] );
 			}
 		}
@@ -147,7 +147,7 @@ var _paq = window._paq || [];\n";
 						}
 					}
 				}
-				$seopress_matomo_event['cd_tags'] = "_paq.push(['setCustomVariable', '" . substr( $cd_tag_option, -1 ) . "', '" . __( 'Tags', 'wp-seopress' ) . "', '" . $get_tags . "', 'visit']);\n";
+				$seopress_matomo_event['cd_tags'] = "_paq.push(['setCustomVariable', '" . substr( $cd_tag_option, -1 ) . "', '" . __( 'Tags', 'webseo' ) . "', '" . $get_tags . "', 'visit']);\n";
 				$seopress_matomo_event['cd_tags'] = apply_filters( 'seopress_matomo_cd_tags_ev', $seopress_matomo_event['cd_tags'] );
 			}
 		}
@@ -155,7 +155,7 @@ var _paq = window._paq || [];\n";
 		$cd_post_type_option = seopress_get_service( 'GoogleAnalyticsOption' )->getCdPostType();
 		if ( ! empty( $cd_post_type_option ) && 'none' !== $cd_post_type_option ) {
 			if ( is_single() ) {
-				$seopress_matomo_event['cd_cpt'] = "_paq.push(['setCustomVariable', '" . substr( $cd_post_type_option, -1 ) . "', '" . __( 'Post types', 'wp-seopress' ) . "', '" . get_post_type() . "', 'visit']);\n";
+				$seopress_matomo_event['cd_cpt'] = "_paq.push(['setCustomVariable', '" . substr( $cd_post_type_option, -1 ) . "', '" . __( 'Post types', 'webseo' ) . "', '" . get_post_type() . "', 'visit']);\n";
 				$seopress_matomo_event['cd_cpt'] = apply_filters( 'seopress_matomo_cd_cpt_ev', $seopress_matomo_event['cd_cpt'] );
 			}
 		}
@@ -163,7 +163,7 @@ var _paq = window._paq || [];\n";
 		$cd_logged_in_user_option = seopress_get_service( 'GoogleAnalyticsOption' )->getCdLoggedInUser();
 		if ( ! empty( $cd_logged_in_user_option ) && 'none' !== $cd_logged_in_user_option ) {
 			if ( wp_get_current_user()->ID ) {
-				$seopress_matomo_event['cd_logged_in'] = "_paq.push(['setCustomVariable', '" . substr( $cd_logged_in_user_option, -1 ) . "', '" . __( 'Connected users', 'wp-seopress' ) . "', '" . wp_get_current_user()->ID . "', 'visit']);\n";
+				$seopress_matomo_event['cd_logged_in'] = "_paq.push(['setCustomVariable', '" . substr( $cd_logged_in_user_option, -1 ) . "', '" . __( 'Connected users', 'webseo' ) . "', '" . wp_get_current_user()->ID . "', 'visit']);\n";
 				$seopress_matomo_event['cd_logged_in'] = apply_filters( 'seopress_matomo_cd_logged_in_ev', $seopress_matomo_event['cd_logged_in'] );
 			}
 		}

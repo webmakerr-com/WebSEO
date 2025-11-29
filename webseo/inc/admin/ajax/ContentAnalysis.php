@@ -28,7 +28,7 @@ function seopress_do_real_preview() {
 	$taxname = isset( $_GET['tax_name'] ) ? $_GET['tax_name'] : null;
 
 	if ( 'yes' === get_post_meta( $id, '_seopress_redirections_enabled', true ) ) {
-		$data['title'] = __( 'A redirect is active for this URL. Turn it off to get the Google preview and content analysis.', 'wp-seopress' );
+		$data['title'] = __( 'A redirect is active for this URL. Turn it off to get the Google preview and content analysis.', 'webseo' );
 		wp_send_json_error( $data );
 		return;
 	}
@@ -43,10 +43,10 @@ function seopress_do_real_preview() {
 
 		switch ( $dom_result['code'] ) {
 			case 404:
-				$default_response['title'] = __( 'To get your Google snippet preview, publish your post!', 'wp-seopress' );
+				$default_response['title'] = __( 'To get your Google snippet preview, publish your post!', 'webseo' );
 				break;
 			case 401:
-				$default_response['title'] = __( 'Your site is protected by an authentication.', 'wp-seopress' );
+				$default_response['title'] = __( 'Your site is protected by an authentication.', 'webseo' );
 				break;
 		}
 

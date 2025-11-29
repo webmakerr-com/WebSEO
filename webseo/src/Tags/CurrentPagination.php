@@ -20,7 +20,7 @@ class CurrentPagination implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Current Number Page', 'wp-seopress' );
+		return __( 'Current Number Page', 'webseo' );
 	}
 
 	/**

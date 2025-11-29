@@ -382,11 +382,11 @@ function seopress_get_empty_templates( $type, $metadata, $notice = true ) {
 
 	if ( 'cpt' === $type ) {
 		$templates   = $postTypes = seopress_get_service( 'WordPressData' )->getPostTypes();
-		$notice_i18n = __( 'Custom Post Types', 'wp-seopress' );
+		$notice_i18n = __( 'Custom Post Types', 'webseo' );
 	}
 	if ( 'tax' === $type ) {
 		$templates   = seopress_get_service( 'WordPressData' )->getTaxonomies();
-		$notice_i18n = __( 'Custom Taxonomies', 'wp-seopress' );
+		$notice_i18n = __( 'Custom Taxonomies', 'webseo' );
 	}
 	foreach ( $templates as $key => $value ) {
 		$options = get_option( 'seopress_titles_option_name' );
@@ -432,7 +432,7 @@ function seopress_get_empty_templates( $type, $metadata, $notice = true ) {
 			$html .= '<div class="seopress-notice is-warning">
 	<p>';
 			/* translators: %1$s: "Custom Post Types" or "Custom Taxonomies", %2$s: "title" or "description" */
-			$html .= wp_kses_post( sprintf( __( 'Some <strong>%1$s</strong> have no <strong>meta %2$s</strong> set! We strongly encourage you to add one by filling in the fields below.', 'wp-seopress' ), esc_attr( $notice_i18n ), esc_attr( $metadata ) ) );
+			$html .= wp_kses_post( sprintf( __( 'Some <strong>%1$s</strong> have no <strong>meta %2$s</strong> set! We strongly encourage you to add one by filling in the fields below.', 'webseo' ), esc_attr( $notice_i18n ), esc_attr( $metadata ) ) );
 			$html .= '</p>';
 			$html .= $list;
 			$html .= '</div>';
@@ -457,8 +457,8 @@ function seopress_notice_permalinks() {
 	$class   = 'notice notice-warning';
 	$message = sprintf(
 		'<p><strong>%s</strong></p><p>%s</p>',
-		__( 'WARNING', 'wp-seopress' ),
-		__( 'Do NOT change your permalink structure on a production site. Changing URLs can severely damage your SEO.', 'wp-seopress' )
+		__( 'WARNING', 'webseo' ),
+		__( 'Do NOT change your permalink structure on a production site. Changing URLs can severely damage your SEO.', 'webseo' )
 	);
 
 	printf( '<div class="%1$s">%2$s</div>', esc_attr( $class ), wp_kses_post( $message ) );
@@ -487,8 +487,8 @@ function seopress_notice_no_rewrite_url() {
 	$class   = 'notice notice-warning';
 	$message = sprintf(
 		'<p><strong>%s</strong></p><p>%s</p>',
-		__( 'WARNING', 'wp-seopress' ),
-		__( 'URL rewriting is NOT enabled on your site. Select a permalink structure that is optimized for SEO (NOT Plain).', 'wp-seopress' )
+		__( 'WARNING', 'webseo' ),
+		__( 'URL rewriting is NOT enabled on your site. Select a permalink structure that is optimized for SEO (NOT Plain).', 'webseo' )
 	);
 
 	printf( '<div class="%1$s">%2$s</div>', esc_attr( $class ), wp_kses_post( $message ) );
@@ -726,7 +726,7 @@ function seopress_if_key_exists( array $arr, $key ) {
  */
 function sp_submit_button( $value = '', $classes = 'btn btnPrimary', $type = 'submit' ) {
 	if ( '' === $value ) {
-		$value = __( 'Save changes', 'wp-seopress' );
+		$value = __( 'Save changes', 'webseo' );
 	}
 
 	// Use esc_attr_e to escape attributes in the output.

@@ -25,7 +25,7 @@ function seopress_google_analytics_enable_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Enable Google Analytics tracking (Global Site Tag: gtag.js)', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable Google Analytics tracking (Global Site Tag: gtag.js)', 'webseo' ); ?>
 </label>
 	<?php
 	if ( isset( $options['seopress_google_analytics_enable'] ) ) {
@@ -43,14 +43,14 @@ function seopress_google_analytics_ga4_callback() {
 	$check   = isset( $options['seopress_google_analytics_ga4'] ) ? $options['seopress_google_analytics_ga4'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_ga4]" placeholder="' . esc_html__( 'Enter your measurement ID (G-XXXXXXXXXX)', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Enter your measurement ID', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_ga4]" placeholder="' . esc_html__( 'Enter your measurement ID (G-XXXXXXXXXX)', 'webseo' ) . '" aria-label="' . esc_attr__( 'Enter your measurement ID', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 
 <p class="seopress-help description">
 	<a href="https://support.google.com/analytics/answer/9539598?hl=en&ref_topic=9303319" target="_blank">
-		<?php esc_attr_e( 'Find your measurement ID', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Find your measurement ID', 'webseo' ); ?>
 	</a>
 	<span class="dashicons dashicons-external"></span>
 </p>
@@ -73,22 +73,22 @@ function seopress_google_analytics_hook_callback() {
 	<option <?php if ( 'wp_body_open' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="wp_body_open"><?php esc_attr_e( 'After the opening body tag (recommended)', 'wp-seopress' ); ?>
+		value="wp_body_open"><?php esc_attr_e( 'After the opening body tag (recommended)', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'wp_footer' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="wp_footer"><?php esc_attr_e( 'Footer', 'wp-seopress' ); ?>
+		value="wp_footer"><?php esc_attr_e( 'Footer', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'wp_head' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="wp_head"><?php esc_attr_e( 'Head (not recommended)', 'wp-seopress' ); ?>
+		value="wp_head"><?php esc_attr_e( 'Head (not recommended)', 'webseo' ); ?>
 	</option>
 </select>
 
 <p class="description">
-	<?php echo wp_kses_post( __( 'Your theme must be compatible with <code>wp_body_open</code> hook introduced in WordPress 5.2 if "opening body tag" option selected.', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'Your theme must be compatible with <code>wp_body_open</code> hook introduced in WordPress 5.2 if "opening body tag" option selected.', 'webseo' ) ); ?>
 </p>
 
 	<?php
@@ -116,23 +116,23 @@ function seopress_google_analytics_disable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Request user consent for analytics tracking (required by GDPR)', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Request user consent for analytics tracking (required by GDPR)', 'webseo' ); ?>
 </label>
 
 <div class="seopress-notice">
-	<p><?php echo wp_kses_post( __( 'Users must click the <strong>Accept</strong> button to allow tracking.', 'wp-seopress' ) ); ?>
+	<p><?php echo wp_kses_post( __( 'Users must click the <strong>Accept</strong> button to allow tracking.', 'webseo' ) ); ?>
 	</p>
 </div>
 
 <p class="description">
-	<?php esc_attr_e( 'User roles excluded from tracking will not see the consent banner.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'User roles excluded from tracking will not see the consent banner.', 'webseo' ); ?>
 </p>
 <p class="description">
-	<?php esc_attr_e( 'If you use a caching plugin, you have to exclude this JS file in your settings:', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'If you use a caching plugin, you have to exclude this JS file in your settings:', 'webseo' ); ?>
 </p>
 <p class="description">
-        <?php echo wp_kses_post( __( '<code>/wp-content/plugins/webseo/assets/js/webseo-cookies-ajax.js</code> and this cookie <code>seopress-user-consent-accept</code>', 'wp-seopress' ) ); ?>
-	<?php echo seopress_tooltip_link( esc_url( $docs['analytics']['custom_tracking'] ), esc_attr__( 'Hook to add custom tracking code with user consent - new window', 'wp-seopress' ) ); ?>
+        <?php echo wp_kses_post( __( '<code>/wp-content/plugins/webseo/assets/js/webseo-cookies-ajax.js</code> and this cookie <code>seopress-user-consent-accept</code>', 'webseo' ) ); ?>
+	<?php echo seopress_tooltip_link( esc_url( $docs['analytics']['custom_tracking'] ), esc_attr__( 'Hook to add custom tracking code with user consent - new window', 'webseo' ) ); ?>
 </p>
 
 	<?php
@@ -158,11 +158,11 @@ function seopress_google_analytics_half_disable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Display and automatically accept user consent on page load (not fully GDPR compliant)', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display and automatically accept user consent on page load (not fully GDPR compliant)', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'The previous option must be enabled to use this.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'The previous option must be enabled to use this.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -189,11 +189,11 @@ function seopress_google_analytics_opt_out_edit_choice_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Allow users to change their cookie preferences', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Allow users to change their cookie preferences', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'Display a button that allows users to reopen the cookie consent banner and change their choice after accepting or declining.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display a button that allows users to reopen the cookie consent banner and change their choice after accepting or declining.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -213,21 +213,21 @@ function seopress_google_analytics_opt_out_msg_callback() {
 	$check   = isset( $options['seopress_google_analytics_opt_out_msg'] ) ? $options['seopress_google_analytics_opt_out_msg'] : null;
 
 	printf(
-		'<textarea id="seopress_google_analytics_opt_out_msg" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg]" rows="4" placeholder="' . esc_html__( 'Enter your message (HTML allowed)', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Cookie consent banner message', 'wp-seopress' ) . '">%s</textarea>',
+		'<textarea id="seopress_google_analytics_opt_out_msg" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg]" rows="4" placeholder="' . esc_html__( 'Enter your message (HTML allowed)', 'webseo' ) . '" aria-label="' . esc_attr__( 'Cookie consent banner message', 'webseo' ) . '">%s</textarea>',
 		esc_html( $check )
 	);
 	?>
 
-	<?php echo seopress_tooltip_link( $docs['analytics']['consent_msg'], esc_attr__( 'Hook to filter user consent message - new window', 'wp-seopress' ) ); ?>
+	<?php echo seopress_tooltip_link( $docs['analytics']['consent_msg'], esc_attr__( 'Hook to filter user consent message - new window', 'webseo' ) ); ?>
 
 <p class="description">
-	<?php esc_attr_e( 'The message displayed in the cookie consent banner.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'The message displayed in the cookie consent banner.', 'webseo' ); ?>
 </p>
 <p class="description">
-	<?php esc_attr_e( 'HTML tags allowed: strong, em, br, a href / target', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'HTML tags allowed: strong, em, br, a href / target', 'webseo' ); ?>
 </p>
 <p class="description">
-	<?php esc_attr_e( 'Shortcode allowed to get the privacy page set in WordPress settings: [seopress_privacy_page]', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Shortcode allowed to get the privacy page set in WordPress settings: [seopress_privacy_page]', 'webseo' ); ?>
 </p>
 	<?php
 }
@@ -242,13 +242,13 @@ function seopress_google_analytics_opt_out_msg_ok_callback() {
 	$check   = isset( $options['seopress_google_analytics_opt_out_msg_ok'] ) ? $options['seopress_google_analytics_opt_out_msg_ok'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg_ok]" placeholder="' . esc_html__( 'Accept', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Accept button text', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg_ok]" placeholder="' . esc_html__( 'Accept', 'webseo' ) . '" aria-label="' . esc_attr__( 'Accept button text', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text displayed on the button that accepts cookie tracking.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text displayed on the button that accepts cookie tracking.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -264,13 +264,13 @@ function seopress_google_analytics_opt_out_msg_close_callback() {
 	$check   = isset( $options['seopress_google_analytics_opt_out_msg_close'] ) ? $options['seopress_google_analytics_opt_out_msg_close'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg_close]" placeholder="' . esc_html__( 'Decline', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Decline button text', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg_close]" placeholder="' . esc_html__( 'Decline', 'webseo' ) . '" aria-label="' . esc_attr__( 'Decline button text', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text displayed on the button that declines cookie tracking.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text displayed on the button that declines cookie tracking.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -286,13 +286,13 @@ function seopress_google_analytics_opt_out_msg_edit_callback() {
 	$check   = isset( $options['seopress_google_analytics_opt_out_msg_edit'] ) ? $options['seopress_google_analytics_opt_out_msg_edit'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg_edit]" placeholder="' . esc_html__( 'Cookie preferences', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Cookie preferences button text', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_opt_out_msg_edit]" placeholder="' . esc_html__( 'Cookie preferences', 'webseo' ) . '" aria-label="' . esc_attr__( 'Cookie preferences button text', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text displayed on the button that allows users to reopen the cookie consent banner.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text displayed on the button that allows users to reopen the cookie consent banner.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -321,7 +321,7 @@ value="30"/>
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Number of days before the user consent cookie expires. Default: 30 days.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Number of days before the user consent cookie expires. Default: 30 days.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -343,22 +343,22 @@ function seopress_google_analytics_cb_pos_callback() {
 	<option <?php if ( 'bottom' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="bottom"><?php esc_attr_e( 'Bottom (default)', 'wp-seopress' ); ?>
+		value="bottom"><?php esc_attr_e( 'Bottom (default)', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'center' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="center"><?php esc_attr_e( 'Middle', 'wp-seopress' ); ?>
+		value="center"><?php esc_attr_e( 'Middle', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'top' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="top"><?php esc_attr_e( 'Top', 'wp-seopress' ); ?>
+		value="top"><?php esc_attr_e( 'Top', 'webseo' ); ?>
 	</option>
 </select>
 
 <p class="description">
-	<?php esc_attr_e( 'Cookie bar vertical alignment.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Cookie bar vertical alignment.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -383,17 +383,17 @@ function seopress_google_analytics_cb_txt_align_callback() {
 	<option <?php if ( 'left' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="left"><?php esc_attr_e( 'Left', 'wp-seopress' ); ?>
+		value="left"><?php esc_attr_e( 'Left', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'center' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="center"><?php esc_attr_e( 'Center (default)', 'wp-seopress' ); ?>
+		value="center"><?php esc_attr_e( 'Center (default)', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'right' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="right"><?php esc_attr_e( 'Right', 'wp-seopress' ); ?>
+		value="right"><?php esc_attr_e( 'Right', 'webseo' ); ?>
 	</option>
 </select>
 
@@ -413,13 +413,13 @@ function seopress_google_analytics_cb_width_callback() {
 	$check   = isset( $options['seopress_google_analytics_cb_width'] ) ? $options['seopress_google_analytics_cb_width'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_width]" aria-label="' . esc_attr__( 'Change the cookie bar width', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_width]" aria-label="' . esc_attr__( 'Change the cookie bar width', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Default unit is Pixels. Add % just after your custom value to use percentages (e.g. 80%). Default width is 100%.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Default unit is Pixels. Add % just after your custom value to use percentages (e.g. 80%). Default width is 100%.', 'webseo' ); ?>
 </p>
 	<?php
 }
@@ -440,22 +440,22 @@ function seopress_google_analytics_cb_align_callback() {
 	<option <?php if ( 'left' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="left"><?php esc_attr_e( 'Left', 'wp-seopress' ); ?>
+		value="left"><?php esc_attr_e( 'Left', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'center' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="center"><?php esc_attr_e( 'Center (default)', 'wp-seopress' ); ?>
+		value="center"><?php esc_attr_e( 'Center (default)', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'right' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="right"><?php esc_attr_e( 'Right', 'wp-seopress' ); ?>
+		value="right"><?php esc_attr_e( 'Right', 'webseo' ); ?>
 	</option>
 </select>
 
 <p class="description">
-	<?php esc_attr_e( 'Cookie bar horizontal alignment (only applies when width is not 100%):', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Cookie bar horizontal alignment (only applies when width is not 100%):', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -478,11 +478,11 @@ function seopress_google_analytics_cb_backdrop_callback() {
 <hr>
 
 <h2>
-	<?php esc_attr_e( 'Backdrop', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Backdrop', 'webseo' ); ?>
 </h2>
 
 <p>
-	<?php echo wp_kses_post( __( 'Customize the cookie bar <strong>backdrop</strong>.', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'Customize the cookie bar <strong>backdrop</strong>.', 'webseo' ) ); ?>
 </p>
 
 <label for="seopress_google_analytics_cb_backdrop">
@@ -491,7 +491,7 @@ function seopress_google_analytics_cb_backdrop_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Display a backdrop with the cookie bar', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Display a backdrop with the cookie bar', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -511,12 +511,12 @@ function seopress_google_analytics_cb_backdrop_bg_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Background color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Background color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-default-color="rgba(0,0,0,0.5)" data-alpha="true" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_backdrop_bg]" placeholder="rgba(0,0,0,0.5)" aria-label="' . esc_attr__( 'Change the background color of the backdrop', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-default-color="rgba(0,0,0,0.5)" data-alpha="true" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_backdrop_bg]" placeholder="rgba(0,0,0,0.5)" aria-label="' . esc_attr__( 'Change the background color of the backdrop', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -532,20 +532,20 @@ function seopress_google_analytics_cb_bg_callback() {
 	?>
 <hr>
 
-<h2><?php esc_attr_e( 'Main settings', 'wp-seopress' ); ?>
+<h2><?php esc_attr_e( 'Main settings', 'webseo' ); ?>
 </h2>
 
 <p>
-	<?php echo wp_kses_post( __( 'Customize the general settings of the <strong>cookie bar</strong>.', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'Customize the general settings of the <strong>cookie bar</strong>.', 'webseo' ) ); ?>
 </p>
 
 <p class="description">
-	<?php esc_attr_e( 'Background color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Background color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-alpha="true" data-default-color="#FFFFFF" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_bg]" placeholder="#FFFFFF" aria-label="' . esc_attr__( 'Change the color of the cookie bar background', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-alpha="true" data-default-color="#FFFFFF" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_bg]" placeholder="#FFFFFF" aria-label="' . esc_attr__( 'Change the color of the cookie bar background', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -561,12 +561,12 @@ function seopress_google_analytics_cb_txt_col_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-default-color="#2c3e50" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_txt_col]" placeholder="#2c3e50" aria-label="' . esc_attr__( 'Change the color of the cookie bar text', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-default-color="#2c3e50" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_txt_col]" placeholder="#2c3e50" aria-label="' . esc_attr__( 'Change the color of the cookie bar text', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -582,12 +582,12 @@ function seopress_google_analytics_cb_lk_col_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Link color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Link color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-default-color="#1a1a1a" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_lk_col]" placeholder="#1a1a1a" aria-label="' . esc_attr__( 'Change the color of the cookie bar link', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-default-color="#1a1a1a" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_lk_col]" placeholder="#1a1a1a" aria-label="' . esc_attr__( 'Change the color of the cookie bar link', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -605,20 +605,20 @@ function seopress_google_analytics_cb_btn_bg_callback() {
 <hr>
 
 <h2>
-	<?php esc_attr_e( 'Primary button', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Primary button', 'webseo' ); ?>
 </h2>
 
 <p>
-	<?php echo wp_kses_post( __( 'Customize the <strong>Accept button</strong>.', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'Customize the <strong>Accept button</strong>.', 'webseo' ) ); ?>
 </p>
 
 <p class="description">
-	<?php esc_attr_e( 'Background color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Background color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-alpha="true" data-default-color="#1a1a1a" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_bg]" placeholder="#1a1a1a" aria-label="' . esc_attr__( 'Change the color of the cookie bar button background', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-alpha="true" data-default-color="#1a1a1a" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_bg]" placeholder="#1a1a1a" aria-label="' . esc_attr__( 'Change the color of the cookie bar button background', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -634,12 +634,12 @@ function seopress_google_analytics_cb_btn_bg_hov_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Background color on hover: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Background color on hover: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-alpha="true" data-default-color="#000000" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_bg_hov]" placeholder="#000000" aria-label="' . esc_attr__( 'Change the color of the cookie bar button hover background', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-alpha="true" data-default-color="#000000" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_bg_hov]" placeholder="#000000" aria-label="' . esc_attr__( 'Change the color of the cookie bar button hover background', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -655,12 +655,12 @@ function seopress_google_analytics_cb_btn_col_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-default-color="#ffffff" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_col]" placeholder="#ffffff" aria-label="' . esc_attr__( 'Change the color of the cookie bar button', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-default-color="#ffffff" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_col]" placeholder="#ffffff" aria-label="' . esc_attr__( 'Change the color of the cookie bar button', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -676,12 +676,12 @@ function seopress_google_analytics_cb_btn_col_hov_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text color on hover: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text color on hover: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-default-color="#ffffff" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_col_hov]" placeholder="#ffffff" aria-label="' . esc_attr__( 'Change the color of the cookie bar button hover', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-default-color="#ffffff" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_col_hov]" placeholder="#ffffff" aria-label="' . esc_attr__( 'Change the color of the cookie bar button hover', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -699,20 +699,20 @@ function seopress_google_analytics_cb_btn_sec_bg_callback() {
 <hr>
 
 <h2>
-	<?php esc_attr_e( 'Secondary button', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Secondary button', 'webseo' ); ?>
 </h2>
 
 <p>
-	<?php echo wp_kses_post( __( 'Customize the <strong>Close button</strong>.', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'Customize the <strong>Close button</strong>.', 'webseo' ) ); ?>
 </p>
 
 <p class="description">
-	<?php esc_attr_e( 'Background color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Background color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-alpha="true" data-default-color="#ffffff" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_bg]" placeholder="#ffffff" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button background', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-alpha="true" data-default-color="#ffffff" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_bg]" placeholder="#ffffff" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button background', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -728,12 +728,12 @@ function seopress_google_analytics_cb_btn_sec_bg_hov_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Background color on hover: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Background color on hover: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-alpha="true" data-default-color="#f9fafb" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_bg_hov]" placeholder="#f9fafb" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-alpha="true" data-default-color="#f9fafb" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_bg_hov]" placeholder="#f9fafb" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -749,12 +749,12 @@ function seopress_google_analytics_cb_btn_sec_col_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text color: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text color: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-default-color="#374151" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_col]" placeholder="#374151" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button hover background', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-default-color="#374151" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_col]" placeholder="#374151" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button hover background', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -770,12 +770,12 @@ function seopress_google_analytics_cb_btn_sec_col_hov_callback() {
 	?>
 
 <p class="description">
-	<?php esc_attr_e( 'Text color on hover: ', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Text color on hover: ', 'webseo' ); ?>
 </p>
 
 	<?php
 	printf(
-		'<input type="text" data-default-color="#1f2937" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_col_hov]" placeholder="#1f2937" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button hover', 'wp-seopress' ) . '" value="%s" class="color-picker"/>',
+		'<input type="text" data-default-color="#1f2937" name="seopress_google_analytics_option_name[seopress_google_analytics_cb_btn_sec_col_hov]" placeholder="#1f2937" aria-label="' . esc_attr__( 'Change the color of the cookie bar secondary button hover', 'webseo' ) . '" value="%s" class="color-picker"/>',
 		esc_html( $check )
 	);
 }
@@ -829,13 +829,13 @@ function seopress_google_analytics_ads_callback() {
 
 	<?php
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_ads]" placeholder="' . esc_html__( 'Enter your Google Ads conversion ID (e.g. AW-123456789)', 'wp-seopress' ) . '" value="%s" aria-label="' . esc_attr__( 'AW-XXXXXXXXX', 'wp-seopress' ) . '"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_ads]" placeholder="' . esc_html__( 'Enter your Google Ads conversion ID (e.g. AW-123456789)', 'webseo' ) . '" value="%s" aria-label="' . esc_attr__( 'AW-XXXXXXXXX', 'webseo' ) . '"/>',
 		esc_html( $check )
 	);
 	?>
 <p class="description">
 	<a class="seopress-help" href="<?php echo esc_url( $docs['analytics']['gads'] ); ?>" target="_blank">
-		<?php esc_attr_e( 'Learn how to find your Google Ads Conversion ID', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Learn how to find your Google Ads Conversion ID', 'webseo' ); ?>
 	</a>
 	<span class="seopress-help dashicons dashicons-external"></span>
 </p>
@@ -851,18 +851,18 @@ function seopress_google_analytics_other_tracking_callback() {
 		$options = get_option( 'seopress_google_analytics_option_name' );
 		$check   = isset( $options['seopress_google_analytics_other_tracking'] ) ? $options['seopress_google_analytics_other_tracking'] : '';
 
-		printf( '<textarea id="seopress_google_analytics_other_tracking" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking]" rows="16" placeholder="' . esc_html__( 'Paste your tracking code here like Google Tag Manager (head). Do NOT paste GA4 or Matomo codes here. They are automatically added to your source code.', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Additional tracking code field', 'wp-seopress' ) . '">%s</textarea>', esc_textarea( $check ) );
+		printf( '<textarea id="seopress_google_analytics_other_tracking" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking]" rows="16" placeholder="' . esc_html__( 'Paste your tracking code here like Google Tag Manager (head). Do NOT paste GA4 or Matomo codes here. They are automatically added to your source code.', 'webseo' ) . '" aria-label="' . esc_attr__( 'Additional tracking code field', 'webseo' ) . '">%s</textarea>', esc_textarea( $check ) );
 		?>
 
 		<p class="description">
-			<?php esc_attr_e( 'This code will be added in the head section of your page.', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'This code will be added in the head section of your page.', 'webseo' ); ?>
 		</p>
 	<?php } else { ?>
 		<input type="hidden" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking]" value="none" />
 
 		<div class="seopress-notice">
 			<p>
-				<?php /* translators: %$ name of the user capability "unfiltered_html" */ echo wp_kses_post( sprintf( __( 'Only users with %s capability can edit this field.', 'wp-seopress' ), '<code>unfiltered_html</code>' ) ); ?>
+				<?php /* translators: %$ name of the user capability "unfiltered_html" */ echo wp_kses_post( sprintf( __( 'Only users with %s capability can edit this field.', 'webseo' ), '<code>unfiltered_html</code>' ) ); ?>
 			</p>
 		</div>
 		<?php
@@ -879,19 +879,19 @@ function seopress_google_analytics_other_tracking_body_callback() {
 		$check   = isset( $options['seopress_google_analytics_other_tracking_body'] ) ? $options['seopress_google_analytics_other_tracking_body'] : '';
 
 		printf(
-			'<textarea id="seopress_google_analytics_other_tracking_body" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking_body]" rows="16" placeholder="' . esc_html__( 'Paste your tracking code here like Google Tag Manager (body)', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Additional tracking code field added to body', 'wp-seopress' ) . '">%s</textarea>',
+			'<textarea id="seopress_google_analytics_other_tracking_body" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking_body]" rows="16" placeholder="' . esc_html__( 'Paste your tracking code here like Google Tag Manager (body)', 'webseo' ) . '" aria-label="' . esc_attr__( 'Additional tracking code field added to body', 'webseo' ) . '">%s</textarea>',
 			esc_textarea( $check )
 		);
 		?>
-		<p class="description"><?php esc_attr_e( 'This code will be added just after the opening body tag of your page.', 'wp-seopress' ); ?></p>
+		<p class="description"><?php esc_attr_e( 'This code will be added just after the opening body tag of your page.', 'webseo' ); ?></p>
 
-		<p class="description"><?php echo wp_kses_post( __( 'You don‘t see your code? Make sure to call <code>wp_body_open();</code> just after the opening body tag in your theme.', 'wp-seopress' ) ); ?></p>
+		<p class="description"><?php echo wp_kses_post( __( 'You don‘t see your code? Make sure to call <code>wp_body_open();</code> just after the opening body tag in your theme.', 'webseo' ) ); ?></p>
 	<?php } else { ?>
 		<input type="hidden" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking_body]" value="none" />
 
 		<div class="seopress-notice">
 			<p>
-				<?php /* translators: %$ name of the user capability "unfiltered_html" */ echo wp_kses_post( sprintf( __( 'Only users with %s capability can edit this field.', 'wp-seopress' ), '<code>unfiltered_html</code>' ) ); ?>
+				<?php /* translators: %$ name of the user capability "unfiltered_html" */ echo wp_kses_post( sprintf( __( 'Only users with %s capability can edit this field.', 'webseo' ), '<code>unfiltered_html</code>' ) ); ?>
 			</p>
 		</div>
 	<?php } ?>
@@ -900,7 +900,7 @@ function seopress_google_analytics_other_tracking_body_callback() {
 	<a class="seopress-help"
 		href="<?php echo esc_url( $docs['analytics']['gtm'] ); ?>"
 		target="_blank">
-		<?php esc_attr_e( 'Learn how to integrate Google Tag Manager', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Learn how to integrate Google Tag Manager', 'webseo' ); ?>
 	</a>
 	<span class="seopress-help dashicons dashicons-external"></span>
 </p>
@@ -917,20 +917,20 @@ function seopress_google_analytics_other_tracking_footer_callback() {
 		$check   = isset( $options['seopress_google_analytics_other_tracking_footer'] ) ? $options['seopress_google_analytics_other_tracking_footer'] : '';
 
 		printf(
-			'<textarea id="seopress_google_analytics_other_tracking_footer" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking_footer]" rows="16" placeholder="' . esc_html__( 'Paste your tracking code here (footer)', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Additional tracking code field added to footer', 'wp-seopress' ) . '">%s</textarea>',
+			'<textarea id="seopress_google_analytics_other_tracking_footer" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking_footer]" rows="16" placeholder="' . esc_html__( 'Paste your tracking code here (footer)', 'webseo' ) . '" aria-label="' . esc_attr__( 'Additional tracking code field added to footer', 'webseo' ) . '">%s</textarea>',
 			esc_textarea( $check )
 		);
 		?>
 
 		<p class="description">
-			<?php esc_attr_e( 'This code will be added just before the closing body tag of your page.', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'This code will be added just before the closing body tag of your page.', 'webseo' ); ?>
 		</p>
 	<?php } else { ?>
 		<input type="hidden" name="seopress_google_analytics_option_name[seopress_google_analytics_other_tracking_footer]" value="none" />
 
 		<div class="seopress-notice">
 			<p>
-				<?php /* translators: %$ name of the user capability "unfiltered_html" */ echo wp_kses_post( sprintf( __( 'Only users with %s capability can edit this field.', 'wp-seopress' ), '<code>unfiltered_html</code>' ) ); ?>
+				<?php /* translators: %$ name of the user capability "unfiltered_html" */ echo wp_kses_post( sprintf( __( 'Only users with %s capability can edit this field.', 'webseo' ), '<code>unfiltered_html</code>' ) ); ?>
 			</p>
 		</div>
 	<?php } ?>
@@ -953,7 +953,7 @@ function seopress_google_analytics_link_tracking_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable external links tracking', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable external links tracking', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -978,7 +978,7 @@ function seopress_google_analytics_download_tracking_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable download tracking', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable download tracking', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -995,12 +995,12 @@ function seopress_google_analytics_download_tracking_callback() {
 	$check   = isset( $options['seopress_google_analytics_download_tracking'] ) ? $options['seopress_google_analytics_download_tracking'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_download_tracking]" placeholder="' . esc_html__( 'pdf|docx|pptx|zip', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Track downloads\' clicks', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_download_tracking]" placeholder="' . esc_html__( 'pdf|docx|pptx|zip', 'webseo' ) . '" aria-label="' . esc_attr__( 'Track downloads\' clicks', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 <p class="description">
-	<?php esc_attr_e( 'Separate each file type extensions with a pipe "|"', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Separate each file type extensions with a pipe "|"', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -1022,7 +1022,7 @@ function seopress_google_analytics_affiliate_tracking_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable affiliate/outbound tracking', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable affiliate/outbound tracking', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1039,12 +1039,12 @@ function seopress_google_analytics_affiliate_tracking_callback() {
 	$check   = isset( $options['seopress_google_analytics_affiliate_tracking'] ) ? $options['seopress_google_analytics_affiliate_tracking'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_affiliate_tracking]" placeholder="' . esc_html__( 'aff|go|out', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Track affiliate/outbound links', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_affiliate_tracking]" placeholder="' . esc_html__( 'aff|go|out', 'webseo' ) . '" aria-label="' . esc_attr__( 'Track affiliate/outbound links', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 <p class="description">
-	<?php esc_attr_e( 'Separate each keyword with a pipe "|"', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Separate each keyword with a pipe "|"', 'webseo' ); ?>
 </p>
 	<?php
 }
@@ -1065,7 +1065,7 @@ function seopress_google_analytics_phone_tracking_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable tracking of "tel:" links', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable tracking of "tel:" links', 'webseo' ); ?>
 </label>
 
 <p class="description">
@@ -1091,14 +1091,14 @@ function seopress_google_analytics_cd_author_callback() {
 	<option <?php if ( 'none' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="none"><?php esc_attr_e( 'None', 'wp-seopress' ); ?>
+		value="none"><?php esc_attr_e( 'None', 'webseo' ); ?>
 	</option>
 
 	<?php for ( $i = 1; $i <= 20; ++$i ) { ?>
 	<option <?php if ( 'dimension' . intval( $i ) . '' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'wp-seopress' ), intval( $i ) ); ?>
+		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'webseo' ), intval( $i ) ); ?>
 	</option>
 	<?php } ?>
 </select>
@@ -1122,14 +1122,14 @@ function seopress_google_analytics_cd_category_callback() {
 	<option <?php if ( 'none' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="none"><?php esc_attr_e( 'None', 'wp-seopress' ); ?>
+		value="none"><?php esc_attr_e( 'None', 'webseo' ); ?>
 	</option>
 
 	<?php for ( $i = 1; $i <= 20; ++$i ) { ?>
 		<option <?php if ( 'dimension' . intval( $i ) . '' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'wp-seopress' ), intval( $i ) ); ?>
+		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'webseo' ), intval( $i ) ); ?>
 	</option>
 	<?php } ?>
 </select>
@@ -1154,14 +1154,14 @@ function seopress_google_analytics_cd_tag_callback() {
 	<option <?php if ( 'none' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="none"><?php esc_attr_e( 'None', 'wp-seopress' ); ?>
+		value="none"><?php esc_attr_e( 'None', 'webseo' ); ?>
 	</option>
 
 	<?php for ( $i = 1; $i <= 20; ++$i ) { ?>
 	<option <?php if ( 'dimension' . intval( $i ) . '' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'wp-seopress' ), intval( $i ) ); ?>
+		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'webseo' ), intval( $i ) ); ?>
 	</option>
 	<?php } ?>
 </select>
@@ -1186,14 +1186,14 @@ function seopress_google_analytics_cd_post_type_callback() {
 	<option <?php if ( 'none' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="none"><?php esc_attr_e( 'None', 'wp-seopress' ); ?>
+		value="none"><?php esc_attr_e( 'None', 'webseo' ); ?>
 	</option>
 
 	<?php for ( $i = 1; $i <= 20; ++$i ) { ?>
 	<option <?php if ( 'dimension' . intval( $i ) . '' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'wp-seopress' ), intval( $i ) ); ?>
+		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'webseo' ), intval( $i ) ); ?>
 	</option>
 	<?php } ?>
 </select>
@@ -1217,13 +1217,13 @@ function seopress_google_analytics_cd_logged_in_user_callback() {
 	<option <?php if ( 'none' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="none"><?php esc_attr_e( 'None', 'wp-seopress' ); ?>
+		value="none"><?php esc_attr_e( 'None', 'webseo' ); ?>
 	</option>
 	<?php for ( $i = 1; $i <= 20; ++$i ) { ?>
 	<option <?php if ( 'dimension' . intval( $i ) . '' === esc_attr( $selected ) ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'wp-seopress' ), intval( $i ) ); ?>
+		value="dimension<?php echo intval( $i ); ?>"><?php /* translators: %d dimension number number, eg: #1 */ printf( esc_html__( 'Custom Dimension #%d', 'webseo' ), intval( $i ) ); ?>
 	</option>
 	<?php } ?>
 </select>
@@ -1249,9 +1249,9 @@ function seopress_google_analytics_matomo_enable_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Enable Matomo tracking', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable Matomo tracking', 'webseo' ); ?>
 	<p class="description">
-		<?php esc_attr_e( 'A Matomo Cloud account or a self hosted Matomo installation is required.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'A Matomo Cloud account or a self hosted Matomo installation is required.', 'webseo' ); ?>
 	</p>
 </label>
 
@@ -1278,12 +1278,12 @@ function seopress_google_analytics_matomo_self_hosted_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e( 'Yes, self-hosted installation', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Yes, self-hosted installation', 'webseo' ); ?>
 	<p class="description">
-		<?php esc_attr_e( 'If you use Matomo Cloud, uncheck this option.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'If you use Matomo Cloud, uncheck this option.', 'webseo' ); ?>
 	</p>
 	<p class="description">
-		<?php printf( '<a href="%s" target="_blank" class="seopress-help">' . esc_attr__( 'Learn how to install Matomo On-Premise on your server', 'wp-seopress' ) . '</a>', esc_url( $docs['analytics']['matomo']['on_premise'] ) ); ?>
+		<?php printf( '<a href="%s" target="_blank" class="seopress-help">' . esc_attr__( 'Learn how to install Matomo On-Premise on your server', 'webseo' ) . '</a>', esc_url( $docs['analytics']['matomo']['on_premise'] ) ); ?>
 		<span class="dashicons dashicons-external seopress-help"></span>
 	</p>
 </label>
@@ -1304,14 +1304,14 @@ function seopress_google_analytics_matomo_id_callback() {
 
 	printf(
 		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_matomo_id]" placeholder="'
-		. esc_html__( 'Enter "example" if you Matomo account URL is "example.matomo.cloud"', 'wp-seopress' )
-		. '" value="%s" aria-label="' . esc_attr__( 'Matomo URL (Cloud or Self-hosted)', 'wp-seopress' ) . '"/>',
+		. esc_html__( 'Enter "example" if you Matomo account URL is "example.matomo.cloud"', 'webseo' )
+		. '" value="%s" aria-label="' . esc_attr__( 'Matomo URL (Cloud or Self-hosted)', 'webseo' ) . '"/>',
 		esc_html( $check )
 	);
 	?>
 
 <p class="description">
-	<?php echo wp_kses_post( __( 'Enter only the <strong>host without the quotes</strong> like this <code>"example.matomo.cloud"</code> (Cloud) or <code>"matomo.example.com"</code> (self-hosted).', 'wp-seopress' ) ); ?>
+	<?php echo wp_kses_post( __( 'Enter only the <strong>host without the quotes</strong> like this <code>"example.matomo.cloud"</code> (Cloud) or <code>"matomo.example.com"</code> (self-hosted).', 'webseo' ) ); ?>
 </p>
 
 	<?php
@@ -1326,15 +1326,15 @@ function seopress_google_analytics_matomo_site_id_callback() {
 
 	printf(
 		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_matomo_site_id]"
-			placeholder="' . esc_html__( 'Enter your site ID here', 'wp-seopress' ) . '" value="%s"
-			aria-label="' . esc_attr__( 'Matomo Site ID', 'wp-seopress' ) . '" />',
+			placeholder="' . esc_html__( 'Enter your site ID here', 'webseo' ) . '" value="%s"
+			aria-label="' . esc_attr__( 'Matomo Site ID', 'webseo' ) . '" />',
 		esc_html( $check )
 	);
 	?>
 
 <p class="description">
-	<?php echo wp_kses_post( __( 'To find your site ID, go to your <strong>Matomo Cloud account, Websites, Manage page</strong>. Look at "Site ID" on the right part.', 'wp-seopress' ) ); ?><br>
-	<?php esc_attr_e( 'For self-hosted installations, go to your Matomo administration, Settings, Websites, Manage. From the list of your websites, find the ID line.', 'wp-seopress' ); ?>
+	<?php echo wp_kses_post( __( 'To find your site ID, go to your <strong>Matomo Cloud account, Websites, Manage page</strong>. Look at "Site ID" on the right part.', 'webseo' ) ); ?><br>
+	<?php esc_attr_e( 'For self-hosted installations, go to your Matomo administration, Settings, Websites, Manage. From the list of your websites, find the ID line.', 'webseo' ); ?>
 </p>
 	<?php
 }
@@ -1355,11 +1355,11 @@ function seopress_google_analytics_matomo_subdomains_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Tracking one domain and its subdomains in the same website', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Tracking one domain and its subdomains in the same website', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'If one visitor visits x.example.com and y.example.com, they will be counted as a unique visitor.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'If one visitor visits x.example.com and y.example.com, they will be counted as a unique visitor.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -1383,10 +1383,10 @@ function seopress_google_analytics_matomo_site_domain_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Prepend the site domain to the page title when tracking', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Prepend the site domain to the page title when tracking', 'webseo' ); ?>
 </label>
 <p class="description">
-	<?php esc_attr_e( 'If someone visits the \'About\' page on blog.example.com it will be recorded as \'blog / About\'. This is the easiest way to get an overview of your traffic by sub-domain.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'If someone visits the \'About\' page on blog.example.com it will be recorded as \'blog / About\'. This is the easiest way to get an overview of your traffic by sub-domain.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -1409,7 +1409,7 @@ function seopress_google_analytics_matomo_no_js_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Track users with JavaScript disabled', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Track users with JavaScript disabled', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1433,17 +1433,17 @@ function seopress_google_analytics_matomo_cross_domain_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enables cross domain linking', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enables cross domain linking', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'By default, the visitor ID that identifies a unique visitor is stored in the browser\'s first party cookies which can only be accessed by pages on the same domain.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'By default, the visitor ID that identifies a unique visitor is stored in the browser\'s first party cookies which can only be accessed by pages on the same domain.', 'webseo' ); ?>
 </p>
 <p class="description">
-	<?php esc_attr_e( 'Enabling cross domain linking lets you track all the actions and pageviews of a specific visitor into the same visit even when they view pages on several domains.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enabling cross domain linking lets you track all the actions and pageviews of a specific visitor into the same visit even when they view pages on several domains.', 'webseo' ); ?>
 </p>
 <p class="description">
-	<?php esc_attr_e( 'Whenever a user clicks on a link to one of your website\'s alias URLs, it will append a URL parameter pk_vid forwarding the Visitor ID.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Whenever a user clicks on a link to one of your website\'s alias URLs, it will append a URL parameter pk_vid forwarding the Visitor ID.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -1461,8 +1461,8 @@ function seopress_google_analytics_matomo_cross_domain_sites_callback() {
 
 	printf(
 		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_matomo_cross_domain_sites]" placeholder="'
-			. esc_html__( 'Enter your domains: seopress.org,sub.seopress.org,sub2.seopress.org', 'wp-seopress' )
-		. '" value="%s" aria-label="' . esc_attr__( 'Cross domains', 'wp-seopress' ) . '"/>',
+			. esc_html__( 'Enter your domains: seopress.org,sub.seopress.org,sub2.seopress.org', 'webseo' )
+		. '" value="%s" aria-label="' . esc_attr__( 'Cross domains', 'webseo' ) . '"/>',
 		esc_html( $check )
 	);
 }
@@ -1481,11 +1481,11 @@ function seopress_google_analytics_matomo_dnt_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable client side DoNotTrack detection', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable client side DoNotTrack detection', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'Tracking requests will not be sent if visitors do not wish to be tracked.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Tracking requests will not be sent if visitors do not wish to be tracked.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -1509,7 +1509,7 @@ function seopress_google_analytics_matomo_no_cookies_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Disables all first party cookies. Existing Matomo cookies for this website will be deleted on the next page view.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Disables all first party cookies. Existing Matomo cookies for this website will be deleted on the next page view.', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1533,11 +1533,11 @@ function seopress_google_analytics_matomo_link_tracking_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enabling Download & Outlink tracking', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enabling Download & Outlink tracking', 'webseo' ); ?>
 </label>
 
 <p class="description">
-	<?php esc_attr_e( 'By default, any file ending with one of these extensions will be considered a "download" in the Matomo interface:', 'wp-seopress' ); ?><br>
+	<?php esc_attr_e( 'By default, any file ending with one of these extensions will be considered a "download" in the Matomo interface:', 'webseo' ); ?><br>
 </p>
 
 <pre>7z|aac|arc|arj|apk|asf|asx|avi|bin|bz|bz2|csv|deb|dmg|doc|exe|flv|gif|gz|gzip|hqx|jar|jpg|jpeg|js|mp2|mp3|mp4|mpg|mpeg|mov|movie|msi|msp|odb|odf|odg|odp|ods|odt|ogg|ogv| pdf|phps|png|ppt|qt|qtm|ra|ram|rar|rpm|sea|sit|tar|tbz|tbz2|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip</pre>
@@ -1563,7 +1563,7 @@ function seopress_google_analytics_matomo_no_heatmaps_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Disabling all heatmaps and session recordings', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Disabling all heatmaps and session recordings', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1587,7 +1587,7 @@ function seopress_google_analytics_clarity_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Add Microsoft Clarity code to your site', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Add Microsoft Clarity code to your site', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -1605,14 +1605,14 @@ function seopress_google_analytics_clarity_project_id_callback() {
 	$check   = isset( $options['seopress_google_analytics_clarity_project_id'] ) ? $options['seopress_google_analytics_clarity_project_id'] : null;
 
 	printf(
-		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_clarity_project_id]" placeholder="' . esc_html__( 'Enter your Project ID', 'wp-seopress' ) . '" aria-label="' . esc_attr__( 'Enter your Project ID', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_clarity_project_id]" placeholder="' . esc_html__( 'Enter your Project ID', 'webseo' ) . '" aria-label="' . esc_attr__( 'Enter your Project ID', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 	?>
 
 <p class="seopress-help description">
 	<a href="<?php echo esc_url( $docs['analytics']['clarity']['project'] ); ?>" target="_blank">
-		<?php esc_attr_e( 'Find your project ID', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Find your project ID', 'webseo' ); ?>
 	</a>
 	<span class="dashicons dashicons-external"></span>
 </p>

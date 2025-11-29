@@ -224,7 +224,7 @@ class SEOPressOptions {
 		$html .= '<div class="sp-components-snackbar">
 				<div class="sp-components-snackbar__content">
 					<span class="dashicons dashicons-yes"></span>
-					' . __( 'Your settings have been saved.', 'wp-seopress' ) . '
+					' . __( 'Your settings have been saved.', 'webseo' ) . '
 				</div>
 			</div>
 		</div>';
@@ -256,11 +256,11 @@ class SEOPressOptions {
 			$html .= $this->feature_save();
 
 			if ( '1' == seopress_get_toggle_option( $feature ) ) { // phpcs:ignore -- TODO: null comparison check.
-				$html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to disable this feature', 'wp-seopress' ) . '</span>';
-				$html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to enable this feature', 'wp-seopress' ) . '</span>';
+				$html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to disable this feature', 'webseo' ) . '</span>';
+				$html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to enable this feature', 'webseo' ) . '</span>';
 			} else {
-				$html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to enable this feature', 'wp-seopress' ) . '</span>';
-				$html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to disable this feature', 'wp-seopress' ) . '</span>';
+				$html .= '<span id="titles-state-default" class="feature-state"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to enable this feature', 'webseo' ) . '</span>';
+				$html .= '<span id="titles-state" class="feature-state feature-state-off"><span class="dashicons dashicons-arrow-left-alt"></span>' . __( 'Click to disable this feature', 'webseo' ) . '</span>';
 			}
 		}
 
@@ -278,11 +278,11 @@ class SEOPressOptions {
 			'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJ1dWlkLTRmNmE4YTQxLTE4ZTMtNGY3Ny1iNWE5LTRiMWIzOGFhMmRjOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODk5LjY1NSA0OTQuMzA5NCI+PHBhdGggaWQ9InV1aWQtYTE1NWMxY2EtZDg2OC00NjUzLTg0NzctOGRkODcyNDBhNzY1IiBkPSJNMzI3LjM4NDksNDM1LjEyOGwtMjk5Ljk5OTktLjI0OTdjLTE2LjI3MzUsMS4xOTM3LTI4LjQ5ODEsMTUuMzUzOC0yNy4zMDQ0LDMxLjYyNzMsMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NGwyOTkuOTk5OSwuMjQ5N2MxNi4yNzM1LTEuMTkzNywyOC40OTgxLTE1LjM1MzgsMjcuMzA0NC0zMS42MjczLTEuMDcxOC0xNC42MTI4LTEyLjY5MTYtMjYuMjMyNS0yNy4zMDQ0LTI3LjMwNDRaIiBzdHlsZT0iZmlsbDojZmZmOyIvPjxwYXRoIGlkPSJ1dWlkLWUzMGJhNGM2LTQ3NjktNDY2Yi1hMDNhLWU2NDRjNTE5OGU1NiIgZD0iTTI3LjM4NDksNTguOTMxN2wyOTkuOTk5OSwuMjQ5N2MxNi4yNzM1LTEuMTkzNywyOC40OTgxLTE1LjM1MzcsMjcuMzA0NC0zMS42MjczLTEuMDcxOC0xNC42MTI4LTEyLjY5MTYtMjYuMjMyNS0yNy4zMDQ0LTI3LjMwNDRMMjcuMzg0OSwwQzExLjExMTQsMS4xOTM3LTEuMTEzMiwxNS4zNTM3LC4wODA1LDMxLjYyNzNjMS4wNzE5LDE0LjYxMjgsMTIuNjkxNiwyNi4yMzI1LDI3LjMwNDQsMjcuMzA0NFoiIHN0eWxlPSJmaWxsOiNmZmY7Ii8+PHBhdGggaWQ9InV1aWQtMmJiZDUyZDYtYWVjMS00Njg5LTlkNGMtMjNjMzVkNGYyMmI4IiBkPSJNNjUyLjQ4NSwuMjg0OWMtMTI0LjkzODgsLjA2NC0yMzAuMTU1NCw5My40MTMyLTI0NS4xMDAxLDIxNy40NTVIMjcuMzg0OWMtMTYuMjczNSwxLjE5MzctMjguNDk4MSwxNS4zNTM3LTI3LjMwNDQsMzEuNjI3MiwxLjA3MTksMTQuNjEyOCwxMi42OTE2LDI2LjIzMjUsMjcuMzA0NCwyNy4zMDQ0SDQwNy4zODQ5YzE2LjIyOTgsMTM1LjQ0NTQsMTM5LjE4NywyMzIuMDg4OCwyNzQuNjMyMywyMTUuODU4OSwxMzUuNDQ1NS0xNi4yMjk4LDIzMi4wODg4LTEzOS4xODY5LDIxNS44NTg5LTI3NC42MzI0Qzg4Mi45OTIxLDkzLjY4MzQsNzc3LjU4ODQsLjIxMTIsNjUyLjQ4NSwuMjg0OVptMCw0MzMuNDIxN2MtMTAyLjk3NTQsMC0xODYuNDUzMy04My40NzgtMTg2LjQ1MzMtMTg2LjQ1MzMsMC0xMDIuOTc1Myw4My40NzgxLTE4Ni40NTMzLDE4Ni40NTMzLTE4Ni40NTMzLDEwMi45NzU0LDAsMTg2LjQ1MzMsODMuNDc4LDE4Ni40NTMzLDE4Ni40NTMzLC4wNTI0LDEwMi45NzUzLTgzLjM4MywxODYuNDk1OS0xODYuMzU4MywxODYuNTQ4My0uMDMxNiwwLS4wNjM0LDAtLjA5NTEsMHYtLjA5NVoiIHN0eWxlPSJmaWxsOiNmZmY7Ii8+PC9zdmc+'
 		);
 
-		$menu_title = apply_filters( 'seopress_seo_admin_menu_title', __( 'SEO', 'wp-seopress' ) );
+		$menu_title = apply_filters( 'seopress_seo_admin_menu_title', __( 'SEO', 'webseo' ) );
 
 		// SEO Dashboard page.
                 add_menu_page(
-                        __( 'SEOPress Option Page', 'wp-seopress' ),
+                        __( 'SEOPress Option Page', 'webseo' ),
                         $menu_title,
                         seopress_capability( 'manage_options', 'menu' ),
                         $this->main_page_slug,
@@ -303,14 +303,14 @@ class SEOPressOptions {
 	 */
         private function register_submenus() {
                 $submenus = array(
-                        array( __( 'Dashboard', 'wp-seopress' ), 'menu', $this->main_page_slug, 'create_admin_page' ),
-                        array( __( 'Titles & Metas', 'wp-seopress' ), PagesAdmin::TITLE_METAS, $this->submenu_slugs['titles'], 'seopress_titles_page' ),
-                        array( __( 'XML - HTML Sitemap', 'wp-seopress' ), PagesAdmin::XML_HTML_SITEMAP, $this->submenu_slugs['xml_sitemap'], 'seopress_xml_sitemap_page' ),
-                        array( __( 'Social Networks', 'wp-seopress' ), PagesAdmin::SOCIAL_NETWORKS, $this->submenu_slugs['social'], 'seopress_social_page' ),
-                        array( __( 'Analytics', 'wp-seopress' ), PagesAdmin::ANALYTICS, $this->submenu_slugs['analytics'], 'seopress_google_analytics_page' ),
-                        array( __( 'Instant Indexing', 'wp-seopress' ), PagesAdmin::INSTANT_INDEXING, $this->submenu_slugs['instant_indexing'], 'seopress_instant_indexing_page' ),
-                        array( __( 'Advanced', 'wp-seopress' ), PagesAdmin::ADVANCED, $this->submenu_slugs['advanced'], 'seopress_advanced_page' ),
-                        array( __( 'Tools', 'wp-seopress' ), PagesAdmin::TOOLS, $this->submenu_slugs['tools'], 'seopress_import_export_page' ),
+                        array( __( 'Dashboard', 'webseo' ), 'menu', $this->main_page_slug, 'create_admin_page' ),
+                        array( __( 'Titles & Metas', 'webseo' ), PagesAdmin::TITLE_METAS, $this->submenu_slugs['titles'], 'seopress_titles_page' ),
+                        array( __( 'XML - HTML Sitemap', 'webseo' ), PagesAdmin::XML_HTML_SITEMAP, $this->submenu_slugs['xml_sitemap'], 'seopress_xml_sitemap_page' ),
+                        array( __( 'Social Networks', 'webseo' ), PagesAdmin::SOCIAL_NETWORKS, $this->submenu_slugs['social'], 'seopress_social_page' ),
+                        array( __( 'Analytics', 'webseo' ), PagesAdmin::ANALYTICS, $this->submenu_slugs['analytics'], 'seopress_google_analytics_page' ),
+                        array( __( 'Instant Indexing', 'webseo' ), PagesAdmin::INSTANT_INDEXING, $this->submenu_slugs['instant_indexing'], 'seopress_instant_indexing_page' ),
+                        array( __( 'Advanced', 'webseo' ), PagesAdmin::ADVANCED, $this->submenu_slugs['advanced'], 'seopress_advanced_page' ),
+                        array( __( 'Tools', 'webseo' ), PagesAdmin::TOOLS, $this->submenu_slugs['tools'], 'seopress_import_export_page' ),
                 );
 
                 foreach ( $submenus as $submenu ) {

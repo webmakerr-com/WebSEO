@@ -20,7 +20,7 @@ class CategoryTitle implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Category Title', 'wp-seopress' );
+		return __( 'Category Title', 'webseo' );
 	}
 
 	/**

@@ -129,21 +129,21 @@ function seopress_instant_indexing_fn( $is_manual_submission = true, $permalink 
 
 	// Check we have URLs to submit.
 	if ( '' === $urls && true === $is_manual_submission ) {
-		$log['error'] = __( 'No URLs to submit', 'wp-seopress' );
+		$log['error'] = __( 'No URLs to submit', 'webseo' );
 		update_option( 'seopress_instant_indexing_log_option_name', $log, false );
 		return;
 	}
 
 	// Check we have at least one search engine selected.
 	if ( empty( $engines ) ) {
-		$log['error'] = __( 'No search engines selected', 'wp-seopress' );
+		$log['error'] = __( 'No search engines selected', 'webseo' );
 		update_option( 'seopress_instant_indexing_log_option_name', $log, false );
 		return;
 	}
 
 	// Check we have setup at least one API key.
 	if ( '' === $google_api_key && '' === $bing_api_key ) {
-		$log['error'] = __( 'No API key defined from the settings tab', 'wp-seopress' );
+		$log['error'] = __( 'No API key defined from the settings tab', 'webseo' );
 		update_option( 'seopress_instant_indexing_log_option_name', $log, false );
 		return;
 	}
@@ -218,7 +218,7 @@ function seopress_instant_indexing_fn( $is_manual_submission = true, $permalink 
 				$log['bing']['response'] = array(
 					'error' => array(
 						'code'    => 400,
-						'message' => __( 'Bad request: Invalid format', 'wp-seopress' ),
+						'message' => __( 'Bad request: Invalid format', 'webseo' ),
 					),
 				);
 			}
@@ -226,7 +226,7 @@ function seopress_instant_indexing_fn( $is_manual_submission = true, $permalink 
 			$log['bing']['response'] = array(
 				'error' => array(
 					'code'    => 400,
-					'message' => __( 'Bad request: Invalid key format', 'wp-seopress' ),
+					'message' => __( 'Bad request: Invalid key format', 'webseo' ),
 				),
 			);
 		}
@@ -234,7 +234,7 @@ function seopress_instant_indexing_fn( $is_manual_submission = true, $permalink 
 		$log['bing']['response'] = array(
 			'error' => array(
 				'code'    => 401,
-				'message' => __( 'Bing API key is missing', 'wp-seopress' ),
+				'message' => __( 'Bing API key is missing', 'webseo' ),
 			),
 		);
 	}
@@ -270,7 +270,7 @@ function seopress_instant_indexing_fn( $is_manual_submission = true, $permalink 
 		} elseif ( '1' === $engines['google'] ) {
 			$log['google']['response']['error'] = array(
 				'code'    => 401,
-				'message' => __( 'Google API key is missing', 'wp-seopress' ),
+				'message' => __( 'Google API key is missing', 'webseo' ),
 			);
 		}
 	}
@@ -293,7 +293,7 @@ function seopress_instant_indexing_fn( $is_manual_submission = true, $permalink 
  */
 function seopress_instant_indexing_post() {
 	check_ajax_referer( 'seopress_instant_indexing_post_nonce' );
-	require_once WP_PLUGIN_DIR . '/wp-seopress/vendor/autoload.php';
+    require_once WP_PLUGIN_DIR . '/webseo/vendor/autoload.php';
 	if ( current_user_can( seopress_capability( 'manage_options', PagesAdmin::INSTANT_INDEXING ) ) && is_admin() ) {
 		seopress_instant_indexing_fn();
 	}

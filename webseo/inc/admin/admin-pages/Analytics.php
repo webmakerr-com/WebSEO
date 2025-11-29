@@ -25,12 +25,12 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 			$current_tab = '';
 
 			$plugin_settings_tabs = array(
-				'tab_seopress_google_analytics_enable'  => __( 'Google Analytics', 'wp-seopress' ),
-				'tab_seopress_google_analytics_matomo'  => __( 'Matomo', 'wp-seopress' ),
-				'tab_seopress_google_analytics_clarity' => __( 'Clarity', 'wp-seopress' ),
-				'tab_seopress_google_analytics_custom_dimensions' => __( 'Advanced', 'wp-seopress' ),
-				'tab_seopress_google_analytics_gdpr'    => __( 'Cookie bar / GDPR / Google Consent', 'wp-seopress' ),
-				'tab_seopress_google_analytics_custom_tracking' => __( 'Custom Tracking', 'wp-seopress' ),
+				'tab_seopress_google_analytics_enable'  => __( 'Google Analytics', 'webseo' ),
+				'tab_seopress_google_analytics_matomo'  => __( 'Matomo', 'webseo' ),
+				'tab_seopress_google_analytics_clarity' => __( 'Clarity', 'webseo' ),
+				'tab_seopress_google_analytics_custom_dimensions' => __( 'Advanced', 'webseo' ),
+				'tab_seopress_google_analytics_gdpr'    => __( 'Cookie bar / GDPR / Google Consent', 'webseo' ),
+				'tab_seopress_google_analytics_custom_tracking' => __( 'Custom Tracking', 'webseo' ),
 			);
 
 			echo '<div class="nav-tab-wrapper">';
@@ -100,6 +100,6 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 		</div>
 	</div>
 
-	<?php sp_submit_button( esc_html__( 'Save changes', 'wp-seopress' ) ); ?>
+	<?php sp_submit_button( esc_html__( 'Save changes', 'webseo' ) ); ?>
 </form>
 <?php

@@ -37,7 +37,7 @@ function seopress_primary_category_select( $echo = true, $with_description = tru
 		$options .= sprintf(
 			'<option value="none" %s>%s</option>',
 			selected( 'none', $seopress_robots_primary_cat, false ),
-			__( 'None (will disable this feature)', 'wp-seopress' )
+			__( 'None (will disable this feature)', 'webseo' )
 		);
 		foreach ( $cats as $category ) {
 			$options .= sprintf(
@@ -52,7 +52,7 @@ function seopress_primary_category_select( $echo = true, $with_description = tru
 	$html        = '';
 	$description = sprintf(
 		/* translators: category permalink structure */
-		__( 'Set the category that gets used in the %s permalink and in our breadcrumbs if you have multiple categories.', 'wp-seopress' ),
+		__( 'Set the category that gets used in the %s permalink and in our breadcrumbs if you have multiple categories.', 'webseo' ),
 		'<code>%category%</code>'
 	);
 	if ( ! empty( $options ) ) {
@@ -62,7 +62,7 @@ function seopress_primary_category_select( $echo = true, $with_description = tru
 				%s
 				<br><select id="seopress_robots_primary_cat" name="seopress_robots_primary_cat">%s</select>
 			</p>',
-			__( 'Select a primary category', 'wp-seopress' ),
+			__( 'Select a primary category', 'webseo' ),
 			$with_description ? sprintf( '<span class="description">%s</span>', $description ) : '',
 			$options
 		);
@@ -130,10 +130,10 @@ function seopress_display_seo_metaboxe() {
 
 		if ( ! empty( $seopress_get_post_types ) && ! seopress_get_service( 'EnqueueModuleMetabox' )->canEnqueue() ) {
 			foreach ( $seopress_get_post_types as $key => $value ) {
-				add_meta_box( 'seopress_cpt', __( 'SEO', 'wp-seopress' ), 'seopress_cpt', $key, 'normal', $metaboxe_position );
+				add_meta_box( 'seopress_cpt', __( 'SEO', 'webseo' ), 'seopress_cpt', $key, 'normal', $metaboxe_position );
 			}
 		}
-		add_meta_box( 'seopress_cpt', __( 'SEO', 'wp-seopress' ), 'seopress_cpt', 'seopress_404', 'normal', $metaboxe_position );
+		add_meta_box( 'seopress_cpt', __( 'SEO', 'webseo' ), 'seopress_cpt', 'seopress_404', 'normal', $metaboxe_position );
 	}
 
 	/**
@@ -208,7 +208,7 @@ function seopress_display_seo_metaboxe() {
 			$seopress_real_preview = array(
 				'seopress_nonce'               => wp_create_nonce( 'seopress_real_preview_nonce' ), // @deprecated 4.4.0
 				'seopress_real_preview'        => admin_url( 'admin-ajax.php' ), // @deprecated 4.4.0
-				'i18n'                         => array( 'progress' => __( 'Analysis in progress...', 'wp-seopress' ) ),
+				'i18n'                         => array( 'progress' => __( 'Analysis in progress...', 'webseo' ) ),
 				'ajax_url'                     => admin_url( 'admin-ajax.php' ),
 				'get_preview_meta_title'       => wp_create_nonce( 'get_preview_meta_title' ),
 				'get_preview_meta_description' => wp_create_nonce( 'get_preview_meta_description' ),
@@ -570,7 +570,7 @@ function seopress_display_ca_metaboxe() {
 
 		if ( ! empty( $seopress_get_post_types ) && ! seopress_get_service( 'EnqueueModuleMetabox' )->canEnqueue() ) {
 			foreach ( $seopress_get_post_types as $key => $value ) {
-				add_meta_box( 'seopress_content_analysis', __( 'Content analysis', 'wp-seopress' ), 'seopress_content_analysis', $key, 'normal', $metaboxe_position );
+				add_meta_box( 'seopress_content_analysis', __( 'Content analysis', 'webseo' ), 'seopress_content_analysis', $key, 'normal', $metaboxe_position );
 			}
 		}
 	}
@@ -602,7 +602,7 @@ function seopress_display_ca_metaboxe() {
 		$seopress_real_preview = array(
 			'seopress_nonce'               => wp_create_nonce( 'seopress_real_preview_nonce' ),
 			'seopress_real_preview'        => admin_url( 'admin-ajax.php' ),
-			'i18n'                         => array( 'progress' => __( 'Analysis in progress...', 'wp-seopress' ) ),
+			'i18n'                         => array( 'progress' => __( 'Analysis in progress...', 'webseo' ) ),
 			'ajax_url'                     => admin_url( 'admin-ajax.php' ),
 			'get_preview_meta_title'       => wp_create_nonce( 'get_preview_meta_title' ),
 			'get_preview_meta_description' => wp_create_nonce( 'get_preview_meta_description' ),

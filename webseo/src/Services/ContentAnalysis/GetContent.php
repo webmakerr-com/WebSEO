@@ -88,7 +88,7 @@ class GetContent {
 		}
 
 		if ( isset( $data['json_schemas'] ) && is_array( $data['json_schemas'] ) && ( ! empty( $data['json_schemas'] ) || isset( $data['json_schemas'] ) ) ) {
-			$desc = '<p>' . __( 'We found these schemas in the source code of this page:', 'wp-seopress' ) . '</p>';
+			$desc = '<p>' . __( 'We found these schemas in the source code of this page:', 'webseo' ) . '</p>';
 
 			$desc .= '<ul>';
 
@@ -98,10 +98,10 @@ class GetContent {
 				$html = null;
 				if ( $value > 1 ) {
 					if ( 'Review' !== $key ) {
-						$html                          = '<span class="impact high">' . __( 'duplicated schema - x', 'wp-seopress' ) . $value . '</span>';
+						$html                          = '<span class="impact high">' . __( 'duplicated schema - x', 'webseo' ) . $value . '</span>';
 						$analyzes['schemas']['impact'] = 'high';
 					} else {
-						$html = ' <span class="impact">' . __( 'x', 'wp-seopress' ) . $value . '</span>';
+						$html = ' <span class="impact">' . __( 'x', 'webseo' ) . $value . '</span>';
 					}
 
 					$issue_desc[] = array( $key, $value );
@@ -119,12 +119,12 @@ class GetContent {
 		} else {
 			$docs                          = seopress_get_docs_links();
 			$analyzes['schemas']['impact'] = 'medium';
-			$analyzes['schemas']['desc']   = '<p>' . __( 'No schemas found in the source code of this page. Get rich snippets in Google Search results and improve your visibility by adding structured data types (schemas) to your page.', 'wp-seopress' ) . '</p>';
+			$analyzes['schemas']['desc']   = '<p>' . __( 'No schemas found in the source code of this page. Get rich snippets in Google Search results and improve your visibility by adding structured data types (schemas) to your page.', 'webseo' ) . '</p>';
 
 			if ( ! is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-				$analyzes['schemas']['desc'] .= '<p><a class="seopress-help" href="' . esc_url( $docs['schemas']['feature'] ) . '" target="_blank" class="components-button is-link">' . __( 'Get SEOPress PRO to add schemas now', 'wp-seopress' ) . '</a></p>';
+				$analyzes['schemas']['desc'] .= '<p><a class="seopress-help" href="' . esc_url( $docs['schemas']['feature'] ) . '" target="_blank" class="components-button is-link">' . __( 'Get SEOPress PRO to add schemas now', 'webseo' ) . '</a></p>';
 			} else {
-				$analyzes['schemas']['desc'] .= '<p><a class="seopress-help" href="' . esc_url( $docs['schemas']['ebook'] ) . '" target="_blank" class="components-button is-link">' . __( 'Learn more', 'wp-seopress' ) . '</a></p>';
+				$analyzes['schemas']['desc'] .= '<p><a class="seopress-help" href="' . esc_url( $docs['schemas']['ebook'] ) . '" target="_blank" class="components-button is-link">' . __( 'Learn more', 'webseo' ) . '</a></p>';
 			}
 
 			$issue['issue_name'] = 'json_schemas_not_found';
@@ -161,14 +161,14 @@ class GetContent {
 		$desc = null;
 		if ( $modified->getTimestamp() < strtotime( '-365 days' ) ) {
 			$analyzes['old_post']['impact'] = 'medium';
-			$desc                           = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This post is a little old!', 'wp-seopress' ) . '</p>';
+			$desc                           = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This post is a little old!', 'webseo' ) . '</p>';
 
 			$issue['issue_name'] = 'old_post';
 			$issue['issue_desc'] = $modified->getTimestamp();
 		} else {
-			$desc = '<p><span class="dashicons dashicons-yes"></span>' . __( 'The last modified date of this article is less than 1 year. Cool!', 'wp-seopress' ) . '</p>';
+			$desc = '<p><span class="dashicons dashicons-yes"></span>' . __( 'The last modified date of this article is less than 1 year. Cool!', 'webseo' ) . '</p>';
 		}
-		$desc                        .= '<p>' . __( 'Search engines love fresh content. Update regularly your articles without entirely rewriting your content and give them a boost in search rankings. SEOPress takes care of the technical part.', 'wp-seopress' ) . '</p>';
+		$desc                        .= '<p>' . __( 'Search engines love fresh content. Update regularly your articles without entirely rewriting your content and give them a boost in search rankings. SEOPress takes care of the technical part.', 'webseo' ) . '</p>';
 		$analyzes['old_post']['desc'] = $desc;
 
 		$issue['issue_priority'] = $analyzes['old_post']['impact'] ? $analyzes['old_post']['impact'] : 0;
@@ -203,7 +203,7 @@ class GetContent {
 		$matches   = $this->getMatches( $permalink, isset( $data['keywords'] ) ? $data['keywords'] : array() );
 
 		if ( ! empty( $matches ) ) {
-			$desc  = '<p><span class="dashicons dashicons-yes"></span>' . __( 'Cool, one of your target keyword is used in your permalink.', 'wp-seopress' ) . '</p>';
+			$desc  = '<p><span class="dashicons dashicons-yes"></span>' . __( 'Cool, one of your target keyword is used in your permalink.', 'webseo' ) . '</p>';
 			$desc .= '<ul>';
 			foreach ( $matches as $key => $value ) {
 				$desc .= '<li><span class="dashicons dashicons-minus"></span>' . $key . '</li>';
@@ -213,10 +213,10 @@ class GetContent {
 			$analyzes['keywords_permalink']['desc']   = $desc;
 			$analyzes['keywords_permalink']['impact'] = 'good';
 		} elseif ( get_option( 'page_on_front' ) === $post->ID ) {
-				$analyzes['keywords_permalink']['desc']   = '<p><span class="dashicons dashicons-yes"></span>' . __( 'This is your homepage. This check doesn\'t apply here because there is no slug.', 'wp-seopress' ) . '</p>';
+				$analyzes['keywords_permalink']['desc']   = '<p><span class="dashicons dashicons-yes"></span>' . __( 'This is your homepage. This check doesn\'t apply here because there is no slug.', 'webseo' ) . '</p>';
 				$analyzes['keywords_permalink']['impact'] = 'good';
 		} else {
-			$analyzes['keywords_permalink']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'You should add one of your target keyword in your permalink.', 'wp-seopress' ) . '</p>';
+			$analyzes['keywords_permalink']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'You should add one of your target keyword in your permalink.', 'webseo' ) . '</p>';
 			$analyzes['keywords_permalink']['impact'] = 'medium';
 
 			$issue['issue_name'] = 'keywords_permalink';
@@ -249,7 +249,7 @@ class GetContent {
 		if ( $this->seo_issues_repository && method_exists( $this->seo_issues_repository, 'deleteSEOIssue' ) ) {
 			$this->seo_issues_repository->deleteSEOIssue( $post->ID, $issue['issue_type'] );
 		}
-		$desc = '<h4>' . __( 'H1 (Heading 1)', 'wp-seopress' ) . '</h4>';
+		$desc = '<h4>' . __( 'H1 (Heading 1)', 'webseo' ) . '</h4>';
 
 		// No headings found.
 		if ( empty( $data['h1'] ) && empty( $data['h2'] ) && empty( $data['h3'] ) ) {
@@ -276,20 +276,20 @@ class GetContent {
 		if ( isset( $data['h1'] ) && is_array( $data['h1'] ) && ! empty( $h1_matches ) ) {
 			$total_h1 = count( $data['h1'] );
 
-			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in Heading 1 (H1).', 'wp-seopress' ) . '</p>';
+			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in Heading 1 (H1).', 'webseo' ) . '</p>';
 
 			$desc .= '<ul>';
 
 			foreach ( $h1_matches as $key => $matches ) {
-				$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s target keyword, %2$d number of times the keyword was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'wp-seopress' ), $key, $matches ) . '</li>';
+				$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s target keyword, %2$d number of times the keyword was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'webseo' ), $key, $matches ) . '</li>';
 			}
 
 			$desc .= '</ul>';
 			if ( $total_h1 > 1 ) {
 				$issue_desc = array();
 
-				$desc                          .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of headings 1 */ sprintf( esc_html__( 'We found %d Heading 1 (H1) in your content.', 'wp-seopress' ), $total_h1 ) . '</p>';
-				$desc                          .= '<p>' . __( 'You should not use more than one H1 heading in your post content. The rule is simple: only one H1 for each web page. It is better for both SEO and accessibility. Below, the list:', 'wp-seopress' ) . '</p>';
+				$desc                          .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of headings 1 */ sprintf( esc_html__( 'We found %d Heading 1 (H1) in your content.', 'webseo' ), $total_h1 ) . '</p>';
+				$desc                          .= '<p>' . __( 'You should not use more than one H1 heading in your post content. The rule is simple: only one H1 for each web page. It is better for both SEO and accessibility. Below, the list:', 'webseo' ) . '</p>';
 				$analyzes['headings']['impact'] = 'high';
 
 				$desc .= '<ul>';
@@ -304,12 +304,12 @@ class GetContent {
 				$issue['issue_desc'] = $issue_desc;
 			}
 		} elseif ( isset( $data['h1'] ) && is_array( $data['h1'] ) && count( $data['h1'] ) === 0 ) {
-			$desc                          .= '<p><span class="dashicons dashicons-no-alt"></span><strong>' . __( 'No Heading 1 (H1) found in your content. This is required for both SEO and Accessibility!', 'wp-seopress' ) . '</strong></p>';
+			$desc                          .= '<p><span class="dashicons dashicons-no-alt"></span><strong>' . __( 'No Heading 1 (H1) found in your content. This is required for both SEO and Accessibility!', 'webseo' ) . '</strong></p>';
 			$analyzes['headings']['impact'] = 'high';
 
 			$issue['issue_name'] = 'headings_h1_not_found';
 		} else {
-			$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in Heading 1 (H1).', 'wp-seopress' ) . '</p>';
+			$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in Heading 1 (H1).', 'webseo' ) . '</p>';
 			if ( 'high' !== $analyzes['headings']['impact'] ) {
 				$analyzes['headings']['impact'] = 'high';
 			}
@@ -328,7 +328,7 @@ class GetContent {
 		// H2.
 		$issue               = array();
 		$issue['issue_type'] = 'headings';
-		$desc               .= '<h4>' . __( 'H2 (Heading 2)', 'wp-seopress' ) . '</h4>';
+		$desc               .= '<h4>' . __( 'H2 (Heading 2)', 'webseo' ) . '</h4>';
 		$h2_matches          = array();
 
 		if ( ! empty( $data['h2'] ) ) {
@@ -345,15 +345,15 @@ class GetContent {
 		}
 
 		if ( ! empty( $h2_matches ) ) {
-			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in Heading 2 (H2).', 'wp-seopress' ) . '</p>';
+			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in Heading 2 (H2).', 'webseo' ) . '</p>';
 			$desc .= '<ul>';
 
 			foreach ( $h2_matches as $key => $matches ) {
-				$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s heading 2, %2$d number of times the heading 2 was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'wp-seopress' ), $key, $matches ) . '</li>';
+				$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s heading 2, %2$d number of times the heading 2 was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'webseo' ), $key, $matches ) . '</li>';
 			}
 			$desc .= '</ul>';
 		} else {
-			$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in Heading 2 (H2).', 'wp-seopress' ) . '</p>';
+			$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in Heading 2 (H2).', 'webseo' ) . '</p>';
 			if ( 'high' !== $analyzes['headings']['impact'] ) {
 				$analyzes['headings']['impact'] = 'medium';
 			}
@@ -372,7 +372,7 @@ class GetContent {
 		// H3.
 		$issue               = array();
 		$issue['issue_type'] = 'headings';
-		$desc               .= '<h4>' . __( 'H3 (Heading 3)', 'wp-seopress' ) . '</h4>';
+		$desc               .= '<h4>' . __( 'H3 (Heading 3)', 'webseo' ) . '</h4>';
 
 		$h3_matches = array();
 		if ( ! empty( $data['h3'] ) ) {
@@ -389,15 +389,15 @@ class GetContent {
 		}
 
 		if ( ! empty( $h3_matches ) ) {
-			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in Heading 3 (H3).', 'wp-seopress' ) . '</p>';
+			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in Heading 3 (H3).', 'webseo' ) . '</p>';
 			$desc .= '<ul>';
 
 			foreach ( $h3_matches as $key => $matches ) {
-				$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s heading 3, %2$d number of times the heading 3 was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'wp-seopress' ), $key, $matches ) . '</li>';
+				$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s heading 3, %2$d number of times the heading 3 was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'webseo' ), $key, $matches ) . '</li>';
 			}
 			$desc .= '</ul>';
 		} else {
-			$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in Heading 3 (H3).', 'wp-seopress' ) . '</p>';
+			$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in Heading 3 (H3).', 'webseo' ) . '</p>';
 			if ( 'high' !== $analyzes['headings']['impact'] && 'medium' !== $analyzes['headings']['impact'] ) {
 				$analyzes['headings']['impact'] = 'low';
 			}
@@ -440,16 +440,16 @@ class GetContent {
 			$matches = $this->getMatches( $seopress_titles_title, isset( $data['keywords'] ) ? $data['keywords'] : array() );
 
 			if ( ! empty( $matches ) ) {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in the Meta Title.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in the Meta Title.', 'webseo' ) . '</p>';
 				$desc .= '<ul>';
 				foreach ( $matches as $key => $value ) {
-					$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s target keyword, %2$d number of times the target keyword was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'wp-seopress' ), $key, count( $value ) ) . '</li>';
+					$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s target keyword, %2$d number of times the target keyword was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'webseo' ), $key, count( $value ) ) . '</li>';
 				}
 				$desc                            .= '</ul>';
 				$analyzes['meta_title']['impact'] = 'good';
 			} else {
 				$analyzes['meta_title']['impact'] = 'medium';
-				$desc                            .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in the Meta Title.', 'wp-seopress' ) . '</p>';
+				$desc                            .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in the Meta Title.', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'title_without_target_kw';
 				$issues[0]['issue_priority'] = $analyzes['meta_title']['impact'];
@@ -457,7 +457,7 @@ class GetContent {
 
 			if ( $title_length > 60 ) {
 				$analyzes['meta_title']['impact'] = 'medium';
-				$desc                            .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your custom title is too long.', 'wp-seopress' ) . '</p>';
+				$desc                            .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your custom title is too long.', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'title_too_long';
 				$issues[1]['issue_desc']     = $title_length;
@@ -466,12 +466,12 @@ class GetContent {
 				if ( ! empty( $analyzes['meta_title']['impact'] ) && 'medium' !== $analyzes['meta_title']['impact'] ) {
 					$analyzes['meta_title']['impact'] = 'good';
 				}
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'The length of your title is correct', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'The length of your title is correct', 'webseo' ) . '</p>';
 			}
 			$analyzes['meta_title']['desc'] = $desc;
 		} else {
 			$analyzes['meta_title']['impact'] = 'medium';
-			$analyzes['meta_title']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'No custom title is set for this post. If the global meta title suits you, you can ignore this recommendation.', 'wp-seopress' ) . '</p>';
+			$analyzes['meta_title']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'No custom title is set for this post. If the global meta title suits you, you can ignore this recommendation.', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'title_not_custom';
 			$issues[2]['issue_priority'] = $analyzes['meta_title']['impact'];
@@ -513,17 +513,17 @@ class GetContent {
 
 			$matches = $this->getMatches( $seopress_titles_desc, isset( $data['keywords'] ) ? $data['keywords'] : array() );
 			if ( ! empty( $matches ) ) {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in the Meta description.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'Target keywords were found in the Meta description.', 'webseo' ) . '</p>';
 				$desc .= '<ul>';
 
 				foreach ( $matches as $key => $value ) {
-					$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s target keyword, %2$d number of times the target keyword was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'wp-seopress' ), $key, count( $value ) ) . '</li>';
+					$desc .= '<li><span class="dashicons dashicons-minus"></span>' . /* translators: %1$s target keyword, %2$d number of times the target keyword was found */ sprintf( esc_html__( '%1$s was found %2$d times.', 'webseo' ), $key, count( $value ) ) . '</li>';
 				}
 				$desc                           .= '</ul>';
 				$analyzes['meta_desc']['impact'] = 'good';
 			} else {
 				$analyzes['meta_desc']['impact'] = 'medium';
-				$desc                           .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in the Meta description.', 'wp-seopress' ) . '</p>';
+				$desc                           .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'None of your target keywords were found in the Meta description.', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'description_without_target_kw';
 				$issues[0]['issue_priority'] = $analyzes['meta_desc']['impact'];
@@ -531,7 +531,7 @@ class GetContent {
 
 			if ( $desc_length > 160 ) {
 				$analyzes['meta_desc']['impact'] = 'medium';
-				$desc                           .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'You custom meta description is too long.', 'wp-seopress' ) . '</p>';
+				$desc                           .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'You custom meta description is too long.', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'description_too_long';
 				$issues[1]['issue_desc']     = $desc_length;
@@ -540,12 +540,12 @@ class GetContent {
 				if ( ! empty( $analyzes['meta_desc']['impact'] ) && 'medium' !== $analyzes['meta_desc']['impact'] ) {
 					$analyzes['meta_desc']['impact'] = 'good';
 				}
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'The length of your meta description is correct', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'The length of your meta description is correct', 'webseo' ) . '</p>';
 			}
 			$analyzes['meta_desc']['desc'] = $desc;
 		} else {
 			$analyzes['meta_desc']['impact'] = 'medium';
-			$analyzes['meta_desc']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'No custom meta description is set for this post. If the global meta description suits you, you can ignore this recommendation.', 'wp-seopress' ) . '</p>';
+			$analyzes['meta_desc']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'No custom meta description is set for this post. If the global meta description suits you, you can ignore this recommendation.', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'description_not_custom';
 			$issues[2]['issue_priority'] = $analyzes['meta_desc']['impact'];
@@ -581,7 +581,7 @@ class GetContent {
 			$this->seo_issues_repository->deleteSEOIssue( $post->ID, 'social' );
 		}
 		$desc  = null;
-		$desc .= '<h4>' . __( 'Open Graph Title', 'wp-seopress' ) . '</h4>';
+		$desc .= '<h4>' . __( 'Open Graph Title', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['og_title'] ) && is_array( $data['og_title'] ) && ! empty( $data['og_title'] ) ) {
 			$count = count( $data['og_title'] );
@@ -590,19 +590,19 @@ class GetContent {
 
 			if ( $count > 1 ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:TITLE tags */ sprintf( esc_html__( 'We found %d og:title in your content.', 'wp-seopress' ), $count ) . '</p>';
-				$desc                        .= '<p>' . __( 'You should not use more than one og:title in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:title tag from your source code. Below, the list:', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:TITLE tags */ sprintf( esc_html__( 'We found %d og:title in your content.', 'webseo' ), $count ) . '</p>';
+				$desc                        .= '<p>' . __( 'You should not use more than one og:title in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:title tag from your source code. Below, the list:', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'og_title_duplicated';
 				$issues[0]['issue_priority'] = $analyzes['social']['impact'];
 			} elseif ( empty( $all_og_title[0] ) ) { // If og:title empty.
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Title tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Title tag is empty!', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'og_title_empty';
 				$issues[1]['issue_priority'] = $analyzes['social']['impact'];
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph Title tag in your source code.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph Title tag in your source code.', 'webseo' ) . '</p>';
 			}
 
 			if ( ! empty( $all_og_title ) ) {
@@ -620,7 +620,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Title is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Title is missing!', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'og_title_missing';
 			$issues[2]['issue_priority'] = $analyzes['social']['impact'];
@@ -639,7 +639,7 @@ class GetContent {
 
 		// og:description.
 		$issues = array();
-		$desc  .= '<h4>' . __( 'Open Graph Description', 'wp-seopress' ) . '</h4>';
+		$desc  .= '<h4>' . __( 'Open Graph Description', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['og_description'] ) && is_array( $data['og_description'] ) && ! empty( $data['og_description'] ) ) {
 			$count = count( $data['og_description'] );
@@ -648,19 +648,19 @@ class GetContent {
 
 			if ( $count > 1 ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:DESCRIPTION tags */ sprintf( esc_html__( 'We found %d og:description in your content.', 'wp-seopress' ), $count ) . '</p>';
-				$desc                        .= '<p>' . __( 'You should not use more than one og:description in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:description tag from your source code. Below, the list:', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:DESCRIPTION tags */ sprintf( esc_html__( 'We found %d og:description in your content.', 'webseo' ), $count ) . '</p>';
+				$desc                        .= '<p>' . __( 'You should not use more than one og:description in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:description tag from your source code. Below, the list:', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'og_desc_duplicated';
 				$issues[0]['issue_priority'] = $analyzes['social']['impact'];
 			} elseif ( empty( $all_og_desc[0] ) ) { // If og:description empty.
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Description tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Description tag is empty!', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'og_desc_empty';
 				$issues[1]['issue_priority'] = $analyzes['social']['impact'];
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph Description tag in your source code.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph Description tag in your source code.', 'webseo' ) . '</p>';
 			}
 
 			if ( ! empty( $all_og_desc ) ) {
@@ -678,7 +678,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Description is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Description is missing!', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'og_desc_missing';
 			$issues[2]['issue_priority'] = $analyzes['social']['impact'];
@@ -698,7 +698,7 @@ class GetContent {
 		// og:image.
 		$issue               = array();
 		$issue['issue_type'] = 'social';
-		$desc               .= '<h4>' . __( 'Open Graph Image', 'wp-seopress' ) . '</h4>';
+		$desc               .= '<h4>' . __( 'Open Graph Image', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['og_image'] ) && is_array( $data['og_image'] ) && ! empty( $data['og_image'] ) ) {
 			$count = count( $data['og_image'] );
@@ -706,13 +706,13 @@ class GetContent {
 			$all_og_img = $data['og_image'];
 
 			if ( $count > 0 && ! empty( $all_og_img[0] ) ) {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . /* translators: %d number of OG:IMAGE tags */ sprintf( esc_html__( 'We found %d og:image in your content.', 'wp-seopress' ), $count ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . /* translators: %d number of OG:IMAGE tags */ sprintf( esc_html__( 'We found %d og:image in your content.', 'webseo' ), $count ) . '</p>';
 			}
 
 			// If og:image empty.
 			if ( $count > 0 && empty( $all_og_img[0] ) ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Image tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Image tag is empty!', 'webseo' ) . '</p>';
 
 				$issue['issue_name'] = 'og_img_empty';
 			}
@@ -726,7 +726,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Image is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Image is missing!', 'webseo' ) . '</p>';
 
 			$issue['issue_name'] = 'og_img_missing';
 		}
@@ -741,7 +741,7 @@ class GetContent {
 
 		// og:url.
 		$issues = array();
-		$desc  .= '<h4>' . __( 'Open Graph URL', 'wp-seopress' ) . '</h4>';
+		$desc  .= '<h4>' . __( 'Open Graph URL', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['og_url'] ) && is_array( $data['og_url'] ) && ! empty( $data['og_url'] ) ) {
 			$count = count( $data['og_url'] );
@@ -750,19 +750,19 @@ class GetContent {
 
 			if ( $count > 1 ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:URL tags */ sprintf( esc_html__( 'We found %d og:url in your content.', 'wp-seopress' ), $count ) . '</p>';
-				$desc                        .= '<p>' . __( 'You should not use more than one og:url in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:url tag from your source code. Below, the list:', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:URL tags */ sprintf( esc_html__( 'We found %d og:url in your content.', 'webseo' ), $count ) . '</p>';
+				$desc                        .= '<p>' . __( 'You should not use more than one og:url in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:url tag from your source code. Below, the list:', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'og_url_duplicated';
 				$issues[0]['issue_priority'] = $analyzes['social']['impact'];
 			} elseif ( empty( $all_og_url[0] ) ) { // If og:url empty.
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph URL tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph URL tag is empty!', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'og_url_empty';
 				$issues[1]['issue_priority'] = $analyzes['social']['impact'];
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph URL tag in your source code.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph URL tag in your source code.', 'webseo' ) . '</p>';
 			}
 
 			if ( ! empty( $all_og_url ) ) {
@@ -780,7 +780,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph URL is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph URL is missing!', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'og_url_missing';
 			$issues[2]['issue_priority'] = $analyzes['social']['impact'];
@@ -799,7 +799,7 @@ class GetContent {
 
 		// og:site_name.
 		$issues = array();
-		$desc  .= '<h4>' . __( 'Open Graph Site Name', 'wp-seopress' ) . '</h4>';
+		$desc  .= '<h4>' . __( 'Open Graph Site Name', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['og_site_name'] ) && is_array( $data['og_site_name'] ) && ! empty( $data['og_site_name'] ) ) {
 			$count = count( $data['og_site_name'] );
@@ -808,19 +808,19 @@ class GetContent {
 
 			if ( $count > 1 ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:SITE_NAME tags */ sprintf( esc_html__( 'We found %d og:site_name in your content.', 'wp-seopress' ), $count ) . '</p>';
-				$desc                        .= '<p>' . __( 'You should not use more than one og:site_name in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:site_name tag from your source code. Below, the list:', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of OG:SITE_NAME tags */ sprintf( esc_html__( 'We found %d og:site_name in your content.', 'webseo' ), $count ) . '</p>';
+				$desc                        .= '<p>' . __( 'You should not use more than one og:site_name in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:site_name tag from your source code. Below, the list:', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'og_sitename_duplicated';
 				$issues[0]['issue_priority'] = $analyzes['social']['impact'];
 			} elseif ( empty( $all_og_site_name[0] ) ) { // If og:site_name empty.
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Site Name tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Site Name tag is empty!', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'og_sitename_empty';
 				$issues[1]['issue_priority'] = $analyzes['social']['impact'];
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph Site Name tag in your source code.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found an Open Graph Site Name tag in your source code.', 'webseo' ) . '</p>';
 			}
 
 			if ( ! empty( $all_og_site_name ) ) {
@@ -838,7 +838,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Site Name is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your Open Graph Site Name is missing!', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'og_sitename_missing';
 			$issues[2]['issue_priority'] = $analyzes['social']['impact'];
@@ -857,7 +857,7 @@ class GetContent {
 
 		// twitter:title.
 		$issues = array();
-		$desc  .= '<h4>' . __( 'X Title', 'wp-seopress' ) . '</h4>';
+		$desc  .= '<h4>' . __( 'X Title', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['twitter_title'] ) && is_array( $data['twitter_title'] ) && ! empty( $data['twitter_title'] ) ) {
 			$count = count( $data['twitter_title'] );
@@ -866,19 +866,19 @@ class GetContent {
 
 			if ( $count > 1 ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of times a twitter:tile tag is found */ sprintf( esc_html__( 'We found %d twitter:title in your content.', 'wp-seopress' ), $count ) . '</p>';
-				$desc                        .= '<p>' . /* translators: %d number of TWITTER:TITLE tags */ __( 'You should not use more than one twitter:title in your post content to avoid conflicts when sharing on social networks. X will take the last twitter:title tag from your source code. Below, the list:', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of times a twitter:tile tag is found */ sprintf( esc_html__( 'We found %d twitter:title in your content.', 'webseo' ), $count ) . '</p>';
+				$desc                        .= '<p>' . /* translators: %d number of TWITTER:TITLE tags */ __( 'You should not use more than one twitter:title in your post content to avoid conflicts when sharing on social networks. X will take the last twitter:title tag from your source code. Below, the list:', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'x_title_duplicated';
 				$issues[0]['issue_priority'] = $analyzes['social']['impact'];
 			} elseif ( empty( $all_tw_title[0] ) ) { // If twitter:title empty.
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Title tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Title tag is empty!', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'x_title_empty';
 				$issues[1]['issue_priority'] = $analyzes['social']['impact'];
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found a X Title tag in your source code.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found a X Title tag in your source code.', 'webseo' ) . '</p>';
 			}
 
 			if ( ! empty( $all_tw_title ) ) {
@@ -896,7 +896,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Title is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Title is missing!', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'x_title_missing';
 			$issues[2]['issue_priority'] = $analyzes['social']['impact'];
@@ -915,7 +915,7 @@ class GetContent {
 
 		// twitter:description.
 		$issues = array();
-		$desc  .= '<h4>' . __( 'X Description', 'wp-seopress' ) . '</h4>';
+		$desc  .= '<h4>' . __( 'X Description', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['twitter_description'] ) && is_array( $data['twitter_description'] ) && ! empty( $data['twitter_description'] ) ) {
 			$count = count( $data['twitter_description'] );
@@ -924,19 +924,19 @@ class GetContent {
 
 			if ( $count > 1 ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of TWITTER:DESCRIPTION tags */ sprintf( esc_html__( 'We found %d twitter:description in your content.', 'wp-seopress' ), $count ) . '</p>';
-				$desc                        .= '<p>' . __( 'You should not use more than one twitter:description in your post content to avoid conflicts when sharing on social networks. X will take the last twitter:description tag from your source code. Below, the list:', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %d number of TWITTER:DESCRIPTION tags */ sprintf( esc_html__( 'We found %d twitter:description in your content.', 'webseo' ), $count ) . '</p>';
+				$desc                        .= '<p>' . __( 'You should not use more than one twitter:description in your post content to avoid conflicts when sharing on social networks. X will take the last twitter:description tag from your source code. Below, the list:', 'webseo' ) . '</p>';
 
 				$issues[0]['issue_name']     = 'x_desc_duplicated';
 				$issues[0]['issue_priority'] = $analyzes['social']['impact'];
 			} elseif ( empty( $all_tw_desc[0] ) ) { // If twitter:description empty.
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Description tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Description tag is empty!', 'webseo' ) . '</p>';
 
 				$issues[1]['issue_name']     = 'x_desc_empty';
 				$issues[1]['issue_priority'] = $analyzes['social']['impact'];
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found a X Description tag in your source code.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found a X Description tag in your source code.', 'webseo' ) . '</p>';
 			}
 
 			if ( ! empty( $all_tw_desc ) ) {
@@ -954,7 +954,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Description is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Description is missing!', 'webseo' ) . '</p>';
 
 			$issues[2]['issue_name']     = 'x_desc_missing';
 			$issues[2]['issue_priority'] = $analyzes['social']['impact'];
@@ -974,7 +974,7 @@ class GetContent {
 		// twitter:image.
 		$issue               = array();
 		$issue['issue_type'] = 'social';
-		$desc               .= '<h4>' . __( 'X Image', 'wp-seopress' ) . '</h4>';
+		$desc               .= '<h4>' . __( 'X Image', 'webseo' ) . '</h4>';
 
 		if ( isset( $data['twitter_image'] ) && is_array( $data['twitter_image'] ) && ! empty( $data['twitter_image'] ) ) {
 			$count = count( $data['twitter_image'] );
@@ -982,13 +982,13 @@ class GetContent {
 			$all_tw_img = $data['twitter_image'];
 
 			if ( $count > 0 && ! empty( $all_tw_img[0] ) ) {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . /* translators: %d number of TWITTER:IMAGE tags */ sprintf( esc_html__( 'We found %d twitter:image in your content.', 'wp-seopress' ), $count ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . /* translators: %d number of TWITTER:IMAGE tags */ sprintf( esc_html__( 'We found %d twitter:image in your content.', 'webseo' ), $count ) . '</p>';
 			}
 
 			// If twitter:image:src empty.
 			if ( $count > 0 && empty( $all_tw_img[0] ) ) {
 				$analyzes['social']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Image tag is empty!', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Image tag is empty!', 'webseo' ) . '</p>';
 
 				$issue['issue_name'] = 'x_img_empty';
 			}
@@ -1002,7 +1002,7 @@ class GetContent {
 			}
 		} else {
 			$analyzes['social']['impact'] = 'high';
-			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Image is missing!', 'wp-seopress' ) . '</p>';
+			$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Your X Image is missing!', 'webseo' ) . '</p>';
 
 			$issue['issue_name'] = 'x_img_missing';
 		}
@@ -1043,7 +1043,7 @@ class GetContent {
 
 				$count_meta_robots = count( $data['meta_robots'] );
 
-				$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %s number of meta robots tags */ sprintf( esc_html__( 'We found %s meta robots in your page. There is probably something wrong with your theme!', 'wp-seopress' ), $count_meta_robots ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . /* translators: %s number of meta robots tags */ sprintf( esc_html__( 'We found %s meta robots in your page. There is probably something wrong with your theme!', 'webseo' ), $count_meta_robots ) . '</p>';
 
 				$issue['issue_name'] = 'meta_robots_duplicated';
 				$issue['issue_desc'] = absint( $count_meta_robots );
@@ -1053,43 +1053,43 @@ class GetContent {
 
 			if ( preg_match( '/noindex/', $encoded ) ) {
 				$analyzes['robots']['impact'] = 'high';
-				$desc                        .= '<p data-robots="noindex"><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>noindex</strong> is on! Search engines can\'t index this page.', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p data-robots="noindex"><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>noindex</strong> is on! Search engines can\'t index this page.', 'webseo' ) . '</p>';
 
 				$issue['issue_name'] = 'meta_robots_noindex';
 			} else {
-				$desc .= '<p data-robots="index"><span class="dashicons dashicons-yes"></span>' . __( '<strong>noindex</strong> is off. Search engines will index this page.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p data-robots="index"><span class="dashicons dashicons-yes"></span>' . __( '<strong>noindex</strong> is off. Search engines will index this page.', 'webseo' ) . '</p>';
 			}
 
 			if ( preg_match( '/nofollow/', $encoded ) ) {
 				$analyzes['robots']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>nofollow</strong> is on! Search engines can\'t follow your links on this page.', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>nofollow</strong> is on! Search engines can\'t follow your links on this page.', 'webseo' ) . '</p>';
 
 				$issue['issue_name'] = 'meta_robots_nofollow';
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( '<strong>nofollow</strong> is off. Search engines will follow links on this page.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( '<strong>nofollow</strong> is off. Search engines will follow links on this page.', 'webseo' ) . '</p>';
 			}
 
 			if ( preg_match( '/noimageindex/', $encoded ) ) {
 				$analyzes['robots']['impact'] = 'high';
-				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>noimageindex</strong> is on! Google will not index your images on this page (but if someone makes a direct link to one of your image in this page, it will be indexed).', 'wp-seopress' ) . '</p>';
+				$desc                        .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>noimageindex</strong> is on! Google will not index your images on this page (but if someone makes a direct link to one of your image in this page, it will be indexed).', 'webseo' ) . '</p>';
 
 				$issue['issue_name'] = 'meta_robots_noimageindex';
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( '<strong>noimageindex</strong> is off. Google will index the images on this page.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( '<strong>noimageindex</strong> is off. Google will index the images on this page.', 'webseo' ) . '</p>';
 			}
 
 			if ( preg_match( '/nosnippet/', $encoded ) ) {
 				if ( 'high' !== $analyzes['robots']['impact'] ) {
 					$analyzes['robots']['impact'] = 'medium';
 				}
-				$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>nosnippet</strong> is on! Search engines will not display a snippet of this page in search results.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( '<strong>nosnippet</strong> is on! Search engines will not display a snippet of this page in search results.', 'webseo' ) . '</p>';
 
 				$issue['issue_name'] = 'meta_robots_nosnippet';
 			} else {
-				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( '<strong>nosnippet</strong> is off. Search engines will display a snippet of this page in search results.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( '<strong>nosnippet</strong> is off. Search engines will display a snippet of this page in search results.', 'webseo' ) . '</p>';
 			}
 		} else {
-			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found no meta robots on this page. It means, your page is index,follow. Search engines will index it, and follow links. ', 'wp-seopress' ) . '</p>';
+			$desc .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'We found no meta robots on this page. It means, your page is index,follow. Search engines will index it, and follow links. ', 'webseo' ) . '</p>';
 		}
 
 		$analyzes['robots']['desc'] = $desc;
@@ -1140,7 +1140,7 @@ class GetContent {
 				$issue_desc = array();
 
 				$analyzes['img_alt']['impact'] = 'high';
-				$desc                         .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'No alternative text found for these images. Alt tags are important for both SEO and accessibility. Edit your images using the media library or your favorite page builder and fill in alternative text fields.', 'wp-seopress' ) . '</p>';
+				$desc                         .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'No alternative text found for these images. Alt tags are important for both SEO and accessibility. Edit your images using the media library or your favorite page builder and fill in alternative text fields.', 'webseo' ) . '</p>';
 
 				// Standard images & galleries.
 				if ( ! empty( $without_alt ) ) {
@@ -1155,14 +1155,14 @@ class GetContent {
 				$desc .= 'onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'block\';" ';
 				$desc .= '/>';
 
-				$desc .= '<figcaption><a href="' . $img_url . '" target="_blank">' . esc_html__( 'Open image (new tab)', 'wp-seopress' ) . '</a></figcaption></figure></li>';
+				$desc .= '<figcaption><a href="' . $img_url . '" target="_blank">' . esc_html__( 'Open image (new tab)', 'webseo' ) . '</a></figcaption></figure></li>';
 
 						$issue_desc[] = sanitize_url( $img );
 					}
 					$desc .= '</ul>';
 				}
 
-				$desc .= '<p>' . __( 'Note that we scan all your source code, it means, some missing alternative texts of images might be located in your header, sidebar or footer.', 'wp-seopress' ) . '</p>';
+				$desc .= '<p>' . __( 'Note that we scan all your source code, it means, some missing alternative texts of images might be located in your header, sidebar or footer.', 'webseo' ) . '</p>';
 			}
 			$desc .= '</div>';
 
@@ -1172,10 +1172,10 @@ class GetContent {
 			$issue['issue_desc'] = $issue_desc;
 		} elseif ( ! empty( $with_alt ) && empty( $without_alt ) ) {
 			$analyzes['img_alt']['impact'] = 'good';
-			$analyzes['img_alt']['desc']   = '<p><span class="dashicons dashicons-yes"></span>' . __( 'All alternative tags are filled in. Good work!', 'wp-seopress' ) . '</p>';
+			$analyzes['img_alt']['desc']   = '<p><span class="dashicons dashicons-yes"></span>' . __( 'All alternative tags are filled in. Good work!', 'webseo' ) . '</p>';
 		} elseif ( empty( $with_alt ) && empty( $without_alt ) ) {
 			$analyzes['img_alt']['impact'] = 'medium';
-			$analyzes['img_alt']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'We could not find any image in your content. Content with media is a plus for your SEO.', 'wp-seopress' ) . '</p>';
+			$analyzes['img_alt']['desc']   = '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'We could not find any image in your content. Content with media is a plus for your SEO.', 'webseo' ) . '</p>';
 
 			$issue['issue_name'] = 'img_alt_no_media';
 		}
@@ -1211,7 +1211,7 @@ class GetContent {
 			$issue_desc = array();
 			$count      = count( $data['links_no_follow'] );
 
-			$desc  = '<p>' . /* translators: %d number of nofollow links */ sprintf( esc_html__( 'We found %d links with nofollow attribute in your page. Do not overuse nofollow attribute in links. Below, the list:', 'wp-seopress' ), $count ) . '</p>';
+			$desc  = '<p>' . /* translators: %d number of nofollow links */ sprintf( esc_html__( 'We found %d links with nofollow attribute in your page. Do not overuse nofollow attribute in links. Below, the list:', 'webseo' ), $count ) . '</p>';
 			$desc .= '<ul>';
 			foreach ( $data['links_no_follow'] as $link ) {
 				$desc .= '<li><span class="dashicons dashicons-minus"></span><a href="' . esc_url( $link['url'] ) . '" target="_blank" class="components-button is-link">' . esc_url( $link['value'] ) . '</a><span class="dashicons dashicons-external"></span></li>';
@@ -1228,7 +1228,7 @@ class GetContent {
 			$issue['issue_name'] = 'nofollow_links_too_many';
 			$issue['issue_desc'] = $issue_desc;
 		} else {
-			$analyzes['nofollow_links']['desc'] = '<p><span class="dashicons dashicons-yes"></span>' . __( 'This page doesn\'t have any nofollow links.', 'wp-seopress' ) . '</p>';
+			$analyzes['nofollow_links']['desc'] = '<p><span class="dashicons dashicons-yes"></span>' . __( 'This page doesn\'t have any nofollow links.', 'webseo' ) . '</p>';
 		}
 
 		$issue['issue_priority'] = $analyzes['nofollow_links']['impact'] ? $analyzes['nofollow_links']['impact'] : 0;
@@ -1258,11 +1258,11 @@ class GetContent {
 			$this->seo_issues_repository->deleteSEOIssue( $post->ID, $issue['issue_type'] );
 		}
 
-		$desc = '<p>' . __( 'Internet is built on the principle of hyperlink. It is therefore perfectly normal to make links between different websites. However, avoid making links to low quality sites, SPAM... If you are not sure about the quality of a site, add the attribute "nofollow" to your link.', 'wp-seopress' ) . '</p>';
+		$desc = '<p>' . __( 'Internet is built on the principle of hyperlink. It is therefore perfectly normal to make links between different websites. However, avoid making links to low quality sites, SPAM... If you are not sure about the quality of a site, add the attribute "nofollow" to your link.', 'webseo' ) . '</p>';
 		if ( isset( $data['outbound_links'] ) && is_array( $data['outbound_links'] ) && ! empty( $data['outbound_links'] ) ) {
 			$count = count( $data['outbound_links'] );
 
-			$desc .= '<p>' . /* translators: %d number of outbound links */ sprintf( __( 'We found %s outbound links in your page. Below, the list:', 'wp-seopress' ), $count ) . '</p>';
+			$desc .= '<p>' . /* translators: %d number of outbound links */ sprintf( __( 'We found %s outbound links in your page. Below, the list:', 'webseo' ), $count ) . '</p>';
 			$desc .= '<ul>';
 			foreach ( $data['outbound_links'] as $link ) {
 				$desc .= '<li><span class="dashicons dashicons-minus"></span><a href="' . esc_url( $link['url'] ) . '" target="_blank" class="components-button is-link">' . esc_url( $link['value'] ) . '</a><span class="dashicons dashicons-external"></span></li>';
@@ -1270,7 +1270,7 @@ class GetContent {
 			$desc .= '</ul>';
 		} else {
 			$analyzes['outbound_links']['impact'] = 'medium';
-			$desc                                .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This page doesn\'t have any outbound links.', 'wp-seopress' ) . '</p>';
+			$desc                                .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This page doesn\'t have any outbound links.', 'webseo' ) . '</p>';
 
 			$issue['issue_name'] = 'outbound_links_missing';
 		}
@@ -1303,27 +1303,27 @@ class GetContent {
 			$this->seo_issues_repository->deleteSEOIssue( $post->ID, $issue['issue_type'] );
 		}
 
-		$desc = '<p>' . __( 'Internal links are important for SEO and user experience. Always try to link your content together, with quality link anchors.', 'wp-seopress' ) . '</p>';
+		$desc = '<p>' . __( 'Internal links are important for SEO and user experience. Always try to link your content together, with quality link anchors.', 'webseo' ) . '</p>';
 
 		// Bricks compatibility.
 		$theme = wp_get_theme();
 		if ( defined( 'BRICKS_DB_EDITOR_MODE' ) && ( 'bricks' === $theme->template || 'Bricks' === $theme->parent_theme ) ) {
 			$analyzes['internal_links']['impact'] = 'good';
-			$desc                                .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Unfortunately, this analysis can‘t work with Bricks Builder because of the way your content is stored in your database.', 'wp-seopress' ) . '</p>';
+			$desc                                .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'Unfortunately, this analysis can‘t work with Bricks Builder because of the way your content is stored in your database.', 'webseo' ) . '</p>';
 		} elseif ( isset( $data['internal_links'] ) && is_array( $data['internal_links'] ) && ! empty( $data['internal_links'] ) ) {
 			$count = count( $data['internal_links'] );
 
-			$desc .= '<p>' . /* translators: %s internal links */ sprintf( __( 'We found %s internal links to this page.', 'wp-seopress' ), $count ) . '</p>';
+			$desc .= '<p>' . /* translators: %s internal links */ sprintf( __( 'We found %s internal links to this page.', 'webseo' ), $count ) . '</p>';
 
 			$desc .= '<ul>';
 			foreach ( $data['internal_links'] as $link ) {
 				$desc .= '<li><span class="dashicons dashicons-minus"></span><a href="' . esc_url( $link['url'] ) . '" target="_blank" class="components-button is-link">' . esc_html( $link['value'] ) . '</a>
-                <a class="nounderline" href="' . esc_url( get_edit_post_link( $link['id'] ) ) . '" title="' . /* translators: %s link to edit the post */ sprintf( __( 'edit %s', 'wp-seopress' ), esc_html( get_the_title( $link['id'] ) ) ) . '"><span class="dashicons dashicons-edit-large"></span></a></li>';
+                <a class="nounderline" href="' . esc_url( get_edit_post_link( $link['id'] ) ) . '" title="' . /* translators: %s link to edit the post */ sprintf( __( 'edit %s', 'webseo' ), esc_html( get_the_title( $link['id'] ) ) ) . '"><span class="dashicons dashicons-edit-large"></span></a></li>';
 			}
 			$desc .= '</ul>';
 		} else {
 			$analyzes['internal_links']['impact'] = 'medium';
-			$desc                                .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This page doesn\'t have any internal links from other content. Links from archive pages are not considered internal links due to lack of context.', 'wp-seopress' ) . '</p>';
+			$desc                                .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This page doesn\'t have any internal links from other content. Links from archive pages are not considered internal links due to lack of context.', 'webseo' ) . '</p>';
 
 			$issue['issue_name'] = 'internal_links_missing';
 		}
@@ -1356,12 +1356,12 @@ class GetContent {
 			$this->seo_issues_repository->deleteSEOIssue( $post->ID, $issue['issue_type'] );
 		}
 
-		$desc = '<p>' . __( 'A canonical URL is required by search engines to handle duplicate content.', 'wp-seopress' ) . '</p>';
+		$desc = '<p>' . __( 'A canonical URL is required by search engines to handle duplicate content.', 'webseo' ) . '</p>';
 
 		if ( isset( $data['canonical'] ) && is_array( $data['canonical'] ) && ! empty( $data['canonical'] ) ) {
 			$count = count( $data['canonical'] );
 
-			$desc .= '<p>' . /* translators: %s number of canonical tags */ sprintf( _n( 'We found %s canonical URL in your source code. Below, the list:', 'We found %s canonical URLs in your source code. Below, the list:', $count, 'wp-seopress' ), number_format_i18n( $count ) ) . '</p>';
+			$desc .= '<p>' . /* translators: %s number of canonical tags */ sprintf( _n( 'We found %s canonical URL in your source code. Below, the list:', 'We found %s canonical URLs in your source code. Below, the list:', $count, 'webseo' ), number_format_i18n( $count ) ) . '</p>';
 
 			$desc .= '<ul>';
 			foreach ( $data['canonical'] as $link ) {
@@ -1371,19 +1371,19 @@ class GetContent {
 
 			if ( $count > 1 ) {
 				$analyzes['all_canonical']['impact'] = 'high';
-				$desc                               .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'You must fix this. Canonical URL duplication is bad for SEO.', 'wp-seopress' ) . '</p>';
+				$desc                               .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'You must fix this. Canonical URL duplication is bad for SEO.', 'webseo' ) . '</p>';
 
 				$issue['issue_name'] = 'canonical_duplicated';
 			}
 		} elseif ( 'yes' === get_post_meta( $post->ID, '_seopress_robots_index', true ) ) {
 				$analyzes['all_canonical']['impact'] = 'good';
-				$desc                               .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'This page doesn\'t have any canonical URL because your post is set to <strong>noindex</strong>. This is normal.', 'wp-seopress' ) . '</p>';
+				$desc                               .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'This page doesn\'t have any canonical URL because your post is set to <strong>noindex</strong>. This is normal.', 'webseo' ) . '</p>';
 		} elseif ( seopress_get_service( 'TitleOption' )->getSingleCptNoIndex() || seopress_get_service( 'TitleOption' )->getTitleNoIndex() || true === post_password_required( $post->ID ) ) {
 			$analyzes['all_canonical']['impact'] = 'good';
-			$desc                               .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'This page doesn\'t have any canonical URL because your post is set to <strong>noindex</strong>. This is normal.', 'wp-seopress' ) . '</p>';
+			$desc                               .= '<p><span class="dashicons dashicons-yes"></span>' . __( 'This page doesn\'t have any canonical URL because your post is set to <strong>noindex</strong>. This is normal.', 'webseo' ) . '</p>';
 		} else {
 			$analyzes['all_canonical']['impact'] = 'high';
-			$desc                               .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This page doesn\'t have any canonical URL.', 'wp-seopress' ) . '</p>';
+			$desc                               .= '<p><span class="dashicons dashicons-no-alt"></span>' . __( 'This page doesn\'t have any canonical URL.', 'webseo' ) . '</p>';
 
 			$issue['issue_name'] = 'canonical_missing';
 		}

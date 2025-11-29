@@ -20,7 +20,7 @@ class SearchKeywords implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Search Keywords', 'wp-seopress' );
+		return __( 'Search Keywords', 'webseo' );
 	}
 
 	/**

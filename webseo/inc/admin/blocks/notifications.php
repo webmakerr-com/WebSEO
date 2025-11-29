@@ -28,11 +28,11 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 			<p>
 				<?php
 					/* translators: %s number of notifications */
-					printf( esc_attr( _n( 'You have %s notification. We strongly encourage you to resolve this issue to avoid any SEO damage.', 'You have %s notifications. We strongly encourage you to resolve these issues to avoid any SEO damage.', esc_attr( $total ), 'wp-seopress' ) ), '<span>' . esc_attr( $total ) . '</span>' );
+					printf( esc_attr( _n( 'You have %s notification. We strongly encourage you to resolve this issue to avoid any SEO damage.', 'You have %s notifications. We strongly encourage you to resolve these issues to avoid any SEO damage.', esc_attr( $total ), 'webseo' ) ), '<span>' . esc_attr( $total ) . '</span>' );
 				?>
 			</p>
 			<button id="seopress-see-notifications" type="button" role="tab" aria-selected="true" data-panel="notifications" class="btn btnSecondary">
-				<?php esc_attr_e( 'See all notifications', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'See all notifications', 'webseo' ); ?>
 			</button>
 		</div>
 	</div>

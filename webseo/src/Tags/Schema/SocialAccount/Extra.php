@@ -20,7 +20,7 @@ class Extra implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Extra URL', 'wp-seopress' );
+		return __( 'Extra URL', 'webseo' );
 	}
 
 	/**

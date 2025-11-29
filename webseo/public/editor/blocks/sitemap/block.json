@@ -6,7 +6,7 @@
   "description": "Display an HTML sitemap",
   "icon": "list-view",
   "category": "wpseopress",
-  "textdomain": "wp-seopress",
+  "textdomain": "webseo",
   "supports": {
     "html": false,
     "color": {

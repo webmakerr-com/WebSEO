@@ -22,7 +22,7 @@ class PostExcerpt implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Excerpt', 'wp-seopress' );
+		return __( 'Post Excerpt', 'webseo' );
 	}
 
 	/**

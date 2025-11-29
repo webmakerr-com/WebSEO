@@ -19,16 +19,16 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 		<div id="seopress-integration-panel" class="seopress-card <?php echo esc_attr( $class ); ?>" style="display: none">
 			<div class="seopress-card-title">
 				<div class="seopress-d-flex seopress-space-between">
-					<h2><?php esc_attr_e( 'Integrations', 'wp-seopress' ); ?></h2>
+					<h2><?php esc_attr_e( 'Integrations', 'webseo' ); ?></h2>
 					<div>
-						<a href="<?php echo esc_url( $docs['integrations']['all'] ); ?>" class="seopress-help" target="_blank" title="<?php esc_attr_e( 'See all our integrations - Open in a new tab', 'wp-seopress' ); ?>">
-							<?php esc_attr_e( 'See all our integrations', 'wp-seopress' ); ?>
+						<a href="<?php echo esc_url( $docs['integrations']['all'] ); ?>" class="seopress-help" target="_blank" title="<?php esc_attr_e( 'See all our integrations - Open in a new tab', 'webseo' ); ?>">
+							<?php esc_attr_e( 'See all our integrations', 'webseo' ); ?>
 						</a>
 						<span class="seopress-help dashicons dashicons-external"></span>
 					</div>
 				</div>
 				<div>
-					<p><?php esc_attr_e( 'You’re using these plugins / themes on your site. We provide advanced integrations with them to improve your SEO.', 'wp-seopress' ); ?></p>
+					<p><?php esc_attr_e( 'You’re using these plugins / themes on your site. We provide advanced integrations with them to improve your SEO.', 'webseo' ); ?></p>
 				</div>
 			</div>
 			<div class="seopress-card-content">
@@ -141,7 +141,7 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 					if ( is_plugin_active( $key ) || ( $key === $theme->template || $key === $theme->parent_theme ) ) {
 						$title  = $integration['title'];
 						$status = 'status-active';
-						$label  = esc_attr__( 'Active', 'wp-seopress' );
+						$label  = esc_attr__( 'Active', 'webseo' );
 						?>
 							<div class="seopress-integration">
 								<div class="details">
@@ -161,11 +161,11 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 					?>
 							<div class="seopress-notice">
 								<p>
-							<?php esc_html_e( 'Currently, no specific integration found for your site. Contact us if you have any doubts about the compatibility between your plugins/themes and our products.', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Currently, no specific integration found for your site. Contact us if you have any doubts about the compatibility between your plugins/themes and our products.', 'webseo' ); ?>
 								</p>
 								<p>
-									<a href="<?php echo esc_url( $docs['contact'] ); ?>" class="seopress-help btn btnSecondary" target="_blank" title="<?php esc_attr_e( 'Request an integration - Open in a new tab', 'wp-seopress' ); ?>">
-								<?php esc_attr_e( 'Request an integration', 'wp-seopress' ); ?>
+									<a href="<?php echo esc_url( $docs['contact'] ); ?>" class="seopress-help btn btnSecondary" target="_blank" title="<?php esc_attr_e( 'Request an integration - Open in a new tab', 'webseo' ); ?>">
+								<?php esc_attr_e( 'Request an integration', 'webseo' ); ?>
 									</a>
 								</p>
 							</div>

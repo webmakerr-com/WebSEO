@@ -20,7 +20,7 @@ class GetPrice implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Product Price', 'wp-seopress' );
+		return __( 'Product Price', 'webseo' );
 	}
 
 	/**

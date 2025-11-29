@@ -20,7 +20,7 @@ class AuthorNickname implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Author Nickname', 'wp-seopress' );
+		return __( 'Author Nickname', 'webseo' );
 	}
 
 	/**

@@ -20,7 +20,7 @@ class ArchiveDateMonthName implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Month Name Archive Date', 'wp-seopress' );
+		return __( 'Month Name Archive Date', 'webseo' );
 	}
 
 	/**

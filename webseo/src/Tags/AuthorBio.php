@@ -20,7 +20,7 @@ class AuthorBio implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Author Bio', 'wp-seopress' );
+		return __( 'Author Bio', 'webseo' );
 	}
 
 	/**

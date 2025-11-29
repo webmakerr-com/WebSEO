@@ -111,10 +111,10 @@ class ContentAnalysis implements ExecuteHooks {
 
 			switch ( $dom_result['code'] ) {
 				case 404:
-					$default_response['title'] = __( 'To get your Google snippet preview, publish your post!', 'wp-seopress' );
+					$default_response['title'] = __( 'To get your Google snippet preview, publish your post!', 'webseo' );
 					break;
 				case 401:
-					$default_response['title'] = __( 'Your site is protected by an authentication.', 'wp-seopress' );
+					$default_response['title'] = __( 'Your site is protected by an authentication.', 'webseo' );
 					break;
 			}
 

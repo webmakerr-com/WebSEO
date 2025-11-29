@@ -11,14 +11,14 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 add_settings_section(
 	'seopress_setting_section_titles_home', // ID.
 	'',
-	// __("Home","wp-seopress"), // Title
+	// __("Home","webseo"), // Title
 	'seopress_print_section_info_titles', // Callback.
 	'seopress-settings-admin-titles-home' // Page.
 );
 
 add_settings_field(
 	'seopress_titles_sep', // ID.
-	__( 'Separator', 'wp-seopress' ), // Title.
+	__( 'Separator', 'webseo' ), // Title.
 	'seopress_titles_sep_callback', // Callback.
 	'seopress-settings-admin-titles-home', // Page.
 	'seopress_setting_section_titles_home' // Section.
@@ -26,7 +26,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_home_site_title', // ID.
-	__( 'Site title', 'wp-seopress' ), // Title.
+	__( 'Site title', 'webseo' ), // Title.
 	'seopress_titles_home_site_title_callback', // Callback.
 	'seopress-settings-admin-titles-home', // Page.
 	'seopress_setting_section_titles_home' // Section.
@@ -34,7 +34,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_home_site_title_alt', // ID.
-	__( 'Alternative site title', 'wp-seopress' ), // Title.
+	__( 'Alternative site title', 'webseo' ), // Title.
 	'seopress_titles_home_site_title_alt_callback', // Callback.
 	'seopress-settings-admin-titles-home', // Page.
 	'seopress_setting_section_titles_home' // Section.
@@ -42,7 +42,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_home_site_desc', // ID.
-	__( 'Meta description', 'wp-seopress' ), // Title.
+	__( 'Meta description', 'webseo' ), // Title.
 	'seopress_titles_home_site_desc_callback', // Callback.
 	'seopress-settings-admin-titles-home', // Page.
 	'seopress_setting_section_titles_home' // Section.
@@ -52,7 +52,7 @@ add_settings_field(
 add_settings_section(
 	'seopress_setting_section_titles_single', // ID.
 	'',
-	// __("Post Types","wp-seopress"), // Title.
+	// __("Post Types","webseo"), // Title.
 	'seopress_print_section_info_single', // Callback.
 	'seopress-settings-admin-titles-single' // Page.
 );
@@ -95,7 +95,7 @@ if ( is_plugin_active( 'buddypress/bp-loader.php' ) || is_plugin_active( 'buddyb
 add_settings_section(
 	'seopress_setting_section_titles_archives', // ID.
 	'',
-	// __("Archives","wp-seopress"), // Title.
+	// __("Archives","webseo"), // Title.
 	'seopress_print_section_info_archives', // Callback.
 	'seopress-settings-admin-titles-archives' // Page.
 );
@@ -111,7 +111,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_author_title', // ID.
 	'',
-	// __('Title template','wp-seopress'),
+	// __('Title template','webseo'),
 	'seopress_titles_archives_author_title_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -120,7 +120,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_author_desc', // ID.
 	'',
-	// __('Meta description template','wp-seopress'),
+	// __('Meta description template','webseo'),
 	'seopress_titles_archives_author_desc_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -129,7 +129,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_author_noindex', // ID.
 	'',
-	// __("noindex","wp-seopress"), // Title
+	// __("noindex","webseo"), // Title
 	'seopress_titles_archives_author_noindex_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -138,7 +138,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_author_disable', // ID.
 	'',
-	// __("disable","wp-seopress"), // Title
+	// __("disable","webseo"), // Title
 	'seopress_titles_archives_author_disable_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -147,7 +147,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_date_title', // ID.
 	'',
-	// __('Title template','wp-seopress'),
+	// __('Title template','webseo'),
 	'seopress_titles_archives_date_title_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -156,7 +156,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_date_desc', // ID.
 	'',
-	// __('Meta description template','wp-seopress'),
+	// __('Meta description template','webseo'),
 	'seopress_titles_archives_date_desc_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -165,7 +165,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_date_noindex', // ID.
 	'',
-	// __("noindex","wp-seopress"), // Title
+	// __("noindex","webseo"), // Title
 	'seopress_titles_archives_date_noindex_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -174,7 +174,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_date_disable', // ID.
 	'',
-	// __("disable","wp-seopress"), // Title
+	// __("disable","webseo"), // Title
 	'seopress_titles_archives_date_disable_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -183,7 +183,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_search_title', // ID.
 	'',
-	// __('Title template','wp-seopress'),
+	// __('Title template','webseo'),
 	'seopress_titles_archives_search_title_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -192,7 +192,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_search_desc', // ID.
 	'',
-	// __('Meta description template','wp-seopress'),
+	// __('Meta description template','webseo'),
 	'seopress_titles_archives_search_desc_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -201,7 +201,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_search_title_noindex', // ID.
 	'',
-	// __('noindex','wp-seopress'),
+	// __('noindex','webseo'),
 	'seopress_titles_archives_search_title_noindex_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -210,7 +210,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_404_title', // ID.
 	'',
-	// __('Title template','wp-seopress'),
+	// __('Title template','webseo'),
 	'seopress_titles_archives_404_title_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -219,7 +219,7 @@ add_settings_field(
 add_settings_field(
 	'seopress_titles_archives_404_desc', // ID.
 	'',
-	// __('Meta description template','wp-seopress'),
+	// __('Meta description template','webseo'),
 	'seopress_titles_archives_404_desc_callback', // Callback.
 	'seopress-settings-admin-titles-archives', // Page.
 	'seopress_setting_section_titles_archives' // Section.
@@ -229,7 +229,7 @@ add_settings_field(
 add_settings_section(
 	'seopress_setting_section_titles_tax', // ID.
 	'',
-	// __("Taxonomies","wp-seopress"), // Title
+	// __("Taxonomies","webseo"), // Title
 	'seopress_print_section_info_tax', // Callback.
 	'seopress-settings-admin-titles-tax' // Page.
 );
@@ -246,14 +246,14 @@ add_settings_field(
 add_settings_section(
 	'seopress_setting_section_titles_advanced', // ID.
 	'',
-	// __("Advanced","wp-seopress"), // Title
+	// __("Advanced","webseo"), // Title
 	'seopress_print_section_info_advanced', // Callback.
 	'seopress-settings-admin-titles-advanced' // Page.
 );
 
 add_settings_field(
 	'seopress_titles_noindex', // ID.
-	__( 'noindex', 'wp-seopress' ), // Title.
+	__( 'noindex', 'webseo' ), // Title.
 	'seopress_titles_noindex_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.
@@ -261,7 +261,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_nofollow', // ID.
-	__( 'nofollow', 'wp-seopress' ), // Title.
+	__( 'nofollow', 'webseo' ), // Title.
 	'seopress_titles_nofollow_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.
@@ -269,7 +269,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_noimageindex', // ID.
-	__( 'noimageindex', 'wp-seopress' ), // Title.
+	__( 'noimageindex', 'webseo' ), // Title.
 	'seopress_titles_noimageindex_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.
@@ -277,7 +277,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_nosnippet', // ID.
-	__( 'nosnippet', 'wp-seopress' ), // Title.
+	__( 'nosnippet', 'webseo' ), // Title.
 	'seopress_titles_nosnippet_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.
@@ -285,7 +285,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_nositelinkssearchbox', // ID.
-	__( 'Remove Website schema', 'wp-seopress' ), // Title.
+	__( 'Remove Website schema', 'webseo' ), // Title.
 	'seopress_titles_nositelinkssearchbox_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.
@@ -293,7 +293,7 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_paged_rel', // ID.
-	__( 'Indicate paginated content to Google', 'wp-seopress' ), // Title.
+	__( 'Indicate paginated content to Google', 'webseo' ), // Title.
 	'seopress_titles_paged_rel_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.
@@ -301,14 +301,14 @@ add_settings_field(
 
 add_settings_field(
 	'seopress_titles_paged_noindex', // ID.
-	__( 'noindex on paged archives', 'wp-seopress' ), // Title.
+	__( 'noindex on paged archives', 'webseo' ), // Title.
 	'seopress_titles_paged_noindex_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.
 );
 add_settings_field(
 	'seopress_titles_attachments_noindex', // ID.
-	__( 'noindex on attachment pages', 'wp-seopress' ), // Title.
+	__( 'noindex on attachment pages', 'webseo' ), // Title.
 	'seopress_titles_attachments_noindex_callback', // Callback.
 	'seopress-settings-admin-titles-advanced', // Page.
 	'seopress_setting_section_titles_advanced' // Section.

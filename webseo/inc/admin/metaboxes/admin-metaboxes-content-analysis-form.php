@@ -21,23 +21,23 @@ $data_attr = seopress_metaboxes_init();
 
 	<div id="seopress-ca-tabs-2">
 		<p>
-			<?php esc_html_e( 'Enter a few keywords for analysis to help you write optimized content.', 'wp-seopress' ); ?>
+			<?php esc_html_e( 'Enter a few keywords for analysis to help you write optimized content.', 'webseo' ); ?>
 		</p>
 		<div class="col-left">
 			<p>
-				<label for="seopress_analysis_target_kw_meta"><?php esc_html_e( 'Target keywords', 'wp-seopress' ); ?></label>
-				<span class="description"><?php esc_html_e( 'Separate target keywords with commas. Do not use spaces after the commas, unless you want to include them.', 'wp-seopress' ); ?></span>
+				<label for="seopress_analysis_target_kw_meta"><?php esc_html_e( 'Target keywords', 'webseo' ); ?></label>
+				<span class="description"><?php esc_html_e( 'Separate target keywords with commas. Do not use spaces after the commas, unless you want to include them.', 'webseo' ); ?></span>
 				<input id="seopress_analysis_target_kw_meta" type="text" name="seopress_analysis_target_kw"
-					placeholder="<?php esc_html_e( 'Enter your target keywords', 'wp-seopress' ); ?>"
-					aria-label="<?php esc_attr_e( 'Target keywords', 'wp-seopress' ); ?>"
+					placeholder="<?php esc_html_e( 'Enter your target keywords', 'webseo' ); ?>"
+					aria-label="<?php esc_attr_e( 'Target keywords', 'webseo' ); ?>"
 					value="<?php echo esc_attr( $seopress_analysis_target_kw ); ?>" />
 			</p>
 
-			<button id="seopress_launch_analysis" type="button" class="<?php echo esc_attr( seopress_btn_secondary_classes() ); ?>" data_id="<?php echo absint( get_the_ID() ); ?>" data_post_type="<?php echo esc_attr( get_current_screen()->post_type ); ?>"><?php esc_html_e( 'Refresh analysis', 'wp-seopress' ); ?></button>
+			<button id="seopress_launch_analysis" type="button" class="<?php echo esc_attr( seopress_btn_secondary_classes() ); ?>" data_id="<?php echo absint( get_the_ID() ); ?>" data_post_type="<?php echo esc_attr( get_current_screen()->post_type ); ?>"><?php esc_html_e( 'Refresh analysis', 'webseo' ); ?></button>
 
 			<?php do_action( 'seopress_ca_after_resfresh_analysis' ); ?>
 
-			<p><span class="description"><?php esc_attr_e( 'To get the most accurate analysis, save your post first. We analyze all of your source code as a search engine would.', 'wp-seopress' ); ?></span></p>
+			<p><span class="description"><?php esc_attr_e( 'To get the most accurate analysis, save your post first. We analyze all of your source code as a search engine would.', 'webseo' ); ?></span></p>
 		</div>
 			<?php do_action( 'seopress_ca_before' ); ?>
 
@@ -57,10 +57,10 @@ $data_attr = seopress_metaboxes_init();
 						$html .= '<li>
                                     <span class="dashicons dashicons-minus"></span>
                                     <strong>' . $item['key'] . '</strong>
-                                    ' . /* translators: %d number of times the target keyword is used */ sprintf( _n( 'is already used %d time', 'is already used %d times', count( $item['rows'] ) - 1, 'wp-seopress' ), count( $item['rows'] ) - 1 ) . '
+                                    ' . /* translators: %d number of times the target keyword is used */ sprintf( _n( 'is already used %d time', 'is already used %d times', count( $item['rows'] ) - 1, 'webseo' ), count( $item['rows'] ) - 1 ) . '
                                 </li>';
 						if ( ! empty( $item['rows'] ) ) {
-							$html .= '<details><summary>' . __( '(URL using this keyword)', 'wp-seopress' ) . '</summary><ul>';
+							$html .= '<details><summary>' . __( '(URL using this keyword)', 'webseo' ) . '</summary><ul>';
 							foreach ( $item['rows'] as $row ) {
 								if ( $row['post_id'] == $post->ID ) {
 									continue;
@@ -76,11 +76,11 @@ $data_attr = seopress_metaboxes_init();
 
 				<?php if ( ! empty( $html ) ) { ?>
 					<div id="seopress-notice-target-kw" class="seopress-notice is-warning">
-						<p><?php echo esc_html( sprintf( _n( 'The keyword:', 'These keywords:', $i, 'wp-seopress' ), absint( number_format_i18n( $i ) ) ) ); ?></p>
+						<p><?php echo esc_html( sprintf( _n( 'The keyword:', 'These keywords:', $i, 'webseo' ), absint( number_format_i18n( $i ) ) ) ); ?></p>
 						<ul>
 							<?php echo $html; ?>
 						</ul>
-						<p><?php esc_html_e( 'You should avoid using multiple times the same keyword for different pages. Try to consolidate your content into one single page.', 'wp-seopress' ); ?></p>
+						<p><?php esc_html_e( 'You should avoid using multiple times the same keyword for different pages. Try to consolidate your content into one single page.', 'webseo' ); ?></p>
 					</div>
 				<?php } ?>
 			</div>

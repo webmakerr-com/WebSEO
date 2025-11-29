@@ -25,16 +25,16 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 		<div id="seopress-ebook-panel" class="seopress-card <?php echo esc_attr( $class ); ?>" style="display: none">
 			<div class="seopress-card-title">
 				<div class="seopress-d-flex seopress-space-between">
-					<h2><?php esc_attr_e( 'Free SEO ebooks', 'wp-seopress' ); ?></h2>
+					<h2><?php esc_attr_e( 'Free SEO ebooks', 'webseo' ); ?></h2>
 					<div>
-						<a href="<?php echo esc_url( $docs['get_started']['ebooks']['link'] ); ?>" class="seopress-help" target="_blank" title="<?php esc_attr_e( 'See all our ebooks - Open in a new tab', 'wp-seopress' ); ?>">
-							<?php esc_attr_e( 'See all our ebooks', 'wp-seopress' ); ?>
+						<a href="<?php echo esc_url( $docs['get_started']['ebooks']['link'] ); ?>" class="seopress-help" target="_blank" title="<?php esc_attr_e( 'See all our ebooks - Open in a new tab', 'webseo' ); ?>">
+							<?php esc_attr_e( 'See all our ebooks', 'webseo' ); ?>
 						</a>
 						<span class="seopress-help dashicons dashicons-external"></span>
 					</div>
 				</div>
 				<div>
-					<p><?php esc_attr_e( 'Learn how to improve your rankings, traffic, conversions and sales.', 'wp-seopress' ); ?></p>
+					<p><?php esc_attr_e( 'Learn how to improve your rankings, traffic, conversions and sales.', 'webseo' ); ?></p>
 				</div>
 			</div>
 			<div class="seopress-card-content">
@@ -102,7 +102,7 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 							<div class="details">
 								<h3 class="name"><?php echo esc_html( $title ); ?></h3>
 								<a href="<?php echo esc_url( $url ); ?>" target="_blank" class="btn btnSecondary">
-							<?php esc_html_e( 'Download', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Download', 'webseo' ); ?>
 								</a>
 							</div>
 							<div class="cover">

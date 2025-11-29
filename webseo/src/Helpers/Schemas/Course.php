@@ -11,23 +11,23 @@ abstract class Course {
 			[
 				[
 					'value' => 'none',
-					'label' => __( 'Select a category', 'wp-seopress' ),
+					'label' => __( 'Select a category', 'webseo' ),
 				],
 				[
 					'value' => 'Free',
-					'label' => __( 'Free', 'wp-seopress' ),
+					'label' => __( 'Free', 'webseo' ),
 				],
 				[
 					'value' => 'Partially Free',
-					'label' => __( 'Partially free', 'wp-seopress' ),
+					'label' => __( 'Partially free', 'webseo' ),
 				],
 				[
 					'value' => 'Subscription',
-					'label' => __( 'Subscription', 'wp-seopress' ),
+					'label' => __( 'Subscription', 'webseo' ),
 				],
 				[
 					'value' => 'Paid',
-					'label' => __( 'Paid', 'wp-seopress' ),
+					'label' => __( 'Paid', 'webseo' ),
 				],
 			]
 		);
@@ -39,15 +39,15 @@ abstract class Course {
 			[
 				[
 					'value' => 'none',
-					'label' => __( 'Select a category', 'wp-seopress' ),
+					'label' => __( 'Select a category', 'webseo' ),
 				],
 				[
 					'value' => 'Onsite',
-					'label' => __( 'Onsite', 'wp-seopress' ),
+					'label' => __( 'Onsite', 'webseo' ),
 				],
 				[
 					'value' => 'Online',
-					'label' => __( 'Online', 'wp-seopress' ),
+					'label' => __( 'Online', 'webseo' ),
 				],
 			]
 		);
@@ -59,23 +59,23 @@ abstract class Course {
 			[
 				[
 					'value' => 'none',
-					'label' => __( 'Select a category', 'wp-seopress' ),
+					'label' => __( 'Select a category', 'webseo' ),
 				],
 				[
 					'value' => 'Daily',
-					'label' => __( 'Daily', 'wp-seopress' ),
+					'label' => __( 'Daily', 'webseo' ),
 				],
 				[
 					'value' => 'Weekly',
-					'label' => __( 'Weekly', 'wp-seopress' ),
+					'label' => __( 'Weekly', 'webseo' ),
 				],
 				[
 					'value' => 'Monthly',
-					'label' => __( 'Monthly', 'wp-seopress' ),
+					'label' => __( 'Monthly', 'webseo' ),
 				],
 				[
 					'value' => 'Yearly',
-					'label' => __( 'Yearly', 'wp-seopress' ),
+					'label' => __( 'Yearly', 'webseo' ),
 				],
 			]
 		);

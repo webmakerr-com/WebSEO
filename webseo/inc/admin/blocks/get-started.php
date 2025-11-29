@@ -20,13 +20,13 @@ if ( ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === fal
 
 	<div id="notice-get-started-alert" class="seopress-get-started seopress-alert deleteable <?php echo esc_attr( $class ); ?>" style="display: none">
 		<div class="seopress-block-wizard seopress-card-title">
-			<h2><?php esc_attr_e( 'Configure your SEO', 'wp-seopress' ); ?></h2>
+			<h2><?php esc_attr_e( 'Configure your SEO', 'webseo' ); ?></h2>
 
-			<p><?php esc_attr_e( 'Launch our installation wizard to quickly and easily configure the basic SEO settings for your site.', 'wp-seopress' ); ?></p>
+			<p><?php esc_attr_e( 'Launch our installation wizard to quickly and easily configure the basic SEO settings for your site.', 'webseo' ); ?></p>
 
 			<p class="seopress-card-actions">
                             <a href="<?php echo esc_url( admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ) ); ?>" class="seopress-btn seopress-btn-primary">
-				<?php esc_attr_e( 'Setup in 5 mins!', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'Setup in 5 mins!', 'webseo' ); ?>
 				</a>
 			</p>
 		</div>

@@ -20,7 +20,7 @@ class Facebook implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Facebook URL', 'wp-seopress' );
+		return __( 'Facebook URL', 'webseo' );
 	}
 
 	/**

@@ -18,7 +18,7 @@ class GetRegularPrice implements GetTagValue {
     const NAME = 'wc_get_regular_price';
 
     public static function getDescription() {
-        return __('Product Regular Price', 'wp-seopress');
+        return __('Product Regular Price', 'webseo');
     }
 
     public function getValue($args = null) {

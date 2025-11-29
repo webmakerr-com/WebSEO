@@ -28,18 +28,18 @@ class RenderContentAnalysis {
                                 <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
                                 <circle id="bar" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
                             </svg>';
-					$tooltip = seopress_tooltip( esc_html__( 'Content analysis', 'wp-seopress' ), wp_kses_post( __( '<strong>Should be improved:</strong> red or orange dots <br> <strong>Good:</strong> yellow or green dots', 'wp-seopress' ) ), '' );
+					$tooltip = seopress_tooltip( esc_html__( 'Content analysis', 'webseo' ), wp_kses_post( __( '<strong>Should be improved:</strong> red or orange dots <br> <strong>Good:</strong> yellow or green dots', 'webseo' ) ), '' );
 
 					if ( ! empty( $impact ) ) {
 						if ( in_array( 'medium', $impact, true ) || in_array( 'high', $impact, true ) ) {
 							$score = false;
 							?>
-				<p class="notgood"><?php echo $svg; ?> <span><?php echo esc_html__( 'Should be improved', 'wp-seopress' ) . $tooltip; ?></span></p>
+				<p class="notgood"><?php echo $svg; ?> <span><?php echo esc_html__( 'Should be improved', 'webseo' ) . $tooltip; ?></span></p>
 									<?php
 						} else {
 							$score = true;
 							?>
-				<p class="good"><?php echo $svg; ?> <span><?php echo esc_html__( 'Good', 'wp-seopress' ) . $tooltip; ?></span></p>
+				<p class="good"><?php echo $svg; ?> <span><?php echo esc_html__( 'Good', 'webseo' ) . $tooltip; ?></span></p>
 									<?php
 						}
 					} else {
@@ -52,7 +52,7 @@ class RenderContentAnalysis {
 						delete_post_meta( get_the_ID(), '_seopress_content_analysis_api' );
 					}
 					?>
-					<span><a href="#" id="expand-all" class="components-button is-link"><?php esc_html_e( 'Expand', 'wp-seopress' ); ?></a> / <a href="#" id="close-all"><?php esc_html_e( 'Close', 'wp-seopress' ); ?></a></span>
+					<span><a href="#" id="expand-all" class="components-button is-link"><?php esc_html_e( 'Expand', 'webseo' ); ?></a> / <a href="#" id="close-all"><?php esc_html_e( 'Close', 'webseo' ); ?></a></span>
 				</div><!-- .analysis-score -->
 				<?php
 				if ( ! empty( $analyzes ) ) {
@@ -82,7 +82,7 @@ class RenderContentAnalysis {
 										<button type="button" aria-expanded="false" class="btn-toggle">
 											<?php if ( isset( $value['impact'] ) ) { ?>
 												<span class="impact <?php echo esc_attr( $value['impact'] ); ?>" aria-hidden="true"></span>
-												<span class="screen-reader-text"><?php /* translators: %s impact of this analysis, eg: high */ printf( esc_html__( 'Degree of severity: %s', 'wp-seopress' ), esc_html( $value['impact'] ) ); ?></span>
+												<span class="screen-reader-text"><?php /* translators: %s impact of this analysis, eg: high */ printf( esc_html__( 'Degree of severity: %s', 'webseo' ), esc_html( $value['impact'] ) ); ?></span>
 											<?php } ?>
 											<span class="seopress-arrow" aria-hidden="true"></span>
 											<?php echo esc_html( $value['title'] ); ?>

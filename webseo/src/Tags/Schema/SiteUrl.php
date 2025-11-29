@@ -20,7 +20,7 @@ class SiteUrl implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Site URL', 'wp-seopress' );
+		return __( 'Site URL', 'webseo' );
 	}
 
 	/**

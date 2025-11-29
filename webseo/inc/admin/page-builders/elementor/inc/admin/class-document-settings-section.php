@@ -116,7 +116,7 @@ class Document_Settings_Section {
 			'seopress_nonce'        => wp_create_nonce( 'seopress_real_preview_nonce' ),
 			'seopress_real_preview' => admin_url( 'admin-ajax.php' ),
 			'post_id'               => $post_id,
-			'i18n'                  => array( 'progress' => __( 'Analysis in progress...', 'wp-seopress' ) ),
+			'i18n'                  => array( 'progress' => __( 'Analysis in progress...', 'webseo' ) ),
 			'post_type'             => $post_type,
 			'post_tax'              => $term,
 			'origin'                => $origin,
@@ -162,7 +162,7 @@ class Document_Settings_Section {
 		$document->start_controls_section(
 			'seopress_title_settings',
 			array(
-				'label' => __( 'SEO Title / Description', 'wp-seopress' ),
+				'label' => __( 'SEO Title / Description', 'webseo' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 			)
 		);
@@ -178,7 +178,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_titles_title',
 			array(
-				'label'       => __( 'Title', 'wp-seopress' ),
+				'label'       => __( 'Title', 'webseo' ),
 				'type'        => 'seopresstextlettercounter',
 				'field_type'  => 'text',
 				'label_block' => true,
@@ -190,7 +190,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_titles_desc',
 			array(
-				'label'       => __( 'Meta Description', 'wp-seopress' ),
+				'label'       => __( 'Meta Description', 'webseo' ),
 				'type'        => 'seopresstextlettercounter',
 				'field_type'  => 'textarea',
 				'label_block' => true,
@@ -202,7 +202,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'social_preview_google',
 			array(
-				'label'       => __( 'Google Snippet Preview', 'wp-seopress' ),
+				'label'       => __( 'Google Snippet Preview', 'webseo' ),
 				'type'        => 'seopress-social-preview',
 				'label_block' => true,
 				'separator'   => 'none',
@@ -231,7 +231,7 @@ class Document_Settings_Section {
 		$document->start_controls_section(
 			'_seopress_advanced_settings',
 			array(
-				'label' => __( 'SEO Advanced', 'wp-seopress' ),
+				'label' => __( 'SEO Advanced', 'webseo' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 			)
 		);
@@ -247,7 +247,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_robots_index',
 			array(
-				'label'       => __( 'Don\'t display this page in search engine results / XML - HTML sitemaps (noindex)', 'wp-seopress' ),
+				'label'       => __( 'Don\'t display this page in search engine results / XML - HTML sitemaps (noindex)', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -258,7 +258,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_robots_follow',
 			array(
-				'label'       => __( 'Don\'t follow links for this page (nofollow)', 'wp-seopress' ),
+				'label'       => __( 'Don\'t follow links for this page (nofollow)', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -269,7 +269,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_robots_imageindex',
 			array(
-				'label'       => __( 'Don\'t index images for this page (noimageindex)', 'wp-seopress' ),
+				'label'       => __( 'Don\'t index images for this page (noimageindex)', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -280,7 +280,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_robots_snippet',
 			array(
-				'label'       => __( 'Don\'t display a description in search results for this page (nosnippet)', 'wp-seopress' ),
+				'label'       => __( 'Don\'t display a description in search results for this page (nosnippet)', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -291,7 +291,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_robots_canonical',
 			array(
-				'label'       => __( 'Canonical URL', 'wp-seopress' ),
+				'label'       => __( 'Canonical URL', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -316,15 +316,15 @@ class Document_Settings_Section {
 				foreach ( $cats as $category ) {
 					$options[ $category->term_id ] = $category->name;
 				}
-				$options['none'] = __( 'None (will disable this feature)', 'wp-seopress' );
+				$options['none'] = __( 'None (will disable this feature)', 'webseo' );
 			}
 
 			if ( ! empty( $options ) ) {
 				$document->add_control(
 					'_seopress_robots_primary_cat',
 					array(
-						'label'       => __( 'Select a primary category', 'wp-seopress' ),
-						'description' => /* translators: category permalink structure */ wp_kses_post( sprintf( __( 'Set the category that gets used in the %s permalink and in our breadcrumbs if you have multiple categories.', 'wp-seopress' ), '<code>%category%</code>' ) ),
+						'label'       => __( 'Select a primary category', 'webseo' ),
+						'description' => /* translators: category permalink structure */ wp_kses_post( sprintf( __( 'Set the category that gets used in the %s permalink and in our breadcrumbs if you have multiple categories.', 'webseo' ), '<code>%category%</code>' ) ),
 						'type'        => \Elementor\Controls_Manager::SELECT,
 						'label_block' => true,
 						'separator'   => 'none',
@@ -339,8 +339,8 @@ class Document_Settings_Section {
 			$document->add_control(
 				'_seopress_robots_breadcrumbs',
 				array(
-					'label'       => __( 'Custom breadcrumbs', 'wp-seopress' ),
-					'description' => __( 'Enter a custom value, useful if your title is too long', 'wp-seopress' ),
+					'label'       => __( 'Custom breadcrumbs', 'webseo' ),
+					'description' => __( 'Enter a custom value, useful if your title is too long', 'webseo' ),
 					'type'        => \Elementor\Controls_Manager::TEXT,
 					'label_block' => true,
 					'separator'   => 'none',
@@ -364,7 +364,7 @@ class Document_Settings_Section {
 		$document->start_controls_section(
 			'_seopress_social_settings',
 			array(
-				'label' => __( 'SEO Social', 'wp-seopress' ),
+				'label' => __( 'SEO Social', 'webseo' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 			)
 		);
@@ -382,9 +382,9 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_note',
 			array(
-				// 'label' => __( 'Important Note', 'wp-seopress' ),
+				// 'label' => __( 'Important Note', 'webseo' ),
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw'  => '<p class="elementor-control-field-description"><a href="https://developers.facebook.com/tools/debug/sharing/?q=' . esc_url( get_permalink( get_the_id() ) ) . '" target="_blank">' . __( 'Ask Facebook to update its cache', 'wp-seopress' ) . '</a><span class="dashicons dashicons-external"></span></p>',
+				'raw'  => '<p class="elementor-control-field-description"><a href="https://developers.facebook.com/tools/debug/sharing/?q=' . esc_url( get_permalink( get_the_id() ) ) . '" target="_blank">' . __( 'Ask Facebook to update its cache', 'webseo' ) . '</a><span class="dashicons dashicons-external"></span></p>',
 				// 'content_classes' => 'your-class',
 			)
 		);
@@ -392,9 +392,9 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_note_2',
 			array(
-				// 'label' => __( 'Important Note', 'wp-seopress' ),
+				// 'label' => __( 'Important Note', 'webseo' ),
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw'  => '<p class="elementor-control-field-description">' . wp_kses_post( __( '<strong>Did you know?</strong> LinkedIn, Instagram and Pinterest use the same social metadata as Facebook. X does the same if no X Cards tags are defined below.', 'wp-seopress' ) ) . '</p>',
+				'raw'  => '<p class="elementor-control-field-description">' . wp_kses_post( __( '<strong>Did you know?</strong> LinkedIn, Instagram and Pinterest use the same social metadata as Facebook. X does the same if no X Cards tags are defined below.', 'webseo' ) ) . '</p>',
 				// 'content_classes' => 'your-class',
 			)
 		);
@@ -402,7 +402,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_fb_title',
 			array(
-				'label'       => __( 'Facebook Title', 'wp-seopress' ),
+				'label'       => __( 'Facebook Title', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -413,7 +413,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_fb_desc',
 			array(
-				'label'       => __( 'Facebook description', 'wp-seopress' ),
+				'label'       => __( 'Facebook description', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::TEXTAREA,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -424,7 +424,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_fb_img',
 			array(
-				'label'       => __( 'Facebook Thumbnail', 'wp-seopress' ),
+				'label'       => __( 'Facebook Thumbnail', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::MEDIA,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -437,7 +437,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'social_preview_facebook',
 			array(
-				'label'       => __( 'Facebook Preview', 'wp-seopress' ),
+				'label'       => __( 'Facebook Preview', 'webseo' ),
 				'type'        => 'seopress-social-preview',
 				'label_block' => true,
 				'separator'   => 'none',
@@ -451,7 +451,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_twitter_title',
 			array(
-				'label'       => __( 'X Title', 'wp-seopress' ),
+				'label'       => __( 'X Title', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -462,7 +462,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_twitter_desc',
 			array(
-				'label'       => __( 'X Description', 'wp-seopress' ),
+				'label'       => __( 'X Description', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::TEXTAREA,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -473,7 +473,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_social_twitter_img',
 			array(
-				'label'       => __( 'X Thumbnail', 'wp-seopress' ),
+				'label'       => __( 'X Thumbnail', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::MEDIA,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -486,7 +486,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'social_preview_twitter',
 			array(
-				'label'       => __( 'X Preview', 'wp-seopress' ),
+				'label'       => __( 'X Preview', 'webseo' ),
 				'type'        => 'seopress-social-preview',
 				'label_block' => true,
 				'separator'   => 'none',
@@ -512,7 +512,7 @@ class Document_Settings_Section {
 		$document->start_controls_section(
 			'seopress_redirection_settings',
 			array(
-				'label' => __( 'SEO Redirection', 'wp-seopress' ),
+				'label' => __( 'SEO Redirection', 'webseo' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 			)
 		);
@@ -524,7 +524,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_redirections_enabled',
 			array(
-				'label'       => __( 'Enable redirection?', 'wp-seopress' ),
+				'label'       => __( 'Enable redirection?', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::SWITCHER,
 				'label_block' => false,
 				'separator'   => 'none',
@@ -535,14 +535,14 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_redirections_type',
 			array(
-				'label'       => __( 'URL redirection', 'wp-seopress' ),
+				'label'       => __( 'URL redirection', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::SELECT,
 				'label_block' => true,
 				'separator'   => 'none',
 				'options'     => array(
-					301 => __( '301 Moved Permanently', 'wp-seopress' ),
-					302 => __( '302 Found / Moved Temporarily', 'wp-seopress' ),
-					307 => __( '307 Moved Temporarily', 'wp-seopress' ),
+					301 => __( '301 Moved Permanently', 'webseo' ),
+					302 => __( '302 Found / Moved Temporarily', 'webseo' ),
+					307 => __( '307 Moved Temporarily', 'webseo' ),
 				),
 				'default'     => $redirections_type ? (int) $redirections_type : 301,
 			)
@@ -551,7 +551,7 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_redirections_value',
 			array(
-				'label'       => __( 'Enter your new URL in absolute (e.g. https://www.example.com/)', 'wp-seopress' ),
+				'label'       => __( 'Enter your new URL in absolute (e.g. https://www.example.com/)', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
 				'label_block' => true,
 				'separator'   => 'none',
@@ -574,7 +574,7 @@ class Document_Settings_Section {
 		$document->start_controls_section(
 			'seopress_content_analysis_settings',
 			array(
-				'label' => __( 'SEO Content Analysis', 'wp-seopress' ),
+				'label' => __( 'SEO Content Analysis', 'webseo' ),
 				'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 			)
 		);
@@ -584,9 +584,9 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_analysis_note',
 			array(
-				// 'label' => __( 'Important Note', 'wp-seopress' ),
+				// 'label' => __( 'Important Note', 'webseo' ),
 				'type' => \Elementor\Controls_Manager::RAW_HTML,
-				'raw'  => '<p class="elementor-control-field-description">' . __( 'Enter a few keywords for analysis to help you write optimized content.', 'wp-seopress' ) . '</p>',
+				'raw'  => '<p class="elementor-control-field-description">' . __( 'Enter a few keywords for analysis to help you write optimized content.', 'webseo' ) . '</p>',
 				// 'content_classes' => 'your-class',
 			)
 		);
@@ -594,9 +594,9 @@ class Document_Settings_Section {
 		$document->add_control(
 			'_seopress_analysis_target_kw',
 			array(
-				'label'       => __( 'Target keywords', 'wp-seopress' ),
+				'label'       => __( 'Target keywords', 'webseo' ),
 				'type'        => \Elementor\Controls_Manager::TEXT,
-				'description' => __( 'Separate target keywords with commas. Do not use spaces after the commas, unless you want to include them', 'wp-seopress' ),
+				'description' => __( 'Separate target keywords with commas. Do not use spaces after the commas, unless you want to include them', 'webseo' ),
 				'label_block' => true,
 				'separator'   => 'none',
 				'default'     => $keywords ? $keywords : '',
@@ -607,8 +607,8 @@ class Document_Settings_Section {
 			$document->add_control(
 				'seopress_google_suggest_kw',
 				array(
-					'label'       => __( 'Google suggestions', 'wp-seopress' ),
-					'description' => __( 'Enter a keyword, or a phrase, to find the top 10 Google suggestions instantly. This is useful if you want to work with the long tail technique.', 'wp-seopress' ),
+					'label'       => __( 'Google suggestions', 'webseo' ),
+					'description' => __( 'Enter a keyword, or a phrase, to find the top 10 Google suggestions instantly. This is useful if you want to work with the long tail technique.', 'webseo' ),
 					'type'        => 'seopress-google-suggestions',
 					'label_block' => true,
 					'separator'   => 'none',
@@ -621,7 +621,7 @@ class Document_Settings_Section {
 			array(
 				'label'       => '',
 				'type'        => 'seopress-content-analysis',
-				'description' => __( 'To get the most accurate analysis, save your post first. We analyze all of your source code as a search engine would.', 'wp-seopress' ),
+				'description' => __( 'To get the most accurate analysis, save your post first. We analyze all of your source code as a search engine would.', 'webseo' ),
 				'label_block' => true,
 				'separator'   => 'none',
 			)

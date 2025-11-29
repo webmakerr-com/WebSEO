@@ -20,7 +20,7 @@ class CustomPostTypePlural implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Plural Post Type Archive name', 'wp-seopress' );
+		return __( 'Plural Post Type Archive name', 'webseo' );
 	}
 
 	/**

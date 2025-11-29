@@ -22,7 +22,7 @@ class SiteTitle implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Site Title', 'wp-seopress' );
+		return __( 'Site Title', 'webseo' );
 	}
 
 	/**

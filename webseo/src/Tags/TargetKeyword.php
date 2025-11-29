@@ -20,7 +20,7 @@ class TargetKeyword implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Target Keywords', 'wp-seopress' );
+		return __( 'Target Keywords', 'webseo' );
 	}
 
 	/**
