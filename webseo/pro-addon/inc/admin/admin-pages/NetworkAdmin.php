@@ -2,7 +2,7 @@
 
 defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks :)');
 
-if (is_plugin_active('wp-seopress/seopress.php')) {
+if (is_plugin_active('webseo/webseo.php')) {
     if (function_exists('seopress_admin_header')) {
         echo seopress_admin_header();
     } ?>

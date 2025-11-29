@@ -140,7 +140,7 @@ function seopress_pro_loaded() {
 		return;
 	}
 
-	if ( ! is_plugin_active( 'wp-seopress/seopress.php' ) ) {// If SEOPress Free NOT activated.
+	if ( ! is_plugin_active( 'webseo/webseo.php' ) ) {// If SEOPress Free NOT activated.
 		deactivate_plugins( 'wp-seopress-pro/seopress-pro.php' );
 		add_action( 'admin_notices', 'seopress_pro_admin_notices' );
 	}
@@ -700,7 +700,7 @@ function seopress_pro_admin_notices() {
 		return;
 	}
 
-	if ( ! is_plugin_active( 'wp-seopress/seopress.php' ) ) {
+	if ( ! is_plugin_active( 'webseo/webseo.php' ) ) {
 		?>
 		<div class="notice error">
 			<p>

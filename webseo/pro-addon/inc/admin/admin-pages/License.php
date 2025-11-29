@@ -6,7 +6,7 @@ $selected = $license ? '********************************' : '';
 $status = get_option('seopress_pro_license_status');
 $docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() : '';
 
-if (is_plugin_active('wp-seopress/seopress.php')) {
+if (is_plugin_active('webseo/webseo.php')) {
 	if (function_exists('seopress_admin_header')) {
 		echo seopress_admin_header();
 	}
