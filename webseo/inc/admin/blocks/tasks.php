@@ -44,18 +44,18 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 			$products = array(
 				'webseo/webseo.php'         => array(
 					'title' => 'SEOPress Free',
-					'logo'  => SEOPRESS_URL_ASSETS . '/img/logo-seopress-free.svg',
+                                    'logo'  => WEBSEO_URL_ASSETS . '/img/logo-webseo-free.svg',
 					'url'   => $docs['pricing'],
 				),
 				'wp-seopress-pro/seopress-pro.php' => array(
 					'title'  => 'SEOPress PRO',
-					'logo'   => SEOPRESS_URL_ASSETS . '/img/logo-seopress-pro.svg',
+                                    'logo'   => WEBSEO_URL_ASSETS . '/img/logo-webseo-pro.svg',
 					'url'    => $docs['addons']['pro'],
 					'status' => $status_pro,
 				),
 				'wp-seopress-insights/seopress-insights.php' => array(
 					'title'  => 'SEOPress Insights',
-					'logo'   => SEOPRESS_URL_ASSETS . '/img/logo-seopress-insights.svg',
+                                    'logo'   => WEBSEO_URL_ASSETS . '/img/logo-webseo-insights.svg',
 					'url'    => $docs['addons']['insights'],
 					'status' => $status_insights,
 				),

@@ -551,77 +551,77 @@ class SEOPRESS_Admin_Setup_Wizard {
 								'wordpress-seo-premium/wp-seo-premium.php',
 							),
 							'name' => 'Yoast SEO',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/yoast.png',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/yoast.png',
 						),
 						'aio'              => array(
 							'slug' => array(
 								'all-in-one-seo-pack/all_in_one_seo_pack.php',
 							),
 							'name' => 'All In One SEO',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/aio.svg',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/aio.svg',
 						),
 						'seo-framework'    => array(
 							'slug' => array(
 								'autodescription/autodescription.php',
 							),
 							'name' => 'The SEO Framework',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/seo-framework.svg',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/seo-framework.svg',
 						),
 						'rk'               => array(
 							'slug' => array(
 								'seo-by-rank-math/rank-math.php',
 							),
 							'name' => 'Rank Math',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/rk.svg',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/rk.svg',
 						),
 						'squirrly'         => array(
 							'slug' => array(
 								'squirrly-seo/squirrly.php',
 							),
 							'name' => 'Squirrly SEO',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/squirrly.png',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/squirrly.png',
 						),
 						'seo-ultimate'     => array(
 							'slug' => array(
 								'seo-ultimate/seo-ultimate.php',
 							),
 							'name' => 'SEO Ultimate',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/seo-ultimate.svg',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/seo-ultimate.svg',
 						),
 						'wp-meta-seo'      => array(
 							'slug' => array(
 								'wp-meta-seo/wp-meta-seo.php',
 							),
 							'name' => 'WP Meta SEO',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/wp-meta-seo.png',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/wp-meta-seo.png',
 						),
 						'premium-seo-pack' => array(
 							'slug' => array(
 								'premium-seo-pack/plugin.php',
 							),
 							'name' => 'Premium SEO Pack',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/premium-seo-pack.png',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/premium-seo-pack.png',
 						),
 						'siteseo'          => array(
 							'slug' => array(
 								'siteseo/siteseo.php',
 							),
 							'name' => 'SiteSEO',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/siteseo.png',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/siteseo.png',
 						),
 						'smart-crawl'      => array(
 							'slug' => array(
 								'smartcrawl-seo/wpmu-dev-seo.php',
 							),
 							'name' => 'SmartCrawl',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/smart-crawl.png',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/smart-crawl.png',
 						),
 						'slim-seo'         => array(
 							'slug' => array(
 								'slim-seo/slim-seo.php',
 							),
 							'name' => 'Slim SEO',
-							'img'  => SEOPRESS_URL_ASSETS . '/img/import/slim-seo.svg',
+							'img'  => WEBSEO_URL_ASSETS . '/img/import/slim-seo.svg',
 						),
 					);
 
@@ -967,7 +967,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 						?>
 						<p>
 							<span class="seopress-social-icon seopress-d-flex seopress-align-items-center">
-								<img src="<?php echo esc_url( SEOPRESS_URL_ASSETS . '/img/social/' . $account['icon'] ); ?>" alt="<?php echo esc_attr( $account['alt'] ); ?>" width="24" height="24">
+								<img src="<?php echo esc_url( WEBSEO_URL_ASSETS . '/img/social/' . $account['icon'] ); ?>" alt="<?php echo esc_attr( $account['alt'] ); ?>" width="24" height="24">
 								<label for="<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $account['label'] ); ?></label>
 							</span>
 							<input type="text" id="<?php echo esc_attr( $key ); ?>" class="location-input" name="<?php echo esc_attr( $key ); ?>"
@@ -1641,7 +1641,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 						<?php if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' !== seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) { ?>
 							<li class="description">
 								<a class="wrap-yt-embed" href="https://www.youtube.com/watch?v=sf0ocG7vQMM" target="_blank" title="<?php esc_attr_e( 'Watch the universal SEO metabox overview video - Open in a new window', 'wp-seopress' ); ?>">
-									<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/yt-universal-metabox.webp' ); ?>" alt="<?php esc_attr_e( 'Universal SEO metabox video thumbnail', 'wp-seopress' ); ?>" width="500" />
+									<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/yt-universal-metabox.webp' ); ?>" alt="<?php esc_attr_e( 'Universal SEO metabox video thumbnail', 'wp-seopress' ); ?>" width="500" />
 								</a>
 							</li>
 						<?php } ?>
@@ -1785,7 +1785,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							<div class="seopress-wizard-next-step-description seopress-wizard-nl">
 								<div class="seopress-d-flex seopress-space-between seopress-wizard-nl-items">
 									<div>
-										<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/cover-seo-routine.jpg' ); ?>" alt="" width="106" height="150" />
+										<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/cover-seo-routine.jpg' ); ?>" alt="" width="106" height="150" />
 									</div>
 									<div>
 										<p class="next-step-heading"><?php esc_html_e( 'Subscribe for free', 'wp-seopress' ); ?></p>

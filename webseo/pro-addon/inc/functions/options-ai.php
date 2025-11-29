@@ -48,7 +48,7 @@ function seopress_ai_alt_text_media_modal( $form_fields, $post ) {
     $language   = function_exists('seopress_get_current_lang') ? seopress_get_current_lang() : get_locale();
 
     $form_fields['seopress_ai_generate_alt_text'] = array(
-        'label' => '<img src="' . SEOPRESS_ASSETS_DIR . '/img/ai.svg" alt="" width="22" height="22" style="max-width: inherit;margin-right:10px">',
+        'label' => '<img src="' . WEBSEO_ASSETS_DIR . '/img/ai.svg" alt="" width="22" height="22" style="max-width: inherit;margin-right:10px">',
         'input' => 'html',
         'html'  => sprintf(
             '<div id="seopress-ai-generate-alt-text">

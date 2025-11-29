@@ -28,49 +28,49 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 
 		$features = array(
 			'titles'            => array(
-				'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-titles-metas.svg',
+				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-titles-metas.svg',
 				'title'       => __( 'Titles & Metas', 'wp-seopress' ),
 				'desc'        => __( 'Manage all your titles & metas for post types, taxonomies, archives...', 'wp-seopress' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-titles' ),
 				'filter'      => 'seopress_remove_feature_titles',
 			),
 			'xml-sitemap'       => array(
-				'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-sitemaps.svg',
+				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-sitemaps.svg',
 				'title'       => __( 'XML & HTML Sitemaps', 'wp-seopress' ),
 				'desc'        => __( 'Manage your XML - Image - Video - HTML Sitemap.', 'wp-seopress' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-xml-sitemap' ),
 				'filter'      => 'seopress_remove_feature_xml_sitemap',
 			),
 			'social'            => array(
-				'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-social-networks.svg',
+				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-social-networks.svg',
 				'title'       => __( 'Social Networks', 'wp-seopress' ),
 				'desc'        => __( 'Open Graph, X Cards, Google Knowledge Graph and more...', 'wp-seopress' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-social' ),
 				'filter'      => 'seopress_remove_feature_social',
 			),
 			'google-analytics'  => array(
-				'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-analytics.svg',
+				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-analytics.svg',
 				'title'       => __( 'Analytics', 'wp-seopress' ),
 				'desc'        => __( 'Track everything about your visitors with Google Analytics / Matomo / Microsoft Clarity.', 'wp-seopress' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-google-analytics' ),
 				'filter'      => 'seopress_remove_feature_google_analytics',
 			),
 			'instant-indexing'  => array(
-				'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-instant-indexing.svg',
+				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-instant-indexing.svg',
 				'title'       => __( 'Instant Indexing', 'wp-seopress' ),
 				'desc'        => __( 'Ping Google & Bing to quickly index your content.', 'wp-seopress' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-instant-indexing' ),
 				'filter'      => 'seopress_remove_feature_instant_indexing',
 			),
 			'advanced'          => array(
-				'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-advanced.svg',
+				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-advanced.svg',
 				'title'       => __( 'Image SEO & Advanced settings', 'wp-seopress' ),
 				'desc'        => __( 'Optimize your images for SEO. Configure advanced settings.', 'wp-seopress' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-advanced' ),
 				'filter'      => 'seopress_remove_feature_advanced',
 			),
 			'universal-metabox' => array(
-				'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-universal-metabox.svg',
+				'svg'         => WEBSEO_URL_ASSETS . '/img/ico-universal-metabox.svg',
 				'title'       => __( 'Universal SEO metabox', 'wp-seopress' ),
 				'desc'        => __( 'Easily manage your SEO settings from your favorite page builder or editor.', 'wp-seopress' ),
 				'btn_primary' => admin_url( 'admin.php?page=webseo-advanced#tab=tab_seopress_advanced_appearance' ),
@@ -81,7 +81,7 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 		$features = apply_filters( 'seopress_features_list_before_tools', $features );
 
 		$features['tools'] = array(
-			'svg'         => SEOPRESS_URL_ASSETS . '/img/ico-tools.svg',
+			'svg'         => WEBSEO_URL_ASSETS . '/img/ico-tools.svg',
 			'title'       => __( 'Tools', 'wp-seopress' ),
 			'desc'        => __( 'Import/Export plugin settings from site to site.', 'wp-seopress' ),
 			'btn_primary' => admin_url( 'admin.php?page=webseo-import-export' ),

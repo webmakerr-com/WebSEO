@@ -120,7 +120,7 @@ class ModuleMetabox implements ExecuteHooks {
 		$args = array_merge(
 			array(
 				'SEOPRESS_URL_PUBLIC'       => SEOPRESS_URL_PUBLIC,
-				'SEOPRESS_URL_ASSETS'       => SEOPRESS_URL_ASSETS,
+				'WEBSEO_URL_ASSETS'       => WEBSEO_URL_ASSETS,
 				'SEOPRESS_PRO_IS_ACTIVATED' => is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ? true : false,
 				'SITENAME'                  => get_bloginfo( 'name' ),
 				'SITEURL'                   => site_url(),
@@ -158,8 +158,8 @@ class ModuleMetabox implements ExecuteHooks {
 					'SCHEMA_MANUAL'    => apply_filters( 'seopress_active_schemas', false ),
 				),
 				'FAVICON'                   => get_site_icon_url( 32 ),
-				'BEACON_SVG'                => apply_filters( 'seopress_beacon_svg', SEOPRESS_URL_ASSETS . '/img/beacon.svg' ),
-				'AI_SVG'                    => apply_filters( 'seopress_ai_svg', SEOPRESS_URL_ASSETS . '/img/ai.svg' ),
+				'BEACON_SVG'                => apply_filters( 'seopress_beacon_svg', WEBSEO_URL_ASSETS . '/img/beacon.svg' ),
+				'AI_SVG'                    => apply_filters( 'seopress_ai_svg', WEBSEO_URL_ASSETS . '/img/ai.svg' ),
 			),
 			$args_localize
 		);

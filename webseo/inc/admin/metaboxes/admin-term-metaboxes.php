@@ -86,30 +86,30 @@ function seopress_display_seo_term_metaboxe() {
 		wp_nonce_field( plugin_basename( __FILE__ ), 'seopress_cpt_nonce' );
 
 		global $typenow;
-		$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+                $prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		// init.
 		$disabled = array();
 
-		wp_enqueue_script( 'seopress-cpt-tabs', SEOPRESS_ASSETS_DIR . '/js/seopress-metabox' . $prefix . '.js', array( 'jquery-ui-tabs' ), SEOPRESS_VERSION, true );
+                wp_enqueue_script( 'webseo-cpt-tabs', WEBSEO_ASSETS_DIR . '/js/webseo-metabox' . $prefix . '.js', array( 'jquery-ui-tabs' ), WEBSEO_VERSION, true );
 
 		if ( 'seopress_404' !== $typenow ) {
 			// Tagify.
-			wp_enqueue_script( 'seopress-tagify', SEOPRESS_ASSETS_DIR . '/js/tagify' . $prefix . '.js', array( 'jquery' ), SEOPRESS_VERSION, true );
-			wp_register_style( 'seopress-tagify', SEOPRESS_ASSETS_DIR . '/css/tagify' . $prefix . '.css', array(), SEOPRESS_VERSION );
-			wp_enqueue_style( 'seopress-tagify' );
+                        wp_enqueue_script( 'webseo-tagify', WEBSEO_ASSETS_DIR . '/js/tagify' . $prefix . '.js', array( 'jquery' ), WEBSEO_VERSION, true );
+                        wp_register_style( 'webseo-tagify', WEBSEO_ASSETS_DIR . '/css/tagify' . $prefix . '.css', array(), WEBSEO_VERSION );
+                        wp_enqueue_style( 'webseo-tagify' );
 
 			// Register Google Snippet Preview / Content Analysis JS.
-			wp_enqueue_script(
-				'seopress-cpt-counters',
-				SEOPRESS_ASSETS_DIR . '/js/seopress-counters' . $prefix . '.js',
-				array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-accordion', 'jquery-ui-autocomplete' ),
-				SEOPRESS_VERSION,
-				array(
-					'strategy'  => 'defer',
-					'in_footer' => true,
-				)
-			);
+                        wp_enqueue_script(
+                                'webseo-cpt-counters',
+                                WEBSEO_ASSETS_DIR . '/js/webseo-counters' . $prefix . '.js',
+                                array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-accordion', 'jquery-ui-autocomplete' ),
+                                WEBSEO_VERSION,
+                                array(
+                                        'strategy'  => 'defer',
+                                        'in_footer' => true,
+                                )
+                        );
 
 			$seopress_real_preview = array(
 				'seopress_nonce'               => wp_create_nonce( 'seopress_real_preview_nonce' ),
@@ -119,9 +119,9 @@ function seopress_display_seo_term_metaboxe() {
 				'get_preview_meta_title'       => wp_create_nonce( 'get_preview_meta_title' ),
 				'get_preview_meta_description' => wp_create_nonce( 'get_preview_meta_description' ),
 			);
-			wp_localize_script( 'seopress-cpt-counters', 'seopressAjaxRealPreview', $seopress_real_preview );
+                        wp_localize_script( 'webseo-cpt-counters', 'seopressAjaxRealPreview', $seopress_real_preview );
 
-			wp_enqueue_script( 'seopress-media-uploader', SEOPRESS_ASSETS_DIR . '/js/seopress-media-uploader' . $prefix . '.js', array( 'jquery' ), SEOPRESS_VERSION, false );
+                        wp_enqueue_script( 'webseo-media-uploader', WEBSEO_ASSETS_DIR . '/js/webseo-media-uploader' . $prefix . '.js', array( 'jquery' ), WEBSEO_VERSION, false );
 			wp_enqueue_media();
 		}
 

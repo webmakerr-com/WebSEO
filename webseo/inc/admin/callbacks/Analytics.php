@@ -131,7 +131,7 @@ function seopress_google_analytics_disable_callback() {
 	<?php esc_attr_e( 'If you use a caching plugin, you have to exclude this JS file in your settings:', 'wp-seopress' ); ?>
 </p>
 <p class="description">
-	<?php echo wp_kses_post( __( '<code>/wp-content/plugins/wp-seopress/assets/js/seopress-cookies-ajax.js</code> and this cookie <code>seopress-user-consent-accept</code>', 'wp-seopress' ) ); ?>
+        <?php echo wp_kses_post( __( '<code>/wp-content/plugins/webseo/assets/js/webseo-cookies-ajax.js</code> and this cookie <code>seopress-user-consent-accept</code>', 'wp-seopress' ) ); ?>
 	<?php echo seopress_tooltip_link( esc_url( $docs['analytics']['custom_tracking'] ), esc_attr__( 'Hook to add custom tracking code with user consent - new window', 'wp-seopress' ) ); ?>
 </p>
 

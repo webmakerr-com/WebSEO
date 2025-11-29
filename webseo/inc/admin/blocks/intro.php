@@ -15,7 +15,7 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 
 <div id="seopress-intro" class="seopress-intro">
 	<div>
-		<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/logo-seopress.svg' ); ?>" width="72" height="72" alt=""/>
+            <img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/logo-webseo.svg' ); ?>" width="72" height="72" alt=""/>
 	</div>
 
 	<div>
