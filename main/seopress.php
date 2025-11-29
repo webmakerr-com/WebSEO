@@ -76,8 +76,23 @@ if ( file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
         );
 }
 
-// Bootstrap bundled Pro features.
-if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php' ) ) {
+// Bootstrap bundled Pro features unless the legacy standalone Pro plugin is still active.
+$legacy_pro_plugin      = 'wp-seopress-pro/seopress-pro.php';
+$legacy_pro_is_active   = false;
+$network_pro_is_active  = false;
+
+if ( function_exists( 'is_plugin_active' ) ) {
+        $legacy_pro_is_active  = is_plugin_active( $legacy_pro_plugin );
+        $network_pro_is_active = function_exists( 'is_plugin_active_for_network' ) ? is_plugin_active_for_network( $legacy_pro_plugin ) : false;
+} else {
+        $active_plugins       = (array) get_option( 'active_plugins', array() );
+        $legacy_pro_is_active = in_array( $legacy_pro_plugin, $active_plugins, true );
+
+        $network_active_plugins = (array) get_site_option( 'active_sitewide_plugins', array() );
+        $network_pro_is_active  = isset( $network_active_plugins[ $legacy_pro_plugin ] );
+}
+
+if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php' ) && ! $legacy_pro_is_active && ! $network_pro_is_active ) {
         require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php';
 }
 
