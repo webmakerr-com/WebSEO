@@ -88,9 +88,9 @@ class ModuleMetabox implements ExecuteHooks {
 					'\WebSEO\Tags\PostThumbnailUrlWidth',
 
 				),
-				'without_classes_pos' => array( '\WebSEO\Tags\Schema', '\SEOPressPro\Tags\Schema' ),
-			)
-		);
+                                'without_classes_pos' => array( '\WebSEO\Tags\Schema', '\WebSEOPro\Tags\Schema' ),
+                        )
+                );
 
 		$get_locale = get_locale();
 		if ( ! empty( $get_locale ) ) {

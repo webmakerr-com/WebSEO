@@ -439,6 +439,7 @@ add_settings_field(
 	'seopress_setting_section_advanced_security' // Section.
 );
 
-seopress_get_service( 'SectionPagesSEOPress' )->printSectionPages();
+seopress_get_service( 'SectionPagesWebSEO' )->printSectionPages();
 
+do_action( 'webseo_settings_advanced_after' );
 do_action( 'seopress_settings_advanced_after' );

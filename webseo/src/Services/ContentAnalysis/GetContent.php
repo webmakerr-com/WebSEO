@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use WebSEO\Helpers\ContentAnalysis;
-use SEOPressPro\Services\Audit;
+use WebSEOPro\Services\Audit;
 
 /**
  * GetContent
