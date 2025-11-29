@@ -30,9 +30,12 @@ abstract class JsonSchemaValue implements GetJsonFromFile {
                 $file = webseo_locate_template_file(
                         array(
                                 sprintf( 'json-schemas/%s.json', $this->getName() ),
-                                sprintf( 'pro-addon/templates/json-schemas/%s.json', $this->getName() ),
                         )
                 );
+
+                // Directory resolution already searches the main template folder and the bundled
+                // legacy Pro template directory (when present), so no explicit `pro-addon` path
+                // is required for schema lookups.
 
                 $file = webseo_apply_filters_compat( 'webseo_get_json_from_file', 'seopress_get_json_from_file', $file, $this->getName() );
 

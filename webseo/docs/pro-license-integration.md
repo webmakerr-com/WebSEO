@@ -14,6 +14,7 @@
 - **Settings parity**: maintain the existing option names (`seopress_pro_license_key`, `seopress_pro_license_status`, `seopress_pro_license_key_error`, `seopress_pro_license_home_url`, `seopress_pro_license_automatic_attempt`) to avoid breaking MainWP/import flows; expose them through the main plugin settings API so the License page can be relocated without breaking storage.
 - **API endpoints**: keep using the current store endpoint (`https://www.webseo.com`) and `edd_action` payloads from the callbacks, but route requests through a shared HTTP helper so both free and PRO paths can swap endpoints or headers centrally.
 - **UI embedding**: mount the existing license form into the main plugin’s admin menu (`webseo-license`) and ensure tasks block/status chips reference the same activation state once the PRO code is removed.
+- **Path replacements**: replace any `pro-addon/inc/admin/...` includes with the unified `inc/admin/...` copies so the UI, callbacks, and updater are loaded from the same directory tree that ships with the main plugin.
 
 ## Deprecation Path for PRO-Only License Helpers
 
