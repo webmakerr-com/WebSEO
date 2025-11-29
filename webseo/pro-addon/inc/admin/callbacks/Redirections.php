@@ -292,7 +292,7 @@ function seopress_get_redirection_pro_html() {
 			</ul>
 
 			<p>
-				<a href="https://www.seopress.org/wp-content/uploads/csv/seopress-redirections-example.csv"
+				<a href="https://www.webseo.com/wp-content/uploads/csv/seopress-redirections-example.csv"
 					target="_blank">
 					<?php esc_html_e('Download a CSV example', 'wp-seopress-pro'); ?>
 				</a>

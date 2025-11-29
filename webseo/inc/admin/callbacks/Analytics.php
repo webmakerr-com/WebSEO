@@ -2,7 +2,7 @@
 /**
  * Analytics callback.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Callbacks
  */
 
@@ -1461,7 +1461,7 @@ function seopress_google_analytics_matomo_cross_domain_sites_callback() {
 
 	printf(
 		'<input type="text" name="seopress_google_analytics_option_name[seopress_google_analytics_matomo_cross_domain_sites]" placeholder="'
-			. esc_html__( 'Enter your domains: seopress.org,sub.seopress.org,sub2.seopress.org', 'webseo' )
+                . esc_html__( 'Enter your domains: webseo.com,sub.webseo.com,sub2.webseo.com', 'webseo' )
 		. '" value="%s" aria-label="' . esc_attr__( 'Cross domains', 'webseo' ) . '"/>',
 		esc_html( $check )
 	);

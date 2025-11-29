@@ -2,7 +2,7 @@
 /**
  * Features list.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 

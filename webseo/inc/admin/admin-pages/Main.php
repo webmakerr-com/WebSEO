@@ -2,7 +2,7 @@
 /**
  * SEOPress Main functions.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Admin_Pages
  */
 

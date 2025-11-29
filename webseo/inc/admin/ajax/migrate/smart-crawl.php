@@ -2,7 +2,7 @@
 /**
  * SmartCrawl migration.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Ajax
  */
 

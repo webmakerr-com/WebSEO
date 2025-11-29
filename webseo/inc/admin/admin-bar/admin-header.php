@@ -2,7 +2,7 @@
 /**
  * SEOPress Admin Header functions.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Admin_Bar
  */
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Uninstall SEOPress
+ * Uninstall WebSEO
  *
  * @package Uninstall
  */
@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Thanks :)' );
 
 /**
- * Uninstall SEOPress
+ * Uninstall WebSEO
  *
  * @since 6.2
  *
@@ -50,7 +50,7 @@ class SEOPRESS_Uninstall {
 	}
 
 	/**
-	 * Delete all entries in the DB related to SEOPress Free AND PRO:
+         * Delete all entries in the DB related to WebSEO Free AND PRO:
 	 * Transients, post meta, options, custom tables
 	 *
 	 * @since 6.2

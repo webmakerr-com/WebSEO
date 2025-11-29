@@ -2,7 +2,7 @@
 /**
  * Dashboard AJAX functions.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Ajax
  */
 

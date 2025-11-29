@@ -4,7 +4,7 @@
  *
  * This file is used to handle the search console data.
  *
- * @package SEOPress PRO
+ * @package WebSEO PRO
  * @subpackage Actions
  */
 

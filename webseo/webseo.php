@@ -16,7 +16,7 @@
  */
 
 /*
-	Copyright 2016 - 2025 - Benjamin Denis  (email : contact@seopress.org)
+        Copyright 2016 - 2025 - Benjamin Denis  (email : contact@webseo.com)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 3, as
@@ -793,11 +793,11 @@ function seopress_plugin_action_links( $links, $file ) {
 		// Define action links.
 		$settings_link = '<a href="' . admin_url( 'admin.php?page=seopress-option' ) . '">' . __( 'Settings', 'webseo' ) . '</a>';
             $wizard_link   = '<a href="' . admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ) . '">' . __( 'Configuration Wizard', 'webseo' ) . '</a>';
-		$website_link  = '<a href="https://www.seopress.org/support/" target="_blank">' . __( 'Docs', 'webseo' ) . '</a>';
+		$website_link  = '<a href="https://www.webseo.com/support/" target="_blank">' . __( 'Docs', 'webseo' ) . '</a>';
 
 		// Add "GO PRO!" link for non-PRO users.
 		if ( ! is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-			$pro_link = '<a href="https://www.seopress.org/seopress-pro/" style="color:red;font-weight:bold" target="_blank">' . __( 'GO PRO!', 'webseo' ) . '</a>';
+			$pro_link = '<a href="https://www.webseo.com/seopress-pro/" style="color:red;font-weight:bold" target="_blank">' . __( 'GO PRO!', 'webseo' ) . '</a>';
 			array_unshift( $links, $pro_link );
 		}
 

@@ -2,7 +2,7 @@
 /**
  * Intro block.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 
@@ -21,14 +21,14 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 	<div>
 		<h1>
 		<?php
-			$seo_title = 'SEOPress';
+			$seo_title = 'WebSEO';
 		if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
 			if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' === seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
-				$seo_title = function_exists( 'seopress_pro_get_service' ) && method_exists( seopress_pro_get_service( 'OptionPro' ), 'getWhiteLabelListTitle' ) && seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() ? seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() : 'SEOPress';
+				$seo_title = function_exists( 'seopress_pro_get_service' ) && method_exists( seopress_pro_get_service( 'OptionPro' ), 'getWhiteLabelListTitle' ) && seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() ? seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() : 'WebSEO';
 			}
 		}
 
-			/* translators: %1$s plugin name, default: SEOPress, %2$s displays the current version number */
+			/* translators: %1$s plugin name, default: WebSEO, %2$s displays the current version number */
 			printf( esc_html__( 'Welcome to %1$s %2$s!', 'webseo' ), esc_html( $seo_title ), '9.3.0.3' );
 		?>
 		</h1>

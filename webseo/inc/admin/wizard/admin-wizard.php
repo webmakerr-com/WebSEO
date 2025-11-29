@@ -2,7 +2,7 @@
 /**
  * Setup Wizard Class.
  *
- * Takes new users through some basic steps to setup SEOPress.
+ * Takes new users through some basic steps to setup WebSEO.
  *
  * @version     3.5.8
  * @package    Wizard
@@ -97,10 +97,10 @@ class SEOPRESS_Admin_Setup_Wizard {
 			remove_all_actions( 'admin_notices' );
 			remove_all_actions( 'all_admin_notices' );
 
-			$this->seo_title = 'SEOPress';
+                        $this->seo_title = 'WebSEO';
 			if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
 				if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' === seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
-					$this->seo_title = function_exists( 'seopress_pro_get_service' ) && method_exists( seopress_pro_get_service( 'OptionPro' ), 'getWhiteLabelListTitle' ) && seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() ? seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() : 'SEOPress';
+                                        $this->seo_title = function_exists( 'seopress_pro_get_service' ) && method_exists( seopress_pro_get_service( 'OptionPro' ), 'getWhiteLabelListTitle' ) && seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() ? seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() : 'WebSEO';
 				}
 			}
 		}
@@ -443,7 +443,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	<div class="seopress-setup-content seopress-option">
 		<h1>
 			<?php
-				/* translators: %s plugin name, default: SEOPress */
+				/* translators: %s plugin name, default: WebSEO */
 				printf( esc_html__( 'Welcome to %s!', 'webseo' ), esc_html( $this->seo_title ) );
 			?>
 		</h1>
@@ -451,8 +451,8 @@ class SEOPRESS_Admin_Setup_Wizard {
 		<?php $this->setup_wizard_sub_steps(); ?>
 
 		<div class="seopress-tab active">
-			<h2><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'Configure %s with the best settings for your site', 'webseo' ), esc_html( $this->seo_title ) ); ?></h2>
-			<p class="store-setup intro"><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'The following wizard will help you configure %s and get you started quickly.', 'webseo' ), esc_html( $this->seo_title ) ); ?>
+			<h2><?php /* translators: %s default: WebSEO */ printf( esc_html__( 'Configure %s with the best settings for your site', 'webseo' ), esc_html( $this->seo_title ) ); ?></h2>
+			<p class="store-setup intro"><?php /* translators: %s default: WebSEO */ printf( esc_html__( 'The following wizard will help you configure %s and get you started quickly.', 'webseo' ), esc_html( $this->seo_title ) ); ?>
 			</p>
 
 			<?php
@@ -461,21 +461,21 @@ class SEOPRESS_Admin_Setup_Wizard {
 			if ( function_exists( 'extension_loaded' ) && ! extension_loaded( 'dom' ) ) {
 				$requirements[] = array(
 					'title' => __( 'PHP module "DOM" is missing on your server.', 'webseo' ),
-					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
+					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including WebSEO. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				);
 			}
 
 			if ( function_exists( 'extension_loaded' ) && ! extension_loaded( 'mbstring' ) ) {
 				$requirements[] = array(
 					'title' => __( 'PHP module "mbstring" is missing on your server.', 'webseo' ),
-					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
+					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including WebSEO. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				);
 			}
 
 			if ( function_exists( 'extension_loaded' ) && ! extension_loaded( 'intl' ) ) {
 				$requirements[] = array(
 					'title' => __( 'PHP module "intl" is missing on your server.', 'webseo' ),
-					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
+					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including WebSEO. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				);
 			}
 
@@ -539,7 +539,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 			<div class="seopress-tab active">
 				<form method="post">
-					<h2><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'Migrate your SEO metadata to %s', 'webseo' ), esc_html( $this->seo_title ) ); ?></h2>
+					<h2><?php /* translators: %s default: WebSEO */ printf( esc_html__( 'Migrate your SEO metadata to %s', 'webseo' ), esc_html( $this->seo_title ) ); ?></h2>
 
 					<p class="store-setup intro"><?php esc_html_e( 'The first step is to import your previous post and term metadata from other plugins to keep your SEO.', 'webseo' ); ?></p>
 
@@ -1496,7 +1496,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							</label>
 						</li>
 						<li class="description">
-							<?php /* translators: %s default: SEOPress */ printf( esc_html__( 'By default, %s redirects your Attachment pages to the parent post. Optimize this by redirecting the user directly to the URL of the media file.', 'webseo' ), esc_html( $this->seo_title ) ); ?>
+							<?php /* translators: %s default: WebSEO */ printf( esc_html__( 'By default, %s redirects your Attachment pages to the parent post. Optimize this by redirecting the user directly to the URL of the media file.', 'webseo' ), esc_html( $this->seo_title ) ); ?>
 						</li>
 
 						<!-- Automatically set alt text on already inserted image -->
@@ -1704,7 +1704,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Final step.
 	 */
 	public function seopress_setup_ready() {
-		// Remove SEOPress notice.
+		// Remove WebSEO notice.
                 $seopress_notices = get_option( 'webseo_notices', array() );
 
                 if ( empty( $seopress_notices ) ) {
@@ -1793,7 +1793,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 										<?php
 										$nl_pros = array(
-											__( 'Introducing your 2-hour-a-week SEO plan with SEOPress', 'webseo' ),
+											__( 'Introducing your 2-hour-a-week SEO plan with WebSEO', 'webseo' ),
 											__( 'Week 1: 2 Hours to Check SEO Progress and Issues', 'webseo' ),
 											__( 'Week 2: 2 Hours to Create SEO Optimized Content', 'webseo' ),
 											__( 'Week 3: 2 Hours to do On-Page Optimizations', 'webseo' ),
@@ -1824,7 +1824,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 										</p>
 
 										<?php
-										/* translators: %s URL of our privacy policy  */ echo wp_kses_post( sprintf( __( 'I accept that SEOPress can store and use my email address in order to send me a newsletter. Read our <a href="%s" target="_blank" title="Open in a new window">privacy policy</a>.', 'webseo' ), esc_url( 'https://www.seopress.org/privacy-policy/' ) ) );
+										/* translators: %s URL of our privacy policy  */ echo wp_kses_post( sprintf( __( 'I accept that WebSEO can store and use my email address in order to send me a newsletter. Read our <a href="%s" target="_blank" title="Open in a new window">privacy policy</a>.', 'webseo' ), esc_url( 'https://www.webseo.com/privacy-policy/' ) ) );
 									} elseif ( isset( $_GET['sub_routine'] ) && '1' === $_GET['sub_routine'] ) {
 										?>
 										<p style="font-size: 16px;font-weight: bold;"><?php esc_html_e( 'Thank you for your subscription!', 'webseo' ); ?></p>
@@ -1848,8 +1848,8 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 		// Send email to SG if we have user consent.
 		if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' !== seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
-			$endpoint_url         = 'https://www.seopress.org/wizard-nl/';
-			$endpoint_url_routine = 'https://www.seopress.org/wizard-nl-routine/';
+			$endpoint_url         = 'https://www.webseo.com/wizard-nl/';
+			$endpoint_url_routine = 'https://www.webseo.com/wizard-nl-routine/';
 
 			$email         = isset( $_POST['seopress_nl'] ) ? sanitize_text_field( wp_unslash( $_POST['seopress_nl'] ) ) : '';
 			$email_routine = isset( $_POST['seopress_nl_routine'] ) ? sanitize_text_field( wp_unslash( $_POST['seopress_nl_routine'] ) ) : '';

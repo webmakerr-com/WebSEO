@@ -2,7 +2,7 @@
 /**
  * Ebooks block.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 
@@ -56,37 +56,37 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 					'seo-success'    => array(
 						'en' => array(
 							'title' => 'SEO Success for WordPress with a Two-Hours-a-Week Routine',
-							'url'   => 'https://www.seopress.org/support/ebooks/seo-success-for-wordpress-with-a-two-hours-a-week-routine/',
-							'cover' => 'https://www.seopress.org/wp-content/uploads/2023/07/seopress-2hours-seo-en-cover-scaled.jpg',
+							'url'   => 'https://www.webseo.com/support/ebooks/seo-success-for-wordpress-with-a-two-hours-a-week-routine/',
+							'cover' => 'https://www.webseo.com/wp-content/uploads/2023/07/seopress-2hours-seo-en-cover-scaled.jpg',
 						),
 						'fr' => array(
 							'title' => 'Réussir son SEO sur WordPress avec deux heures de travail par semaine',
-							'url'   => 'https://www.seopress.org/fr/support/ebooks/reussir-son-seo-sur-wordpress-avec-deux-heures-de-travail-semaine/',
-							'cover' => 'https://www.seopress.org/fr/wp-content/uploads/sites/2/2023/07/seopress-2hours-seo-fr-cover-scaled.jpg',
+							'url'   => 'https://www.webseo.com/fr/support/ebooks/reussir-son-seo-sur-wordpress-avec-deux-heures-de-travail-semaine/',
+							'cover' => 'https://www.webseo.com/fr/wp-content/uploads/sites/2/2023/07/seopress-2hours-seo-fr-cover-scaled.jpg',
 						),
 					),
 					'search-console' => array(
 						'en' => array(
 							'title' => 'Maximizing Your WordPress SEO with Google Search Console',
-							'url'   => 'https://www.seopress.org/support/ebooks/maximizing-your-wordpress-seo-with-google-search-console/',
-							'cover' => 'https://www.seopress.org/wp-content/uploads/2023/05/seopress-google-search-console-en.png',
+							'url'   => 'https://www.webseo.com/support/ebooks/maximizing-your-wordpress-seo-with-google-search-console/',
+							'cover' => 'https://www.webseo.com/wp-content/uploads/2023/05/seopress-google-search-console-en.png',
 						),
 						'fr' => array(
 							'title' => 'Maximiser votre référencement WordPress avec Google Search Console',
-							'url'   => 'https://www.seopress.org/fr/support/ebooks/maximiser-votre-referencement-wordpress-avec-google-search-console/',
-							'cover' => 'https://www.seopress.org/fr/wp-content/uploads/sites/2/2023/05/seopress-google-search-console-fr.png',
+							'url'   => 'https://www.webseo.com/fr/support/ebooks/maximiser-votre-referencement-wordpress-avec-google-search-console/',
+							'cover' => 'https://www.webseo.com/fr/wp-content/uploads/sites/2/2023/05/seopress-google-search-console-fr.png',
 						),
 					),
 					'image-seo'      => array(
 						'en' => array(
 							'title' => 'More Visibility with Image SEO',
-							'url'   => 'https://www.seopress.org/support/ebooks/more-visibility-with-image-seo/',
-							'cover' => 'https://www.seopress.org/wp-content/uploads/2022/07/seopress-ebook-more-visibility-image-seo-en@2x.png',
+							'url'   => 'https://www.webseo.com/support/ebooks/more-visibility-with-image-seo/',
+							'cover' => 'https://www.webseo.com/wp-content/uploads/2022/07/seopress-ebook-more-visibility-image-seo-en@2x.png',
 						),
 						'fr' => array(
 							'title' => 'Devenez plus visible grace au référencement de vos images',
-							'url'   => 'https://www.seopress.org/fr/support/ebooks/devenez-plus-visible-grace-au-referencement-de-vos-images/',
-							'cover' => 'https://www.seopress.org/fr/wp-content/uploads/sites/2/2022/07/seopress-ebook-more-visibility-image-seo-fr@2x.png',
+							'url'   => 'https://www.webseo.com/fr/support/ebooks/devenez-plus-visible-grace-au-referencement-de-vos-images/',
+							'cover' => 'https://www.webseo.com/fr/wp-content/uploads/sites/2/2022/07/seopress-ebook-more-visibility-image-seo-fr@2x.png',
 						),
 					),
 				);

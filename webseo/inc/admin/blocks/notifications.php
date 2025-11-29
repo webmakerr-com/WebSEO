@@ -2,7 +2,7 @@
 /**
  * Notifications block.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 

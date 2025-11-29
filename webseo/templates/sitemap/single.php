@@ -2,7 +2,7 @@
 /**
  * Sitemap single template.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Templates
  */
 

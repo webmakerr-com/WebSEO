@@ -2,7 +2,7 @@
 /**
  * Squirrly migration.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Ajax
  */
 

@@ -2,7 +2,7 @@
 /**
  * SEOPress Social functions.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Admin_Pages
  */
 

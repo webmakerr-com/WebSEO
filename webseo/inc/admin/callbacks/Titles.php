@@ -2,7 +2,7 @@
 /**
  * Titles callbacks
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Callbacks
  */
 

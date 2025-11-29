@@ -2,7 +2,7 @@
 /**
  * SEO Framework migration.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Ajax
  */
 
