@@ -4,6 +4,7 @@ namespace WebSEO\Compose;
 
 use WebSEO\Helpers\TagCompose;
 use WebSEO\Models\GetTagValue;
+use function webseo_apply_filters_compat;
 
 /**
  * UseTags
@@ -170,13 +171,13 @@ trait UseTags {
 if ( \seopress_is_pro_license_active() && defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH' ) && file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags' ) && is_dir( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags' ) ) {
 $tags = $this->buildTags(
 SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags',
-				array(
-					'root'         => '\\SEOPressPro\\Tags\\%s%s',
-					'subNamespace' => '',
-				),
-				$tags
-			);
-		}
+                                array(
+                                        'root'         => '\\WebSEOPro\\Tags\\%s%s',
+                                        'subNamespace' => '',
+                                ),
+                                $tags
+                        );
+                }
 
 		if ( isset( $options['without_classes'] ) ) {
 			$without_classes     = isset( $options['without_classes'] );
@@ -196,10 +197,10 @@ SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags',
 			}
 		}
 
-		$this->tags_available[ $hash ] = apply_filters( 'seopress_tags_available', $tags );
+                $this->tags_available[ $hash ] = webseo_apply_filters_compat( 'webseo_tags_available', 'seopress_tags_available', $tags );
 
-		return $this->tags_available[ $hash ];
-	}
+                return $this->tags_available[ $hash ];
+        }
 
 	/**
 	 * The __call function.

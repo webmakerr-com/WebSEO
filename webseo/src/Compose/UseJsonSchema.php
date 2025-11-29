@@ -3,6 +3,7 @@
 namespace WebSEO\Compose;
 
 use WebSEO\Models\GetJsonFromFile;
+use function webseo_apply_filters_compat;
 
 /**
  * UseJsonSchema
@@ -138,9 +139,9 @@ trait UseJsonSchema {
 	 * @return array
 	 */
 	public function getSchemasAvailable() { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
-		if ( null !== $this->schemas_available ) {
-			return apply_filters( 'seopress_schemas_available', $this->schemas_available );
-		}
+                if ( null !== $this->schemas_available ) {
+                        return webseo_apply_filters_compat( 'webseo_schemas_available', 'seopress_schemas_available', $this->schemas_available );
+                }
 
 		$schemas = $this->buildSchemas( SEOPRESS_PLUGIN_DIR_PATH . 'src/JsonSchemas' );
 
@@ -148,16 +149,16 @@ if ( \seopress_is_pro_license_active() && defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH
 $schemas = $this->buildSchemas(
 SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/JsonSchemas',
 				$schemas,
-				array(
-					'root'         => '\\SEOPressPro\\JsonSchemas\\%s%s',
-					'subNamespace' => '',
-				)
-			);
-		}
-		$this->schemas_available = $schemas;
+                                array(
+                                        'root'         => '\\WebSEOPro\\JsonSchemas\\%s%s',
+                                        'subNamespace' => '',
+                                )
+                        );
+                }
+                $this->schemas_available = $schemas;
 
-		return apply_filters( 'seopress_schemas_available', $this->schemas_available );
-	}
+                return webseo_apply_filters_compat( 'webseo_schemas_available', 'seopress_schemas_available', $this->schemas_available );
+        }
 
 	/**
 	 * The __call function.
