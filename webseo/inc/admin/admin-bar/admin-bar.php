@@ -63,7 +63,7 @@ function seopress_admin_bar_links() {
 		}
 
 		if ( true === $metarobots ) {
-			$noindex  = '<a class="wrap-seopress-noindex" href="' . admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_advanced' ) . '">';
+			$noindex  = '<a class="wrap-seopress-noindex" href="' . admin_url( 'admin.php?page=webseo-titles#tab=tab_seopress_titles_advanced' ) . '">';
 			$noindex .= '<span class="ab-icon dashicons dashicons-hidden"></span>';
 			$noindex .= __( 'noindex is on!', 'wp-seopress' );
 			$noindex .= '</a>';
@@ -78,7 +78,7 @@ function seopress_admin_bar_links() {
 			'parent' => false,
 			'id'     => 'seopress',
 			'title'  => $title . $counter . $noindex,
-			'href'   => admin_url( 'admin.php?page=seopress-option' ),
+			'href'   => admin_url( 'admin.php?page=webseo-option' ),
 		)
 	);
 
@@ -133,7 +133,7 @@ function seopress_admin_bar_links() {
 					'parent' => 'seopress',
 					'id'     => 'seopress_custom_sub_menu_meta_robots',
 					'title'  => $robots,
-					'href'   => admin_url( 'admin.php?page=seopress-titles' ),
+					'href'   => admin_url( 'admin.php?page=webseo-titles' ),
 				)
 			);
 		}
@@ -144,7 +144,7 @@ function seopress_admin_bar_links() {
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_titles',
 			'title'  => __( 'Titles & Metas', 'wp-seopress' ),
-			'href'   => admin_url( 'admin.php?page=seopress-titles' ),
+			'href'   => admin_url( 'admin.php?page=webseo-titles' ),
 		)
 	);
 	$wp_admin_bar->add_menu(
@@ -152,7 +152,7 @@ function seopress_admin_bar_links() {
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_xml_sitemap',
 			'title'  => __( 'XML - HTML Sitemap', 'wp-seopress' ),
-			'href'   => admin_url( 'admin.php?page=seopress-xml-sitemap' ),
+			'href'   => admin_url( 'admin.php?page=webseo-xml-sitemap' ),
 		)
 	);
 	$wp_admin_bar->add_menu(
@@ -160,7 +160,7 @@ function seopress_admin_bar_links() {
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_social',
 			'title'  => __( 'Social Networks', 'wp-seopress' ),
-			'href'   => admin_url( 'admin.php?page=seopress-social' ),
+			'href'   => admin_url( 'admin.php?page=webseo-social' ),
 		)
 	);
 	$wp_admin_bar->add_menu(
@@ -168,7 +168,7 @@ function seopress_admin_bar_links() {
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_google_analytics',
 			'title'  => __( 'Analytics', 'wp-seopress' ),
-			'href'   => admin_url( 'admin.php?page=seopress-google-analytics' ),
+			'href'   => admin_url( 'admin.php?page=webseo-google-analytics' ),
 		)
 	);
 	$wp_admin_bar->add_menu(
@@ -176,7 +176,7 @@ function seopress_admin_bar_links() {
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_instant_indexing',
 			'title'  => __( 'Instant Indexing', 'wp-seopress' ),
-			'href'   => admin_url( 'admin.php?page=seopress-instant-indexing' ),
+			'href'   => admin_url( 'admin.php?page=webseo-instant-indexing' ),
 		)
 	);
 	$wp_admin_bar->add_menu(
@@ -184,7 +184,7 @@ function seopress_admin_bar_links() {
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_advanced',
 			'title'  => __( 'Advanced', 'wp-seopress' ),
-			'href'   => admin_url( 'admin.php?page=seopress-advanced' ),
+			'href'   => admin_url( 'admin.php?page=webseo-advanced' ),
 		)
 	);
 	$wp_admin_bar->add_menu(
@@ -192,7 +192,7 @@ function seopress_admin_bar_links() {
 			'parent' => 'seopress',
 			'id'     => 'seopress_custom_sub_menu_import_export',
 			'title'  => __( 'Tools', 'wp-seopress' ),
-			'href'   => admin_url( 'admin.php?page=seopress-import-export' ),
+			'href'   => admin_url( 'admin.php?page=webseo-import-export' ),
 		)
 	);
 

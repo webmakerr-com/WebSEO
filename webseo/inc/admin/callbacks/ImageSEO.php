@@ -145,7 +145,7 @@ function seopress_advanced_advanced_image_auto_alt_editor_callback() {
 			echo '<p class="seopress-help description"><a href="' . esc_url( $docs['ai']['introduction'] ) . '" target="_blank">' . esc_attr__( 'Our PRO version can optimize your image ALT texts for Search Engines using AI and Machine Learning.', 'wp-seopress' ) . '</a><span class="dashicons dashicons-external"></span></p>';
 		}
 	} else {
-		echo '<p class="seopress-help description"><a href="' . esc_url( admin_url( 'admin.php?page=seopress-pro-page#tab=tab_seopress_ai' ) ) . '">' . esc_attr__( 'Use AI to automatically describe your image files.', 'wp-seopress' ) . '</a></p>';
+		echo '<p class="seopress-help description"><a href="' . esc_url( admin_url( 'admin.php?page=webseo-pro-page#tab=tab_seopress_ai' ) ) . '">' . esc_attr__( 'Use AI to automatically describe your image files.', 'wp-seopress' ) . '</a></p>';
 	}
 
 	if ( isset( $options['seopress_advanced_advanced_image_auto_alt_editor'] ) ) {

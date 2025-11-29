@@ -344,7 +344,7 @@ function seopress_titles_single_titles_callback() {
 					<p>
 								<?php
 									/* translators: %s documentation URL */
-									echo wp_kses_post( sprintf( __( 'This custom post type is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you <a href="%s">check this out here</a>.', 'wp-seopress' ), admin_url( 'admin.php?page=seopress-xml-sitemap' ) ) );
+									echo wp_kses_post( sprintf( __( 'This custom post type is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you <a href="%s">check this out here</a>.', 'wp-seopress' ), admin_url( 'admin.php?page=webseo-xml-sitemap' ) ) );
 								?>
 					</p>
 				</div>
@@ -825,7 +825,7 @@ function seopress_titles_tax_titles_callback() {
 												?>
 												<div class="seopress-notice is-error">
 													<p>
-														<?php echo /* translators: %s: "XML sitemap settings URL" */ wp_kses_post( sprintf( __( 'This custom taxonomy is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you check this out from the <a href="%s">XML sitemap settings</a>.', 'wp-seopress' ), esc_url( admin_url( 'admin.php?page=seopress-xml-sitemap#tab=tab_seopress_xml_sitemap_taxonomies' ) ) ) ); ?>
+														<?php echo /* translators: %s: "XML sitemap settings URL" */ wp_kses_post( sprintf( __( 'This custom taxonomy is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you check this out from the <a href="%s">XML sitemap settings</a>.', 'wp-seopress' ), esc_url( admin_url( 'admin.php?page=webseo-xml-sitemap#tab=tab_seopress_xml_sitemap_taxonomies' ) ) ) ); ?>
 													</p>
 												</div>
 												<?php

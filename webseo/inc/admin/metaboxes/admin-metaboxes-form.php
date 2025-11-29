@@ -96,7 +96,7 @@ if ( 'term.php' === $pagenow || 'edit-tags.php' === $pagenow ) { ?>
 						<p class="notice notice-info">
 										<?php
 										/* translators: %s documentation URL */
-										echo wp_kses_post( sprintf( __( 'This is your <strong>Shop page</strong>. Go to <a href="%s"><strong>SEO > Titles & Metas > Archives > Products</strong></a> to edit your title and meta description.', 'wp-seopress' ), esc_url( admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_archives' ) ) ) );
+										echo wp_kses_post( sprintf( __( 'This is your <strong>Shop page</strong>. Go to <a href="%s"><strong>SEO > Titles & Metas > Archives > Products</strong></a> to edit your title and meta description.', 'wp-seopress' ), esc_url( admin_url( 'admin.php?page=webseo-titles#tab=tab_seopress_titles_archives' ) ) ) );
 										?>
 						</p>
 										<?php
@@ -273,7 +273,7 @@ if ( 'term.php' === $pagenow || 'edit-tags.php' === $pagenow ) { ?>
 						<span class="sp-section"><?php esc_html_e( 'Meta robots settings', 'wp-seopress' ); ?></span>
 						<p class="description">
 							<?php
-							$url = admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_single' );
+							$url = admin_url( 'admin.php?page=webseo-titles#tab=tab_seopress_titles_single' );
 								/* translators: %s: link to plugin settings page */
 								echo wp_kses_post( sprintf( __( 'You cannot uncheck a parameter? This is normal, and it‘s most likely defined in the <a href="%s" class="components-button is-link">global settings of the plugin.</a>', 'wp-seopress' ), esc_url( $url ) ) );
 							?>
