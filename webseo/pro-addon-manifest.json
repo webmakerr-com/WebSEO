@@ -2757,439 +2757,512 @@
     "path": "pro-addon/templates/json-schemas/aggregate-rating.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/aggregate-rating.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/article.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/article.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/author.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/author.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/brand.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/brand.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/course-instance.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/course-instance.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/course.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/course.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/defined-region.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/defined-region.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/event.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/event.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/faq.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/faq.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/geo.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/geo.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/how-to-step.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/how-to-step.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/how-to.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/how-to.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/job.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/job.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/local-business.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/local-business.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/main-entity-of-page.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/main-entity-of-page.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/main-entity.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/main-entity.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/monetary-amount.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/monetary-amount.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/nutrition-information.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/nutrition-information.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/offer-shipping-details.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/offer-shipping-details.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/offer.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/offer.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/opening-hours.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/opening-hours.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/person.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/person.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/place.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/place.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/postal-address.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/postal-address.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/product.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/product.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/rating.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/rating.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/recipe.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/recipe.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/review.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/review.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/schedule.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/schedule.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/service.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/service.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/softwareapp.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/softwareapp.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/speakable.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/speakable.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/thing.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/thing.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/video.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/video.json"
   },
   {
     "path": "pro-addon/templates/json-schemas/virtual-location.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/json-schemas/virtual-location.json"
   },
   {
     "path": "pro-addon/templates/stop-words/arabic.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/arabic.json"
   },
   {
     "path": "pro-addon/templates/stop-words/armenian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/armenian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/basque.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/basque.json"
   },
   {
     "path": "pro-addon/templates/stop-words/bulgarian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/bulgarian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/catalan.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/catalan.json"
   },
   {
     "path": "pro-addon/templates/stop-words/cebuano.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/cebuano.json"
   },
   {
     "path": "pro-addon/templates/stop-words/chinese.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/chinese.json"
   },
   {
     "path": "pro-addon/templates/stop-words/czech.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/czech.json"
   },
   {
     "path": "pro-addon/templates/stop-words/danish.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/danish.json"
   },
   {
     "path": "pro-addon/templates/stop-words/dutch.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/dutch.json"
   },
   {
     "path": "pro-addon/templates/stop-words/english.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/english.json"
   },
   {
     "path": "pro-addon/templates/stop-words/estonian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/estonian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/finnish.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/finnish.json"
   },
   {
     "path": "pro-addon/templates/stop-words/french.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/french.json"
   },
   {
     "path": "pro-addon/templates/stop-words/german.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/german.json"
   },
   {
     "path": "pro-addon/templates/stop-words/greek.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/greek.json"
   },
   {
     "path": "pro-addon/templates/stop-words/gujarati.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/gujarati.json"
   },
   {
     "path": "pro-addon/templates/stop-words/hebrew.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/hebrew.json"
   },
   {
     "path": "pro-addon/templates/stop-words/hindi.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/hindi.json"
   },
   {
     "path": "pro-addon/templates/stop-words/hungarian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/hungarian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/indonesian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/indonesian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/italian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/italian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/japanese.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/japanese.json"
   },
   {
     "path": "pro-addon/templates/stop-words/latvian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/latvian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/malay.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/malay.json"
   },
   {
     "path": "pro-addon/templates/stop-words/norwegian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/norwegian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/persian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/persian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/portuguese.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/portuguese.json"
   },
   {
     "path": "pro-addon/templates/stop-words/romanian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/romanian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/russian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/russian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/slovak.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/slovak.json"
   },
   {
     "path": "pro-addon/templates/stop-words/spanish.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/spanish.json"
   },
   {
     "path": "pro-addon/templates/stop-words/swedish.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/swedish.json"
   },
   {
     "path": "pro-addon/templates/stop-words/tagalog.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/tagalog.json"
   },
   {
     "path": "pro-addon/templates/stop-words/thai.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/thai.json"
   },
   {
     "path": "pro-addon/templates/stop-words/turkish.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/turkish.json"
   },
   {
     "path": "pro-addon/templates/stop-words/ukrainian.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/ukrainian.json"
   },
   {
     "path": "pro-addon/templates/stop-words/vietnamese.json",
     "type": "pro-only",
     "notes": "No main plugin counterpart.",
-    "action": "keep"
+    "action": "keep",
+    "target": "templates/stop-words/vietnamese.json"
   },
   {
     "path": "pro-addon/vendor/autoload.php",

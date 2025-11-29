@@ -18,7 +18,58 @@ use WebSEO\Core\Kernel;
  * @return object
  */
 function seopress_get_service( $service ) {
-	return Kernel::getContainer()->getServiceByName( $service );
+        return Kernel::getContainer()->getServiceByName( $service );
+}
+
+if ( ! function_exists( 'webseo_locate_template_file' ) ) {
+        /**
+         * Locate a template while supporting legacy Pro template paths.
+         *
+         * @param array $relative_paths Possible relative paths to search for.
+         * @param array $directories    Optional directories to search within.
+         *
+         * @return string
+         */
+        function webseo_locate_template_file( array $relative_paths, array $directories = array() ) {
+                $relative_paths = array_map( static function ( $path ) {
+                        return ltrim( $path, '/\\' );
+                }, $relative_paths );
+
+                $default_directories = array_filter(
+                        array(
+                                WEBSEO_TEMPLATE_DIR,
+                                WEBSEO_PLUGIN_DIR_PATH,
+                                defined( 'WEBSEO_LEGACY_PRO_TEMPLATE_DIR' ) ? WEBSEO_LEGACY_PRO_TEMPLATE_DIR : null,
+                        )
+                );
+
+                $directories = array_values( array_unique( array_filter( array_merge( $directories, $default_directories ) ) ) );
+
+                $directories = webseo_apply_filters_compat(
+                        'webseo_template_directories',
+                        'seopress_template_directories',
+                        array_map( 'untrailingslashit', $directories ),
+                        $relative_paths
+                );
+
+                foreach ( $relative_paths as $relative_path ) {
+                        $theme_match = locate_template( $relative_path );
+
+                        if ( $theme_match ) {
+                                return $theme_match;
+                        }
+
+                        foreach ( $directories as $directory ) {
+                                $candidate = trailingslashit( $directory ) . $relative_path;
+
+                                if ( file_exists( $candidate ) ) {
+                                        return $candidate;
+                                }
+                        }
+                }
+
+                return '';
+        }
 }
 
 if ( ! function_exists( 'array_key_last' ) ) {
