@@ -39,6 +39,7 @@ defined( 'ABSPATH' ) || exit( 'Please don’t call the plugin directly. Thanks :
  */
 define( 'SEOPRESS_VERSION', '9.3.0.3' );
 define( 'SEOPRESS_AUTHOR', 'Benjamin Denis' );
+define( 'SEOPRESS_PLUGIN_FILE', __FILE__ );
 define( 'SEOPRESS_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SEOPRESS_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'SEOPRESS_ASSETS_DIR', SEOPRESS_PLUGIN_DIR_URL . 'assets' );
@@ -48,6 +49,10 @@ define( 'SEOPRESS_TEMPLATE_JSON_SCHEMAS', SEOPRESS_TEMPLATE_DIR . '/json-schemas
 define( 'SEOPRESS_PATH_PUBLIC', SEOPRESS_PLUGIN_DIR_PATH . 'public' );
 define( 'SEOPRESS_URL_PUBLIC', SEOPRESS_PLUGIN_DIR_URL . 'public' );
 define( 'SEOPRESS_URL_ASSETS', SEOPRESS_PLUGIN_DIR_URL . 'assets' );
+
+// Pro assets shipped within the main plugin.
+define( 'SEOPRESS_PRO_PLUGIN_DIR_PATH', SEOPRESS_PLUGIN_DIR_PATH . 'pro-addon/' );
+define( 'SEOPRESS_PRO_PLUGIN_DIR_URL', SEOPRESS_PLUGIN_DIR_URL . 'pro-addon/' );
 
 /**
  * Kernel
@@ -61,14 +66,19 @@ if ( file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
 
 // Initialize the kernel if the vendor autoload exists.
 if ( file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
-	Kernel::execute(
-		array(
-			'file'      => __FILE__,
-			'slug'      => 'wp-seopress',
+        Kernel::execute(
+                array(
+                        'file'      => __FILE__,
+                        'slug'      => 'wp-seopress',
 			'main_file' => 'seopress',
 			'root'      => __DIR__,
 		)
-	);
+        );
+}
+
+// Bootstrap bundled Pro features.
+if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php' ) ) {
+        require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php';
 }
 
 /**
@@ -90,10 +100,9 @@ register_activation_hook( __FILE__, 'seopress_activation' );
  * @return void
  */
 function seopress_deactivation() {
-	deactivate_plugins( array( 'wp-seopress-pro/seopress-pro.php' ) );
-	delete_option( 'seopress_activated' );
-	flush_rewrite_rules( false );
-	do_action( 'seopress_deactivation' );
+        delete_option( 'seopress_activated' );
+        flush_rewrite_rules( false );
+        do_action( 'seopress_deactivation' );
 }
 register_deactivation_hook( __FILE__, 'seopress_deactivation' );
 

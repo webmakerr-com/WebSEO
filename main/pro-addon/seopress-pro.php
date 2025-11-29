@@ -35,7 +35,7 @@
 // To prevent calling the plugin directly.
 defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Thanks :)' );
 
-update_option('seopress_pro_license_key', 'B5E0B5F8DD8689E6ACA49DD6E6E1A930'); 
+update_option('seopress_pro_license_key', 'B5E0B5F8DD8689E6ACA49DD6E6E1A930');
 update_option('seopress_pro_license_status', 'valid');
 
 /**
@@ -62,19 +62,22 @@ define( 'SEOPRESS_PRO_TEMPLATE_STOP_WORDS', SEOPRESS_PRO_TEMPLATE_DIR . '/stop-w
 use SEOPressPro\Core\Kernel;
 require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-autoload.php';
 
-if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . '/vendor/autoload.php' ) && file_exists( WP_PLUGIN_DIR . '/wp-seopress/seopress-autoload.php' ) ) {
-	require_once WP_PLUGIN_DIR . '/wp-seopress/seopress-autoload.php';
-	require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . '/seopress-pro-functions.php';
-	require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . '/inc/admin/cron.php';
+if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . '/vendor/autoload.php' ) && defined( 'SEOPRESS_PLUGIN_DIR_PATH' ) ) {
+        if ( file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'seopress-autoload.php' ) ) {
+                require_once SEOPRESS_PLUGIN_DIR_PATH . 'seopress-autoload.php';
+        }
 
-	Kernel::execute(
-		array(
-			'file'      => __FILE__,
-			'slug'      => 'wp-seopress-pro',
-			'main_file' => 'seopress-pro',
-			'root'      => __DIR__,
-		)
-	);
+        require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . '/seopress-pro-functions.php';
+        require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . '/inc/admin/cron.php';
+
+        Kernel::execute(
+                array(
+                        'file'      => __FILE__,
+                        'slug'      => 'wp-seopress-pro',
+                        'main_file' => 'seopress-pro',
+                        'root'      => __DIR__,
+                )
+        );
 }
 
 /**
@@ -233,31 +236,11 @@ function seopress_pro_install_plugin( $plugin_slug ) {
  * @return void
  */
 function seopress_pro_activation() {
-	require_once ABSPATH . 'wp-admin/includes/plugin.php';
-	if ( ! function_exists( 'activate_plugins' ) ) {
-		return;
-	}
+        add_option( 'seopress_pro_activated', 'yes', '', false );
 
-	if ( ! function_exists( 'get_plugins' ) ) {
-		return;
-	}
+        flush_rewrite_rules( false );
 
-	$plugins = get_plugins();
-	if ( empty( $plugins['wp-seopress/seopress.php'] ) ) { // If SEOPress Free is NOT installed.
-		seopress_pro_install_plugin( 'wp-seopress' );
-		activate_plugins( 'wp-seopress/seopress.php' );
-	}
-
-	if ( ! empty( $plugins['wp-seopress/seopress.php'] ) ) { // If SEOPress Free is installed.
-		if ( ! is_plugin_active( 'wp-seopress/seopress.php' ) ) { // If SEOPress Free is not activated.
-			activate_plugins( 'wp-seopress/seopress.php' );
-		}
-		add_option( 'seopress_pro_activated', 'yes', '', false );
-
-		flush_rewrite_rules( false );
-
-		seopress_pro_cron();
-	}
+        seopress_pro_cron();
 
 	// Add Redirections caps to user with "manage_options" capability.
 	$roles = get_editable_roles();
@@ -292,7 +275,7 @@ function seopress_pro_activation() {
 
 	do_action( 'seopress_pro_activation' );
 }
-register_activation_hook( __FILE__, 'seopress_pro_activation' );
+register_activation_hook( defined( 'SEOPRESS_PLUGIN_FILE' ) ? SEOPRESS_PLUGIN_FILE : __FILE__, 'seopress_pro_activation' );
 
 /**
  * Hooks deactivation
@@ -310,7 +293,7 @@ function seopress_pro_deactivation() {
 	wp_clear_scheduled_hook( 'seopress_matomo_analytics_cron' );
 	do_action( 'seopress_pro_deactivation' );
 }
-register_deactivation_hook( __FILE__, 'seopress_pro_deactivation' );
+register_deactivation_hook( defined( 'SEOPRESS_PLUGIN_FILE' ) ? SEOPRESS_PLUGIN_FILE : __FILE__, 'seopress_pro_deactivation' );
 
 /**
  * Loads the SEOPress PRO admin + core + API
