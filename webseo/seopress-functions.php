@@ -106,20 +106,38 @@ add_filter( 'wp_robots', 'seopress_robots_wc_pages', 20 );
 /**
  * Remove default WC meta robots (useful for WooCommerce < 5.7).
  */
-function seopress_compatibility_woocommerce() {
-	if ( ! is_admin() && function_exists( 'is_plugin_active' ) && is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-		remove_action( 'wp_head', 'wc_page_noindex' );
-	}
+function webseo_compatibility_woocommerce() {
+        webseo_do_action_compat( 'webseo_integration_woocommerce', 'seopress_compatibility_woocommerce' );
+
+        if ( ! is_admin() && function_exists( 'is_plugin_active' ) && is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+                remove_action( 'wp_head', 'wc_page_noindex' );
+        }
 }
-add_action( 'wp_head', 'seopress_compatibility_woocommerce', 0 );
+add_action( 'wp_head', 'webseo_compatibility_woocommerce', 0 );
+
+/**
+ * @deprecated Use webseo_compatibility_woocommerce().
+ */
+function seopress_compatibility_woocommerce() {
+        webseo_compatibility_woocommerce();
+}
 
 /**
  * Remove Elementor description meta tag.
  */
-function seopress_compatibility_hello_elementor() {
-	remove_action( 'wp_head', 'hello_elementor_add_description_meta_tag' );
+function webseo_compatibility_hello_elementor() {
+        webseo_do_action_compat( 'webseo_integration_hello_elementor', 'seopress_compatibility_hello_elementor' );
+
+        remove_action( 'wp_head', 'hello_elementor_add_description_meta_tag' );
 }
-add_action( 'after_setup_theme', 'seopress_compatibility_hello_elementor' );
+add_action( 'after_setup_theme', 'webseo_compatibility_hello_elementor' );
+
+/**
+ * @deprecated Use webseo_compatibility_hello_elementor().
+ */
+function seopress_compatibility_hello_elementor() {
+        webseo_compatibility_hello_elementor();
+}
 
 if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'sg-cachepress/sg-cachepress.php' ) ) {
 	/**

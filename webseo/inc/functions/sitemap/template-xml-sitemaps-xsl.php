@@ -31,7 +31,7 @@ if ( 2 === apply_filters( 'wpml_setting', false, 'language_negotiation_type' ) )
 function seopress_xml_sitemap_index_xsl() {
 	$home_url = home_url() . '/';
 
-	$home_url = apply_filters( 'seopress_sitemaps_home_url', $home_url );
+     $home_url = webseo_apply_filters_compat( 'webseo_sitemaps_home_url', 'seopress_sitemaps_home_url', $home_url );
 
 	$seopress_sitemaps_xsl     = '<?xml version="1.0" encoding="UTF-8"?><xsl:stylesheet version="2.0"
 				xmlns:html="http://www.w3.org/TR/REC-html40"
@@ -49,12 +49,13 @@ function seopress_xml_sitemap_index_xsl() {
 	$seopress_sitemaps_xsl    .= "\n";
 	$seopress_sitemaps_xsl_css = '<style type="text/css">';
 
-	$seopress_sitemaps_xsl_css .= apply_filters(
-		'seopress_sitemaps_xsl_css',
-		'
-	* {
-		margin: 0;
-		padding: 0;
+     $seopress_sitemaps_xsl_css .= webseo_apply_filters_compat(
+             'webseo_sitemaps_xsl_css',
+             'seopress_sitemaps_xsl_css',
+             '
+                * {
+                        margin: 0;
+                        padding: 0;
 		box-sizing: border-box;
 	}
 	body {
@@ -189,7 +190,7 @@ function seopress_xml_sitemap_index_xsl() {
 
 	$seopress_sitemaps_xsl .= '</xsl:stylesheet>';
 
-	$seopress_sitemaps_xsl = apply_filters( 'seopress_sitemaps_xsl', $seopress_sitemaps_xsl );
+    $seopress_sitemaps_xsl = webseo_apply_filters_compat( 'webseo_sitemaps_xsl', 'seopress_sitemaps_xsl', $seopress_sitemaps_xsl );
 
 	return $seopress_sitemaps_xsl;
 }

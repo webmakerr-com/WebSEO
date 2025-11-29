@@ -29,18 +29,18 @@ if ( 2 === apply_filters( 'wpml_setting', false, 'language_negotiation_type' ) )
  * @return string XML Sitemap author template
  */
 function seopress_xml_sitemap_author() {
-	if ( '' !== get_query_var( 'seopress_cpt' ) ) {
-		$path = get_query_var( 'seopress_cpt' );
-	}
+    if ( '' !== get_query_var( 'webseo_cpt', get_query_var( 'seopress_cpt' ) ) ) {
+            $path = get_query_var( 'webseo_cpt', get_query_var( 'seopress_cpt' ) );
+    }
 
 	$home_url = home_url() . '/';
 
-	$home_url = apply_filters( 'seopress_sitemaps_home_url', $home_url );
+    $home_url = webseo_apply_filters_compat( 'webseo_sitemaps_home_url', 'seopress_sitemaps_home_url', $home_url );
 
 	$seopress_sitemaps  = '<?xml version="1.0" encoding="UTF-8"?>';
 	$seopress_sitemaps .= '<?xml-stylesheet type="text/xsl" href="' . $home_url . 'sitemaps_xsl.xsl"?>';
 	$seopress_sitemaps .= "\n";
-	$seopress_sitemaps .= apply_filters( 'seopress_sitemaps_urlset', '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' );
+    $seopress_sitemaps .= webseo_apply_filters_compat( 'webseo_sitemaps_urlset', 'seopress_sitemaps_urlset', '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' );
 	$args               = array(
 		'fields'              => 'ID',
 		'orderby'             => 'nicename',
@@ -49,7 +49,7 @@ function seopress_xml_sitemap_author() {
 		'blog_id'             => absint( get_current_blog_id() ),
 		'lang'                => '',
 	);
-	$args               = apply_filters( 'seopress_sitemaps_author_query', $args );
+    $args               = webseo_apply_filters_compat( 'webseo_sitemaps_author_query', 'seopress_sitemaps_author_query', $args );
 
 	$authorslist = get_users( $args );
 
@@ -70,12 +70,12 @@ function seopress_xml_sitemap_author() {
 		$seopress_sitemaps_url .= "\n";
 		$seopress_sitemaps_url .= '</url>';
 
-		$seopress_sitemaps .= apply_filters( 'seopress_sitemaps_url', $seopress_sitemaps_url, $seopress_url );
+            $seopress_sitemaps .= webseo_apply_filters_compat( 'webseo_sitemaps_url', 'seopress_sitemaps_url', $seopress_sitemaps_url, $seopress_url );
 	}
 	$seopress_sitemaps .= '</urlset>';
 	$seopress_sitemaps .= "\n";
 
-	$seopress_sitemaps = apply_filters( 'seopress_sitemaps_xml_author', $seopress_sitemaps );
+    $seopress_sitemaps = webseo_apply_filters_compat( 'webseo_sitemaps_xml_author', 'seopress_sitemaps_xml_author', $seopress_sitemaps );
 
 	return $seopress_sitemaps;
 }
