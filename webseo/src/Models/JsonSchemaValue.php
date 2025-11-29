@@ -19,19 +19,26 @@ abstract class JsonSchemaValue implements GetJsonFromFile {
 	 */
 	abstract protected function getName(); // phpcs:ignore -- TODO: check if method is outside this class before renaming.
 
-	/**
-	 * The getJson function.
-	 *
-	 * @since 4.5.0
-	 *
-	 * @return string
-	 */
-	public function getJson() {
-        $file = webseo_apply_filters_compat( 'webseo_get_json_from_file', 'seopress_get_json_from_file', sprintf( '%s/%s.json', SEOPRESS_TEMPLATE_JSON_SCHEMAS, $this->getName(), '.json' ) );
+        /**
+         * The getJson function.
+         *
+         * @since 4.5.0
+         *
+         * @return string
+         */
+        public function getJson() {
+                $file = webseo_locate_template_file(
+                        array(
+                                sprintf( 'json-schemas/%s.json', $this->getName() ),
+                                sprintf( 'pro-addon/templates/json-schemas/%s.json', $this->getName() ),
+                        )
+                );
 
-		if ( ! file_exists( $file ) ) {
-			return '';
-		}
+                $file = webseo_apply_filters_compat( 'webseo_get_json_from_file', 'seopress_get_json_from_file', $file, $this->getName() );
+
+                if ( empty( $file ) || ! file_exists( $file ) ) {
+                        return '';
+                }
 
 		$json = file_get_contents( $file );
 
