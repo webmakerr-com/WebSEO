@@ -14,8 +14,10 @@
 - **Images**: Relocate `pro-addon/assets/img` SVGs into `assets/img/pro/` and adjust any PHP/JS references that expect the old relative path.
 - **Editor blocks**: Place Gutenberg builds from `pro-addon/public/editor` inside `public/editor/pro/` (mirroring free block structure). Preserve `*.asset.php` files beside their JS/CSS so WordPress dependency resolution continues to work.
 - **Shared vendor files**: Keep `chart.bundle.min.js` and `datatables.min.{js,css}` alongside the scripts that enqueue them (likely `assets/js/pro/` and `assets/css/pro/`) and update enqueue paths, since handles like `seopress-pro-ga-embed` and `seopress-datatable` are already in use.【F:pro-addon/seopress-pro.php†L471-L616】
+- **Path replacements**: Sweep enqueues, imports, and build config for `pro-addon/assets` or `pro-addon/public` prefixes and point them to the new locations above so no runtime lookups depend on the legacy add-on directory.
 
 ## Notes for enqueue/bundler adjustments
 - Update any `plugins_url()` or `WEBSEO_URL_PUBLIC`/`WEBSEO_ASSETS_DIR` calls to point to the new paths while keeping existing handles and localization object names intact to avoid breaking AJAX consumers.
 - Ensure `SCRIPT_DEBUG` handling remains (minified vs non-minified) when moving files; keep both `.js` and `.min.js` pairs in the new hierarchy.
 - For block builds, align the bundler output (likely `@wordpress/scripts`) to emit into `public/editor/pro/**` with matching `index.asset.php` content, and ensure block registration references `file:` paths relative to the new locations.
+- Add a release note to remind QA to confirm that no remaining `pro-addon` references appear in compiled asset manifests or localized script data after the relocation.

@@ -31,3 +31,7 @@ This note captures where Pro-specific hooks are registered during plugin bootstr
 5. **Runtime hook execution:** container actions attach their own actions/filters when `plugins_loaded` fires (priority 20), with scope-aware execution for admin vs. frontend. Compatibility helpers keep legacy hook names available for custom events like cron handlers.【F:pro-addon/src/Core/Kernel.php†L36-L94】【F:pro-addon/inc/admin/cron.php†L73-L88】
 
 This mapping keeps existing conditional loading (license guard, feature toggles, builder exclusions) intact while clarifying where Pro hooks enter the lifecycle.
+
+## Migration notes for unified plugin
+- Move the bootstrap responsibilities from `pro-addon/seopress-pro.php` into the main `webseo.php` (or an adjacent loader) so the hook wiring no longer depends on a nested plugin entry point.
+- Replace `pro-addon/inc/...` include paths in admin bootstrapping with the consolidated `inc/` equivalents referenced in the migration map so comments, docs, and future refactors all point at the same directory.
