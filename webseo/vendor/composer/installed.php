@@ -6,7 +6,7 @@
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'reference' => '4d43327e887f8e88c1a8ec8b25d1f7d335be9aa8',
-        'name' => 'wp-seopress/wp-seopress',
+        'name' => 'webseo/webseo',
         'dev' => false,
     ),
     'versions' => array(
@@ -214,7 +214,7 @@
             'reference' => '605389f2a7e5625f273b53960dc46aeaf9c62918',
             'dev_requirement' => false,
         ),
-        'wp-seopress/wp-seopress' => array(
+        'webseo/webseo' => array(
             'pretty_version' => '9.3.x-dev',
             'version' => '9.3.9999999.9999999-dev',
             'type' => 'wordpress-plugin',
