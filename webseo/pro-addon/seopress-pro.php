@@ -547,7 +547,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 	}
 
 	// Pro Tabs.
-	if ( isset( $_GET['page'] ) && 'seopress-pro-page' === $_GET['page'] ) {
+    if ( isset( $_GET['page'] ) && in_array( $_GET['page'], array( 'seopress-pro-page', 'webseo-pro-page' ), true ) ) {
 		// Admin tabs.
 		wp_enqueue_script( 'seopress-pro-admin-tabs', plugins_url( 'assets/js/seopress-pro-tabs' . $prefix . '.js', __FILE__ ), array( 'jquery-ui-tabs' ), SEOPRESS_PRO_VERSION, true );
 
@@ -607,7 +607,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 		wp_localize_script( 'seopress-pro-ai', 'seopressAjaxAICheckLicense', $seopress_ai_check_license_key );
 	}
 
-	if ( isset( $_GET['page'] ) && ( 'seopress-pro-page' === $_GET['page'] || 'seopress-network-option' === $_GET['page'] ) ) {
+    if ( isset( $_GET['page'] ) && in_array( $_GET['page'], array( 'seopress-pro-page', 'webseo-pro-page', 'seopress-network-option' ), true ) ) {
 		// .htaccess.
 		wp_enqueue_script( 'seopress-save-htaccess', plugins_url( 'assets/js/seopress-htaccess' . $prefix . '.js', __FILE__ ), array( 'jquery' ), SEOPRESS_PRO_VERSION, true );
 
@@ -623,7 +623,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 	// Google Page Speed.
 	if ( 'edit.php' === $hook ) {
 		seopress_pro_admin_ps_scripts();
-	} elseif ( isset( $_GET['page'] ) && 'seopress-pro-page' === $_GET['page'] ) {
+    } elseif ( isset( $_GET['page'] ) && in_array( $_GET['page'], array( 'seopress-pro-page', 'webseo-pro-page' ), true ) ) {
 		seopress_pro_admin_ps_scripts();
 	}
 

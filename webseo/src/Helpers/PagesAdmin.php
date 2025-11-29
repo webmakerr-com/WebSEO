@@ -142,8 +142,9 @@ abstract class PagesAdmin {
 				return self::TOOLS;
 			case 'seopress-instant-indexing':
 				return self::INSTANT_INDEXING;
-			case 'seopress-pro-page':
-				return self::PRO;
+                        case 'seopress-pro-page':
+                        case 'webseo-pro-page':
+                                return self::PRO;
 			case 'seopress-advanced':
 				return self::ADVANCED;
 			case 'seopress-bot-batch':
@@ -176,8 +177,8 @@ abstract class PagesAdmin {
 				return 'seopress-import-export';
 			case self::INSTANT_INDEXING:
 				return 'seopress-instant-indexing';
-			case self::PRO:
-				return 'seopress-pro-page';
+                        case self::PRO:
+                                return 'webseo-pro-page';
 			case self::ADVANCED:
 				return 'seopress-advanced';
 			case self::BOT:
