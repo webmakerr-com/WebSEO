@@ -2,7 +2,7 @@
 /**
  * News block.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 
@@ -25,7 +25,7 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 	<div id="seopress-news-panel" class="seopress-card <?php echo esc_attr( $class ); ?>" style="display: none">
 		<div class="seopress-card-title">
 			<div class="seopress-d-flex seopress-space-between">
-				<h2><?php esc_attr_e( 'Latest News from SEOPress Blog', 'webseo' ); ?></h2>
+				<h2><?php esc_attr_e( 'Latest News from WebSEO Blog', 'webseo' ); ?></h2>
 				<div>
 					<a href="<?php echo esc_url( $docs['blog'] ); ?>" class="seopress-help" target="_blank" title="<?php esc_attr_e( 'See all our blog posts - Open in a new tab', 'webseo' ); ?>">
 						<?php esc_attr_e( 'See all our blog posts', 'webseo' ); ?>
@@ -34,7 +34,7 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 				</div>
 			</div>
 			<div>
-				<p><?php esc_attr_e( 'The latest news about SEOPress, SEO and WordPress.', 'webseo' ); ?></p>
+				<p><?php esc_attr_e( 'The latest news about WebSEO, SEO and WordPress.', 'webseo' ); ?></p>
 			</div>
 		</div>
 		<div class="seopress-card-content">
@@ -50,7 +50,7 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 				'fr_CA',
 			);
 
-			$feed_url = in_array( $wplang, $fr, true ) ? 'https://www.seopress.org/fr/feed' : 'https://www.seopress.org/feed';
+			$feed_url = in_array( $wplang, $fr, true ) ? 'https://www.webseo.com/fr/feed' : 'https://www.webseo.com/feed';
 
 			$maxitems   = 4;
 			$feed_items = array();
@@ -68,7 +68,7 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 				add_filter(
 					'http_request_args',
 					function ( $args, $url ) {
-						if ( strpos( $url, 'seopress.org' ) !== false ) {
+                                            if ( strpos( $url, 'webseo.com' ) !== false ) {
 							$args['timeout'] = 5;
 						}
 						return $args;

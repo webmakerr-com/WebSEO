@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WebSEO 9.3.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/webseo\n"
-"Last-Translator: SEOPress <contact@seopress.org>\n"
+"Last-Translator: WebSEO <contact@webseo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -177,15 +177,15 @@ msgid "Quickly filter our documentation by a specific plugin."
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:102
-msgid "SEOPress Free documentation (new window)"
+msgid "WebSEO Free documentation (new window)"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:105
-msgid "SEOPress PRO documentation (new window)"
+msgid "WebSEO PRO documentation (new window)"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:108
-msgid "SEOPress Insights documentation (new window)"
+msgid "WebSEO Insights documentation (new window)"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:115
@@ -204,7 +204,7 @@ msgstr ""
 
 #. translators: %s: admin Updates URL
 #: inc/admin/admin-bar/admin-header.php:118
-msgid "Your translation is missing? Contribute to SEOPress now!"
+msgid "Your translation is missing? Contribute to WebSEO now!"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:119
@@ -212,7 +212,7 @@ msgid "Learn how to translate the plugin in your own language"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:120
-msgid "Translate SEOPress"
+msgid "Translate WebSEO"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:126
@@ -225,7 +225,7 @@ msgid "Can‘t find the info you‘re looking for?"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:128
-msgid "Open a support ticket on SEOPress.org website (new window)"
+msgid "Open a support ticket on WebSEO.org website (new window)"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-header.php:142
@@ -770,7 +770,7 @@ msgid "Click to enable this feature"
 msgstr ""
 
 #: inc/admin/admin.php:137
-msgid "SEOPress Option Page"
+msgid "WebSEO Option Page"
 msgstr ""
 
 #: inc/admin/admin.php:155
@@ -927,7 +927,7 @@ msgstr ""
 msgid "Request an integration"
 msgstr ""
 
-#. translators: %1$s plugin name, default: SEOPress, %2$s displays the current version number
+#. translators: %1$s plugin name, default: WebSEO, %2$s displays the current version number
 #: inc/admin/blocks/intro.php:25
 #, php-format
 msgid "Welcome to %1$s %2$s!"
@@ -938,7 +938,7 @@ msgid "Your control center for SEO."
 msgstr ""
 
 #: inc/admin/blocks/news.php:21
-msgid "Latest News from SEOPress Blog"
+msgid "Latest News from WebSEO Blog"
 msgstr ""
 
 #: inc/admin/blocks/news.php:23
@@ -950,7 +950,7 @@ msgid "See all our blog posts"
 msgstr ""
 
 #: inc/admin/blocks/news.php:30
-msgid "The latest news about SEOPress, SEO and WordPress."
+msgid "The latest news about WebSEO, SEO and WordPress."
 msgstr ""
 
 #: inc/admin/blocks/news.php:64
@@ -1009,7 +1009,7 @@ msgid "See all notifications"
 msgstr ""
 
 #: inc/admin/blocks/tasks.php:32
-msgid "SEOPress Suite"
+msgid "WebSEO Suite"
 msgstr ""
 
 #: inc/admin/blocks/tasks.php:33
@@ -1790,7 +1790,7 @@ msgid "Whenever a user clicks on a link to one of your website's alias URLs, it 
 msgstr ""
 
 #: inc/admin/callbacks/Analytics.php:1097
-msgid "Enter your domains: seopress.org,sub.seopress.org,sub2.seopress.org"
+msgid "Enter your domains: webseo.com,sub.webseo.com,sub2.webseo.com"
 msgstr ""
 
 #: inc/admin/callbacks/Analytics.php:1098
@@ -2857,7 +2857,7 @@ msgid "Starter guides"
 msgstr ""
 
 #: inc/admin/docs/DocsLinks.php:27
-msgid "Ready to boost your SEO? Get started in minutes with SEOPress."
+msgid "Ready to boost your SEO? Get started in minutes with WebSEO."
 msgstr ""
 
 #: inc/admin/docs/DocsLinks.php:32
@@ -2881,19 +2881,19 @@ msgid "Developer Docs"
 msgstr ""
 
 #: inc/admin/docs/DocsLinks.php:45
-msgid "Unlock the power of SEOPress with our actions and filters."
+msgid "Unlock the power of WebSEO with our actions and filters."
 msgstr ""
 
 #: inc/admin/docs/DocsLinks.php:51
-msgid "Activate your SEOPress Insights license"
+msgid "Activate your WebSEO Insights license"
 msgstr ""
 
 #: inc/admin/docs/DocsLinks.php:52
-msgid "Track your keyword rankings in Google with SEOPress Insights"
+msgid "Track your keyword rankings in Google with WebSEO Insights"
 msgstr ""
 
 #: inc/admin/docs/DocsLinks.php:53
-msgid "Monitor and analyse your Backlinks with SEOPress Insights"
+msgid "Monitor and analyse your Backlinks with WebSEO Insights"
 msgstr ""
 
 #: inc/admin/docs/DocsLinks.php:54
@@ -3508,7 +3508,7 @@ msgstr ""
 msgid "Breadcrumb Title"
 msgstr ""
 
-#. translators: %1$s defaut: SEOPress, %2$s competitor SEO plugin name
+#. translators: %1$s defaut: WebSEO, %2$s competitor SEO plugin name
 #: inc/admin/migrate/MigrationTools.php:49
 #, php-format
 msgid "<strong>WARNING:</strong> Migration will delete / update all <strong>%1$s posts and terms metadata</strong>, plus <strong>global settings</strong> (if applicable). Some dynamic variables will not be interpreted. We do <strong>NOT delete any %2$s data</strong>."
@@ -4671,19 +4671,19 @@ msgstr ""
 msgid "Skip this step"
 msgstr ""
 
-#. translators: %s plugin name, default: SEOPress
+#. translators: %s plugin name, default: WebSEO
 #: inc/admin/wizard/admin-wizard.php:398
 #, php-format
 msgid "Welcome to %s!"
 msgstr ""
 
-#. translators: %s default: SEOPress
+#. translators: %s default: WebSEO
 #: inc/admin/wizard/admin-wizard.php:405
 #, php-format
 msgid "Configure %s with the best settings for your site"
 msgstr ""
 
-#. translators: %s default: SEOPress
+#. translators: %s default: WebSEO
 #: inc/admin/wizard/admin-wizard.php:406
 #, php-format
 msgid "The following wizard will help you configure %s and get you started quickly."
@@ -4700,7 +4700,7 @@ msgstr ""
 #: src/Services/Admin/Notifications/Notifications.php:531
 #: src/Services/Admin/Notifications/Notifications.php:550
 #: src/Services/Admin/Notifications/Notifications.php:569
-msgid "This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this."
+msgid "This PHP module, installed by default with PHP, is required by many plugins including WebSEO. Please contact your host as soon as possible to solve this."
 msgstr ""
 
 #: inc/admin/wizard/admin-wizard.php:421
@@ -4755,7 +4755,7 @@ msgstr ""
 msgid "Migration"
 msgstr ""
 
-#. translators: %s default: SEOPress
+#. translators: %s default: WebSEO
 #: inc/admin/wizard/admin-wizard.php:492
 #, php-format
 msgid "Migrate your SEO metadata to %s"
@@ -4930,7 +4930,7 @@ msgstr ""
 msgid "Final step before being ready to rank on search engines."
 msgstr ""
 
-#. translators: %s default: SEOPress
+#. translators: %s default: WebSEO
 #: inc/admin/wizard/admin-wizard.php:1398
 #, php-format
 msgid "By default, %s redirects your Attachment pages to the parent post. Optimize this by redirecting the user directly to the URL of the media file."
@@ -5013,7 +5013,7 @@ msgid "SEO Success for WordPress with a Two-Hours-a-Week Routine. Free."
 msgstr ""
 
 #: inc/admin/wizard/admin-wizard.php:1670
-msgid "Introducing your 2-hour-a-week SEO plan with SEOPress"
+msgid "Introducing your 2-hour-a-week SEO plan with WebSEO"
 msgstr ""
 
 #: inc/admin/wizard/admin-wizard.php:1671
@@ -5044,7 +5044,7 @@ msgstr ""
 #. translators: %s URL of our privacy policy
 #: inc/admin/wizard/admin-wizard.php:1700
 #, php-format
-msgid "I accept that SEOPress can store and use my email address in order to send me a newsletter. Read our <a href=\"%s\" target=\"_blank\" title=\"Open in a new window\">privacy policy</a>."
+msgid "I accept that WebSEO can store and use my email address in order to send me a newsletter. Read our <a href=\"%s\" target=\"_blank\" title=\"Open in a new window\">privacy policy</a>."
 msgstr ""
 
 #: inc/admin/wizard/admin-wizard.php:1702
@@ -5678,7 +5678,7 @@ msgid "Yearly"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:33
-msgid "You like SEOPress? Please help us by rating us 5 stars!"
+msgid "You like WebSEO? Please help us by rating us 5 stars!"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:34
@@ -5756,11 +5756,11 @@ msgid "Activate it"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:163
-msgid "Configure SEOPress in a few minutes with our installation wizard"
+msgid "Configure WebSEO in a few minutes with our installation wizard"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:164
-msgid "The best way to quickly setup SEOPress on your site."
+msgid "The best way to quickly setup WebSEO on your site."
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:170
@@ -5806,7 +5806,7 @@ msgid "Your theme doesn't use <strong>add_theme_support('title-tag');</strong>"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:268
-msgid "This error indicates that your theme uses a deprecated function to generate the title tag of your pages. SEOPress will not be able to generate your custom title tags if this error is not fixed."
+msgid "This error indicates that your theme uses a deprecated function to generate the title tag of your pages. WebSEO will not be able to generate your custom title tags if this error is not fixed."
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:288
@@ -5814,7 +5814,7 @@ msgid "WPML plugin has been detected!"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:289
-msgid "SEOPress is fully compatible with WPML. If you are looking to translate SEOPress global settings, read our guide by clicking the link below."
+msgid "WebSEO is fully compatible with WPML. If you are looking to translate WebSEO global settings, read our guide by clicking the link below."
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:310
@@ -5826,7 +5826,7 @@ msgid "Swift Performance is caching your XML sitemap. You must disable this opti
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:347
-msgid "Do you want to migrate all your metadata to SEOPress? Do not use multiple SEO plugins at once to avoid conflicts!"
+msgid "Do you want to migrate all your metadata to WebSEO? Do not use multiple SEO plugins at once to avoid conflicts!"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:353
@@ -5878,7 +5878,7 @@ msgid "Your site title is empty!"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:617
-msgid "Your Site Title is used by WordPress, your theme and your plugins including SEOPress. It is an essential component in the generation of title tags, but not only. Enter one!"
+msgid "Your Site Title is used by WordPress, your theme and your plugins including WebSEO. It is an essential component in the generation of title tags, but not only. Enter one!"
 msgstr ""
 
 #: src/Services/Admin/Notifications/Notifications.php:636
@@ -5984,7 +5984,7 @@ msgid "No schemas found in the source code of this page. Get rich snippets in Go
 msgstr ""
 
 #: src/Services/ContentAnalysis/GetContent.php:99
-msgid "Get SEOPress PRO to add schemas now"
+msgid "Get WebSEO PRO to add schemas now"
 msgstr ""
 
 #: src/Services/ContentAnalysis/GetContent.php:137
@@ -5999,7 +5999,7 @@ msgstr ""
 
 #: src/Services/ContentAnalysis/GetContent.php:144
 #: src/Services/I18nUniversalMetabox.php:220
-msgid "Search engines love fresh content. Update regularly your articles without entirely rewriting your content and give them a boost in search rankings. SEOPress takes care of the technical part."
+msgid "Search engines love fresh content. Update regularly your articles without entirely rewriting your content and give them a boost in search rankings. WebSEO takes care of the technical part."
 msgstr ""
 
 #: src/Services/ContentAnalysis/GetContent.php:179
@@ -7296,7 +7296,7 @@ msgstr ""
 msgid "Note that the pages do not need to be absolutely identical; minor changes in sorting or filtering of list pages do not make the page unique (for example, sorting by price or filtering by item color). The canonical can be in a different domain than a duplicate."
 msgstr ""
 
-#: src/Services/Settings/Roles/SectionPagesSEOPress.php:36
+#: src/Services/Settings/Roles/SectionPagesWebSEO.php:36
 msgid "Check a user role to authorized it to edit a specific SEO page."
 msgstr ""
 

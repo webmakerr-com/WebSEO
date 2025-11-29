@@ -1,8 +1,8 @@
 <?php
 /**
- * SEOPress PRO autoloader.
+ * WebSEO PRO autoloader.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Autoloader
  */
 

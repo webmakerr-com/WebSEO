@@ -1,22 +1,22 @@
 <?php
 /**
- * Plugin Name: SEOPress PRO
- * Plugin URI: https://www.seopress.org/wordpress-seo-plugins/pro/
- * Description: The PRO version of SEOPress. SEOPress required (free).
+ * Plugin Name: WebSEO PRO
+ * Plugin URI: https://www.webseo.com/wordpress-seo-plugins/pro/
+ * Description: The PRO version of WebSEO. WebSEO required (free).
  * Version: 9.3.0.4
- * Author: The SEO Guys at SEOPress
- * Author URI: https://www.seopress.org/wordpress-seo-plugins/pro/
+ * Author: The SEO Folks at WebSEO
+ * Author URI: https://www.webseo.com/wordpress-seo-plugins/pro/
  * License: GPLv3 or later
  * Text Domain: wp-seopress-pro
  * Domain Path: /languages
  * Requires PHP: 7.4
  * Requires at least: 5.0
  *
- * @package SEOPressPRO
+ * @package WebSEOPRO
  */
 
 /*
-	Copyright 2016 - 2025 - Benjamin Denis  (email : contact@seopress.org)
+    Copyright 2016 - 2025 - Benjamin Denis  (email : contact@webseo.com)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 3, as
@@ -43,9 +43,9 @@ update_option('seopress_pro_license_status', 'valid');
  */
 define( 'SEOPRESS_PRO_VERSION', '9.3.0.4' );
 define( 'SEOPRESS_PRO_AUTHOR', 'Benjamin Denis' );
-define( 'STORE_URL_SEOPRESS', 'https://www.seopress.org' );
+define( 'STORE_URL_SEOPRESS', 'https://www.webseo.com' );
 define( 'ITEM_ID_SEOPRESS', 113 );
-define( 'ITEM_NAME_SEOPRESS', 'SEOPress PRO' );
+define( 'ITEM_NAME_SEOPRESS', 'WebSEO PRO' );
 define( 'SEOPRESS_LICENSE_PAGE', 'seopress-license' );
 
 if ( ! defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH' ) ) {
@@ -140,7 +140,7 @@ function seopress_pro_loaded() {
 		return;
 	}
 
-	if ( ! is_plugin_active( 'webseo/webseo.php' ) ) {// If SEOPress Free NOT activated.
+ if ( ! is_plugin_active( 'webseo/webseo.php' ) ) {// If WebSEO Free NOT activated.
 		deactivate_plugins( 'wp-seopress-pro/seopress-pro.php' );
 		add_action( 'admin_notices', 'seopress_pro_admin_notices' );
 	}
@@ -303,7 +303,7 @@ function seopress_pro_deactivation() {
 register_deactivation_hook( defined( 'SEOPRESS_PLUGIN_FILE' ) ? SEOPRESS_PLUGIN_FILE : __FILE__, 'seopress_pro_deactivation' );
 
 /**
- * Loads the SEOPress PRO admin + core + API
+ * Loads the WebSEO PRO admin + core + API
  *
  * @return void
  */
@@ -380,7 +380,7 @@ function seopress_pro_plugins_loaded() {
 add_action( 'plugins_loaded', 'seopress_pro_plugins_loaded', 999 );
 
 /**
- * Loads the SEOPress PRO i18n.
+ * Loads the WebSEO PRO i18n.
  *
  * @return void
  */
@@ -691,7 +691,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 add_action( 'admin_enqueue_scripts', 'seopress_pro_add_admin_options_scripts', 10, 1 );
 
 /**
- * Display SEOPress PRO notices.
+ * Display WebSEO PRO notices.
  *
  * @return void
  */
@@ -704,7 +704,7 @@ function seopress_pro_admin_notices() {
 		?>
 		<div class="notice error">
 			<p>
-				<?php echo wp_kses_post( __( 'Please enable <strong>SEOPress</strong> in order to use SEOPRESS PRO.', 'wp-seopress-pro' ) ); ?>
+                        <?php echo wp_kses_post( __( 'Please enable <strong>WebSEO</strong> in order to use WEBSEO PRO.', 'wp-seopress-pro' ) ); ?>
 				<a href="<?php echo esc_url( admin_url( 'plugin-install.php?tab=plugin-information&plugin=wp-seopress&TB_iframe=true&width=600&height=550' ) ); ?>" class="thickbox btn btnPrimary" target="_blank">
 					<?php esc_html_e( 'Enable / Download now!', 'wp-seopress-pro' ); ?>
 				</a>
@@ -757,7 +757,7 @@ function seopress_pro_plugin_action_links( $links, $file ) {
 
 	if ( $file === $this_plugin ) {
 		$settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=seopress-pro-page' ) ) . '">' . esc_html__( 'Settings', 'wp-seopress-pro' ) . '</a>';
-		$website_link  = '<a href="https://www.seopress.org/support/" target="_blank">' . esc_html__( 'Support', 'wp-seopress-pro' ) . '</a>';
+		$website_link  = '<a href="https://www.webseo.com/support/" target="_blank">' . esc_html__( 'Support', 'wp-seopress-pro' ) . '</a>';
 
 		// Combine license link logic to reduce function calls.
 		$license_status = get_option( 'seopress_pro_license_status' );
@@ -787,7 +787,7 @@ function seopress_pro_plugin_action_links( $links, $file ) {
 add_filter( 'plugin_action_links', 'seopress_pro_plugin_action_links', 10, 2 );
 
 /**
- * SEOPress PRO Updater
+ * WebSEO PRO Updater
  *
  * @return void
  */
@@ -798,7 +798,7 @@ if ( ! class_exists( 'SEOPRESS_Updater' ) ) {
 }
 
 /**
- * SEOPress PRO Updater.
+ * WebSEO PRO Updater.
  *
  * @return void
  */

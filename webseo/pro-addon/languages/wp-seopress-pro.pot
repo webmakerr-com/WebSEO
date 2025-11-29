@@ -1,11 +1,11 @@
-# Copyright (C) 2025 The SEO Guys at SEOPress
+# Copyright (C) 2025 The SEO Guys at WebSEO
 # This file is distributed under the GPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: SEOPress 9.3.0.4\n"
+"Project-Id-Version: WebSEO 9.3.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-seopress-pro\n"
-"Last-Translator: SEOPress Team <contact@seopress.org>\n"
-"Language-Team: SEOPress Team <contact@seopress.org>\n"
+"Last-Translator: WebSEO Team <contact@webseo.com>\n"
+"Language-Team: WebSEO Team <contact@webseo.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,23 +16,23 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: seopress-pro.php
-msgid "SEOPress PRO"
+msgid "WebSEO PRO"
 msgstr ""
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
 #: seopress-pro.php
-msgid "https://www.seopress.org/wordpress-seo-plugins/pro/"
+msgid "https://www.webseo.com/wordpress-seo-plugins/pro/"
 msgstr ""
 
 #. Description of the plugin
 #: seopress-pro.php
-msgid "The PRO version of SEOPress. SEOPress required (free)."
+msgid "The PRO version of WebSEO. WebSEO required (free)."
 msgstr ""
 
 #. Author of the plugin
 #: seopress-pro.php
-msgid "The SEO Guys at SEOPress"
+msgid "The SEO Guys at WebSEO"
 msgstr ""
 
 #: inc/admin/admin-bar/admin-bar.php:13
@@ -315,7 +315,7 @@ msgid "Reset"
 msgstr ""
 
 #: inc/admin/admin-pages/Tools.php:32
-msgid "Looking for the CSV import / export tool? Please <strong>update SEOPress PRO</strong> to version 6.1."
+msgid "Looking for the CSV import / export tool? Please <strong>update WebSEO PRO</strong> to version 6.1."
 msgstr ""
 
 #: inc/admin/admin-pages/Tools.php:45
@@ -1557,7 +1557,7 @@ msgstr ""
 msgid "Your license is not active for this URL."
 msgstr ""
 
-#. translators: %s: SEOPress PRO
+#. translators: %s: WebSEO PRO
 #: inc/admin/callbacks/License.php:101
 #: inc/admin/callbacks/License.php:205
 #: src/Thirds/MainWP/MainWPFunctions.php:68
@@ -2225,7 +2225,7 @@ msgstr ""
 
 #: inc/admin/callbacks/WhiteLabel.php:128
 #: inc/admin/callbacks/WhiteLabel.php:146
-msgid "Hide help icons and SEOPress documentation links"
+msgid "Hide help icons and WebSEO documentation links"
 msgstr ""
 
 #: inc/admin/callbacks/WhiteLabel.php:161
@@ -2269,7 +2269,7 @@ msgstr ""
 #: inc/admin/callbacks/WhiteLabel.php:280
 #: inc/admin/callbacks/WhiteLabel.php:311
 #: inc/admin/callbacks/WhiteLabel.php:355
-msgid "This option will apply to both SEOPress and SEOPress PRO."
+msgid "This option will apply to both WebSEO and WebSEO PRO."
 msgstr ""
 
 #: inc/admin/callbacks/WhiteLabel.php:292
@@ -9077,21 +9077,21 @@ msgstr ""
 
 #: inc/admin/settings/WhiteLabel.php:33
 #: inc/admin/settings/WhiteLabel.php:138
-msgid "Edit SEOPress item in admin bar"
+msgid "Edit WebSEO item in admin bar"
 msgstr ""
 
 #: inc/admin/settings/WhiteLabel.php:41
 #: inc/admin/settings/WhiteLabel.php:146
-msgid "Edit SEOPress title in main menu"
+msgid "Edit WebSEO title in main menu"
 msgstr ""
 
 #: inc/admin/settings/WhiteLabel.php:49
 #: inc/admin/settings/WhiteLabel.php:154
-msgid "Hide SEOPress links / help icons"
+msgid "Hide WebSEO links / help icons"
 msgstr ""
 
 #: inc/admin/settings/WhiteLabel.php:57
-msgid "Remove SEOPress menu/submenu pages/dashboard items"
+msgid "Remove WebSEO menu/submenu pages/dashboard items"
 msgstr ""
 
 #: inc/admin/settings/WhiteLabel.php:64
@@ -9283,7 +9283,7 @@ msgstr ""
 msgid "We have detected that you have deleted a term (<code>%s</code>)."
 msgstr ""
 
-#. translators: %s default: SEOPress
+#. translators: %s default: WebSEO
 #: inc/admin/wizard/wizard.php:19
 msgid "Welcome to %s!"
 msgstr ""
@@ -10378,7 +10378,7 @@ msgid "You have enabled 404 cleaning BUT the scheduled task is not running."
 msgstr ""
 
 #: seopress-pro-functions.php:404
-msgid "To solve this, please disable and re-enable SEOPress PRO. No data will be lost."
+msgid "To solve this, please disable and re-enable WebSEO PRO. No data will be lost."
 msgstr ""
 
 #: seopress-pro-functions.php:406
@@ -10404,7 +10404,7 @@ msgid "You have to enter your licence key to get updates and support"
 msgstr ""
 
 #: seopress-pro-functions.php:441
-msgid "Please activate the SEOPress PRO license key to automatically receive updates to guarantee you the best user experience possible."
+msgid "Please activate the WebSEO PRO license key to automatically receive updates to guarantee you the best user experience possible."
 msgstr ""
 
 #: seopress-pro-functions.php:462
@@ -10454,7 +10454,7 @@ msgid "Help?"
 msgstr ""
 
 #: seopress-pro.php:714
-msgid "Please enable <strong>SEOPress</strong> in order to use SEOPRESS PRO."
+msgid "Please enable <strong>WebSEO</strong> in order to use SEOPRESS PRO."
 msgstr ""
 
 #: seopress-pro.php:716

@@ -2,7 +2,7 @@
 /**
  * Premium SEO Pack migration.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Ajax
  */
 

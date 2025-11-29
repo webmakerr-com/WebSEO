@@ -2,7 +2,7 @@
 /**
  * Tasks block.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 
@@ -36,25 +36,25 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 
 	<div id="notice-tasks-alert" class="seopress-card <?php echo esc_attr( $class ); ?>" style="display: none">
 		<div class="seopress-card-title">
-			<h2><?php esc_attr_e( 'SEOPress Suite', 'webseo' ); ?></h2>
+			<h2><?php esc_attr_e( 'WebSEO Suite', 'webseo' ); ?></h2>
 			<p><?php esc_html_e( 'From on-site to off-site SEO, our SEO plugins cover all your needs to rank higher in search engines.', 'webseo' ); ?></p>
 		</div>
 		<div class="seopress-card-content">
 		<?php
 			$products = array(
 				'webseo/webseo.php'         => array(
-					'title' => 'SEOPress Free',
+					'title' => 'WebSEO Free',
                                     'logo'  => WEBSEO_URL_ASSETS . '/img/logo-webseo-free.svg',
 					'url'   => $docs['pricing'],
 				),
 				'wp-seopress-pro/seopress-pro.php' => array(
-					'title'  => 'SEOPress PRO',
+					'title'  => 'WebSEO PRO',
                                     'logo'   => WEBSEO_URL_ASSETS . '/img/logo-webseo-pro.svg',
 					'url'    => $docs['addons']['pro'],
 					'status' => $status_pro,
 				),
 				'wp-seopress-insights/seopress-insights.php' => array(
-					'title'  => 'SEOPress Insights',
+					'title'  => 'WebSEO Insights',
                                     'logo'   => WEBSEO_URL_ASSETS . '/img/logo-webseo-insights.svg',
 					'url'    => $docs['addons']['insights'],
 					'status' => $status_insights,

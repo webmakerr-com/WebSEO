@@ -1,8 +1,8 @@
 <?php
 /**
- * SEOPress PRO functions.
+ * WebSEO PRO functions.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Functions
  */
 
@@ -401,7 +401,7 @@ if ( version_compare( $actual_version, '6.7', '>=' ) || ( defined( 'SCRIPT_DEBUG
 				$args[] = array(
 					'id'         => 'notice-title-tag',
 					'title'      => __( 'You have enabled 404 cleaning BUT the scheduled task is not running.', 'wp-seopress-pro' ),
-					'desc'       => __( 'To solve this, please disable and re-enable SEOPress PRO. No data will be lost.', 'wp-seopress-pro' ),
+                                      'desc'       => __( 'To solve this, please disable and re-enable WebSEO PRO. No data will be lost.', 'wp-seopress-pro' ),
 					'impact'     => array(
 						'medium' => __( 'Medium impact', 'wp-seopress-pro' ),
 					),
@@ -438,7 +438,7 @@ if ( version_compare( $actual_version, '6.7', '>=' ) || ( defined( 'SCRIPT_DEBUG
 			$args[] = array(
 				'id'         => 'notice-license',
 				'title'      => __( 'You have to enter your licence key to get updates and support', 'wp-seopress-pro' ),
-				'desc'       => __( 'Please activate the SEOPress PRO license key to automatically receive updates to guarantee you the best user experience possible.', 'wp-seopress-pro' ),
+                              'desc'       => __( 'Please activate the WebSEO PRO license key to automatically receive updates to guarantee you the best user experience possible.', 'wp-seopress-pro' ),
 				'impact'     => array(
 					'info' => __( 'License', 'wp-seopress-pro' ),
 				),

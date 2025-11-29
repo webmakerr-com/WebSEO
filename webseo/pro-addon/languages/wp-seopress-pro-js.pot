@@ -1,10 +1,10 @@
-# Copyright (C) 2023 The SEO Guys at SEOPress
+# Copyright (C) 2023 The SEO Guys at WebSEO
 # This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: SEOPress PRO {VERSION}\n"
+"Project-Id-Version: WebSEO PRO {VERSION}\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-seopress-pro\n"
-"Last-Translator: SEOPress <contact@seopress.org>\n"
+"Last-Translator: WebSEO <contact@webseo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,20 +15,20 @@ msgstr ""
 "X-Domain: wp-seopress-pro\n"
 
 #. Plugin Name of the plugin
-msgid "SEOPress PRO"
+msgid "WebSEO PRO"
 msgstr ""
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
-msgid "https://www.seopress.org/seopress-pro/"
+msgid "https://www.webseo.com/seopress-pro/"
 msgstr ""
 
 #. Description of the plugin
-msgid "The PRO version of SEOPress. SEOPress required (free)."
+msgid "The PRO version of WebSEO. WebSEO required (free)."
 msgstr ""
 
 #. Author of the plugin
-msgid "The SEO Guys at SEOPress"
+msgid "The SEO Guys at WebSEO"
 msgstr ""
 
 #: app/editor/blocks/breadcrumbs/edit.js:9

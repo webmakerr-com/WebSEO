@@ -4,7 +4,7 @@
  *
  * Description: This file contains the function for the content analysis real preview.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Ajax
  */
 

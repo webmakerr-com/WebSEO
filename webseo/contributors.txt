@@ -27,7 +27,7 @@ Beta testers / feedbacks:
 - Déborah Donnier: @deborahdonnier
 - Jérémy Herve: @jeherve
 
-Integrations (https://www.seopress.org/integrations/):
+Integrations (https://www.webseo.com/integrations/):
 - The Admin Columns PRO team
 - The Polylang team
 - The WPML team

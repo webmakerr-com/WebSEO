@@ -2,7 +2,7 @@
 /**
  * WP Meta SEO migration.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Ajax
  */
 

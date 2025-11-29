@@ -2,7 +2,7 @@
 /**
  * Print the notifications center.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 

@@ -2,7 +2,7 @@
 /**
  * Integrations block.
  *
- * @package SEOPress
+ * @package WebSEO
  * @subpackage Blocks
  */
 
