@@ -97,12 +97,12 @@ class SEOPRESS_Admin_Setup_Wizard {
 			remove_all_actions( 'admin_notices' );
 			remove_all_actions( 'all_admin_notices' );
 
-                        $this->seo_title = 'WebSEO';
-			if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-				if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' === seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
-                                        $this->seo_title = function_exists( 'seopress_pro_get_service' ) && method_exists( seopress_pro_get_service( 'OptionPro' ), 'getWhiteLabelListTitle' ) && seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() ? seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() : 'WebSEO';
-				}
-			}
+$this->seo_title = 'WebSEO';
+if ( seopress_is_pro_license_active() ) {
+if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' === seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
+$this->seo_title = function_exists( 'seopress_pro_get_service' ) && method_exists( seopress_pro_get_service( 'OptionPro' ), 'getWhiteLabelListTitle' ) && seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() ? seopress_pro_get_service( 'OptionPro' )->getWhiteLabelListTitle() : 'WebSEO';
+}
+}
 		}
 	}
 

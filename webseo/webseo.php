@@ -957,17 +957,17 @@ function seopress_plugin_action_links( $links, $file ) {
             $wizard_link   = '<a href="' . admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ) . '">' . __( 'Configuration Wizard', 'webseo' ) . '</a>';
 		$website_link  = '<a href="https://www.webseo.com/support/" target="_blank">' . __( 'Docs', 'webseo' ) . '</a>';
 
-		// Add "GO PRO!" link for non-PRO users.
-		if ( ! is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-			$pro_link = '<a href="https://www.webseo.com/seopress-pro/" style="color:red;font-weight:bold" target="_blank">' . __( 'GO PRO!', 'webseo' ) . '</a>';
-			array_unshift( $links, $pro_link );
-		}
+// Add "GO PRO!" link for non-PRO users.
+if ( ! seopress_is_pro_license_active() ) {
+$pro_link = '<a href="https://www.webseo.com/seopress-pro/" style="color:red;font-weight:bold" target="_blank">' . __( 'GO PRO!', 'webseo' ) . '</a>';
+array_unshift( $links, $pro_link );
+}
 
-		// Remove "Deactivate" link if PRO plugins are active.
-		$is_pro_active = is_plugin_active( 'wp-seopress-pro/seopress-pro.php' );
-		if ( $is_pro_active && isset( $links['deactivate'] ) ) {
-			unset( $links['deactivate'] );
-		}
+// Remove "Deactivate" link if PRO plugins are active.
+$is_pro_active = seopress_is_pro_license_active();
+if ( $is_pro_active && isset( $links['deactivate'] ) ) {
+unset( $links['deactivate'] );
+}
 
 		// Determine white-label behavior.
 		$use_white_label_links = function_exists( 'seopress_pro_get_service' ) &&

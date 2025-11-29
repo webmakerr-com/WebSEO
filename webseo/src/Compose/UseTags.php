@@ -167,9 +167,9 @@ trait UseTags {
 			)
 		);
 
-		if ( defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH' ) && file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags' ) && is_dir( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags' ) ) {
-			$tags = $this->buildTags(
-				SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags',
+if ( \seopress_is_pro_license_active() && defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH' ) && file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags' ) && is_dir( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags' ) ) {
+$tags = $this->buildTags(
+SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/Tags',
 				array(
 					'root'         => '\\SEOPressPro\\Tags\\%s%s',
 					'subNamespace' => '',

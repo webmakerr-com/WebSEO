@@ -335,9 +335,9 @@ class Document_Settings_Section {
 			}
 		}
 
-		if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-			$document->add_control(
-				'_seopress_robots_breadcrumbs',
+if ( seopress_is_pro_license_active() ) {
+$document->add_control(
+'_seopress_robots_breadcrumbs',
 				array(
 					'label'       => __( 'Custom breadcrumbs', 'webseo' ),
 					'description' => __( 'Enter a custom value, useful if your title is too long', 'webseo' ),
@@ -603,9 +603,9 @@ class Document_Settings_Section {
 			)
 		);
 
-		if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-			$document->add_control(
-				'seopress_google_suggest_kw',
+if ( seopress_is_pro_license_active() ) {
+$document->add_control(
+'seopress_google_suggest_kw',
 				array(
 					'label'       => __( 'Google suggestions', 'webseo' ),
 					'description' => __( 'Enter a keyword, or a phrase, to find the top 10 Google suggestions instantly. This is useful if you want to work with the long tail technique.', 'webseo' ),

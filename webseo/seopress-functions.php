@@ -21,6 +21,29 @@ function seopress_get_service( $service ) {
         return Kernel::getContainer()->getServiceByName( $service );
 }
 
+/**
+ * Check if a PRO license is active from the main plugin settings.
+ *
+ * @return bool
+ */
+function seopress_is_pro_license_active() {
+        $license_status = get_option( 'seopress_pro_license_status' );
+        $is_active      = 'valid' === $license_status;
+
+        return (bool) apply_filters( 'seopress_is_pro_license_active', $is_active, $license_status );
+}
+
+if ( ! function_exists( 'seopress_is_pro_active' ) ) {
+        /**
+         * Backward-compatible alias for determining PRO availability.
+         *
+         * @return bool
+         */
+        function seopress_is_pro_active() {
+                return seopress_is_pro_license_active();
+        }
+}
+
 if ( ! function_exists( 'webseo_locate_template_file' ) ) {
         /**
          * Locate a template while supporting legacy Pro template paths.
@@ -717,11 +740,11 @@ function seopress_remove_other_notices() {
 		remove_all_actions( 'user_admin_notices' );
 		remove_all_actions( 'all_admin_notices' );
 		add_action( 'admin_notices', 'seopress_admin_notices' );
-		if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-			if ( version_compare( SEOPRESS_PRO_VERSION, '6.4', '>=' ) ) {
-				add_action( 'admin_notices', 'seopress_pro_admin_notices' );
-			}
-		}
+if ( seopress_is_pro_license_active() ) {
+if ( defined( 'SEOPRESS_PRO_VERSION' ) && version_compare( SEOPRESS_PRO_VERSION, '6.4', '>=' ) ) {
+add_action( 'admin_notices', 'seopress_pro_admin_notices' );
+}
+}
 		if ( is_plugin_active( 'wp-seopress-insights/seopress-insights.php' ) ) {
 			if ( version_compare( SEOPRESS_INSIGHTS_VERSION, '1.8.1', '>=' ) ) {
 				add_action( 'admin_notices', 'seopress_insights_notices' );
@@ -745,6 +768,29 @@ function seopress_remove_other_plugin_notices() {
 	}
 }
 add_action( 'admin_init', 'seopress_remove_other_plugin_notices' );
+
+/**
+ * Enable feature flags tied to PRO capabilities when the license is valid.
+ *
+ * @return void
+ */
+function seopress_register_pro_feature_flags() {
+        if ( ! seopress_is_pro_license_active() ) {
+                return;
+        }
+
+        $enable_with_license = static function ( $active ) {
+                return $active || seopress_is_pro_license_active();
+        };
+
+        add_filter( 'seopress_active_schemas_manual_universal_metabox', $enable_with_license, 10, 1 );
+        add_filter( 'seopress_active_google_news', $enable_with_license, 10, 1 );
+        add_filter( 'seopress_active_video_sitemap', $enable_with_license, 10, 1 );
+        add_filter( 'seopress_active_inspect_url', $enable_with_license, 10, 1 );
+        add_filter( 'seopress_active_internal_linking', $enable_with_license, 10, 1 );
+        add_filter( 'seopress_active_schemas', $enable_with_license, 10, 1 );
+}
+add_action( 'plugins_loaded', 'seopress_register_pro_feature_flags', 12 );
 
 /**
  * We replace the WP action by ours.

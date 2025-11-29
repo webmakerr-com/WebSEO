@@ -8,10 +8,10 @@
 
 defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Thanks :)' );
 
-if ( is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-	if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' === seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
-		return;
-	}
+if ( seopress_is_pro_license_active() ) {
+if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' === seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
+return;
+}
 }
 
 	$docs       = seopress_get_docs_links();
@@ -74,10 +74,11 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 						<div class="details">
 							<h3 class="name"><?php echo esc_html( $title ); ?></h3>
 					<?php
-					// Plugin status.
-					if ( is_plugin_active( $key ) ) {
-						$status = 'status-active';
-						$label  = esc_attr__( 'Active', 'webseo' );
+// Plugin status.
+$is_active = 'wp-seopress-pro/seopress-pro.php' === $key ? seopress_is_pro_license_active() : is_plugin_active( $key );
+if ( $is_active ) {
+$status = 'status-active';
+$label  = esc_attr__( 'Active', 'webseo' );
 					} else {
 						$status  = 'status-inactive';
 						$label   = esc_attr__( 'Inactive', 'webseo' );
