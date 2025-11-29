@@ -36,7 +36,7 @@ class TableList {
             ]),
         ]);
 
-        return new Table("seopress_significant_keywords", $tableStructureImportantKeywords, 1);
+        return new Table("webseo_significant_keywords", $tableStructureImportantKeywords, 1);
     }
 
     public function getTableSEOIssues() {
@@ -72,13 +72,13 @@ class TableList {
             ]),
         ]);
 
-        return new Table("seopress_seo_issues", $tableStructure, 1);
+        return new Table("webseo_seo_issues", $tableStructure, 1);
     }
 
     public function getTables() {
         return [
-            'seopress_significant_keywords' => $this->getTableSignificantKeywords(),
-            'seopress_seo_issues' => $this->getTableSEOIssues(),
+            'webseo_significant_keywords' => $this->getTableSignificantKeywords(),
+            'webseo_seo_issues' => $this->getTableSEOIssues(),
         ];
     }
 }

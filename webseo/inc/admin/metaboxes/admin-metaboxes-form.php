@@ -686,7 +686,7 @@ if ( 'term.php' === $pagenow || 'edit-tags.php' === $pagenow ) { ?>
 											return;
 										}
 
-										const dataResponse = await fetch("<?php echo esc_url( rest_url() ); ?>seopress/v1/search-url?url=" + term)
+                                                                                const dataResponse = await fetch("<?php echo esc_url( rest_url( WEBSEO_REST_NAMESPACE . '/' ) ); ?>search-url?url=" + term)
 										const data = await dataResponse.json();
 
 										cache[ term ] = data.map(item => {

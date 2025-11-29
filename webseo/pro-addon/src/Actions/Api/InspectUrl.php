@@ -14,7 +14,7 @@ class InspectUrl implements ExecuteHooks {
     }
 
     public function register() {
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/inspect', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/inspect', [
             'methods' => 'GET',
             'callback' => [$this, 'processGet'],
             'args' => [
@@ -30,7 +30,7 @@ class InspectUrl implements ExecuteHooks {
             },
         ]);
 
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/inspect', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/inspect', [
             'methods' => 'POST',
             'callback' => [$this, 'processPost'],
             'permission_callback' => function ($request) {

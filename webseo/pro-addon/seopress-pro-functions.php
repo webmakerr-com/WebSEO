@@ -395,8 +395,8 @@ if ( version_compare( $actual_version, '6.7', '>=' ) || ( defined( 'SCRIPT_DEBUG
 		$option_pro_service    = seopress_pro_get_service( 'OptionPro' );
 		$notice_option_service = seopress_pro_get_service( 'NoticeOption' );
 
-		if ( null !== $option_pro_service && method_exists( $option_pro_service, 'get404Cleaning' ) ) {
-			if ( $option_pro_service->get404Cleaning() === '1' && ! wp_next_scheduled( 'seopress_404_cron_cleaning' ) ) {
+                if ( null !== $option_pro_service && method_exists( $option_pro_service, 'get404Cleaning' ) ) {
+                        if ( $option_pro_service->get404Cleaning() === '1' && ! wp_next_scheduled( 'webseo_404_cron_cleaning' ) && ! wp_next_scheduled( 'seopress_404_cron_cleaning' ) ) {
 
 				$args[] = array(
 					'id'         => 'notice-title-tag',

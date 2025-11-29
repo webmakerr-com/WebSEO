@@ -93,40 +93,40 @@ if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . '/vendor/autoload.php' ) && def
  * @return void
  */
 function seopress_pro_cron() {
-	// CRON - 404 cleaning.
-	if ( ! wp_next_scheduled( 'seopress_404_cron_cleaning' ) ) {
-		wp_schedule_event( time(), 'daily', 'seopress_404_cron_cleaning' );
-	}
+        // CRON - 404 cleaning.
+        if ( ! wp_next_scheduled( 'webseo_404_cron_cleaning' ) ) {
+                wp_schedule_event( time(), 'daily', 'webseo_404_cron_cleaning' );
+        }
 
-	// CRON - GA stats in dashboard.
-	if ( ! wp_next_scheduled( 'seopress_google_analytics_cron' ) ) {
-		wp_schedule_event( time(), 'hourly', 'seopress_google_analytics_cron' );
-	}
+        // CRON - GA stats in dashboard.
+        if ( ! wp_next_scheduled( 'webseo_google_analytics_cron' ) ) {
+                wp_schedule_event( time(), 'hourly', 'webseo_google_analytics_cron' );
+        }
 
-	// CRON - Matomo stats in dashboard.
-	if ( ! wp_next_scheduled( 'seopress_matomo_analytics_cron' ) ) {
-		wp_schedule_event( time(), 'hourly', 'seopress_matomo_analytics_cron' );
-	}
+        // CRON - Matomo stats in dashboard.
+        if ( ! wp_next_scheduled( 'webseo_matomo_analytics_cron' ) ) {
+                wp_schedule_event( time(), 'hourly', 'webseo_matomo_analytics_cron' );
+        }
 
-	// CRON - Page Speed Insights.
-	if ( ! wp_next_scheduled( 'seopress_page_speed_insights_cron' ) ) {
-		wp_schedule_event( time(), 'daily', 'seopress_page_speed_insights_cron' );
-	}
+        // CRON - Page Speed Insights.
+        if ( ! wp_next_scheduled( 'webseo_page_speed_insights_cron' ) ) {
+                wp_schedule_event( time(), 'daily', 'webseo_page_speed_insights_cron' );
+        }
 
-	// CRON - 404 errors Email Alerts.
-	if ( ! wp_next_scheduled( 'seopress_404_email_alerts_cron' ) ) {
-		wp_schedule_event( time(), 'weekly', 'seopress_404_email_alerts_cron' );
-	}
+        // CRON - 404 errors Email Alerts.
+        if ( ! wp_next_scheduled( 'webseo_404_email_alerts_cron' ) ) {
+                wp_schedule_event( time(), 'weekly', 'webseo_404_email_alerts_cron' );
+        }
 
-	// CRON - Insights from GSC.
-	if ( ! wp_next_scheduled( 'seopress_insights_gsc_cron' ) ) {
-		wp_schedule_event( time(), 'daily', 'seopress_insights_gsc_cron' );
-	}
+        // CRON - Insights from GSC.
+        if ( ! wp_next_scheduled( 'webseo_insights_gsc_cron' ) ) {
+                wp_schedule_event( time(), 'daily', 'webseo_insights_gsc_cron' );
+        }
 
-	// CRON - SEO Alerts.
-	if ( ! wp_next_scheduled( 'seopress_alerts_cron' ) ) {
-		wp_schedule_event( time(), 'twicedaily', 'seopress_alerts_cron' );
-	}
+        // CRON - SEO Alerts.
+        if ( ! wp_next_scheduled( 'webseo_alerts_cron' ) ) {
+                wp_schedule_event( time(), 'twicedaily', 'webseo_alerts_cron' );
+        }
 }
 
 /**
@@ -290,15 +290,13 @@ register_activation_hook( defined( 'SEOPRESS_PLUGIN_FILE' ) ? SEOPRESS_PLUGIN_FI
  * @return void
  */
 function seopress_pro_deactivation() {
-	delete_option( 'seopress_pro_activated' );
-	flush_rewrite_rules( false );
-	wp_clear_scheduled_hook( 'seopress_404_cron_cleaning' );
-	wp_clear_scheduled_hook( 'seopress_google_analytics_cron' );
-	wp_clear_scheduled_hook( 'seopress_page_speed_insights_cron' );
-	wp_clear_scheduled_hook( 'seopress_404_email_alerts_cron' );
-	wp_clear_scheduled_hook( 'seopress_insights_gsc_cron' );
-	wp_clear_scheduled_hook( 'seopress_matomo_analytics_cron' );
-	do_action( 'seopress_pro_deactivation' );
+        delete_option( 'seopress_pro_activated' );
+        flush_rewrite_rules( false );
+        foreach ( webseo_get_cron_event_mappings() as $legacy_hook => $new_hook ) {
+                wp_clear_scheduled_hook( $new_hook );
+                wp_clear_scheduled_hook( $legacy_hook );
+        }
+        do_action( 'seopress_pro_deactivation' );
 }
 register_deactivation_hook( defined( 'SEOPRESS_PLUGIN_FILE' ) ? SEOPRESS_PLUGIN_FILE : __FILE__, 'seopress_pro_deactivation' );
 

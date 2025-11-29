@@ -49,6 +49,8 @@ define( 'WEBSEO_TEMPLATE_JSON_SCHEMAS', WEBSEO_TEMPLATE_DIR . '/json-schemas' );
 define( 'WEBSEO_PATH_PUBLIC', WEBSEO_PLUGIN_DIR_PATH . 'public' );
 define( 'WEBSEO_URL_PUBLIC', WEBSEO_PLUGIN_DIR_URL . 'public' );
 define( 'WEBSEO_URL_ASSETS', WEBSEO_PLUGIN_DIR_URL . 'assets' );
+define( 'WEBSEO_REST_NAMESPACE', 'webseo/v1' );
+define( 'SEOPRESS_REST_NAMESPACE', 'seopress/v1' );
 
 // Pro assets shipped within the main plugin.
 define( 'WEBSEO_PRO_PLUGIN_DIR_PATH', WEBSEO_PLUGIN_DIR_PATH . 'pro-addon/' );
@@ -147,6 +149,122 @@ function webseo_do_action_compat( $new_hook, $legacy_hook, ...$args ) {
 }
 
 /**
+ * Register an action for both the new and legacy hook names.
+ *
+ * @param string   $new_hook    New hook name.
+ * @param string   $legacy_hook Deprecated legacy hook name.
+ * @param callable $callback    Callback to execute.
+ * @param int      $priority    Hook priority.
+ * @param int      $accepted_args Number of accepted arguments.
+ * @return void
+ */
+function webseo_add_action_compat( $new_hook, $legacy_hook, $callback, $priority = 10, $accepted_args = 1 ) {
+        add_action( $new_hook, $callback, $priority, $accepted_args );
+
+        if ( $legacy_hook !== $new_hook ) {
+                add_action( $legacy_hook, $callback, $priority, $accepted_args );
+        }
+}
+
+/**
+ * Register a REST route for both the WebSEO and legacy SEOPress namespaces.
+ *
+ * @param string $route     Route path.
+ * @param array  $args      Route arguments.
+ * @param bool   $override  Whether to override an existing route.
+ * @return void
+ */
+function webseo_register_rest_route( $route, $args = array(), $override = false ) {
+        register_rest_route( WEBSEO_REST_NAMESPACE, $route, $args, $override );
+        register_rest_route( SEOPRESS_REST_NAMESPACE, $route, $args, $override );
+}
+
+/**
+ * Retrieve cron event mappings from legacy to new hook names.
+ *
+ * @return array<string, string>
+ */
+function webseo_get_cron_event_mappings() {
+        return array(
+                'seopress_xml_sitemaps_ping_cron' => 'webseo_xml_sitemaps_ping_cron',
+                'seopress_404_cron_cleaning'      => 'webseo_404_cron_cleaning',
+                'seopress_google_analytics_cron'  => 'webseo_google_analytics_cron',
+                'seopress_page_speed_insights_cron' => 'webseo_page_speed_insights_cron',
+                'seopress_404_email_alerts_cron'  => 'webseo_404_email_alerts_cron',
+                'seopress_insights_gsc_cron'      => 'webseo_insights_gsc_cron',
+                'seopress_matomo_analytics_cron'  => 'webseo_matomo_analytics_cron',
+                'seopress_alerts_cron'            => 'webseo_alerts_cron',
+                'seopress_site_audit_run_task_cron' => 'webseo_site_audit_run_task_cron',
+        );
+}
+
+/**
+ * Migrate scheduled events to the new WebSEO-prefixed hook names.
+ *
+ * @param array $completed_migrations Completed migrations array (passed by reference).
+ * @return void
+ */
+function webseo_migrate_cron_events( &$completed_migrations ) {
+        if ( ! empty( $completed_migrations['webseo_cron_rename'] ) ) {
+                return;
+        }
+
+        foreach ( webseo_get_cron_event_mappings() as $legacy_hook => $new_hook ) {
+                $next_event = wp_next_scheduled( $legacy_hook );
+
+                if ( $next_event && ! wp_next_scheduled( $new_hook ) ) {
+                        $schedule = wp_get_schedule( $legacy_hook );
+
+                        if ( $schedule ) {
+                                wp_schedule_event( $next_event, $schedule, $new_hook );
+                        }
+                }
+
+                while ( $next_event ) {
+                        wp_unschedule_event( $next_event, $legacy_hook );
+                        $next_event = wp_next_scheduled( $legacy_hook );
+                }
+        }
+
+        $completed_migrations['webseo_cron_rename'] = true;
+}
+
+/**
+ * Migrate custom tables from the legacy SEOPress prefix to the WebSEO prefix.
+ *
+ * @param array $completed_migrations Completed migrations array (passed by reference).
+ * @return void
+ */
+function webseo_migrate_custom_tables( &$completed_migrations ) {
+        global $wpdb;
+
+        if ( ! empty( $completed_migrations['webseo_table_rename'] ) ) {
+                return;
+        }
+
+        $table_pairs = array(
+                'seopress_significant_keywords' => 'webseo_significant_keywords',
+                'seopress_seo_issues'           => 'webseo_seo_issues',
+                'seopress_content_analysis'     => 'webseo_content_analysis',
+        );
+
+        foreach ( $table_pairs as $legacy_table => $new_table ) {
+                $legacy_table_name = $wpdb->prefix . $legacy_table;
+                $new_table_name    = $wpdb->prefix . $new_table;
+
+                if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_table_name ) ) === $new_table_name ) {
+                        continue;
+                }
+
+                if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $legacy_table_name ) ) === $legacy_table_name ) {
+                        $wpdb->query( "RENAME TABLE `{$legacy_table_name}` TO `{$new_table_name}`" );
+                }
+        }
+
+        $completed_migrations['webseo_table_rename'] = true;
+}
+
+/**
  * Copy an option value from an old key to a new key and remove the legacy entry when successful.
  *
  * @param string $old_key Legacy option key.
@@ -186,17 +304,19 @@ function webseo_migrate_option_key( $old_key, $new_key ) {
 function webseo_run_option_migrations() {
         $completed_migrations = get_option( 'webseo_completed_migrations', array() );
 
-        if ( ! empty( $completed_migrations['webseo_option_rename'] ) ) {
-                return;
+        if ( empty( $completed_migrations['webseo_option_rename'] ) ) {
+                $migrations_success = webseo_migrate_option_key( 'seopress_activated', 'webseo_activated' );
+                $migrations_success = webseo_migrate_option_key( 'seopress_notices', 'webseo_notices' ) && $migrations_success;
+
+                if ( $migrations_success ) {
+                        $completed_migrations['webseo_option_rename'] = true;
+                }
         }
 
-        $migrations_success = webseo_migrate_option_key( 'seopress_activated', 'webseo_activated' );
-        $migrations_success = webseo_migrate_option_key( 'seopress_notices', 'webseo_notices' ) && $migrations_success;
+        webseo_migrate_custom_tables( $completed_migrations );
+        webseo_migrate_cron_events( $completed_migrations );
 
-        if ( $migrations_success ) {
-                $completed_migrations['webseo_option_rename'] = true;
-                update_option( 'webseo_completed_migrations', $completed_migrations, false );
-        }
+        update_option( 'webseo_completed_migrations', $completed_migrations, false );
 }
 add_action( 'plugins_loaded', 'webseo_run_option_migrations', 5 );
 

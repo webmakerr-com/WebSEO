@@ -20,7 +20,7 @@ class SiteAudit {
 
 	public function getDataIds($type) {
 		global $wpdb;
-		$table_name = $wpdb->prefix . 'seopress_seo_issues';
+		$table_name = $wpdb->prefix . 'webseo_seo_issues';
 		$column_name = 'post_id';
 		$issue_type = $type ? sanitize_text_field($type) : '';
 
@@ -81,7 +81,7 @@ class SiteAudit {
 	public function countTotalIssues($type = '', $priority = '', $ignore = 0) {
 		global $wpdb;
 
-		$sql = 'SELECT COUNT(*) FROM `' . $wpdb->prefix . 'seopress_seo_issues`';
+		$sql = 'SELECT COUNT(*) FROM `' . $wpdb->prefix . 'webseo_seo_issues`';
 
 		$conditions = [];
 
@@ -109,7 +109,7 @@ class SiteAudit {
 	public function countTotalCrawledURL() {
 		global $wpdb;
 
-		$sql = 'SELECT COUNT(DISTINCT `post_id`) FROM `' . $wpdb->prefix . 'seopress_seo_issues`';
+		$sql = 'SELECT COUNT(DISTINCT `post_id`) FROM `' . $wpdb->prefix . 'webseo_seo_issues`';
 
 		$count = $wpdb->get_var($sql);
 

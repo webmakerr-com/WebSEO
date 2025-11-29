@@ -37,8 +37,7 @@ class TitleDescriptionMeta implements ExecuteHooks {
 	 * @return void
 	 */
 	public function register() {
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/posts/(?P<id>\d+)/title-description-metas',
 			array(
 				'methods'             => 'GET',
@@ -63,8 +62,7 @@ class TitleDescriptionMeta implements ExecuteHooks {
 			)
 		);
 
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/posts/(?P<id>\d+)/title-description-metas',
 			array(
 				'methods'             => 'PUT',

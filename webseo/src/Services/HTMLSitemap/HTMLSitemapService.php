@@ -33,12 +33,13 @@ class HTMLSitemapService {
 	 *
 	 * @return void
 	 */
-	public function init() {
-		if ( '1' === $this->sitemap_option->getHtmlEnable() ) {
-			add_action( 'wp', array( $this, 'display' ) );
-			add_shortcode( 'seopress_html_sitemap', array( $this, 'renderSitemap' ) );
-		}
-	}
+        public function init() {
+                if ( '1' === $this->sitemap_option->getHtmlEnable() ) {
+                        add_action( 'wp', array( $this, 'display' ) );
+                        add_shortcode( 'webseo_html_sitemap', array( $this, 'renderSitemap' ) );
+                        add_shortcode( 'seopress_html_sitemap', array( $this, 'renderSitemap' ) );
+                }
+        }
 
 	/**
 	 * The display function.
@@ -62,13 +63,13 @@ class HTMLSitemapService {
 	 */
 	public function renderSitemap( $html = '' ) { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
 		$atts = shortcode_atts(
-			array(
-				'cpt'        => '',
-				'terms_only' => false,
-			),
-			$html,
-			'[seopress_html_sitemap]'
-		);
+                        array(
+                                'cpt'        => '',
+                                'terms_only' => false,
+                        ),
+                        $html,
+                        '[webseo_html_sitemap]'
+                );
 
 		$product_cat_slug = apply_filters( 'seopress_sitemaps_html_product_cat_slug', 'product_cat' );
 

@@ -16,7 +16,7 @@ class GenerateByAI implements ExecuteHooks {
 
     public function register() {
 
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/generate-metas-by-ai', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/generate-metas-by-ai', [
             'methods'             => 'POST',
             'callback'            => [$this, 'processPost'],
             'args'                => [

@@ -25,7 +25,7 @@ class Redirections implements ExecuteHooks
      */
     public function register()
     {
-        register_rest_route('seopress/v1', '/redirections', [
+        webseo_register_rest_route( '/redirections', [
             'methods'             => 'GET',
             'callback'            => [$this, 'processGetAll'],
             'args'                => [

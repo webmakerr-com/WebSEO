@@ -14,7 +14,7 @@ class GetMatomoStats implements ExecuteHooks {
     }
 
     public function register() {
-        register_rest_route('seopress/v1', '/matomo', [
+        webseo_register_rest_route( '/matomo', [
             'methods' => 'GET',
             'callback' => [$this, 'processGet'],
             'permission_callback' => function ($request) {

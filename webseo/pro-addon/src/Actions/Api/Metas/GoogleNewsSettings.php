@@ -25,7 +25,7 @@ class GoogleNewsSettings implements ExecuteHooks {
      * @return void
      */
     public function register() {
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/google-news-settings', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/google-news-settings', [
             'methods'             => 'GET',
             'callback'            => [$this, 'processGet'],
             'args'                => [
@@ -47,7 +47,7 @@ class GoogleNewsSettings implements ExecuteHooks {
             },
         ]);
 
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/google-news-settings', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/google-news-settings', [
             'methods'             => 'PUT',
             'callback'            => [$this, 'processPut'],
             'args'                => [

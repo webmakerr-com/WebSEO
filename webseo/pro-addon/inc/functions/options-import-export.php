@@ -897,7 +897,7 @@ function seopress_clean_404() {
     }
 
     add_filter('seopress_404_cleaning_query', 'seopress_clean_404_query_hook');
-    do_action('seopress_404_cron_cleaning', true);
+    webseo_do_action_compat('webseo_404_cron_cleaning', 'seopress_404_cron_cleaning', true);
     wp_safe_redirect(admin_url('edit.php?post_type=seopress_404'));
     exit;
 }
@@ -1122,11 +1122,13 @@ function seopress_clean_audit_scans() {
 
     global $wpdb;
 
-    // Clean custom table if it exists
-    if ($wpdb->get_var("SHOW TABLES LIKE '{$wpdb->prefix}seopress_seo_issues'") === $wpdb->prefix . 'seopress_seo_issues') {
-        $sql = 'DELETE FROM `' . $wpdb->prefix . 'seopress_seo_issues`';
-        $sql = $wpdb->prepare($sql);
-        $wpdb->query($sql);
+    // Clean custom tables if they exist
+    foreach (['webseo_seo_issues', 'seopress_seo_issues'] as $issues_table) {
+        if ($wpdb->get_var("SHOW TABLES LIKE '{$wpdb->prefix}{$issues_table}'") === $wpdb->prefix . $issues_table) {
+            $sql = 'DELETE FROM `' . $wpdb->prefix . $issues_table . '`';
+            $sql = $wpdb->prepare($sql);
+            $wpdb->query($sql);
+        }
     }
 
     wp_safe_redirect(admin_url('admin.php?page=seopress-import-export'));

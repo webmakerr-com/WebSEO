@@ -22,7 +22,7 @@ class GetSEOIssues implements ExecuteHooks
      */
     public function register()
     {
-        register_rest_route('seopress/v1', '/seo-issues/(?P<id>\d+)', [
+        webseo_register_rest_route( '/seo-issues/(?P<id>\d+)', [
             'methods'             => 'GET',
             'callback'            => [$this, 'processGetByID'],
             'args'                => [
@@ -40,7 +40,7 @@ class GetSEOIssues implements ExecuteHooks
             },
         ]);
 
-        register_rest_route('seopress/v1', '/seo-issues', [
+        webseo_register_rest_route( '/seo-issues', [
             'methods'             => 'GET',
             'callback'            => [$this, 'processGetAll'],
             'args'                => [
@@ -181,7 +181,7 @@ class GetSEOIssues implements ExecuteHooks
         }
 
         global $wpdb;
-        $table_name = $wpdb->prefix . 'seopress_seo_issues';
+        $table_name = $wpdb->prefix . 'webseo_seo_issues';
 
         $sql = $wpdb->prepare("SELECT * FROM $table_name WHERE post_id = %d", absint($id));
 
@@ -205,7 +205,7 @@ class GetSEOIssues implements ExecuteHooks
         $ignore = $request->get_param('ignore');
 
         global $wpdb;
-        $table_name = $wpdb->prefix . 'seopress_seo_issues';
+        $table_name = $wpdb->prefix . 'webseo_seo_issues';
 
         $sql = "SELECT * FROM $table_name";
 
