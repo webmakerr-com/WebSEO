@@ -13,7 +13,7 @@ class InspectUrlGoogle {
     }
 
     public function setupService() {
-        require_once WP_PLUGIN_DIR . '/wp-seopress-pro/vendor/autoload.php';
+        require_once WEBSEO_PRO_PLUGIN_DIR_PATH . 'vendor/autoload.php';
 
         $client = new \Google_Client();
 
@@ -124,7 +124,7 @@ class InspectUrlGoogle {
     }
 
     public function handle($postId) {
-        require_once WP_PLUGIN_DIR . '/wp-seopress-pro/vendor/autoload.php';
+        require_once WEBSEO_PRO_PLUGIN_DIR_PATH . 'vendor/autoload.php';
 
         $data = [];
 
