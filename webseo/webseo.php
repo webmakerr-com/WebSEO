@@ -101,6 +101,7 @@ foreach ( $legacy_constants as $legacy_constant => $new_constant ) {
  * Kernel
  */
 use WebSEO\Core\Kernel;
+use WebSEO\Helpers\PagesAdmin;
 require_once WEBSEO_PLUGIN_DIR_PATH . 'seopress-autoload.php';
 
 if ( file_exists( WEBSEO_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
@@ -256,20 +257,104 @@ function webseo_migrate_custom_tables( &$completed_migrations ) {
                 'seopress_content_analysis'     => 'webseo_content_analysis',
         );
 
-        foreach ( $table_pairs as $legacy_table => $new_table ) {
-                $legacy_table_name = $wpdb->prefix . $legacy_table;
-                $new_table_name    = $wpdb->prefix . $new_table;
+foreach ( $table_pairs as $legacy_table => $new_table ) {
+$legacy_table_name = $wpdb->prefix . $legacy_table;
+$new_table_name    = $wpdb->prefix . $new_table;
 
-                if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_table_name ) ) === $new_table_name ) {
-                        continue;
-                }
+if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $new_table_name ) ) === $new_table_name ) {
+continue;
+}
 
-                if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $legacy_table_name ) ) === $legacy_table_name ) {
-                        $wpdb->query( "RENAME TABLE `{$legacy_table_name}` TO `{$new_table_name}`" );
-                }
-        }
+if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $legacy_table_name ) ) === $legacy_table_name ) {
+$renamed = $wpdb->query( "RENAME TABLE `{$legacy_table_name}` TO `{$new_table_name}`" );
 
-        $completed_migrations['webseo_table_rename'] = true;
+if ( false === $renamed ) {
+// Fallback copy to avoid data loss when rename fails.
+$wpdb->query( "CREATE TABLE `{$new_table_name}` LIKE `{$legacy_table_name}`" );
+$wpdb->query( "INSERT INTO `{$new_table_name}` SELECT * FROM `{$legacy_table_name}`" );
+$wpdb->query( "DROP TABLE `{$legacy_table_name}`" );
+}
+}
+}
+
+$completed_migrations['webseo_table_rename'] = true;
+}
+
+/**
+ * Migrate stored capabilities from legacy prefixes to the WebSEO prefix.
+ *
+ * @param array $completed_migrations Completed migrations array (passed by reference).
+ * @return void
+ */
+function webseo_migrate_capabilities( &$completed_migrations ) {
+if ( ! empty( $completed_migrations['webseo_capability_rename'] ) ) {
+return;
+}
+
+$roles = wp_roles();
+
+if ( ! $roles ) {
+return;
+}
+
+$pages = PagesAdmin::getPages();
+
+foreach ( $roles->role_objects as $role ) {
+foreach ( $pages as $capability ) {
+$new_capability    = PagesAdmin::getCustomCapability( $capability );
+$legacy_capability = PagesAdmin::getLegacyCapability( $capability );
+
+if ( isset( $role->capabilities[ $legacy_capability ] ) ) {
+$role->add_cap( $new_capability, true );
+$role->remove_cap( $legacy_capability );
+}
+}
+}
+
+$completed_migrations['webseo_capability_rename'] = true;
+}
+
+/**
+ * Remove cached values that use legacy prefixes so rebuilt caches use the new identifiers.
+ *
+ * @param array $completed_migrations Completed migrations array (passed by reference).
+ * @return void
+ */
+function webseo_migrate_caches( &$completed_migrations ) {
+if ( ! empty( $completed_migrations['webseo_cache_reset'] ) ) {
+return;
+}
+
+global $wpdb;
+
+$legacy_transients = array(
+'_seopress_sitemap_ids_video',
+'seopress_results_page_speed',
+'seopress_results_page_speed_desktop',
+'seopress_results_google_analytics',
+'seopress_results_matomo',
+'seopress_prevent_title_redirection_already_exist',
+);
+
+foreach ( $legacy_transients as $legacy_transient ) {
+delete_transient( $legacy_transient );
+}
+
+$patterned_transients = array(
+'_transient_seopress_content_analysis_count_target_keywords_use_%',
+'_transient_timeout_seopress_content_analysis_count_target_keywords_use_%',
+);
+
+foreach ( $patterned_transients as $pattern ) {
+//phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
+$options = $wpdb->get_col( $wpdb->prepare( "SELECT option_name FROM {$wpdb->options} WHERE option_name LIKE %s", $pattern ) );
+
+foreach ( $options as $option_name ) {
+delete_option( $option_name );
+}
+}
+
+$completed_migrations['webseo_cache_reset'] = true;
 }
 
 /**
@@ -312,19 +397,21 @@ function webseo_migrate_option_key( $old_key, $new_key ) {
 function webseo_run_option_migrations() {
         $completed_migrations = get_option( 'webseo_completed_migrations', array() );
 
-        if ( empty( $completed_migrations['webseo_option_rename'] ) ) {
-                $migrations_success = webseo_migrate_option_key( 'seopress_activated', 'webseo_activated' );
-                $migrations_success = webseo_migrate_option_key( 'seopress_notices', 'webseo_notices' ) && $migrations_success;
+if ( empty( $completed_migrations['webseo_option_rename'] ) ) {
+$migrations_success = webseo_migrate_option_key( 'seopress_activated', 'webseo_activated' );
+$migrations_success = webseo_migrate_option_key( 'seopress_notices', 'webseo_notices' ) && $migrations_success;
 
                 if ( $migrations_success ) {
                         $completed_migrations['webseo_option_rename'] = true;
-                }
-        }
+}
+}
 
-        webseo_migrate_custom_tables( $completed_migrations );
-        webseo_migrate_cron_events( $completed_migrations );
+webseo_migrate_custom_tables( $completed_migrations );
+webseo_migrate_cron_events( $completed_migrations );
+webseo_migrate_capabilities( $completed_migrations );
+webseo_migrate_caches( $completed_migrations );
 
-        update_option( 'webseo_completed_migrations', $completed_migrations, false );
+update_option( 'webseo_completed_migrations', $completed_migrations, false );
 }
 add_action( 'plugins_loaded', 'webseo_run_option_migrations', 5 );
 

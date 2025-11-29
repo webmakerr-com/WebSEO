@@ -99,25 +99,26 @@ abstract class PagesAdmin {
 	 *
 	 * @return array
 	 */
-	public static function getPages() { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
-		return apply_filters(
-			'seopress_pages_admin',
-			array(
-				self::DASHBOARD,
-				self::TITLE_METAS,
-				self::XML_HTML_SITEMAP,
-				self::SOCIAL_NETWORKS,
-				self::ANALYTICS,
-				self::ADVANCED,
-				self::TOOLS,
-				self::INSTANT_INDEXING,
-				self::PRO,
-				self::SCHEMAS,
-				self::BOT,
-				self::LICENSE,
-			)
-		);
-	}
+        public static function getPages() { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
+                return webseo_apply_filters_compat(
+                        'webseo_pages_admin',
+                        'seopress_pages_admin',
+                        array(
+                                self::DASHBOARD,
+                                self::TITLE_METAS,
+                                self::XML_HTML_SITEMAP,
+                                self::SOCIAL_NETWORKS,
+                                self::ANALYTICS,
+                                self::ADVANCED,
+                                self::TOOLS,
+                                self::INSTANT_INDEXING,
+                                self::PRO,
+                                self::SCHEMAS,
+                                self::BOT,
+                                self::LICENSE,
+                        )
+                );
+        }
 
 	/**
 	 * The get_capability_by_page function.
@@ -150,9 +151,9 @@ abstract class PagesAdmin {
 			case 'seopress-bot-batch':
 				return self::BOT;
 			default:
-				return apply_filters( 'seopress_get_capability_by_page', null );
-		}
-	}
+                                return webseo_apply_filters_compat( 'webseo_get_capability_by_page', 'seopress_get_capability_by_page', null );
+                }
+        }
 
 	/**
 	 * The get_page_by_capability function.
@@ -163,11 +164,17 @@ abstract class PagesAdmin {
 	 *
 	 * @return string
 	 */
-	public static function getPageByCapability( $capability ) { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
-		switch ( $capability ) {
-			case self::TITLE_METAS:
-				return 'seopress-titles';
-			case self::XML_HTML_SITEMAP:
+        public static function getPageByCapability( $capability ) { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
+                if ( 0 === strpos( $capability, 'webseo_manage_' ) ) {
+                        $capability = substr( $capability, strlen( 'webseo_manage_' ) );
+                } elseif ( 0 === strpos( $capability, 'seopress_manage_' ) ) {
+                        $capability = substr( $capability, strlen( 'seopress_manage_' ) );
+                }
+
+                switch ( $capability ) {
+                        case self::TITLE_METAS:
+                                return 'seopress-titles';
+                        case self::XML_HTML_SITEMAP:
 				return 'seopress-xml-sitemap';
 			case self::SOCIAL_NETWORKS:
 				return 'seopress-social';
@@ -181,12 +188,12 @@ abstract class PagesAdmin {
                                 return 'webseo-pro-page';
 			case self::ADVANCED:
 				return 'seopress-advanced';
-			case self::BOT:
-				return 'seopress-bot-batch';
-			default:
-				return apply_filters( 'seopress_get_page_by_capability', null );
-		}
-	}
+                        case self::BOT:
+                                return 'seopress-bot-batch';
+                        default:
+                                return webseo_apply_filters_compat( 'webseo_get_page_by_capability', 'seopress_get_page_by_capability', null );
+                }
+        }
 
 	/**
 	 * The get_custom_capability function.
@@ -198,6 +205,17 @@ abstract class PagesAdmin {
 	 * @return string
 	 */
 	public static function getCustomCapability( $capability ) { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
-		return sprintf( 'seopress_manage_%s', $capability );
-	}
+                return sprintf( 'webseo_manage_%s', $capability );
+        }
+
+        /**
+         * Retrieve the legacy capability string for backward compatibility.
+         *
+         * @param string $capability The capability.
+         *
+         * @return string
+         */
+        public static function getLegacyCapability( $capability ) {
+                return sprintf( 'seopress_manage_%s', $capability );
+        }
 }
