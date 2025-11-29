@@ -8,8 +8,8 @@
 
 defined( 'ABSPATH' ) || exit( 'Cheatin&#8217; uh?' );
 
-if ( '' !== get_query_var( 'seopress_cpt' ) ) {
-	$path = get_query_var( 'seopress_cpt' );
+if ( '' !== get_query_var( 'webseo_cpt', get_query_var( 'seopress_cpt' ) ) ) {
+        $path = get_query_var( 'webseo_cpt', get_query_var( 'seopress_cpt' ) );
 }
 
 $request_uri = '';
@@ -22,7 +22,7 @@ $offset = end( $matches[0] );
 
 // Max posts per paginated sitemap.
 $max = 1000;
-$max = apply_filters( 'seopress_sitemaps_max_posts_per_sitemap', $max );
+$max = webseo_apply_filters_compat( 'webseo_sitemaps_max_posts_per_sitemap', 'seopress_sitemaps_max_posts_per_sitemap', $max );
 
 if ( isset( $offset ) && absint( $offset ) && '' !== $offset && 0 !== $offset ) {
 	$offset = ( ( --$offset ) * $max );
@@ -32,13 +32,13 @@ if ( isset( $offset ) && absint( $offset ) && '' !== $offset && 0 !== $offset ) 
 
 $home_url = home_url() . '/';
 
-$home_url = apply_filters( 'seopress_sitemaps_home_url', $home_url );
+$home_url = webseo_apply_filters_compat( 'webseo_sitemaps_home_url', 'seopress_sitemaps_home_url', $home_url );
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 printf( '<?xml-stylesheet type="text/xsl" href="%s"?>', esc_url( $home_url . 'sitemaps_xsl.xsl' ) );
 
 $urlset = '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">';
 
-echo apply_filters( 'seopress_sitemaps_urlset', $urlset );
+echo webseo_apply_filters_compat( 'webseo_sitemaps_urlset', 'seopress_sitemaps_urlset', $urlset );
 
 // Archive link.
 if ( get_post_type_archive_link( $path ) && 0 === $offset ) {
@@ -91,9 +91,9 @@ if ( get_post_type_archive_link( $path ) && 0 === $offset ) {
 			);
 			$sitemap_url  = sprintf( "<url>\n<loc>%s</loc>\n</url>", $loc );
 
-			$sitemap_url = apply_filters( 'seopress_sitemaps_no_archive_link', $sitemap_url, $path );
+                        $sitemap_url = webseo_apply_filters_compat( 'webseo_sitemaps_no_archive_link', 'seopress_sitemaps_no_archive_link', $sitemap_url, $path );
 
-			echo apply_filters( 'seopress_sitemaps_url', $sitemap_url, $seopress_url );
+                        echo webseo_apply_filters_compat( 'webseo_sitemaps_url', 'seopress_sitemaps_url', $sitemap_url, $seopress_url );
 		}
 	}
 }
@@ -132,7 +132,7 @@ if ( function_exists( 'get_languages_list' ) && ( is_plugin_active( 'polylang/po
 	}
 }
 
-$args = apply_filters( 'seopress_sitemaps_single_query', $args, $path );
+$args = webseo_apply_filters_compat( 'webseo_sitemaps_single_query', 'seopress_sitemaps_single_query', $args, $path );
 
 $postslist = get_posts( $args );
 
@@ -216,7 +216,7 @@ foreach ( $postslist as $post ) {
 		'images' => array(),
 	);
 
-	$seopress_url = apply_filters( 'seopress_sitemaps_single_url', $seopress_url, $post );
+    $seopress_url = webseo_apply_filters_compat( 'webseo_sitemaps_single_url', 'seopress_sitemaps_single_url', $seopress_url, $post );
 
 	if ( ! empty( $seopress_url['loc'] ) ) {
 		$sitemap_data .= sprintf( "\n<url>\n<loc>%s</loc>\n<lastmod>%s</lastmod>", $seopress_url['loc'], $seopress_url['mod'] );
@@ -230,7 +230,7 @@ foreach ( $postslist as $post ) {
 				$dom             = new domDocument();
 				$internal_errors = libxml_use_internal_errors( true );
 
-				$run_shortcodes = apply_filters( 'seopress_sitemaps_single_shortcodes', false );
+                            $run_shortcodes = webseo_apply_filters_compat( 'webseo_sitemaps_single_shortcodes', 'seopress_sitemaps_single_shortcodes', false );
 
 				if ( true === $run_shortcodes ) {
 					// WP.
@@ -274,7 +274,7 @@ foreach ( $postslist as $post ) {
 						if ( $images->length >= 1 ) {
 							foreach ( $images as $img ) {
 								$url = $img->getAttribute( 'src' );
-								$url = apply_filters( 'seopress_sitemaps_single_img_url', $url );
+                                                            $url = webseo_apply_filters_compat( 'webseo_sitemaps_single_img_url', 'seopress_sitemaps_single_img_url', $url );
 								if ( '' !== $url ) {
 									// Exclude Base64 img.
 									if ( false === strpos( $url, 'data:image/' ) ) {
@@ -344,13 +344,13 @@ foreach ( $postslist as $post ) {
 					}
 				}
 
-				$sitemap_data = apply_filters( 'seopress_sitemaps_single_img', $sitemap_data, $post );
+                            $sitemap_data = webseo_apply_filters_compat( 'webseo_sitemaps_single_img', 'seopress_sitemaps_single_img', $sitemap_data, $post );
 			}
 		}
 		$sitemap_data .= '</url>';
 	}
 
-	echo apply_filters( 'seopress_sitemaps_url', $sitemap_data, $seopress_url );
+    echo webseo_apply_filters_compat( 'webseo_sitemaps_url', 'seopress_sitemaps_url', $sitemap_data, $seopress_url );
 }
 wp_reset_postdata();
 ?>

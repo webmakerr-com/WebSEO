@@ -111,7 +111,7 @@ function seopress_xml_sitemap_index() {
 
 	$home_url = home_url() . '/';
 
-	$home_url = apply_filters( 'seopress_sitemaps_home_url', $home_url );
+        $home_url = webseo_apply_filters_compat( 'webseo_sitemaps_home_url', 'seopress_sitemaps_home_url', $home_url );
 
 	$seopress_sitemaps  = '<?xml version="1.0" encoding="UTF-8"?>';
 	$seopress_sitemaps .= '<?xml-stylesheet type="text/xsl" href="' . $home_url . 'sitemaps_xsl.xsl"?>';
@@ -136,13 +136,13 @@ function seopress_xml_sitemap_index() {
 						// Polylang: exclude hidden languages.
 						$args = seopress_pll_exclude_hidden_lang( $args );
 
-						$args = apply_filters( 'seopress_sitemaps_index_post_types_query', $args, $cpt_key );
+                                                $args = webseo_apply_filters_compat( 'webseo_sitemaps_index_post_types_query', 'seopress_sitemaps_index_post_types_query', $args, $cpt_key );
 
 						$count_posts = count( get_posts( $args ) );
 
 						// Max posts per paginated sitemap.
 						$max = 1000;
-						$max = apply_filters( 'seopress_sitemaps_max_posts_per_sitemap', $max );
+                                                $max = webseo_apply_filters_compat( 'webseo_sitemaps_max_posts_per_sitemap', 'seopress_sitemaps_max_posts_per_sitemap', $max );
 
 						if ( $count_posts >= $max ) {
 							$max_loop = $count_posts / $max;
@@ -153,10 +153,16 @@ function seopress_xml_sitemap_index() {
 						// Performance optimization: Get all lastmod dates in a single query instead of one query per page.
 						// This avoids expensive OFFSET queries that become slower with each page. Updated in 9.3.0.
 						global $wpdb;
-						$cache_key_all     = 'seopress_sitemap_lastmod_all_' . $cpt_key . '_' . $max;
-						$all_lastmod_dates = get_transient( $cache_key_all );
+                                                $cache_key_all          = 'webseo_sitemap_lastmod_all_' . $cpt_key . '_' . $max;
+                                                $legacy_cache_key_all   = 'seopress_sitemap_lastmod_all_' . $cpt_key . '_' . $max;
+                                                $all_lastmod_dates      = get_transient( $cache_key_all );
+                                                $legacy_lastmod_dates   = get_transient( $legacy_cache_key_all );
 
-						if ( false === $all_lastmod_dates ) {
+                                                if ( false === $all_lastmod_dates && false !== $legacy_lastmod_dates ) {
+                                                        $all_lastmod_dates = $legacy_lastmod_dates;
+                                                }
+
+                                                if ( false === $all_lastmod_dates ) {
 							// Get the first post_modified for each sitemap page in one query.
 							// Then use a subquery with row numbering to get every Nth post efficiently.
 							$sql = $wpdb->prepare(
@@ -185,9 +191,10 @@ function seopress_xml_sitemap_index() {
 							$all_lastmod_dates = $wpdb->get_col( $sql ); // phpcs:ignore
 
 							// Cache for 1 hour to match existing behavior.
-							$cache_duration = apply_filters( 'seopress_sitemaps_cache_duration', HOUR_IN_SECONDS );
-							set_transient( $cache_key_all, $all_lastmod_dates, $cache_duration );
-						}
+                                                        $cache_duration = webseo_apply_filters_compat( 'webseo_sitemaps_cache_duration', 'seopress_sitemaps_cache_duration', HOUR_IN_SECONDS );
+                                                        set_transient( $cache_key_all, $all_lastmod_dates, $cache_duration );
+                                                        delete_transient( $legacy_cache_key_all );
+                                                }
 
 						$paged = '';
 						$i     = '';
@@ -255,7 +262,7 @@ function seopress_xml_sitemap_index() {
 						// Polylang: exclude hidden languages.
 						$args = seopress_pll_exclude_hidden_lang( $args );
 
-						$args = apply_filters( 'seopress_sitemaps_index_tax_query', $args, $tax_key );
+                                            $args = webseo_apply_filters_compat( 'webseo_sitemaps_index_tax_query', 'seopress_sitemaps_index_tax_query', $args, $tax_key );
 
 						$terms_data  = get_terms( $args );
 						$count_terms = 0;
@@ -265,7 +272,7 @@ function seopress_xml_sitemap_index() {
 
 						// Max terms per paginated sitemap.
 						$max = 1000;
-						$max = apply_filters( 'seopress_sitemaps_max_terms_per_sitemap', $max );
+                                            $max = webseo_apply_filters_compat( 'webseo_sitemaps_max_terms_per_sitemap', 'seopress_sitemaps_max_terms_per_sitemap', $max );
 
 						if ( $count_terms >= $max ) {
 							$max_loop = $count_terms / $max;
@@ -309,11 +316,11 @@ function seopress_xml_sitemap_index() {
 		$seopress_sitemaps .= '</sitemap>';
 	}
 
-	$seopress_sitemaps = apply_filters( 'seopress_sitemaps_xml_index_item', $seopress_sitemaps, $home_url );
+    $seopress_sitemaps = webseo_apply_filters_compat( 'webseo_sitemaps_xml_index_item', 'seopress_sitemaps_xml_index_item', $seopress_sitemaps, $home_url );
 
 	// Custom sitemap.
 	$custom_sitemap = null;
-	$custom_sitemap = apply_filters( 'seopress_sitemaps_external_link', $custom_sitemap );
+    $custom_sitemap = webseo_apply_filters_compat( 'webseo_sitemaps_external_link', 'seopress_sitemaps_external_link', $custom_sitemap );
 	if ( isset( $custom_sitemap ) ) {
 		foreach ( $custom_sitemap as $key => $sitemap ) {
 			$seopress_sitemaps .= "\n";
@@ -336,7 +343,7 @@ function seopress_xml_sitemap_index() {
 	$seopress_sitemaps .= "\n";
 	$seopress_sitemaps .= '</sitemapindex>';
 
-	$seopress_sitemaps = apply_filters( 'seopress_sitemaps_xml_index', $seopress_sitemaps );
+    $seopress_sitemaps = webseo_apply_filters_compat( 'webseo_sitemaps_xml_index', 'seopress_sitemaps_xml_index', $seopress_sitemaps );
 
 	return $seopress_sitemaps;
 }

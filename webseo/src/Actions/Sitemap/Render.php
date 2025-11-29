@@ -57,15 +57,21 @@ class Render implements ExecuteHooksFrontend {
 		if ( 2 !== apply_filters( 'wpml_setting', false, 'language_negotiation_type' ) ) {
 			add_filter(
 				'request',
-				function ( $q ) {
-					$current_language = apply_filters( 'wpml_current_language', false );
-					$default_language = apply_filters( 'wpml_default_language', false );
-					if ( $current_language !== $default_language ) {
-						unset( $q['seopress_sitemap'] );
-						unset( $q['seopress_cpt'] );
-						unset( $q['seopress_paged'] );
-						unset( $q['seopress_author'] );
-						unset( $q['seopress_sitemap_xsl'] );
+                                function ( $q ) {
+                                        $current_language = apply_filters( 'wpml_current_language', false );
+                                        $default_language = apply_filters( 'wpml_default_language', false );
+                                        if ( $current_language !== $default_language ) {
+                                                unset( $q['webseo_sitemap'] );
+                                                unset( $q['webseo_cpt'] );
+                                                unset( $q['webseo_paged'] );
+                                                unset( $q['webseo_author'] );
+                                                unset( $q['webseo_sitemap_xsl'] );
+                                                unset( $q['webseo_sitemap_video_xsl'] );
+                                                unset( $q['seopress_sitemap'] );
+                                                unset( $q['seopress_cpt'] );
+                                                unset( $q['seopress_paged'] );
+                                                unset( $q['seopress_author'] );
+                                                unset( $q['seopress_sitemap_xsl'] );
 						unset( $q['seopress_sitemap_video_xsl'] );
 					}
 
@@ -90,40 +96,46 @@ class Render implements ExecuteHooksFrontend {
 			return;
 		}
 
-		if (
-			'1' !== seopress_get_service( 'SitemapOption' )->isEnabled()
-			|| '1' !== seopress_get_toggle_option( 'xml-sitemap' )
-		) {
-			return;
-		}
+                if (
+                        '1' !== seopress_get_service( 'SitemapOption' )->isEnabled()
+                        || '1' !== seopress_get_toggle_option( 'xml-sitemap' )
+                ) {
+                        return;
+                }
 
-		$filename = null;
-		if ( '1' === get_query_var( 'seopress_sitemap' ) ) {
-			$filename = 'template-xml-sitemaps.php';
-		} elseif ( '1' === get_query_var( 'seopress_sitemap_xsl' ) ) {
-			$filename = 'template-xml-sitemaps-xsl.php';
-		} elseif ( '1' === get_query_var( 'seopress_sitemap_video_xsl' ) ) {
-			$filename = 'template-xml-sitemaps-video-xsl.php';
-		} elseif ( '1' === get_query_var( 'seopress_author' ) ) {
-			$filename = 'template-xml-sitemaps-author.php';
-		} elseif ( '' !== get_query_var( 'seopress_cpt' ) ) {
-			if ( ! empty( seopress_get_service( 'SitemapOption' )->getPostTypesList() )
-				&& array_key_exists( get_query_var( 'seopress_cpt' ), seopress_get_service( 'SitemapOption' )->getPostTypesList() ) ) {
-				/*
-				 * @since 4.3.0
-				 */
-				seopress_get_service( 'SitemapRenderSingle' )->render();
-				exit();
-			} elseif ( ! empty( seopress_get_service( 'SitemapOption' )->getTaxonomiesList() )
-				&& array_key_exists( get_query_var( 'seopress_cpt' ), seopress_get_service( 'SitemapOption' )->getTaxonomiesList() ) ) {
-				$filename = 'template-xml-sitemaps-single-term.php';
-			} else {
-				global $wp_query;
-				$wp_query->set_404();
-				status_header( 404 );
-				return;
-			}
-		}
+                $filename = null;
+                $sitemap_query      = get_query_var( 'webseo_sitemap', get_query_var( 'seopress_sitemap' ) );
+                $sitemap_xsl_query  = get_query_var( 'webseo_sitemap_xsl', get_query_var( 'seopress_sitemap_xsl' ) );
+                $video_xsl_query    = get_query_var( 'webseo_sitemap_video_xsl', get_query_var( 'seopress_sitemap_video_xsl' ) );
+                $author_query       = get_query_var( 'webseo_author', get_query_var( 'seopress_author' ) );
+                $cpt_query          = get_query_var( 'webseo_cpt', get_query_var( 'seopress_cpt' ) );
+
+                if ( '1' === $sitemap_query ) {
+                        $filename = 'template-xml-sitemaps.php';
+                } elseif ( '1' === $sitemap_xsl_query ) {
+                        $filename = 'template-xml-sitemaps-xsl.php';
+                } elseif ( '1' === $video_xsl_query ) {
+                        $filename = 'template-xml-sitemaps-video-xsl.php';
+                } elseif ( '1' === $author_query ) {
+                        $filename = 'template-xml-sitemaps-author.php';
+                } elseif ( '' !== $cpt_query ) {
+                        if ( ! empty( seopress_get_service( 'SitemapOption' )->getPostTypesList() )
+                                && array_key_exists( $cpt_query, seopress_get_service( 'SitemapOption' )->getPostTypesList() ) ) {
+                                /*
+                                 * @since 4.3.0
+                                 */
+                                seopress_get_service( 'SitemapRenderSingle' )->render();
+                                exit();
+                        } elseif ( ! empty( seopress_get_service( 'SitemapOption' )->getTaxonomiesList() )
+                                && array_key_exists( $cpt_query, seopress_get_service( 'SitemapOption' )->getTaxonomiesList() ) ) {
+                                $filename = 'template-xml-sitemaps-single-term.php';
+                        } else {
+                                global $wp_query;
+                                $wp_query->set_404();
+                                status_header( 404 );
+                                return;
+                        }
+                }
 
 		if ( 'template-xml-sitemaps-video-xsl.php' === $filename ) {
 			include SEOPRESS_PRO_PLUGIN_DIR_PATH . 'inc/functions/video-sitemap/' . $filename;

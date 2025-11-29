@@ -27,7 +27,7 @@ abstract class JsonSchemaValue implements GetJsonFromFile {
 	 * @return string
 	 */
 	public function getJson() {
-		$file = apply_filters( 'seopress_get_json_from_file', sprintf( '%s/%s.json', SEOPRESS_TEMPLATE_JSON_SCHEMAS, $this->getName(), '.json' ) );
+        $file = webseo_apply_filters_compat( 'webseo_get_json_from_file', 'seopress_get_json_from_file', sprintf( '%s/%s.json', SEOPRESS_TEMPLATE_JSON_SCHEMAS, $this->getName(), '.json' ) );
 
 		if ( ! file_exists( $file ) ) {
 			return '';
@@ -50,7 +50,7 @@ abstract class JsonSchemaValue implements GetJsonFromFile {
 		try {
 			$data = json_decode( $json, true );
 
-			return apply_filters( 'seopress_schema_get_array_json', $data, $this->getName() );
+                        return webseo_apply_filters_compat( 'webseo_schema_get_array_json', 'seopress_schema_get_array_json', $data, $this->getName() );
 		} catch ( \Exception $th ) {
 			return array();
 		}
@@ -79,6 +79,6 @@ abstract class JsonSchemaValue implements GetJsonFromFile {
 	 * @return array
 	 */
 	public function cleanValues( $data ) {
-		return apply_filters( 'seopress_schema_clean_values', $data, $this->getName() );
+        return webseo_apply_filters_compat( 'webseo_schema_clean_values', 'seopress_schema_clean_values', $data, $this->getName() );
 	}
 }

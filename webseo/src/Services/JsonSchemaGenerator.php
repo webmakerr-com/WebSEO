@@ -89,7 +89,7 @@ class JsonSchemaGenerator {
 			$data[ $key ]                   = $this->getJsonFromSchema( $schema, $context, array( 'remove_empty' => true ) );
 		}
 
-		return apply_filters( 'seopress_json_schema_generator_get_jsons', $data );
+                return webseo_apply_filters_compat( 'webseo_json_schema_generator_get_jsons', 'seopress_json_schema_generator_get_jsons', $data );
 	}
 
 	/**
@@ -115,6 +115,6 @@ class JsonSchemaGenerator {
 			$data[ $key ] = wp_json_encode( $data[ $key ] );
 		}
 
-		return apply_filters( 'seopress_json_schema_generator_get_jsons_encoded', $data );
-	}
+                return webseo_apply_filters_compat( 'webseo_json_schema_generator_get_jsons_encoded', 'seopress_json_schema_generator_get_jsons_encoded', $data );
+        }
 }
