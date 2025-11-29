@@ -14,7 +14,7 @@ function seopress_pro_elementor_register_elements_assets()
             'seopress_nonce' => wp_create_nonce('seopress_ai_generate_seo_meta_nonce'),
             'seopress_ai_generate_seo_meta' => admin_url('admin-ajax.php'),
             'i18n' => [
-                'alt_text_not_found' => __('Alternative text input could not be found.', 'wp-seopress-pro'),
+                'alt_text_not_found' => __('Alternative text input could not be found.', 'webseo'),
             ],
         ];
 
@@ -39,7 +39,7 @@ function seopress_pro_elementor_seo_titles_before()
                 echo seopress_get_current_lang();
             }; ?>"
             type="button">
-            <?php esc_html_e('Generate meta with AI', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Generate meta with AI', 'webseo'); ?>
         </button>
         <div id="seopress_ai_generate_seo_meta_log" style="display:none"></div>
     </div>

@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_ai_provider', // ID
-    __('AI provider', 'wp-seopress-pro'), // Title
+    __('AI provider', 'webseo'), // Title
     'seopress_ai_provider_callback', // Callback
     'seopress-settings-admin-ai', // Page
     'seopress_setting_section_ai' // Section
@@ -29,7 +29,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_ai_openai_api_key', // ID
-    __('OpenAI API key', 'wp-seopress-pro'), // Title
+    __('OpenAI API key', 'webseo'), // Title
     'seopress_ai_openai_api_key_callback', // Callback
     'seopress-settings-admin-ai', // Page
     'seopress_setting_section_ai_openai' // Section
@@ -37,7 +37,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_ai_openai_model', // ID
-    __('OpenAI model', 'wp-seopress-pro'), // Title
+    __('OpenAI model', 'webseo'), // Title
     'seopress_ai_openai_model_callback', // Callback
     'seopress-settings-admin-ai', // Page
     'seopress_setting_section_ai_openai' // Section
@@ -53,7 +53,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_ai_deepseek_api_key', // ID
-    __('DeepSeek API key', 'wp-seopress-pro'), // Title
+    __('DeepSeek API key', 'webseo'), // Title
     'seopress_ai_deepseek_api_key_callback', // Callback
     'seopress-settings-admin-ai', // Page
     'seopress_setting_section_ai_deepseek' // Section
@@ -61,7 +61,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_ai_deepseek_model', // ID
-    __('DeepSeek model', 'wp-seopress-pro'), // Title
+    __('DeepSeek model', 'webseo'), // Title
     'seopress_ai_deepseek_model_callback', // Callback
     'seopress-settings-admin-ai', // Page
     'seopress_setting_section_ai_deepseek' // Section
@@ -77,7 +77,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_ai_openai_alt_text', // ID
-    __('Use AI to set the image Alt text', 'wp-seopress-pro'), // Title
+    __('Use AI to set the image Alt text', 'webseo'), // Title
     'seopress_ai_openai_alt_text_callback', // Callback
     'seopress-settings-admin-ai', // Page
     'seopress_setting_section_ai_misc' // Section

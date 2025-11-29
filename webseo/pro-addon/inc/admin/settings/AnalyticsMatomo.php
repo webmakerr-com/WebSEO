@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_google_analytics_matomo_widget_auth_token', // ID
-    __('Matomo Authentication Token', 'wp-seopress-pro'), // Title
+    __('Matomo Authentication Token', 'webseo'), // Title
     'seopress_google_analytics_matomo_widget_auth_token_callback', // Callback
     'seopress-settings-admin-google-analytics-matomo-widget', // Page
     'seopress_setting_section_google_analytics_matomo_widget' // Section
@@ -21,7 +21,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_google_analytics_matomo_dashboard_widget', // ID
-    __('Remove Matomo dashboard widget', 'wp-seopress-pro'), // Title
+    __('Remove Matomo dashboard widget', 'webseo'), // Title
     'seopress_google_analytics_matomo_dashboard_widget_callback', // Callback
     'seopress-settings-admin-google-analytics-matomo-widget', // Page
     'seopress_setting_section_google_analytics_matomo_widget' // Section

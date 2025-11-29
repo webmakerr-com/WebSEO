@@ -10,7 +10,7 @@ function seopress_print_section_info_edd()
 
         <div class="seopress-notice is-warning">
             <p>
-                <?php echo wp_kses_post(__('You need to enable <strong>Easy Digital Downloads</strong> to apply these settings.', 'wp-seopress-pro')); ?>
+                <?php echo wp_kses_post(__('You need to enable <strong>Easy Digital Downloads</strong> to apply these settings.', 'webseo')); ?>
             </p>
         </div>
 

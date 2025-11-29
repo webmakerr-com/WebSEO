@@ -5,8 +5,8 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 function seopress_ai_provider_callback()
 {
     $providers = [
-        'openai' => esc_attr__('OpenAI', 'wp-seopress-pro'),
-        'deepseek' => esc_attr__('DeepSeek', 'wp-seopress-pro'),
+        'openai' => esc_attr__('OpenAI', 'webseo'),
+        'deepseek' => esc_attr__('DeepSeek', 'webseo'),
     ];
 
     $selected = seopress_pro_get_service('OptionPro')->getAIProvider() ?: 'openai';
@@ -44,12 +44,12 @@ function seopress_ai_openai_api_key_callback()
     // Show placeholder if key exists, otherwise show empty field
     $display_value = !empty($api_key) ? 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' : '';
     
-    printf('<input id="seopress_ai_openai_api_key" type="text" name="seopress_pro_option_name[seopress_ai_openai_api_key]" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" value="%s" placeholder="%s" aria-label="' . esc_html__('OpenAI API key', 'wp-seopress-pro') . '"/>', esc_attr($display_value), esc_attr__('Enter your OpenAI API key', 'wp-seopress-pro'));
+    printf('<input id="seopress_ai_openai_api_key" type="text" name="seopress_pro_option_name[seopress_ai_openai_api_key]" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" value="%s" placeholder="%s" aria-label="' . esc_html__('OpenAI API key', 'webseo') . '"/>', esc_attr($display_value), esc_attr__('Enter your OpenAI API key', 'webseo'));
 ?>
     <p class="description">
         <?php
         /* translators: %s documentation URL */
-        echo wp_kses_post(sprintf(__('Sign up to <a href="%s" target="_blank">OpenAI</a> to generate your API key.', 'wp-seopress-pro'), esc_url('https://platform.openai.com/account/api-keys')));
+        echo wp_kses_post(sprintf(__('Sign up to <a href="%s" target="_blank">OpenAI</a> to generate your API key.', 'webseo'), esc_url('https://platform.openai.com/account/api-keys')));
         ?>
     </p>
 
@@ -57,12 +57,12 @@ function seopress_ai_openai_api_key_callback()
     $api_key = seopress_pro_get_service('Usage')->getLicenseKey('openai');
 
     if (defined('SEOPRESS_OPENAI_KEY') && !empty(SEOPRESS_OPENAI_KEY) && is_string(SEOPRESS_OPENAI_KEY)) { ?>
-        <p class="seopress-notice"><?php esc_html_e('Your OpenAI key is defined in wp-config.php.', 'wp-seopress-pro'); ?></p>
+        <p class="seopress-notice"><?php esc_html_e('Your OpenAI key is defined in wp-config.php.', 'webseo'); ?></p>
     <?php } ?>
 
     <p>
         <button type="button" id="seopress-open-ai-check-license" class="btn btnTertiary">
-            <?php esc_html_e('Test API Key', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Test API Key', 'webseo'); ?>
         </button>
         <span class="spinner" style="float: none; margin-left: 10px;"></span>
     </p>
@@ -77,11 +77,11 @@ function seopress_ai_openai_model_callback()
     <select id="seopress_ai_openai_model" name="seopress_pro_option_name[seopress_ai_openai_model]">
         <?php
         $models = [
-            'gpt-5-chat-latest' => __('GPT-5', 'wp-seopress-pro'),
-            'gpt-4o' => __('GPT-4o', 'wp-seopress-pro'),
-            'gpt-4o-mini' => __('GPT-4o Mini', 'wp-seopress-pro'),
-            'gpt-4' => __('GPT-4', 'wp-seopress-pro'),
-            'gpt-3.5-turbo' => __('GPT-3.5 Turbo (deprecated, will no longer be supported after October 2025)', 'wp-seopress-pro'),
+            'gpt-5-chat-latest' => __('GPT-5', 'webseo'),
+            'gpt-4o' => __('GPT-4o', 'webseo'),
+            'gpt-4o-mini' => __('GPT-4o Mini', 'webseo'),
+            'gpt-4' => __('GPT-4', 'webseo'),
+            'gpt-3.5-turbo' => __('GPT-3.5 Turbo (deprecated, will no longer be supported after October 2025)', 'webseo'),
         ];
 
         if (!empty($models)) {
@@ -94,7 +94,7 @@ function seopress_ai_openai_model_callback()
     </select>
 
     <p class="description">
-        <?php esc_html_e('Select your OpenAI model. This requires at least 1 successful payment of $5 via the OpenAI platform. GPT-3.5 Turbo is deprecated, will no longer be supported after October 2025.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('Select your OpenAI model. This requires at least 1 successful payment of $5 via the OpenAI platform. GPT-3.5 Turbo is deprecated, will no longer be supported after October 2025.', 'webseo'); ?>
     </p>
 
     <?php if (isset($options['seopress_ai_openai_model'])) {
@@ -112,12 +112,12 @@ function seopress_ai_deepseek_api_key_callback()
     // Show placeholder if key exists, otherwise show empty field
     $display_value = !empty($api_key) ? 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' : '';
     
-    printf('<input id="seopress_ai_deepseek_api_key" type="text" name="seopress_pro_option_name[seopress_ai_deepseek_api_key]" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" value="%s" placeholder="%s" aria-label="' . esc_html__('DeepSeek API key', 'wp-seopress-pro') . '"/>', esc_attr($display_value), esc_attr__('Enter your DeepSeek API key', 'wp-seopress-pro'));
+    printf('<input id="seopress_ai_deepseek_api_key" type="text" name="seopress_pro_option_name[seopress_ai_deepseek_api_key]" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" value="%s" placeholder="%s" aria-label="' . esc_html__('DeepSeek API key', 'webseo') . '"/>', esc_attr($display_value), esc_attr__('Enter your DeepSeek API key', 'webseo'));
 ?>
     <p class="description">
         <?php
         /* translators: %s documentation URL */
-        echo wp_kses_post(sprintf(__('Sign up to <a href="%s" target="_blank">DeepSeek</a> to generate your API key.', 'wp-seopress-pro'), esc_url('https://platform.deepseek.com/api_keys')));
+        echo wp_kses_post(sprintf(__('Sign up to <a href="%s" target="_blank">DeepSeek</a> to generate your API key.', 'webseo'), esc_url('https://platform.deepseek.com/api_keys')));
         ?>
     </p>
 
@@ -125,12 +125,12 @@ function seopress_ai_deepseek_api_key_callback()
     $api_key = seopress_pro_get_service('Usage')->getLicenseKey('deepseek');
 
     if (defined('SEOPRESS_DEEPSEEK_KEY') && !empty(SEOPRESS_DEEPSEEK_KEY) && is_string(SEOPRESS_DEEPSEEK_KEY)) { ?>
-        <p class="seopress-notice"><?php esc_html_e('Your DeepSeek key is defined in wp-config.php.', 'wp-seopress-pro'); ?></p>
+        <p class="seopress-notice"><?php esc_html_e('Your DeepSeek key is defined in wp-config.php.', 'webseo'); ?></p>
     <?php } ?>
 
     <p>
         <button type="button" id="seopress-deepseek-check-license" class="btn btnTertiary">
-            <?php esc_html_e('Test API Key', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Test API Key', 'webseo'); ?>
         </button>
         <span class="spinner" style="float: none; margin-left: 10px;"></span>
     </p>
@@ -145,7 +145,7 @@ function seopress_ai_deepseek_model_callback()
     <select id="seopress_ai_deepseek_model" name="seopress_pro_option_name[seopress_ai_deepseek_model]">
         <?php
         $models = [
-            'deepseek-chat' => __('DeepSeek Chat (recommended)', 'wp-seopress-pro')
+            'deepseek-chat' => __('DeepSeek Chat (recommended)', 'webseo')
         ];
 
         if (!empty($models)) {
@@ -158,11 +158,11 @@ function seopress_ai_deepseek_model_callback()
     </select>
 
     <p class="description">
-        <?php esc_html_e('Select your DeepSeek model.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('Select your DeepSeek model.', 'webseo'); ?>
     </p>
     
     <p class="seopress-notice">
-        <?php esc_html_e('DeepSeek does not support alt text generation.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('DeepSeek does not support alt text generation.', 'webseo'); ?>
     </p>
 
     <?php if (isset($options['seopress_ai_deepseek_model'])) {
@@ -177,11 +177,11 @@ function seopress_ai_openai_alt_text_callback()
     <label for="seopress_ai_openai_alt_text">
         <input id="seopress_ai_openai_alt_text" name="seopress_pro_option_name[seopress_ai_openai_alt_text]" type="checkbox" <?php if ('1' == $check) { ?> checked="yes" <?php } ?> value="1" />
 
-        <?php esc_html_e('When uploading an image file, automatically set the alternative text using AI', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('When uploading an image file, automatically set the alternative text using AI', 'webseo'); ?>
     </label>
 
     <p class="description">
-        <?php esc_html_e('This may slow down the image upload.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('This may slow down the image upload.', 'webseo'); ?>
     </p>
 
     <?php if (isset($options['seopress_ai_openai_alt_text'])) {
@@ -194,10 +194,10 @@ function seopress_print_section_info_ai_logs()
     ?>
     <hr>
     <h3 id="seopress-ai-logs">
-        <?php esc_html_e('AI Logs', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('AI Logs', 'webseo'); ?>
     </h3>
 
-    <p><?php esc_html_e('Below is the latest error message obtained from the AI API:', 'wp-seopress-pro'); ?></p>
+    <p><?php esc_html_e('Below is the latest error message obtained from the AI API:', 'webseo'); ?></p>
 
     <?php
     //Logs
@@ -211,7 +211,7 @@ function seopress_print_section_info_ai_logs()
     ?>
 <?php
     } else {
-        esc_html_e('Currently no errors logged.', 'wp-seopress-pro');
+        esc_html_e('Currently no errors logged.', 'webseo');
     }
     echo '</pre>';
 }

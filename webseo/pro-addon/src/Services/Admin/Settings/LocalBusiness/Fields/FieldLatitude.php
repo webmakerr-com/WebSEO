@@ -15,11 +15,11 @@ trait FieldLatitude {
         <input
             type="text"
             name="seopress_pro_option_name[seopress_local_business_lat]"
-            placeholder="<?php esc_attr_e('e.g. 43.4831389', 'wp-seopress-pro'); ?>"
-            aria-label="<?php esc_attr_e('Latitude', 'wp-seopress-pro'); ?>"
+            placeholder="<?php esc_attr_e('e.g. 43.4831389', 'webseo'); ?>"
+            aria-label="<?php esc_attr_e('Latitude', 'webseo'); ?>"
             value="<?php echo esc_attr($value); ?>" />
 
-        <p class="description"><?php echo wp_kses_post(__('<span class="field-recommended">Recommended</span> property by Google.', 'wp-seopress-pro')); ?></p>
+        <p class="description"><?php echo wp_kses_post(__('<span class="field-recommended">Recommended</span> property by Google.', 'webseo')); ?></p>
         <?php
     }
 }

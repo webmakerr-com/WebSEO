@@ -51,22 +51,22 @@ if ('1' === seopress_get_toggle_option('google-analytics') && '1' !== seopress_p
                 $stats = $stats['all'];
 
                 if (! empty($stats['nb_uniq_visitors'])) {
-                    $html[__('Unique Visitors', 'wp-seopress-pro')] = is_numeric($stats['nb_uniq_visitors']) ? number_format_i18n($stats['nb_uniq_visitors']) : '';
+                    $html[__('Unique Visitors', 'webseo')] = is_numeric($stats['nb_uniq_visitors']) ? number_format_i18n($stats['nb_uniq_visitors']) : '';
                 }
                 if (! empty($stats['nb_visits'])) {
-                    $html[__('Visits', 'wp-seopress-pro')] = is_numeric($stats['nb_visits']) ? number_format_i18n($stats['nb_visits']) : '';
+                    $html[__('Visits', 'webseo')] = is_numeric($stats['nb_visits']) ? number_format_i18n($stats['nb_visits']) : '';
                 }
                 if (! empty($stats['max_actions'])) {
-                    $html[__('Max actions in one visit', 'wp-seopress-pro')] = is_numeric($stats['max_actions']) ? number_format_i18n($stats['max_actions']) : '';
+                    $html[__('Max actions in one visit', 'webseo')] = is_numeric($stats['max_actions']) ? number_format_i18n($stats['max_actions']) : '';
                 }
                 if (! empty($stats['nb_actions_per_visit'])) {
-                    $html[__('Average actions per visit', 'wp-seopress-pro')] = is_numeric($stats['nb_actions_per_visit']) ? number_format_i18n($stats['nb_actions_per_visit'], 2) : '';
+                    $html[__('Average actions per visit', 'webseo')] = is_numeric($stats['nb_actions_per_visit']) ? number_format_i18n($stats['nb_actions_per_visit'], 2) : '';
                 }
                 if (! empty($stats['bounce_rate'])) {
-                    $html[__('Bounce rate', 'wp-seopress-pro')] = is_numeric($stats['bounce_rate']) ? number_format_i18n($stats['bounce_rate']) .'%' : '';
+                    $html[__('Bounce rate', 'webseo')] = is_numeric($stats['bounce_rate']) ? number_format_i18n($stats['bounce_rate']) .'%' : '';
                 }
                 if (! empty($stats['avg_time_on_site'])) {
-                    $html[__('Avg. Visit Duration (in seconds)', 'wp-seopress-pro')] = is_numeric($stats['avg_time_on_site']) ? number_format_i18n($stats['avg_time_on_site']) : '';
+                    $html[__('Avg. Visit Duration (in seconds)', 'webseo')] = is_numeric($stats['avg_time_on_site']) ? number_format_i18n($stats['avg_time_on_site']) : '';
                 } ?>
 
                 <span class="spinner"></span>
@@ -89,7 +89,7 @@ if ('1' === seopress_get_toggle_option('google-analytics') && '1' !== seopress_p
                         </div>
                         <?php } ?>
                     <?php } else { ?>
-                        <p class="inside"><?php esc_html_e('No stats found', 'wp-seopress-pro'); ?></p>
+                        <p class="inside"><?php esc_html_e('No stats found', 'webseo'); ?></p>
                     <?php } ?>
                 </div>
                 <?php
@@ -97,11 +97,11 @@ if ('1' === seopress_get_toggle_option('google-analytics') && '1' !== seopress_p
                 global $pagenow;
                 ?>
                 <div class="seopress-tools-card">
-                    <p><?php esc_html_e('You need to login to Matomo Analytics.', 'wp-seopress-pro'); ?></p>
-                    <p><?php esc_html_e('Make sure you have entered an authentication token from Matomo settings page.', 'wp-seopress-pro'); ?></p>
+                    <p><?php esc_html_e('You need to login to Matomo Analytics.', 'webseo'); ?></p>
+                    <p><?php esc_html_e('Make sure you have entered an authentication token from Matomo settings page.', 'webseo'); ?></p>
                     <p>
                         <a class="<?php if ('index.php' == $pagenow) { echo 'button'; } else { echo 'seopress-btn'; }; ?>" href="<?php echo esc_url(admin_url('admin.php?page=seopress-google-analytics#tab=tab_seopress_google_analytics_matomo')); ?>">
-                            <?php esc_html_e('Authenticate', 'wp-seopress-pro'); ?>
+                            <?php esc_html_e('Authenticate', 'webseo'); ?>
                         </a>
                     </p>
                     <span class="dashicons dashicons-chart-line seopress-bg-icon"></span>
@@ -134,15 +134,15 @@ if ('1' === seopress_get_toggle_option('google-analytics') && '1' !== seopress_p
             }
 
             $select = [
-                'last1' => esc_html__('Today', 'wp-seopress-pro'),
-                'last2' => esc_html__('Yesterday', 'wp-seopress-pro'),
-                'last7' => esc_html__('7 days ago', 'wp-seopress-pro'),
-                'last30' => esc_html__('30 days ago', 'wp-seopress-pro'),
-                'last90' => esc_html__('90 days ago', 'wp-seopress-pro'),
-                'last365' => esc_html__('365 days ago', 'wp-seopress-pro'),
+                'last1' => esc_html__('Today', 'webseo'),
+                'last2' => esc_html__('Yesterday', 'webseo'),
+                'last7' => esc_html__('7 days ago', 'webseo'),
+                'last30' => esc_html__('30 days ago', 'webseo'),
+                'last90' => esc_html__('90 days ago', 'webseo'),
+                'last365' => esc_html__('365 days ago', 'webseo'),
             ]; ?>
 
-            <p><strong><?php esc_html_e('Period', 'wp-seopress-pro'); ?></strong></p>
+            <p><strong><?php esc_html_e('Period', 'webseo'); ?></strong></p>
 
             <p>
                 <select id="period" name="seopress_matomo_dashboard_widget_options[period]">
@@ -162,15 +162,15 @@ if ('1' === seopress_get_toggle_option('google-analytics') && '1' !== seopress_p
                 }
 
                 $select = [
-                    'nb_visits' => esc_html__('Sessions', 'wp-seopress-pro'),
-                    'nb_uniq_visitors' => esc_html__('Users', 'wp-seopress-pro'),
-                    'max_actions' => esc_html__('Maximum actions in one visit', 'wp-seopress-pro'),
-                    'nb_actions_per_visit' => esc_html__('Average actions per visit', 'wp-seopress-pro'),
-                    'avg_time_on_site' => esc_html__('Average session duration', 'wp-seopress-pro'),
-                    'bounce_rate' => esc_html__('Bounce Rate', 'wp-seopress-pro'),
+                    'nb_visits' => esc_html__('Sessions', 'webseo'),
+                    'nb_uniq_visitors' => esc_html__('Users', 'webseo'),
+                    'max_actions' => esc_html__('Maximum actions in one visit', 'webseo'),
+                    'nb_actions_per_visit' => esc_html__('Average actions per visit', 'webseo'),
+                    'avg_time_on_site' => esc_html__('Average session duration', 'webseo'),
+                    'bounce_rate' => esc_html__('Bounce Rate', 'webseo'),
                 ];
                 ?>
-            <p><strong><?php esc_html_e('Stats', 'wp-seopress-pro'); ?></strong></p>
+            <p><strong><?php esc_html_e('Stats', 'webseo'); ?></strong></p>
 
             <p>
                 <select id="type" name="seopress_matomo_dashboard_widget_options[type]">

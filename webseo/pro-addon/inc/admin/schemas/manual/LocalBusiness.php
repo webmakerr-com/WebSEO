@@ -32,7 +32,7 @@ function seopress_get_schema_metaboxe_local_business($seopress_pro_rich_snippets
 
 	$options = $seopress_pro_rich_snippets_lb_opening_hours;
 
-	$days = [__('Monday', 'wp-seopress-pro'), __('Tuesday', 'wp-seopress-pro'), __('Wednesday', 'wp-seopress-pro'), __('Thursday', 'wp-seopress-pro'), __('Friday', 'wp-seopress-pro'), __('Saturday', 'wp-seopress-pro'), __('Sunday', 'wp-seopress-pro')];
+	$days = [__('Monday', 'webseo'), __('Tuesday', 'webseo'), __('Wednesday', 'webseo'), __('Thursday', 'webseo'), __('Friday', 'webseo'), __('Saturday', 'webseo'), __('Sunday', 'webseo')];
 
 	$hours = ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
 
@@ -40,21 +40,21 @@ function seopress_get_schema_metaboxe_local_business($seopress_pro_rich_snippets
 <div class="wrap-rich-snippets-item wrap-rich-snippets-local-business">
 	<div class="seopress-notice">
 		<p>
-			<?php esc_html_e('When users search for businesses on Google Search or Maps, Search results may display a prominent Knowledge Graph card with details about a business that matched the query. ', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('When users search for businesses on Google Search or Maps, Search results may display a prominent Knowledge Graph card with details about a business that matched the query. ', 'webseo'); ?>
 		</p>
 	</div>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_name_meta">
-			<?php esc_html_e('Name of your business', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Name of your business', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_name_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_name]"
-			placeholder="<?php esc_html_e('e.g. My Local Business', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Name of your business', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. My Local Business', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Name of your business', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_name); ?>" />
 	</p>
 	<p>
-		<label for="seopress_pro_rich_snippets_lb_type_meta"><?php esc_html_e('Select a business type', 'wp-seopress-pro'); ?></label>
+		<label for="seopress_pro_rich_snippets_lb_type_meta"><?php esc_html_e('Select a business type', 'webseo'); ?></label>
 		<select id="seopress_pro_rich_snippets_lb_type_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_type]">';
 			<?php foreach ($seopress_lb_types as $type_value => $type_i18n) { ?>
@@ -67,13 +67,13 @@ function seopress_get_schema_metaboxe_local_business($seopress_pro_rich_snippets
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_img_meta">
-			<?php esc_html_e('Image', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Image', 'webseo'); ?>
 		</label>
-		<span class="description"><?php echo wp_kses_post(__('Every page must contain at least one image (whether or not you include markup). Google will pick the best image to display in Search results based on the aspect ratio and resolution.<br> Image URLs must be crawlable and indexable.<br> Images must represent the marked up content.<br> Images must be in .jpg, .png, or. gif format.<br> For best results, provide multiple high-resolution images (minimum of 50K pixels when multiplying width and height) with the following aspect ratios: 16x9, 4x3, and 1x1.', 'wp-seopress-pro')); ?></span>
+		<span class="description"><?php echo wp_kses_post(__('Every page must contain at least one image (whether or not you include markup). Google will pick the best image to display in Search results based on the aspect ratio and resolution.<br> Image URLs must be crawlable and indexable.<br> Images must represent the marked up content.<br> Images must be in .jpg, .png, or. gif format.<br> For best results, provide multiple high-resolution images (minimum of 50K pixels when multiplying width and height) with the following aspect ratios: 16x9, 4x3, and 1x1.', 'webseo')); ?></span>
 		<input id="seopress_pro_rich_snippets_lb_img_meta" type="text"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_img]"
-			placeholder="<?php esc_html_e('Select your image', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Image', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('Select your image', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Image', 'webseo'); ?>"
 			value="<?php echo esc_url($seopress_pro_rich_snippets_lb_img); ?>" />
 		<input id="seopress_pro_rich_snippets_lb_img_width" type="hidden"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_img_width]"
@@ -84,143 +84,143 @@ function seopress_get_schema_metaboxe_local_business($seopress_pro_rich_snippets
 		<input id="seopress_pro_rich_snippets_lb_img"
 			class="<?php echo esc_attr(seopress_btn_secondary_classes()); ?> seopress_media_upload"
 			type="button"
-			value="<?php esc_html_e('Upload an Image', 'wp-seopress-pro'); ?>" />
+			value="<?php esc_html_e('Upload an Image', 'webseo'); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_street_addr_meta">
-			<?php esc_html_e('Street Address', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Street Address', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_street_addr_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_street_addr]"
-			placeholder="<?php esc_html_e('e.g. Place Bellevue', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Street Address', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. Place Bellevue', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Street Address', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_street_addr); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_city_meta">
-			<?php esc_html_e('City', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('City', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_city_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_city]"
-			placeholder="<?php esc_html_e('e.g. Biarritz', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('City', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. Biarritz', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('City', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_city); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_state_meta">
-			<?php esc_html_e('State', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('State', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_state_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_state]"
-			placeholder="<?php esc_html_e('e.g. Nouvelle Aquitaine', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('State', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. Nouvelle Aquitaine', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('State', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_state); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_pc_meta">
-			<?php esc_html_e('Postal code', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Postal code', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_pc_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_pc]"
-			placeholder="<?php esc_html_e('e.g. 64200', 'wp-seopress-pro') . '" aria-label="' . esc_html_e('Postal code', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. 64200', 'webseo') . '" aria-label="' . esc_html_e('Postal code', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_pc); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_country_meta">
-			<?php esc_html_e('Country', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Country', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_country_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_country]"
-			placeholder="<?php esc_html_e('e.g. FR for France', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Country', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. FR for France', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Country', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_country); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_lat_meta">
-			<?php esc_html_e('Latitude', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Latitude', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_lat_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_lat]"
-			placeholder="<?php esc_html_e('e.g. 43.4831389', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Latitude', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. 43.4831389', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Latitude', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_lat); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_lon_meta">
-			<?php esc_html_e('Longitude', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Longitude', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_lon_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_lon]"
-			placeholder="<?php esc_html_e('e.g. -1.5630987', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Longitude', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. -1.5630987', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Longitude', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_lon); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_website_meta">
-			<?php esc_html_e('URL', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('URL', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_website_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_website]"
-			placeholder="<?php /* translators: %s home_url() */ printf(esc_html__('e.g. %s', 'wp-seopress-pro'), esc_url(get_home_url())); ?>"
-			aria-label="<?php esc_html_e('URL', 'wp-seopress-pro'); ?>"
+			placeholder="<?php /* translators: %s home_url() */ printf(esc_html__('e.g. %s', 'webseo'), esc_url(get_home_url())); ?>"
+			aria-label="<?php esc_html_e('URL', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_website); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_tel_meta">
-			<?php esc_html_e('Telephone', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Telephone', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_tel_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_tel]"
-			placeholder="<?php esc_html_e('e.g. +33501020304', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Telephone', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. +33501020304', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Telephone', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_tel); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_price_meta">
-			<?php esc_html_e('Price range', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Price range', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_price_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_price]"
-			placeholder="<?php esc_html_e('e.g. $$, €€€, or ££££...', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Price', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. $$, €€€, or ££££...', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Price', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_price); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_cuisine_meta">
-			<?php esc_html_e('Cuisine served', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Cuisine served', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_cuisine_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_cuisine]"
-			placeholder="<?php esc_html_e('e.g. French, Italian, Indian, American', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('The type of cuisine the restaurant serves.', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. French, Italian, Indian, American', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('The type of cuisine the restaurant serves.', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_cuisine); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_menu_meta">
-			<?php esc_html_e('URL of the menu', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('URL of the menu', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_menu_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_menu]"
-			placeholder="<?php printf(/* translators: %s home_url() */ esc_html__('e.g. %s', 'wp-seopress-pro'), esc_url(get_home_url())); ?>"
-			aria-label="<?php esc_html_e('The URL of the menu.', 'wp-seopress-pro'); ?>"
+			placeholder="<?php printf(/* translators: %s home_url() */ esc_html__('e.g. %s', 'webseo'), esc_url(get_home_url())); ?>"
+			aria-label="<?php esc_html_e('The URL of the menu.', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_menu); ?>" />
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_accepts_reservations_meta">
-			<?php esc_html_e('Accepts reservations', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Accepts reservations', 'webseo'); ?>
 		</label>
 		<input type="text" id="seopress_pro_rich_snippets_lb_accepts_reservations_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_lb_accepts_reservations]"
-			placeholder="<?php esc_html_e('e.g. True', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Accepts reservations ', 'wp-seopress-pro'); ?>"
+			placeholder="<?php esc_html_e('e.g. True', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Accepts reservations ', 'webseo'); ?>"
 			value="<?php echo esc_attr($seopress_pro_rich_snippets_lb_accepts_reservations); ?>" />
-		<span class="description"><?php esc_html_e('Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean (True or False), an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.', 'wp-seopress-pro'); ?></span>
+		<span class="description"><?php esc_html_e('Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean (True or False), an URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.', 'webseo'); ?></span>
 	</p>
 	<p>
 		<label for="seopress_pro_rich_snippets_lb_opening_hours_meta">
-			<?php esc_html_e('Opening hours', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Opening hours', 'webseo'); ?>
 		</label>
-		<span class="description"><?php echo wp_kses_post(__('<strong>Morning and Afternoon are just time slots</strong>. e.g. if you\'re opened from 10:00 AM to 9:00 PM, check Morning and enter 10:00 / 21:00. If you are open non-stop, check Morning and enter 0:00 / 23:59.', 'wp-seopress-pro')); ?></span>
+		<span class="description"><?php echo wp_kses_post(__('<strong>Morning and Afternoon are just time slots</strong>. e.g. if you\'re opened from 10:00 AM to 9:00 PM, check Morning and enter 10:00 / 21:00. If you are open non-stop, check Morning and enter 0:00 / 23:59.', 'webseo')); ?></span>
 	</p>
 
 
@@ -257,7 +257,7 @@ function seopress_get_schema_metaboxe_local_business($seopress_pro_rich_snippets
 
 					<label
 						for="seopress_local_business_opening_hours[<?php echo esc_attr($key); ?>][open]">
-						<?php esc_html_e('Closed all the day?', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Closed all the day?', 'webseo'); ?>
 					</label>
 
 					<?php if (isset($options['seopress_local_business_opening_hours'][$key]['open'])) { ?>
@@ -278,7 +278,7 @@ function seopress_get_schema_metaboxe_local_business($seopress_pro_rich_snippets
 
 					<label
 						for="seopress_local_business_opening_hours[<?php echo esc_attr($key); ?>][am][open]">
-						<?php esc_html_e('Open in the morning?', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Open in the morning?', 'webseo'); ?>
 					</label>
 					<?php
 						if (isset($options['seopress_local_business_opening_hours'][$key]['am']['open'])) {
@@ -381,7 +381,7 @@ function seopress_get_schema_metaboxe_local_business($seopress_pro_rich_snippets
 
 			<label
 				for="seopress_local_business_opening_hours[<?php echo esc_attr($key); ?>][pm][open]">
-				<?php esc_html_e('Open in the afternoon?', 'wp-seopress-pro'); ?>
+				<?php esc_html_e('Open in the afternoon?', 'webseo'); ?>
 			</label>
 
 			<?php

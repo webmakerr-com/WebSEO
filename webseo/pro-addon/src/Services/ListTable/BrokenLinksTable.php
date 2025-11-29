@@ -16,13 +16,13 @@ class BrokenLinksTable extends WP_List_Table {
     {
         $columns = array(
                 'cb'            => '<input type="checkbox" />',
-                'name'          => __('Broken Link', 'wp-seopress-pro'),
-                'count'         => __('Count', 'wp-seopress-pro'),
-                'status'   => __('Status', 'wp-seopress-pro'),
-                'type'        => __('Type', 'wp-seopress-pro'),
-                'anchor'        => __('Anchor text', 'wp-seopress-pro'),
-                'source'        => __('Source', 'wp-seopress-pro'),
-                'post_type'        => __('Post type', 'wp-seopress-pro'),
+                'name'          => __('Broken Link', 'webseo'),
+                'count'         => __('Count', 'webseo'),
+                'status'   => __('Status', 'webseo'),
+                'type'        => __('Type', 'webseo'),
+                'anchor'        => __('Anchor text', 'webseo'),
+                'source'        => __('Source', 'webseo'),
+                'post_type'        => __('Post type', 'webseo'),
         );
         return $columns;
     }
@@ -50,7 +50,7 @@ class BrokenLinksTable extends WP_List_Table {
     public function get_bulk_actions()
     {
         $actions = [
-            'delete_all'    => __('Delete', 'wp-seopress-pro'),
+            'delete_all'    => __('Delete', 'webseo'),
         ];
 
         return $actions;
@@ -108,7 +108,7 @@ class BrokenLinksTable extends WP_List_Table {
                 $status = ['200', '301', '302', '307', '400', '401', '402', '403', '404', '410', '451', '500'];
 
                 echo "<select name='bot-status' id='bot-status' class='postform'>";
-                echo "<option value=''>" . __('Show All', 'wp-seopress-pro') . '</option>';
+                echo "<option value=''>" . __('Show All', 'webseo') . '</option>';
                 foreach ($status as $code) {
                     echo '<option value=' . $code, isset($_GET[$code]) == $code ? ' selected="selected"' : '','>' . $code . '</option>';
                 }
@@ -188,11 +188,11 @@ class BrokenLinksTable extends WP_List_Table {
             $action = 'bulk-' . $this->_args['plural'];
 
             if ( ! wp_verify_nonce( $nonce, $action ) ) {
-                wp_die( esc_html__( 'Nope! Security check failed!', 'wp-seopress-pro' ) );
+                wp_die( esc_html__( 'Nope! Security check failed!', 'webseo' ) );
             }
 
         } else {
-            wp_die( esc_html__( 'No nonce provided!', 'wp-seopress-pro' ) );
+            wp_die( esc_html__( 'No nonce provided!', 'webseo' ) );
         }
 
         $action = $this->current_action();

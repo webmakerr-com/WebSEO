@@ -129,7 +129,7 @@ class FAQ_Schema
             $element->add_control(
                 'show_faq_schema',
                 [
-                    'label' => __('Enable FAQ Schema', 'wp-seopress-pro'),
+                    'label' => __('Enable FAQ Schema', 'webseo'),
                     'type' => \Elementor\Controls_Manager::SWITCHER,
                 ]
             );

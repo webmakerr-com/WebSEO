@@ -25,34 +25,34 @@ class FormSchemaHowTo extends FormApi {
     protected function getLabelByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_how_to_name':
-                return __('Title of the how-to', 'wp-seopress-pro');
+                return __('Title of the how-to', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_desc':
-                return __('How-to description (default excerpt, or beginning of the content)', 'wp-seopress-pro');
+                return __('How-to description (default excerpt, or beginning of the content)', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_currency':
-                return __('Currency', 'wp-seopress-pro');
+                return __('Currency', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_cost':
-                return __('Estimated cost', 'wp-seopress-pro');
+                return __('Estimated cost', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_total_time':
-                return __('Total time needed', 'wp-seopress-pro');
+                return __('Total time needed', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_img':
-                return __('Image thumbnail', 'wp-seopress-pro');
+                return __('Image thumbnail', 'webseo');
         }
     }
 
     protected function getPlaceholderByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_how_to_name':
-                return __('The name of your how-to', 'wp-seopress-pro');
+                return __('The name of your how-to', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_desc':
-                return __('Enter your how-to description', 'wp-seopress-pro');
+                return __('Enter your how-to description', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_currency':
-                return __('The currency of the estimated cost', 'wp-seopress-pro');
+                return __('The currency of the estimated cost', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_cost':
-                return __('The estimated cost', 'wp-seopress-pro');
+                return __('The estimated cost', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_total_time':
-                return __('e.g. HH:MM:SS', 'wp-seopress-pro');
+                return __('e.g. HH:MM:SS', 'webseo');
             case '_seopress_pro_rich_snippets_how_to_img':
-                return __('Select your image', 'wp-seopress-pro');
+                return __('Select your image', 'webseo');
             default:
                 return '';
         }
@@ -61,7 +61,7 @@ class FormSchemaHowTo extends FormApi {
     protected function getDescriptionByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_how_to_img':
-                return __('Minimum width: 720px - Recommended size: 1920px -  .jpg, .png, or. gif format - crawlable and indexable', 'wp-seopress-pro');
+                return __('Minimum width: 720px - Recommended size: 1920px -  .jpg, .png, or. gif format - crawlable and indexable', 'webseo');
         }
     }
 

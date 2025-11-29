@@ -12,13 +12,13 @@ function seopress_get_schema_metaboxe_custom($seopress_pro_rich_snippets_data, $
 		<p>
 			<?php $code = '<code>' . htmlspecialchars('<script type="application/ld+json">your custom schema</script>') . '</code>'; ?>
 			<?php
-				/* translators: %s: <script type="application/ld+json">your custom schema</script> */ printf(esc_html__('Build your custom schema. Don\'t forget to include the script tag: %s', 'wp-seopress-pro'), wp_kses_post($code));
+				/* translators: %s: <script type="application/ld+json">your custom schema</script> */ printf(esc_html__('Build your custom schema. Don\'t forget to include the script tag: %s', 'webseo'), wp_kses_post($code));
 			?>
 		</p>
 	</div>
 	<p>
 		<label for="seopress_pro_rich_snippets_custom_meta">
-			<?php esc_html_e('Custom schema', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Custom schema', 'webseo'); ?>
 		</label>
 		<textarea rows="25" id="seopress_pro_rich_snippets_custom_meta"
 			name="seopress_pro_rich_snippets_data[<?php echo esc_attr($key_schema); ?>][seopress_pro_rich_snippets_custom]"
@@ -54,14 +54,14 @@ function seopress_get_schema_metaboxe_custom($seopress_pro_rich_snippets_data, $
 				"@type": "Organization",
 				"name": "Washington Times"
 				}
-			}</script>', 'wp-seopress-pro'); ?>"
-			aria-label="<?php esc_html_e('Custom schema', 'wp-seopress-pro'); ?>"><?php echo esc_textarea( $seopress_pro_rich_snippets_custom ); ?></textarea>
+			}</script>', 'webseo'); ?>"
+			aria-label="<?php esc_html_e('Custom schema', 'webseo'); ?>"><?php echo esc_textarea( $seopress_pro_rich_snippets_custom ); ?></textarea>
 	</p>
 	<p class="description">
-		<?php esc_html_e('⚠ Make sure to open and close the script tag.', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('⚠ Make sure to open and close the script tag.', 'webseo'); ?>
 	</p>
 	<p class="description">
-		<?php /* translators: %s: documentation link */ echo wp_kses_post(sprintf(__('<a href="%s" target="_blank">You can use dynamic variables in your schema.</a>', 'wp-seopress-pro'), esc_url($docs['schemas']['dynamic']))); ?>
+		<?php /* translators: %s: documentation link */ echo wp_kses_post(sprintf(__('<a href="%s" target="_blank">You can use dynamic variables in your schema.</a>', 'webseo'), esc_url($docs['schemas']['dynamic']))); ?>
 		<span class="seopress-help dashicons dashicons-external"></span>
 	</p>
 </div>

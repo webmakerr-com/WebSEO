@@ -13,7 +13,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_rich_snippets_enable', // ID
-    __('Enable Structured Data Types', 'wp-seopress-pro'), // Title
+    __('Enable Structured Data Types', 'webseo'), // Title
     'seopress_rich_snippets_enable_callback', // Callback
     'seopress-settings-admin-rich-snippets', // Page
     'seopress_setting_section_rich_snippets' // Section
@@ -21,7 +21,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_rich_snippets_publisher_logo', // ID
-    __('Upload your publisher logo', 'wp-seopress-pro'), // Title
+    __('Upload your publisher logo', 'webseo'), // Title
     'seopress_rich_snippets_publisher_logo_callback', // Callback
     'seopress-settings-admin-rich-snippets', // Page
     'seopress_setting_section_rich_snippets' // Section

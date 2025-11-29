@@ -14,7 +14,7 @@ function seopress_pro_advanced_appearance_ps_col_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Display Page Speed column to check performances', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Display Page Speed column to check performances', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_advanced_appearance_ps_col'])) {
@@ -34,7 +34,7 @@ function seopress_pro_advanced_appearance_search_console_callback() {
         <?php } ?>
         value="1"/>
 
-        <?php esc_html_e('Display Search Console Data (clicks, impressions, CTR, positions)', 'wp-seopress-pro');
+        <?php esc_html_e('Display Search Console Data (clicks, impressions, CTR, positions)', 'webseo');
     ?>
 </label>
 
@@ -55,13 +55,13 @@ function seopress_rewrite_search_callback() {
     } ?>
 
 <input type="text" name="seopress_advanced_option_name[seopress_rewrite_search]"
-    placeholder="<?php esc_html_e('Search results base', 'wp-seopress-pro'); ?>"
-    aria-label="<?php esc_html_e('Search results base, e.g. "search-results" without quotes', 'wp-seopress-pro'); ?>"
+    placeholder="<?php esc_html_e('Search results base', 'webseo'); ?>"
+    aria-label="<?php esc_html_e('Search results base, e.g. "search-results" without quotes', 'webseo'); ?>"
     value="<?php echo esc_attr($check); ?>" />
 
     <div class="seopress-notice">
         <p>
-            <?php esc_html_e('You have to flush your permalinks each time you change this setting.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('You have to flush your permalinks each time you change this setting.', 'webseo'); ?>
         </p>
     </div>
 <?php
@@ -79,7 +79,7 @@ function seopress_advanced_appearance_dashboard_livechat_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_attr_e('Disable AI Live Chat', 'wp-seopress-pro'); ?>
+	<?php esc_attr_e('Disable AI Live Chat', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_advanced_appearance_dashboard_livechat'])) {

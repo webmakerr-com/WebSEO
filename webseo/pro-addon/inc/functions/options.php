@@ -87,9 +87,9 @@ if ('1' == seopress_get_toggle_option('rich-snippets')) {
                 ?>
 <div class="seopress-notice is-error">
     <p>
-        <?php echo wp_kses_post(__('Please enable <strong>Structured Data Types metabox for your posts, pages and custom post types</strong> option in order to use automatic schemas.', 'wp-seopress-pro')); ?>
+        <?php echo wp_kses_post(__('Please enable <strong>Structured Data Types metabox for your posts, pages and custom post types</strong> option in order to use automatic schemas.', 'webseo')); ?>
         <a href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_rich_snippets')); ?>"
-            class="btn btnPrimary"><?php esc_html_e('Fix this!', 'wp-seopress-pro'); ?></a>
+            class="btn btnPrimary"><?php esc_html_e('Fix this!', 'webseo'); ?></a>
     </p>
 </div>
 <?php

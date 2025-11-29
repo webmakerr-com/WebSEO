@@ -28,11 +28,11 @@ class MetaRobotSettings implements ExecuteHooks {
             'type'        => 'input',
             'use_default' => '',
             'default'     => true,
-            'label'       => __('Custom breadcrumbs', 'wp-seopress-pro'),
-            'description' => __('Enter a custom value, useful if your title is too long', 'wp-seopress-pro'),
+            'label'       => __('Custom breadcrumbs', 'webseo'),
+            'description' => __('Enter a custom value, useful if your title is too long', 'webseo'),
             'placeholder' => sprintf(
                 /* translators: %s: post title */
-                __('Current breadcrumbs: %s', 'wp-seopress-pro'),
+                __('Current breadcrumbs: %s', 'webseo'),
                 get_the_title($id)
             ),
             'visible'     => true,

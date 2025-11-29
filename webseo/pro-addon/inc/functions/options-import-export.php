@@ -21,15 +21,15 @@ function seopress_import_redirections_settings() {
     $extension = pathinfo($_FILES['import_file']['name'], PATHINFO_EXTENSION);
 
     if ('csv' != $extension) {
-        wp_die(esc_html__('Please upload a valid .csv file', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a valid .csv file', 'webseo'));
     }
     $import_file = $_FILES['import_file']['tmp_name'];
     if (empty($import_file)) {
-        wp_die(esc_html__('Please upload a file to import', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a file to import', 'webseo'));
     }
 
     if ( ! $_POST['import_sep']) {
-        wp_die(esc_html__('Please choose a separator', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please choose a separator', 'webseo'));
     }
 
     $csv = array_map(function ($item) {
@@ -38,7 +38,7 @@ function seopress_import_redirections_settings() {
         } elseif ('semicolon' == $_POST['import_sep']) {
             $sep = ';';
         } else {
-            wp_die(esc_html__('Invalid separator', 'wp-seopress-pro'));
+            wp_die(esc_html__('Invalid separator', 'webseo'));
         }
 
         return str_getcsv($item, $sep, '"', '\\');
@@ -143,11 +143,11 @@ function seopress_import_yoast_redirections() {
     $extension = pathinfo($_FILES['import_file']['name'], PATHINFO_EXTENSION);
 
     if ('csv' != $extension) {
-        wp_die(esc_html__('Please upload a valid .csv file', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a valid .csv file', 'webseo'));
     }
     $import_file = $_FILES['import_file']['tmp_name'];
     if (empty($import_file)) {
-        wp_die(esc_html__('Please upload a file to import', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a file to import', 'webseo'));
     }
 
     $csv = array_map('str_getcsv', file($import_file));
@@ -417,11 +417,11 @@ function seopress_import_redirections_plugin_settings() {
     $extension = pathinfo($_FILES['import_file']['name'], PATHINFO_EXTENSION);
 
     if ('json' != $extension) {
-        wp_die(esc_html__('Please upload a valid .json file', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a valid .json file', 'webseo'));
     }
     $import_file = $_FILES['import_file']['tmp_name'];
     if (empty($import_file)) {
-        wp_die(esc_html__('Please upload a file to import', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a file to import', 'webseo'));
     }
 
     $settings = (array) json_decode(file_get_contents($import_file), true);
@@ -496,11 +496,11 @@ function seopress_import_rk_redirections() {
     $extension = pathinfo($_FILES['import_file']['name'], PATHINFO_EXTENSION);
 
     if ('json' != $extension) {
-        wp_die(esc_html__('Please upload a valid .json file', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a valid .json file', 'webseo'));
     }
     $import_file = $_FILES['import_file']['tmp_name'];
     if (empty($import_file)) {
-        wp_die(esc_html__('Please upload a file to import', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a file to import', 'webseo'));
     }
 
     $settings = (array) json_decode(file_get_contents($import_file), true);
@@ -595,11 +595,11 @@ function seopress_import_aioseo_redirections() {
     $extension = pathinfo($_FILES['import_file']['name'], PATHINFO_EXTENSION);
 
     if ('json' != $extension) {
-        wp_die(esc_html__('Please upload a valid .json file', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a valid .json file', 'webseo'));
     }
     $import_file = $_FILES['import_file']['tmp_name'];
     if (empty($import_file)) {
-        wp_die(esc_html__('Please upload a file to import', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a file to import', 'webseo'));
     }
 
     $settings = (array) json_decode(file_get_contents($import_file), true);
@@ -733,11 +733,11 @@ function seopress_import_smartcrawl_redirections() {
     $extension = pathinfo($_FILES['import_file']['name'], PATHINFO_EXTENSION);
 
     if ('json' != $extension) {
-        wp_die(esc_html__('Please upload a valid .json file', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a valid .json file', 'webseo'));
     }
     $import_file = $_FILES['import_file']['tmp_name'];
     if (empty($import_file)) {
-        wp_die(esc_html__('Please upload a file to import', 'wp-seopress-pro'));
+        wp_die(esc_html__('Please upload a file to import', 'webseo'));
     }
 
     $settings = (array) json_decode(file_get_contents($import_file), true);

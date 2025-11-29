@@ -14,7 +14,7 @@ function seopress_seo_alerts_noindex_callback()
 		<?php if ('1' == $check) { ?>
 	checked="yes" <?php } ?> value="1" />
 
-	<?php esc_html_e('Receive an alert if your homepage is set to noindex', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Receive an alert if your homepage is set to noindex', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_seo_alerts_noindex'])) {
@@ -35,7 +35,7 @@ function seopress_seo_alerts_robots_txt_callback()
 		<?php if ('1' == $check) { ?>
 	checked="yes" <?php } ?> value="1" />
 
-	<?php esc_html_e('Receive an alert if your robots.txt returns an error code', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Receive an alert if your robots.txt returns an error code', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_seo_alerts_robots_txt'])) {
@@ -56,7 +56,7 @@ function seopress_seo_alerts_xml_sitemaps_callback()
 		<?php if ('1' == $check) { ?>
 	checked="yes" <?php } ?> value="1" />
 
-	<?php esc_html_e('Receive an alert if your XML sitemap index return an error code', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Receive an alert if your XML sitemap index return an error code', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_seo_alerts_xml_sitemaps'])) {
@@ -71,12 +71,12 @@ function seopress_seo_alerts_recipients_callback()
 	$check = isset($options['seopress_seo_alerts_recipients']) ? $options['seopress_seo_alerts_recipients'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_seo_alerts_recipients]" aria-label="' . esc_html__('Your email address', 'wp-seopress-pro') . '" placeholder="' . esc_html__('e.g. admin@example.com', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_seo_alerts_recipients]" aria-label="' . esc_html__('Your email address', 'webseo') . '" placeholder="' . esc_html__('e.g. admin@example.com', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	); ?>
 
 <p class="description">
-	<?php esc_html_e('Receive SEO alerts by mail. Separate emails by commas.', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Receive SEO alerts by mail. Separate emails by commas.', 'webseo'); ?>
 </p>
 
 <?php
@@ -90,17 +90,17 @@ function seopress_seo_alerts_slack_webhook_url_callback()
 	$docs = seopress_get_docs_links();
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_seo_alerts_slack_webhook_url]" aria-label="' . esc_html__('Your Slack webhook URL', 'wp-seopress-pro') . '" placeholder="' . esc_html__('Your Slack webhook URL', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_seo_alerts_slack_webhook_url]" aria-label="' . esc_html__('Your Slack webhook URL', 'webseo') . '" placeholder="' . esc_html__('Your Slack webhook URL', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	); ?>
 
 <p class="description">
-	<?php esc_html_e('Receive notifications, twice a day, to Slack.', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Receive notifications, twice a day, to Slack.', 'webseo'); ?>
 </p>
 
 <p class="description">
 	<a href="<?php echo esc_url($docs['alerts']['slack_webhook']); ?>" target="_blank" class="seopress-help">
-		<?php esc_html_e('How to find my Slack Webhook URL?', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('How to find my Slack Webhook URL?', 'webseo'); ?>
 	</a>
 	<span class="seopress-help dashicons dashicons-external"></span>
 </p>

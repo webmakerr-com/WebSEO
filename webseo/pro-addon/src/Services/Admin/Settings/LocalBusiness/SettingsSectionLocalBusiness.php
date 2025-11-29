@@ -102,10 +102,10 @@ class SettingsSectionLocalBusiness {
             ?>
 <div class="seopress-notice is-error">
     <p>
-        <?php esc_html_e('You have to set an image in Knowledge Graph settings, otherwise, your Google Local Business data will not be valid.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('You have to set an image in Knowledge Graph settings, otherwise, your Google Local Business data will not be valid.', 'webseo'); ?>
         <a href="<?php echo esc_url(admin_url('admin.php?page=seopress-social')); ?>"
             class="btn btnPrimary">
-            <?php esc_html_e('Fix this!', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Fix this!', 'webseo'); ?>
         </a>
     </p>
 </div>
@@ -114,14 +114,14 @@ class SettingsSectionLocalBusiness {
 <p>
     <a
         href="<?php echo esc_url(admin_url('admin.php?page=seopress-social#tab=tab_seopress_social_knowledge')); ?>">
-        <?php esc_html_e('To edit your business name, visit this page.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('To edit your business name, visit this page.', 'webseo'); ?>
     </a>
 </p>
 
 <p class="seopress-notice">
     <?php echo wp_kses_post(sprintf(
         /* translators: 1: schema metabox URL */
-        __('<strong>Need to add multiple locations?</strong> Create a manual Local Business schema from the schema metabox when you edit a post, page or post type, or an <a href="%s">automatic Local Business schema</a>.', 'wp-seopress-pro'), esc_url(admin_url('edit.php?post_type=seopress_schemas')))); ?>
+        __('<strong>Need to add multiple locations?</strong> Create a manual Local Business schema from the schema metabox when you edit a post, page or post type, or an <a href="%s">automatic Local Business schema</a>.', 'webseo'), esc_url(admin_url('edit.php?post_type=seopress_schemas')))); ?>
 </p>
 
 <?php

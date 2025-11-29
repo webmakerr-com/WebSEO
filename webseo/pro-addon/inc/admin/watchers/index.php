@@ -141,8 +141,8 @@ if ('1' == seopress_get_toggle_option('404') && apply_filters('seopress_post_aut
                 ),
                 'seopress_dismiss_all_notice_need_to_redirect'
             );
-            $info = /* translators: %s number of redirections */ __('We have %s redirections that needs your attention', 'wp-seopress-pro');
-            $view_all = /* translators: %s number of notices */ __('View all notices (%s)', 'wp-seopress-pro'); ?>
+            $info = /* translators: %s number of redirections */ __('We have %s redirections that needs your attention', 'webseo');
+            $view_all = /* translators: %s number of notices */ __('View all notices (%s)', 'webseo'); ?>
 <div class="notice notice-warning">
     <p>
         <?php printf(esc_html($info), count($notices)); ?>
@@ -153,11 +153,11 @@ if ('1' == seopress_get_toggle_option('404') && apply_filters('seopress_post_aut
         </a> 
         <a href="<?php echo esc_url($remove_all_notices_url); ?>"
             class="button button-link">
-            <?php esc_html_e('Remove all notices', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Remove all notices', 'webseo'); ?>
         </a> -
         <a href="<?php echo esc_url(admin_url('admin.php?page=seopress-import-export#tab=tab_seopress_tool_redirects')); ?>"
             class="button button-link">
-            <?php esc_html_e('Export all slug changes', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Export all slug changes', 'webseo'); ?>
         </a>
     </p>
 </div>
@@ -184,7 +184,7 @@ if ('1' == seopress_get_toggle_option('404') && apply_filters('seopress_post_aut
 <div class="notice notice-warning <?php if ($key > 0) { ?>notice-redirect-hide<?php } ?>"
     style="position:relative; <?php if ($key > 0) { ?>display:none;<?php } ?>">
     <?php
-                printf('<a href="%s" class="notice-dismiss" style="text-decoration:none;"><span class="screen-reader-text">' . esc_html__('Dismiss this notice', 'wp-seopress-pro') . '</span></a>', wp_nonce_url(
+                printf('<a href="%s" class="notice-dismiss" style="text-decoration:none;"><span class="screen-reader-text">' . esc_html__('Dismiss this notice', 'webseo') . '</span></a>', wp_nonce_url(
                 add_query_arg(
                     [
                         'action' => 'seopress_dismiss_notice_need_to_redirect',
@@ -198,7 +198,7 @@ if ('1' == seopress_get_toggle_option('404') && apply_filters('seopress_post_aut
     <p>
         <a href="<?php echo esc_url($href_button); ?>" target="_blank"
             class="button button-secondary">
-            <?php esc_html_e('Create a redirection (new window)', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Create a redirection (new window)', 'webseo'); ?>
         </a>
     </p>
 </div>

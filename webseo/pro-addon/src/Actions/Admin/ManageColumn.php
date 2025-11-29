@@ -60,19 +60,19 @@ class ManageColumn implements ExecuteHooksBackend {
 	 */
 	public function addColumn( $columns ) {
 		if ( '1' === seopress_get_service( 'AdvancedOption' )->getAppearancePsCol() ) {
-			$columns['seopress_ps'] = __( 'Page Speed', 'wp-seopress-pro' );
+			$columns['seopress_ps'] = __( 'Page Speed', 'webseo' );
 		}
 		if ( ! empty( seopress_get_service( 'AdvancedOption' )->getAppearanceSearchConsole() ) ) {
-			$columns['seopress_search_console_clicks'] = __( 'Clicks', 'wp-seopress-pro' );
+			$columns['seopress_search_console_clicks'] = __( 'Clicks', 'webseo' );
 		}
 		if ( ! empty( seopress_get_service( 'AdvancedOption' )->getAppearanceSearchConsole() ) ) {
-			$columns['seopress_search_console_impressions'] = __( 'Impressions', 'wp-seopress-pro' );
+			$columns['seopress_search_console_impressions'] = __( 'Impressions', 'webseo' );
 		}
 		if ( ! empty( seopress_get_service( 'AdvancedOption' )->getAppearanceSearchConsole() ) ) {
-			$columns['seopress_search_console_ctr'] = __( 'CTR', 'wp-seopress-pro' );
+			$columns['seopress_search_console_ctr'] = __( 'CTR', 'webseo' );
 		}
 		if ( ! empty( seopress_get_service( 'AdvancedOption' )->getAppearanceSearchConsole() ) ) {
-			$columns['seopress_search_console_position'] = __( 'Position', 'wp-seopress-pro' );
+			$columns['seopress_search_console_position'] = __( 'Position', 'webseo' );
 		}
 
 		return $columns;
@@ -88,7 +88,7 @@ class ManageColumn implements ExecuteHooksBackend {
 	public function displayColumn( $column, $post_id ) {
 		switch ( $column ) {
 			case 'seopress_ps':
-				echo '<a href="' . esc_url( admin_url( 'admin.php?page=seopress-pro-page&data_permalink=' . esc_url( get_the_permalink() . '#tab=tab_seopress_page_speed' ) ) ) . '" class="seopress-button" title="' . esc_attr( __( 'Analyze this page with Google Page Speed', 'wp-seopress-pro' ) ) . '"><span class="dashicons dashicons-dashboard"></span></a>';
+				echo '<a href="' . esc_url( admin_url( 'admin.php?page=seopress-pro-page&data_permalink=' . esc_url( get_the_permalink() . '#tab=tab_seopress_page_speed' ) ) ) . '" class="seopress-button" title="' . esc_attr( __( 'Analyze this page with Google Page Speed', 'webseo' ) ) . '"><span class="dashicons dashicons-dashboard"></span></a>';
 				break;
 
 			case 'seopress_search_console_clicks':

@@ -6,7 +6,7 @@
   "description": "Display a tutorial block",
   "icon": "feedback",
   "category": "wpseopress",
-  "textdomain": "wp-seopress-pro",
+  "textdomain": "webseo",
   "supports": {
     "align": true,
     "html": false,

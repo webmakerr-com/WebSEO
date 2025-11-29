@@ -8,12 +8,12 @@ function seopress_bot_scan_settings_email_callback()
     $check = isset($options['seopress_bot_scan_settings_email']) ? $options['seopress_bot_scan_settings_email'] : null;
 
     printf(
-        '<input type="text" name="seopress_bot_option_name[seopress_bot_scan_settings_email]" aria-label="' . esc_html__('Your email address', 'wp-seopress-pro') . '" placeholder="' . esc_html__('e.g. admin@example.com', 'wp-seopress-pro') . '" value="%s" />',
+        '<input type="text" name="seopress_bot_option_name[seopress_bot_scan_settings_email]" aria-label="' . esc_html__('Your email address', 'webseo') . '" placeholder="' . esc_html__('e.g. admin@example.com', 'webseo') . '" value="%s" />',
         esc_html($check)
     ); ?>
 
 <p class="description">
-    <?php esc_html_e('Receive an alert by mail once the site audit is completed. Separate emails by commas.', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Receive an alert by mail once the site audit is completed. Separate emails by commas.', 'webseo'); ?>
 </p>
 
 <?php
@@ -81,7 +81,7 @@ function seopress_bot_scan_settings_audit_cpt_callback() {
     }
     ?>
     <p class="description">
-        <?php echo wp_kses_post(sprintf(/* translators: %s public */ __('By default, all custom post types registered as %s will be analyzed.', 'wp-seopress-pro'), '<code>public</code>')); ?>
+        <?php echo wp_kses_post(sprintf(/* translators: %s public */ __('By default, all custom post types registered as %s will be analyzed.', 'webseo'), '<code>public</code>')); ?>
     </p>
     <?php
 }
@@ -98,11 +98,11 @@ function seopress_bot_scan_settings_audit_noindex_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Yes', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Yes', 'webseo'); ?>
 </label>
 
 <p class="description">
-    <?php echo wp_kses_post(sprintf(/* translators: %s noindex */ __('By default, content marked as %s will NOT be scanned.', 'wp-seopress-pro'), '<code>noindex</code>')); ?>
+    <?php echo wp_kses_post(sprintf(/* translators: %s noindex */ __('By default, content marked as %s will NOT be scanned.', 'webseo'), '<code>noindex</code>')); ?>
 </p>
 
 <?php if (isset($options['seopress_bot_scan_settings_audit_noindex'])) {
@@ -121,7 +121,7 @@ value="<?php echo esc_attr($options['seopress_bot_scan_settings_audit_batch_size
 value="10"/>
 
     <p class="description">
-        <?php esc_html_e('How many posts to scan at once. Default: 10. Max: 50', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('How many posts to scan at once. Default: 10. Max: 50', 'webseo'); ?>
     </p>
     <?php
     if (isset($options['seopress_bot_scan_settings_audit_batch_size'])) {
@@ -178,7 +178,7 @@ function seopress_bot_scan_settings_post_types_callback() {
 function seopress_bot_scan_settings_where_callback() {
     $options = get_option('seopress_bot_option_name');
 
-    $where = ['post_content' => __('Post content', 'wp-seopress-pro'), 'body_page' => __('Source code of your page (extremely slow)', 'wp-seopress-pro')];
+    $where = ['post_content' => __('Post content', 'webseo'), 'body_page' => __('Source code of your page (extremely slow)', 'webseo')];
 
     foreach ($where as $key => $value) { ?>
 <div class="seopress_wrap_single_cpt">
@@ -222,7 +222,7 @@ value="100"/>
         esc_html($options['seopress_bot_scan_settings_number']);
     } ?>
 <p class="description">
-    <?php esc_html_e('The higher the value, the more time it will take. Min 10. Default: 100', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('The higher the value, the more time it will take. Min 10. Default: 100', 'webseo'); ?>
 </p>
 
 <?php
@@ -240,7 +240,7 @@ function seopress_bot_scan_settings_type_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Yes', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Yes', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_bot_scan_settings_type'])) {
@@ -260,7 +260,7 @@ function seopress_bot_scan_settings_404_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Yes', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Yes', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_bot_scan_settings_404'])) {
@@ -283,7 +283,7 @@ value="5"/>
     } ?>
 
 <p class="description">
-    <?php esc_html_e('If the request exceeds x seconds of delay, the link will be considered as down', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('If the request exceeds x seconds of delay, the link will be considered as down', 'webseo'); ?>
 </p>
 
 <?php
@@ -301,7 +301,7 @@ function seopress_bot_scan_settings_cleaning_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Yes', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Yes', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_bot_scan_settings_cleaning'])) {

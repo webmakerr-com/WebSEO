@@ -6,7 +6,7 @@
   "description": "Displays a single Local Business field",
   "icon": "store",
   "category": "wpseopress",
-  "textdomain": "wp-seopress-pro",
+  "textdomain": "webseo",
   "parent": [
     "wpseopress/local-business"
   ],

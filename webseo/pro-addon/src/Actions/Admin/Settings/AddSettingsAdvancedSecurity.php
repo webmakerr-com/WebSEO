@@ -84,9 +84,9 @@ class AddSettingsAdvancedSecurity implements ExecuteHooksBackend {
      */
     public function addSettings() {
         $postTypes = [
-            'seopress_bot'     => esc_html__('Broken Link', 'wp-seopress-pro'),
+            'seopress_bot'     => esc_html__('Broken Link', 'webseo'),
             'seopress_404'     => '404',
-            'seopress_schemas' => esc_html__('Schemas', 'wp-seopress-pro'),
+            'seopress_schemas' => esc_html__('Schemas', 'webseo'),
         ];
         foreach ($postTypes as $key => $value) {
             add_settings_field(

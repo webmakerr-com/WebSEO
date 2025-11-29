@@ -15,11 +15,11 @@ trait FieldAddressRegion {
         <input
             type="text"
             name="seopress_pro_option_name[seopress_local_business_address_region]"
-            placeholder="<?php esc_attr_e('e.g. Nouvelle Aquitaine', 'wp-seopress-pro'); ?>"
-            aria-label="<?php esc_attr_e('State', 'wp-seopress-pro'); ?>"
+            placeholder="<?php esc_attr_e('e.g. Nouvelle Aquitaine', 'webseo'); ?>"
+            aria-label="<?php esc_attr_e('State', 'webseo'); ?>"
             value="<?php echo esc_attr($value); ?>" />
 
-        <p class="description"><?php echo wp_kses_post(__('<span class="field-required">Required</span> property by Google.', 'wp-seopress-pro')); ?></p>
+        <p class="description"><?php echo wp_kses_post(__('<span class="field-required">Required</span> property by Google.', 'webseo')); ?></p>
         <?php
     }
 }

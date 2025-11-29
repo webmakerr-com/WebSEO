@@ -7,7 +7,7 @@ function seopress_google_analytics_matomo_widget_auth_token_callback() {
 
     $check = isset($options['seopress_google_analytics_matomo_widget_auth_token']) ? 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' : null;
 
-    printf('<input type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" name="seopress_google_analytics_option_name[seopress_google_analytics_matomo_widget_auth_token]" value="%s" aria-label="' . esc_html__('Matomo authentication token', 'wp-seopress-pro') . '"/>', esc_html($check));
+    printf('<input type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" name="seopress_google_analytics_option_name[seopress_google_analytics_matomo_widget_auth_token]" value="%s" aria-label="' . esc_html__('Matomo authentication token', 'webseo') . '"/>', esc_html($check));
 }
 
 function seopress_google_analytics_matomo_dashboard_widget_callback() {
@@ -22,7 +22,7 @@ function seopress_google_analytics_matomo_dashboard_widget_callback() {
     <?php } ?>
     value="1"/>
 
-    <?php esc_html_e('Remove Matomo stats widget from WordPress dashboard', 'wp-seopress-pro'); ?>
+    <?php esc_html_e('Remove Matomo stats widget from WordPress dashboard', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_google_analytics_matomo_dashboard_widget'])) {

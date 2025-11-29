@@ -15,7 +15,7 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 function seopress_importer_generic_mappings($mappings)
 {
     $generic_mappings = [
-        __('Title', 'wp-seopress-pro') => 'name',
+        __('Title', 'webseo') => 'name',
     ];
 
     return array_merge($mappings, $generic_mappings);

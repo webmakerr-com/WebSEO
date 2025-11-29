@@ -10,7 +10,7 @@ function seopress_print_section_info_woocommerce()
     if (!is_plugin_active('woocommerce/woocommerce.php')) { ?>
 
         <div class="seopress-notice is-warning">
-            <p><?php echo wp_kses_post(__('You need to enable <strong>WooCommerce</strong> to apply these settings.', 'wp-seopress-pro')); ?></p>
+            <p><?php echo wp_kses_post(__('You need to enable <strong>WooCommerce</strong> to apply these settings.', 'webseo')); ?></p>
         </div>
 
 <?php

@@ -14,15 +14,15 @@ if ( is_plugin_active( 'woocommerce/woocommerce.php' )) {
 		woocommerce_wp_select(
 			array(
 				'id'      => 'sp_wc_barcode_type_field',
-				'label'   => __( 'Product Global Identifiers type', 'wp-seopress-pro' ),
+				'label'   => __( 'Product Global Identifiers type', 'webseo' ),
 				'options' => array(
-					'none' => __( 'None', 'wp-seopress-pro' ),
-					'gtin8' => __( 'gtin8 (ean8)', 'wp-seopress-pro' ),
-					'gtin12' => __( 'gtin12 (ean12)', 'wp-seopress-pro' ),
-					'gtin13' => __( 'gtin13 (ean13)', 'wp-seopress-pro' ),
-					'gtin14' => __( 'gtin14 (ean14)', 'wp-seopress-pro' ),
-					'mpn' => __( 'mpn', 'wp-seopress-pro' ),
-					'isbn' => __( 'isbn', 'wp-seopress-pro' )
+					'none' => __( 'None', 'webseo' ),
+					'gtin8' => __( 'gtin8 (ean8)', 'webseo' ),
+					'gtin12' => __( 'gtin12 (ean12)', 'webseo' ),
+					'gtin13' => __( 'gtin13 (ean13)', 'webseo' ),
+					'gtin14' => __( 'gtin14 (ean14)', 'webseo' ),
+					'mpn' => __( 'mpn', 'webseo' ),
+					'isbn' => __( 'isbn', 'webseo' )
 					)
 				)
 		);
@@ -50,11 +50,11 @@ if ( is_plugin_active( 'woocommerce/woocommerce.php' )) {
 	function seopress_wc_barcode_field() {
 		$args = array(
 			'id'			=> 'sp_wc_barcode_field',
-			'label'			=> __( 'Product Global Identifiers', 'wp-seopress-pro' ),
+			'label'			=> __( 'Product Global Identifiers', 'webseo' ),
 			'class'			=> '',
 			'desc_tip'		=> true,
 			'data_type'		=> '',
-			'description'	=> __( 'A valid product identifier to be used in the product schema (accepted types: gtin8 (ean8) | gtin12 (ean12) | gtin13 (ean13) | gtin14 (ean14) | mpn | isbn)', 'wp-seopress-pro' ),
+			'description'	=> __( 'A valid product identifier to be used in the product schema (accepted types: gtin8 (ean8) | gtin12 (ean12) | gtin13 (ean13) | gtin14 (ean14) | mpn | isbn)', 'webseo' ),
 		);
 		woocommerce_wp_text_input( $args );
 	}

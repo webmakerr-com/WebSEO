@@ -13,12 +13,12 @@ function seopress_ps_url_callback() {
 	}
 
 	printf(
-	'<input id="seopress_ps_url" type="text" name="seopress_pro_option_name[seopress_ps_url]" aria-label="' . esc_html__('Enter a URL to analyse with Page Speed Insights', 'wp-seopress-pro') . '" placeholder="' . esc_html__('Enter a URL to analyse with Page Speed Insights', 'wp-seopress-pro') . '" value="%s">',
+	'<input id="seopress_ps_url" type="text" name="seopress_pro_option_name[seopress_ps_url]" aria-label="' . esc_html__('Enter a URL to analyse with Page Speed Insights', 'webseo') . '" placeholder="' . esc_html__('Enter a URL to analyse with Page Speed Insights', 'webseo') . '" value="%s">',
 	esc_html($check)
 	); ?>
 
 	<p class="seopress-help description">
-		<?php esc_html_e('Leave this field empty to analyse homepage', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('Leave this field empty to analyse homepage', 'webseo'); ?>
 	</p>
 
 	<?php
@@ -29,25 +29,25 @@ function seopress_ps_api_key_callback() {
 	$docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() : '';
 
 	printf(
-	'<input id="seopress_ps_api_key" type="text" name="seopress_pro_option_name[seopress_ps_api_key]" aria-label="' . esc_html__('Google Page Speed Insights API key', 'wp-seopress-pro') . '" placeholder="' . esc_html__('Enter your Page Speed Insights API key', 'wp-seopress-pro') . '" value="%s">',
+	'<input id="seopress_ps_api_key" type="text" name="seopress_pro_option_name[seopress_ps_api_key]" aria-label="' . esc_html__('Google Page Speed Insights API key', 'webseo') . '" placeholder="' . esc_html__('Enter your Page Speed Insights API key', 'webseo') . '" value="%s">',
 	esc_html($check)
 	);
 
 	?>
 	<p class="seopress-help description">
 		<a href="<?php echo esc_url($docs['page_speed']['api']); ?>" target="_blank">
-			<?php esc_html_e('Learn how to create a free Google Page Speed API key', 'wp-seopress-pro'); ?>
+			<?php esc_html_e('Learn how to create a free Google Page Speed API key', 'webseo'); ?>
 		</a>
 		<span class="dashicons dashicons-external"></span>
 	</p>
 	<p class="seopress-help description">
 		<a href="<?php echo esc_url($docs['page_speed']['google']); ?>" target="_blank">
 			<?php
-				esc_html_e('A Page Speed Insights key', 'wp-seopress-pro');
+				esc_html_e('A Page Speed Insights key', 'webseo');
 				?>
 		</a>
 		<span class="dashicons dashicons-external"></span>
-		<?php esc_html_e('is required to avoid quota errors.', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('is required to avoid quota errors.', 'webseo'); ?>
 	</p>
 
 	<?php
@@ -58,10 +58,10 @@ function seopress_print_section_info_page_speed_logs() {
 	?>
 	<hr>
 	<h3 id="seopress-page-speed-logs">
-		<?php esc_html_e('PageSpeed Insights Logs', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('PageSpeed Insights Logs', 'webseo'); ?>
 	</h3>
 
-	<p><?php esc_html_e('Below is the latest error message obtained from the PageSpeed Insights API:', 'wp-seopress-pro'); ?></p>
+	<p><?php esc_html_e('Below is the latest error message obtained from the PageSpeed Insights API:', 'webseo'); ?></p>
 
 	<?php
 	//Logs
@@ -77,7 +77,7 @@ function seopress_print_section_info_page_speed_logs() {
 	?>
 <?php
 	} else {
-		esc_html_e('Currently no errors logged.', 'wp-seopress-pro');
+		esc_html_e('Currently no errors logged.', 'webseo');
 	}
 	echo '</pre>';
 }

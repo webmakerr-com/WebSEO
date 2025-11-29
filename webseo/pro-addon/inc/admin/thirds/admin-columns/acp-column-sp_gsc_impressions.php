@@ -7,7 +7,7 @@ class ACP_Column_sp_gsc_impressions extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_gsc_impressions' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'Impressions', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'Impressions', 'webseo' ) );
 	}
 
 	public function get_meta_key() {

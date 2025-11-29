@@ -39,7 +39,7 @@ add_settings_section(
 
 add_settings_field(
     'seopress_bot_scan_settings_email', // ID
-    __('Recipients', 'wp-seopress-pro'), // Title
+    __('Recipients', 'webseo'), // Title
     'seopress_bot_scan_settings_email_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_setting_section_bot_site_audit_settings' // Section
@@ -47,7 +47,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_audit_cpt', // ID
-    __('Post types to scan', 'wp-seopress-pro'), // Title
+    __('Post types to scan', 'webseo'), // Title
     'seopress_bot_scan_settings_audit_cpt_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_setting_section_bot_site_audit_settings' // Section
@@ -55,7 +55,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_audit_noindex', // ID
-    __('Scan noindex content', 'wp-seopress-pro'), // Title
+    __('Scan noindex content', 'webseo'), // Title
     'seopress_bot_scan_settings_audit_noindex_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_setting_section_bot_site_audit_settings' // Section
@@ -63,7 +63,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_audit_batch_size', // ID
-    __('Batch size', 'wp-seopress-pro'), // Title
+    __('Batch size', 'webseo'), // Title
     'seopress_bot_scan_settings_audit_batch_size_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_setting_section_bot_site_audit_settings' // Section
@@ -71,7 +71,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_post_types', // ID
-    __('Post types to scan', 'wp-seopress-pro'), // Title
+    __('Post types to scan', 'webseo'), // Title
     'seopress_bot_scan_settings_post_types_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_print_section_info_bot_settings_broken_links' // Section
@@ -79,7 +79,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_where', // ID
-    __('Find links in', 'wp-seopress-pro'), // Title
+    __('Find links in', 'webseo'), // Title
     'seopress_bot_scan_settings_where_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_print_section_info_bot_settings_broken_links' // Section
@@ -87,7 +87,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_number', // ID
-    __('Number of posts / pages / post types to scan', 'wp-seopress-pro'), // Title
+    __('Number of posts / pages / post types to scan', 'webseo'), // Title
     'seopress_bot_scan_settings_number_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_print_section_info_bot_settings_broken_links' // Section
@@ -95,7 +95,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_type', // ID
-    __('Scan link type (slow down the bot)', 'wp-seopress-pro'), // Title
+    __('Scan link type (slow down the bot)', 'webseo'), // Title
     'seopress_bot_scan_settings_type_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_print_section_info_bot_settings_broken_links' // Section
@@ -103,7 +103,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_404', // ID
-    __('Scan 404 only', 'wp-seopress-pro'), // Title
+    __('Scan 404 only', 'webseo'), // Title
     'seopress_bot_scan_settings_404_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_print_section_info_bot_settings_broken_links' // Section
@@ -111,7 +111,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_timeout', // ID
-    __('Request Timeout (default 5 sec)', 'wp-seopress-pro'), // Title
+    __('Request Timeout (default 5 sec)', 'webseo'), // Title
     'seopress_bot_scan_settings_timeout_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_print_section_info_bot_settings_broken_links' // Section
@@ -119,7 +119,7 @@ add_settings_field(
 
 add_settings_field(
     'seopress_bot_scan_settings_cleaning', // ID
-    __('Clean broken links list when requesting a new scan', 'wp-seopress-pro'), // Title
+    __('Clean broken links list when requesting a new scan', 'webseo'), // Title
     'seopress_bot_scan_settings_cleaning_callback', // Callback
     'seopress-settings-admin-bot-settings', // Page
     'seopress_print_section_info_bot_settings_broken_links' // Section

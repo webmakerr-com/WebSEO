@@ -449,7 +449,7 @@ class SEOPRESS_CSV_Importer extends SEOPRESS_Importer
     protected function read_file()
     {
         if ( ! SEOPRESS_CSV_Setup_Wizard_Controller::is_file_valid_csv($this->file)) {
-            wp_die(esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'wp-seopress-pro'));
+            wp_die(esc_html__('Invalid file type. The importer supports CSV and TXT file formats.', 'webseo'));
         }
 
         $handle = fopen($this->file, 'r');
@@ -459,7 +459,7 @@ class SEOPRESS_CSV_Importer extends SEOPRESS_Importer
         } elseif ('semicolon' === $this->params['delimiter']) {
             $this->params['delimiter'] = ';';
         } else {
-            wp_die(esc_html__('Invalid separator', 'wp-seopress-pro'));
+            wp_die(esc_html__('Invalid separator', 'webseo'));
         }
 
         if (false !== $handle) {
@@ -723,7 +723,7 @@ class SEOPRESS_CSV_Importer extends SEOPRESS_Importer
 
         if ($id) {
             /* translators: %d: metadata ID */
-            $row_data[] = sprintf(__('ID %d', 'wp-seopress-pro'), $id);
+            $row_data[] = sprintf(__('ID %d', 'webseo'), $id);
         }
 
         return implode(', ', $row_data);

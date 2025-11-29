@@ -64,12 +64,12 @@ function seopress_ai_alt_text_media_modal( $form_fields, $post ) {
             </div>',
             (int) $post->ID,
             (string) $language,
-            esc_html__('Generate alt text with AI', 'wp-seopress-pro'),
+            esc_html__('Generate alt text with AI', 'webseo'),
         ),
         'helps' => sprintf(
             'Configure <a href="%s">%s</a>',
             esc_url(admin_url('admin.php?page=seopress-pro-page')),
-            esc_html__('AI settings or check logs.', 'wp-seopress-pro')
+            esc_html__('AI settings or check logs.', 'webseo')
         ),
     );
     return $form_fields;

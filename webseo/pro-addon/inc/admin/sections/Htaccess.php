@@ -8,7 +8,7 @@ function seopress_print_section_info_htaccess()
 
     <div class="seopress-notice is-warning">
         <p>
-            <strong><?php esc_html_e('SAVE YOUR HTACCESS FILE BEFORE EDIT!', 'wp-seopress-pro'); ?></strong>
+            <strong><?php esc_html_e('SAVE YOUR HTACCESS FILE BEFORE EDIT!', 'webseo'); ?></strong>
         </p>
     </div>
 

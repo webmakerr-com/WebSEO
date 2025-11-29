@@ -161,44 +161,44 @@ if ('1' === seopress_pro_get_service('OptionPro')->getBreadcrumbsEnable() || '1'
         if ( ! empty(seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nHome())) {
             $i18n_home = seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nHome();
         } else {
-            $i18n_home = __('Home', 'wp-seopress-pro');
+            $i18n_home = __('Home', 'webseo');
         }
         //Author
         if ( ! empty(seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nAuthor())) {
             $i18n_author = seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nAuthor();
         } else {
-            $i18n_author = __('Author: ', 'wp-seopress-pro');
+            $i18n_author = __('Author: ', 'webseo');
         }
         //404 error
         if ( ! empty(seopress_pro_get_service('OptionPro')->getBreadcrumbsI18n404())) {
             $i18n_404 = seopress_pro_get_service('OptionPro')->getBreadcrumbsI18n404();
         } else {
-            $i18n_404 = __('404 error', 'wp-seopress-pro');
+            $i18n_404 = __('404 error', 'webseo');
         }
         //Search results for
         if ( ! empty(seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nSearch())) {
             $i18n_search_results = seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nSearch() . ' ';
         } else {
-            $i18n_search_results = __('Search results for: ', 'wp-seopress-pro');
+            $i18n_search_results = __('Search results for: ', 'webseo');
         }
         //No results
         if ( ! empty(seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nNoResults())) {
             $i18n_no_results = seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nNoResults();
         } else {
-            $i18n_no_results = __('No results', 'wp-seopress-pro');
+            $i18n_no_results = __('No results', 'webseo');
         }
 
         //Attachments
         if ( ! empty(seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nAttachments())) {
             $i18n_attachments = seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nAttachments();
         } else {
-            $i18n_attachments = __('Attachments', 'wp-seopress-pro');
+            $i18n_attachments = __('Attachments', 'webseo');
         }
         //Paged
         if ( ! empty(seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nPaged())) {
             $i18n_paged = seopress_pro_get_service('OptionPro')->getBreadcrumbsI18nPaged();
         } else {
-            $i18n_paged = __('Page ', 'wp-seopress-pro');
+            $i18n_paged = __('Page ', 'webseo');
         }
 
         //Globals
@@ -824,9 +824,9 @@ if ('1' === seopress_pro_get_service('OptionPro')->getBreadcrumbsEnable() || '1'
             $ol_class = apply_filters('seopress_pro_breadcrumbs_html_class_ol', $ol_class);
 
             if ($display_markup === true) {
-                $sp_breadcrumbs = '<nav ' . $nav_class . ' aria-label="' . esc_html__('breadcrumb', 'wp-seopress-pro') . '">' . $here . '<ol ' . $ol_class . ' itemscope itemtype="' . seopress_check_ssl() . 'schema.org/BreadcrumbList">' . $sp_breadcrumbs_html . '</ol></nav>';
+                $sp_breadcrumbs = '<nav ' . $nav_class . ' aria-label="' . esc_html__('breadcrumb', 'webseo') . '">' . $here . '<ol ' . $ol_class . ' itemscope itemtype="' . seopress_check_ssl() . 'schema.org/BreadcrumbList">' . $sp_breadcrumbs_html . '</ol></nav>';
             } else {
-                $sp_breadcrumbs = '<nav ' . $nav_class . ' aria-label="' . esc_html__('breadcrumb', 'wp-seopress-pro') . '">' . $here . '<ol ' . $ol_class . '>' . $sp_breadcrumbs_html . '</ol></nav>';
+                $sp_breadcrumbs = '<nav ' . $nav_class . ' aria-label="' . esc_html__('breadcrumb', 'webseo') . '">' . $here . '<ol ' . $ol_class . '>' . $sp_breadcrumbs_html . '</ol></nav>';
             }
 
             $sp_breadcrumbs = apply_filters('seopress_pro_breadcrumbs_html', $sp_breadcrumbs);

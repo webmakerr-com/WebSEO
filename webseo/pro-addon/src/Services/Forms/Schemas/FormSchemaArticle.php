@@ -32,47 +32,47 @@ class FormSchemaArticle extends FormApi {
     protected function getLabelByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_article_type':
-                return __('Select your article type', 'wp-seopress-pro');
+                return __('Select your article type', 'webseo');
             case '_seopress_pro_rich_snippets_article_title':
-                return __('Headline (max limit: 110)', 'wp-seopress-pro');
+                return __('Headline (max limit: 110)', 'webseo');
             case '_seopress_pro_rich_snippets_article_desc':
-                return __('Description', 'wp-seopress-pro');
+                return __('Description', 'webseo');
             case '_seopress_pro_rich_snippets_article_author':
-                return __('Post author', 'wp-seopress-pro');
+                return __('Post author', 'webseo');
             case '_seopress_pro_rich_snippets_article_img':
-                return __('Image', 'wp-seopress-pro');
+                return __('Image', 'webseo');
             case '_seopress_pro_rich_snippets_article_coverage_start_date':
-                return __('Coverage Start Date', 'wp-seopress-pro');
+                return __('Coverage Start Date', 'webseo');
             case '_seopress_pro_rich_snippets_article_coverage_start_time':
-                return __('Coverage Start Time', 'wp-seopress-pro');
+                return __('Coverage Start Time', 'webseo');
             case '_seopress_pro_rich_snippets_article_coverage_end_date':
-                return __('Coverage End Date', 'wp-seopress-pro');
+                return __('Coverage End Date', 'webseo');
             case '_seopress_pro_rich_snippets_article_coverage_end_time':
-                return __('Coverage End Time', 'wp-seopress-pro');
+                return __('Coverage End Time', 'webseo');
             case '_seopress_pro_rich_snippets_article_speakable_css_selector':
-                return __('Speakable CSS Selector', 'wp-seopress-pro');
+                return __('Speakable CSS Selector', 'webseo');
         }
     }
 
     protected function getPlaceholderByField($field) {
         switch ($field) {
             case '_seopress_pro_rich_snippets_article_title':
-                return __('The headline of the article', 'wp-seopress-pro');
+                return __('The headline of the article', 'webseo');
             case '_seopress_pro_rich_snippets_article_desc':
-                return __('The description of the article', 'wp-seopress-pro');
+                return __('The description of the article', 'webseo');
             case '_seopress_pro_rich_snippets_article_author':
-                return __('The author of the article', 'wp-seopress-pro');
+                return __('The author of the article', 'webseo');
             case '_seopress_pro_rich_snippets_article_img':
-                return __('Select your image', 'wp-seopress-pro');
+                return __('Select your image', 'webseo');
             case '_seopress_pro_rich_snippets_article_coverage_start_date':
-                return __('The beginning of live coverage. For example, "2017-01-24T19:33:17+00:00".', 'wp-seopress-pro');
+                return __('The beginning of live coverage. For example, "2017-01-24T19:33:17+00:00".', 'webseo');
             case '_seopress_pro_rich_snippets_article_coverage_start_time':
             case '_seopress_pro_rich_snippets_article_coverage_end_time':
-                return __('e.g. HH:MM', 'wp-seopress-pro');
+                return __('e.g. HH:MM', 'webseo');
             case '_seopress_pro_rich_snippets_article_coverage_end_date':
-                return __('The end of live coverage. For example, "2017-01-24T19:33:17+00:00".', 'wp-seopress-pro');
+                return __('The end of live coverage. For example, "2017-01-24T19:33:17+00:00".', 'webseo');
             case '_seopress_pro_rich_snippets_article_speakable_css_selector':
-                return __('e.g. post', 'wp-seopress-pro');
+                return __('e.g. post', 'webseo');
             default:
                 return '';
         }
@@ -83,13 +83,13 @@ class FormSchemaArticle extends FormApi {
             case '_seopress_pro_rich_snippets_article_type':
                 return '';
             case '_seopress_pro_rich_snippets_article_title':
-                return __('Default value if empty: Post title', 'wp-seopress-pro');
+                return __('Default value if empty: Post title', 'webseo');
             case '_seopress_pro_rich_snippets_article_desc':
-                return __('Default value if empty: Post excerpt', 'wp-seopress-pro');
+                return __('Default value if empty: Post excerpt', 'webseo');
             case '_seopress_pro_rich_snippets_article_author':
-                return __('Default value if empty: Post author', 'wp-seopress-pro');
+                return __('Default value if empty: Post author', 'webseo');
             case '_seopress_pro_rich_snippets_article_img':
-                return __('The representative image of the article. Only a marked-up image that directly belongs to the article should be specified. Default value if empty: Post thumbnail (featured image). Minimum size: 696px wide, JPG, PNG or GIF, crawlable and indexable (default: post thumbnail if available)', 'wp-seopress-pro');
+                return __('The representative image of the article. Only a marked-up image that directly belongs to the article should be specified. Default value if empty: Post thumbnail (featured image). Minimum size: 696px wide, JPG, PNG or GIF, crawlable and indexable (default: post thumbnail if available)', 'webseo');
             case '_seopress_pro_rich_snippets_article_img_width':
             case '_seopress_pro_rich_snippets_article_img_height':
                 return '';
@@ -97,9 +97,9 @@ class FormSchemaArticle extends FormApi {
             case '_seopress_pro_rich_snippets_article_coverage_start_time':
             case '_seopress_pro_rich_snippets_article_coverage_end_date':
             case '_seopress_pro_rich_snippets_article_coverage_end_time':
-                return __('To use with Live Blog Posting article type', 'wp-seopress-pro');
+                return __('To use with Live Blog Posting article type', 'webseo');
             case '_seopress_pro_rich_snippets_article_speakable_css_selector':
-                return __('Addresses content in the annotated pages (such as class attribute)', 'wp-seopress-pro');
+                return __('Addresses content in the annotated pages (such as class attribute)', 'webseo');
         }
     }
 

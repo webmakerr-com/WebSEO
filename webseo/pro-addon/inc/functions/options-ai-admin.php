@@ -15,14 +15,14 @@ foreach ($postTypes as $key => $value) {
 
 function seopress_bulk_actions_ai_title($bulk_actions)
 {
-    $bulk_actions['seopress_ai_title'] = __('Generate meta title with AI', 'wp-seopress-pro');
+    $bulk_actions['seopress_ai_title'] = __('Generate meta title with AI', 'webseo');
 
     return $bulk_actions;
 }
 
 function seopress_bulk_actions_ai_desc($bulk_actions)
 {
-    $bulk_actions['seopress_ai_desc'] = __('Generate meta description with AI', 'wp-seopress-pro');
+    $bulk_actions['seopress_ai_desc'] = __('Generate meta description with AI', 'webseo');
 
     return $bulk_actions;
 }
@@ -42,7 +42,7 @@ function seopress_bulk_action_ai_title_admin_notice()
                     '%s generation by AI.',
                     '%s generations by AI.',
                     $index_count,
-                    'wp-seopress-pro'
+                    'webseo'
                 )
             ) . '</p></div>', absint($index_count));
     }
@@ -50,7 +50,7 @@ function seopress_bulk_action_ai_title_admin_notice()
     if (! empty($_REQUEST['bulk_ai_posts_failed'])) {
         $index_count = intval($_REQUEST['bulk_ai_posts_failed']);
 
-        $log = '<a href="' . esc_url(admin_url( 'admin.php?page=seopress-pro-page#tab=tab_seopress_ai' )) .'" class="button button-secondary">' . esc_html__( 'Check out logs', 'wp-seopress-pro' ) . '</a>';
+        $log = '<a href="' . esc_url(admin_url( 'admin.php?page=seopress-pro-page#tab=tab_seopress_ai' )) .'" class="button button-secondary">' . esc_html__( 'Check out logs', 'webseo' ) . '</a>';
 
         if($index_count > 0){
             $message = sprintf(
@@ -59,7 +59,7 @@ function seopress_bulk_action_ai_title_admin_notice()
                     '%1$s generation failed by AI.',
                     '%1$s generations failed by AI.',
                     absint($index_count),
-                    'wp-seopress-pro'
+                    'webseo'
                 ),
                 absint($index_count)
             );
@@ -75,7 +75,7 @@ function seopress_bulk_action_ai_title_admin_notice()
     if (! empty($_REQUEST['bulk_ai_title_posts'])) {
         $ai_title_count = intval($_REQUEST['bulk_ai_title_posts']);
         /* translators: %s number of posts */
-        $message = _n('%s meta title generated with AI.','%s meta titles generated with AI.',$ai_title_count,'wp-seopress-pro');
+        $message = _n('%s meta title generated with AI.','%s meta titles generated with AI.',$ai_title_count,'webseo');
         printf('<div id="message" class="updated fade"><p>%s</p></div>', esc_html(sprintf($message, absint($ai_title_count))));
     }
 }
@@ -100,7 +100,7 @@ function seopress_bulk_action_ai_desc_admin_notice()
     if (! empty($_REQUEST['bulk_ai_desc_posts'])) {
         $ai_desc_count = intval($_REQUEST['bulk_ai_desc_posts']);
         /* translators: %s number of posts */
-        $message = _n('%s meta description generated with AI.', '%s meta descriptions generated with AI.', $ai_desc_count, 'wp-seopress-pro');
+        $message = _n('%s meta description generated with AI.', '%s meta descriptions generated with AI.', $ai_desc_count, 'webseo');
         printf('<div id="message" class="updated fade"><p>%s</p></div>', esc_html(sprintf($message, absint($ai_desc_count))));
     }
 }
@@ -114,7 +114,7 @@ function seopress_bulk_action_ai_desc_admin_notice()
  */
 add_filter('bulk_actions-upload', 'seopress_bulk_actions_ai_alt_text');
 function seopress_bulk_actions_ai_alt_text($bulk_actions) {
-    $bulk_actions['seopress_ai_alt_text'] = esc_html__('Generate alt text with AI', 'wp-seopress-pro');
+    $bulk_actions['seopress_ai_alt_text'] = esc_html__('Generate alt text with AI', 'webseo');
 
     return $bulk_actions;
 }
@@ -137,7 +137,7 @@ function seopress_bulk_actions_ai_alt_text_notice() {
     if (! empty($_REQUEST['bulk_ai_alt_text'])) {
         $ai_alt_text_count = intval($_REQUEST['bulk_ai_alt_text']);
         /* translators: %s number of media */
-        $message = _n('%s alternative text generated with AI.', '%s alternative texts generated with AI.', $ai_alt_text_count, 'wp-seopress-pro');
+        $message = _n('%s alternative text generated with AI.', '%s alternative texts generated with AI.', $ai_alt_text_count, 'webseo');
         printf('<div id="message" class="updated fade"><p>%s</p></div>', esc_html(sprintf($message, absint($ai_alt_text_count))));
     }
 }
@@ -151,7 +151,7 @@ function seopress_bulk_actions_ai_alt_text_notice() {
  */
 add_filter('bulk_actions-upload', 'seopress_bulk_actions_ai_alt_text_missing');
 function seopress_bulk_actions_ai_alt_text_missing($bulk_actions) {
-    $bulk_actions['seopress_ai_alt_text_missing'] = esc_html__('Generate alt text with AI (only for missing alt text)', 'wp-seopress-pro');
+    $bulk_actions['seopress_ai_alt_text_missing'] = esc_html__('Generate alt text with AI (only for missing alt text)', 'webseo');
 
     return $bulk_actions;
 }
@@ -174,7 +174,7 @@ function seopress_bulk_actions_ai_alt_text_missing_notice() {
     if (! empty($_REQUEST['bulk_ai_alt_text_missing'])) {
         $ai_alt_text_count = intval($_REQUEST['bulk_ai_alt_text_missing']);
         /* translators: %s number of media */
-        $message = _n('%s alternative text generated with AI.', '%s alternative texts generated with AI.', $ai_alt_text_count, 'wp-seopress-pro');
+        $message = _n('%s alternative text generated with AI.', '%s alternative texts generated with AI.', $ai_alt_text_count, 'webseo');
         printf('<div id="message" class="updated fade"><p>%s</p></div>', esc_html(sprintf($message, absint($ai_alt_text_count))));
     }
 }

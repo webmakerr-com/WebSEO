@@ -344,23 +344,23 @@ function seopress_request_google_analytics_fn($clear = false)
                     switch ($seopress_ga_dashboard_widget_options_type) {
                         case 'ga_sessions':
                             $ga_sessions_rows = $all[0]['sessions'] ?? [];
-                            $seopress_ga_dashboard_widget_options_title = __('Sessions', 'wp-seopress-pro');
+                            $seopress_ga_dashboard_widget_options_title = __('Sessions', 'webseo');
                             break;
                         case 'ga_users':
                             $ga_sessions_rows = $all[0]['users'] ?? [];
-                            $seopress_ga_dashboard_widget_options_title = __('Users', 'wp-seopress-pro');
+                            $seopress_ga_dashboard_widget_options_title = __('Users', 'webseo');
                             break;
                         case 'ga_pageviews':
                             $ga_sessions_rows = $all[0]['pageviews'] ?? [];
-                            $seopress_ga_dashboard_widget_options_title = __('Page Views', 'wp-seopress-pro');
+                            $seopress_ga_dashboard_widget_options_title = __('Page Views', 'webseo');
                             break;
                         case 'ga_avgSessionDuration':
                             $ga_sessions_rows = $all[0]['avgSessionDuration'] ?? [];
-                            $seopress_ga_dashboard_widget_options_title = __('Session Duration', 'wp-seopress-pro');
+                            $seopress_ga_dashboard_widget_options_title = __('Session Duration', 'webseo');
                             break;
                         default:
                             $ga_sessions_rows = $all[0]['sessions'] ?? [];
-                            $seopress_ga_dashboard_widget_options_title = __('Sessions', 'wp-seopress-pro');
+                            $seopress_ga_dashboard_widget_options_title = __('Sessions', 'webseo');
                     }
 
                     function seopress_ga_dashboard_4_get_sessions_labels($ga_date)
@@ -525,25 +525,25 @@ function seopress_request_matomo_analytics_fn($clear = false)
 
         switch ($seopress_matomo_dashboard_widget_options_type) {
             case 'nb_uniq_visitors':
-                $widget_title = __('Unique visitors', 'wp-seopress-pro');
+                $widget_title = __('Unique visitors', 'webseo');
                 break;
             case 'nb_visits':
-                $widget_title = __('Visits', 'wp-seopress-pro');
+                $widget_title = __('Visits', 'webseo');
                 break;
             case 'max_actions':
-                $widget_title = __('Maximum actions in one visit', 'wp-seopress-pro');
+                $widget_title = __('Maximum actions in one visit', 'webseo');
                 break;
             case 'nb_actions_per_visit':
-                $widget_title = __('Average actions per visit', 'wp-seopress-pro');
+                $widget_title = __('Average actions per visit', 'webseo');
                 break;
             case 'bounce_rate':
-                $widget_title = __('Bounce Rate', 'wp-seopress-pro');
+                $widget_title = __('Bounce Rate', 'webseo');
                 break;
             case 'avg_time_on_site':
-                $widget_title = __('Avg. Visit Duration (in seconds)', 'wp-seopress-pro');
+                $widget_title = __('Avg. Visit Duration (in seconds)', 'webseo');
                 break;
             default:
-                $widget_title = __('Unique visitors', 'wp-seopress-pro');
+                $widget_title = __('Unique visitors', 'webseo');
         }
 
         function seopress_matomo_get_sessions_labels($rows)
@@ -702,7 +702,7 @@ add_action('wp_ajax_seopress_request_matomo_analytics', 'seopress_request_matomo
 function seopress_404_send_alert()
 {
     $to = seopress_pro_get_service('OptionPro')->get404RedirectEnableMailsFrom();
-    $subject = /* translators: %s name of the site from General settings */ sprintf(__('404 alert - %s', 'wp-seopress-pro'), get_bloginfo('name'));
+    $subject = /* translators: %s name of the site from General settings */ sprintf(__('404 alert - %s', 'webseo'), get_bloginfo('name'));
     $content = '';
 
     // Get the Latest 404 errors
@@ -734,10 +734,10 @@ function seopress_404_send_alert()
     }
 
     if ( ! empty($errors['latest'])) {
-        $content .= '<h2>' . __('Latest 404 errors since 1 week', 'wp-seopress-pro') . '</h2>';
+        $content .= '<h2>' . __('Latest 404 errors since 1 week', 'webseo') . '</h2>';
         $content .= '<ul>';
         foreach ($errors['latest'] as $error) {
-            $hits = ! empty($error['count']) ? ' - ' . $error['count'] . __(' Hits', 'wp-seopress-pro') : '';
+            $hits = ! empty($error['count']) ? ' - ' . $error['count'] . __(' Hits', 'webseo') : '';
             $content .= '<li>' . get_home_url() . '/' . $error['url'] . $hits . '</li>';
         }
         $content .= '</ul>';
@@ -779,10 +779,10 @@ function seopress_404_send_alert()
     }
 
     if ( ! empty($errors['top'])) {
-        $content .= '<h2>' . __('Top 404 errors', 'wp-seopress-pro') . '</h2>';
+        $content .= '<h2>' . __('Top 404 errors', 'webseo') . '</h2>';
         $content .= '<ul>';
         foreach ($errors['top'] as $error) {
-            $hits = ! empty($error['count']) ? ' - ' . $error['count'] . __(' Hits', 'wp-seopress-pro') : '';
+            $hits = ! empty($error['count']) ? ' - ' . $error['count'] . __(' Hits', 'webseo') : '';
             $content .= '<li>' . get_home_url() . '/' . $error['url'] . $hits . '</li>';
         }
         $content .= '</ul>';
@@ -797,7 +797,7 @@ function seopress_404_send_alert()
             'header_subject' => $subject,
             'footer_text'  => sprintf(
                 /* translators: %s site name */
-                esc_html__('Sent from %s', 'wp-seopress-pro'),
+                esc_html__('Sent from %s', 'webseo'),
                 get_bloginfo('name')
             ),
             'text_color'   => '#505050',
@@ -805,7 +805,7 @@ function seopress_404_send_alert()
         ];
 
         // Add the view all 404 errors button
-        $content .= '<p style="text-align: center;"><a class="button" href="' . get_home_url() . '/wp-admin/edit.php?post_type=seopress_404&action=-1&m=0&redirect-cat=0&redirection-type=404&redirection-enabled&filter_action=Filter&paged=1&action2=-1&post_status=404">' . __('View all 404 errors', 'wp-seopress-pro') . '</a></p>';
+        $content .= '<p style="text-align: center;"><a class="button" href="' . get_home_url() . '/wp-admin/edit.php?post_type=seopress_404&action=-1&m=0&redirect-cat=0&redirection-type=404&redirection-enabled&filter_action=Filter&paged=1&action2=-1&post_status=404">' . __('View all 404 errors', 'webseo') . '</a></p>';
 
         // Send the email
         $email_service->send($to, $subject, $content, $email_args);
@@ -1001,7 +1001,7 @@ function seopress_send_alerts_cron()
     if ( ! empty(seopress_pro_get_service('OptionPro')->getSEOAlertsRecipients())) {
         if ($alerts['noindex'] === true || $alerts['robots'] === true || $alerts['xml_sitemaps'] === true) {
             $to = seopress_pro_get_service('OptionPro')->getSEOAlertsRecipients();
-            $subject = /* translators: %s name of the site from General settings */ sprintf(__('SEO Alerts - %s', 'wp-seopress-pro'), get_bloginfo('name'));
+            $subject = /* translators: %s name of the site from General settings */ sprintf(__('SEO Alerts - %s', 'webseo'), get_bloginfo('name'));
             $content = '';
 
             if ( ! empty($alerts)) {
@@ -1009,21 +1009,21 @@ function seopress_send_alerts_cron()
 
                 if ($alerts['noindex'] === true) {
                     $content .= '<li>' . sprintf(
-                        /* translators: %1$s homepage URL, %2$s homepage URL */ wp_kses_post(__('⚠️ Your <strong>homepage</strong> has a <code>noindex</code> meta robots. Please check it at <a href="%1$s" target="_blank">%2$s</a>', 'wp-seopress-pro')),
+                        /* translators: %1$s homepage URL, %2$s homepage URL */ wp_kses_post(__('⚠️ Your <strong>homepage</strong> has a <code>noindex</code> meta robots. Please check it at <a href="%1$s" target="_blank">%2$s</a>', 'webseo')),
                         esc_url(get_home_url()),
                         esc_url(get_home_url())
                     ) . '</li>';
                 }
                 if ($alerts['robots'] === true) {
                     $content .= '<li>' . sprintf(
-                        /* translators: %1$s robots.txt URL, %2$s robots.txt URL */ wp_kses_post(__('⚠️ Your <code>robots.txt</code> file returns an error. Please check it at <a href="%1$s" target="_blank">%2$s</a>', 'wp-seopress-pro')),
+                        /* translators: %1$s robots.txt URL, %2$s robots.txt URL */ wp_kses_post(__('⚠️ Your <code>robots.txt</code> file returns an error. Please check it at <a href="%1$s" target="_blank">%2$s</a>', 'webseo')),
                         esc_url(get_home_url() . '/robots.txt'),
                         esc_url(get_home_url() . '/robots.txt')
                     ) . '</li>';
                 }
                 if ($alerts['xml_sitemaps'] === true) {
                     $content .= '<li>' . sprintf(
-                        /* translators: %1$s XML sitemap URL, %2$s XML sitemap URL */ wp_kses_post(__('⚠️ Your <strong>XML sitemap</strong> returns an error. Please check your index sitemap at <a href="%1$s" target="_blank">%2$s</a>', 'wp-seopress-pro')),
+                        /* translators: %1$s XML sitemap URL, %2$s XML sitemap URL */ wp_kses_post(__('⚠️ Your <strong>XML sitemap</strong> returns an error. Please check your index sitemap at <a href="%1$s" target="_blank">%2$s</a>', 'webseo')),
                         esc_url(get_home_url() . '/sitemaps.xml'),
                         esc_url(get_home_url() . '/sitemaps.xml')
                     ) . '</li>';
@@ -1035,7 +1035,7 @@ function seopress_send_alerts_cron()
             // Add notification management link
             $content .= '<p>' . sprintf(
                 /* translators: %s manage notifications URL */
-                wp_kses_post(__('You are receiving this email because SEO alerts are enabled on your WordPress site. <a href="%s">Manage notifications</a>', 'wp-seopress-pro')),
+                wp_kses_post(__('You are receiving this email because SEO alerts are enabled on your WordPress site. <a href="%s">Manage notifications</a>', 'webseo')),
                 esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_alerts'))
             ) . '</p>';
 
@@ -1047,7 +1047,7 @@ function seopress_send_alerts_cron()
                 'header_subject' => $subject,
                 'footer_text'  => sprintf(
                     /* translators: %s site name */
-                    esc_html__('Sent from %s', 'wp-seopress-pro'),
+                    esc_html__('Sent from %s', 'webseo'),
                     get_bloginfo('name')
                 ),
                 'text_color'   => '#505050',
@@ -1063,7 +1063,7 @@ function seopress_send_alerts_cron()
     //Slack alerts
     if ( ! empty(seopress_pro_get_service('OptionPro')->getSEOAlertsSlackWebhookUrl())) {
         if ($alerts['noindex'] === true || $alerts['robots'] === true || $alerts['xml_sitemaps'] === true) {
-            $title = '🔔 ' . __('SEO Alerts', 'wp-seopress-pro');
+            $title = '🔔 ' . __('SEO Alerts', 'webseo');
 
             $body = [
                 'blocks' => [
@@ -1315,7 +1315,7 @@ webseo_add_action_compat('webseo_site_audit_run_task_cron', 'seopress_site_audit
 add_action('seopress_site_audit_after_processs', 'seopress_site_audit_send_email');
 function seopress_site_audit_send_email() {
     $to = seopress_pro_get_service('OptionBot')->getBotScanSettingsEmail() ? seopress_pro_get_service('OptionBot')->getBotScanSettingsEmail() : null;
-    $subject = /* translators: %s name of the site from General settings */ sprintf(__('Site audit completed - %s', 'wp-seopress-pro'), get_bloginfo('name'));
+    $subject = /* translators: %s name of the site from General settings */ sprintf(__('Site audit completed - %s', 'webseo'), get_bloginfo('name'));
     $scan_duration = get_option('seopress_pro_site_audit_scan_duration') ? get_option('seopress_pro_site_audit_scan_duration') : null;
 
     if ($scan_duration) {
@@ -1323,14 +1323,14 @@ function seopress_site_audit_send_email() {
         $scan_duration_seconds = $scan_duration % 60;
     }
 
-    $content = '<p>' . esc_html__('We have finished auditing your site\'s SEO.', 'wp-seopress-pro') . '</p>';
+    $content = '<p>' . esc_html__('We have finished auditing your site\'s SEO.', 'webseo') . '</p>';
     $content .= '<p>' . sprintf(
-        wp_kses_post(/* translators: %1$s duration in minutes, %2$s duration in seconds */ __('<strong>Scan duration:</strong> %1$s minutes %2$s seconds', 'wp-seopress-pro')),
+        wp_kses_post(/* translators: %1$s duration in minutes, %2$s duration in seconds */ __('<strong>Scan duration:</strong> %1$s minutes %2$s seconds', 'webseo')),
         esc_html($scan_duration_minutes),
         esc_html($scan_duration_seconds)
     ) . '</p>';
-    $content .= '<p>' . esc_html__('Find all the details of the analysis by clicking on the following link:', 'wp-seopress-pro') . '</p>';
-    $content .= '<p><a href="' . esc_url(admin_url('admin.php?page=seopress-bot-batch#tab=tab_seopress_audit')) . '" title="' . esc_html__('Read the audit', 'wp-seopress-pro') . '">' . esc_html__('Read the site audit', 'wp-seopress-pro') . '</a></p>';
+    $content .= '<p>' . esc_html__('Find all the details of the analysis by clicking on the following link:', 'webseo') . '</p>';
+    $content .= '<p><a href="' . esc_url(admin_url('admin.php?page=seopress-bot-batch#tab=tab_seopress_audit')) . '" title="' . esc_html__('Read the audit', 'webseo') . '">' . esc_html__('Read the site audit', 'webseo') . '</a></p>';
 
     // Use the new EmailService
     $email_service = \WebSEO\Services\Email\EmailService::get_instance();
@@ -1340,7 +1340,7 @@ function seopress_site_audit_send_email() {
         'header_subject' => $subject,
         'footer_text'  => sprintf(
             /* translators: %s site name */
-            esc_html__('Sent from %s', 'wp-seopress-pro'),
+            esc_html__('Sent from %s', 'webseo'),
             get_bloginfo('name')
         ),
         'text_color'   => '#505050',
@@ -1444,7 +1444,7 @@ function seopress_site_audit_get_task_progress() {
     if (current_user_can(seopress_capability('manage_options', 'site-audit')) && is_admin()) {
         $progress = get_option('seopress_pro_site_audit_post_count', 0);
         $running = get_option('seopress_pro_site_audit_running', 0);
-        $log = get_option('seopress_pro_site_audit_log') ? get_option('seopress_pro_site_audit_log') : esc_html('Currently running...', 'wp-seopress-pro');
+        $log = get_option('seopress_pro_site_audit_log') ? get_option('seopress_pro_site_audit_log') : esc_html('Currently running...', 'webseo');
 
         wp_send_json_success(array(
             'progress' => (int)$progress,

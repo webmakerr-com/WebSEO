@@ -14,7 +14,7 @@ function seopress_breadcrumbs_enable_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Enable HTML Breadcrumbs', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Enable HTML Breadcrumbs', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_breadcrumbs_enable'])) {
@@ -34,17 +34,17 @@ function seopress_breadcrumbs_enable_json_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Enable JSON-LD Breadcrumbs', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Enable JSON-LD Breadcrumbs', 'webseo'); ?>
 </label>
 
 <p class="description">
-	<?php esc_html_e('To avoid duplicated schemas, we automatically remove the microdata on the HTML breadcrumbs.', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('To avoid duplicated schemas, we automatically remove the microdata on the HTML breadcrumbs.', 'webseo'); ?>
 </p>
 <p class="description">
-	<?php esc_html_e('We automatically add the JSON-LD to the head of your document using the wp_head hook.', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('We automatically add the JSON-LD to the head of your document using the wp_head hook.', 'webseo'); ?>
 </p>
 <p class="description">
-	<?php esc_html_e('You don\'t need to manually call the breadcrumbs function.', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('You don\'t need to manually call the breadcrumbs function.', 'webseo'); ?>
 </p>
 
 <?php if (isset($options['seopress_breadcrumbs_json_enable'])) {
@@ -58,23 +58,23 @@ function seopress_breadcrumbs_separator_callback() {
 	$docs = function_exists('seopress_get_docs_links') ? seopress_get_docs_links() : '';
 
 	printf(
-		'<input type="text" class="seopress_breadcrumbs_sep" name="seopress_pro_option_name[seopress_breadcrumbs_separator]" aria-label="' . esc_html__('Breadcrumbs Separator', 'wp-seopress-pro') . '" placeholder="' . esc_html__('e.g. / ', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" class="seopress_breadcrumbs_sep" name="seopress_pro_option_name[seopress_breadcrumbs_separator]" aria-label="' . esc_html__('Breadcrumbs Separator', 'webseo') . '" placeholder="' . esc_html__('e.g. / ', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	); ?>
 
 <div class="wrap-tags">
-	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-breadcrumbs-1" data-tag="-"><?php esc_html_e('-', 'wp-seopress-pro'); ?></button>
+	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-breadcrumbs-1" data-tag="-"><?php esc_html_e('-', 'webseo'); ?></button>
 	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-breadcrumbs-2" data-tag="–"
-		class="tag-title"><?php esc_html_e('–', 'wp-seopress-pro'); ?></button>
+		class="tag-title"><?php esc_html_e('–', 'webseo'); ?></button>
 	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-breadcrumbs-3" data-tag=">"
-		class="tag-title"><?php esc_html_e('>', 'wp-seopress-pro'); ?></button>
+		class="tag-title"><?php esc_html_e('>', 'webseo'); ?></button>
 	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-breadcrumbs-4" data-tag="<"
-		class="tag-title"><?php esc_html_e('<', 'wp-seopress-pro'); ?></button>
+		class="tag-title"><?php esc_html_e('<', 'webseo'); ?></button>
 	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-breadcrumbs-5" data-tag="|"
-		class="tag-title"><?php esc_html_e('|', 'wp-seopress-pro'); ?></button>
+		class="tag-title"><?php esc_html_e('|', 'webseo'); ?></button>
 </div>
 
-<?php echo seopress_tooltip_link(esc_url($docs['breadcrumbs']['sep']), esc_html__('Customize breadcrumbs separator with a hook', 'wp-seopress-pro')); ?>
+<?php echo seopress_tooltip_link(esc_url($docs['breadcrumbs']['sep']), esc_html__('Customize breadcrumbs separator with a hook', 'webseo')); ?>
 <?php
 }
 
@@ -92,7 +92,7 @@ function seopress_breadcrumbs_cpt_callback() {
 	} ?>
 
 	<p>
-		<?php esc_html_e('Select the post types that you want to display in the breadcrumbs for this taxonomy.', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('Select the post types that you want to display in the breadcrumbs for this taxonomy.', 'webseo'); ?>
 	</p>
 
 	<?php
@@ -145,7 +145,7 @@ function seopress_breadcrumbs_tax_callback() {
 	}
 	?>
 	<p>
-		<?php esc_html_e('Select the taxonomy that you want to display in the breadcrumbs for this post type.', 'wp-seopress-pro'); ?>
+		<?php esc_html_e('Select the taxonomy that you want to display in the breadcrumbs for this post type.', 'webseo'); ?>
 	</p>
 
 	<?php
@@ -201,7 +201,7 @@ function seopress_breadcrumbs_remove_blog_page_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Remove static Posts page defined in WordPress Reading settings', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Remove static Posts page defined in WordPress Reading settings', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_breadcrumbs_remove_blog_page'])) {
@@ -221,7 +221,7 @@ function seopress_breadcrumbs_remove_shop_page_callback() {
 	<?php } ?>
 	value="1"/>
 
-	<?php esc_html_e('Remove the static Shop page defined in the WooCommerce settings', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Remove the static Shop page defined in the WooCommerce settings', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_breadcrumbs_remove_shop_page'])) {
@@ -234,12 +234,12 @@ function seopress_breadcrumbs_i18n_here_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_here']) ? $options['seopress_breadcrumbs_i18n_here'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_here]" aria-label="' . esc_html__('e.g. You are here: ', 'wp-seopress-pro') . '" placeholder="' . esc_html__('e.g. You are here: ', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_here]" aria-label="' . esc_html__('e.g. You are here: ', 'webseo') . '" placeholder="' . esc_html__('e.g. You are here: ', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	); ?>
 
 <p class="description">
-	<?php echo wp_kses_post(__('HTML tags allowed, e.g. <code>span</code>, <code>p</code>...', 'wp-seopress-pro')); ?>
+	<?php echo wp_kses_post(__('HTML tags allowed, e.g. <code>span</code>, <code>p</code>...', 'webseo')); ?>
 </p>
 
 <?php
@@ -250,11 +250,11 @@ function seopress_breadcrumbs_i18n_home_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_home']) ? $options['seopress_breadcrumbs_i18n_home'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_home]" aria-label="' . esc_html__('Home', 'wp-seopress-pro') . '" placeholder="' . esc_html__('default: Home', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_home]" aria-label="' . esc_html__('Home', 'webseo') . '" placeholder="' . esc_html__('default: Home', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	); ?>
 <p class="description">
-	<?php echo wp_kses_post(__('HTML tags allowed, e.g. <code>span</code>, <code>p</code>...', 'wp-seopress-pro')); ?>
+	<?php echo wp_kses_post(__('HTML tags allowed, e.g. <code>span</code>, <code>p</code>...', 'webseo')); ?>
 </p>
 <?php
 }
@@ -264,7 +264,7 @@ function seopress_breadcrumbs_i18n_author_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_author']) ? $options['seopress_breadcrumbs_i18n_author'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_author]" aria-label="' . esc_html__('Author:', 'wp-seopress-pro') . '" placeholder="' . esc_html__('default: Author:', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_author]" aria-label="' . esc_html__('Author:', 'webseo') . '" placeholder="' . esc_html__('default: Author:', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	);
 }
@@ -274,7 +274,7 @@ function seopress_breadcrumbs_i18n_404_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_404']) ? $options['seopress_breadcrumbs_i18n_404'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_404]" aria-label="' . esc_html__('404 error', 'wp-seopress-pro') . '" placeholder="' . esc_html__('default: 404 error', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_404]" aria-label="' . esc_html__('404 error', 'webseo') . '" placeholder="' . esc_html__('default: 404 error', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	);
 }
@@ -284,7 +284,7 @@ function seopress_breadcrumbs_i18n_search_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_search']) ? $options['seopress_breadcrumbs_i18n_search'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_search]" aria-label="' . esc_html__('Search results for: ', 'wp-seopress-pro') . '" placeholder="' . esc_html__('default: Search results for: ', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_search]" aria-label="' . esc_html__('Search results for: ', 'webseo') . '" placeholder="' . esc_html__('default: Search results for: ', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	);
 }
@@ -294,7 +294,7 @@ function seopress_breadcrumbs_i18n_no_results_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_no_results']) ? $options['seopress_breadcrumbs_i18n_no_results'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_no_results]" aria-label="' . esc_html__('No results', 'wp-seopress-pro') . '" placeholder="' . esc_html__('Default: No results', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_no_results]" aria-label="' . esc_html__('No results', 'webseo') . '" placeholder="' . esc_html__('Default: No results', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	);
 }
@@ -304,7 +304,7 @@ function seopress_breadcrumbs_i18n_attachments_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_attachments']) ? $options['seopress_breadcrumbs_i18n_attachments'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_attachments]" aria-label="' . esc_html__('Attachments', 'wp-seopress-pro') . '" placeholder="' . esc_html__('Default: Attachments', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_attachments]" aria-label="' . esc_html__('Attachments', 'webseo') . '" placeholder="' . esc_html__('Default: Attachments', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	);
 }
@@ -314,7 +314,7 @@ function seopress_breadcrumbs_i18n_paged_callback() {
 	$check = isset($options['seopress_breadcrumbs_i18n_paged']) ? $options['seopress_breadcrumbs_i18n_paged'] : null;
 
 	printf(
-		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_paged]" aria-label="' . esc_html__('Page ', 'wp-seopress-pro') . '" placeholder="' . esc_html__('Default: Page ', 'wp-seopress-pro') . '" value="%s" />',
+		'<input type="text" name="seopress_pro_option_name[seopress_breadcrumbs_i18n_paged]" aria-label="' . esc_html__('Page ', 'webseo') . '" placeholder="' . esc_html__('Default: Page ', 'webseo') . '" value="%s" />',
 		esc_html($check)
 	);
 }
@@ -330,7 +330,7 @@ function seopress_breadcrumbs_separator_disable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_html_e('My theme is already displaying a separator in my breadcrumbs', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('My theme is already displaying a separator in my breadcrumbs', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_breadcrumbs_separator_disable'])) {
@@ -349,7 +349,7 @@ function seopress_breadcrumbs_storefront_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_html_e('Try to automatically override Storefront‘s default breadcrumbs', 'wp-seopress-pro'); ?>
+	<?php esc_html_e('Try to automatically override Storefront‘s default breadcrumbs', 'webseo'); ?>
 </label>
 
 <?php if (isset($options['seopress_breadcrumbs_storefront'])) {

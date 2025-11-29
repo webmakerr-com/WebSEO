@@ -5,7 +5,7 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 	<div class="seopress-notice">
 		<p>
 			<?php /* translators: %s: link documentation */
-				echo wp_kses_post(sprintf(__('Learn more about the <strong>Product schema</strong> from the <a href="%s" target="_blank">Google official documentation website</a>', 'wp-seopress-pro'), 'https://developers.google.com/search/docs/data-types/product'));
+				echo wp_kses_post(sprintf(__('Learn more about the <strong>Product schema</strong> from the <a href="%s" target="_blank">Google official documentation website</a>', 'webseo'), 'https://developers.google.com/search/docs/data-types/product'));
 			?>
 			<span class="dashicons dashicons-external"></span>
 		</p>
@@ -16,11 +16,11 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 			if (('no' == get_option('woocommerce_enable_reviews') && get_option('woocommerce_enable_reviews')) || ('no' == get_option('woocommerce_enable_review_rating') && get_option('woocommerce_enable_review_rating')) || ('no' == get_option('woocommerce_review_rating_required') && get_option('woocommerce_review_rating_required'))) { ?>
 	<div class="seopress-notice">
 		<p>
-			<?php echo wp_kses_post(__('To automatically add <strong>aggregateRating</strong> and <strong>Review</strong> properties to your schema, you have to enable <strong>User Reviews</strong> from WooCommerce settings.', 'wp-seopress-pro')); ?>
+			<?php echo wp_kses_post(__('To automatically add <strong>aggregateRating</strong> and <strong>Review</strong> properties to your schema, you have to enable <strong>User Reviews</strong> from WooCommerce settings.', 'webseo')); ?>
 		</p>
 		<p>
 			<?php /* translators: %s: link to plugin settings page */
-				echo wp_kses_post(sprintf(__('Please activate these options from <strong>WC settings</strong>, <strong>Products</strong>, <a href="%s"><strong>General tab</strong></a>:', 'wp-seopress-pro'), esc_url(admin_url('admin.php?page=wc-settings&tab=products'))));
+				echo wp_kses_post(sprintf(__('Please activate these options from <strong>WC settings</strong>, <strong>Products</strong>, <a href="%s"><strong>General tab</strong></a>:', 'webseo'), esc_url(admin_url('admin.php?page=wc-settings&tab=products'))));
 			?>
 		</p>
 		<ul>
@@ -29,19 +29,19 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 			if ('no' == get_option('woocommerce_enable_reviews') && get_option('woocommerce_enable_reviews')) { ?>
 			<li>
 				<span class="dashicons dashicons-minus"></span>
-				<?php esc_html_e('Enable product reviews', 'wp-seopress-pro'); ?>
+				<?php esc_html_e('Enable product reviews', 'webseo'); ?>
 			</li>
 			<?php }
 			if ('no' == get_option('woocommerce_enable_review_rating') && get_option('woocommerce_enable_review_rating')) { ?>
 			<li>
 				<span class="dashicons dashicons-minus"></span>
-				<?php esc_html_e('Enable star rating on reviews', 'wp-seopress-pro'); ?>
+				<?php esc_html_e('Enable star rating on reviews', 'webseo'); ?>
 			</li>
 			<?php }
 			if ('no' == get_option('woocommerce_review_rating_required') && get_option('woocommerce_review_rating_required')) { ?>
 			<li>
 				<span class="dashicons dashicons-minus"></span>
-				<?php esc_html_e('Star ratings should be required, not optional', 'wp-seopress-pro'); ?>
+				<?php esc_html_e('Star ratings should be required, not optional', 'webseo'); ?>
 				<?php }
 			if (('no' == get_option('woocommerce_enable_reviews') && get_option('woocommerce_enable_reviews')) || ('no' == get_option('woocommerce_enable_review_rating') && get_option('woocommerce_enable_review_rating')) || ('no' == get_option('woocommerce_review_rating_required') && get_option('woocommerce_review_rating_required'))) {
 				echo '</ul></div>';
@@ -53,7 +53,7 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 					<p>
 						<?php
 							/* translators: %s: link to plugin settings page */
-							echo wp_kses_post(sprintf(__('You have not deactivated the default WooCommerce structured data type from our <a href="%s"><strong>PRO settings > WooCommerce tab</strong></a>. It\'s recommended to disable it to avoid any conflicts with your product schemas.', 'wp-seopress-pro'), esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_woocommerce'))));
+							echo wp_kses_post(sprintf(__('You have not deactivated the default WooCommerce structured data type from our <a href="%s"><strong>PRO settings > WooCommerce tab</strong></a>. It\'s recommended to disable it to avoid any conflicts with your product schemas.', 'webseo'), esc_url(admin_url('admin.php?page=seopress-pro-page#tab=tab_seopress_woocommerce'))));
 				?>
 					</p>
 				</div>
@@ -61,136 +61,136 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
 			} else { ?>
 				<div class="seopress-notice is-error">
 					<p>
-						<?php echo wp_kses_post(__('WooCommerce is not enabled on your site. Some properties like <strong>aggregateRating</strong> and <strong>Review</strong> will not work out of the box.', 'wp-seopress-pro')); ?>
+						<?php echo wp_kses_post(__('WooCommerce is not enabled on your site. Some properties like <strong>aggregateRating</strong> and <strong>Review</strong> will not work out of the box.', 'webseo')); ?>
 					</p>
 				</div>
 				<?php } ?>
 
 				<p>
 					<label for="seopress_pro_rich_snippets_product_name_meta">
-						<?php esc_html_e('Product name', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Product name', 'webseo'); ?>
 						<code>name</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_name', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('The name of your product', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('The name of your product', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_description_meta"><?php esc_html_e('Product description', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_description_meta"><?php esc_html_e('Product description', 'webseo'); ?>
 						<code>description</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_description', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('The description of the product', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('The description of the product', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_img_meta"><?php esc_html_e('Thumbnail', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_img_meta"><?php esc_html_e('Thumbnail', 'webseo'); ?>
 						<code>image</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_img', 'image'); ?>
 					<span
-						class="description"><?php esc_html_e('Pictures clearly showing the product, e.g. against a white background, are preferred.', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('Pictures clearly showing the product, e.g. against a white background, are preferred.', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label for="seopress_pro_rich_snippets_product_price_meta">
-						<?php esc_html_e('Product price', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Product price', 'webseo'); ?>
 						<code>price</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_price', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('e.g. 30. Even if this value is set to None, we‘ll still display a value for this property to follow Google guidelines and avoid warnings in Google Search Console.', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('e.g. 30. Even if this value is set to None, we‘ll still display a value for this property to follow Google guidelines and avoid warnings in Google Search Console.', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_price_valid_date"><?php esc_html_e('Product price valid until', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_price_valid_date"><?php esc_html_e('Product price valid until', 'webseo'); ?>
 						<code>priceValidDate</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_price_valid_date', 'date'); ?>
 					<span
-						class="description"><?php esc_html_e('e.g. YYYY-MM-DD', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('e.g. YYYY-MM-DD', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label for="seopress_pro_rich_snippets_product_sku_meta">
-						<?php esc_html_e('Product SKU', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Product SKU', 'webseo'); ?>
 						<code>sku</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_sku', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('e.g. 0446310786', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('e.g. 0446310786', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label for="seopress_pro_rich_snippets_product_global_ids_meta">
-						<?php esc_html_e('Product Global Identifiers type', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Product Global Identifiers type', 'webseo'); ?>
 						<code>globalIds</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_global_ids', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('e.g. gtin8', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('e.g. gtin8', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label for="seopress_pro_rich_snippets_product_global_ids_value_meta">
-						<?php esc_html_e('Product Global Identifiers', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Product Global Identifiers', 'webseo'); ?>
 						<code>globalIdsValue</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_global_ids_value', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('e.g. 925872', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('e.g. 925872', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label for="seopress_pro_rich_snippets_product_brand_meta">
-						<?php esc_html_e('Product Brand', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Product Brand', 'webseo'); ?>
 						<code>brand</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_brand', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('e.g. Apple', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('e.g. Apple', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label for="seopress_pro_rich_snippets_product_price_currency_meta">
-						<?php esc_html_e('Product currency', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Product currency', 'webseo'); ?>
 						<code>priceCurrency</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_price_currency', 'default'); ?>
 					<span
-						class="description"><?php esc_html_e('e.g. USD, EUR', 'wp-seopress-pro'); ?></span>
+						class="description"><?php esc_html_e('e.g. USD, EUR', 'webseo'); ?></span>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_condition_meta"><?php esc_html_e('Product Condition', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_condition_meta"><?php esc_html_e('Product Condition', 'webseo'); ?>
 						<code>condition</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_condition', 'default'); ?>
 					<span
-						class="description"><?php echo wp_kses_post(__('<strong>Authorized values:</strong> "NewCondition", "UsedCondition", "DamagedCondition", "RefurbishedCondition"', 'wp-seopress-pro')); ?></span>
+						class="description"><?php echo wp_kses_post(__('<strong>Authorized values:</strong> "NewCondition", "UsedCondition", "DamagedCondition", "RefurbishedCondition"', 'webseo')); ?></span>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_availability_meta"><?php esc_html_e('Product Availability', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_availability_meta"><?php esc_html_e('Product Availability', 'webseo'); ?>
 						<code>availability</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_availability', 'default'); ?>
 					<span
-						class="description"><?php echo wp_kses_post(__('<strong>Authorized values:</strong> "InStock", "InStoreOnly", "OnlineOnly", "LimitedAvailability", "SoldOut", "OutOfStock", "Discontinued", "PreOrder", "PreSale"', 'wp-seopress-pro')); ?></span>
+						class="description"><?php echo wp_kses_post(__('<strong>Authorized values:</strong> "InStock", "InStoreOnly", "OnlineOnly", "LimitedAvailability", "SoldOut", "OutOfStock", "Discontinued", "PreOrder", "PreSale"', 'webseo')); ?></span>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_positive_notes"><?php esc_html_e('Positive Notes', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_positive_notes"><?php esc_html_e('Positive Notes', 'webseo'); ?>
 						<code>positiveNotes</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_positive_notes', 'default'); ?>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_negative_notes"><?php esc_html_e('Negative Notes', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_negative_notes"><?php esc_html_e('Negative Notes', 'webseo'); ?>
 						<code>negativeNotes</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_negative_notes', 'default'); ?>
 				</p>
 				<p>
 					<label
-						for="seopress_pro_rich_snippets_product_energy_consumption"><?php esc_html_e('Energy Consumption', 'wp-seopress-pro'); ?>
+						for="seopress_pro_rich_snippets_product_energy_consumption"><?php esc_html_e('Energy Consumption', 'webseo'); ?>
 						<code>energy_consumption</code>
 					</label>
 					<?php echo seopress_schemas_mapping_array('seopress_pro_rich_snippets_product_energy_consumption', 'default'); ?>

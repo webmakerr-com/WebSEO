@@ -19,16 +19,16 @@ trait FieldOpeningHoursDisplayFormat {
             class="seopress-admin-select">
             
             <option value="24h" <?php selected($value, '24h'); ?>>
-                <?php esc_html_e('24-hour format (e.g., 14:30)', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('24-hour format (e.g., 14:30)', 'webseo'); ?>
             </option>
             
             <option value="12h" <?php selected($value, '12h'); ?>>
-                <?php esc_html_e('12-hour format (e.g., 2:30 PM)', 'wp-seopress-pro'); ?>
+                <?php esc_html_e('12-hour format (e.g., 2:30 PM)', 'webseo'); ?>
             </option>
         </select>
         
         <p class="description">
-            <?php esc_html_e('Choose how opening hours are displayed in the frontend widget.', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Choose how opening hours are displayed in the frontend widget.', 'webseo'); ?>
         </p>
 
         <?php

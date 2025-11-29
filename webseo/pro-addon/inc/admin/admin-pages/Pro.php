@@ -30,22 +30,22 @@ if (is_plugin_active('webseo/webseo.php')) {
     <div id="seopress-tabs" class="wrap">
         <?php
                 $plugin_settings_tabs = [
-                    'tab_seopress_404'            => esc_html__('Redirections / 404', 'wp-seopress-pro'),
-                    'tab_seopress_rich_snippets'  => esc_html__('Structured Data Types', 'wp-seopress-pro'),
-                    'tab_seopress_robots'         => esc_html__('robots.txt', 'wp-seopress-pro'),
-                    'tab_seopress_htaccess'       => esc_html__('.htaccess', 'wp-seopress-pro'),
-                    'tab_seopress_local_business' => esc_html__('Local Business', 'wp-seopress-pro'),
-                    'tab_seopress_ai'             => esc_html__('AI', 'wp-seopress-pro'),
-                    'tab_seopress_breadcrumbs'    => esc_html__('Breadcrumbs', 'wp-seopress-pro'),
-                    'tab_seopress_woocommerce'    => esc_html__('WooCommerce', 'wp-seopress-pro'),
-                    'tab_seopress_edd'            => esc_html__('Easy Digital Downloads', 'wp-seopress-pro'),
-                    'tab_seopress_page_speed'     => esc_html__('PageSpeed Insights', 'wp-seopress-pro'),
-                    'tab_seopress_inspect_url'    => esc_html__('Google Search Console', 'wp-seopress-pro'),
-                    'tab_seopress_news'           => esc_html__('Google News', 'wp-seopress-pro'),
-                    'tab_seopress_alerts'         => esc_html__('SEO Alerts', 'wp-seopress-pro'),
-                    'tab_seopress_dublin_core'    => esc_html__('Dublin Core', 'wp-seopress-pro'),
-                    'tab_seopress_rss'            => esc_html__('RSS', 'wp-seopress-pro'),
-                    'tab_seopress_white_label'    => esc_html__('White Label', 'wp-seopress-pro'),
+                    'tab_seopress_404'            => esc_html__('Redirections / 404', 'webseo'),
+                    'tab_seopress_rich_snippets'  => esc_html__('Structured Data Types', 'webseo'),
+                    'tab_seopress_robots'         => esc_html__('robots.txt', 'webseo'),
+                    'tab_seopress_htaccess'       => esc_html__('.htaccess', 'webseo'),
+                    'tab_seopress_local_business' => esc_html__('Local Business', 'webseo'),
+                    'tab_seopress_ai'             => esc_html__('AI', 'webseo'),
+                    'tab_seopress_breadcrumbs'    => esc_html__('Breadcrumbs', 'webseo'),
+                    'tab_seopress_woocommerce'    => esc_html__('WooCommerce', 'webseo'),
+                    'tab_seopress_edd'            => esc_html__('Easy Digital Downloads', 'webseo'),
+                    'tab_seopress_page_speed'     => esc_html__('PageSpeed Insights', 'webseo'),
+                    'tab_seopress_inspect_url'    => esc_html__('Google Search Console', 'webseo'),
+                    'tab_seopress_news'           => esc_html__('Google News', 'webseo'),
+                    'tab_seopress_alerts'         => esc_html__('SEO Alerts', 'webseo'),
+                    'tab_seopress_dublin_core'    => esc_html__('Dublin Core', 'webseo'),
+                    'tab_seopress_rss'            => esc_html__('RSS', 'webseo'),
+                    'tab_seopress_white_label'    => esc_html__('White Label', 'webseo'),
                 ];
 
     if (defined('SUBDOMAIN_INSTALL') && false === constant('SUBDOMAIN_INSTALL')) {//if multisite subdirectories
@@ -183,6 +183,6 @@ if (is_plugin_active('webseo/webseo.php')) {
     </div>
     <!--seopress-tabs-->
     <?php echo $this->feature_save(); ?>
-    <?php sp_submit_button(__('Save changes', 'wp-seopress-pro')); ?>
+    <?php sp_submit_button(__('Save changes', 'webseo')); ?>
 </form>
 <?php

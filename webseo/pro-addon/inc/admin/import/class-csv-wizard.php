@@ -146,7 +146,7 @@ class SEOPRESS_CSV_Importers
     public function register_importers()
     {
         if (defined('WP_LOAD_IMPORTERS')) {
-            register_importer('seopress_csv_importer', __('SEO metadata (CSV)', 'wp-seopress-pro'), __('Import <strong>metadata</strong> (title, meta description, social metas...) to your site via a csv file.', 'wp-seopress-pro'), [ $this, 'seopress_csv_importer' ]);
+            register_importer('seopress_csv_importer', __('SEO metadata (CSV)', 'webseo'), __('Import <strong>metadata</strong> (title, meta description, social metas...) to your site via a csv file.', 'webseo'), [ $this, 'seopress_csv_importer' ]);
         }
     }
 
@@ -159,7 +159,7 @@ class SEOPRESS_CSV_Importers
         check_ajax_referer('seopress-csv-importer', 'security');
 
         if ( ! $this->import_allowed() || ! isset($_POST['file'])) {
-            wp_send_json_error([ 'message' => __('Insufficient privileges to import metadata.', 'wp-seopress-pro') ]);
+            wp_send_json_error([ 'message' => __('Insufficient privileges to import metadata.', 'webseo') ]);
         }
 
         include_once dirname(__FILE__) . '/class-csv-controller.php';

@@ -9,12 +9,12 @@ function seopress_pro_tools_tabs($plugin_settings_tabs) {
 	unset($plugin_settings_tabs['tab_seopress_tool_plugins']);
 	unset($plugin_settings_tabs['tab_seopress_tool_reset']);
 
-	$plugin_settings_tabs['tab_seopress_tool_data'] = __('Data', 'wp-seopress-pro');
-	$plugin_settings_tabs['tab_seopress_tool_settings'] = __('Settings', 'wp-seopress-pro');
-	$plugin_settings_tabs['tab_seopress_tool_plugins'] = __('Plugins', 'wp-seopress-pro');
-	$plugin_settings_tabs['tab_seopress_tool_redirects'] = __('Redirections', 'wp-seopress-pro');
-	$plugin_settings_tabs['tab_seopress_tool_video'] = __('Video sitemap', 'wp-seopress-pro');
-	$plugin_settings_tabs['tab_seopress_tool_reset'] = __('Reset', 'wp-seopress-pro');
+	$plugin_settings_tabs['tab_seopress_tool_data'] = __('Data', 'webseo');
+	$plugin_settings_tabs['tab_seopress_tool_settings'] = __('Settings', 'webseo');
+	$plugin_settings_tabs['tab_seopress_tool_plugins'] = __('Plugins', 'webseo');
+	$plugin_settings_tabs['tab_seopress_tool_redirects'] = __('Redirections', 'webseo');
+	$plugin_settings_tabs['tab_seopress_tool_video'] = __('Video sitemap', 'webseo');
+	$plugin_settings_tabs['tab_seopress_tool_reset'] = __('Reset', 'webseo');
 
 	return $plugin_settings_tabs;
 }
@@ -29,7 +29,7 @@ function seopress_pro_tools_before($current_tab, $docs) {
 	<?php } else { ?>
 		<div class="seopress-tab <?php if ('tab_seopress_tool_data' == $current_tab) { echo 'active'; } ?>" id="tab_seopress_tool_data">
 			<div class="seopress-notice">
-				<p><?php echo wp_kses_post(__('Looking for the CSV import / export tool? Please <strong>update SEOPress PRO</strong> to version 6.1.','wp-seopress-pro')); ?></p>
+				<p><?php echo wp_kses_post(__('Looking for the CSV import / export tool? Please <strong>update SEOPress PRO</strong> to version 6.1.','webseo')); ?></p>
 			</div>
 		</div>
 	<?php }
@@ -42,15 +42,15 @@ function seopress_pro_tools_reset_seo_issues() {
 	<div class="postbox section-tool">
 		<div class="inside">
 			<h3>
-				<span><?php esc_html_e('Clean Site Audit', 'wp-seopress-pro'); ?></span>
+				<span><?php esc_html_e('Clean Site Audit', 'webseo'); ?></span>
 			</h3>
 
-			<p><?php esc_html_e('By clicking Delete SEO audit scans, all SEO issues will be deleted from your database.', 'wp-seopress-pro'); ?></p>
+			<p><?php esc_html_e('By clicking Delete SEO audit scans, all SEO issues will be deleted from your database.', 'webseo'); ?></p>
 
 			<form method="post" enctype="multipart/form-data">
 				<input type="hidden" name="seopress_action" value="clean_audit_scans" />
 				<?php wp_nonce_field('seopress_clean_audit_scans_nonce', 'seopress_clean_audit_scans_nonce'); ?>
-				<?php sp_submit_button(esc_html__('Delete SEO audit scans', 'wp-seopress-pro'), 'btn btnTertiary'); ?>
+				<?php sp_submit_button(esc_html__('Delete SEO audit scans', 'webseo'), 'btn btnTertiary'); ?>
 			</form>
 		</div><!-- .inside -->
 	</div><!-- .postbox -->
@@ -67,12 +67,12 @@ function seopress_pro_tools_migration($current_tab) { ?>
 		seopress_get_redirection_pro_html();
 	} else { ?>
 			<div class="seopress-notice is-warning">
-				<p><?php echo wp_kses_post(__('Redirections feature is disabled. Please activate it from the <strong>PRO page</strong>.', 'wp-seopress-pro')); ?>
+				<p><?php echo wp_kses_post(__('Redirections feature is disabled. Please activate it from the <strong>PRO page</strong>.', 'webseo')); ?>
 				</p>
 				<p>
 					<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-pro-page')); ?>"
 						class="btn btnSecondary">
-						<?php esc_html_e('Activate Redirections', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Activate Redirections', 'webseo'); ?>
 					</a>
 				</p>
 			</div>
@@ -85,24 +85,24 @@ function seopress_pro_tools_migration($current_tab) { ?>
 		<div class="postbox section-tool">
 			<div class="sp-section-header">
 				<h2>
-					<?php esc_html_e('Video XML sitemap', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Video XML sitemap', 'webseo'); ?>
 				</h2>
 			</div>
 			<div class="inside">
 				<h3>
-					<?php esc_html_e('Add YouTube videos to the XML Video sitemap', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('Add YouTube videos to the XML Video sitemap', 'webseo'); ?>
 				</h3>
-				<p><?php esc_html_e('Click the button below to automatically scan all your content for YouTube URL and add them to the video XML sitemap. We automatically add YouTube videos each time you save a post.','wp-seopress-pro'); ?></p>
+				<p><?php esc_html_e('Click the button below to automatically scan all your content for YouTube URL and add them to the video XML sitemap. We automatically add YouTube videos each time you save a post.','webseo'); ?></p>
 
 				<p>
 					<a href="<?php echo esc_url(get_option('home') . '/video1.xml'); ?>" target="_blank">
-						<?php esc_html_e('Open Video Sitemap','wp-seopress-pro'); ?>
+						<?php esc_html_e('Open Video Sitemap','webseo'); ?>
 					</a>
 					<span class="dashicons dashicons-external"></span>
 				</p>
 
 				<p>
-					<button id="seopress-video-regenerate" type="button" class="btn btnTertiary"><?php esc_html_e('Regenerate','wp-seopress-pro'); ?></button>
+					<button id="seopress-video-regenerate" type="button" class="btn btnTertiary"><?php esc_html_e('Regenerate','webseo'); ?></button>
 					<span class="spinner"></span>
 					<div class="log"></div>
 				</p>
@@ -110,12 +110,12 @@ function seopress_pro_tools_migration($current_tab) { ?>
 		</div>
 	<?php } else { ?>
 			<div class="seopress-notice is-warning">
-				<p><?php echo wp_kses_post(__('XML Video sitemap feature is disabled. Please activate it from the <strong>XML sitemaps settings page</strong>.', 'wp-seopress-pro')); ?>
+				<p><?php echo wp_kses_post(__('XML Video sitemap feature is disabled. Please activate it from the <strong>XML sitemaps settings page</strong>.', 'webseo')); ?>
 				</p>
 				<p>
 					<a href="<?php echo esc_url(admin_url('admin.php?page=seopress-xml-sitemap')); ?>"
 						class="btn btnTertiary">
-						<?php esc_html_e('Activate XML Video sitemap', 'wp-seopress-pro'); ?>
+						<?php esc_html_e('Activate XML Video sitemap', 'webseo'); ?>
 					</a>
 				</p>
 			</div>

@@ -10,20 +10,20 @@ function seopress_print_section_info_page_speed()
 ?>
 
     <p>
-        <?php esc_html_e('Learn how your site has performed, based on data from your actual users around the world.', 'wp-seopress-pro'); ?>
+        <?php esc_html_e('Learn how your site has performed, based on data from your actual users around the world.', 'webseo'); ?>
     </p>
 
     <p>
         <button type="button" class="seopress-request-page-speed btn btnPrimary" data_permalink="<?php if (isset($url)) { echo esc_url($url); } else { echo esc_url(get_home_url()); } ?>">
-            <?php esc_html_e('Analyse with PageSpeed Insights', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Analyse with PageSpeed Insights', 'webseo'); ?>
         </button>
 
         <a href="javascript:window.print()" class="btn btnTertiary">
-            <?php esc_html_e('Save as PDF', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Save as PDF', 'webseo'); ?>
         </a>
 
         <button type="button" id="seopress-clear-page-speed-cache" class="btn btnTertiary is-deletable">
-            <?php esc_html_e('Remove last analysis', 'wp-seopress-pro'); ?>
+            <?php esc_html_e('Remove last analysis', 'webseo'); ?>
         </button>
 
         <span class="spinner"></span>

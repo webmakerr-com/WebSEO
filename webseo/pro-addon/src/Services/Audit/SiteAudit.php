@@ -41,7 +41,7 @@ class SiteAudit {
 		<details class="wrap-site-audit-analysis" data-type="<?php echo esc_attr($type); ?>">
 			<?php $this->renderSummaryAndDescription($details, $type); ?>
 			<div class="analysis-results-placeholder">
-				<p><?php esc_html_e('Loading', 'wp-seopress-pro'); ?></p>
+				<p><?php esc_html_e('Loading', 'webseo'); ?></p>
 			</div>
 		</details>
 		<?php
@@ -58,10 +58,10 @@ class SiteAudit {
 			if ($issues || $hidden_issues) {
 				$count .= ' <span>';
 				if ($issues) {
-					$count .= $issues . ' ' . esc_html__('issues', 'wp-seopress-pro');
+					$count .= $issues . ' ' . esc_html__('issues', 'webseo');
 				}
 				if ($hidden_issues) {
-					$count .= ' <span style="font-weight: normal;font-style: italic;color: var(--colorWarning);">(' . $hidden_issues . ' ' . esc_html__('ignored', 'wp-seopress-pro').')</span>';
+					$count .= ' <span style="font-weight: normal;font-style: italic;color: var(--colorWarning);">(' . $hidden_issues . ' ' . esc_html__('ignored', 'webseo').')</span>';
 				}
 				$count .= '</span>';
 			}
@@ -126,23 +126,23 @@ class SiteAudit {
 				<table class="seopress-site-audit-table display">
 					<thead>
 						<tr>
-							<th><?php esc_html_e('Impact','wp-seopress-pro'); ?></th>
-							<th><?php esc_html_e('Post ID','wp-seopress-pro'); ?></th>
-							<th><?php esc_html_e('Post URL','wp-seopress-pro'); ?></th>
-							<th><?php esc_html_e('Issue name','wp-seopress-pro'); ?></th>
-							<th><?php esc_html_e('Issue description','wp-seopress-pro'); ?></th>
-							<th><?php esc_html_e('Target keywords','wp-seopress-pro'); ?></th>
+							<th><?php esc_html_e('Impact','webseo'); ?></th>
+							<th><?php esc_html_e('Post ID','webseo'); ?></th>
+							<th><?php esc_html_e('Post URL','webseo'); ?></th>
+							<th><?php esc_html_e('Issue name','webseo'); ?></th>
+							<th><?php esc_html_e('Issue description','webseo'); ?></th>
+							<th><?php esc_html_e('Target keywords','webseo'); ?></th>
 							<?php if (seopress_get_service('ToggleOption')->getToggleInspectUrl() === '1') {
 								$google_api_key = $this->getGoogleApiKey();
 								if (!empty($google_api_key)) { ?>
-									<th><?php esc_html_e('Position','wp-seopress-pro'); ?></th>
-									<th><?php esc_html_e('Clicks','wp-seopress-pro'); ?></th>
+									<th><?php esc_html_e('Position','webseo'); ?></th>
+									<th><?php esc_html_e('Clicks','webseo'); ?></th>
 								<?php }
 							} ?>
 							<?php if ($type === 'img_alt') { ?>
-								<th><?php esc_html_e('Actions','wp-seopress-pro'); ?></th>
+								<th><?php esc_html_e('Actions','webseo'); ?></th>
 							<?php } ?>
-							<th><?php esc_html_e('Ignore?','wp-seopress-pro'); ?></th>
+							<th><?php esc_html_e('Ignore?','webseo'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -161,7 +161,7 @@ class SiteAudit {
 			<div class="site-audit-analysis-desc gr-analysis">
 				<p>
 					<span class="dashicons dashicons-yes"></span>
-					<?php esc_html_e('All good!', 'wp-seopress-pro'); ?>
+					<?php esc_html_e('All good!', 'webseo'); ?>
 				</p>
 			</div>
 			<?php
@@ -189,7 +189,7 @@ class SiteAudit {
 		$post_title = $post->post_title ?? '';
 		$post_permalink = $this->permalinkCache[$id];
 		$edit_link = $this->editLinkCache[$id];
-		$target_keywords = $this->getPostMeta($id, '_seopress_analysis_target_kw', '<span class="site-audit-target-keyword-missing">' . __('Missing!', 'wp-seopress-pro') . '</span>');
+		$target_keywords = $this->getPostMeta($id, '_seopress_analysis_target_kw', '<span class="site-audit-target-keyword-missing">' . __('Missing!', 'webseo') . '</span>');
 
 		$data = $this->getDataAnalysis($post, $type);
 
@@ -225,12 +225,12 @@ class SiteAudit {
 							<?php echo esc_html(absint($id)); ?>
 						</td>
 						<td class="site-audit-item-link" data-sort="<?php echo esc_url($post_permalink ?: ''); ?>">
-							<a href="<?php echo esc_url($post_permalink ?: ''); ?>" title="<?php esc_attr_e('View this content in a new window', 'wp-seopress-pro'); ?>" target="_blank">
+							<a href="<?php echo esc_url($post_permalink ?: ''); ?>" title="<?php esc_attr_e('View this content in a new window', 'webseo'); ?>" target="_blank">
 								<?php echo esc_html($post_permalink ?: ''); ?>
 							</a>
 							<span class="dashicons dashicons-external"></span>
-							<a href="<?php echo esc_url($edit_link ?: ''); ?>" title="<?php esc_attr_e('Edit this content in a new window', 'wp-seopress-pro'); ?>" class="site-audit-edit-url button button-link" target="_blank">
-								<?php esc_html_e('Edit', 'wp-seopress-pro'); ?>
+							<a href="<?php echo esc_url($edit_link ?: ''); ?>" title="<?php esc_attr_e('Edit this content in a new window', 'webseo'); ?>" class="site-audit-edit-url button button-link" target="_blank">
+								<?php esc_html_e('Edit', 'webseo'); ?>
 							</a>
 						</td>
 						<td class="site-audit-name" data-sort="<?php echo esc_attr(sanitize_text_field($value['issue_name'])); ?>">
@@ -267,7 +267,7 @@ class SiteAudit {
 						<td class="site-audit-ignore" data-sort="<?php echo absint($ignore); ?>" data-search="<?php echo absint($ignore); ?>">
 							<?php if ($ignore !== 1): ?>
 								<button type="button" class="seopress-site-audit-ignore-issue btn btnSecondary" data-issue-post-id="<?php echo esc_attr(absint($id)); ?>" data-issue-type="<?php echo esc_attr($issue_type); ?>">
-									<?php esc_html_e('Ignore', 'wp-seopress-pro'); ?>
+									<?php esc_html_e('Ignore', 'webseo'); ?>
 								</button>
 							<?php endif; ?>
 						</td>
@@ -283,7 +283,7 @@ class SiteAudit {
 
 	public function renderAllGoodMessage($numItems) {
 		if ($numItems === 0) { ?>
-			<p><?php esc_html_e('All good!', 'wp-seopress-pro'); ?></p>
+			<p><?php esc_html_e('All good!', 'webseo'); ?></p>
 			<?php
 		}
 	}
@@ -313,7 +313,7 @@ class SiteAudit {
 		$html = '';
 
 		if ($issue_name === 'img_alt_missing') {
-			$html = '<button type="button" class="btn btnSecondary seopress-site-audit-run-actions-img-alt" data-issue-post-id="' . esc_attr($id) . '">' . esc_html__('Generate missing alt text with AI', 'wp-seopress-pro') . '</button>';
+			$html = '<button type="button" class="btn btnSecondary seopress-site-audit-run-actions-img-alt" data-issue-post-id="' . esc_attr($id) . '">' . esc_html__('Generate missing alt text with AI', 'webseo') . '</button>';
 		}
 
 		return $html;

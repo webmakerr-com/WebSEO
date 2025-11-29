@@ -7,7 +7,7 @@ class ACP_Column_sp_desc extends AC\Column\Meta
 	public function __construct() {
 		$this->set_type( 'column-sp_desc' );
 		$this->set_group( 'seopress' );
-		$this->set_label( __( 'Meta description', 'wp-seopress-pro' ) );
+		$this->set_label( __( 'Meta description', 'webseo' ) );
 	}
 
 	public function get_meta_key() {
