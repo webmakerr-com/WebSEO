@@ -20,7 +20,7 @@ class PostThumbnailUrl implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Thumbnail URL', 'wp-seopress' );
+		return __( 'Post Thumbnail URL', 'webseo' );
 	}
 
 	/**

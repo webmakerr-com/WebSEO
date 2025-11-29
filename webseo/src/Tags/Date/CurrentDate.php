@@ -20,7 +20,7 @@ class CurrentDate implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Current Date', 'wp-seopress' );
+		return __( 'Current Date', 'webseo' );
 	}
 
 	/**

@@ -20,7 +20,7 @@ class PostUrl implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post URL', 'wp-seopress' );
+		return __( 'Post URL', 'webseo' );
 	}
 
 	/**

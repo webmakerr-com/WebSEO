@@ -20,7 +20,7 @@ class PostModifiedDate implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Modified Date', 'wp-seopress' );
+		return __( 'Post Modified Date', 'webseo' );
 	}
 
 	/**

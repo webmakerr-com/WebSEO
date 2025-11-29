@@ -70,9 +70,9 @@ class Google_Suggestions_Control extends \Elementor\Base_Control {
 		global $post;
 
 		return array(
-			'label'       => esc_html__( 'Google suggestions', 'wp-seopress' ),
-			'placeholder' => esc_html__( 'Get suggestions from Google', 'wp-seopress' ),
-			'buttonLabel' => esc_html__( 'Get suggestions!', 'wp-seopress' ),
+			'label'       => esc_html__( 'Google suggestions', 'webseo' ),
+			'placeholder' => esc_html__( 'Get suggestions from Google', 'webseo' ),
+			'buttonLabel' => esc_html__( 'Get suggestions!', 'webseo' ),
 		);
 	}
 

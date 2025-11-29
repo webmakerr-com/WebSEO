@@ -188,7 +188,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_noindex( $bulk_actions ) {
-		$bulk_actions['seopress_noindex'] = __( 'Enable noindex', 'wp-seopress' );
+		$bulk_actions['seopress_noindex'] = __( 'Enable noindex', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -234,7 +234,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 						'%s post to noindex.',
 						'%s posts to noindex.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -251,7 +251,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_index( $bulk_actions ) {
-		$bulk_actions['seopress_index'] = __( 'Enable index', 'wp-seopress' );
+		$bulk_actions['seopress_index'] = __( 'Enable index', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -298,7 +298,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 						'%s post to index.',
 						'%s posts to index.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -315,7 +315,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_nofollow( $bulk_actions ) {
-		$bulk_actions['seopress_nofollow'] = __( 'Enable nofollow', 'wp-seopress' );
+		$bulk_actions['seopress_nofollow'] = __( 'Enable nofollow', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -362,7 +362,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 						'%s post to nofollow.',
 						'%s posts to nofollow.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -379,7 +379,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_follow( $bulk_actions ) {
-		$bulk_actions['seopress_follow'] = __( 'Enable follow', 'wp-seopress' );
+		$bulk_actions['seopress_follow'] = __( 'Enable follow', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -426,7 +426,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 						'%s post to follow.',
 						'%s posts to follow.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -443,7 +443,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_redirect_enable( $bulk_actions ) {
-		$bulk_actions['seopress_enable'] = __( 'Enable redirection', 'wp-seopress' );
+		$bulk_actions['seopress_enable'] = __( 'Enable redirection', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -489,7 +489,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 						'%s redirection enabled.',
 						'%s redirections enabled.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -506,7 +506,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_redirect_disable( $bulk_actions ) {
-		$bulk_actions['seopress_disable'] = __( 'Disable redirection', 'wp-seopress' );
+		$bulk_actions['seopress_disable'] = __( 'Disable redirection', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -551,7 +551,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 						'%s redirection disabled.',
 						'%s redirections disabled.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -568,7 +568,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_add_instant_indexing( $bulk_actions ) {
-		$bulk_actions['seopress_instant_indexing'] = __( 'Add to instant indexing queue', 'wp-seopress' );
+		$bulk_actions['seopress_instant_indexing'] = __( 'Add to instant indexing queue', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -628,7 +628,7 @@ if ( 'edit.php' === $pagenow || 'edit-tags.php' === $pagenow ) {
 						'%s post added to instant indexing queue.',
 						'%s posts added to instant indexing queue.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -649,7 +649,7 @@ if ( 'upload.php' === $pagenow ) {
 	 * @return array $bulk_actions
 	 */
 	function seopress_bulk_actions_alt_text( $bulk_actions ) {
-		$bulk_actions['seopress_alt_text'] = __( 'Generate alt text from filename', 'wp-seopress' );
+		$bulk_actions['seopress_alt_text'] = __( 'Generate alt text from filename', 'webseo' );
 
 		return $bulk_actions;
 	}
@@ -696,7 +696,7 @@ if ( 'upload.php' === $pagenow ) {
 						'%s alternative text generated from filename.',
 						'%s alternative texts generated from filename.',
 						$count,
-						'wp-seopress'
+						'webseo'
 					),
 					number_format_i18n( $count )
 				)
@@ -735,10 +735,10 @@ if ( 'edit.php' === $pagenow ) {
 			switch ( $column_name ) {
 				case 'seopress_title':
 					?>
-			<h4><?php esc_html_e( 'SEO', 'wp-seopress' ); ?>
+			<h4><?php esc_html_e( 'SEO', 'webseo' ); ?>
 			</h4>
 			<label class="inline-edit-group">
-				<span class="title"><?php esc_html_e( 'Title tag', 'wp-seopress' ); ?></span>
+				<span class="title"><?php esc_html_e( 'Title tag', 'webseo' ); ?></span>
 				<span class="input-text-wrap"><input type="text" name="seopress_title" /></span>
 			</label>
 					<?php
@@ -746,7 +746,7 @@ if ( 'edit.php' === $pagenow ) {
 				case 'seopress_desc':
 					?>
 			<label class="inline-edit-group">
-				<span class="title"><?php esc_html_e( 'Meta description', 'wp-seopress' ); ?></span>
+				<span class="title"><?php esc_html_e( 'Meta description', 'webseo' ); ?></span>
 				<span class="input-text-wrap"><textarea cols="18" rows="1" name="seopress_desc" autocomplete="off"
 						role="combobox" aria-autocomplete="list" aria-expanded="false"></textarea></span>
 			</label>
@@ -755,7 +755,7 @@ if ( 'edit.php' === $pagenow ) {
 				case 'seopress_tkw':
 					?>
 			<label class="inline-edit-group">
-				<span class="title"><?php esc_html_e( 'Target keywords', 'wp-seopress' ); ?></span>
+				<span class="title"><?php esc_html_e( 'Target keywords', 'webseo' ); ?></span>
 				<span class="input-text-wrap"><input type="text" name="seopress_tkw" /></span>
 			</label>
 					<?php
@@ -763,7 +763,7 @@ if ( 'edit.php' === $pagenow ) {
 				case 'seopress_canonical':
 					?>
 			<label class="inline-edit-group">
-				<span class="title"><?php esc_html_e( 'Canonical', 'wp-seopress' ); ?></span>
+				<span class="title"><?php esc_html_e( 'Canonical', 'webseo' ); ?></span>
 				<span class="input-text-wrap"><input type="text" name="seopress_canonical" /></span>
 			</label>
 					<?php
@@ -772,7 +772,7 @@ if ( 'edit.php' === $pagenow ) {
 					?>
 			<label class="alignleft">
 				<input type="checkbox" name="seopress_noindex" value="yes">
-				<span class="checkbox-title"><?php echo wp_kses_post( __( 'Do not display this page in search engine results / XML - HTML sitemaps <strong>(noindex)</strong>', 'wp-seopress' ) ); ?></span>
+				<span class="checkbox-title"><?php echo wp_kses_post( __( 'Do not display this page in search engine results / XML - HTML sitemaps <strong>(noindex)</strong>', 'webseo' ) ); ?></span>
 			</label>
 					<?php
 					break;
@@ -780,7 +780,7 @@ if ( 'edit.php' === $pagenow ) {
 					?>
 			<label class="alignleft">
 				<input type="checkbox" name="seopress_nofollow" value="yes">
-				<span class="checkbox-title"><?php echo wp_kses_post( __( 'Do not follow links for this page <strong>(nofollow)</strong>', 'wp-seopress' ) ); ?></span>
+				<span class="checkbox-title"><?php echo wp_kses_post( __( 'Do not follow links for this page <strong>(nofollow)</strong>', 'webseo' ) ); ?></span>
 			</label>
 					<?php
 					break;
@@ -788,14 +788,14 @@ if ( 'edit.php' === $pagenow ) {
 					?>
 			<label class="alignleft">
 				<input type="checkbox" name="seopress_redirections_enabled" value="yes">
-				<span class="checkbox-title"><?php echo wp_kses_post( __( 'Enable redirection?', 'wp-seopress' ) ); ?></span>
+				<span class="checkbox-title"><?php echo wp_kses_post( __( 'Enable redirection?', 'webseo' ) ); ?></span>
 			</label>
 					<?php
 					break;
 				case 'seopress_redirect_url':
 					?>
 			<label class="inline-edit-group">
-				<span class="title"><?php echo wp_kses_post( __( 'New URL', 'wp-seopress' ) ); ?></span>
+				<span class="title"><?php echo wp_kses_post( __( 'New URL', 'webseo' ) ); ?></span>
 				<span class="input-text-wrap">
 					<input type="text" name="seopress_redirections_value" />
 				</span>
@@ -953,7 +953,7 @@ if ( seopress_get_service( 'AdvancedOption' )->getAdvancedTaxDescEditor() === '1
 			?>
 
 <tr class="form-field term-description-wrap">
-	<th scope="row"><label for="description"><?php esc_html_e( 'Description', 'wp-seopress' ); ?></label></th>
+	<th scope="row"><label for="description"><?php esc_html_e( 'Description', 'webseo' ); ?></label></th>
 	<td>
 			<?php
 			$settings = array(
@@ -962,7 +962,7 @@ if ( seopress_get_service( 'AdvancedOption' )->getAdvancedTaxDescEditor() === '1
 			);
 			wp_editor( htmlspecialchars_decode( $tag->description ), 'html-tag-description', $settings );
 			?>
-		<p class="description"><?php esc_html_e( 'The description is not prominent by default; however, some themes may show it.', 'wp-seopress' ); ?>
+		<p class="description"><?php esc_html_e( 'The description is not prominent by default; however, some themes may show it.', 'webseo' ); ?>
 		</p>
 	</td>
 	<script type="text/javascript">

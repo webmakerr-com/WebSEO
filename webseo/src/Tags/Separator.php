@@ -22,7 +22,7 @@ class Separator implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Separator', 'wp-seopress' );
+		return __( 'Separator', 'webseo' );
 	}
 
 	/**

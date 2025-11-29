@@ -39,7 +39,7 @@ class SectionPagesSEOPress {
 
 			if ( 'titles-metas_editor' === $unique_key ) { ?>
 	<p class="description">
-				<?php esc_html_e( 'Check a user role to authorized it to edit a specific SEO page.', 'wp-seopress' ); ?>
+				<?php esc_html_e( 'Check a user role to authorized it to edit a specific SEO page.', 'webseo' ); ?>
 	</p>
 	<?php } ?>
 

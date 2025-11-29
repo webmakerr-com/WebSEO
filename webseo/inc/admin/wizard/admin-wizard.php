@@ -110,8 +110,8 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Add dashboard page.
 	 */
         public function load_wizard() {
-                add_submenu_page( $this->parent_slug, __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->plugin_slug, array( $this, 'setup_wizard' ), 10 );
-                add_submenu_page( $this->parent_slug, __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->legacy_plugin_slug, array( $this, 'setup_wizard' ), 10 );
+                add_submenu_page( $this->parent_slug, __( 'Wizard', 'webseo' ), __( 'Wizard', 'webseo' ), seopress_capability( 'manage_options', 'menu' ), $this->plugin_slug, array( $this, 'setup_wizard' ), 10 );
+                add_submenu_page( $this->parent_slug, __( 'Wizard', 'webseo' ), __( 'Wizard', 'webseo' ), seopress_capability( 'manage_options', 'menu' ), $this->legacy_plugin_slug, array( $this, 'setup_wizard' ), 10 );
         }
 
 	/**
@@ -145,108 +145,108 @@ class SEOPRESS_Admin_Setup_Wizard {
 		$default_steps = array(
 			'welcome'             => array(
 				'breadcrumbs' => true,
-				'name'        => __( 'Welcome', 'wp-seopress' ),
+				'name'        => __( 'Welcome', 'webseo' ),
 				'view'        => array( $this, 'seopress_setup_welcome' ),
 				'handler'     => array( $this, 'seopress_setup_import_settings_save' ),
 				'sub_steps'   => array(
-					'welcome'         => __( 'Welcome', 'wp-seopress' ),
-					'import_settings' => __( 'Import metadata', 'wp-seopress' ),
+					'welcome'         => __( 'Welcome', 'webseo' ),
+					'import_settings' => __( 'Import metadata', 'webseo' ),
 				),
 				'parent'      => 'welcome',
 			),
 			'import_settings'     => array(
-				'name'      => __( 'Import SEO metadata', 'wp-seopress' ),
+				'name'      => __( 'Import SEO metadata', 'webseo' ),
 				'view'      => array( $this, 'seopress_setup_import_settings' ),
 				'handler'   => array( $this, 'seopress_setup_import_settings_save' ),
 				'sub_steps' => array(
-					'welcome'         => __( 'Welcome', 'wp-seopress' ),
-					'import_settings' => __( 'Import metadata', 'wp-seopress' ),
+					'welcome'         => __( 'Welcome', 'webseo' ),
+					'import_settings' => __( 'Import metadata', 'webseo' ),
 				),
 				'parent'    => 'welcome',
 			),
 			'site'                => array(
 				'breadcrumbs' => true,
-				'name'        => __( 'Your site', 'wp-seopress' ),
+				'name'        => __( 'Your site', 'webseo' ),
 				'view'        => array( $this, 'seopress_setup_site' ),
 				'handler'     => array( $this, 'seopress_setup_site_save' ),
 				'sub_steps'   => array(
-					'site'            => __( 'General', 'wp-seopress' ),
-					'social_accounts' => __( 'Your social accounts', 'wp-seopress' ),
+					'site'            => __( 'General', 'webseo' ),
+					'social_accounts' => __( 'Your social accounts', 'webseo' ),
 				),
 				'parent'      => 'site',
 			),
 			'social_accounts'     => array(
-				'name'      => __( 'Your site', 'wp-seopress' ),
+				'name'      => __( 'Your site', 'webseo' ),
 				'view'      => array( $this, 'seopress_setup_social_accounts' ),
 				'handler'   => array( $this, 'seopress_setup_social_accounts_save' ),
 				'sub_steps' => array(
-					'site'            => __( 'General', 'wp-seopress' ),
-					'social_accounts' => __( 'Your social accounts', 'wp-seopress' ),
+					'site'            => __( 'General', 'webseo' ),
+					'social_accounts' => __( 'Your social accounts', 'webseo' ),
 				),
 				'parent'    => 'site',
 			),
 			'indexing_post_types' => array(
 				'breadcrumbs' => true,
-				'name'        => __( 'Indexing', 'wp-seopress' ),
+				'name'        => __( 'Indexing', 'webseo' ),
 				'view'        => array( $this, 'seopress_setup_indexing_post_types' ),
 				'handler'     => array( $this, 'seopress_setup_indexing_post_types_save' ),
 				'sub_steps'   => array(
-					'indexing_post_types' => __( 'Post Types', 'wp-seopress' ),
-					'indexing_archives'   => __( 'Archives', 'wp-seopress' ),
-					'indexing_taxonomies' => __( 'Taxonomies', 'wp-seopress' ),
+					'indexing_post_types' => __( 'Post Types', 'webseo' ),
+					'indexing_archives'   => __( 'Archives', 'webseo' ),
+					'indexing_taxonomies' => __( 'Taxonomies', 'webseo' ),
 				),
 				'parent'      => 'indexing_post_types',
 			),
 			'indexing_archives'   => array(
-				'name'      => __( 'Indexing', 'wp-seopress' ),
+				'name'      => __( 'Indexing', 'webseo' ),
 				'view'      => array( $this, 'seopress_setup_indexing_archives' ),
 				'handler'   => array( $this, 'seopress_setup_indexing_archives_save' ),
 				'sub_steps' => array(
-					'indexing_post_types' => __( 'Post Types', 'wp-seopress' ),
-					'indexing_archives'   => __( 'Archives', 'wp-seopress' ),
-					'indexing_taxonomies' => __( 'Taxonomies', 'wp-seopress' ),
+					'indexing_post_types' => __( 'Post Types', 'webseo' ),
+					'indexing_archives'   => __( 'Archives', 'webseo' ),
+					'indexing_taxonomies' => __( 'Taxonomies', 'webseo' ),
 				),
 				'parent'    => 'indexing_post_types',
 			),
 			'indexing_taxonomies' => array(
-				'name'      => __( 'Indexing', 'wp-seopress' ),
+				'name'      => __( 'Indexing', 'webseo' ),
 				'view'      => array( $this, 'seopress_setup_indexing_taxonomies' ),
 				'handler'   => array( $this, 'seopress_setup_indexing_taxonomies_save' ),
 				'sub_steps' => array(
-					'indexing_post_types' => __( 'Post Types', 'wp-seopress' ),
-					'indexing_archives'   => __( 'Archives', 'wp-seopress' ),
-					'indexing_taxonomies' => __( 'Taxonomies', 'wp-seopress' ),
+					'indexing_post_types' => __( 'Post Types', 'webseo' ),
+					'indexing_archives'   => __( 'Archives', 'webseo' ),
+					'indexing_taxonomies' => __( 'Taxonomies', 'webseo' ),
 				),
 				'parent'    => 'indexing_post_types',
 			),
 			'advanced'            => array(
 				'breadcrumbs' => true,
-				'name'        => __( 'Advanced options', 'wp-seopress' ),
+				'name'        => __( 'Advanced options', 'webseo' ),
 				'view'        => array( $this, 'seopress_setup_advanced' ),
 				'handler'     => array( $this, 'seopress_setup_advanced_save' ),
 				'sub_steps'   => array(
-					'advanced'  => __( 'Advanced', 'wp-seopress' ),
-					'universal' => __( 'Universal SEO metabox', 'wp-seopress' ),
+					'advanced'  => __( 'Advanced', 'webseo' ),
+					'universal' => __( 'Universal SEO metabox', 'webseo' ),
 				),
 				'parent'      => 'advanced',
 			),
 			'universal'           => array(
-				'name'      => __( 'Advanced options', 'wp-seopress' ),
+				'name'      => __( 'Advanced options', 'webseo' ),
 				'view'      => array( $this, 'seopress_setup_universal' ),
 				'handler'   => array( $this, 'seopress_setup_universal_save' ),
 				'sub_steps' => array(
-					'advanced'  => __( 'Advanced', 'wp-seopress' ),
-					'universal' => __( 'Universal SEO metabox', 'wp-seopress' ),
+					'advanced'  => __( 'Advanced', 'webseo' ),
+					'universal' => __( 'Universal SEO metabox', 'webseo' ),
 				),
 				'parent'    => 'advanced',
 			),
 			'ready'               => array(
 				'breadcrumbs' => true,
-				'name'        => __( 'Ready!', 'wp-seopress' ),
+				'name'        => __( 'Ready!', 'webseo' ),
 				'view'        => array( $this, 'seopress_setup_ready' ),
 				'handler'     => array( $this, 'seopress_final_subscribe' ),
 				'sub_steps'   => array(
-					'ready' => __( 'Ready!', 'wp-seopress' ),
+					'ready' => __( 'Ready!', 'webseo' ),
 				),
 			),
 		);
@@ -316,7 +316,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 		<div class="seopress-setup-footer">
 			<?php if ( 'welcome' === $this->step ) { ?>
                         <a class="seopress-setup-footer-links"
-                                href="<?php echo esc_url( admin_url( 'admin.php?page=' . $this->parent_slug ) ); ?>"><?php esc_html_e( 'Not right now', 'wp-seopress' ); ?></a>
+                                href="<?php echo esc_url( admin_url( 'admin.php?page=' . $this->parent_slug ) ); ?>"><?php esc_html_e( 'Not right now', 'webseo' ); ?></a>
 				<?php
 			} elseif (
 				'import_settings' === $this->step ||
@@ -331,7 +331,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 				) {
 					$skip_link = esc_url( $this->get_next_step_link() );
 				?>
-				<a class="seopress-setup-footer-links" href="<?php echo esc_url( $skip_link ); ?>"><?php esc_html_e( 'Skip this step', 'wp-seopress' ); ?></a>
+				<a class="seopress-setup-footer-links" href="<?php echo esc_url( $skip_link ); ?>"><?php esc_html_e( 'Skip this step', 'webseo' ); ?></a>
 			<?php } ?>
 		</div>
 		<?php
@@ -444,15 +444,15 @@ class SEOPRESS_Admin_Setup_Wizard {
 		<h1>
 			<?php
 				/* translators: %s plugin name, default: SEOPress */
-				printf( esc_html__( 'Welcome to %s!', 'wp-seopress' ), esc_html( $this->seo_title ) );
+				printf( esc_html__( 'Welcome to %s!', 'webseo' ), esc_html( $this->seo_title ) );
 			?>
 		</h1>
 
 		<?php $this->setup_wizard_sub_steps(); ?>
 
 		<div class="seopress-tab active">
-			<h2><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'Configure %s with the best settings for your site', 'wp-seopress' ), esc_html( $this->seo_title ) ); ?></h2>
-			<p class="store-setup intro"><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'The following wizard will help you configure %s and get you started quickly.', 'wp-seopress' ), esc_html( $this->seo_title ) ); ?>
+			<h2><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'Configure %s with the best settings for your site', 'webseo' ), esc_html( $this->seo_title ) ); ?></h2>
+			<p class="store-setup intro"><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'The following wizard will help you configure %s and get you started quickly.', 'webseo' ), esc_html( $this->seo_title ) ); ?>
 			</p>
 
 			<?php
@@ -460,22 +460,22 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 			if ( function_exists( 'extension_loaded' ) && ! extension_loaded( 'dom' ) ) {
 				$requirements[] = array(
-					'title' => __( 'PHP module "DOM" is missing on your server.', 'wp-seopress' ),
-					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'wp-seopress' ),
+					'title' => __( 'PHP module "DOM" is missing on your server.', 'webseo' ),
+					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				);
 			}
 
 			if ( function_exists( 'extension_loaded' ) && ! extension_loaded( 'mbstring' ) ) {
 				$requirements[] = array(
-					'title' => __( 'PHP module "mbstring" is missing on your server.', 'wp-seopress' ),
-					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'wp-seopress' ),
+					'title' => __( 'PHP module "mbstring" is missing on your server.', 'webseo' ),
+					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				);
 			}
 
 			if ( function_exists( 'extension_loaded' ) && ! extension_loaded( 'intl' ) ) {
 				$requirements[] = array(
-					'title' => __( 'PHP module "intl" is missing on your server.', 'wp-seopress' ),
-					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'wp-seopress' ),
+					'title' => __( 'PHP module "intl" is missing on your server.', 'webseo' ),
+					'desc'  => __( 'This PHP module, installed by default with PHP, is required by many plugins including SEOPress. Please contact your host as soon as possible to solve this.', 'webseo' ),
 				);
 			}
 
@@ -486,30 +486,30 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 				if ( wp_convert_hr_to_bytes( $upload_max_filesize ) / 1024 / 1024 < 24 ) {
 					$requirements[] = array(
-						'title' => __( 'PHP upload max filesize is too low.', 'wp-seopress' ),
-						'desc'  => /* translators: %s: "upload max filesize" */ sprintf( __( 'Please contact your host to increase this value to at least <code>24M</code> (current value: <code>%dM</code>).', 'wp-seopress' ), absint( wp_convert_hr_to_bytes( $upload_max_filesize ) / 1024 / 1024 ) ),
+						'title' => __( 'PHP upload max filesize is too low.', 'webseo' ),
+						'desc'  => /* translators: %s: "upload max filesize" */ sprintf( __( 'Please contact your host to increase this value to at least <code>24M</code> (current value: <code>%dM</code>).', 'webseo' ), absint( wp_convert_hr_to_bytes( $upload_max_filesize ) / 1024 / 1024 ) ),
 					);
 				}
 
 				if ( wp_convert_hr_to_bytes( $post_max_size ) / 1024 / 1024 < 23 ) {
 					$requirements[] = array(
-						'title' => __( 'PHP post max size is too low.', 'wp-seopress' ),
-						'desc'  => /* translators: %s: "post max size" */ sprintf( __( 'Please contact your host to increase this value to at least <code>24M</code> (current value: <code>%dM</code>).', 'wp-seopress' ), absint( wp_convert_hr_to_bytes( $post_max_size ) / 1024 / 1024 ) ),
+						'title' => __( 'PHP post max size is too low.', 'webseo' ),
+						'desc'  => /* translators: %s: "post max size" */ sprintf( __( 'Please contact your host to increase this value to at least <code>24M</code> (current value: <code>%dM</code>).', 'webseo' ), absint( wp_convert_hr_to_bytes( $post_max_size ) / 1024 / 1024 ) ),
 					);
 				}
 
 				if ( wp_convert_hr_to_bytes( $memory_limit ) / 1024 / 1024 < 256 ) {
 					$requirements[] = array(
-						'title' => __( 'PHP memory limit is too low.', 'wp-seopress' ),
-						'desc'  => /* translators: %s: "memory limit" */ sprintf( __( 'Please contact your host to increase this value to at least <code>256M</code> (current value: <code>%dM</code>).', 'wp-seopress' ), absint( wp_convert_hr_to_bytes( $memory_limit ) / 1024 / 1024 ) ),
+						'title' => __( 'PHP memory limit is too low.', 'webseo' ),
+						'desc'  => /* translators: %s: "memory limit" */ sprintf( __( 'Please contact your host to increase this value to at least <code>256M</code> (current value: <code>%dM</code>).', 'webseo' ), absint( wp_convert_hr_to_bytes( $memory_limit ) / 1024 / 1024 ) ),
 					);
 				}
 			}
 
 			if ( ! empty( $requirements ) ) {
 				?>
-					<h3><?php esc_attr_e( 'Requirements', 'wp-seopress' ); ?></h3>
-					<p><?php esc_attr_e( 'We have detected that your server configuration may pose problems for running WordPress and our plugins.', 'wp-seopress' ); ?></p>
+					<h3><?php esc_attr_e( 'Requirements', 'webseo' ); ?></h3>
+					<p><?php esc_attr_e( 'We have detected that your server configuration may pose problems for running WordPress and our plugins.', 'webseo' ); ?></p>
 
 					<?php foreach ( $requirements as $key => $value ) { ?>
 						<div class="seopress-notice is-warning">
@@ -521,7 +521,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 			}
 			?>
 
-			<a href="<?php echo esc_url( $this->get_next_step_link() ); ?>" class="btnPrimary btn btnNext"><?php esc_html_e( 'Here we go!', 'wp-seopress' ); ?></a>
+			<a href="<?php echo esc_url( $this->get_next_step_link() ); ?>" class="btnPrimary btn btnNext"><?php esc_html_e( 'Here we go!', 'webseo' ); ?></a>
 		</div>
 	</div>
 		<?php
@@ -533,15 +533,15 @@ class SEOPRESS_Admin_Setup_Wizard {
 	public function seopress_setup_import_settings() {
 		?>
 		<div class="seopress-setup-content seopress-option">
-			<h1><?php esc_attr_e( 'Migration', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_attr_e( 'Migration', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
 			<div class="seopress-tab active">
 				<form method="post">
-					<h2><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'Migrate your SEO metadata to %s', 'wp-seopress' ), esc_html( $this->seo_title ) ); ?></h2>
+					<h2><?php /* translators: %s default: SEOPress */ printf( esc_html__( 'Migrate your SEO metadata to %s', 'webseo' ), esc_html( $this->seo_title ) ); ?></h2>
 
-					<p class="store-setup intro"><?php esc_html_e( 'The first step is to import your previous post and term metadata from other plugins to keep your SEO.', 'wp-seopress' ); ?></p>
+					<p class="store-setup intro"><?php esc_html_e( 'The first step is to import your previous post and term metadata from other plugins to keep your SEO.', 'webseo' ); ?></p>
 
 					<?php
 					$plugins = array(
@@ -639,7 +639,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 					if ( ! empty( $active_seo_plugins ) ) {
 						?>
 						<div class="seopress-notice is-error">
-							<p><?php echo wp_kses_post( __( 'One ore more <strong>SEO plugins</strong> are enabled on your site, please deactivate them to avoid any conflicts:', 'wp-seopress' ) ); ?></p>
+							<p><?php echo wp_kses_post( __( 'One ore more <strong>SEO plugins</strong> are enabled on your site, please deactivate them to avoid any conflicts:', 'webseo' ) ); ?></p>
 							<ul>
 								<?php
 								foreach ( $active_seo_plugins['name'] as $key => $value ) {
@@ -656,7 +656,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 					<fieldset class="seopress-import-tools-wrapper" role="group" aria-labelledby="import-tools-legend">
 						<div class="seopress-notice">
-							<legend id="import-tools-legend"><?php esc_attr_e( 'Select an SEO plugin to migrate from (you don\'t have to enable the selected one to run the import):', 'wp-seopress' ); ?></legend>
+							<legend id="import-tools-legend"><?php esc_attr_e( 'Select an SEO plugin to migrate from (you don\'t have to enable the selected one to run the import):', 'webseo' ); ?></legend>
 						</div>
 						<div class="seopress-import-tools" role="radiogroup" aria-labelledby="import-tools-legend">
 							<?php
@@ -671,7 +671,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 										<label for="<?php echo esc_attr( $plugin ); ?>-migration-tool" tabindex="0">
 											<input type="radio" id="<?php echo esc_attr( $plugin ); ?>-migration-tool" name="select-wizard-import" value="<?php echo esc_attr( $plugin ); ?>-migration-tool"
 											aria-describedby="<?php echo esc_attr( $plugin ); ?>-description"
-											aria-label="<?php echo /* translators: %s: "SEO plugin name" */ esc_attr( sprintf( __( 'Select %s for migration', 'wp-seopress' ), $detail['name'] ) ); ?>"
+											aria-label="<?php echo /* translators: %s: "SEO plugin name" */ esc_attr( sprintf( __( 'Select %s for migration', 'webseo' ), $detail['name'] ) ); ?>"
 										<?php
 										if ( ! empty( $active_seo_plugins ) && in_array( $detail['slug'], $active_seo_plugins['slug'], true ) ) {
 											echo 'checked';
@@ -683,7 +683,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 											<?php endif; ?>
 											<span><?php echo esc_html( $detail['name'] ); ?></span>
 										</label>
-										<p id="<?php echo esc_attr( $plugin ); ?>-description" class="screen-reader-text"><?php echo /* translators: %s: "SEO plugin name" */ wp_kses_post( sprintf( __( 'Import metadata from %s, including titles and meta descriptions.', 'wp-seopress' ), esc_html( $detail['name'] ) ) ); ?></p>
+										<p id="<?php echo esc_attr( $plugin ); ?>-description" class="screen-reader-text"><?php echo /* translators: %s: "SEO plugin name" */ wp_kses_post( sprintf( __( 'Import metadata from %s, including titles and meta descriptions.', 'webseo' ), esc_html( $detail['name'] ) ) ); ?></p>
 									</div>
 								<?php
 							}
@@ -705,13 +705,13 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 					<hr>
 
-					<p class="store-setup"><?php esc_html_e( 'No data to migrate? Click "Next step" button!', 'wp-seopress' ); ?></p>
+					<p class="store-setup"><?php esc_html_e( 'No data to migrate? Click "Next step" button!', 'webseo' ); ?></p>
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btnPrimary btn btnNext"
-							value="<?php esc_attr_e( 'Next step', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Next step', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Next step', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Next step', 'webseo' ); ?>
 						</button>
 
 						<?php wp_nonce_field( $this->nonce_action ); ?>
@@ -753,103 +753,103 @@ class SEOPRESS_Admin_Setup_Wizard {
 		?>
 
 		<div class="seopress-setup-content seopress-option">
-			<h1><?php esc_html_e( 'Your site', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_html_e( 'Your site', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
 			<div class="seopress-tab active">
 
 				<form method="post">
-					<h2><?php esc_html_e( 'Tell us more about your site', 'wp-seopress' ); ?></h2>
-					<p><?php esc_html_e( 'To build title tags and knowledge graph for Google, you need to fill out the fields below to configure the general settings.', 'wp-seopress' ); ?>
+					<h2><?php esc_html_e( 'Tell us more about your site', 'webseo' ); ?></h2>
+					<p><?php esc_html_e( 'To build title tags and knowledge graph for Google, you need to fill out the fields below to configure the general settings.', 'webseo' ); ?>
 					</p>
 
 					<p>
-						<label for="site_title"><?php esc_html_e( 'Site title', 'wp-seopress' ); ?></label>
+						<label for="site_title"><?php esc_html_e( 'Site title', 'webseo' ); ?></label>
 						<input type="text" id="site_title" class="location-input" name="site_title"
-							placeholder="<?php esc_html_e( 'e.g. My super website', 'wp-seopress' ); ?>"
+							placeholder="<?php esc_html_e( 'e.g. My super website', 'webseo' ); ?>"
 							required value="<?php echo esc_html( $site_title ); ?>" />
 					</p>
 
 					<p class="description">
-						<?php echo wp_kses_post( __( 'The site title will be used by the dynamic variable <strong>%%sitetitle%%</strong> in your title and meta description templates.', 'wp-seopress' ) ); ?>
+						<?php echo wp_kses_post( __( 'The site title will be used by the dynamic variable <strong>%%sitetitle%%</strong> in your title and meta description templates.', 'webseo' ) ); ?>
 					</p>
 
 					<p>
-						<label for="alt_site_title"><?php esc_html_e( 'Alternative site title', 'wp-seopress' ); ?></label>
-						<input type="text" id="alt_site_title" class="location-input" name="alt_site_title" placeholder="<?php esc_html_e( 'e.g. My alternative site title', 'wp-seopress' ); ?>" value="<?php echo esc_attr( $alt_site_title ); ?>" />
+						<label for="alt_site_title"><?php esc_html_e( 'Alternative site title', 'webseo' ); ?></label>
+						<input type="text" id="alt_site_title" class="location-input" name="alt_site_title" placeholder="<?php esc_html_e( 'e.g. My alternative site title', 'webseo' ); ?>" value="<?php echo esc_attr( $alt_site_title ); ?>" />
 					</p>
 
-					<p class="description"><?php /* translators: %s documentation URL  */ echo wp_kses_post( sprintf( __( 'The alternate name of the website (for example, if there\'s a commonly recognized acronym or shorter name for your site), if applicable. Make sure the name meets the <a href="%s" target="_blank">content guidelines</a><span class="dashicons dashicons-external"></span>.', 'wp-seopress' ), esc_url( $docs['titles']['alt_title'] ) ) ); ?></p>
+					<p class="description"><?php /* translators: %s documentation URL  */ echo wp_kses_post( sprintf( __( 'The alternate name of the website (for example, if there\'s a commonly recognized acronym or shorter name for your site), if applicable. Make sure the name meets the <a href="%s" target="_blank">content guidelines</a><span class="dashicons dashicons-external"></span>.', 'webseo' ), esc_url( $docs['titles']['alt_title'] ) ) ); ?></p>
 
 					<p>
-						<label for="knowledge_type"><?php esc_html_e( 'Person or organization', 'wp-seopress' ); ?></label>
+						<label for="knowledge_type"><?php esc_html_e( 'Person or organization', 'webseo' ); ?></label>
 						<?php
-						echo '<select id="knowledge_type" name="knowledge_type" data-placeholder="' . esc_attr__( 'Choose a knowledge type', 'wp-seopress' ) . '"	class="location-input dropdown">';
+						echo '<select id="knowledge_type" name="knowledge_type" data-placeholder="' . esc_attr__( 'Choose a knowledge type', 'webseo' ) . '"	class="location-input dropdown">';
 						echo ' <option ';
 						if ( 'None' === $knowledge_type ) {
 							echo 'selected="selected"';
 						}
-						echo ' value="none">' . esc_html__( 'None (will disable this feature)', 'wp-seopress' ) . '</option>';
+						echo ' value="none">' . esc_html__( 'None (will disable this feature)', 'webseo' ) . '</option>';
 						echo ' <option ';
 						if ( 'Person' === $knowledge_type ) {
 							echo 'selected="selected"';
 						}
-						echo ' value="Person">' . esc_html__( 'Person', 'wp-seopress' ) . '</option>';
+						echo ' value="Person">' . esc_html__( 'Person', 'webseo' ) . '</option>';
 						echo '<option ';
 						if ( 'Organization' === $knowledge_type ) {
 							echo 'selected="selected"';
 						}
-						echo ' value="Organization">' . esc_html__( 'Organization', 'wp-seopress' ) . '</option>';
+						echo ' value="Organization">' . esc_html__( 'Organization', 'webseo' ) . '</option>';
 						echo '</select>';
 						?>
 					</p>
 
 					<p class="description">
-						<?php echo wp_kses_post( __( 'Choose between <strong>"Organization"</strong> (for companies, associations, organizations), or <strong>"Personal"</strong> for a personal site, to help Google better understand your type of website and generate a Knowledge Graph panel.', 'wp-seopress' ) ); ?>
+						<?php echo wp_kses_post( __( 'Choose between <strong>"Organization"</strong> (for companies, associations, organizations), or <strong>"Personal"</strong> for a personal site, to help Google better understand your type of website and generate a Knowledge Graph panel.', 'webseo' ) ); ?>
 					</p>
 
 					<p>
-						<label for="knowledge_name"><?php esc_html_e( 'Your name/organization', 'wp-seopress' ); ?></label>
+						<label for="knowledge_name"><?php esc_html_e( 'Your name/organization', 'webseo' ); ?></label>
 						<input type="text" id="knowledge_name" class="location-input" name="knowledge_name"
-							placeholder="<?php esc_html_e( 'e.g. My Company Name', 'wp-seopress' ); ?>"
+							placeholder="<?php esc_html_e( 'e.g. My Company Name', 'webseo' ); ?>"
 							value="<?php echo esc_html( $knowledge_name ); ?>" />
 					</p>
 
 					<p>
-						<label for="knowledge_img_meta"><?php esc_html_e( 'Your photo/organization logo', 'wp-seopress' ); ?></label>
+						<label for="knowledge_img_meta"><?php esc_html_e( 'Your photo/organization logo', 'webseo' ); ?></label>
 						<input type="text" id="knowledge_img_meta" class="location-input" name="knowledge_img"
-						placeholder="<?php esc_html_e( 'e.g. https://www.example.com/logo.png', 'wp-seopress' ); ?>"
+						placeholder="<?php esc_html_e( 'e.g. https://www.example.com/logo.png', 'webseo' ); ?>"
 						value="<?php echo esc_url( $knowledge_img ); ?>" />
 
-						<input id="knowledge_img_upload" class="btn btnSecondary" type="button" value="<?php esc_attr_e( 'Upload an Image', 'wp-seopress' ); ?>" />
+						<input id="knowledge_img_upload" class="btn btnSecondary" type="button" value="<?php esc_attr_e( 'Upload an Image', 'webseo' ); ?>" />
 					</p>
 
 					<p class="description">
-						<?php esc_html_e( 'JPG, PNG, WebP and GIF allowed. The minimum allowed image dimension is 200 x 200 pixels.', 'wp-seopress' ); ?><br>
-						<?php esc_html_e( 'The size of the image file must not exceed 8 MB. Use images that are at least 1200 x 630 pixels for the best display on high resolution devices.', 'wp-seopress' ); ?><br>
-						<?php esc_html_e( 'At the minimum, you should use images that are 600 x 315 pixels to display link page posts with larger images.', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'JPG, PNG, WebP and GIF allowed. The minimum allowed image dimension is 200 x 200 pixels.', 'webseo' ); ?><br>
+						<?php esc_html_e( 'The size of the image file must not exceed 8 MB. Use images that are at least 1200 x 630 pixels for the best display on high resolution devices.', 'webseo' ); ?><br>
+						<?php esc_html_e( 'At the minimum, you should use images that are 600 x 315 pixels to display link page posts with larger images.', 'webseo' ); ?>
 					</p>
 
 					<p>
-						<label for="knowledge_phone_meta"><?php esc_html_e( 'Organization‘s phone number (only for Organizations)', 'wp-seopress' ); ?></label>
+						<label for="knowledge_phone_meta"><?php esc_html_e( 'Organization‘s phone number (only for Organizations)', 'webseo' ); ?></label>
 						<input type="text" id="knowledge_phone_meta" class="location-input" name="knowledge_phone"
-						placeholder="<?php esc_html_e( 'e.g. +33123456789 (internationalized version required)', 'wp-seopress' ); ?>"
+						placeholder="<?php esc_html_e( 'e.g. +33123456789 (internationalized version required)', 'webseo' ); ?>"
 						value="<?php echo esc_html( $knowledge_phone ); ?>" />
 					</p>
 
 					<p>
-						<label for="knowledge_tax_id_meta"><?php esc_html_e( 'VAT ID (only for Organizations)', 'wp-seopress' ); ?></label>
+						<label for="knowledge_tax_id_meta"><?php esc_html_e( 'VAT ID (only for Organizations)', 'webseo' ); ?></label>
 						<input type="text" id="knowledge_tax_id_meta" class="location-input" name="knowledge_tax_id"
-						placeholder="<?php esc_html_e( 'e.g. FR12345678901', 'wp-seopress' ); ?>"
+						placeholder="<?php esc_html_e( 'e.g. FR12345678901', 'webseo' ); ?>"
 						value="<?php echo esc_html( $knowledge_tax_id ); ?>" />
 					</p>
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btnPrimary btn btnNext"
-							value="<?php esc_attr_e( 'Save & Continue', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Save & Continue', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Save & Continue', 'webseo' ); ?>
 						</button>
 						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
@@ -906,43 +906,43 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 		$social_media_accounts = array(
 			'knowledge_fb'    => array(
-				'label'       => __( 'Facebook page URL', 'wp-seopress' ),
-				'placeholder' => __( 'e.g. https://facebook.com/my-page-url', 'wp-seopress' ),
+				'label'       => __( 'Facebook page URL', 'webseo' ),
+				'placeholder' => __( 'e.g. https://facebook.com/my-page-url', 'webseo' ),
 				'value'       => esc_url( $knowledge_fb ),
 				'icon'        => 'facebook.svg',
 				'alt'         => 'Facebook',
 			),
 			'knowledge_tw'    => array(
-				'label'       => __( 'X Username', 'wp-seopress' ),
-				'placeholder' => __( 'e.g. @my_x_account', 'wp-seopress' ),
+				'label'       => __( 'X Username', 'webseo' ),
+				'placeholder' => __( 'e.g. @my_x_account', 'webseo' ),
 				'value'       => esc_url( $knowledge_tw ),
 				'icon'        => 'x.svg',
 				'alt'         => 'X',
 			),
 			'knowledge_pin'   => array(
-				'label'       => __( 'Pinterest URL', 'wp-seopress' ),
-				'placeholder' => __( 'e.g. https://pinterest.com/my-page-url/', 'wp-seopress' ),
+				'label'       => __( 'Pinterest URL', 'webseo' ),
+				'placeholder' => __( 'e.g. https://pinterest.com/my-page-url/', 'webseo' ),
 				'value'       => esc_url( $knowledge_pin ),
 				'icon'        => 'pinterest.svg',
 				'alt'         => 'Pinterest',
 			),
 			'knowledge_insta' => array(
-				'label'       => __( 'Instagram URL', 'wp-seopress' ),
-				'placeholder' => __( 'e.g. https://www.instagram.com/my-page-url/', 'wp-seopress' ),
+				'label'       => __( 'Instagram URL', 'webseo' ),
+				'placeholder' => __( 'e.g. https://www.instagram.com/my-page-url/', 'webseo' ),
 				'value'       => esc_url( $knowledge_insta ),
 				'icon'        => 'instagram.svg',
 				'alt'         => 'Instagram',
 			),
 			'knowledge_yt'    => array(
-				'label'       => __( 'YouTube URL', 'wp-seopress' ),
-				'placeholder' => __( 'e.g. https://www.youtube.com/my-channel-url', 'wp-seopress' ),
+				'label'       => __( 'YouTube URL', 'webseo' ),
+				'placeholder' => __( 'e.g. https://www.youtube.com/my-channel-url', 'webseo' ),
 				'value'       => esc_url( $knowledge_yt ),
 				'icon'        => 'youtube.svg',
 				'alt'         => 'YouTube',
 			),
 			'knowledge_li'    => array(
-				'label'       => __( 'LinkedIn URL', 'wp-seopress' ),
-				'placeholder' => __( 'e.g. http://linkedin.com/company/my-company-url/', 'wp-seopress' ),
+				'label'       => __( 'LinkedIn URL', 'webseo' ),
+				'placeholder' => __( 'e.g. http://linkedin.com/company/my-company-url/', 'webseo' ),
 				'value'       => esc_url( $knowledge_li ),
 				'icon'        => 'linkedin.svg',
 				'alt'         => 'LinkedIn',
@@ -950,16 +950,16 @@ class SEOPRESS_Admin_Setup_Wizard {
 		);
 		?>
 		<div class="seopress-setup-content seopress-option">
-			<h1><?php esc_html_e( 'Your site', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_html_e( 'Your site', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
 			<div class="seopress-tab active">
 
 				<form method="post">
-					<h2><?php esc_html_e( 'Link your site to your social networks', 'wp-seopress' ); ?></h2>
+					<h2><?php esc_html_e( 'Link your site to your social networks', 'webseo' ); ?></h2>
 
-					<p><?php esc_html_e( 'Fill in your social accounts for search engines.', 'wp-seopress' ); ?>
+					<p><?php esc_html_e( 'Fill in your social accounts for search engines.', 'webseo' ); ?>
 					</p>
 
 					<?php
@@ -980,18 +980,18 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 					<p>
 						<span class="seopress-social-icon seopress-d-flex seopress-align-items-center">
-							<label for="knowledge_extra"><?php esc_html_e( 'Additional accounts', 'wp-seopress' ); ?></label>
+							<label for="knowledge_extra"><?php esc_html_e( 'Additional accounts', 'webseo' ); ?></label>
 						</span>
 						<textarea id="knowledge_extra" class="location-input" name="knowledge_extra" rows="8"
-						placeholder="<?php esc_html_e( 'Enter 1 URL per line (e.g. https://example.com/my-profile)', 'wp-seopress' ); ?>"
-						aria-label="<?php esc_html_e( 'Enter 1 URL per line (e.g. https://example.com/my-profile)', 'wp-seopress' ); ?>"><?php echo esc_html( $knowledge_extra ); ?></textarea>
+						placeholder="<?php esc_html_e( 'Enter 1 URL per line (e.g. https://example.com/my-profile)', 'webseo' ); ?>"
+						aria-label="<?php esc_html_e( 'Enter 1 URL per line (e.g. https://example.com/my-profile)', 'webseo' ); ?>"><?php echo esc_html( $knowledge_extra ); ?></textarea>
 					</p>
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btnPrimary btn btnNext"
-							value="<?php esc_attr_e( 'Save & Continue', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Save & Continue', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Save & Continue', 'webseo' ); ?>
 						</button>
 						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
@@ -1034,7 +1034,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 		?>
 
 		<div class="seopress-setup-content seopress-option">
-			<h1><?php esc_html_e( 'Indexing', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_html_e( 'Indexing', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
@@ -1046,12 +1046,12 @@ class SEOPRESS_Admin_Setup_Wizard {
 					if ( ! empty( $post_types ) ) {
 						?>
 					<h2>
-						<?php esc_html_e( 'For which single post types, should indexing be disabled?', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'For which single post types, should indexing be disabled?', 'webseo' ); ?>
 					</h2>
 
 					<div class="seopress-notice">
-						<p><?php echo wp_kses_post( __( 'Custom post types are a content type in WordPress. <strong>Post</strong> and <strong>Page</strong> are the <strong>default post types</strong>.', 'wp-seopress' ) ); ?></p>
-						<p><?php echo wp_kses_post( __( 'You can create your own type of content like "product" or "business": these are <strong>custom post types</strong>.', 'wp-seopress' ) ); ?></p>
+						<p><?php echo wp_kses_post( __( 'Custom post types are a content type in WordPress. <strong>Post</strong> and <strong>Page</strong> are the <strong>default post types</strong>.', 'webseo' ) ); ?></p>
+						<p><?php echo wp_kses_post( __( 'You can create your own type of content like "product" or "business": these are <strong>custom post types</strong>.', 'webseo' ) ); ?></p>
 					</div>
 
 						<?php
@@ -1077,7 +1077,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 											}
 											?>
 										value="1"/>
-										<?php echo wp_kses_post( __( 'Do not display this single post type in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+										<?php echo wp_kses_post( __( 'Do not display this single post type in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 									</label>
 								</li>
 							</ul>
@@ -1089,9 +1089,9 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btnPrimary btn btnNext"
-							value="<?php esc_attr_e( 'Save & Continue', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Save & Continue', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Save & Continue', 'webseo' ); ?>
 						</button>
 
 						<?php wp_nonce_field( $this->nonce_action ); ?>
@@ -1136,7 +1136,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 		?>
 
 		<div class="seopress-setup-content seopress-option">
-			<h1><?php esc_html_e( 'Indexing', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_html_e( 'Indexing', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
@@ -1155,12 +1155,12 @@ class SEOPRESS_Admin_Setup_Wizard {
 						if ( ! empty( $cpt ) ) {
 							?>
 								<h2>
-									<?php esc_html_e( 'For which post type archives, should indexing be disabled?', 'wp-seopress' ); ?>
+									<?php esc_html_e( 'For which post type archives, should indexing be disabled?', 'webseo' ); ?>
 								</h2>
 
 								<div class="seopress-notice">
-									<p><?php echo wp_kses_post( __( '<strong>Archive pages</strong> are automatically generated by WordPress. They group specific content such as your latest articles, a product category or your content by author or date.', 'wp-seopress' ) ); ?></p>
-									<p><?php echo wp_kses_post( __( 'Below the list of your <strong>post type archives</strong>:', 'wp-seopress' ) ); ?></p>
+									<p><?php echo wp_kses_post( __( '<strong>Archive pages</strong> are automatically generated by WordPress. They group specific content such as your latest articles, a product category or your content by author or date.', 'webseo' ) ); ?></p>
+									<p><?php echo wp_kses_post( __( 'Below the list of your <strong>post type archives</strong>:', 'webseo' ) ); ?></p>
 								</div>
 								
 								<?php
@@ -1187,7 +1187,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 											<label
 												for="seopress_titles_archive_cpt_noindex[<?php echo esc_html( $seopress_cpt_key ); ?>]">
 												
-												<?php echo wp_kses_post( __( 'Do not display this post type archive in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+												<?php echo wp_kses_post( __( 'Do not display this post type archive in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 											</label>
 										</li>
 									</ul>
@@ -1197,7 +1197,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 						if ( empty( $cpt ) ) {
 							?>
-							<p><?php esc_html_e( 'You don’t have any post type archives, you can continue to the next step.', 'wp-seopress' ); ?></p>
+							<p><?php esc_html_e( 'You don’t have any post type archives, you can continue to the next step.', 'webseo' ); ?></p>
 							<?php
 						}
 					}
@@ -1208,12 +1208,12 @@ class SEOPRESS_Admin_Setup_Wizard {
 					?>
 					
 					<h2>
-						<?php esc_html_e( 'For which other archives, should indexing be disabled?', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'For which other archives, should indexing be disabled?', 'webseo' ); ?>
 					</h2>
 
-					<h3><?php esc_html_e( 'Date archives', 'wp-seopress' ); ?></h3>
-					<p><?php echo wp_kses_post( __( 'Date archives are automatically generated by WordPress. They group specific content by date.', 'wp-seopress' ) ); ?></p>
-					<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/2025/01/01/</strong>', 'wp-seopress' ) ); ?></p>
+					<h3><?php esc_html_e( 'Date archives', 'webseo' ); ?></h3>
+					<p><?php echo wp_kses_post( __( 'Date archives are automatically generated by WordPress. They group specific content by date.', 'webseo' ) ); ?></p>
+					<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/2025/01/01/</strong>', 'webseo' ) ); ?></p>
 
 					<ul>
 						<li class="seopress-wizard-service-item">
@@ -1228,17 +1228,17 @@ class SEOPRESS_Admin_Setup_Wizard {
 								?>
 							value="1"/>	
 							<label for="seopress_titles_option_name[seopress_titles_archives_date_noindex]">
-								<?php echo wp_kses_post( __( 'Do not display date archives in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+								<?php echo wp_kses_post( __( 'Do not display date archives in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 							</label>
 						</li>
 					</ul>
 
 					<hr>
-					<h3><?php esc_html_e( 'Search archives', 'wp-seopress' ); ?></h3>
+					<h3><?php esc_html_e( 'Search archives', 'webseo' ); ?></h3>
 					<p>
-						<?php echo wp_kses_post( __( 'Search archives are automatically generated by WordPress. They group specific content by search term.', 'wp-seopress' ) ); ?>
+						<?php echo wp_kses_post( __( 'Search archives are automatically generated by WordPress. They group specific content by search term.', 'webseo' ) ); ?>
 					</p>
-					<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/?s=keyword</strong>', 'wp-seopress' ) ); ?></p>
+					<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/?s=keyword</strong>', 'webseo' ) ); ?></p>
 					<ul>
 						<li class="seopress-wizard-service-item">
 							<input
@@ -1252,16 +1252,16 @@ class SEOPRESS_Admin_Setup_Wizard {
 								?>
 							value="1"/>
 							<label for="seopress_titles_option_name[seopress_titles_archives_search_title_noindex]">
-								<?php echo wp_kses_post( __( 'Do not display search archives in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+								<?php echo wp_kses_post( __( 'Do not display search archives in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 							</label>
 						</li>
 					</ul>
 
 					<hr>
-					<h3><?php esc_html_e( 'Author archives', 'wp-seopress' ); ?></h3>
-					<p><?php echo wp_kses_post( __( 'Author archives are automatically generated by WordPress. They group specific content by author.', 'wp-seopress' ) ); ?></p>
-					<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/author/john-doe/</strong>', 'wp-seopress' ) ); ?></p>
-					<p><?php esc_html_e( 'You only have one author on your site? Check this option to avoid duplicate content.', 'wp-seopress' ); ?></p>
+					<h3><?php esc_html_e( 'Author archives', 'webseo' ); ?></h3>
+					<p><?php echo wp_kses_post( __( 'Author archives are automatically generated by WordPress. They group specific content by author.', 'webseo' ) ); ?></p>
+					<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/author/john-doe/</strong>', 'webseo' ) ); ?></p>
+					<p><?php esc_html_e( 'You only have one author on your site? Check this option to avoid duplicate content.', 'webseo' ); ?></p>
 					<ul>
 						<li class="seopress-wizard-service-item">
 							<input
@@ -1275,16 +1275,16 @@ class SEOPRESS_Admin_Setup_Wizard {
 								?>
 							value="1"/>
 							<label for="seopress_titles_option_name[seopress_titles_archives_author_noindex]">
-								<?php echo wp_kses_post( __( 'Do not display author archives in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+								<?php echo wp_kses_post( __( 'Do not display author archives in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 							</label>
 						</li>
 					</ul>
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btnPrimary btn btnNext"
-							value="<?php esc_attr_e( 'Save & Continue', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Save & Continue', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Save & Continue', 'webseo' ); ?>
 						</button>
 
 						<?php wp_nonce_field( $this->nonce_action ); ?>
@@ -1354,7 +1354,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 		?>
 
 		<div class="seopress-setup-content seopress-option">
-			<h1><?php esc_html_e( 'Indexing', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_html_e( 'Indexing', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
@@ -1368,12 +1368,12 @@ class SEOPRESS_Admin_Setup_Wizard {
 					if ( ! empty( $taxonomies ) ) {
 						?>
 					<h2>
-						<?php esc_html_e( 'For which taxonomy archives, should indexing be disabled?', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'For which taxonomy archives, should indexing be disabled?', 'webseo' ); ?>
 					</h2>
 
 					<div class="seopress-notice">
-						<p><?php echo wp_kses_post( __( '<strong>Taxonomies</strong> are the method of classifying content and data in WordPress. When you use a taxonomy you’re grouping similar things together. The taxonomy refers to the sum of those groups.', 'wp-seopress' ) ); ?></p>
-						<p><?php echo wp_kses_post( __( '<strong>Categories</strong> and <strong>Tags</strong> are the default taxonomies. You can add your own taxonomies like "product categories": these are called <strong>custom taxonomies</strong>.', 'wp-seopress' ) ); ?></p>
+						<p><?php echo wp_kses_post( __( '<strong>Taxonomies</strong> are the method of classifying content and data in WordPress. When you use a taxonomy you’re grouping similar things together. The taxonomy refers to the sum of those groups.', 'webseo' ) ); ?></p>
+						<p><?php echo wp_kses_post( __( '<strong>Categories</strong> and <strong>Tags</strong> are the default taxonomies. You can add your own taxonomies like "product categories": these are called <strong>custom taxonomies</strong>.', 'webseo' ) ); ?></p>
 					</div>
 
 					
@@ -1400,13 +1400,13 @@ class SEOPRESS_Admin_Setup_Wizard {
 											?>
 									value="1"/>
 									<label for="seopress_titles_tax_noindex[<?php echo esc_html( $seopress_tax_key ); ?>]">
-										<?php echo wp_kses_post( __( 'Do not display this taxonomy archive in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+										<?php echo wp_kses_post( __( 'Do not display this taxonomy archive in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 									</label>
 								</li>
 								<?php if ( $seopress_tax_key == 'post_tag' ) { ?>
 									<div class="seopress-notice is-warning is-inline">
 										<p>
-											<?php echo wp_kses_post( __( 'We do not recommend indexing <strong>tags</strong> which are, in the vast majority of cases, a source of duplicate content.', 'wp-seopress' ) ); ?>
+											<?php echo wp_kses_post( __( 'We do not recommend indexing <strong>tags</strong> which are, in the vast majority of cases, a source of duplicate content.', 'webseo' ) ); ?>
 										</p>
 									</div>
 								<?php } ?>
@@ -1419,9 +1419,9 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btnPrimary btn btnNext"
-							value="<?php esc_attr_e( 'Save & Continue', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Save & Continue', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Save & Continue', 'webseo' ); ?>
 						</button>
 
 						<?php wp_nonce_field( $this->nonce_action ); ?>
@@ -1471,14 +1471,14 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 		<div class="seopress-setup-content seopress-option">
 
-			<h1><?php esc_html_e( 'Advanced options', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_html_e( 'Advanced options', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
 			<div class="seopress-tab active">
-				<h2><?php esc_html_e( 'Almost done!', 'wp-seopress' ); ?></h2>
+				<h2><?php esc_html_e( 'Almost done!', 'webseo' ); ?></h2>
 
-				<p><?php esc_html_e( 'Final step before being ready to rank on search engines.', 'wp-seopress' ); ?></p>
+				<p><?php esc_html_e( 'Final step before being ready to rank on search engines.', 'webseo' ); ?></p>
 
 				<form method="post">
 					<ul>
@@ -1492,11 +1492,11 @@ class SEOPRESS_Admin_Setup_Wizard {
 								}
 								?>
 						value="1"/>
-								<?php esc_html_e( 'Redirect attachment pages to their file URL (https://www.example.com/my-image-file.jpg)', 'wp-seopress' ); ?>
+								<?php esc_html_e( 'Redirect attachment pages to their file URL (https://www.example.com/my-image-file.jpg)', 'webseo' ); ?>
 							</label>
 						</li>
 						<li class="description">
-							<?php /* translators: %s default: SEOPress */ printf( esc_html__( 'By default, %s redirects your Attachment pages to the parent post. Optimize this by redirecting the user directly to the URL of the media file.', 'wp-seopress' ), esc_html( $this->seo_title ) ); ?>
+							<?php /* translators: %s default: SEOPress */ printf( esc_html__( 'By default, %s redirects your Attachment pages to the parent post. Optimize this by redirecting the user directly to the URL of the media file.', 'webseo' ), esc_html( $this->seo_title ) ); ?>
 						</li>
 
 						<!-- Automatically set alt text on already inserted image -->
@@ -1509,11 +1509,11 @@ class SEOPRESS_Admin_Setup_Wizard {
 								}
 								?>
 						value="1"/>
-								<?php esc_html_e( 'Automatically set alt text on already inserted image', 'wp-seopress' ); ?>
+								<?php esc_html_e( 'Automatically set alt text on already inserted image', 'webseo' ); ?>
 							</label>
 						</li>
 						<li class="description">
-							<?php esc_html_e( 'By default, WordPress does not update image alt texts entered from the media library after they are inserted into the content of a post, page, or post type. By checking this box, this will be done when the page loads on the fly as long as this option remains active.', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'By default, WordPress does not update image alt texts entered from the media library after they are inserted into the content of a post, page, or post type. By checking this box, this will be done when the page loads on the fly as long as this option remains active.', 'webseo' ); ?>
 						</li>
 
 						<!-- Remove /category/ in URLs -->
@@ -1533,12 +1533,12 @@ class SEOPRESS_Admin_Setup_Wizard {
 								}
 
 								/* translators: %s permalink category base  */
-								echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'wp-seopress' ), esc_attr( $category_base ) ) );
+								echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'webseo' ), esc_attr( $category_base ) ) );
 								?>
 							</label>
 						</li>
 						<li class="description">
-							<?php /* translators: %s category base */ echo wp_kses_post( sprintf( __( 'Shorten your URLs by removing %s and improve your SEO.', 'wp-seopress' ), esc_attr( $category_base ) ) ); ?>
+							<?php /* translators: %s category base */ echo wp_kses_post( sprintf( __( 'Shorten your URLs by removing %s and improve your SEO.', 'webseo' ), esc_attr( $category_base ) ) ); ?>
 						</li>
 
 						<?php if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) { ?>
@@ -1563,21 +1563,21 @@ class SEOPRESS_Admin_Setup_Wizard {
 									}
 
 									/* translators: %s permalink category / product category base  */
-									echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'wp-seopress' ), esc_attr( $category_base ) ) );
+									echo wp_kses_post( sprintf( __( 'Remove <strong>%s</strong> in your permalinks', 'webseo' ), esc_attr( $category_base ) ) );
 									?>
 								</label>
 							</li>
 							<li class="description">
-								<?php /* translators: %s permalink category / product category base  */ echo wp_kses_post( sprintf( __( 'Shorten your URLs by removing %s and improve your SEO.', 'wp-seopress' ), esc_attr( $category_base ) ) ); ?>
+								<?php /* translators: %s permalink category / product category base  */ echo wp_kses_post( sprintf( __( 'Shorten your URLs by removing %s and improve your SEO.', 'webseo' ), esc_attr( $category_base ) ) ); ?>
 							</li>
 						<?php } ?>
 					</ul>
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btn btnPrimary btnNext"
-							value="<?php esc_attr_e( 'Save & Continue', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Save & Continue', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Save & Continue', 'webseo' ); ?>
 						</button>
 
 						<?php wp_nonce_field( $this->nonce_action ); ?>
@@ -1624,7 +1624,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 		<div class="seopress-setup-content seopress-option">
 
-			<h1><?php esc_html_e( 'Advanced options', 'wp-seopress' ); ?></h1>
+			<h1><?php esc_html_e( 'Advanced options', 'webseo' ); ?></h1>
 
 			<?php $this->setup_wizard_sub_steps(); ?>
 
@@ -1632,16 +1632,16 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 				<form method="post">
 					<h2>
-						<?php esc_html_e( 'Improve your workflow with the Universal SEO metabox', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'Improve your workflow with the Universal SEO metabox', 'webseo' ); ?>
 					</h2>
 
-					<p><?php esc_html_e( 'Edit your SEO metadata directly from your page or theme builder.', 'wp-seopress' ); ?></p>
+					<p><?php esc_html_e( 'Edit your SEO metadata directly from your page or theme builder.', 'webseo' ); ?></p>
 					<ul>
 						<!-- Universal SEO metabox overview -->
 						<?php if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' !== seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) { ?>
 							<li class="description">
-								<a class="wrap-yt-embed" href="https://www.youtube.com/watch?v=sf0ocG7vQMM" target="_blank" title="<?php esc_attr_e( 'Watch the universal SEO metabox overview video - Open in a new window', 'wp-seopress' ); ?>">
-									<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/yt-universal-metabox.webp' ); ?>" alt="<?php esc_attr_e( 'Universal SEO metabox video thumbnail', 'wp-seopress' ); ?>" width="500" />
+								<a class="wrap-yt-embed" href="https://www.youtube.com/watch?v=sf0ocG7vQMM" target="_blank" title="<?php esc_attr_e( 'Watch the universal SEO metabox overview video - Open in a new window', 'webseo' ); ?>">
+									<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/yt-universal-metabox.webp' ); ?>" alt="<?php esc_attr_e( 'Universal SEO metabox video thumbnail', 'webseo' ); ?>" width="500" />
 								</a>
 							</li>
 						<?php } ?>
@@ -1656,19 +1656,19 @@ class SEOPRESS_Admin_Setup_Wizard {
 								}
 								?>
 						value="1"/>
-								<?php esc_html_e( 'Yes, please enable the universal SEO metabox!', 'wp-seopress' ); ?>
+								<?php esc_html_e( 'Yes, please enable the universal SEO metabox!', 'webseo' ); ?>
 							</label>
 						</li>
 						<li class="description">
-							<?php esc_html_e( 'You can change this setting at anytime from SEO, Advanced settings page, Appearance tab.', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'You can change this setting at anytime from SEO, Advanced settings page, Appearance tab.', 'webseo' ); ?>
 						</li>
 					</ul>
 
 					<p class="seopress-setup-actions step">
 						<button type="submit" class="btn btnPrimary btnNext"
-							value="<?php esc_attr_e( 'Save & Continue', 'wp-seopress' ); ?>"
+							value="<?php esc_attr_e( 'Save & Continue', 'webseo' ); ?>"
 							name="save_step">
-							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
+							<?php esc_html_e( 'Save & Continue', 'webseo' ); ?>
 						</button>
 
 						<?php wp_nonce_field( $this->nonce_action ); ?>
@@ -1728,29 +1728,29 @@ class SEOPRESS_Admin_Setup_Wizard {
 			<div class="seopress-tab active">
 
 				<div class="final">
-					<h1>🎉 <?php esc_html_e( 'Congratulations!', 'wp-seopress' ); ?></h2>
-					<h2><?php esc_html_e( 'Your site is now ready for search engines.', 'wp-seopress' ); ?></h2>
-					<p><?php esc_html_e( 'We have automatically applied some SEO optimizations on your site to help you rank higher in search engines.', 'wp-seopress' ); ?></p>
+					<h1>🎉 <?php esc_html_e( 'Congratulations!', 'webseo' ); ?></h2>
+					<h2><?php esc_html_e( 'Your site is now ready for search engines.', 'webseo' ); ?></h2>
+					<p><?php esc_html_e( 'We have automatically applied some SEO optimizations on your site to help you rank higher in search engines.', 'webseo' ); ?></p>
 					<ul>
 						<li>
 							<span class="dashicons dashicons-yes-alt"></span>
-							<?php echo wp_kses_post( __( '<strong>IndexNow</strong> is enabled to improve your site indexing.', 'wp-seopress' ) ); ?>
+							<?php echo wp_kses_post( __( '<strong>IndexNow</strong> is enabled to improve your site indexing.', 'webseo' ) ); ?>
 						</li>
 						<li>
 							<span class="dashicons dashicons-yes-alt"></span>
-							<?php echo wp_kses_post( __( '<strong>Open Graph / Twitter card</strong> is enabled to improve your social media sharing.', 'wp-seopress' ) ); ?>
+							<?php echo wp_kses_post( __( '<strong>Open Graph / Twitter card</strong> is enabled to improve your social media sharing.', 'webseo' ) ); ?>
 						</li>
 						<li>
 							<span class="dashicons dashicons-yes-alt"></span>
-							<?php echo wp_kses_post( __( '<strong>Content Analysis</strong> is enabled to help you improve your content.', 'wp-seopress' ) ); ?>
+							<?php echo wp_kses_post( __( '<strong>Content Analysis</strong> is enabled to help you improve your content.', 'webseo' ) ); ?>
 						</li>
 						<li>
 							<span class="dashicons dashicons-yes-alt"></span>
-							<?php echo wp_kses_post( __( '<strong>XML sitemaps</strong> are enabled to improve Google\'s crawling of your site.', 'wp-seopress' ) ); ?>
+							<?php echo wp_kses_post( __( '<strong>XML sitemaps</strong> are enabled to improve Google\'s crawling of your site.', 'webseo' ) ); ?>
 						</li>
 						<li>
 							<span class="dashicons dashicons-yes-alt"></span>
-							<?php echo wp_kses_post( __( '<strong>Indexing</strong> configured for your post types, taxonomies, authors, dates, search, 404, etc.', 'wp-seopress' ) ); ?>
+							<?php echo wp_kses_post( __( '<strong>Indexing</strong> configured for your post types, taxonomies, authors, dates, search, 404, etc.', 'webseo' ) ); ?>
 						</li>
 					</ul>
 				</div>
@@ -1760,18 +1760,18 @@ class SEOPRESS_Admin_Setup_Wizard {
 
 					<li class="seopress-wizard-next-step-item">
 						<div class="seopress-wizard-next-step-description">
-							<p class="next-step-heading"><?php esc_html_e( 'Next step', 'wp-seopress' ); ?>
+							<p class="next-step-heading"><?php esc_html_e( 'Next step', 'webseo' ); ?>
 							</p>
-							<h3 class="next-step-description"><?php esc_html_e( 'Create your XML sitemaps', 'wp-seopress' ); ?>
+							<h3 class="next-step-description"><?php esc_html_e( 'Create your XML sitemaps', 'webseo' ); ?>
 							</h3>
-							<p class="next-step-extra-info"><?php esc_html_e( "Build custom XML sitemaps to improve Google's crawling of your site.", 'wp-seopress' ); ?>
+							<p class="next-step-extra-info"><?php esc_html_e( "Build custom XML sitemaps to improve Google's crawling of your site.", 'webseo' ); ?>
 							</p>
 						</div>
 						<div class="seopress-wizard-next-step-action">
 							<p class="seopress-setup-actions step">
 								<a class="btn btnPrimary"
                                                                   href="<?php echo esc_url( admin_url( 'admin.php?page=webseo-xml-sitemap' ) ); ?>">
-									<?php esc_html_e( 'Configure your XML sitemaps', 'wp-seopress' ); ?>
+									<?php esc_html_e( 'Configure your XML sitemaps', 'webseo' ); ?>
 								</a>
 							</p>
 						</div>
@@ -1788,16 +1788,16 @@ class SEOPRESS_Admin_Setup_Wizard {
 										<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/cover-seo-routine.jpg' ); ?>" alt="" width="106" height="150" />
 									</div>
 									<div>
-										<p class="next-step-heading"><?php esc_html_e( 'Subscribe for free', 'wp-seopress' ); ?></p>
-										<h3 class="next-step-description"><?php esc_html_e( 'SEO Success for WordPress with a Two-Hours-a-Week Routine. Free.', 'wp-seopress' ); ?></h3>
+										<p class="next-step-heading"><?php esc_html_e( 'Subscribe for free', 'webseo' ); ?></p>
+										<h3 class="next-step-description"><?php esc_html_e( 'SEO Success for WordPress with a Two-Hours-a-Week Routine. Free.', 'webseo' ); ?></h3>
 
 										<?php
 										$nl_pros = array(
-											__( 'Introducing your 2-hour-a-week SEO plan with SEOPress', 'wp-seopress' ),
-											__( 'Week 1: 2 Hours to Check SEO Progress and Issues', 'wp-seopress' ),
-											__( 'Week 2: 2 Hours to Create SEO Optimized Content', 'wp-seopress' ),
-											__( 'Week 3: 2 Hours to do On-Page Optimizations', 'wp-seopress' ),
-											__( 'Week 4: 2 Hours to do Off-Page Optimizations', 'wp-seopress' ),
+											__( 'Introducing your 2-hour-a-week SEO plan with SEOPress', 'webseo' ),
+											__( 'Week 1: 2 Hours to Check SEO Progress and Issues', 'webseo' ),
+											__( 'Week 2: 2 Hours to Create SEO Optimized Content', 'webseo' ),
+											__( 'Week 3: 2 Hours to do On-Page Optimizations', 'webseo' ),
+											__( 'Week 4: 2 Hours to do Off-Page Optimizations', 'webseo' ),
 										);
 										?>
 										<ul class="next-step-extra-info">
@@ -1814,20 +1814,20 @@ class SEOPRESS_Admin_Setup_Wizard {
 									<?php if ( ! isset( $_GET['sub_routine'] ) ) { ?>
 										<p class="seopress-setup-actions step">
 											<form method="post">
-												<input type="text" id="seopress_nl_routine" class="location-input" name="seopress_nl_routine" placeholder="<?php esc_html_e( 'Enter your email address', 'wp-seopress' ); ?>" value="<?php echo esc_html( $user_email ); ?>" />
+												<input type="text" id="seopress_nl_routine" class="location-input" name="seopress_nl_routine" placeholder="<?php esc_html_e( 'Enter your email address', 'webseo' ); ?>" value="<?php echo esc_html( $user_email ); ?>" />
 
-												<button id="seopress_nl_routine_submit" type="submit" class="btnPrimary btn" value="<?php esc_attr_e( 'Subscribe', 'wp-seopress' ); ?>" name="save_step">
-													<?php esc_html_e( 'Subscribe', 'wp-seopress' ); ?>
+												<button id="seopress_nl_routine_submit" type="submit" class="btnPrimary btn" value="<?php esc_attr_e( 'Subscribe', 'webseo' ); ?>" name="save_step">
+													<?php esc_html_e( 'Subscribe', 'webseo' ); ?>
 												</button>
 												<?php wp_nonce_field( $this->nonce_action ); ?>
 											</form>
 										</p>
 
 										<?php
-										/* translators: %s URL of our privacy policy  */ echo wp_kses_post( sprintf( __( 'I accept that SEOPress can store and use my email address in order to send me a newsletter. Read our <a href="%s" target="_blank" title="Open in a new window">privacy policy</a>.', 'wp-seopress' ), esc_url( 'https://www.seopress.org/privacy-policy/' ) ) );
+										/* translators: %s URL of our privacy policy  */ echo wp_kses_post( sprintf( __( 'I accept that SEOPress can store and use my email address in order to send me a newsletter. Read our <a href="%s" target="_blank" title="Open in a new window">privacy policy</a>.', 'webseo' ), esc_url( 'https://www.seopress.org/privacy-policy/' ) ) );
 									} elseif ( isset( $_GET['sub_routine'] ) && '1' === $_GET['sub_routine'] ) {
 										?>
-										<p style="font-size: 16px;font-weight: bold;"><?php esc_html_e( 'Thank you for your subscription!', 'wp-seopress' ); ?></p>
+										<p style="font-size: 16px;font-weight: bold;"><?php esc_html_e( 'Thank you for your subscription!', 'webseo' ); ?></p>
 									<?php } ?>
 								</div>
 							</div>

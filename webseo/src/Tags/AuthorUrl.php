@@ -20,7 +20,7 @@ class AuthorUrl implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Author URL', 'wp-seopress' );
+		return __( 'Author URL', 'webseo' );
 	}
 
 	/**

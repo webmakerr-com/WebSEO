@@ -25,8 +25,8 @@ function seopress_xml_sitemap_general_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable XML Sitemap', 'wp-seopress' ); ?>
-	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['sitemaps']['xml'] ), esc_attr__( 'Guide to enable XML Sitemaps - new window', 'wp-seopress' ) ) ); ?>
+	<?php esc_attr_e( 'Enable XML Sitemap', 'webseo' ); ?>
+	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['sitemaps']['xml'] ), esc_attr__( 'Guide to enable XML Sitemaps - new window', 'webseo' ) ) ); ?>
 </label>
 
 
@@ -54,13 +54,13 @@ function seopress_xml_sitemap_img_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable Image Sitemap (standard images, image galleries, featured image, WooCommerce product images)', 'wp-seopress' ); ?>
-	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['sitemaps']['image'] ), esc_attr__( 'Guide to enable XML image sitemap - new window', 'wp-seopress' ) ) ); ?>
+	<?php esc_attr_e( 'Enable Image Sitemap (standard images, image galleries, featured image, WooCommerce product images)', 'webseo' ); ?>
+	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['sitemaps']['image'] ), esc_attr__( 'Guide to enable XML image sitemap - new window', 'webseo' ) ) ); ?>
 </label>
 
 
 <p class="description">
-	<?php esc_attr_e( 'Images in XML sitemaps are visible only from the source code.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Images in XML sitemaps are visible only from the source code.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -85,7 +85,7 @@ function seopress_xml_sitemap_author_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable Author Sitemap', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Enable Author Sitemap', 'webseo' ); ?>
 </label>
 
 	<?php if ( '1' === $check ) { ?>
@@ -93,7 +93,7 @@ function seopress_xml_sitemap_author_enable_callback() {
 	<?php } ?>
 
 <p class="description">
-	<?php esc_attr_e( 'Make sure to enable author archive from SEO, titles and metas, archives tab.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Make sure to enable author archive from SEO, titles and metas, archives tab.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -120,8 +120,8 @@ function seopress_xml_sitemap_html_enable_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Enable HTML Sitemap', 'wp-seopress' ); ?>
-	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['sitemaps']['html'] ), esc_attr__( 'Guide to enable a HTML Sitemap - new window', 'wp-seopress' ) ) ); ?>
+	<?php esc_attr_e( 'Enable HTML Sitemap', 'webseo' ); ?>
+	<?php echo wp_kses_post( seopress_tooltip_link( esc_url( $docs['sitemaps']['html'] ), esc_attr__( 'Guide to enable a HTML Sitemap - new window', 'webseo' ) ) ); ?>
 </label>
 
 
@@ -171,13 +171,13 @@ function seopress_xml_sitemap_post_types_list_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Include', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Include', 'webseo' ); ?>
 	</label>
 
 		<?php if ( 'attachment' === $seopress_cpt_value->name ) { ?>
 	<div class="seopress-notice is-warning is-inline">
 		<p>
-			<?php echo wp_kses_post( __( 'You should never include <strong>attachment</strong> post type in your sitemap. Be careful if you checked this.', 'wp-seopress' ) ); ?>
+			<?php echo wp_kses_post( __( 'You should never include <strong>attachment</strong> post type in your sitemap. Be careful if you checked this.', 'webseo' ) ); ?>
 		</p>
 	</div>
 	<?php } ?>
@@ -231,7 +231,7 @@ function seopress_xml_sitemap_taxonomies_list_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Include', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Include', 'webseo' ); ?>
 	</label>
 
 		<?php
@@ -253,7 +253,7 @@ function seopress_xml_sitemap_html_mapping_callback() {
 	$check   = isset( $options['seopress_xml_sitemap_html_mapping'] ) ? $options['seopress_xml_sitemap_html_mapping'] : null;
 
 	printf(
-		'<input type="text" name="seopress_xml_sitemap_option_name[seopress_xml_sitemap_html_mapping]" placeholder="' . esc_html__( 'e.g. 2, 28, 68', 'wp-seopress' ) . '" aria-label="' . esc_html__( 'Enter a post, page or custom post type ID(s) to display the sitemap', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_xml_sitemap_option_name[seopress_xml_sitemap_html_mapping]" placeholder="' . esc_html__( 'e.g. 2, 28, 68', 'webseo' ) . '" aria-label="' . esc_html__( 'Enter a post, page or custom post type ID(s) to display the sitemap', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 }
@@ -266,7 +266,7 @@ function seopress_xml_sitemap_html_exclude_callback() {
 	$check   = isset( $options['seopress_xml_sitemap_html_exclude'] ) ? $options['seopress_xml_sitemap_html_exclude'] : null;
 
 	printf(
-		'<input type="text" name="seopress_xml_sitemap_option_name[seopress_xml_sitemap_html_exclude]" placeholder="' . esc_html__( 'e.g. 13, 8, 38', 'wp-seopress' ) . '" aria-label="' . esc_html__( 'Exclude some Posts, Pages, Custom Post Types or Terms IDs', 'wp-seopress' ) . '" value="%s"/>',
+		'<input type="text" name="seopress_xml_sitemap_option_name[seopress_xml_sitemap_html_exclude]" placeholder="' . esc_html__( 'e.g. 13, 8, 38', 'webseo' ) . '" aria-label="' . esc_html__( 'Exclude some Posts, Pages, Custom Post Types or Terms IDs', 'webseo' ) . '" value="%s"/>',
 		esc_html( $check )
 	);
 }
@@ -284,12 +284,12 @@ function seopress_xml_sitemap_html_order_callback() {
 	<option <?php if ( 'DESC' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="DESC"><?php esc_attr_e( 'DESC (descending order from highest to lowest values (3, 2, 1; c, b, a))', 'wp-seopress' ); ?>
+		value="DESC"><?php esc_attr_e( 'DESC (descending order from highest to lowest values (3, 2, 1; c, b, a))', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'ASC' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="ASC"><?php esc_attr_e( 'ASC (ascending order from lowest to highest values (1, 2, 3; a, b, c))', 'wp-seopress' ); ?>
+		value="ASC"><?php esc_attr_e( 'ASC (ascending order from lowest to highest values (1, 2, 3; a, b, c))', 'webseo' ); ?>
 	</option>
 </select>
 
@@ -313,27 +313,27 @@ function seopress_xml_sitemap_html_orderby_callback() {
 	<option <?php if ( 'date' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="date"><?php esc_attr_e( 'Default (date)', 'wp-seopress' ); ?>
+		value="date"><?php esc_attr_e( 'Default (date)', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'title' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="title"><?php esc_attr_e( 'Post Title', 'wp-seopress' ); ?>
+		value="title"><?php esc_attr_e( 'Post Title', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'modified' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="modified"><?php esc_attr_e( 'Modified date', 'wp-seopress' ); ?>
+		value="modified"><?php esc_attr_e( 'Modified date', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'ID' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="ID"><?php esc_attr_e( 'Post ID', 'wp-seopress' ); ?>
+		value="ID"><?php esc_attr_e( 'Post ID', 'webseo' ); ?>
 	</option>
 	<option <?php if ( 'menu_order' === $selected ) { ?>
 		selected="selected"
 		<?php } ?>
-		value="menu_order"><?php esc_attr_e( 'Menu order', 'wp-seopress' ); ?>
+		value="menu_order"><?php esc_attr_e( 'Menu order', 'webseo' ); ?>
 	</option>
 </select>
 
@@ -359,7 +359,7 @@ function seopress_xml_sitemap_html_date_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Disable date after each post, page, post type?', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Disable date after each post, page, post type?', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -384,7 +384,7 @@ function seopress_xml_sitemap_html_no_hierarchy_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Do not display posts and products by categories / product categories?', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Do not display posts and products by categories / product categories?', 'webseo' ); ?>
 </label>
 
 	<?php
@@ -409,14 +409,14 @@ function seopress_xml_sitemap_html_post_type_archive_callback() {
 	checked="yes"
 	<?php } ?>
 	value="1"/>
-	<?php esc_attr_e( 'Do not display post type archive links', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Do not display post type archive links', 'webseo' ); ?>
 </label>
 
 <p class="description">
 	<?php
 	echo wp_kses_post(
 		/* translators: %1$s is_archive, %2$s true */
-		sprintf( esc_attr__( 'Only post types registered with the %1$s argument set to %2$s will be displayed.', 'wp-seopress' ), '<code>is_archive</code>', '<code>true</code>' )
+		sprintf( esc_attr__( 'Only post types registered with the %1$s argument set to %2$s will be displayed.', 'webseo' ), '<code>is_archive</code>', '<code>true</code>' )
 	);
 	?>
 </p>

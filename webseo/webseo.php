@@ -338,9 +338,8 @@ add_action( 'plugins_loaded', 'seopress_plugins_loaded', 999 );
  * @return void
  */
 function seopress_init() {
-        // i18n.
-        load_plugin_textdomain( 'webseo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-        load_plugin_textdomain( 'wp-seopress', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+// i18n.
+load_plugin_textdomain( 'webseo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	// Preload dynamic variables file.
 	include_once plugin_dir_path( __FILE__ ) . 'inc/functions/variables/dynamic-variables.php';

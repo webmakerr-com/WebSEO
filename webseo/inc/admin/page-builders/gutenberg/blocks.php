@@ -23,7 +23,7 @@ function seopress_register_block_categories( $categories ) {
 		array(
 			array(
 				'slug'  => 'wpseopress',
-				'title' => __( 'SEO', 'wp-seopress' ),
+				'title' => __( 'SEO', 'webseo' ),
 			),
 		)
 	);
@@ -77,7 +77,7 @@ function seopress_register_blocks() {
 			),
 		)
 	);
-	wp_set_script_translations( 'wpseopress/faq', 'wp-seopress' );
+	wp_set_script_translations( 'wpseopress/faq', 'webseo' );
 
 	// Sitemap Block.
 	register_block_type(
@@ -118,7 +118,7 @@ function seopress_register_blocks() {
 			),
 		)
 	);
-	wp_set_script_translations( 'wpseopress/sitemap', 'wp-seopress' );
+	wp_set_script_translations( 'wpseopress/sitemap', 'webseo' );
 
 	// FAQ v2.
 	register_block_type(
@@ -136,7 +136,7 @@ function seopress_register_blocks() {
 			),
 		)
 	);
-	wp_set_script_translations( 'wpseopress/faq-block-v2', 'wp-seopress' );
+	wp_set_script_translations( 'wpseopress/faq-block-v2', 'webseo' );
 }
 
 

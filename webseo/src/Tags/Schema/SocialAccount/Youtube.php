@@ -20,7 +20,7 @@ class Youtube implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'YouTube URL', 'wp-seopress' );
+		return __( 'YouTube URL', 'webseo' );
 	}
 
 	/**

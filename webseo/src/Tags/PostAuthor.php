@@ -20,7 +20,7 @@ class PostAuthor implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Author', 'wp-seopress' );
+		return __( 'Post Author', 'webseo' );
 	}
 
 	/**

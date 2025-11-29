@@ -17,13 +17,13 @@ abstract class OpeningHoursHelper {
 	 */
 	public static function getDays() { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
 		return array(
-			__( 'Monday', 'wp-seopress' ),
-			__( 'Tuesday', 'wp-seopress' ),
-			__( 'Wednesday', 'wp-seopress' ),
-			__( 'Thursday', 'wp-seopress' ),
-			__( 'Friday', 'wp-seopress' ),
-			__( 'Saturday', 'wp-seopress' ),
-			__( 'Sunday', 'wp-seopress' ),
+			__( 'Monday', 'webseo' ),
+			__( 'Tuesday', 'webseo' ),
+			__( 'Wednesday', 'webseo' ),
+			__( 'Thursday', 'webseo' ),
+			__( 'Friday', 'webseo' ),
+			__( 'Saturday', 'webseo' ),
+			__( 'Sunday', 'webseo' ),
 		);
 	}
 

@@ -213,7 +213,7 @@ class HTMLSitemapService {
 
 		$archive_label = sprintf(
 			/* translators: %s: post type archive label */
-			__( 'View all %s', 'wp-seopress' ),
+			__( 'View all %s', 'webseo' ),
 			strtolower( $post_type_obj->labels->name )
 		);
 

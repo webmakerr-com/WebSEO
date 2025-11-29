@@ -22,10 +22,10 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 		<?php
 			$current_tab      = '';
 		$plugin_settings_tabs = array(
-			'tab_seopress_xml_sitemap_general'    => __( 'General', 'wp-seopress' ),
-			'tab_seopress_xml_sitemap_post_types' => __( 'Post Types', 'wp-seopress' ),
-			'tab_seopress_xml_sitemap_taxonomies' => __( 'Taxonomies', 'wp-seopress' ),
-			'tab_seopress_html_sitemap'           => __( 'HTML Sitemap', 'wp-seopress' ),
+			'tab_seopress_xml_sitemap_general'    => __( 'General', 'webseo' ),
+			'tab_seopress_xml_sitemap_post_types' => __( 'Post Types', 'webseo' ),
+			'tab_seopress_xml_sitemap_taxonomies' => __( 'Taxonomies', 'webseo' ),
+			'tab_seopress_html_sitemap'           => __( 'HTML Sitemap', 'webseo' ),
 		);
 
 		echo '<div class="nav-tab-wrapper">';
@@ -64,6 +64,6 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 				" id="tab_seopress_html_sitemap"><?php do_settings_sections( 'seopress-settings-admin-html-sitemap' ); ?></div>
 		</div>
 
-		<?php sp_submit_button( esc_html__( 'Save changes', 'wp-seopress' ) ); ?>
+		<?php sp_submit_button( esc_html__( 'Save changes', 'webseo' ) ); ?>
 	</form>
 <?php

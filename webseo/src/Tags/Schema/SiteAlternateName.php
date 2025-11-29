@@ -22,7 +22,7 @@ class SiteAlternateName implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Alternative site title', 'wp-seopress' );
+		return __( 'Alternative site title', 'webseo' );
 	}
 
 	/**

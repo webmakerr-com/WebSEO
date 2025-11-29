@@ -6,7 +6,7 @@
   "description": "Allows to easily build FAQs",
   "icon": "index-card",
   "category": "wpseopress",
-  "textdomain": "wp-seopress",
+  "textdomain": "webseo",
   "allowedBlocks": [
     "core/details"
   ],

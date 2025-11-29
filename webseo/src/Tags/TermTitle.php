@@ -20,7 +20,7 @@ class TermTitle implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Term Title', 'wp-seopress' );
+		return __( 'Term Title', 'webseo' );
 	}
 
 	/**

@@ -20,7 +20,7 @@ class Instagram implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Instagram URL', 'wp-seopress' );
+		return __( 'Instagram URL', 'webseo' );
 	}
 
 	/**

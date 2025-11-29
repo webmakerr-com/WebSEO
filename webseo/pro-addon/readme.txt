@@ -185,7 +185,7 @@ We provide deep integration with Elementor page builder UI, see below:
 
 == Installation ==
 
-1. Upload 'wp-seopress' to the '/wp-content/plugins/' directory
+1. Upload 'webseo' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Click on SEOPress and apply settings.
 

@@ -28,8 +28,8 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 	<div id="seopress-tabs" class="wrap">
 		<?php
 		$plugin_settings_tabs = array(
-			'tab_seopress_instant_indexing_general'  => __( 'General', 'wp-seopress' ),
-			'tab_seopress_instant_indexing_settings' => __( 'Settings', 'wp-seopress' ),
+			'tab_seopress_instant_indexing_general'  => __( 'General', 'webseo' ),
+			'tab_seopress_instant_indexing_settings' => __( 'Settings', 'webseo' ),
 		);
 
 		echo '<div class="nav-tab-wrapper">';
@@ -64,6 +64,6 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 	</div>
 	<!--seopress-tabs-->
 	<?php echo $this->feature_save(); ?>
-	<?php sp_submit_button( esc_html__( 'Save changes', 'wp-seopress' ) ); ?>
+	<?php sp_submit_button( esc_html__( 'Save changes', 'webseo' ) ); ?>
 </form>
 <?php

@@ -20,7 +20,7 @@ class Linkedin implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'LinkedIn URL', 'wp-seopress' );
+		return __( 'LinkedIn URL', 'webseo' );
 	}
 
 	/**

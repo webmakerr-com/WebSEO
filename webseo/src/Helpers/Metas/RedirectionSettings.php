@@ -45,7 +45,7 @@ abstract class RedirectionSettings {
 					'placeholder' => '',
 					'use_default' => '',
 					'default'     => '',
-					'label'       => __( 'Enabled redirection?', 'wp-seopress' ),
+					'label'       => __( 'Enabled redirection?', 'webseo' ),
 					'visible'     => true,
 				),
 				array(
@@ -54,19 +54,19 @@ abstract class RedirectionSettings {
 					'placeholder' => '',
 					'use_default' => true,
 					'default'     => $default_status,
-					'label'       => __( 'Select a login status:', 'wp-seopress' ),
+					'label'       => __( 'Select a login status:', 'webseo' ),
 					'options'     => array(
 						array(
 							'value' => 'both',
-							'label' => __( 'All', 'wp-seopress' ),
+							'label' => __( 'All', 'webseo' ),
 						),
 						array(
 							'value' => 'only_logged_in',
-							'label' => __( 'Only Logged In', 'wp-seopress' ),
+							'label' => __( 'Only Logged In', 'webseo' ),
 						),
 						array(
 							'value' => 'only_not_logged_in',
-							'label' => __( 'Only Not Logged In', 'wp-seopress' ),
+							'label' => __( 'Only Not Logged In', 'webseo' ),
 						),
 					),
 					'visible'     => true,
@@ -77,19 +77,19 @@ abstract class RedirectionSettings {
 					'placeholder' => '',
 					'use_default' => true,
 					'default'     => $default_type,
-					'label'       => __( 'Select a redirection type:', 'wp-seopress' ),
+					'label'       => __( 'Select a redirection type:', 'webseo' ),
 					'options'     => array(
 						array(
 							'value' => 301,
-							'label' => __( '301 Moved Permanently', 'wp-seopress' ),
+							'label' => __( '301 Moved Permanently', 'webseo' ),
 						),
 						array(
 							'value' => 302,
-							'label' => __( '302 Found / Moved Temporarily', 'wp-seopress' ),
+							'label' => __( '302 Found / Moved Temporarily', 'webseo' ),
 						),
 						array(
 							'value' => 307,
-							'label' => __( '307 Moved Temporarily', 'wp-seopress' ),
+							'label' => __( '307 Moved Temporarily', 'webseo' ),
 						),
 					),
 					'visible'     => true,
@@ -97,9 +97,9 @@ abstract class RedirectionSettings {
 				array(
 					'key'         => '_seopress_redirections_value',
 					'type'        => 'input',
-					'placeholder' => __( 'Enter your new URL in absolute (e.g. https://www.example.com/)', 'wp-seopress' ),
-					'label'       => __( 'URL redirection', 'wp-seopress' ),
-					'description' => __( 'Enter some keywords to auto-complete this field against your content', 'wp-seopress' ),
+					'placeholder' => __( 'Enter your new URL in absolute (e.g. https://www.example.com/)', 'webseo' ),
+					'label'       => __( 'URL redirection', 'webseo' ),
+					'description' => __( 'Enter some keywords to auto-complete this field against your content', 'webseo' ),
 					'use_default' => '',
 					'default'     => '',
 					'visible'     => true,

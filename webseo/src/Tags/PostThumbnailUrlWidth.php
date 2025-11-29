@@ -20,7 +20,7 @@ class PostThumbnailUrlWidth implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Thumbnail Width', 'wp-seopress' );
+		return __( 'Post Thumbnail Width', 'webseo' );
 	}
 
 	/**

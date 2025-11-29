@@ -23,470 +23,470 @@ class I18nUniversalMetabox {
 
 		return array(
 			'generic'        => array(
-				'pixels'                  => __( 'pixels', 'wp-seopress' ),
-				'save'                    => __( 'Save', 'wp-seopress' ),
-				'save_settings'           => __( 'Your settings have been saved.', 'wp-seopress' ),
-				'yes'                     => __( 'Yes', 'wp-seopress' ),
-				'good'                    => __( 'Good', 'wp-seopress' ),
-				'expand'                  => __( 'Expand', 'wp-seopress' ),
-				'close'                   => __( 'Close', 'wp-seopress' ),
-				'title'                   => __( 'Title', 'wp-seopress' ),
-				'twitter'                 => __( 'X', 'wp-seopress' ),
-				'maximum_limit'           => __( 'maximum limit', 'wp-seopress' ),
-				'choose_image'            => __( 'Choose an image', 'wp-seopress' ),
-				'opening_hours_morning'   => __( 'Open in the morning?', 'wp-seopress' ),
-				'opening_hours_afternoon' => __( 'Open in the afternoon?', 'wp-seopress' ),
-				'thumbnail'               => __( 'Thumbnail', 'wp-seopress' ),
-				'x'                       => __( 'x', 'wp-seopress' ),
-				'search_tag'              => __( 'Search a tag', 'wp-seopress' ),
-				'loading_data'            => __( 'Loading your data', 'wp-seopress' ),
+				'pixels'                  => __( 'pixels', 'webseo' ),
+				'save'                    => __( 'Save', 'webseo' ),
+				'save_settings'           => __( 'Your settings have been saved.', 'webseo' ),
+				'yes'                     => __( 'Yes', 'webseo' ),
+				'good'                    => __( 'Good', 'webseo' ),
+				'expand'                  => __( 'Expand', 'webseo' ),
+				'close'                   => __( 'Close', 'webseo' ),
+				'title'                   => __( 'Title', 'webseo' ),
+				'twitter'                 => __( 'X', 'webseo' ),
+				'maximum_limit'           => __( 'maximum limit', 'webseo' ),
+				'choose_image'            => __( 'Choose an image', 'webseo' ),
+				'opening_hours_morning'   => __( 'Open in the morning?', 'webseo' ),
+				'opening_hours_afternoon' => __( 'Open in the afternoon?', 'webseo' ),
+				'thumbnail'               => __( 'Thumbnail', 'webseo' ),
+				'x'                       => __( 'x', 'webseo' ),
+				'search_tag'              => __( 'Search a tag', 'webseo' ),
+				'loading_data'            => __( 'Loading your data', 'webseo' ),
 			),
 			'services'       => array(
-				'social_meta_tags_title' => __( 'Social meta tags', 'wp-seopress' ),
+				'social_meta_tags_title' => __( 'Social meta tags', 'webseo' ),
 				'twitter'                => array(
-					'title'                    => __( 'X Title', 'wp-seopress' ),
-					'description'              => __( 'X Description', 'wp-seopress' ),
-					'image'                    => __( 'X Image', 'wp-seopress' ),
+					'title'                    => __( 'X Title', 'webseo' ),
+					'description'              => __( 'X Description', 'webseo' ),
+					'image'                    => __( 'X Image', 'webseo' ),
 					/* translators: %s X tag, eg: twitter:title */
 					'missing'                  => __(
 						'Your %s is missing!',
-						'wp-seopress'
+						'webseo'
 					),
-					'we_founded'               => __( 'We found', 'wp-seopress' ),
-					'we_founded_2'             => __( 'in your content.', 'wp-seopress' ),
+					'we_founded'               => __( 'We found', 'webseo' ),
+					'we_founded_2'             => __( 'in your content.', 'webseo' ),
 					'help_twitter_title'       => __(
 						'You should not use more than one twitter:title in your post content to avoid conflicts when sharing on social networks. X will take the last twitter:title tag from your source code. Below, the list:',
-						'wp-seopress'
+						'webseo'
 					),
 					'help_twitter_description' => __(
 						'You should not use more than one twitter:description in your post content to avoid conflicts when sharing on social networks. X will take the last twitter:description tag from your source code. Below, the list:',
-						'wp-seopress'
+						'webseo'
 					),
-					'we_founded_tag'           => __( 'We found a', 'wp-seopress' ),
-					'we_founded_tag_2'         => __( 'tag in your source code.', 'wp-seopress' ),
+					'we_founded_tag'           => __( 'We found a', 'webseo' ),
+					'we_founded_tag_2'         => __( 'tag in your source code.', 'webseo' ),
 					/* translators: %s X tag, eg: twitter:title */
 					'tag_empty'                => __(
 						'Your %s tag is empty!',
-						'wp-seopress'
+						'webseo'
 					),
 
 				),
 				'open_graph'             => array(
-					'title'               => __( 'Open Graph', 'wp-seopress' ),
-					'description'         => __( 'Description', 'wp-seopress' ),
-					'image'               => __( 'Image', 'wp-seopress' ),
-					'url'                 => __( 'URL', 'wp-seopress' ),
-					'site_name'           => __( 'Site Name', 'wp-seopress' ),
+					'title'               => __( 'Open Graph', 'webseo' ),
+					'description'         => __( 'Description', 'webseo' ),
+					'image'               => __( 'Image', 'webseo' ),
+					'url'                 => __( 'URL', 'webseo' ),
+					'site_name'           => __( 'Site Name', 'webseo' ),
 					/* translators: %s Facebook tag, eg: og:title */
 					'missing'             => __(
 						'Your Open Graph %s is missing!',
-						'wp-seopress'
+						'webseo'
 					),
-					'we_founded'          => __( 'We found', 'wp-seopress' ),
-					'we_founded_2'        => __( 'in your content.', 'wp-seopress' ),
+					'we_founded'          => __( 'We found', 'webseo' ),
+					'we_founded_2'        => __( 'in your content.', 'webseo' ),
 					'help_og_title'       => __(
 						'You should not use more than one og:title in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:title tag from your source code. Below, the list:',
-						'wp-seopress'
+						'webseo'
 					),
 					'help_og_description' => __(
 						'You should not use more than one og:description in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:description tag from your source code. Below, the list:',
-						'wp-seopress'
+						'webseo'
 					),
 					'help_og_url'         => __(
 						'You should not use more than one og:url in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:url tag from your source code. Below, the list:',
-						'wp-seopress'
+						'webseo'
 					),
 					'help_og_site_name'   => __(
 						'You should not use more than one og:site_name in your post content to avoid conflicts when sharing on social networks. Facebook will take the last og:site_name tag from your source code. Below, the list:',
-						'wp-seopress'
+						'webseo'
 					),
-					'we_founded_tag'      => __( 'We found an Open Graph', 'wp-seopress' ),
-					'we_founded_tag_2'    => __( 'tag in your source code.', 'wp-seopress' ),
+					'we_founded_tag'      => __( 'We found an Open Graph', 'webseo' ),
+					'we_founded_tag_2'    => __( 'tag in your source code.', 'webseo' ),
 					/* translators: %s Facebook tag, eg: og:title */
 					'tag_empty'           => __(
 						'Your Open Graph %s tag is empty!',
-						'wp-seopress'
+						'webseo'
 					),
 				),
 				'content_analysis'       => array(
 					'meta_title'       => array(
-						'title'               => __( 'Meta title', 'wp-seopress' ),
+						'title'               => __( 'Meta title', 'webseo' ),
 						'no_meta_title'       => __(
 							'No custom title is set for this post. If the global meta title suits you, you can ignore this recommendation.',
-							'wp-seopress'
+							'webseo'
 						),
 						'meta_title_found'    => __(
 							'Target keywords were found in the Meta Title.',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %1$s target keyword %2$s number of times */
 						'meta_title_found_in' => __(
 							'%1$s was found %2$s times.',
-							'wp-seopress'
+							'webseo'
 						),
 						'empty_matches'       => __(
 							'None of your target keywords were found in the Meta Title.',
-							'wp-seopress'
+							'webseo'
 						),
-						'too_long'            => __( 'Your custom title is too long.', 'wp-seopress' ),
-						'length'              => __( 'The length of your title is correct.', 'wp-seopress' ),
+						'too_long'            => __( 'Your custom title is too long.', 'webseo' ),
+						'length'              => __( 'The length of your title is correct.', 'webseo' ),
 
 					),
 					'meta_description' => array(
-						'title'                     => __( 'Meta description', 'wp-seopress' ),
+						'title'                     => __( 'Meta description', 'webseo' ),
 						'no_meta_description'       => __(
 							'No custom meta description is set for this post. If the global meta description suits you, you can ignore this recommendation.',
-							'wp-seopress'
+							'webseo'
 						),
 						'meta_description_found'    => __(
 							'Target keywords were found in the Meta description.',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %1$s target keyword %2$s number of times */
 						'meta_description_found_in' => __(
 							'%1$s was found %2$s times.',
-							'wp-seopress'
+							'webseo'
 						),
 						'no_meta_description_found' => __(
 							'None of your target keywords were found in the Meta description.',
-							'wp-seopress'
+							'webseo'
 						),
 						'too_long'                  => __(
 							'You custom meta description is too long.',
-							'wp-seopress'
+							'webseo'
 						),
 						'length'                    => __(
 							'The length of your meta description is correct',
-							'wp-seopress'
+							'webseo'
 						),
 					),
 					'meta_robots'      => array(
-						'title'                  => __( 'Meta robots', 'wp-seopress' ),
+						'title'                  => __( 'Meta robots', 'webseo' ),
 						'empty_metas'            => __(
 							'We found no meta robots on this page. It means, your page is index,follow. Search engines will index it, and follow links. ',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %s number of meta robots */
 						'founded_multiple_metas' => __(
 							'We found %s meta robots in your page. There is probably something wrong with your theme!',
-							'wp-seopress'
+							'webseo'
 						),
 						'noindex_on'             => __(
 							"is on! Search engines can't index this page.",
-							'wp-seopress'
+							'webseo'
 						),
 						'noindex_off'            => __(
 							'is off. Search engines will index this page.',
-							'wp-seopress'
+							'webseo'
 						),
 						'nofollow_on'            => __(
 							"is on! Search engines can't follow your links on this page.",
-							'wp-seopress'
+							'webseo'
 						),
 						'nofollow_off'           => __(
 							'is off. Search engines will follow links on this page.',
-							'wp-seopress'
+							'webseo'
 						),
 						'noimageindex_on'        => __(
 							'is on! Google will not index your images on this page (but if someone makes a direct link to one of your image in this page, it will be indexed).',
-							'wp-seopress'
+							'webseo'
 						),
 						'noimageindex_off'       => __(
 							'is off. Google will index the images on this page.',
-							'wp-seopress'
+							'webseo'
 						),
 						'nosnippet_on'           => __(
 							'is on! Search engines will not display a snippet of this page in search results.',
-							'wp-seopress'
+							'webseo'
 						),
 						'nosnippet_off'          => __(
 							'is off. Search engines will display a snippet of this page in search results.',
-							'wp-seopress'
+							'webseo'
 						),
 					),
 					'outbound_links'   => array(
-						'title'                => __( 'Outbound Links', 'wp-seopress' ),
+						'title'                => __( 'Outbound Links', 'webseo' ),
 						'description'          => __(
 							'Internet is built on the principle of hyperlink. It is therefore perfectly normal to make links between different websites. However, avoid making links to low quality sites, SPAM... If you are not sure about the quality of a site, add the attribute "nofollow" to your link.',
-							'wp-seopress'
+							'webseo'
 						),
 						'no_outbound_links'    => __(
 							"This page doesn't have any outbound links.",
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %s number of outbound links */
 						'outbound_links_count' => __(
 							'We found %s outbound links in your page. Below, the list:',
-							'wp-seopress'
+							'webseo'
 						),
 					),
 					'old_post'         => array(
-						'bad'         => __( 'This post is a little old!', 'wp-seopress' ),
+						'bad'         => __( 'This post is a little old!', 'webseo' ),
 						'good'        => __(
 							'The last modified date of this article is less than 1 year. Cool!',
-							'wp-seopress'
+							'webseo'
 						),
 						'description' => __(
 							'Search engines love fresh content. Update regularly your articles without entirely rewriting your content and give them a boost in search rankings. SEOPress takes care of the technical part.',
-							'wp-seopress'
+							'webseo'
 						),
-						'title'       => __( 'Last modified date', 'wp-seopress' ),
+						'title'       => __( 'Last modified date', 'webseo' ),
 					),
 					'headings'         => array(
 						/* translators: %1$s heading name, eg: h2, %2$s heading number, eg: 2 */
 						'head'                      => __(
 							'Target keywords were found in Heading %1$s (H%2$s).',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %s heading number, eg: 2 */
-						'heading_hn'                => __( 'Heading H%s', 'wp-seopress' ),
-						'heading'                   => __( 'Heading', 'wp-seopress' ),
+						'heading_hn'                => __( 'Heading H%s', 'webseo' ),
+						'heading'                   => __( 'Heading', 'webseo' ),
 						'no_heading'                => __(
 							'No custom title is set for this post. If the global meta title suits you, you can ignore this recommendation.',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %1$s heading name, eg: h2, %2$s heading number, eg: 2 */
 						'no_heading_detail'         => __(
 							'No Heading %1$s (H%2$s) found in your content. This is required for both SEO and Accessibility!',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %1$s heading name, eg: h2, %2$s heading number, eg: 2 */
 						'no_target_keywords_detail' => __(
 							'None of your target keywords were found in Heading %1$s (H%2$s).',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %1$s heading name found %2$s times, eg: H2 was found 2 times */
 						'match'                     => __(
 							'%1$s was found %2$s times.',
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %s number of times a heading is found, eg: 1 */
 						'count_h1'                  => __(
 							'We found %s Heading 1 (H1) in your content.',
-							'wp-seopress'
+							'webseo'
 						),
 						'count_h1_detail'           => __(
 							'You should not use more than one H1 heading in your post content. The rule is simple: only one H1 for each web page. It is better for both SEO and accessibility. Below, the list:',
-							'wp-seopress'
+							'webseo'
 						),
-						'below_h1'                  => __( 'Below the list:', 'wp-seopress' ),
-						'title'                     => __( 'Headings', 'wp-seopress' ),
+						'below_h1'                  => __( 'Below the list:', 'webseo' ),
+						'title'                     => __( 'Headings', 'webseo' ),
 					),
 					'images'           => array(
 						'bad'                             => __(
 							'We could not find any image in your content. Content with media is a plus for your SEO.',
-							'wp-seopress'
+							'webseo'
 						),
 						'good'                            => __(
 							'All alternative tags are filled in. Good work!',
-							'wp-seopress'
+							'webseo'
 						),
 						'no_alternative_text'             => __(
 							'No alternative text found for these images. Alt tags are important for both SEO and accessibility. Edit your images using the media library or your favorite page builder and fill in alternative text fields.',
-							'wp-seopress'
+							'webseo'
 						),
 						'description_no_alternative_text' => __(
 							'Note that we scan all your source code, it means, some missing alternative texts of images might be located in your header, sidebar or footer.',
-							'wp-seopress'
+							'webseo'
 						),
-						'title'                           => __( 'Alternative texts of images', 'wp-seopress' ),
+						'title'                           => __( 'Alternative texts of images', 'webseo' ),
 					),
 					'internal_links'   => array(
 						'description'          => __(
 							'Internal links are important for SEO and user experience. Always try to link your content together, with quality link anchors.',
-							'wp-seopress'
+							'webseo'
 						),
 						'no_internal_links'    => __(
 							"This page doesn't have any internal links from other content. Links from archive pages are not considered internal links due to lack of context.",
-							'wp-seopress'
+							'webseo'
 						),
 						/* translators: %s number of internal links */
 						'internal_links_count' => __(
 							'We found %s internal links in your page. Below, the list:',
-							'wp-seopress'
+							'webseo'
 						),
-						'title'                => __( 'Internal Links', 'wp-seopress' ),
+						'title'                => __( 'Internal Links', 'webseo' ),
 					),
 					'kws_permalink'    => array(
 						'no_apply' => __(
 							"This is your homepage. This check doesn't apply here because there is no slug.",
-							'wp-seopress'
+							'webseo'
 						),
 						'bad'      => __(
 							'You should add one of your target keyword in your permalink.',
-							'wp-seopress'
+							'webseo'
 						),
 						'good'     => __(
 							'Cool, one of your target keyword is used in your permalink.',
-							'wp-seopress'
+							'webseo'
 						),
-						'title'    => __( 'Keywords in permalink', 'wp-seopress' ),
+						'title'    => __( 'Keywords in permalink', 'webseo' ),
 					),
 					'no_follow_links'  => array(
 						/* translators: %s number of times a nofollow link is found, eg: 1 */
 						'founded'    => __(
 							'We found %s links with nofollow attribute in your page. Do not overuse nofollow attribute in links. Below, the list:',
-							'wp-seopress'
+							'webseo'
 						),
 						'no_founded' => __(
 							"This page doesn't have any nofollow links.",
-							'wp-seopress'
+							'webseo'
 						),
-						'title'      => __( 'NoFollow Links', 'wp-seopress' ),
+						'title'      => __( 'NoFollow Links', 'webseo' ),
 					),
 
 				),
 				'canonical_url'          => array(
-					'title'                   => __( 'Canonical URL', 'wp-seopress' ),
+					'title'                   => __( 'Canonical URL', 'webseo' ),
 					'head'                    => __(
 						'A canonical URL is required by search engines to handle duplicate content.',
-						'wp-seopress'
+						'webseo'
 					),
 					'no_canonical'            => __(
 						"This page doesn't have any canonical URL because your post is set to <strong>noindex</strong>. This is normal.",
-						'wp-seopress'
+						'webseo'
 					),
 					'no_canonical_no_index'   => __(
 						"This page doesn't have any canonical URL.",
-						'wp-seopress'
+						'webseo'
 					),
 					/* translators: %d number of times a canonical tag is found, singular form only */
-					'canonicals_found'        => __( 'We found %d canonical URL in your source code. Below, the list:', 'wp-seopress' ),
+					'canonicals_found'        => __( 'We found %d canonical URL in your source code. Below, the list:', 'webseo' ),
 					/* translators: %d number of times a canonical tag is found, plural form only */
-					'canonicals_found_plural' => __( 'We found %d canonical URLs in your source code. Below, the list:', 'wp-seopress' ),
-					'multiple_canonicals'     => __( 'You must fix this. Canonical URL duplication is bad for SEO.', 'wp-seopress' ),
-					'duplicated'              => __( 'duplicated schema - x', 'wp-seopress' ),
+					'canonicals_found_plural' => __( 'We found %d canonical URLs in your source code. Below, the list:', 'webseo' ),
+					'multiple_canonicals'     => __( 'You must fix this. Canonical URL duplication is bad for SEO.', 'webseo' ),
+					'duplicated'              => __( 'duplicated schema - x', 'webseo' ),
 				),
 				'schemas'                => array(
-					'title'      => __( 'Structured Data Types (schemas)', 'wp-seopress' ),
-					'no_schema'  => __( 'No schemas found in the source code of this page. Get rich snippets in Google Search results and improve your visibility by adding structured data types (schemas) to your page.', 'wp-seopress' ),
-					'head'       => __( 'We found these schemas in the source code of this page:', 'wp-seopress' ),
-					'duplicated' => __( 'duplicated schema - x', 'wp-seopress' ),
+					'title'      => __( 'Structured Data Types (schemas)', 'webseo' ),
+					'no_schema'  => __( 'No schemas found in the source code of this page. Get rich snippets in Google Search results and improve your visibility by adding structured data types (schemas) to your page.', 'webseo' ),
+					'head'       => __( 'We found these schemas in the source code of this page:', 'webseo' ),
+					'duplicated' => __( 'duplicated schema - x', 'webseo' ),
 
 				),
 			),
 			'constants'      => array(
 				'tabs'     => array(
-					'title_description_meta' => __( 'Titles & Metas', 'wp-seopress' ),
-					'content_analysis'       => __( 'Content Analysis', 'wp-seopress' ),
-					'schemas'                => __( 'Schemas', 'wp-seopress' ),
+					'title_description_meta' => __( 'Titles & Metas', 'webseo' ),
+					'content_analysis'       => __( 'Content Analysis', 'webseo' ),
+					'schemas'                => __( 'Schemas', 'webseo' ),
 				),
 				'sub_tabs' => array(
-					'title_settings'   => __( 'Title settings', 'wp-seopress' ),
-					'social'           => __( 'Social', 'wp-seopress' ),
-					'advanced'         => __( 'Advanced', 'wp-seopress' ),
-					'redirection'      => __( 'Redirection', 'wp-seopress' ),
-					'google_news'      => __( 'Google News', 'wp-seopress' ),
-					'video_sitemap'    => __( 'Video Sitemap', 'wp-seopress' ),
-					'overview'         => __( 'Overview', 'wp-seopress' ),
-					'inspect_url'      => __( 'Inspect with Google', 'wp-seopress' ),
-					'internal_linking' => __( 'Internal Linking', 'wp-seopress' ),
-					'schema_manual'    => __( 'Manual', 'wp-seopress' ),
+					'title_settings'   => __( 'Title settings', 'webseo' ),
+					'social'           => __( 'Social', 'webseo' ),
+					'advanced'         => __( 'Advanced', 'webseo' ),
+					'redirection'      => __( 'Redirection', 'webseo' ),
+					'google_news'      => __( 'Google News', 'webseo' ),
+					'video_sitemap'    => __( 'Video Sitemap', 'webseo' ),
+					'overview'         => __( 'Overview', 'webseo' ),
+					'inspect_url'      => __( 'Inspect with Google', 'webseo' ),
+					'internal_linking' => __( 'Internal Linking', 'webseo' ),
+					'schema_manual'    => __( 'Manual', 'webseo' ),
 				),
 			),
 			'seo_bar'        => array(
-				'title' => __( 'SEO', 'wp-seopress' ),
+				'title' => __( 'SEO', 'webseo' ),
 			),
 			'forms'          => array(
-				'maximum_limit'                  => __( 'maximum limit', 'wp-seopress' ),
-				'maximum_recommended_limit'      => __( 'maximum recommended limit', 'wp-seopress' ),
+				'maximum_limit'                  => __( 'maximum limit', 'webseo' ),
+				'maximum_recommended_limit'      => __( 'maximum recommended limit', 'webseo' ),
 				'meta_title_description'         => array(
-					'title'                        => __( 'Title', 'wp-seopress' ),
-					'tooltip_title'                => __( 'Meta Title', 'wp-seopress' ),
-					'tooltip_description'          => __( "Titles are critical to give users a quick insight into the content of a result and why it’s relevant to their query. It's often the primary piece of information used to decide which result to click on, so it's important to use high-quality titles on your web pages.", 'wp-seopress' ),
-					'placeholder_title'            => __( 'Enter your title', 'wp-seopress' ),
-					'meta_description'             => __( 'Meta description', 'wp-seopress' ),
-					'tooltip_description_1'        => __( 'A meta description tag should generally inform and interest users with a short, relevant summary of what a particular page is about.', 'wp-seopress' ),
-					'tooltip_description_2'        => __( "They are like a pitch that convince the user that the page is exactly what they're looking for.", 'wp-seopress' ),
-					'tooltip_description_3'        => __( "There's no limit on how long a meta description can be, but the search result snippets are truncated as needed, typically to fit the device width.", 'wp-seopress' ),
-					'placeholder_description'      => __( 'Enter your description', 'wp-seopress' ),
-					'generate_ai'                  => __( 'Generate meta with AI', 'wp-seopress' ),
-					'generate_ai_title'            => __( 'Generate meta title with AI', 'wp-seopress' ),
-					'generate_ai_description'      => __( 'Generate meta description with AI', 'wp-seopress' ),
+					'title'                        => __( 'Title', 'webseo' ),
+					'tooltip_title'                => __( 'Meta Title', 'webseo' ),
+					'tooltip_description'          => __( "Titles are critical to give users a quick insight into the content of a result and why it’s relevant to their query. It's often the primary piece of information used to decide which result to click on, so it's important to use high-quality titles on your web pages.", 'webseo' ),
+					'placeholder_title'            => __( 'Enter your title', 'webseo' ),
+					'meta_description'             => __( 'Meta description', 'webseo' ),
+					'tooltip_description_1'        => __( 'A meta description tag should generally inform and interest users with a short, relevant summary of what a particular page is about.', 'webseo' ),
+					'tooltip_description_2'        => __( "They are like a pitch that convince the user that the page is exactly what they're looking for.", 'webseo' ),
+					'tooltip_description_3'        => __( "There's no limit on how long a meta description can be, but the search result snippets are truncated as needed, typically to fit the device width.", 'webseo' ),
+					'placeholder_description'      => __( 'Enter your description', 'webseo' ),
+					'generate_ai'                  => __( 'Generate meta with AI', 'webseo' ),
+					'generate_ai_title'            => __( 'Generate meta title with AI', 'webseo' ),
+					'generate_ai_description'      => __( 'Generate meta description with AI', 'webseo' ),
 					/* translators: %s Products archive meta settings page */
-					'woocommerce_shop_page_notice' => __( 'This is your <strong>Shop page</strong>. Go to <a href="%s"><strong>SEO > Titles & Metas > Archives > Products</strong></a> to edit your title and meta description.', 'wp-seopress' ),
+					'woocommerce_shop_page_notice' => __( 'This is your <strong>Shop page</strong>. Go to <a href="%s"><strong>SEO > Titles & Metas > Archives > Products</strong></a> to edit your title and meta description.', 'webseo' ),
 				),
 				'repeater_how_to'                => array(
 					'title_step'       => __(
 						'The title of the step (required)',
-						'wp-seopress'
+						'webseo'
 					),
 					'description_step' => __(
 						'The text of your step (required)',
-						'wp-seopress'
+						'webseo'
 					),
-					'remove_step'      => __( 'Remove step', 'wp-seopress' ),
-					'add_step'         => __( 'Add step', 'wp-seopress' ),
+					'remove_step'      => __( 'Remove step', 'webseo' ),
+					'add_step'         => __( 'Add step', 'webseo' ),
 				),
 				'repeater_negative_notes_review' => array(
 					'title'  => __(
 						'Your negative statement (required)',
-						'wp-seopress'
+						'webseo'
 					),
-					'remove' => __( 'Remove note', 'wp-seopress' ),
-					'add'    => __( 'Add a statement', 'wp-seopress' ),
+					'remove' => __( 'Remove note', 'webseo' ),
+					'add'    => __( 'Add a statement', 'webseo' ),
 				),
 				'repeater_positive_notes_review' => array(
 					'title'  => __(
 						'Your positive statement (required)',
-						'wp-seopress'
+						'webseo'
 					),
-					'remove' => __( 'Remove note', 'wp-seopress' ),
-					'add'    => __( 'Add a statement', 'wp-seopress' ),
+					'remove' => __( 'Remove note', 'webseo' ),
+					'add'    => __( 'Add a statement', 'webseo' ),
 				),
 				'repeater_course_offers'         => array(
-					'title'         => __( 'Offer', 'wp-seopress' ),
-					'remove'        => __( 'Remove offer', 'wp-seopress' ),
-					'add'           => __( 'Add an offer', 'wp-seopress' ),
-					'category'      => __( 'Category', 'wp-seopress' ),
-					'priceCurrency' => __( 'Currency', 'wp-seopress' ),
-					'price'         => __( 'Price', 'wp-seopress' ),
+					'title'         => __( 'Offer', 'webseo' ),
+					'remove'        => __( 'Remove offer', 'webseo' ),
+					'add'           => __( 'Add an offer', 'webseo' ),
+					'category'      => __( 'Category', 'webseo' ),
+					'priceCurrency' => __( 'Currency', 'webseo' ),
+					'price'         => __( 'Price', 'webseo' ),
 					'currencies'    => Currencies::getOptions(),
 					'categories'    => Course::getCategories(),
 				),
 				'repeater_course_instances'      => array(
-					'title'             => __( 'Instance', 'wp-seopress' ),
-					'remove'            => __( 'Remove instance', 'wp-seopress' ),
-					'add'               => __( 'Add an instance', 'wp-seopress' ),
-					'courseMode'        => __( 'Course Mode', 'wp-seopress' ),
-					'location'          => __( 'Location', 'wp-seopress' ),
-					'duration'          => __( 'Duration', 'wp-seopress' ),
-					'repeatCount'       => __( 'Repeat count', 'wp-seopress' ),
-					'repeatFrequency'   => __( 'Repeat frequency', 'wp-seopress' ),
-					'startDate'         => __( 'Start Date', 'wp-seopress' ),
-					'endDate'           => __( 'End Date', 'wp-seopress' ),
+					'title'             => __( 'Instance', 'webseo' ),
+					'remove'            => __( 'Remove instance', 'webseo' ),
+					'add'               => __( 'Add an instance', 'webseo' ),
+					'courseMode'        => __( 'Course Mode', 'webseo' ),
+					'location'          => __( 'Location', 'webseo' ),
+					'duration'          => __( 'Duration', 'webseo' ),
+					'repeatCount'       => __( 'Repeat count', 'webseo' ),
+					'repeatFrequency'   => __( 'Repeat frequency', 'webseo' ),
+					'startDate'         => __( 'Start Date', 'webseo' ),
+					'endDate'           => __( 'End Date', 'webseo' ),
 					'courseModes'       => Course::getCourseModes(),
 					'repeatFrequencies' => Course::getRepeatFrequencies(),
 				),
 			),
 			'google_preview' => array(
-				'title'        => __( 'Google Snippet Preview', 'wp-seopress' ),
+				'title'        => __( 'Google Snippet Preview', 'webseo' ),
 				'description'  => __(
 					'This is what your page will look like in Google search results. You have to publish your post to get the Google Snippet Preview. Note that Google may optionally display an image of your article.',
-					'wp-seopress'
+					'webseo'
 				),
-				'mobile_title' => __( 'Mobile Preview', 'wp-seopress' ),
+				'mobile_title' => __( 'Mobile Preview', 'webseo' ),
 			),
 			'components'     => array(
 				'repeated_faq' => array(
 					'empty_question' => __(
 						'Empty Question',
-						'wp-seopress'
+						'webseo'
 					),
 					'empty_answer'   => __(
 						'Empty Answer',
-						'wp-seopress'
+						'webseo'
 					),
 					'question'       => __(
 						'Question (required)',
-						'wp-seopress'
+						'webseo'
 					),
 					'answer'         => __(
 						'Answer (required)',
-						'wp-seopress'
+						'webseo'
 					),
-					'remove'         => __( 'Remove question', 'wp-seopress' ),
-					'add'            => __( 'Add question', 'wp-seopress' ),
+					'remove'         => __( 'Remove question', 'webseo' ),
+					'add'            => __( 'Add question', 'webseo' ),
 				),
 			),
 			'layouts'        => array(
@@ -494,338 +494,338 @@ class I18nUniversalMetabox {
 					/* translators: %s documentation URL */
 					'title'                                => __(
 						"You cannot uncheck a parameter? This is normal, and it's most likely defined in the <a href='%s'>global settings of the plugin.</a>",
-						'wp-seopress'
+						'webseo'
 					),
 					'robots_index_description'             => __(
 						'Do not display this page in search engine results / XML - HTML sitemaps',
-						'wp-seopress'
+						'webseo'
 					),
-					'robots_index_tooltip_title'           => __( '"noindex" robots meta tag', 'wp-seopress' ),
+					'robots_index_tooltip_title'           => __( '"noindex" robots meta tag', 'webseo' ),
 					'robots_index_tooltip_description_1'   => __(
 						'By checking this option, you will add a meta robots tag with the value "noindex".',
-						'wp-seopress'
+						'webseo'
 					),
 					'robots_index_tooltip_description_2'   => __(
 						'Search engines will not index this URL in the search results.',
-						'wp-seopress'
+						'webseo'
 					),
-					'robots_follow_description'            => __( 'Do not follow links for this page', 'wp-seopress' ),
-					'robots_follow_tooltip_title'          => __( '"nofollow" robots meta tag', 'wp-seopress' ),
+					'robots_follow_description'            => __( 'Do not follow links for this page', 'webseo' ),
+					'robots_follow_tooltip_title'          => __( '"nofollow" robots meta tag', 'webseo' ),
 					'robots_follow_tooltip_description_1'  => __(
 						'By checking this option, you will add a meta robots tag with the value "nofollow".',
-						'wp-seopress'
+						'webseo'
 					),
 					'robots_follow_tooltip_description_2'  => __(
 						'Search engines will not follow links from this URL.',
-						'wp-seopress'
+						'webseo'
 					),
 					'robots_snippet_description'           => __(
 						'Do not display a description in search results for this page',
-						'wp-seopress'
+						'webseo'
 					),
-					'robots_snippet_tooltip_title'         => __( '"nosnippet" robots meta tag', 'wp-seopress' ),
+					'robots_snippet_tooltip_title'         => __( '"nosnippet" robots meta tag', 'webseo' ),
 					'robots_snippet_tooltip_description_1' => __(
 						'By checking this option, you will add a meta robots tag with the value "nosnippet".',
-						'wp-seopress'
+						'webseo'
 					),
-					'robots_imageindex_description'        => __( 'Do not index images for this page', 'wp-seopress' ),
-					'robots_imageindex_tooltip_title'      => __( '"noimageindex" robots meta tag', 'wp-seopress' ),
+					'robots_imageindex_description'        => __( 'Do not index images for this page', 'webseo' ),
+					'robots_imageindex_tooltip_title'      => __( '"noimageindex" robots meta tag', 'webseo' ),
 					'robots_imageindex_tooltip_description_1' => __(
 						'By checking this option, you will add a meta robots tag with the value "noimageindex".',
-						'wp-seopress'
+						'webseo'
 					),
 					'robots_imageindex_tooltip_description_2' => __(
 						'Note that your images can always be indexed if they are linked from other pages.',
-						'wp-seopress'
+						'webseo'
 					),
 				),
 				'inspect_url'      => array(
 					'description'                       => __(
 						'Inspect the current post URL with Google Search Console and get informations about your indexing, crawling, rich snippets and more.',
-						'wp-seopress'
+						'webseo'
 					),
 					'verdict_unspecified'               => array(
-						'title'       => __( 'Unknown verdict', 'wp-seopress' ),
+						'title'       => __( 'Unknown verdict', 'webseo' ),
 						'description' => __(
 							'The URL has been indexed, can appear in Google Search results, and no problems were found with any enhancements found in the page (structured data, linked AMP pages, and so on).',
-							'wp-seopress'
+							'webseo'
 						),
 					),
 					'pass'                              => array(
-						'title'       => __( 'URL is on Google', 'wp-seopress' ),
+						'title'       => __( 'URL is on Google', 'webseo' ),
 						'description' => __(
 							'The URL has been indexed, can appear in Google Search results, and no problems were found with any enhancements found in the page (structured data, linked AMP pages, and so on).',
-							'wp-seopress'
+							'webseo'
 						),
 					),
 					'partial'                           => array(
-						'title'       => __( 'URL is on Google, but has issues', 'wp-seopress' ),
+						'title'       => __( 'URL is on Google, but has issues', 'webseo' ),
 						'description' => __(
 							'The URL has been indexed and can appear in Google Search results, but there are some problems that might prevent it from appearing with the enhancements that you applied to the page. This might mean a problem with an associated AMP page, or malformed structured data for a rich result (such as a recipe or job posting) on the page.',
-							'wp-seopress'
+							'webseo'
 						),
 					),
 					'fail'                              => array(
 						'title'       => __(
 							'URL is not on Google: Indexing errors',
-							'wp-seopress'
+							'webseo'
 						),
 						'description' => __(
 							'There was at least one critical error that prevented the URL from being indexed, and it cannot appear in Google Search until those issues are fixed.',
-							'wp-seopress'
+							'webseo'
 						),
 					),
 					'neutral'                           => array(
-						'title'       => __( 'URL is not on Google', 'wp-seopress' ),
+						'title'       => __( 'URL is not on Google', 'webseo' ),
 						'description' => __(
 							'This URL won‘t appear in Google Search results, but we think that was your intention. Common reasons include that the page is password-protected or robots.txt protected, or blocked by a noindex directive.',
-							'wp-seopress'
+							'webseo'
 						),
 					),
-					'indexing_state_unspecified'        => __( 'Unknown indexing status.', 'wp-seopress' ),
-					'indexing_allowed'                  => __( 'Indexing allowed.', 'wp-seopress' ),
+					'indexing_state_unspecified'        => __( 'Unknown indexing status.', 'webseo' ),
+					'indexing_allowed'                  => __( 'Indexing allowed.', 'webseo' ),
 					'blocked_by_meta_tag'               => __(
 						"Indexing not allowed, 'noindex' detected in 'robots' meta tag.",
-						'wp-seopress'
+						'webseo'
 					),
 					'blocked_by_http_header'            => __(
 						"Indexing not allowed, 'noindex' detected in 'X-Robots-Tag' http header.",
-						'wp-seopress'
+						'webseo'
 					),
 					'blocked_by_robots_txt'             => __(
 						'Indexing not allowed, blocked to Googlebot with a robots.txt file.',
-						'wp-seopress'
+						'webseo'
 					),
-					'page_fetch_state_unspecified'      => __( 'Unknown fetch state.', 'wp-seopress' ),
-					'successful'                        => __( 'Successful fetch.', 'wp-seopress' ),
-					'soft_404'                          => __( 'Soft 404.', 'wp-seopress' ),
-					'blocked_robots_txt'                => __( 'Blocked by robots.txt.', 'wp-seopress' ),
-					'not_found'                         => __( 'Not found (404).', 'wp-seopress' ),
+					'page_fetch_state_unspecified'      => __( 'Unknown fetch state.', 'webseo' ),
+					'successful'                        => __( 'Successful fetch.', 'webseo' ),
+					'soft_404'                          => __( 'Soft 404.', 'webseo' ),
+					'blocked_robots_txt'                => __( 'Blocked by robots.txt.', 'webseo' ),
+					'not_found'                         => __( 'Not found (404).', 'webseo' ),
 					'access_denied'                     => __(
 						'Blocked due to unauthorized request (401).',
-						'wp-seopress'
+						'webseo'
 					),
-					'server_error'                      => __( 'Server error (5xx).', 'wp-seopress' ),
-					'redirect_error'                    => __( 'Redirection error.', 'wp-seopress' ),
-					'access_forbidden'                  => __( 'Blocked due to access forbidden (403).', 'wp-seopress' ),
+					'server_error'                      => __( 'Server error (5xx).', 'webseo' ),
+					'redirect_error'                    => __( 'Redirection error.', 'webseo' ),
+					'access_forbidden'                  => __( 'Blocked due to access forbidden (403).', 'webseo' ),
 					'blocked_4xx'                       => __(
 						'Blocked due to other 4xx issue (not 403, 404).',
-						'wp-seopress'
+						'webseo'
 					),
-					'internal_crawl_error'              => __( 'Internal error.', 'wp-seopress' ),
-					'invalid_url'                       => __( 'Invalid URL.', 'wp-seopress' ),
-					'crawling_user_agent_unspecified'   => __( 'Unknown user agent.', 'wp-seopress' ),
-					'desktop'                           => __( 'Googlebot desktop', 'wp-seopress' ),
-					'mobile'                            => __( 'Googlebot smartphone', 'wp-seopress' ),
+					'internal_crawl_error'              => __( 'Internal error.', 'webseo' ),
+					'invalid_url'                       => __( 'Invalid URL.', 'webseo' ),
+					'crawling_user_agent_unspecified'   => __( 'Unknown user agent.', 'webseo' ),
+					'desktop'                           => __( 'Googlebot desktop', 'webseo' ),
+					'mobile'                            => __( 'Googlebot smartphone', 'webseo' ),
 					'robots_txt_state_unspecified'      => __(
 						'Unknown robots.txt state, typically because the page wasn‘t fetched or found, or because robots.txt itself couldn‘t be reached.',
-						'wp-seopress'
+						'webseo'
 					),
-					'disallowed'                        => __( 'Crawl blocked by robots.txt.', 'wp-seopress' ),
-					'mobile_verdict_unspecified_title'  => __( 'No data available', 'wp-seopress' ),
+					'disallowed'                        => __( 'Crawl blocked by robots.txt.', 'webseo' ),
+					'mobile_verdict_unspecified_title'  => __( 'No data available', 'webseo' ),
 					'mobile_verdict_unspecified_description' => __(
 						"For some reason we couldn't retrieve the page or test its mobile-friendliness. Please wait a bit and try again.",
-						'wp-seopress'
+						'webseo'
 					),
-					'mobile_pass_title'                 => __( 'Page is mobile friendly', 'wp-seopress' ),
+					'mobile_pass_title'                 => __( 'Page is mobile friendly', 'webseo' ),
 					'mobile_pass_description'           => __(
 						'The page should probably work well on a mobile device.',
-						'wp-seopress'
+						'webseo'
 					),
-					'mobile_fail_title'                 => __( 'Page is not mobile friendly', 'wp-seopress' ),
+					'mobile_fail_title'                 => __( 'Page is not mobile friendly', 'webseo' ),
 					'mobile_fail_description'           => __(
 						'The page won‘t work well on a mobile device because of a few issues.',
-						'wp-seopress'
+						'webseo'
 					),
-					'rich_snippets_verdict_unspecified' => __( 'No data available', 'wp-seopress' ),
-					'rich_snippets_pass'                => __( 'Your Rich Snippets are valid', 'wp-seopress' ),
-					'rich_snippets_fail'                => __( 'Your Rich Snippets are not valid', 'wp-seopress' ),
-					'discovery'                         => __( 'Discovery', 'wp-seopress' ),
-					'discovery_sitemap'                 => __( 'Sitemaps', 'wp-seopress' ),
-					'discovery_referring_urls'          => __( 'Referring page', 'wp-seopress' ),
-					'crawl'                             => __( 'Crawl', 'wp-seopress' ),
-					'crawl_last_crawl_time'             => __( 'Last crawl', 'wp-seopress' ),
-					'crawl_crawled_as'                  => __( 'Crawled as', 'wp-seopress' ),
-					'crawl_allowed'                     => __( 'Crawl allowed?', 'wp-seopress' ),
-					'crawl_page_fetch'                  => __( 'Page fetch', 'wp-seopress' ),
-					'crawl_indexing'                    => __( 'Indexing allowed?', 'wp-seopress' ),
-					'indexing_title'                    => __( 'Indexing', 'wp-seopress' ),
-					'indexing_user_canonical'           => __( 'User-declared canonical', 'wp-seopress' ),
-					'indexing_google_canonical'         => __( 'Google-selected canonical', 'wp-seopress' ),
-					'enhancements_title'                => __( 'Enhancements', 'wp-seopress' ),
-					'enhancements_mobile'               => __( 'Mobile Usability', 'wp-seopress' ),
-					'enhancements_rich_snippets'        => __( 'Rich Snippets detected', 'wp-seopress' ),
-					'btn_inspect_url'                   => __( 'Inspect URL with Google', 'wp-seopress' ),
+					'rich_snippets_verdict_unspecified' => __( 'No data available', 'webseo' ),
+					'rich_snippets_pass'                => __( 'Your Rich Snippets are valid', 'webseo' ),
+					'rich_snippets_fail'                => __( 'Your Rich Snippets are not valid', 'webseo' ),
+					'discovery'                         => __( 'Discovery', 'webseo' ),
+					'discovery_sitemap'                 => __( 'Sitemaps', 'webseo' ),
+					'discovery_referring_urls'          => __( 'Referring page', 'webseo' ),
+					'crawl'                             => __( 'Crawl', 'webseo' ),
+					'crawl_last_crawl_time'             => __( 'Last crawl', 'webseo' ),
+					'crawl_crawled_as'                  => __( 'Crawled as', 'webseo' ),
+					'crawl_allowed'                     => __( 'Crawl allowed?', 'webseo' ),
+					'crawl_page_fetch'                  => __( 'Page fetch', 'webseo' ),
+					'crawl_indexing'                    => __( 'Indexing allowed?', 'webseo' ),
+					'indexing_title'                    => __( 'Indexing', 'webseo' ),
+					'indexing_user_canonical'           => __( 'User-declared canonical', 'webseo' ),
+					'indexing_google_canonical'         => __( 'Google-selected canonical', 'webseo' ),
+					'enhancements_title'                => __( 'Enhancements', 'webseo' ),
+					'enhancements_mobile'               => __( 'Mobile Usability', 'webseo' ),
+					'enhancements_rich_snippets'        => __( 'Rich Snippets detected', 'webseo' ),
+					'btn_inspect_url'                   => __( 'Inspect URL with Google', 'webseo' ),
 					'notice_empty_api_key'              => __(
 						'No data found, click Inspect URL button above.',
-						'wp-seopress'
+						'webseo'
 					),
-					'btn_full_report'                   => __( 'View Full Report', 'wp-seopress' ),
+					'btn_full_report'                   => __( 'View Full Report', 'webseo' ),
 				),
 				'video_sitemap'    => array(
 					'btn_remove_video' => __(
 						'Remove video',
-						'wp-seopress'
+						'webseo'
 					),
-					'btn_add_video'    => __( 'Add video', 'wp-seopress' ),
+					'btn_add_video'    => __( 'Add video', 'webseo' ),
 				),
 				'internal_linking' => array(
-					'matching'       => __( 'Matching word:', 'wp-seopress' ),
+					'matching'       => __( 'Matching word:', 'webseo' ),
 					'description_1'  => __(
 						'Internal links are important for SEO and user experience. Always try to link your content together, with quality link anchors.',
-						'wp-seopress'
+						'webseo'
 					),
 					'description_2'  => __(
 						'Here is a list of articles related to your content, sorted by relevance, that you should link to.',
-						'wp-seopress'
+						'webseo'
 					),
-					'no_suggestions' => __( 'No suggestion of internal links.', 'wp-seopress' ),
+					'no_suggestions' => __( 'No suggestion of internal links.', 'webseo' ),
 					'copied'         => __(
 						'Link copied in the clipboard',
-						'wp-seopress'
+						'webseo'
 					),
 					/* translators: %s post title */
-					'copy_link'      => __( 'Copy %s link', 'wp-seopress' ),
+					'copy_link'      => __( 'Copy %s link', 'webseo' ),
 					'open_link'      => __(
 						'Open this link in a new window',
-						'wp-seopress'
+						'webseo'
 					),
 					'edit_link'      => __(
 						'Edit this link in a new window',
-						'wp-seopress'
+						'webseo'
 					),
 					/* translators: %s post title */
-					'edit_link_aria' => __( 'Edit %s link', 'wp-seopress' ),
+					'edit_link_aria' => __( 'Edit %s link', 'webseo' ),
 				),
 				'content_analysis' => array(
 					'description'                    => __(
 						'Enter a few keywords for analysis to help you write optimized content.',
-						'wp-seopress'
+						'webseo'
 					),
-					'title_severity'                 => /* translators: %s degree of severity, eg: low */ __( 'Degree of severity: %s', 'wp-seopress' ),
-					'target_keywords'                => __( 'Target keywords', 'wp-seopress' ),
+					'title_severity'                 => /* translators: %s degree of severity, eg: low */ __( 'Degree of severity: %s', 'webseo' ),
+					'target_keywords'                => __( 'Target keywords', 'webseo' ),
 					'target_keywords_description'    => __(
 						'Separate target keywords by pressing Enter.',
-						'wp-seopress'
+						'webseo'
 					),
 					'target_keywords_multiple_usage' => __(
 						'You should avoid using multiple times the same keyword for different pages. Try to consolidate your content into one single page.',
-						'wp-seopress'
+						'webseo'
 					),
-					'target_keywords_details'        => __( '(URL using this keyword)', 'wp-seopress' ),
+					'target_keywords_details'        => __( '(URL using this keyword)', 'webseo' ),
 					'target_keywords_placeholder'    => __(
 						'Enter your target keywords',
-						'wp-seopress'
+						'webseo'
 					),
-					'btn_refresh_analysis'           => __( 'Refresh analysis', 'wp-seopress' ),
+					'btn_refresh_analysis'           => __( 'Refresh analysis', 'webseo' ),
 					'help_target_keywords'           => __(
 						'To get the most accurate analysis, save your post first. We analyze all of your source code as a search engine would.',
-						'wp-seopress'
+						'webseo'
 					),
-					'google_suggestions'             => __( 'Google suggestions', 'wp-seopress' ),
+					'google_suggestions'             => __( 'Google suggestions', 'webseo' ),
 					'google_suggestions_description' => __(
 						'Enter a keyword, or a phrase, to find the top 10 Google suggestions instantly. This is useful if you want to work with the long tail technique.',
-						'wp-seopress'
+						'webseo'
 					),
 					'google_suggestions_placeholder' => __(
 						'Get suggestions from Google',
-						'wp-seopress'
+						'webseo'
 					),
-					'get_suggestions'                => __( 'Get suggestions!', 'wp-seopress' ),
-					'should_be_improved'             => __( 'Should be improved', 'wp-seopress' ),
-					'keyword_singular'               => __( 'The keyword:', 'wp-seopress' ),
-					'keyword_plural'                 => __( 'These keywords:', 'wp-seopress' ),
-					'already_used_singular'          => /* translators: %d number of times a target keyword is used, singular form only */ __( 'is already used %d time', 'wp-seopress' ),
-					'already_used_plural'            => /* translators: %d number of times a target keyword is used, plural form only */ __( 'is already used %d times', 'wp-seopress' ),
+					'get_suggestions'                => __( 'Get suggestions!', 'webseo' ),
+					'should_be_improved'             => __( 'Should be improved', 'webseo' ),
+					'keyword_singular'               => __( 'The keyword:', 'webseo' ),
+					'keyword_plural'                 => __( 'These keywords:', 'webseo' ),
+					'already_used_singular'          => /* translators: %d number of times a target keyword is used, singular form only */ __( 'is already used %d time', 'webseo' ),
+					'already_used_plural'            => /* translators: %d number of times a target keyword is used, plural form only */ __( 'is already used %d times', 'webseo' ),
 				),
 				'schemas_manual'   => array(
-					'description' => __( 'It is recommended to enter as many properties as possible to maximize the chances of getting a rich snippet in Google search results.', 'wp-seopress' ),
-					'remove'      => __( 'Delete schema', 'wp-seopress' ),
-					'add'         => __( 'Add a schema', 'wp-seopress' ),
+					'description' => __( 'It is recommended to enter as many properties as possible to maximize the chances of getting a rich snippet in Google search results.', 'webseo' ),
+					'remove'      => __( 'Delete schema', 'webseo' ),
+					'add'         => __( 'Add a schema', 'webseo' ),
 				),
 				'social'           => array(
 					'title'          => __(
 						'LinkedIn, Instagram, WhatsApp and Pinterest use the same social metadata as Facebook. X does the same if no X Cards tags are defined below.',
-						'wp-seopress'
+						'webseo'
 					),
 					'facebook_title' => __(
 						'Ask Facebook to update its cache',
-						'wp-seopress'
+						'webseo'
 					),
 					'twitter_title'  => __(
 						'Preview your X Cards using the official validator',
-						'wp-seopress'
+						'webseo'
 					),
 				),
 				'social_preview'   => array(
 					'facebook' => array(
-						'title'                 => __( 'Facebook Preview', 'wp-seopress' ),
+						'title'                 => __( 'Facebook Preview', 'webseo' ),
 						'description'           => __(
 							'This is what your post will look like in Facebook. You have to publish your post to get the Facebook Preview.',
-							'wp-seopress'
+							'webseo'
 						),
-						'ratio'                 => __( 'Your image ratio is:', 'wp-seopress' ),
-						'ratio_info'            => __( 'The closer to 1.91 the better.', 'wp-seopress' ),
-						'img_filesize'          => __( 'Your filesize is: ', 'wp-seopress' ),
-						'filesize_is_too_large' => __( 'This is superior to 300KB. WhatsApp will not use your image.', 'wp-seopress' ),
+						'ratio'                 => __( 'Your image ratio is:', 'webseo' ),
+						'ratio_info'            => __( 'The closer to 1.91 the better.', 'webseo' ),
+						'img_filesize'          => __( 'Your filesize is: ', 'webseo' ),
+						'filesize_is_too_large' => __( 'This is superior to 300KB. WhatsApp will not use your image.', 'webseo' ),
 						'min_size'              => __(
 							'Minimun size for Facebook is <strong>200x200px</strong>. Please choose another image.',
-							'wp-seopress'
+							'webseo'
 						),
 						'file_support'          => __(
 							'File type not supported by Facebook. Please choose another image.',
-							'wp-seopress'
+							'webseo'
 						),
 						'error_image'           => __(
 							'File error. Please choose another image.',
-							'wp-seopress'
+							'webseo'
 						),
-						'choose_image'          => __( 'Please choose an image', 'wp-seopress' ),
+						'choose_image'          => __( 'Please choose an image', 'webseo' ),
 					),
 					'twitter'  => array(
-						'title'        => __( 'X Preview', 'wp-seopress' ),
+						'title'        => __( 'X Preview', 'webseo' ),
 						'description'  => __(
 							'This is what your post will look like in X. You have to publish your post to get the X Preview.',
-							'wp-seopress'
+							'webseo'
 						),
-						'ratio'        => __( 'Your image ratio is:', 'wp-seopress' ),
+						'ratio'        => __( 'Your image ratio is:', 'webseo' ),
 						'ratio_info'   => __(
 							'The closer to 1 the better (with large card, 2 is better).',
-							'wp-seopress'
+							'webseo'
 						),
 						'min_size'     => __(
 							'Minimun size for X is <strong>144x144px</strong>. Please choose another image.',
-							'wp-seopress'
+							'webseo'
 						),
 						'file_support' => __(
 							'File type not supported by X. Please choose another image.',
-							'wp-seopress'
+							'webseo'
 						),
 						'error_image'  => __(
 							'File error. Please choose another image.',
-							'wp-seopress'
+							'webseo'
 						),
-						'choose_image' => __( 'Please choose an image', 'wp-seopress' ),
+						'choose_image' => __( 'Please choose an image', 'webseo' ),
 
 					),
 				),
 				'advanced'         => array(
-					'title'                           => __( 'Meta robots settings', 'wp-seopress' ),
+					'title'                           => __( 'Meta robots settings', 'webseo' ),
 					'tooltip_canonical'               => __(
 						'Canonical URL',
-						'wp-seopress'
+						'webseo'
 					),
 					'tooltip_canonical_description'   => __(
 						'A canonical URL is the URL of the page that Google thinks is most representative from a set of duplicate pages on your site.',
-						'wp-seopress'
+						'webseo'
 					),
 					'tooltip_canonical_description_2' => __(
 						'For example, if you have URLs for the same page (for example: example.com?dress=1234 and example.com/dresses/1234), Google chooses one as canonical.',
-						'wp-seopress'
+						'webseo'
 					),
 					'tooltip_canonical_description_3' => __(
 						'Note that the pages do not need to be absolutely identical; minor changes in sorting or filtering of list pages do not make the page unique (for example, sorting by price or filtering by item color). The canonical can be in a different domain than a duplicate.',
-						'wp-seopress'
+						'webseo'
 					),
 				),
 			),

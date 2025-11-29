@@ -91,37 +91,37 @@ class ManageColumn implements ExecuteHooksBackend {
 	 */
 	public function addColumn( $columns ) {
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceTitleCol() === '1' ) {
-			$columns['seopress_title'] = __( 'Title tag', 'wp-seopress' );
+			$columns['seopress_title'] = __( 'Title tag', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceMetaDescriptionCol() === '1' ) {
-			$columns['seopress_desc'] = __( 'Meta Desc.', 'wp-seopress' );
+			$columns['seopress_desc'] = __( 'Meta Desc.', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceRedirectEnableCol() === '1' ) {
-			$columns['seopress_redirect_enable'] = __( 'Redirect?', 'wp-seopress' );
+			$columns['seopress_redirect_enable'] = __( 'Redirect?', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceRedirectUrlCol() === '1' ) {
-			$columns['seopress_redirect_url'] = __( 'Redirect URL', 'wp-seopress' );
+			$columns['seopress_redirect_url'] = __( 'Redirect URL', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceCanonical() === '1' ) {
-			$columns['seopress_canonical'] = __( 'Canonical', 'wp-seopress' );
+			$columns['seopress_canonical'] = __( 'Canonical', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceTargetKwCol() === '1' ) {
-			$columns['seopress_tkw'] = __( 'Target Kw', 'wp-seopress' );
+			$columns['seopress_tkw'] = __( 'Target Kw', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceNoIndexCol() === '1' ) {
-			$columns['seopress_noindex'] = __( 'noindex?', 'wp-seopress' );
+			$columns['seopress_noindex'] = __( 'noindex?', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceNoFollowCol() === '1' ) {
-			$columns['seopress_nofollow'] = __( 'nofollow?', 'wp-seopress' );
+			$columns['seopress_nofollow'] = __( 'nofollow?', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceInboundCol() === '1' ) {
-			$columns['seopress_inbound'] = __( 'Inbound links', 'wp-seopress' );
+			$columns['seopress_inbound'] = __( 'Inbound links', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceOutboundCol() === '1' ) {
-			$columns['seopress_outbound'] = __( 'Outbound links', 'wp-seopress' );
+			$columns['seopress_outbound'] = __( 'Outbound links', 'webseo' );
 		}
 		if ( seopress_get_service( 'AdvancedOption' )->getAppearanceScoreCol() === '1' ) {
-			$columns['seopress_score'] = __( 'Score', 'wp-seopress' );
+			$columns['seopress_score'] = __( 'Score', 'webseo' );
 		}
 
 		return $columns;
@@ -138,7 +138,7 @@ class ManageColumn implements ExecuteHooksBackend {
 	 * @return array
 	 */
 	public function addMediaColumn( $columns ) {
-		$columns['seopress_alt_text'] = __( 'Alt text', 'wp-seopress' );
+		$columns['seopress_alt_text'] = __( 'Alt text', 'webseo' );
 
 		return $columns;
 	}
@@ -198,13 +198,13 @@ class ManageColumn implements ExecuteHooksBackend {
 
 			case 'seopress_noindex':
 				if ( 'yes' === get_post_meta( $post_id, '_seopress_robots_index', true ) ) {
-					echo '<span class="dashicons dashicons-hidden"></span><span class="screen-reader-text">' . esc_html__( 'noindex is on!', 'wp-seopress' ) . '</span>';
+					echo '<span class="dashicons dashicons-hidden"></span><span class="screen-reader-text">' . esc_html__( 'noindex is on!', 'webseo' ) . '</span>';
 				}
 				break;
 
 			case 'seopress_nofollow':
 				if ( 'yes' === get_post_meta( $post_id, '_seopress_robots_follow', true ) ) {
-					echo '<span class="dashicons dashicons-yes"></span><span class="screen-reader-text">' . esc_html__( 'nofollow is on!', 'wp-seopress' ) . '</span>';
+					echo '<span class="dashicons dashicons-yes"></span><span class="screen-reader-text">' . esc_html__( 'nofollow is on!', 'webseo' ) . '</span>';
 				}
 				break;
 
@@ -290,12 +290,12 @@ class ManageColumn implements ExecuteHooksBackend {
 						echo '<p><svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
                         <circle id="bar" class="notgood" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0" style="stroke-dashoffset: 101.788px;"></circle>
-                    </svg><span class="screen-reader-text">' . esc_html__( 'Should be improved', 'wp-seopress' ) . '</span></p>';
+                    </svg><span class="screen-reader-text">' . esc_html__( 'Should be improved', 'webseo' ) . '</span></p>';
 					} else {
 						echo '<p><svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
                         <circle id="bar" class="good" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-                    </svg><span class="screen-reader-text">' . esc_html__( 'Good', 'wp-seopress' ) . '</span></p>';
+                    </svg><span class="screen-reader-text">' . esc_html__( 'Good', 'webseo' ) . '</span></p>';
 					}
 					echo '</div>';
 					return;
@@ -315,12 +315,12 @@ class ManageColumn implements ExecuteHooksBackend {
 						echo '<p><svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
                         <circle id="bar" class="good" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-                    </svg><span class="screen-reader-text">' . esc_html__( 'Good', 'wp-seopress' ) . '</span></p>';
+                    </svg><span class="screen-reader-text">' . esc_html__( 'Good', 'webseo' ) . '</span></p>';
 					} else {
 						echo '<p><svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
                         <circle id="bar" class="notgood" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0" style="stroke-dashoffset: 101.788px;"></circle>
-                    </svg><span class="screen-reader-text">' . esc_html__( 'Should be improved', 'wp-seopress' ) . '</span></p>';
+                    </svg><span class="screen-reader-text">' . esc_html__( 'Should be improved', 'webseo' ) . '</span></p>';
 					}
 					echo '</div>';
 				} elseif ( get_post_meta( $post_id, '_seopress_analysis_data' ) ) {
@@ -330,12 +330,12 @@ class ManageColumn implements ExecuteHooksBackend {
 						echo '<p><svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 							<circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
 							<circle id="bar" class="good" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
-						</svg><span class="screen-reader-text">' . esc_html__( 'Good', 'wp-seopress' ) . '</span></p>';
+						</svg><span class="screen-reader-text">' . esc_html__( 'Good', 'webseo' ) . '</span></p>';
 					} elseif ( isset( $ca[0]['score'] ) && '' === $ca[0]['score'] ) {
 						echo '<p><svg role="img" aria-hidden="true" focusable="false" width="100%" height="100%" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
 							<circle r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
 							<circle id="bar" class="notgood" r="90" cx="100" cy="100" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0" style="stroke-dashoffset: 101.788px;"></circle>
-						</svg><span class="screen-reader-text">' . esc_html__( 'Should be improved', 'wp-seopress' ) . '</span></p>';
+						</svg><span class="screen-reader-text">' . esc_html__( 'Should be improved', 'webseo' ) . '</span></p>';
 					}
 						echo '</div>';
 				}

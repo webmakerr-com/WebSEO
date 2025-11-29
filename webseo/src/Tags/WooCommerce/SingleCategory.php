@@ -20,7 +20,7 @@ class SingleCategory implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Product Category', 'wp-seopress' );
+		return __( 'Product Category', 'webseo' );
 	}
 
 	/**

@@ -25,16 +25,16 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 	<div id="seopress-news-panel" class="seopress-card <?php echo esc_attr( $class ); ?>" style="display: none">
 		<div class="seopress-card-title">
 			<div class="seopress-d-flex seopress-space-between">
-				<h2><?php esc_attr_e( 'Latest News from SEOPress Blog', 'wp-seopress' ); ?></h2>
+				<h2><?php esc_attr_e( 'Latest News from SEOPress Blog', 'webseo' ); ?></h2>
 				<div>
-					<a href="<?php echo esc_url( $docs['blog'] ); ?>" class="seopress-help" target="_blank" title="<?php esc_attr_e( 'See all our blog posts - Open in a new tab', 'wp-seopress' ); ?>">
-						<?php esc_attr_e( 'See all our blog posts', 'wp-seopress' ); ?>
+					<a href="<?php echo esc_url( $docs['blog'] ); ?>" class="seopress-help" target="_blank" title="<?php esc_attr_e( 'See all our blog posts - Open in a new tab', 'webseo' ); ?>">
+						<?php esc_attr_e( 'See all our blog posts', 'webseo' ); ?>
 					</a>
 					<span class="seopress-help dashicons dashicons-external"></span>
 				</div>
 			</div>
 			<div>
-				<p><?php esc_attr_e( 'The latest news about SEOPress, SEO and WordPress.', 'wp-seopress' ); ?></p>
+				<p><?php esc_attr_e( 'The latest news about SEOPress, SEO and WordPress.', 'webseo' ); ?></p>
 			</div>
 		</div>
 		<div class="seopress-card-content">
@@ -110,12 +110,12 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 					<p>
 						<?php
 						/* translators: %s error message */
-						printf( esc_html__( 'Unable to load news feed: %s', 'wp-seopress' ), esc_html( $rss->get_error_message() ) );
+						printf( esc_html__( 'Unable to load news feed: %s', 'webseo' ), esc_html( $rss->get_error_message() ) );
 						?>
 					</p>
 				<?php } elseif ( empty( $feed_items ) ) { ?>
 					<p>
-						<?php esc_html_e( 'No items', 'wp-seopress' ); ?>
+						<?php esc_html_e( 'No items', 'webseo' ); ?>
 					</p>
 					<?php
 				} else {
@@ -125,7 +125,7 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 						<article class="<?php echo esc_attr( $class ); ?>">
 							<div>
 								<?php if ( ! empty( $item['image'] ) ) { ?>
-									<img src="<?php echo esc_url( $item['image'] ); ?>" class="seopress-thumb" alt="<?php /* translators: %s blog post title */ printf( esc_attr__( 'Post thumbnail of %s', 'wp-seopress' ), esc_html( $item['title'] ) ); ?>" decoding="async" loading="lazy"/>
+									<img src="<?php echo esc_url( $item['image'] ); ?>" class="seopress-thumb" alt="<?php /* translators: %s blog post title */ printf( esc_attr__( 'Post thumbnail of %s', 'webseo' ), esc_html( $item['title'] ) ); ?>" decoding="async" loading="lazy"/>
 								<?php } ?>
 
 								<?php if ( ! empty( $item['categories'] ) ) { ?>
@@ -135,7 +135,7 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 								<?php } ?>
 
 								<h3 class="seopress-item-title">
-									<a href="<?php echo esc_url( $item['permalink'] . '?utm_source=plugin&utm_medium=dashboard' ); ?>" target="_blank" title="<?php /* translators: %s blog post URL */ printf( esc_attr__( 'Learn more about %s in a new tab', 'wp-seopress' ), esc_html( $item['title'] ) ); ?>">
+									<a href="<?php echo esc_url( $item['permalink'] . '?utm_source=plugin&utm_medium=dashboard' ); ?>" target="_blank" title="<?php /* translators: %s blog post URL */ printf( esc_attr__( 'Learn more about %s in a new tab', 'webseo' ), esc_html( $item['title'] ) ); ?>">
 										<?php echo esc_html( $item['title'] ); ?>
 									</a>
 								</h3>
@@ -143,8 +143,8 @@ $class = '1' !== seopress_get_service( 'AdvancedOption' )->getAppearanceNews() ?
 								<p class="seopress-item-content"><?php echo esc_html( $item['description'] ); ?></p>
 							</div>
 							<div class="seopress-item-wrap-content">
-								<a class="btn btnSecondary" href="<?php echo esc_url( $item['permalink'] . '?utm_source=plugin&utm_medium=dashboard' ); ?>" target="_blank" title="<?php /* translators: %s blog post URL */ printf( esc_attr__( 'Learn more about %s in a new tab', 'wp-seopress' ), esc_html( $item['title'] ) ); ?>">
-									<?php esc_html_e( 'Learn more', 'wp-seopress' ); ?>
+								<a class="btn btnSecondary" href="<?php echo esc_url( $item['permalink'] . '?utm_source=plugin&utm_medium=dashboard' ); ?>" target="_blank" title="<?php /* translators: %s blog post URL */ printf( esc_attr__( 'Learn more about %s in a new tab', 'webseo' ), esc_html( $item['title'] ) ); ?>">
+									<?php esc_html_e( 'Learn more', 'webseo' ); ?>
 								</a>
 							</div>
 						</article>

@@ -20,7 +20,7 @@ class CurrentShortMonth implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Current Month in 3 letters', 'wp-seopress' );
+		return __( 'Current Month in 3 letters', 'webseo' );
 	}
 
 	/**

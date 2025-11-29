@@ -20,7 +20,7 @@ class PostContent implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Content', 'wp-seopress' );
+		return __( 'Post Content', 'webseo' );
 	}
 
 	/**

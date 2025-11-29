@@ -25,9 +25,9 @@ function seopress_wp_tiny_mce( $hook ) {
                 'webseo-classic',
                 'seopressI18n',
                 array(
-                        'sponsored' => __( 'Add <code>rel="sponsored"</code> attribute', 'wp-seopress' ),
-			'nofollow'  => __( 'Add <code>rel="nofollow"</code> attribute', 'wp-seopress' ),
-			'ugc'       => __( 'Add <code>rel="UGC"</code> attribute', 'wp-seopress' ),
+                        'sponsored' => __( 'Add <code>rel="sponsored"</code> attribute', 'webseo' ),
+			'nofollow'  => __( 'Add <code>rel="nofollow"</code> attribute', 'webseo' ),
+			'ugc'       => __( 'Add <code>rel="UGC"</code> attribute', 'webseo' ),
 		)
 	);
 }

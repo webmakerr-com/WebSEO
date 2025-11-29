@@ -22,12 +22,12 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 		<?php
 			$current_tab      = '';
 		$plugin_settings_tabs = array(
-			'tab_seopress_social_knowledge' => __( 'Knowledge Graph', 'wp-seopress' ),
-			'tab_seopress_social_accounts'  => __( 'Your social accounts', 'wp-seopress' ),
-			'tab_seopress_social_facebook'  => __( 'Facebook (Open Graph)', 'wp-seopress' ),
-			'tab_seopress_social_twitter'   => __( 'X Cards', 'wp-seopress' ),
-			'tab_seopress_social_linkedin'  => __( 'LinkedIn', 'wp-seopress' ),
-			'tab_seopress_social_fediverse' => __( 'Fediverse', 'wp-seopress' ),
+			'tab_seopress_social_knowledge' => __( 'Knowledge Graph', 'webseo' ),
+			'tab_seopress_social_accounts'  => __( 'Your social accounts', 'webseo' ),
+			'tab_seopress_social_facebook'  => __( 'Facebook (Open Graph)', 'webseo' ),
+			'tab_seopress_social_twitter'   => __( 'X Cards', 'webseo' ),
+			'tab_seopress_social_linkedin'  => __( 'LinkedIn', 'webseo' ),
+			'tab_seopress_social_fediverse' => __( 'Fediverse', 'webseo' ),
 		);
 
 		echo '<div class="nav-tab-wrapper">';
@@ -80,6 +80,6 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 				" id="tab_seopress_social_fediverse"><?php do_settings_sections( 'seopress-settings-admin-social-fediverse' ); ?></div>
 		</div>
 
-		<?php sp_submit_button( esc_html__( 'Save changes', 'wp-seopress' ) ); ?>
+		<?php sp_submit_button( esc_html__( 'Save changes', 'webseo' ) ); ?>
 	</form>
 <?php

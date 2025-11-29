@@ -23,7 +23,7 @@ add_settings_section(
 add_settings_section(
     'seopress_setting_section_bot_site_audit_settings', // ID
     '',
-    //__("Site audit settings","wp-seopress"), // Title
+    //__("Site audit settings","webseo"), // Title
     'seopress_print_section_info_bot_site_audit', // Callback
     'seopress-settings-admin-bot-settings' // Page
 );

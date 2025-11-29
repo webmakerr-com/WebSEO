@@ -27,16 +27,16 @@ function seopress_display_seo_term_metaboxe() {
 
 		if ( empty( $check_missing_titles ) || empty( $check_missing_descriptions ) ) {
 			echo '<div class="notice notice-warning">';
-			echo '<p><strong>' . esc_html__( 'WARNING', 'wp-seopress' ) . '</strong></p>';
+			echo '<p><strong>' . esc_html__( 'WARNING', 'webseo' ) . '</strong></p>';
 			echo '<ul>';
 			if ( empty( $check_missing_titles ) ) {
-				echo '<li>' . wp_kses_post( __( 'You have not set a <strong>global meta title</strong> for this taxonomy.', 'wp-seopress' ) ) . '</li>';
+				echo '<li>' . wp_kses_post( __( 'You have not set a <strong>global meta title</strong> for this taxonomy.', 'webseo' ) ) . '</li>';
 			}
 			if ( empty( $check_missing_descriptions ) ) {
-				echo '<li>' . wp_kses_post( __( 'You have not set a <strong>global meta description</strong> for this taxonomy.', 'wp-seopress' ) ) . '</li>';
+				echo '<li>' . wp_kses_post( __( 'You have not set a <strong>global meta description</strong> for this taxonomy.', 'webseo' ) ) . '</li>';
 			}
 			echo '</ul>';
-			echo '<p><a class="button button-primary" href="' . esc_url( admin_url( 'admin.php?page=webseo-titles#tab=tab_seopress_titles_tax' ) ) . '">' . esc_attr__( 'Fix this!', 'wp-seopress' ) . '</a></p>';
+			echo '<p><a class="button button-primary" href="' . esc_url( admin_url( 'admin.php?page=webseo-titles#tab=tab_seopress_titles_tax' ) ) . '">' . esc_attr__( 'Fix this!', 'webseo' ) . '</a></p>';
 			echo '</div>';
 		}
 	}
@@ -114,7 +114,7 @@ function seopress_display_seo_term_metaboxe() {
 			$seopress_real_preview = array(
 				'seopress_nonce'               => wp_create_nonce( 'seopress_real_preview_nonce' ),
 				'seopress_real_preview'        => admin_url( 'admin-ajax.php' ),
-				'i18n'                         => array( 'progress' => __( 'Analysis in progress...', 'wp-seopress' ) ),
+				'i18n'                         => array( 'progress' => __( 'Analysis in progress...', 'webseo' ) ),
 				'ajax_url'                     => admin_url( 'admin-ajax.php' ),
 				'get_preview_meta_title'       => wp_create_nonce( 'get_preview_meta_title' ),
 				'get_preview_meta_description' => wp_create_nonce( 'get_preview_meta_description' ),

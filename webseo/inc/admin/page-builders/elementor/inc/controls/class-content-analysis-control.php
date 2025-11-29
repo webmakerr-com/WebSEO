@@ -55,7 +55,7 @@ class Content_Analysis_Control extends \Elementor\Base_Control {
 		return array(
 			'post_id'     => isset( $post ) ? $post->ID : '',
 			'post_type'   => isset( $post ) ? $post->post_type : '',
-			'loading'     => __( 'Analysis in progress...', 'wp-seopress' ),
+			'loading'     => __( 'Analysis in progress...', 'webseo' ),
 			'description' => '',
 		);
 	}
@@ -71,7 +71,7 @@ class Content_Analysis_Control extends \Elementor\Base_Control {
 	<button id="seopress_launch_analysis" type="button"
 		class="btn btnSecondary elementor-button elementor-button-default" data_id="{{ data.post_id }}"
 		data_post_type="{{ data.post_type }}">
-		<?php esc_html_e( 'Refresh analysis', 'wp-seopress' ); ?>
+		<?php esc_html_e( 'Refresh analysis', 'webseo' ); ?>
 	</button>
 
 	<# if ( data.description ) { #>

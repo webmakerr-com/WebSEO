@@ -16,12 +16,12 @@ function seopress_titles_sep_callback() {
 	$check   = isset( $options['seopress_titles_sep'] ) ? $options['seopress_titles_sep'] : null; ?>
 
 <input type="text" id="seopress_titles_sep" name="seopress_titles_option_name[seopress_titles_sep]"
-	placeholder="<?php esc_html_e( 'Enter your separator, e.g. "-"', 'wp-seopress' ); ?>"
-	aria-label="<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>"
+	placeholder="<?php esc_html_e( 'Enter your separator, e.g. "-"', 'webseo' ); ?>"
+	aria-label="<?php esc_attr_e( 'Separator', 'webseo' ); ?>"
 	value="<?php echo esc_html( $check ); ?>" />
 
 <p class="description">
-	<?php esc_attr_e( 'Use this separator with %%sep%% in your title and meta description.', 'wp-seopress' ); ?>
+	<?php esc_attr_e( 'Use this separator with %%sep%% in your title and meta description.', 'webseo' ); ?>
 </p>
 
 	<?php
@@ -37,24 +37,24 @@ function seopress_titles_home_site_title_callback() {
 
 <input type="text" id="seopress_titles_home_site_title"
 	name="seopress_titles_option_name[seopress_titles_home_site_title]"
-	placeholder="<?php esc_html_e( 'My awesome website', 'wp-seopress' ); ?>"
-	aria-label="<?php esc_attr_e( 'Site title', 'wp-seopress' ); ?>"
+	placeholder="<?php esc_html_e( 'My awesome website', 'webseo' ); ?>"
+	aria-label="<?php esc_attr_e( 'Site title', 'webseo' ); ?>"
 	value="<?php echo esc_html( $check ); ?>" />
 
 <div class="wrap-tags">
 	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-title" data-tag="%%sitetitle%%">
 		<span class="dashicons dashicons-plus-alt2"></span>
-		<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 	</button>
 
 	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-sep" data-tag="%%sep%%">
 		<span class="dashicons dashicons-plus-alt2"></span>
-		<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 	</button>
 
 	<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-desc" data-tag="%%tagline%%">
 		<span class="dashicons dashicons-plus-alt2"></span>
-		<?php esc_attr_e( 'Tagline', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Tagline', 'webseo' ); ?>
 	</button>
 
 	<?php
@@ -72,14 +72,14 @@ function seopress_titles_home_site_title_alt_callback() {
 
 <input type="text" id="seopress_titles_home_site_title_alt"
 	name="seopress_titles_option_name[seopress_titles_home_site_title_alt]"
-	placeholder="<?php esc_html_e( 'My alternative site title', 'wp-seopress' ); ?>"
-	aria-label="<?php esc_attr_e( 'Alternative site title', 'wp-seopress' ); ?>"
+	placeholder="<?php esc_html_e( 'My alternative site title', 'webseo' ); ?>"
+	aria-label="<?php esc_attr_e( 'Alternative site title', 'webseo' ); ?>"
 	value="<?php echo esc_html( $check ); ?>" />
 
 	<p class="description">
 		<?php
 			/* translators: %1$s documentation URL */
-			echo wp_kses_post( sprintf( __( 'The alternate name of the website (for example, if there\'s a commonly recognized acronym or shorter name for your site), if applicable. Make sure the name meets the <a href="%1$s" target="_blank">content guidelines</a><span class="dashicons dashicons-external"></span>.', 'wp-seopress' ), esc_url( $docs['titles']['alt_title'] ) ) );
+			echo wp_kses_post( sprintf( __( 'The alternate name of the website (for example, if there\'s a commonly recognized acronym or shorter name for your site), if applicable. Make sure the name meets the <a href="%1$s" target="_blank">content guidelines</a><span class="dashicons dashicons-external"></span>.', 'webseo' ), esc_url( $docs['titles']['alt_title'] ) ) );
 		?>
 	</p>
 
@@ -95,13 +95,13 @@ function seopress_titles_home_site_desc_callback() {
 	?>
 
 	<textarea id="seopress_titles_home_site_desc" name="seopress_titles_option_name[seopress_titles_home_site_desc]"
-		placeholder="<?php esc_html_e( 'This is a cool website about Wookiees', 'wp-seopress' ); ?>"
-		aria-label="<?php esc_attr_e( 'Meta description', 'wp-seopress' ); ?>"><?php echo esc_html( $check ); ?></textarea>
+		placeholder="<?php esc_html_e( 'This is a cool website about Wookiees', 'webseo' ); ?>"
+		aria-label="<?php esc_attr_e( 'Meta description', 'webseo' ); ?>"><?php echo esc_html( $check ); ?></textarea>
 
 	<div class="wrap-tags">
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-meta-desc" data-tag="%%tagline%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Tagline', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Tagline', 'webseo' ); ?>
 		</button>
 
 		<?php echo seopress_render_dyn_variables( 'tag-description' ); ?>
@@ -111,7 +111,7 @@ function seopress_titles_home_site_desc_callback() {
 		<p>
 			<a
 				href="<?php echo esc_url( admin_url( 'post.php?post=' . get_option( 'page_for_posts' ) ) . '&action=edit' ); ?>">
-				<?php esc_attr_e( 'Looking to edit your blog page?', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'Looking to edit your blog page?', 'webseo' ); ?>
 			</a>
 		</p>
 		<?php
@@ -154,26 +154,26 @@ function seopress_titles_single_titles_callback() {
 
 				<label
 					for="seopress_titles_single_cpt_enable[<?php echo esc_attr( $seopress_cpt_key ); ?>]">
-					<?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'webseo' ); ?>
 				</label>
 
 				<?php if ( '1' === $check ) { ?>
 				<span id="titles-state-default" class="feature-state">
 					<span class="dashicons dashicons-arrow-left-alt"></span>
-					<?php esc_attr_e( 'Click to display any SEO metaboxes / columns / bulk actions for this post type', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Click to display any SEO metaboxes / columns / bulk actions for this post type', 'webseo' ); ?>
 				</span>
 				<span id="titles-state" class="feature-state feature-state-off">
 					<span class="dashicons dashicons-arrow-left-alt"></span>
-					<?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'webseo' ); ?>
 				</span>
 				<?php } else { ?>
 				<span id="titles-state-default" class="feature-state">
 					<span class="dashicons dashicons-arrow-left-alt"></span>
-					<?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'webseo' ); ?>
 				</span>
 				<span id="titles-state" class="feature-state feature-state-off">
 					<span class="dashicons dashicons-arrow-left-alt"></span>
-					<?php esc_attr_e( 'Click to display any SEO metaboxes / columns / bulk actions for this post type', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Click to display any SEO metaboxes / columns / bulk actions for this post type', 'webseo' ); ?>
 				</span>
 				<?php } ?>
 
@@ -184,11 +184,11 @@ function seopress_titles_single_titles_callback() {
 								$(this).attr('data-toggle', $(this).attr('data-toggle') == '1' ? '0' : '1');
 								if ($(this).attr('data-toggle') == '1') {
 									$(this).next().next('.feature-state').html(
-										'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'wp-seopress' ); ?>'
+										'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to hide any SEO metaboxes / columns / bulk actions for this post type', 'webseo' ); ?>'
 									);
 								} else {
 									$(this).next().next('.feature-state').html(
-										'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to display any SEO metaboxes / columns / bulk actions for this post type', 'wp-seopress' ); ?>'
+										'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to display any SEO metaboxes / columns / bulk actions for this post type', 'webseo' ); ?>'
 									);
 								}
 							});
@@ -208,7 +208,7 @@ function seopress_titles_single_titles_callback() {
 		<!--Single Title CPT-->
 		<div class="seopress_wrap_single_cpt">
 			<p>
-				<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 			</p>
 
 			<?php
@@ -248,21 +248,21 @@ function seopress_titles_single_titles_callback() {
 					id="seopress-tag-single-title-<?php echo esc_attr( $seopress_cpt_key ); ?>"
 					data-tag="%%post_title%%">
 					<span class="dashicons dashicons-plus-alt2"></span>
-					<?php esc_attr_e( 'Post Title', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Post Title', 'webseo' ); ?>
 				</button>
 
 				<button type="button" class="btn btnSecondary tag-title"
 					id="seopress-tag-sep-<?php echo esc_attr( $seopress_cpt_key ); ?>"
 					data-tag="%%sep%%">
 					<span class="dashicons dashicons-plus-alt2"></span>
-					<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 				</button>
 
 				<button type="button" class="btn btnSecondary tag-title"
 					id="seopress-tag-single-sitetitle-<?php echo esc_attr( $seopress_cpt_key ); ?>"
 					data-tag="%%sitetitle%%">
 					<span class="dashicons dashicons-plus-alt2"></span>
-					<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 				</button>
 
 				<?php
@@ -273,7 +273,7 @@ function seopress_titles_single_titles_callback() {
 			<!--Single Meta Description CPT-->
 			<div class="seopress_wrap_single_cpt">
 				<p>
-					<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 				</p>
 
 				<?php
@@ -305,7 +305,7 @@ function seopress_titles_single_titles_callback() {
 						id="seopress-tag-single-desc-<?php echo esc_attr( $seopress_cpt_key ); ?>"
 						data-tag="%%post_excerpt%%">
 						<span class="dashicons dashicons-plus-alt2"></span>
-						<?php esc_attr_e( 'Post excerpt', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'Post excerpt', 'webseo' ); ?>
 					</button>
 					<?php
 					echo seopress_render_dyn_variables( 'tag-description' );
@@ -332,7 +332,7 @@ function seopress_titles_single_titles_callback() {
 					<?php } ?>
 					value="1"/>
 
-					<?php echo wp_kses_post( __( 'Do not display this single post type in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+					<?php echo wp_kses_post( __( 'Do not display this single post type in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 				</label>
 
 				<?php
@@ -344,7 +344,7 @@ function seopress_titles_single_titles_callback() {
 					<p>
 								<?php
 									/* translators: %s documentation URL */
-									echo wp_kses_post( sprintf( __( 'This custom post type is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you <a href="%s">check this out here</a>.', 'wp-seopress' ), admin_url( 'admin.php?page=webseo-xml-sitemap' ) ) );
+									echo wp_kses_post( sprintf( __( 'This custom post type is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you <a href="%s">check this out here</a>.', 'webseo' ), admin_url( 'admin.php?page=webseo-xml-sitemap' ) ) );
 								?>
 					</p>
 				</div>
@@ -377,7 +377,7 @@ function seopress_titles_single_titles_callback() {
 					<?php } ?>
 					value="1"/>
 
-					<?php echo wp_kses_post( __( 'Do not follow links for this single post type <strong>(nofollow)</strong>', 'wp-seopress' ) ); ?>
+					<?php echo wp_kses_post( __( 'Do not follow links for this single post type <strong>(nofollow)</strong>', 'webseo' ) ); ?>
 				</label>
 
 				<?php
@@ -407,11 +407,11 @@ function seopress_titles_single_titles_callback() {
 					<?php } ?>
 					value="1"/>
 
-					<?php echo wp_kses_post( __( 'Display date in Google search results by adding <code>article:published_time</code> and <code>article:modified_time</code> meta?', 'wp-seopress' ) ); ?>
+					<?php echo wp_kses_post( __( 'Display date in Google search results by adding <code>article:published_time</code> and <code>article:modified_time</code> meta?', 'webseo' ) ); ?>
 				</label>
 
 				<p class="description">
-					<?php esc_attr_e( 'Unchecking this doesn\'t prevent Google to display post date in search results.', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Unchecking this doesn\'t prevent Google to display post date in search results.', 'webseo' ); ?>
 				</p>
 
 				<?php
@@ -441,13 +441,13 @@ function seopress_titles_single_titles_callback() {
 					<?php } ?>
 					value="1"/>
 
-					<?php esc_attr_e( 'Display post thumbnail in Google Custom Search results?', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Display post thumbnail in Google Custom Search results?', 'webseo' ); ?>
 				</label>
 
 				<p class="description">
 					<?php
 						/* translators: %s documentation URL */
-						echo wp_kses_post( sprintf( __( 'This option does not apply to traditional search results. <a href="%s" target="_blank">Learn more</a>', 'wp-seopress' ), esc_url( $docs['titles']['thumbnail'] ) ) );
+						echo wp_kses_post( sprintf( __( 'This option does not apply to traditional search results. <a href="%s" target="_blank">Learn more</a>', 'webseo' ), esc_url( $docs['titles']['thumbnail'] ) ) );
 					?>
 					<span class="dashicons dashicons-external"></span>
 				</p>
@@ -473,11 +473,11 @@ function seopress_titles_bp_groups_title_callback() {
 		$options = get_option( 'seopress_titles_option_name' );
 		?>
 			<h3>
-				<?php esc_attr_e( 'BuddyPress groups', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'BuddyPress groups', 'webseo' ); ?>
 			</h3>
 
 			<p>
-				<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 			</p>
 
 			<?php $check = isset( $options['seopress_titles_bp_groups_title'] ) ? $options['seopress_titles_bp_groups_title'] : null; ?>
@@ -489,16 +489,16 @@ function seopress_titles_bp_groups_title_callback() {
 			<div class="wrap-tags">
 				<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-post-title-bd-groups" data-tag="%%post_title%%">
 					<span class="dashicons dashicons-plus-alt2"></span>
-					<?php esc_attr_e( 'Post Title', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Post Title', 'webseo' ); ?>
 				</button>
 				<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-sep-bd-groups" data-tag="%%sep%%">
 					<span class="dashicons dashicons-plus-alt2"></span>
-					<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 				</button>
 
 				<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-title-bd-groups" data-tag="%%sitetitle%%">
 					<span class="dashicons dashicons-plus-alt2"></span>
-					<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 				</button>
 
 				<?php
@@ -514,7 +514,7 @@ function seopress_titles_bp_groups_desc_callback() {
 		$options = get_option( 'seopress_titles_option_name' );
 		?>
 		<p>
-			<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 		</p>
 
 		<?php $check = isset( $options['seopress_titles_bp_groups_desc'] ) ? $options['seopress_titles_bp_groups_desc'] : null; ?>
@@ -541,7 +541,7 @@ function seopress_titles_bp_groups_noindex_callback() {
 					<?php } ?>
 					value="1"/>
 
-					<?php echo wp_kses_post( __( 'Do not display BuddyPress groups in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+					<?php echo wp_kses_post( __( 'Do not display BuddyPress groups in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 				</label>
 
 				<?php
@@ -586,7 +586,7 @@ function seopress_titles_tax_titles_callback() {
 
 					<label
 						for="seopress_titles_tax_titles_enable[<?php echo esc_attr( $seopress_tax_key ); ?>]">
-						<?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'webseo' ); ?>
 					</label>
 
 					<?php
@@ -594,20 +594,20 @@ function seopress_titles_tax_titles_callback() {
 						?>
 					<span id="titles-state-default" class="feature-state">
 						<span class="dashicons dashicons-arrow-left-alt"></span>
-						<?php esc_attr_e( 'Click to display any SEO metaboxes / bulk actions for this taxonomy', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'Click to display any SEO metaboxes / bulk actions for this taxonomy', 'webseo' ); ?>
 					</span>
 					<span id="titles-state" class="feature-state feature-state-off">
 						<span class="dashicons dashicons-arrow-left-alt"></span>
-						<?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'webseo' ); ?>
 					</span>
 					<?php } else { ?>
 					<span id="titles-state-default" class="feature-state">
 						<span class="dashicons dashicons-arrow-left-alt"></span>
-						<?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'webseo' ); ?>
 					</span>
 					<span id="titles-state" class="feature-state feature-state-off">
 						<span class="dashicons dashicons-arrow-left-alt"></span>
-						<?php esc_attr_e( 'Click to display any SEO metaboxes / bulk actions for this taxonomy', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'Click to display any SEO metaboxes / bulk actions for this taxonomy', 'webseo' ); ?>
 					</span>
 					<?php } ?>
 					
@@ -620,11 +620,11 @@ function seopress_titles_tax_titles_callback() {
 											'1');
 										if ($(this).attr('data-toggle') == '1') {
 											$(this).next().next('.feature-state').html(
-												'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'wp-seopress' ); ?>'
+												'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to hide any SEO metaboxes / bulk actions for this taxonomy', 'webseo' ); ?>'
 											);
 										} else {
 											$(this).next().next('.feature-state').html(
-												'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to display any SEO metaboxes / bulk actions for this taxonomy', 'wp-seopress' ); ?>'
+												'<span class="dashicons dashicons-arrow-left-alt"></span><?php esc_attr_e( 'Click to display any SEO metaboxes / bulk actions for this taxonomy', 'webseo' ); ?>'
 											);
 										}
 									});
@@ -647,7 +647,7 @@ function seopress_titles_tax_titles_callback() {
 
 				<div class="seopress_wrap_tax">
 					<p>
-						<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 					</p>
 
 					<script>
@@ -695,7 +695,7 @@ function seopress_titles_tax_titles_callback() {
 							id="seopress-tag-tax-title-<?php echo esc_attr( $seopress_tax_key ); ?>"
 							data-tag="%%_category_title%%" class="btn btnSecondary tag-title">
 							<span class="dashicons dashicons-plus-alt2"></span>
-										<?php esc_attr_e( 'Category Title', 'wp-seopress' ); ?>
+										<?php esc_attr_e( 'Category Title', 'webseo' ); ?>
 						</button>
 									<?php } elseif ( 'post_tag' === $seopress_tax_key ) { ?>
 						<div class="wrap-tags">
@@ -703,7 +703,7 @@ function seopress_titles_tax_titles_callback() {
 								id="seopress-tag-tax-title-<?php echo esc_attr( $seopress_tax_key ); ?>"
 								data-tag="%%tag_title%%">
 								<span class="dashicons dashicons-plus-alt2"></span>
-								<?php esc_attr_e( 'Tag Title', 'wp-seopress' ); ?>
+								<?php esc_attr_e( 'Tag Title', 'webseo' ); ?>
 							</button>
 							<?php } else { ?>
 							<div class="wrap-tags">
@@ -711,7 +711,7 @@ function seopress_titles_tax_titles_callback() {
 									id="seopress-tag-tax-title-<?php echo esc_attr( $seopress_tax_key ); ?>"
 									data-tag="%%term_title%%">
 									<span class="dashicons dashicons-plus-alt2"></span>
-										<?php esc_attr_e( 'Term Title', 'wp-seopress' ); ?>
+										<?php esc_attr_e( 'Term Title', 'webseo' ); ?>
 								</button>
 								<?php } ?>
 
@@ -719,14 +719,14 @@ function seopress_titles_tax_titles_callback() {
 									id="seopress-tag-sep-<?php echo esc_attr( $seopress_tax_key ); ?>"
 									data-tag="%%sep%%">
 									<span class="dashicons dashicons-plus-alt2"></span>
-									<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+									<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 								</button>
 
 								<button type="button" class="btn btnSecondary tag-title"
 									id="seopress-tag-tax-sitetitle-<?php echo esc_attr( $seopress_tax_key ); ?>"
 									data-tag="%%sitetitle%%">
 									<span class="dashicons dashicons-plus-alt2"></span>
-									<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+									<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 								</button>
 
 								<?php echo seopress_render_dyn_variables( 'tag-title' ); ?>
@@ -737,7 +737,7 @@ function seopress_titles_tax_titles_callback() {
 								<?php $check2 = isset( $options['seopress_titles_tax_titles'][ $seopress_tax_key ]['description'] ) ? $options['seopress_titles_tax_titles'][ $seopress_tax_key ]['description'] : null; ?>
 
 								<p>
-									<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+									<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 								</p>
 
 								<script>
@@ -768,7 +768,7 @@ function seopress_titles_tax_titles_callback() {
 										id="seopress-tag-tax-desc-<?php echo esc_attr( $seopress_tax_key ); ?>"
 										data-tag="%%_category_description%%">
 										<span class="dashicons dashicons-plus-alt2"></span>
-										<?php esc_attr_e( 'Category Description', 'wp-seopress' ); ?>
+										<?php esc_attr_e( 'Category Description', 'webseo' ); ?>
 									</button>
 									<?php } elseif ( 'post_tag' === $seopress_tax_key ) { ?>
 									<div class="wrap-tags">
@@ -776,7 +776,7 @@ function seopress_titles_tax_titles_callback() {
 											id="seopress-tag-tax-desc-<?php echo esc_attr( $seopress_tax_key ); ?>"
 											data-tag="%%tag_description%%">
 											<span class="dashicons dashicons-plus-alt2"></span>
-											<?php esc_attr_e( 'Tag Description', 'wp-seopress' ); ?>
+											<?php esc_attr_e( 'Tag Description', 'webseo' ); ?>
 										</button>
 										<?php } else { ?>
 										<div class="wrap-tags">
@@ -784,7 +784,7 @@ function seopress_titles_tax_titles_callback() {
 												id="seopress-tag-tax-desc-<?php echo esc_attr( $seopress_tax_key ); ?>"
 												data-tag="%%term_description%%">
 												<span class="dashicons dashicons-plus-alt2"></span>
-												<?php esc_attr_e( 'Term Description', 'wp-seopress' ); ?>
+												<?php esc_attr_e( 'Term Description', 'webseo' ); ?>
 											</button>
 											<?php } echo seopress_render_dyn_variables( 'tag-description' ); ?>
 										</div>
@@ -808,11 +808,11 @@ function seopress_titles_tax_titles_callback() {
 												checked="yes"
 												<?php } ?>
 												value="1"/>
-												<?php echo wp_kses_post( __( 'Do not display this taxonomy archive in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+												<?php echo wp_kses_post( __( 'Do not display this taxonomy archive in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 												<?php if ( 'post_tag' === $seopress_tax_key ) { ?>
 													<div class="seopress-notice is-warning is-inline">
 														<p>
-															<?php echo wp_kses_post( __( 'We do not recommend indexing <strong>tags</strong> which are, in the vast majority of cases, a source of duplicate content.', 'wp-seopress' ) ); ?>
+															<?php echo wp_kses_post( __( 'We do not recommend indexing <strong>tags</strong> which are, in the vast majority of cases, a source of duplicate content.', 'webseo' ) ); ?>
 														</p>
 													</div>
 												<?php } ?>
@@ -825,7 +825,7 @@ function seopress_titles_tax_titles_callback() {
 												?>
 												<div class="seopress-notice is-error">
 													<p>
-														<?php echo /* translators: %s: "XML sitemap settings URL" */ wp_kses_post( sprintf( __( 'This custom taxonomy is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you check this out from the <a href="%s">XML sitemap settings</a>.', 'wp-seopress' ), esc_url( admin_url( 'admin.php?page=webseo-xml-sitemap#tab=tab_seopress_xml_sitemap_taxonomies' ) ) ) ); ?>
+														<?php echo /* translators: %s: "XML sitemap settings URL" */ wp_kses_post( sprintf( __( 'This custom taxonomy is <strong>NOT</strong> excluded from your XML sitemaps despite the fact that it is set to <strong>NOINDEX</strong>. We recommend that you check this out from the <a href="%s">XML sitemap settings</a>.', 'webseo' ), esc_url( admin_url( 'admin.php?page=webseo-xml-sitemap#tab=tab_seopress_xml_sitemap_taxonomies' ) ) ) ); ?>
 													</p>
 												</div>
 												<?php
@@ -857,7 +857,7 @@ function seopress_titles_tax_titles_callback() {
 												checked="yes"
 												<?php } ?>
 												value="1"/>
-												<?php echo wp_kses_post( __( 'Do not follow links for this taxonomy archive <strong>(nofollow)</strong>', 'wp-seopress' ) ); ?>
+												<?php echo wp_kses_post( __( 'Do not follow links for this taxonomy archive <strong>(nofollow)</strong>', 'webseo' ) ); ?>
 											</label>
 
 											<?php
@@ -887,7 +887,7 @@ function seopress_titles_archives_titles_callback() {
 				<?php if ( get_post_type_archive_link( $seopress_cpt_value->name ) ) { ?>
 				<span class="link-archive">
 					<a href="<?php echo esc_url( get_post_type_archive_link( $seopress_cpt_value->name ) ); ?>" target="_blank">
-						<?php esc_attr_e( 'See archive', 'wp-seopress' ); ?>
+						<?php esc_attr_e( 'See archive', 'webseo' ); ?>
 					</a>
 					<span class="dashicons dashicons-external"></span>
 				</span>
@@ -897,7 +897,7 @@ function seopress_titles_archives_titles_callback() {
 			<!--Archive Title CPT-->
 			<div class="seopress_wrap_archive_cpt">
 				<p>
-					<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+					<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 				</p>
 
 				<script>
@@ -944,17 +944,17 @@ function seopress_titles_archives_titles_callback() {
 		<div class="wrap-tags"><button type="button" class="btn btnSecondary tag-title"
 				id="seopress-tag-archive-title-<?php echo esc_attr( $seopress_cpt_key ); ?>"
 				data-tag="%%cpt_plural%%"><span
-					class="dashicons dashicons-plus-alt2"></span><?php esc_attr_e( 'Post Type Archive Name', 'wp-seopress' ); ?></button>
+					class="dashicons dashicons-plus-alt2"></span><?php esc_attr_e( 'Post Type Archive Name', 'webseo' ); ?></button>
 
 			<button type="button" class="btn btnSecondary tag-title"
 				id="seopress-tag-archive-sep-<?php echo esc_attr( $seopress_cpt_key ); ?>"
 				data-tag="%%sep%%"><span
-					class="dashicons dashicons-plus-alt2"></span><?php esc_attr_e( 'Separator', 'wp-seopress' ); ?></button>
+					class="dashicons dashicons-plus-alt2"></span><?php esc_attr_e( 'Separator', 'webseo' ); ?></button>
 
 			<button type="button" class="btn btnSecondary tag-title"
 				id="seopress-tag-archive-sitetitle-<?php echo esc_attr( $seopress_cpt_key ); ?>"
 				data-tag="%%sitetitle%%"><span
-					class="dashicons dashicons-plus-alt2"></span><?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?></button>
+					class="dashicons dashicons-plus-alt2"></span><?php esc_attr_e( 'Site Title', 'webseo' ); ?></button>
 
 			<?php echo seopress_render_dyn_variables( 'tag-title' ); ?>
 
@@ -964,7 +964,7 @@ function seopress_titles_archives_titles_callback() {
 		<div class="seopress_wrap_archive_cpt">
 
 			<p>
-				<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+				<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 			</p>
 
 			<?php $check = isset( $options['seopress_titles_archive_titles'][ $seopress_cpt_key ]['description'] ) ? $options['seopress_titles_archive_titles'][ $seopress_cpt_key ]['description'] : null; ?>
@@ -1031,7 +1031,7 @@ function seopress_titles_archives_titles_callback() {
 					checked="yes"
 					<?php } ?>
 					value="1"/>
-					<?php echo wp_kses_post( __( 'Do not display this post type archive in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+					<?php echo wp_kses_post( __( 'Do not display this post type archive in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 				</label>
 
 				<?php
@@ -1059,7 +1059,7 @@ function seopress_titles_archives_titles_callback() {
 					checked="yes"
 					<?php } ?>
 					value="1"/>
-					<?php echo wp_kses_post( __( 'Do not follow links for this post type archive <strong>(nofollow)</strong>', 'wp-seopress' ) ); ?>
+					<?php echo wp_kses_post( __( 'Do not follow links for this post type archive <strong>(nofollow)</strong>', 'webseo' ) ); ?>
 				</label>
 
 				<?php
@@ -1081,17 +1081,17 @@ function seopress_titles_archives_author_title_callback() {
 	?>
 
 	<h3>
-		<?php esc_attr_e( 'Author archives', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Author archives', 'webseo' ); ?>
 	</h3>
 
-	<p><?php echo wp_kses_post( __( 'Author archives are automatically generated by WordPress. They group specific content by author.', 'wp-seopress' ) ); ?></p>
-	<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/author/john-doe/</strong>', 'wp-seopress' ) ); ?></p>
-	<p><?php esc_html_e( 'You only have one author on your site? Check this option to avoid duplicate content.', 'wp-seopress' ); ?></p>
+	<p><?php echo wp_kses_post( __( 'Author archives are automatically generated by WordPress. They group specific content by author.', 'webseo' ) ); ?></p>
+	<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/author/john-doe/</strong>', 'webseo' ) ); ?></p>
+	<p><?php esc_html_e( 'You only have one author on your site? Check this option to avoid duplicate content.', 'webseo' ); ?></p>
 
 	<br>
 
 	<p>
-		<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 	</p>
 
 	<?php $check = isset( $options['seopress_titles_archives_author_title'] ) ? $options['seopress_titles_archives_author_title'] : null; ?>
@@ -1103,16 +1103,16 @@ function seopress_titles_archives_author_title_callback() {
 	<div class="wrap-tags">
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-post-author" data-tag="%%post_author%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Post author', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Post author', 'webseo' ); ?>
 		</button>
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-sep-author" data-tag="%%sep%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 		</button>
 
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-title-author" data-tag="%%sitetitle%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 		</button>
 
 		<?php
@@ -1126,7 +1126,7 @@ function seopress_titles_archives_author_desc_callback() {
 	$options = get_option( 'seopress_titles_option_name' );
 	?>
 	<p>
-		<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 	</p>
 
 	<?php $check = isset( $options['seopress_titles_archives_author_desc'] ) ? $options['seopress_titles_archives_author_desc'] : null; ?>
@@ -1136,7 +1136,7 @@ function seopress_titles_archives_author_desc_callback() {
 	<div class="wrap-tags">
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-author-bio" data-tag="%%author_bio%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Author biography', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Author biography', 'webseo' ); ?>
 		</button>
 
 		<?php
@@ -1160,7 +1160,7 @@ function seopress_titles_archives_author_noindex_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php echo wp_kses_post( __( 'Do not display author archives in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+		<?php echo wp_kses_post( __( 'Do not display author archives in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 	</label>
 
 	<?php
@@ -1185,7 +1185,7 @@ function seopress_titles_archives_author_disable_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Disable author archives', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Disable author archives', 'webseo' ); ?>
 	</label>
 
 	<?php
@@ -1201,16 +1201,16 @@ function seopress_titles_archives_date_title_callback() {
 	$options = get_option( 'seopress_titles_option_name' );
 	?>
 	<h3>
-		<?php esc_attr_e( 'Date archives', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Date archives', 'webseo' ); ?>
 	</h3>
 
-	<p><?php echo wp_kses_post( __( 'Date archives are automatically generated by WordPress. They group specific content by date.', 'wp-seopress' ) ); ?></p>
-	<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/2025/01/01/</strong>', 'wp-seopress' ) ); ?></p>
+	<p><?php echo wp_kses_post( __( 'Date archives are automatically generated by WordPress. They group specific content by date.', 'webseo' ) ); ?></p>
+	<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/2025/01/01/</strong>', 'webseo' ) ); ?></p>
 
 	<br>
 
 	<p>
-		<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 	</p>
 
 	<?php $check = isset( $options['seopress_titles_archives_date_title'] ) ? $options['seopress_titles_archives_date_title'] : null; ?>
@@ -1222,15 +1222,15 @@ function seopress_titles_archives_date_title_callback() {
 	<div class="wrap-tags">
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-archive-date" data-tag="%%archive_date%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Date archives', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Date archives', 'webseo' ); ?>
 		</button>
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-sep-date" data-tag="%%sep%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 		</button>
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-title-date" data-tag="%%sitetitle%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 		</button>
 		<?php
 		echo seopress_render_dyn_variables( 'tag-title' );
@@ -1244,7 +1244,7 @@ function seopress_titles_archives_date_desc_callback() {
 	?>
 
 	<p>
-		<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 	</p>
 
 	<?php $check = isset( $options['seopress_titles_archives_date_desc'] ) ? $options['seopress_titles_archives_date_desc'] : null; ?>
@@ -1271,7 +1271,7 @@ function seopress_titles_archives_date_noindex_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php echo wp_kses_post( __( 'Do not display date archives in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+		<?php echo wp_kses_post( __( 'Do not display date archives in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 	</label>
 
 	<?php
@@ -1297,7 +1297,7 @@ function seopress_titles_archives_date_disable_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Disable date archives', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Disable date archives', 'webseo' ); ?>
 	</label>
 
 	<?php
@@ -1313,18 +1313,18 @@ function seopress_titles_archives_search_title_callback() {
 	$options = get_option( 'seopress_titles_option_name' );
 	?>
 	<h3>
-		<?php esc_attr_e( 'Search archives', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Search archives', 'webseo' ); ?>
 	</h3>
 
 	<p>
-		<?php echo wp_kses_post( __( 'Search archives are automatically generated by WordPress. They group specific content by search term.', 'wp-seopress' ) ); ?>
+		<?php echo wp_kses_post( __( 'Search archives are automatically generated by WordPress. They group specific content by search term.', 'webseo' ) ); ?>
 	</p>
-	<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/?s=keyword</strong>', 'wp-seopress' ) ); ?></p>
+	<p><?php echo wp_kses_post( __( 'Example: <strong>https://example.com/?s=keyword</strong>', 'webseo' ) ); ?></p>
 
 	<br>
 
 	<p>
-		<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 	</p>
 
 	<?php $check = isset( $options['seopress_titles_archives_search_title'] ) ? $options['seopress_titles_archives_search_title'] : null; ?>
@@ -1336,17 +1336,17 @@ function seopress_titles_archives_search_title_callback() {
 	<div class="wrap-tags">
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-search-keywords" data-tag="%%search_keywords%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Search Keywords', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Search Keywords', 'webseo' ); ?>
 		</button>
 
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-sep-search" data-tag="%%sep%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 		</button>
 
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-title-search" data-tag="%%sitetitle%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 		</button>
 		<?php
 		echo seopress_render_dyn_variables( 'tag-title' );
@@ -1359,7 +1359,7 @@ function seopress_titles_archives_search_desc_callback() {
 	$options = get_option( 'seopress_titles_option_name' );
 	?>
 	<p>
-		<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 	</p>
 
 	<?php $check = isset( $options['seopress_titles_archives_search_desc'] ) ? $options['seopress_titles_archives_search_desc'] : null; ?>
@@ -1387,7 +1387,7 @@ function seopress_titles_archives_search_title_noindex_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php echo wp_kses_post( __( 'Do not display search archives in search engine results <strong>(noindex)</strong>', 'wp-seopress' ) ); ?>
+		<?php echo wp_kses_post( __( 'Do not display search archives in search engine results <strong>(noindex)</strong>', 'webseo' ) ); ?>
 	</label>
 
 	<?php
@@ -1403,11 +1403,11 @@ function seopress_titles_archives_404_title_callback() {
 	$options = get_option( 'seopress_titles_option_name' );
 	?>
 	<h3>
-		<?php esc_attr_e( '404 archives', 'wp-seopress' ); ?>
+		<?php esc_attr_e( '404 archives', 'webseo' ); ?>
 	</h3>
 
 	<p>
-		<?php esc_attr_e( 'Title template', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Title template', 'webseo' ); ?>
 	</p>
 
 	<?php $check = isset( $options['seopress_titles_archives_404_title'] ) ? $options['seopress_titles_archives_404_title'] : null; ?>
@@ -1419,11 +1419,11 @@ function seopress_titles_archives_404_title_callback() {
 	<div class="wrap-tags">
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-site-title-404" data-tag="%%sitetitle%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Site Title', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Site Title', 'webseo' ); ?>
 		</button>
 		<button type="button" class="btn btnSecondary tag-title" id="seopress-tag-sep-404" data-tag="%%sep%%">
 			<span class="dashicons dashicons-plus-alt2"></span>
-			<?php esc_attr_e( 'Separator', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Separator', 'webseo' ); ?>
 		</button>
 		<?php
 		echo seopress_render_dyn_variables( 'tag-title' );
@@ -1438,7 +1438,7 @@ function seopress_titles_archives_404_desc_callback() {
 
 	<p>
 		<label for="seopress_titles_archives_404_desc">
-			<?php esc_attr_e( 'Meta description template', 'wp-seopress' ); ?>
+			<?php esc_attr_e( 'Meta description template', 'webseo' ); ?>
 		</label>
 	</p>
 
@@ -1467,17 +1467,17 @@ function seopress_titles_noindex_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'noindex', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'noindex', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'Do not display all pages of the site in Google search results and do not display "Cached" links in search results.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Do not display all pages of the site in Google search results and do not display "Cached" links in search results.', 'webseo' ); ?>
 	</p>
 
 	<p class="description">
 		<?php
 			/* translators: %s documentation URL */
-			echo wp_kses_post( sprintf( __( 'Check also the <strong>"Search engine visibility"</strong> setting from the <a href="%s">WordPress Reading page</a>.', 'wp-seopress' ), admin_url( 'options-reading.php' ) ) );
+			echo wp_kses_post( sprintf( __( 'Check also the <strong>"Search engine visibility"</strong> setting from the <a href="%s">WordPress Reading page</a>.', 'webseo' ), admin_url( 'options-reading.php' ) ) );
 		?>
 	</p>
 
@@ -1503,11 +1503,11 @@ function seopress_titles_nofollow_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'nofollow', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'nofollow', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'Do not follow links for all pages.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Do not follow links for all pages.', 'webseo' ); ?>
 	</p>
 
 	<?php
@@ -1532,11 +1532,11 @@ function seopress_titles_noimageindex_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'noimageindex', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'noimageindex', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'Do not index images from the entire site.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Do not index images from the entire site.', 'webseo' ); ?>
 	</p>
 
 	<?php
@@ -1561,11 +1561,11 @@ function seopress_titles_nosnippet_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'nosnippet', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'nosnippet', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'Do not display a description in the Google search results for all pages.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Do not display a description in the Google search results for all pages.', 'webseo' ); ?>
 	</p>
 
 	<?php
@@ -1590,11 +1590,11 @@ function seopress_titles_nositelinkssearchbox_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Remove Website schema', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Remove Website schema', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'Note that the alternative site title declared in the Titles and metas settings is used by this.', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Note that the alternative site title declared in the Titles and metas settings is used by this.', 'webseo' ); ?>
 	</p>
 
 	<?php
@@ -1619,7 +1619,7 @@ function seopress_titles_paged_rel_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Add rel next/prev link in head of paginated archive pages', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Add rel next/prev link in head of paginated archive pages', 'webseo' ); ?>
 	</label>
 
 	<?php
@@ -1645,11 +1645,11 @@ function seopress_titles_paged_noindex_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Add a "noindex" meta robots for all paginated archive pages', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Add a "noindex" meta robots for all paginated archive pages', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'e.g. https://example.com/category/my-category/page/2/', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'e.g. https://example.com/category/my-category/page/2/', 'webseo' ); ?>
 	</p>
 
 	<?php
@@ -1674,11 +1674,11 @@ function seopress_titles_attachments_noindex_callback() {
 		checked="yes"
 		<?php } ?>
 		value="1"/>
-		<?php esc_attr_e( 'Add a "noindex" meta robots for all attachment pages', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'Add a "noindex" meta robots for all attachment pages', 'webseo' ); ?>
 	</label>
 
 	<p class="description">
-		<?php esc_attr_e( 'e.g. https://example.com/my-media-attachment-page', 'wp-seopress' ); ?>
+		<?php esc_attr_e( 'e.g. https://example.com/my-media-attachment-page', 'webseo' ); ?>
 	</p>
 
 	<?php

@@ -22,7 +22,7 @@ class CustomPostMeta extends AbstractCustomTagValue implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Custom fields (replace your_custom_field_name by the name of your custom field)', 'wp-seopress' );
+		return __( 'Custom fields (replace your_custom_field_name by the name of your custom field)', 'webseo' );
 	}
 
 	/**

@@ -23,7 +23,7 @@ SEOPress is a powerful WordPress SEO plugin to optimize your SEO, boost your tra
 ✔ <strong>No advertising, no footprints, white label, in backend AND frontend</strong>
 ✔ <strong>Content analysis to help you write content optimized for search engines with unlimited target keywords</strong>
 ✔ <strong><a href="https://www.seopress.org/solutions/migrate-from/" target="_blank">Import your post and term metadatas</a> from other SEO plugins or CSV file in 1 click</strong>
-✔ <strong><a href="https://translate.wordpress.org/projects/wp-plugins/wp-seopress" target="_blank">Translated into 27 languages (and counting)</strong>
+✔ <strong><a href="https://translate.wordpress.org/projects/wp-plugins/webseo" target="_blank">Translated into 27 languages (and counting)</strong>
 ✔ <strong>Trusted by over 350,000 WordPress websites since 2017</strong>
 
 <a href="https://www.seopress.org/pricing/" target="_blank"><strong>Buy SEOPress PRO: only $49 / year / 1 site</strong></a>
@@ -185,7 +185,7 @@ We provide deep integration with Elementor page builder UI, see below:
 
 == Installation ==
 
-1. Upload 'wp-seopress' to the '/wp-content/plugins/' directory
+1. Upload 'webseo' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Click on SEOPress and apply settings.
 
@@ -255,7 +255,7 @@ SEOPress PRO supports Google News XML and Video sitemaps.
 
 = How do I get support? =
 
-For FREE users: <a href="https://www.seopress.org/support/guides/">guides</a>, forum on <a href="https://wordpress.org/plugins/wp-seopress/">w.org</a>, <a href="https://www.seopress.org/support/faq/">FAQ</a>, <a href="https://www.seopress.org/support/hooks/">hooks for developers</a>, and <a href="https://www.youtube.com/channel/UCH5sQx3T2QZFhFEamT51hsw" target="_blank">videos on our YouTube channel</a>.
+For FREE users: <a href="https://www.seopress.org/support/guides/">guides</a>, forum on <a href="https://wordpress.org/plugins/webseo/">w.org</a>, <a href="https://www.seopress.org/support/faq/">FAQ</a>, <a href="https://www.seopress.org/support/hooks/">hooks for developers</a>, and <a href="https://www.youtube.com/channel/UCH5sQx3T2QZFhFEamT51hsw" target="_blank">videos on our YouTube channel</a>.
 For PRO users: support by mail from their customer account.
 
 = Is SEOPress GDPR compliant? =
@@ -293,7 +293,7 @@ By using our contact form (select Misc as subject), or directly from <a href="ht
 
 = My question is not listed here! =
 
-<a href="https://www.seopress.org/support/faq/" target="_blank">Read our complete FAQ on our site</a> or ask on our [support forum](https://wordpress.org/support/plugin/wp-seopress/).
+<a href="https://www.seopress.org/support/faq/" target="_blank">Read our complete FAQ on our site</a> or ask on our [support forum](https://wordpress.org/support/plugin/webseo/).
 
 
 == Screenshots ==

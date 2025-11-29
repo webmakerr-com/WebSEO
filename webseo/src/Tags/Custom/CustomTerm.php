@@ -22,7 +22,7 @@ class CustomTerm extends AbstractCustomTagValue implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Custom Term', 'wp-seopress' );
+		return __( 'Custom Term', 'webseo' );
 	}
 
 	/**

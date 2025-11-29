@@ -20,7 +20,7 @@ class SinglePriceExcludeTax implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Product Price Taxes Excluded', 'wp-seopress' );
+		return __( 'Product Price Taxes Excluded', 'webseo' );
 	}
 
 	/**

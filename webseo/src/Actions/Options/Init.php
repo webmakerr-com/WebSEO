@@ -322,7 +322,7 @@ class Init implements ActivationHook {
 		$title_options['seopress_titles_archives_search_title_noindex'] = '1';
 
 		// 404.
-		$title_options['seopress_titles_archives_404_title'] = __( '404 - Page not found', 'wp-seopress' ) . ' %%sep%% %%sitetitle%%';
+		$title_options['seopress_titles_archives_404_title'] = __( '404 - Page not found', 'webseo' ) . ' %%sep%% %%sitetitle%%';
 
 		// Link rel prev/next.
 		$title_options['seopress_titles_paged_rel'] = '1';

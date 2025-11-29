@@ -22,7 +22,7 @@ class SiteTagline implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Site Tagline', 'wp-seopress' );
+		return __( 'Site Tagline', 'webseo' );
 	}
 
 	/**

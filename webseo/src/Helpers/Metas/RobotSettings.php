@@ -29,7 +29,7 @@ abstract class RobotSettings {
 
 		$default = array(
 			'term_id' => 'none',
-			'name'    => __( 'None (will disable this feature)', 'wp-seopress' ),
+			'name'    => __( 'None (will disable this feature)', 'webseo' ),
 		);
 
 		if ( ! is_array( $cats ) ) {
@@ -69,7 +69,7 @@ abstract class RobotSettings {
 					'type'        => 'checkbox',
 					'use_default' => $title_option_service->getSingleCptNoIndex( $id ) || $title_option_service->getTitleNoIndex() || true === post_password_required( $id ),
 					'default'     => 'yes',
-					'label'       => __( 'Do not display this page in search engine results / XML - HTML sitemaps (noindex)', 'wp-seopress' ),
+					'label'       => __( 'Do not display this page in search engine results / XML - HTML sitemaps (noindex)', 'webseo' ),
 					'visible'     => true,
 				),
 				array(
@@ -77,7 +77,7 @@ abstract class RobotSettings {
 					'type'        => 'checkbox',
 					'use_default' => $title_option_service->getSingleCptNoFollow( $id ) || $title_option_service->getTitleNoFollow(),
 					'default'     => 'yes',
-					'label'       => __( 'Do not follow links for this page (nofollow)', 'wp-seopress' ),
+					'label'       => __( 'Do not follow links for this page (nofollow)', 'webseo' ),
 					'visible'     => true,
 				),
 				array(
@@ -85,7 +85,7 @@ abstract class RobotSettings {
 					'type'        => 'checkbox',
 					'use_default' => $title_option_service->getTitleNoSnippet(),
 					'default'     => 'yes',
-					'label'       => __( 'Do not display a description in search results for this page (nosnippet)', 'wp-seopress' ),
+					'label'       => __( 'Do not display a description in search results for this page (nosnippet)', 'webseo' ),
 					'visible'     => true,
 				),
 				array(
@@ -93,16 +93,16 @@ abstract class RobotSettings {
 					'type'        => 'checkbox',
 					'use_default' => $title_option_service->getTitleNoImageIndex(),
 					'default'     => 'yes',
-					'label'       => __( 'Do not index images for this page (noimageindex)', 'wp-seopress' ),
+					'label'       => __( 'Do not index images for this page (noimageindex)', 'webseo' ),
 					'visible'     => true,
 				),
 				array(
 					'key'         => '_seopress_robots_canonical',
 					'type'        => 'input',
 					'use_default' => '',
-					'placeholder' => sprintf( '%s %s', __( 'Default value: ', 'wp-seopress' ), urldecode( get_permalink( $id ) ) ),
+					'placeholder' => sprintf( '%s %s', __( 'Default value: ', 'webseo' ), urldecode( get_permalink( $id ) ) ),
 					'default'     => '',
-					'label'       => __( 'Canonical URL', 'wp-seopress' ),
+					'label'       => __( 'Canonical URL', 'webseo' ),
 					'visible'     => true,
 				),
 				array(
@@ -111,8 +111,8 @@ abstract class RobotSettings {
 					'use_default' => '',
 					'placeholder' => '',
 					'default'     => '',
-					'label'       => __( 'Select a primary category', 'wp-seopress' ),
-					'description' => /* translators: category permalink structure */ wp_kses_post( sprintf( __( 'Set thee category that gets used in the %s permalink and in our breadcrumbs if you have multiple categories.', 'wp-seopress' ), '<code>%category%</code>' ) ),
+					'label'       => __( 'Select a primary category', 'webseo' ),
+					'description' => /* translators: category permalink structure */ wp_kses_post( sprintf( __( 'Set thee category that gets used in the %s permalink and in our breadcrumbs if you have multiple categories.', 'webseo' ), '<code>%category%</code>' ) ),
 					'options'     => self::getRobotPrimaryCats( $id, $post_type ),
 					'visible'     => ( 'post' === $post_type || 'product' === $post_type ),
 				),

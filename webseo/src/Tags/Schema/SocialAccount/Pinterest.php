@@ -20,7 +20,7 @@ class Pinterest implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Pinterest URL', 'wp-seopress' );
+		return __( 'Pinterest URL', 'webseo' );
 	}
 
 	/**

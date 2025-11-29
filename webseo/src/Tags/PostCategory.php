@@ -20,7 +20,7 @@ class PostCategory implements GetTagValue {
 	 * @return string
 	 */
 	public static function getDescription() {
-		return __( 'Post Category', 'wp-seopress' );
+		return __( 'Post Category', 'webseo' );
 	}
 
 	/**
