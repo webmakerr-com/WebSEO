@@ -145,7 +145,7 @@ class seopress_pro_options
 
     public function add_plugin_page()
     {
-        add_submenu_page('seopress-option', __('PRO', 'webseo'), __('PRO', 'webseo'), seopress_capability('manage_options', 'pro'), 'seopress-pro-page', [$this, 'seopress_pro_page']);
+        add_submenu_page('webseo-option', __('PRO', 'webseo'), __('PRO', 'webseo'), seopress_capability('manage_options', 'pro'), 'webseo-pro-page', [$this, 'seopress_pro_page']);
         if ('1' == seopress_get_toggle_option('rich-snippets')) {
             add_submenu_page('seopress-option', __('Schemas', 'webseo'), __('Schemas', 'webseo'), seopress_capability('edit_schemas', 'menu'), 'edit.php?post_type=seopress_schemas', null);
         }
@@ -155,7 +155,7 @@ class seopress_pro_options
         if ('1' == seopress_get_toggle_option('bot')) {
             add_submenu_page('seopress-option', __('Broken links', 'webseo'), __('Broken links', 'webseo'), seopress_capability('manage_options', 'menu'), 'edit.php?post_type=seopress_bot', null);
         }
-        add_submenu_page('seopress-option', __('License', 'webseo'), __('License', 'webseo'), seopress_capability('manage_options', 'menu'), 'seopress-license', [$this, 'seopress_license_page']);
+        add_submenu_page('webseo-option', __('License', 'webseo'), __('License', 'webseo'), seopress_capability('manage_options', 'menu'), 'webseo-license', [$this, 'seopress_license_page']);
 
     }
 
