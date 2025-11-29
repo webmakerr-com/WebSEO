@@ -54,13 +54,14 @@ class ComposerStaticInit303c06f6dc8f80594e3f972f929a39ce
     );
 
     public static $prefixDirsPsr4 = array (
-        'phpseclib3\\' => 
+        'phpseclib3\\' =>
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
         ),
         'WebSEO\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
+            1 => __DIR__ . '/../..' . '/pro-addon/src',
         ),
         'Psr\\Log\\' => 
         array (
