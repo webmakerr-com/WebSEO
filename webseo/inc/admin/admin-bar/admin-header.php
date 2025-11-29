@@ -29,7 +29,7 @@ function seopress_admin_header( $context = '' ) {
 	<div id="seopress-navbar">
 		<ul>
 			<li>
-				<a href="<?php echo esc_url( admin_url( 'admin.php?page=seopress-option' ) ); ?>">
+                            <a href="<?php echo esc_url( admin_url( 'admin.php?page=webseo-option' ) ); ?>">
 					<?php esc_html_e( 'Home', 'wp-seopress' ); ?>
 				</a>
 			</li>
@@ -42,7 +42,7 @@ function seopress_admin_header( $context = '' ) {
 	</div>
 	<aside id="seopress-activity-panel" class="seopress-activity-panel">
 		<div role="tablist" aria-orientation="horizontal" class="seopress-activity-panel-tabs">
-			<?php if ( 'seopress-option' === $page ) { ?>
+            <?php if ( 'webseo-option' === $page ) { ?>
 				<button type="button" role="tab" aria-selected="true" aria-label="<?php esc_html_e( 'Display', 'wp-seopress' ); ?>" title="<?php esc_html_e( 'Display', 'wp-seopress' ); ?>" id="activity-panel-tab-display" data-panel="display" class="btn">
 					<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 						<path d="M15.75 0.75H2.25C1.85218 0.75 1.47064 0.908035 1.18934 1.18934C0.908035 1.47064 0.75 1.85218 0.75 2.25V15.75C0.75 16.1478 0.908035 16.5294 1.18934 16.8107C1.47064 17.092 1.85218 17.25 2.25 17.25H15.75C16.1478 17.25 16.5294 17.092 16.8107 16.8107C17.092 16.5294 17.25 16.1478 17.25 15.75V2.25C17.25 1.85218 17.092 1.47064 16.8107 1.18934C16.5294 0.908035 16.1478 0.75 15.75 0.75ZM15.75 8.25H9.75V2.25H15.75V8.25ZM8.25 2.25V8.25H2.25V2.25H8.25ZM2.25 9.75H8.25V15.75H2.25V9.75ZM15.75 15.75H9.75V9.75H15.75V15.75Z" fill="#0C082F"/>
@@ -149,7 +149,7 @@ function seopress_admin_header( $context = '' ) {
 			</div>
 		</div>
 
-		<?php if ( 'seopress-option' === $page ) { ?>
+            <?php if ( 'webseo-option' === $page ) { ?>
 			<div id="seopress-activity-panel-display" class="seopress-activity-panel-wrapper" tabindex="0" role="popover" aria-label="Display">
 				<div id="activity-panel-true">
 					<div class="seopress-activity-panel-header">

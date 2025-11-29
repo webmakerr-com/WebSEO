@@ -580,7 +580,7 @@ function seopress_remove_utf8_bom( $text ) {
  * @param mixed $context
  */
 function seopress_capability( $cap, $context = '' ) {
-	$newcap = apply_filters( 'seopress_capability', $cap, $context );
+        $newcap = webseo_apply_filters_compat( 'webseo_capability', 'seopress_capability', $cap, $context );
 
 	if ( ! current_user_can( $newcap ) ) {
 		return $cap;
@@ -602,16 +602,34 @@ function is_seopress_page() {
 	$page      = isset( $_REQUEST['page'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['page'] ) ) : null;
 	$post_type = isset( $_REQUEST['post_type'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['post_type'] ) ) : null;
 
-	if ( $page ) {
-		return strpos( $page, 'seopress' ) === 0;
-	}
+        $prefixes = array( 'seopress', 'webseo' );
 
-	if ( $post_type ) {
-		if ( is_array( $post_type ) && ! empty( $post_type ) ) {
-			return strpos( $post_type[0], 'seopress' ) === 0;
-		}
-		return strpos( $post_type, 'seopress' ) === 0;
-	}
+        if ( $page ) {
+                foreach ( $prefixes as $prefix ) {
+                        if ( 0 === strpos( $page, $prefix ) ) {
+                                return true;
+                        }
+                }
+        }
+
+        if ( $post_type ) {
+                if ( is_array( $post_type ) && ! empty( $post_type ) ) {
+                        foreach ( $prefixes as $prefix ) {
+                                if ( 0 === strpos( $post_type[0], $prefix ) ) {
+                                        return true;
+                                }
+                        }
+                        return false;
+                }
+
+                foreach ( $prefixes as $prefix ) {
+                        if ( 0 === strpos( $post_type, $prefix ) ) {
+                                return true;
+                        }
+                }
+
+                return false;
+        }
 
 	return false;
 }

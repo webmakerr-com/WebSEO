@@ -36,7 +36,7 @@ function seopress_display_seo_term_metaboxe() {
 				echo '<li>' . wp_kses_post( __( 'You have not set a <strong>global meta description</strong> for this taxonomy.', 'wp-seopress' ) ) . '</li>';
 			}
 			echo '</ul>';
-			echo '<p><a class="button button-primary" href="' . esc_url( admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_tax' ) ) . '">' . esc_attr__( 'Fix this!', 'wp-seopress' ) . '</a></p>';
+			echo '<p><a class="button button-primary" href="' . esc_url( admin_url( 'admin.php?page=webseo-titles#tab=tab_seopress_titles_tax' ) ) . '">' . esc_attr__( 'Fix this!', 'wp-seopress' ) . '</a></p>';
 			echo '</div>';
 		}
 	}

@@ -107,7 +107,7 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 									</div>
 								<?php } elseif ( isset( $product['status'] ) && false === $product['status'] ) { ?>
 									<div class="status upgrade">
-										<a href="<?php echo esc_url( admin_url( 'admin.php?page=seopress-license' ) ); ?>">
+										<a href="<?php echo esc_url( admin_url( 'admin.php?page=webseo-license' ) ); ?>">
 											<?php esc_html_e( 'Check license', 'wp-seopress' ); ?>
 										</a>
 									</div>

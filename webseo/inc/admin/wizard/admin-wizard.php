@@ -42,11 +42,11 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 */
 	private $seo_title = '';
 
-	/**
-	 * Unique plugin slug identifier.
-	 *
-	 * @var string
-	 */
+        /**
+         * Unique plugin slug identifier.
+         *
+         * @var string
+         */
         public $plugin_slug = 'webseo-setup';
 
         /**
@@ -55,6 +55,34 @@ class SEOPRESS_Admin_Setup_Wizard {
          * @var string
          */
         public $legacy_plugin_slug = 'seopress-setup';
+
+        /**
+         * Parent admin menu slug.
+         *
+         * @var string
+         */
+        public $parent_slug = 'webseo-option';
+
+        /**
+         * Legacy parent admin menu slug.
+         *
+         * @var string
+         */
+        public $legacy_parent_slug = 'seopress-option';
+
+        /**
+         * Setup nonce action.
+         *
+         * @var string
+         */
+        private $nonce_action = 'webseo-setup';
+
+        /**
+         * Legacy setup nonce action.
+         *
+         * @var string
+         */
+        private $legacy_nonce_action = 'seopress-setup';
 
 	/**
 	 * Hook in tabs.
@@ -82,20 +110,21 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Add dashboard page.
 	 */
         public function load_wizard() {
-                add_submenu_page( 'seopress-option', __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->plugin_slug, array( $this, 'setup_wizard' ), 10 );
-                add_submenu_page( 'seopress-option', __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->legacy_plugin_slug, array( $this, 'setup_wizard' ), 10 );
+                add_submenu_page( $this->parent_slug, __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->plugin_slug, array( $this, 'setup_wizard' ), 10 );
+                add_submenu_page( $this->parent_slug, __( 'Wizard', 'wp-seopress' ), __( 'Wizard', 'wp-seopress' ), seopress_capability( 'manage_options', 'menu' ), $this->legacy_plugin_slug, array( $this, 'setup_wizard' ), 10 );
         }
 
 	/**
 	 * Hide Wizard item from SEO menu.
 	 */
 	public function hide_from_menus() {
-		global $submenu;
+                global $submenu;
 
-		if ( ! empty( $submenu ) ) {
-			foreach ( $submenu as $key => $value ) {
-				if ( 'seopress-option' === $key ) {
-					foreach ( $value as $_key => $_value ) {
+                if ( ! empty( $submenu ) ) {
+                        $parent_slugs = array( $this->parent_slug, $this->legacy_parent_slug );
+                        foreach ( $submenu as $key => $value ) {
+                                if ( in_array( $key, $parent_slugs, true ) ) {
+                                        foreach ( $value as $_key => $_value ) {
                                                 if ( in_array( $_value[2], array( $this->plugin_slug, $this->legacy_plugin_slug ), true ) ) {
                                                         unset( $submenu[ $key ][ $_key ] );
                                                 }
@@ -286,8 +315,8 @@ class SEOPRESS_Admin_Setup_Wizard {
 		?>
 		<div class="seopress-setup-footer">
 			<?php if ( 'welcome' === $this->step ) { ?>
-			<a class="seopress-setup-footer-links"
-				href="<?php echo esc_url( admin_url( 'admin.php?page=seopress-option' ) ); ?>"><?php esc_html_e( 'Not right now', 'wp-seopress' ); ?></a>
+                        <a class="seopress-setup-footer-links"
+                                href="<?php echo esc_url( admin_url( 'admin.php?page=' . $this->parent_slug ) ); ?>"><?php esc_html_e( 'Not right now', 'wp-seopress' ); ?></a>
 				<?php
 			} elseif (
 				'import_settings' === $this->step ||
@@ -685,7 +714,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							<?php esc_html_e( 'Next step', 'wp-seopress' ); ?>
 						</button>
 
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -697,7 +726,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save step 1.2 settings.
 	 */
 	public function seopress_setup_import_settings_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 		wp_safe_redirect( esc_url_raw( $this->get_next_step_link() ) );
 		exit;
 	}
@@ -822,7 +851,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							name="save_step">
 							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
 						</button>
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -834,7 +863,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save step 2.0 settings.
 	 */
 	public function seopress_setup_site_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Get options.
 		$seopress_titles_option = get_option( 'seopress_titles_option_name' );
@@ -964,7 +993,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							name="save_step">
 							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
 						</button>
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -976,7 +1005,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save step 2.1 settings.
 	 */
 	public function seopress_setup_social_accounts_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Get options.
 		$seopress_social_option = get_option( 'seopress_social_option_name' );
@@ -1065,7 +1094,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
 						</button>
 
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -1077,7 +1106,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save Step 3.0 Post Types settings.
 	 */
 	public function seopress_setup_indexing_post_types_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Get options.
 		$seopress_titles_option = get_option( 'seopress_titles_option_name' );
@@ -1258,7 +1287,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
 						</button>
 
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -1270,7 +1299,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save Step 3.1 Archives settings.
 	 */
 	public function seopress_setup_indexing_archives_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Get options.
 		$seopress_titles_option = get_option( 'seopress_titles_option_name' );
@@ -1395,7 +1424,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
 						</button>
 
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -1407,7 +1436,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save Step 3.2 taxonomies settings.
 	 */
 	public function seopress_setup_indexing_taxonomies_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Get options.
 		$seopress_titles_option = get_option( 'seopress_titles_option_name' );
@@ -1551,7 +1580,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
 						</button>
 
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -1563,7 +1592,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save step 4.1 settings.
 	 */
 	public function seopress_setup_advanced_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Get options.
 		$seopress_advanced_option = get_option( 'seopress_advanced_option_name' );
@@ -1642,7 +1671,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 							<?php esc_html_e( 'Save & Continue', 'wp-seopress' ); ?>
 						</button>
 
-						<?php wp_nonce_field( 'seopress-setup' ); ?>
+						<?php wp_nonce_field( $this->nonce_action ); ?>
 					</p>
 				</form>
 			</div>
@@ -1654,7 +1683,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Save step 4.2 settings.
 	 */
 	public function seopress_setup_universal_save() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Get options.
 		$seopress_advanced_option = get_option( 'seopress_advanced_option_name' );
@@ -1741,7 +1770,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 						<div class="seopress-wizard-next-step-action">
 							<p class="seopress-setup-actions step">
 								<a class="btn btnPrimary"
-									href="<?php echo esc_url( admin_url( 'admin.php?page=seopress-xml-sitemap' ) ); ?>">
+                                                                  href="<?php echo esc_url( admin_url( 'admin.php?page=webseo-xml-sitemap' ) ); ?>">
 									<?php esc_html_e( 'Configure your XML sitemaps', 'wp-seopress' ); ?>
 								</a>
 							</p>
@@ -1790,7 +1819,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 												<button id="seopress_nl_routine_submit" type="submit" class="btnPrimary btn" value="<?php esc_attr_e( 'Subscribe', 'wp-seopress' ); ?>" name="save_step">
 													<?php esc_html_e( 'Subscribe', 'wp-seopress' ); ?>
 												</button>
-												<?php wp_nonce_field( 'seopress-setup' ); ?>
+												<?php wp_nonce_field( $this->nonce_action ); ?>
 											</form>
 										</p>
 
@@ -1815,7 +1844,7 @@ class SEOPRESS_Admin_Setup_Wizard {
 	 * Final subscribe.
 	 */
 	public function seopress_final_subscribe() {
-		check_admin_referer( 'seopress-setup' );
+		$this->verify_setup_nonce();
 
 		// Send email to SG if we have user consent.
 		if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' !== seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) {
@@ -1866,6 +1895,19 @@ class SEOPRESS_Admin_Setup_Wizard {
                         wp_safe_redirect( esc_url_raw( 'admin.php?page=' . $this->plugin_slug . '&step=ready&parent&sub=1' ) );
                         exit;
                 }
-	}
+        }
+
+        /**
+         * Verify setup wizard nonce with legacy support.
+         */
+        private function verify_setup_nonce() {
+                $nonce = isset( $_REQUEST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) : '';
+
+                if ( wp_verify_nonce( $nonce, $this->nonce_action ) || wp_verify_nonce( $nonce, $this->legacy_nonce_action ) ) {
+                        return;
+                }
+
+                check_admin_referer( $this->nonce_action );
+        }
 }
 new SEOPRESS_Admin_Setup_Wizard();

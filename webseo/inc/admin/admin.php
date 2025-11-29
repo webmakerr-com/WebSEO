@@ -15,11 +15,72 @@ use WebSEO\Helpers\PagesAdmin;
 class SEOPressOptions {
 
 	/**
-	 * Options
-	 *
-	 * @var array
-	 */
-	private $options;
+        * Options
+        *
+        * @var array
+        */
+        private $options;
+
+        /**
+         * Primary admin page slug.
+         *
+         * @var string
+         */
+        private $main_page_slug = 'webseo-option';
+
+        /**
+         * Legacy admin page slug.
+         *
+         * @var string
+         */
+        private $legacy_main_page_slug = 'seopress-option';
+
+        /**
+         * Admin submenu slugs.
+         *
+         * @var array
+         */
+        private $submenu_slugs = array(
+                'dashboard'       => 'webseo-option',
+                'titles'          => 'webseo-titles',
+                'xml_sitemap'     => 'webseo-xml-sitemap',
+                'social'          => 'webseo-social',
+                'analytics'       => 'webseo-google-analytics',
+                'instant_indexing' => 'webseo-instant-indexing',
+                'advanced'        => 'webseo-advanced',
+                'tools'           => 'webseo-import-export',
+        );
+
+        /**
+         * Legacy submenu slugs.
+         *
+         * @var array
+         */
+        private $legacy_submenu_slugs = array(
+                'dashboard'       => 'seopress-option',
+                'titles'          => 'seopress-titles',
+                'xml_sitemap'     => 'seopress-xml-sitemap',
+                'social'          => 'seopress-social',
+                'analytics'       => 'seopress-google-analytics',
+                'instant_indexing' => 'seopress-instant-indexing',
+                'advanced'        => 'seopress-advanced',
+                'tools'           => 'seopress-import-export',
+                'setup'           => 'seopress-setup',
+        );
+
+        /**
+         * Setup wizard slug.
+         *
+         * @var string
+         */
+        private $wizard_slug = 'webseo-setup';
+
+        /**
+         * Legacy setup wizard slug.
+         *
+         * @var string
+         */
+        private $legacy_wizard_slug = 'seopress-setup';
 
 	/**
 	 * Constructor
@@ -32,27 +93,29 @@ class SEOPressOptions {
 	/**
 	 * Load dependencies
 	 */
-	private function load_dependencies() {
-		global $pagenow, $typenow;
+        private function load_dependencies() {
+                global $pagenow, $typenow;
+
+                $current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
 
 		require_once plugin_dir_path( __FILE__ ) . 'admin-dyn-variables-helper.php';
 		require_once plugin_dir_path( __FILE__ ) . '/sanitize/Sanitize.php';
 
-		if ( wp_doing_ajax() || ( isset( $_GET['page'] ) && 'seopress-option' === $_GET['page'] ) ) {
-			require_once plugin_dir_path( __FILE__ ) . '/ajax/Dashboard.php';
-		}
+                if ( wp_doing_ajax() || in_array( $current_page, array( $this->main_page_slug, $this->legacy_main_page_slug ), true ) ) {
+                        require_once plugin_dir_path( __FILE__ ) . '/ajax/Dashboard.php';
+                }
 
-		if (
-			wp_doing_ajax()
-			|| ( ( 'post-new.php' === $pagenow || 'post.php' === $pagenow ) && ( 'seopress_schemas' !== $typenow ) )
-			|| ( 'term.php' === $pagenow || 'edit-tags.php' === $pagenow )
-		) {
-			require_once plugin_dir_path( __FILE__ ) . '/ajax/ContentAnalysis.php';
-		}
+                if (
+                        wp_doing_ajax()
+                        || ( ( 'post-new.php' === $pagenow || 'post.php' === $pagenow ) && ( 'seopress_schemas' !== $typenow ) )
+                        || ( 'term.php' === $pagenow || 'edit-tags.php' === $pagenow )
+                ) {
+                        require_once plugin_dir_path( __FILE__ ) . '/ajax/ContentAnalysis.php';
+                }
 
-		if ( wp_doing_ajax() || ( isset( $_GET['page'] ) && ( 'seopress-import-export' === $_GET['page'] || 'seopress-setup' === $_GET['page'] ) ) ) {
-			$ajax_migrate_files = array(
-				'/migrate/MigrationTools.php',
+                if ( wp_doing_ajax() || in_array( $current_page, array( $this->submenu_slugs['tools'], $this->legacy_submenu_slugs['tools'], $this->wizard_slug, $this->legacy_wizard_slug ), true ) ) {
+                        $ajax_migrate_files = array(
+                                '/migrate/MigrationTools.php',
 				'/ajax/migrate/smart-crawl.php',
 				'/ajax/migrate/slim-seo.php',
 				'/ajax/migrate/premium-seo-pack.php',
@@ -69,31 +132,84 @@ class SEOPressOptions {
 		}
 	}
 
-	/**
-	 * Initialize hooks
-	 */
-	private function initialize_hooks() {
-		add_action( 'admin_menu', array( $this, 'init_wizard' ), 5 );
-		add_action( 'admin_menu', array( $this, 'setup_admin_pages' ), 10 );
-		add_action( 'admin_init', array( $this, 'page_init' ), 10 );
-		add_action( 'admin_init', array( $this, 'feature_save' ), 30 );
-		add_action( 'admin_init', array( $this, 'feature_title' ), 20 );
-		add_action( 'admin_init', array( $this, 'load_sections' ), 30 );
-		add_action( 'admin_init', array( $this, 'load_callbacks' ), 40 );
-		add_action( 'admin_init', array( $this, 'pre_save_options' ), 50 );
-	}
+        /**
+         * Initialize hooks
+         */
+        private function initialize_hooks() {
+                add_action( 'admin_init', array( $this, 'maybe_redirect_legacy_pages' ), 1 );
+                add_action( 'admin_menu', array( $this, 'init_wizard' ), 5 );
+                add_action( 'admin_menu', array( $this, 'setup_admin_pages' ), 10 );
+                add_action( 'admin_init', array( $this, 'page_init' ), 10 );
+                add_action( 'admin_init', array( $this, 'feature_save' ), 30 );
+                add_action( 'admin_init', array( $this, 'feature_title' ), 20 );
+                add_action( 'admin_init', array( $this, 'load_sections' ), 30 );
+                add_action( 'admin_init', array( $this, 'load_callbacks' ), 40 );
+                add_action( 'admin_init', array( $this, 'pre_save_options' ), 50 );
+        }
+
+        /**
+         * Map legacy slugs to their WebSEO equivalents.
+         *
+         * @return array
+         */
+        private function get_legacy_slug_map() {
+                return array(
+                        $this->legacy_main_page_slug              => $this->main_page_slug,
+                        $this->legacy_submenu_slugs['titles']     => $this->submenu_slugs['titles'],
+                        $this->legacy_submenu_slugs['xml_sitemap'] => $this->submenu_slugs['xml_sitemap'],
+                        $this->legacy_submenu_slugs['social']     => $this->submenu_slugs['social'],
+                        $this->legacy_submenu_slugs['analytics']  => $this->submenu_slugs['analytics'],
+                        $this->legacy_submenu_slugs['instant_indexing'] => $this->submenu_slugs['instant_indexing'],
+                        $this->legacy_submenu_slugs['advanced']   => $this->submenu_slugs['advanced'],
+                        $this->legacy_submenu_slugs['tools']      => $this->submenu_slugs['tools'],
+                        $this->legacy_wizard_slug                 => $this->wizard_slug,
+                        'seopress-license'                        => 'webseo-license',
+                        'seopress-pro-page'                       => 'webseo-pro-page',
+                );
+        }
+
+        /**
+         * Redirect legacy SEOPress admin slugs to WebSEO.
+         */
+        public function maybe_redirect_legacy_pages() {
+                if ( wp_doing_ajax() || ! isset( $_GET['page'] ) ) {
+                        return;
+                }
+
+                $page       = sanitize_text_field( wp_unslash( $_GET['page'] ) );
+                $legacy_map = $this->get_legacy_slug_map();
+
+                if ( isset( $legacy_map[ $page ] ) ) {
+                        $params = array();
+
+                        foreach ( wp_unslash( $_GET ) as $key => $value ) {
+                                $sanitized_key = sanitize_key( $key );
+                                if ( is_array( $value ) ) {
+                                        $params[ $sanitized_key ] = array_map( 'sanitize_text_field', $value );
+                                } else {
+                                        $params[ $sanitized_key ] = sanitize_text_field( $value );
+                                }
+                        }
+
+                        $params['page']  = $legacy_map[ $page ];
+                        $redirect_target = add_query_arg( $params, admin_url( 'admin.php' ) );
+
+                        wp_safe_redirect( $redirect_target );
+                        exit;
+                }
+        }
 
 	/**
 	 * Initialize wizard
 	 */
-	public function init_wizard() {
-		$current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
+        public function init_wizard() {
+                $current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : '';
 
-		if ( 'seopress-setup' === $current_page ) {
-			ob_start();
-			require_once plugin_dir_path( __FILE__ ) . 'wizard/admin-wizard.php';
-		}
-	}
+                if ( in_array( $current_page, array( $this->wizard_slug, $this->legacy_wizard_slug ), true ) ) {
+                        ob_start();
+                        require_once plugin_dir_path( __FILE__ ) . 'wizard/admin-wizard.php';
+                }
+        }
 
 	/**
 	 * Feature save
@@ -165,15 +281,15 @@ class SEOPressOptions {
 		$menu_title = apply_filters( 'seopress_seo_admin_menu_title', __( 'SEO', 'wp-seopress' ) );
 
 		// SEO Dashboard page.
-		add_menu_page(
-			__( 'SEOPress Option Page', 'wp-seopress' ),
-			$menu_title,
-			seopress_capability( 'manage_options', 'menu' ),
-			'seopress-option',
-			array( $this, 'create_admin_page' ),
-			$menu_icon,
-			90
-		);
+                add_menu_page(
+                        __( 'SEOPress Option Page', 'wp-seopress' ),
+                        $menu_title,
+                        seopress_capability( 'manage_options', 'menu' ),
+                        $this->main_page_slug,
+                        array( $this, 'create_admin_page' ),
+                        $menu_icon,
+                        90
+                );
 
 		// Add submenus.
 		$this->register_submenus();
@@ -185,24 +301,24 @@ class SEOPressOptions {
 	/**
 	 * Register submenus
 	 */
-	private function register_submenus() {
-		$submenus = array(
-			array( __( 'Dashboard', 'wp-seopress' ), 'menu', 'seopress-option', 'create_admin_page' ),
-			array( __( 'Titles & Metas', 'wp-seopress' ), PagesAdmin::TITLE_METAS, 'seopress-titles', 'seopress_titles_page' ),
-			array( __( 'XML - HTML Sitemap', 'wp-seopress' ), PagesAdmin::XML_HTML_SITEMAP, 'seopress-xml-sitemap', 'seopress_xml_sitemap_page' ),
-			array( __( 'Social Networks', 'wp-seopress' ), PagesAdmin::SOCIAL_NETWORKS, 'seopress-social', 'seopress_social_page' ),
-			array( __( 'Analytics', 'wp-seopress' ), PagesAdmin::ANALYTICS, 'seopress-google-analytics', 'seopress_google_analytics_page' ),
-			array( __( 'Instant Indexing', 'wp-seopress' ), PagesAdmin::INSTANT_INDEXING, 'seopress-instant-indexing', 'seopress_instant_indexing_page' ),
-			array( __( 'Advanced', 'wp-seopress' ), PagesAdmin::ADVANCED, 'seopress-advanced', 'seopress_advanced_page' ),
-			array( __( 'Tools', 'wp-seopress' ), PagesAdmin::TOOLS, 'seopress-import-export', 'seopress_import_export_page' ),
-		);
+        private function register_submenus() {
+                $submenus = array(
+                        array( __( 'Dashboard', 'wp-seopress' ), 'menu', $this->main_page_slug, 'create_admin_page' ),
+                        array( __( 'Titles & Metas', 'wp-seopress' ), PagesAdmin::TITLE_METAS, $this->submenu_slugs['titles'], 'seopress_titles_page' ),
+                        array( __( 'XML - HTML Sitemap', 'wp-seopress' ), PagesAdmin::XML_HTML_SITEMAP, $this->submenu_slugs['xml_sitemap'], 'seopress_xml_sitemap_page' ),
+                        array( __( 'Social Networks', 'wp-seopress' ), PagesAdmin::SOCIAL_NETWORKS, $this->submenu_slugs['social'], 'seopress_social_page' ),
+                        array( __( 'Analytics', 'wp-seopress' ), PagesAdmin::ANALYTICS, $this->submenu_slugs['analytics'], 'seopress_google_analytics_page' ),
+                        array( __( 'Instant Indexing', 'wp-seopress' ), PagesAdmin::INSTANT_INDEXING, $this->submenu_slugs['instant_indexing'], 'seopress_instant_indexing_page' ),
+                        array( __( 'Advanced', 'wp-seopress' ), PagesAdmin::ADVANCED, $this->submenu_slugs['advanced'], 'seopress_advanced_page' ),
+                        array( __( 'Tools', 'wp-seopress' ), PagesAdmin::TOOLS, $this->submenu_slugs['tools'], 'seopress_import_export_page' ),
+                );
 
-		foreach ( $submenus as $submenu ) {
-			add_submenu_page(
-				'seopress-option',
-				$submenu[0],
-				$submenu[0],
-				seopress_capability( 'manage_options', $submenu[1] ),
+                foreach ( $submenus as $submenu ) {
+                        add_submenu_page(
+                                $this->main_page_slug,
+                                $submenu[0],
+                                $submenu[0],
+                                seopress_capability( 'manage_options', $submenu[1] ),
 				$submenu[2],
 				array( $this, $submenu[3] )
 			);
