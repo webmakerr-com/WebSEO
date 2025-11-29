@@ -30,7 +30,7 @@ private static $installed = array (
     array (
     ),
     'reference' => '735e97484cdccbf84918b2ec75150cb68b9365b0',
-    'name' => 'wp-seopress-pro/wp-seopress-pro',
+    'name' => 'webseo/webseo-pro',
   ),
   'versions' => 
   array (
@@ -305,7 +305,7 @@ private static $installed = array (
       ),
       'reference' => '605389f2a7e5625f273b53960dc46aeaf9c62918',
     ),
-    'wp-seopress-pro/wp-seopress-pro' => 
+    'webseo/webseo-pro' =>
     array (
       'pretty_version' => '9.3.x-dev',
       'version' => '9.3.9999999.9999999-dev',
