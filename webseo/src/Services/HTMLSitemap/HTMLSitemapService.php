@@ -41,18 +41,22 @@ class HTMLSitemapService {
                 }
         }
 
-	/**
-	 * The display function.
-	 *
-	 * @return void
-	 */
-	public function display() {
-		if ( '' !== $this->sitemap_option->getHtmlMapping() ) {
-			if ( is_page( explode( ',', $this->sitemap_option->getHtmlMapping() ) ) ) {
-				add_filter( 'the_content', array( $this, 'renderSitemap' ) );
-			}
-		}
-	}
+        /**
+         * The display function.
+         *
+         * @return void
+         */
+        public function display() {
+                $html_mapping = $this->sitemap_option->getHtmlMapping();
+
+                if ( ! empty( $html_mapping ) ) {
+                        $mapped_pages = explode( ',', (string) $html_mapping );
+
+                        if ( is_page( $mapped_pages ) ) {
+                                add_filter( 'the_content', array( $this, 'renderSitemap' ) );
+                        }
+                }
+        }
 
 	/**
 	 * The renderSitemap function.
