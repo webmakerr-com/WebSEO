@@ -23,7 +23,7 @@ class CustomCapabilities implements ExecuteHooksBackend {
 	 */
 	public function hooks() {
 		if ( '1' === seopress_get_toggle_option( 'advanced' ) ) {
-			add_filter( 'seopress_capability', array( $this, 'custom' ), 9999, 2 );
+                        add_filter( 'webseo_capability', array( $this, 'custom' ), 9999, 2 );
 			add_filter( 'option_page_capability_seopress_titles_option_group', array( $this, 'capabilitySaveTitlesMetas' ) );
 			add_filter( 'option_page_capability_seopress_xml_sitemap_option_group', array( $this, 'capabilitySaveXmlSitemap' ) );
 			add_filter( 'option_page_capability_seopress_social_option_group', array( $this, 'capabilitySaveSocial' ) );
