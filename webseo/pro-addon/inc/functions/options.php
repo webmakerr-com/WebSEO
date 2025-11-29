@@ -9,7 +9,7 @@ add_action('init', 'seopress_pro_enable', 999);
 function seopress_pro_enable()
 {
     if (is_admin()) {
-        if (is_plugin_active('wp-seopress/seopress.php') && defined('SEOPRESS_VERSION')) {
+        if (is_plugin_active('webseo/webseo.php') && defined('SEOPRESS_VERSION')) {
             require_once dirname(__FILE__) . '/options-import-export.php'; //Import Export
         }
     }

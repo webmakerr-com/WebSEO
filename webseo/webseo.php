@@ -1,18 +1,18 @@
 <?php
 /**
- * Plugin Name: SEOPress
- * Plugin URI: https://www.seopress.org/
- * Description: One of the best SEO plugins for WordPress.
- * Author: The SEO Guys at SEOPress
+ * Plugin Name: WebSEO
+ * Plugin URI: https://www.webseo.com/
+ * Description: All-in-one SEO plugin for WordPress.
+ * Author: WebSEO Team
  * Version: 9.3.0.3
- * Author URI: https://www.seopress.org/
+ * Author URI: https://www.webseo.com/
  * License: GPLv3 or later
- * Text Domain: wp-seopress
+ * Text Domain: webseo
  * Domain Path: /languages
  * Requires PHP: 7.4
  * Requires at least: 5.0
  *
- * @package SEOPress
+ * @package WEBSEO
  */
 
 /*
@@ -37,48 +37,81 @@ defined( 'ABSPATH' ) || exit( 'Please don’t call the plugin directly. Thanks :
 /**
  * Define constants
  */
-define( 'SEOPRESS_VERSION', '9.3.0.3' );
-define( 'SEOPRESS_AUTHOR', 'Benjamin Denis' );
-define( 'SEOPRESS_PLUGIN_FILE', __FILE__ );
-define( 'SEOPRESS_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'SEOPRESS_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'SEOPRESS_ASSETS_DIR', SEOPRESS_PLUGIN_DIR_URL . 'assets' );
-define( 'SEOPRESS_TEMPLATE_DIR', SEOPRESS_PLUGIN_DIR_PATH . 'templates' );
-define( 'SEOPRESS_TEMPLATE_SITEMAP_DIR', SEOPRESS_TEMPLATE_DIR . '/sitemap' );
-define( 'SEOPRESS_TEMPLATE_JSON_SCHEMAS', SEOPRESS_TEMPLATE_DIR . '/json-schemas' );
-define( 'SEOPRESS_PATH_PUBLIC', SEOPRESS_PLUGIN_DIR_PATH . 'public' );
-define( 'SEOPRESS_URL_PUBLIC', SEOPRESS_PLUGIN_DIR_URL . 'public' );
-define( 'SEOPRESS_URL_ASSETS', SEOPRESS_PLUGIN_DIR_URL . 'assets' );
+define( 'WEBSEO_VERSION', '9.3.0.3' );
+define( 'WEBSEO_AUTHOR', 'Benjamin Denis' );
+define( 'WEBSEO_PLUGIN_FILE', __FILE__ );
+define( 'WEBSEO_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'WEBSEO_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'WEBSEO_ASSETS_DIR', WEBSEO_PLUGIN_DIR_URL . 'assets' );
+define( 'WEBSEO_TEMPLATE_DIR', WEBSEO_PLUGIN_DIR_PATH . 'templates' );
+define( 'WEBSEO_TEMPLATE_SITEMAP_DIR', WEBSEO_TEMPLATE_DIR . '/sitemap' );
+define( 'WEBSEO_TEMPLATE_JSON_SCHEMAS', WEBSEO_TEMPLATE_DIR . '/json-schemas' );
+define( 'WEBSEO_PATH_PUBLIC', WEBSEO_PLUGIN_DIR_PATH . 'public' );
+define( 'WEBSEO_URL_PUBLIC', WEBSEO_PLUGIN_DIR_URL . 'public' );
+define( 'WEBSEO_URL_ASSETS', WEBSEO_PLUGIN_DIR_URL . 'assets' );
 
 // Pro assets shipped within the main plugin.
-define( 'SEOPRESS_PRO_PLUGIN_DIR_PATH', SEOPRESS_PLUGIN_DIR_PATH . 'pro-addon/' );
-define( 'SEOPRESS_PRO_PLUGIN_DIR_URL', SEOPRESS_PLUGIN_DIR_URL . 'pro-addon/' );
+define( 'WEBSEO_PRO_PLUGIN_DIR_PATH', WEBSEO_PLUGIN_DIR_PATH . 'pro-addon/' );
+define( 'WEBSEO_PRO_PLUGIN_DIR_URL', WEBSEO_PLUGIN_DIR_URL . 'pro-addon/' );
+
+$legacy_source_constants = array(
+        'WEBSEO_WL_ADMIN_HEADER' => 'SEOPRESS_WL_ADMIN_HEADER',
+);
+
+foreach ( $legacy_source_constants as $new_constant => $legacy_constant ) {
+        if ( defined( $legacy_constant ) && ! defined( $new_constant ) ) {
+                define( $new_constant, constant( $legacy_constant ) );
+        }
+}
+
+$legacy_constants = array(
+        'SEOPRESS_VERSION'               => 'WEBSEO_VERSION',
+        'SEOPRESS_AUTHOR'                => 'WEBSEO_AUTHOR',
+        'SEOPRESS_PLUGIN_FILE'           => 'WEBSEO_PLUGIN_FILE',
+        'SEOPRESS_PLUGIN_DIR_PATH'       => 'WEBSEO_PLUGIN_DIR_PATH',
+        'SEOPRESS_PLUGIN_DIR_URL'        => 'WEBSEO_PLUGIN_DIR_URL',
+        'SEOPRESS_ASSETS_DIR'            => 'WEBSEO_ASSETS_DIR',
+        'SEOPRESS_TEMPLATE_DIR'          => 'WEBSEO_TEMPLATE_DIR',
+        'SEOPRESS_TEMPLATE_SITEMAP_DIR'  => 'WEBSEO_TEMPLATE_SITEMAP_DIR',
+        'SEOPRESS_TEMPLATE_JSON_SCHEMAS' => 'WEBSEO_TEMPLATE_JSON_SCHEMAS',
+        'SEOPRESS_PATH_PUBLIC'           => 'WEBSEO_PATH_PUBLIC',
+        'SEOPRESS_URL_PUBLIC'            => 'WEBSEO_URL_PUBLIC',
+        'SEOPRESS_URL_ASSETS'            => 'WEBSEO_URL_ASSETS',
+        'SEOPRESS_PRO_PLUGIN_DIR_PATH'   => 'WEBSEO_PRO_PLUGIN_DIR_PATH',
+        'SEOPRESS_PRO_PLUGIN_DIR_URL'    => 'WEBSEO_PRO_PLUGIN_DIR_URL',
+);
+
+foreach ( $legacy_constants as $legacy_constant => $new_constant ) {
+        if ( ! defined( $legacy_constant ) ) {
+                define( $legacy_constant, constant( $new_constant ) );
+        }
+}
 
 /**
  * Kernel
  */
 use SEOPress\Core\Kernel;
-require_once SEOPRESS_PLUGIN_DIR_PATH . 'seopress-autoload.php';
+require_once WEBSEO_PLUGIN_DIR_PATH . 'seopress-autoload.php';
 
-if ( file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
-	require_once SEOPRESS_PLUGIN_DIR_PATH . 'seopress-functions.php';
+if ( file_exists( WEBSEO_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
+	require_once WEBSEO_PLUGIN_DIR_PATH . 'seopress-functions.php';
 }
 
 // Initialize the kernel if the vendor autoload exists.
-if ( file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
+if ( file_exists( WEBSEO_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
         Kernel::execute(
                 array(
                         'file'      => __FILE__,
-                        'slug'      => 'wp-seopress',
-			'main_file' => 'seopress',
-			'root'      => __DIR__,
-		)
+                        'slug'      => 'webseo',
+                        'main_file' => 'webseo',
+                        'root'      => __DIR__,
+                )
         );
 }
 
 // Bootstrap bundled Pro features.
-if ( file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php' ) ) {
-        require_once SEOPRESS_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php';
+if ( file_exists( WEBSEO_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php' ) ) {
+        require_once WEBSEO_PRO_PLUGIN_DIR_PATH . 'seopress-pro.php';
 }
 
 /**
@@ -159,7 +192,7 @@ function seopress_plugins_loaded( $hook ) {
 		}
 
 		// Load admin header unless explicitly disabled.
-		if ( ! defined( 'SEOPRESS_WL_ADMIN_HEADER' ) || SEOPRESS_WL_ADMIN_HEADER !== false ) {
+		if ( ! defined( 'WEBSEO_WL_ADMIN_HEADER' ) || WEBSEO_WL_ADMIN_HEADER !== false ) {
 			require_once $plugin_dir . 'inc/admin/admin-bar/admin-header.php';
 		}
 	}
@@ -189,8 +222,9 @@ add_action( 'plugins_loaded', 'seopress_plugins_loaded', 999 );
  * @return void
  */
 function seopress_init() {
-	// i18n.
-	load_plugin_textdomain( 'wp-seopress', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        // i18n.
+        load_plugin_textdomain( 'webseo', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        load_plugin_textdomain( 'wp-seopress', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 	// Preload dynamic variables file.
 	include_once plugin_dir_path( __FILE__ ) . 'inc/functions/variables/dynamic-variables.php';
@@ -225,7 +259,7 @@ function seopress_add_admin_options_scripts( $hook ) {
 	$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	// Register stylesheets.
-	wp_register_style( 'seopress-admin', plugins_url( 'assets/css/seopress' . $prefix . '.css', __FILE__ ), array(), SEOPRESS_VERSION );
+	wp_register_style( 'seopress-admin', plugins_url( 'assets/css/seopress' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
 	wp_enqueue_style( 'seopress-admin' );
 
 	// Early return if no page query var.
@@ -276,15 +310,15 @@ function seopress_add_admin_options_scripts( $hook ) {
 
 	// Setup Wizard page.
 	if ( 'seopress-setup' === $page ) {
-		wp_enqueue_style( 'seopress-setup', plugins_url( 'assets/css/seopress-setup' . $prefix . '.css', __FILE__ ), array(), SEOPRESS_VERSION );
-		wp_enqueue_script( 'seopress-migrate', plugins_url( 'assets/js/seopress-migrate' . $prefix . '.js', __FILE__ ), array( 'jquery' ), SEOPRESS_VERSION, true );
+		wp_enqueue_style( 'seopress-setup', plugins_url( 'assets/css/seopress-setup' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
+		wp_enqueue_script( 'seopress-migrate', plugins_url( 'assets/js/seopress-migrate' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
 		wp_enqueue_media();
-		wp_enqueue_script( 'seopress-media-uploader', plugins_url( 'assets/js/seopress-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), SEOPRESS_VERSION, true );
+		wp_enqueue_script( 'seopress-media-uploader', plugins_url( 'assets/js/seopress-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
 	}
 
 	// Dashboard page styles.
 	if ( 'seopress-option' === $page ) {
-		wp_register_style( 'seopress-admin-dashboard', plugins_url( 'assets/css/seopress-admin-dashboard' . $prefix . '.css', __FILE__ ), array(), SEOPRESS_VERSION );
+		wp_register_style( 'seopress-admin-dashboard', plugins_url( 'assets/css/seopress-admin-dashboard' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
 		wp_enqueue_style( 'seopress-admin-dashboard' );
 	}
 
@@ -321,7 +355,7 @@ function seopress_add_admin_options_scripts( $hook ) {
 
 	// Load scripts conditionally.
 	foreach ( $scripts as $script ) {
-		wp_enqueue_script( $script, plugins_url( 'assets/js/' . $script . $prefix . '.js', __FILE__ ), array( 'jquery' ), SEOPRESS_VERSION, true );
+		wp_enqueue_script( $script, plugins_url( 'assets/js/' . $script . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
 	}
 
 	if ( in_array( $page, $pages_with_toggle_js, true ) ) {
@@ -329,7 +363,7 @@ function seopress_add_admin_options_scripts( $hook ) {
 		$seopress_toggle_features = array(
 			'seopress_nonce'           => wp_create_nonce( 'seopress_toggle_features_nonce' ),
 			'seopress_toggle_features' => admin_url( 'admin-ajax.php' ),
-			'i18n'                     => __( 'has been successfully updated!', 'wp-seopress' ),
+			'i18n'                     => __( 'has been successfully updated!', 'webseo' ),
 		);
 		wp_localize_script( 'seopress-dashboard', 'seopressAjaxToggleFeatures', $seopress_toggle_features );
 
@@ -367,17 +401,17 @@ function seopress_add_admin_options_scripts( $hook ) {
 	// Google Analytics color picker.
 	if ( 'seopress-google-analytics' === $page ) {
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'wp-color-picker-alpha', plugins_url( 'assets/js/wp-color-picker-alpha' . $prefix . '.js', __FILE__ ), array( 'wp-color-picker' ), SEOPRESS_VERSION, true );
+		wp_enqueue_script( 'wp-color-picker-alpha', plugins_url( 'assets/js/wp-color-picker-alpha' . $prefix . '.js', __FILE__ ), array( 'wp-color-picker' ), WEBSEO_VERSION, true );
 		wp_localize_script(
 			'wp-color-picker-alpha',
 			'wpColorPickerL10n',
 			array(
-				'clear'            => __( 'Clear', 'wp-seopress' ),
-				'clearAriaLabel'   => __( 'Clear color', 'wp-seopress' ),
-				'defaultString'    => __( 'Default', 'wp-seopress' ),
-				'defaultAriaLabel' => __( 'Select default color', 'wp-seopress' ),
-				'pick'             => __( 'Select Color', 'wp-seopress' ),
-				'defaultLabel'     => __( 'Color value', 'wp-seopress' ),
+				'clear'            => __( 'Clear', 'webseo' ),
+				'clearAriaLabel'   => __( 'Clear color', 'webseo' ),
+				'defaultString'    => __( 'Default', 'webseo' ),
+				'defaultAriaLabel' => __( 'Select default color', 'webseo' ),
+				'pick'             => __( 'Select Color', 'webseo' ),
+				'defaultLabel'     => __( 'Color value', 'webseo' ),
 			),
 		);
 
@@ -466,8 +500,8 @@ function seopress_add_admin_options_scripts( $hook ) {
 				'seopress_metadata_export' => admin_url( 'admin-ajax.php' ),
 			),
 			'i18n'                              => array(
-				'migration' => __( 'Migration completed!', 'wp-seopress' ),
-				'export'    => __( 'Export completed!', 'wp-seopress' ),
+				'migration' => __( 'Migration completed!', 'webseo' ),
+				'export'    => __( 'Export completed!', 'webseo' ),
 			),
 		);
 		wp_localize_script( 'seopress-migrate', 'seopressAjaxMigrate', $seopress_migrate );
@@ -475,7 +509,7 @@ function seopress_add_admin_options_scripts( $hook ) {
 
 	// Media uploader for social page.
 	if ( 'seopress-social' === $page ) {
-		wp_enqueue_script( 'seopress-media-uploader', plugins_url( 'assets/js/seopress-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), SEOPRESS_VERSION, false );
+		wp_enqueue_script( 'seopress-media-uploader', plugins_url( 'assets/js/seopress-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, false );
 		wp_enqueue_media();
 	}
 
@@ -521,7 +555,7 @@ function seopress_add_admin_options_scripts( $hook ) {
 
 	// CSV Importer.
 	if ( 'seopress_csv_importer' === $_GET['page'] ) {
-		wp_enqueue_style( 'seopress-setup', plugins_url( 'assets/css/seopress-setup' . $prefix . '.css', __FILE__ ), array( 'dashicons' ), SEOPRESS_VERSION );
+		wp_enqueue_style( 'seopress-setup', plugins_url( 'assets/css/seopress-setup' . $prefix . '.css', __FILE__ ), array( 'dashicons' ), WEBSEO_VERSION );
 	}
 }
 add_action( 'admin_enqueue_scripts', 'seopress_add_admin_options_scripts', 10, 1 );
@@ -540,7 +574,7 @@ function seopress_admin_bar_css() {
 		// Enqueue the style only if the appearance option is not '1'.
 		if ( '1' !== $appearance_option ) {
 			$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-			wp_enqueue_style( 'seopress-admin-bar', plugins_url( 'assets/css/seopress-admin-bar' . $prefix . '.css', __FILE__ ), array(), SEOPRESS_VERSION );
+			wp_enqueue_style( 'seopress-admin-bar', plugins_url( 'assets/css/seopress-admin-bar' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
 		}
 	}
 }
@@ -564,7 +598,7 @@ function seopress_add_admin_options_scripts_quick_edit() {
 	$prefix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	$script_url = plugins_url( 'assets/js/seopress-quick-edit' . $prefix . '.js', __FILE__ );
 
-	wp_enqueue_script( 'seopress-quick-edit', $script_url, array( 'jquery', 'inline-edit-post' ), SEOPRESS_VERSION, true );
+	wp_enqueue_script( 'seopress-quick-edit', $script_url, array( 'jquery', 'inline-edit-post' ), WEBSEO_VERSION, true );
 }
 add_action( 'admin_print_scripts-edit.php', 'seopress_add_admin_options_scripts_quick_edit' );
 
@@ -612,7 +646,7 @@ function seopress_admin_body_class( $classes ) {
 	}
 
 	// Add white-label class if applicable.
-	if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false ) {
+	if ( defined( 'WEBSEO_WL_ADMIN_HEADER' ) && WEBSEO_WL_ADMIN_HEADER === false ) {
 		$classes .= ' seopress-white-label';
 	}
 
@@ -642,13 +676,13 @@ function seopress_plugin_action_links( $links, $file ) {
 
 	if ( $file === $this_plugin ) {
 		// Define action links.
-		$settings_link = '<a href="' . admin_url( 'admin.php?page=seopress-option' ) . '">' . __( 'Settings', 'wp-seopress' ) . '</a>';
-		$wizard_link   = '<a href="' . admin_url( 'admin.php?page=seopress-setup&step=welcome&parent=welcome' ) . '">' . __( 'Configuration Wizard', 'wp-seopress' ) . '</a>';
-		$website_link  = '<a href="https://www.seopress.org/support/" target="_blank">' . __( 'Docs', 'wp-seopress' ) . '</a>';
+		$settings_link = '<a href="' . admin_url( 'admin.php?page=seopress-option' ) . '">' . __( 'Settings', 'webseo' ) . '</a>';
+		$wizard_link   = '<a href="' . admin_url( 'admin.php?page=seopress-setup&step=welcome&parent=welcome' ) . '">' . __( 'Configuration Wizard', 'webseo' ) . '</a>';
+		$website_link  = '<a href="https://www.seopress.org/support/" target="_blank">' . __( 'Docs', 'webseo' ) . '</a>';
 
 		// Add "GO PRO!" link for non-PRO users.
 		if ( ! is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ) {
-			$pro_link = '<a href="https://www.seopress.org/seopress-pro/" style="color:red;font-weight:bold" target="_blank">' . __( 'GO PRO!', 'wp-seopress' ) . '</a>';
+			$pro_link = '<a href="https://www.seopress.org/seopress-pro/" style="color:red;font-weight:bold" target="_blank">' . __( 'GO PRO!', 'webseo' ) . '</a>';
 			array_unshift( $links, $pro_link );
 		}
 

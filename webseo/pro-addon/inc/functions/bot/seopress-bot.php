@@ -80,7 +80,7 @@ class Bot {
      * @since 1.0.0
      */
     public function menu_cb() {
-        if (is_plugin_active('wp-seopress/seopress.php')) {
+        if (is_plugin_active('webseo/webseo.php')) {
             if (function_exists('seopress_admin_header')) {
                 echo seopress_admin_header();
             }

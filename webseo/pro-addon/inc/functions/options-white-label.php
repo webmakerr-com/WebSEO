@@ -127,27 +127,27 @@ if (!empty(seopress_pro_get_service('OptionPro')->getWhiteLabelListTitle())
     add_filter('all_plugins', 'seopress_filter_plugins_list', 10, 1);
     function seopress_filter_plugins_list($data) {
         //SEOPress
-        if (array_key_exists('wp-seopress/seopress.php', $data)) {
+        if (array_key_exists('webseo/webseo.php', $data)) {
             //Title
             if (!empty(seopress_pro_get_service('OptionPro')->getWhiteLabelListTitle())) {
-                $data['wp-seopress/seopress.php']['Name']  = seopress_pro_get_service('OptionPro')->getWhiteLabelListTitle();
-                $data['wp-seopress/seopress.php']['Title'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListTitle();
+                $data['webseo/webseo.php']['Name']  = seopress_pro_get_service('OptionPro')->getWhiteLabelListTitle();
+                $data['webseo/webseo.php']['Title'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListTitle();
             }
 
             //Description
             if (!empty(seopress_pro_get_service('OptionPro')->getWhiteLabelListDesc())) {
-                $data['wp-seopress/seopress.php']['Description'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListDesc();
+                $data['webseo/webseo.php']['Description'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListDesc();
             }
 
             //Author
             if (!empty(seopress_pro_get_service('OptionPro')->getWhiteLabelListAuthor())) {
-                $data['wp-seopress/seopress.php']['Author']     = seopress_pro_get_service('OptionPro')->getWhiteLabelListAuthor();
-                $data['wp-seopress/seopress.php']['AuthorName'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListAuthor();
+                $data['webseo/webseo.php']['Author']     = seopress_pro_get_service('OptionPro')->getWhiteLabelListAuthor();
+                $data['webseo/webseo.php']['AuthorName'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListAuthor();
             }
 
             //Website
             if (!empty(seopress_pro_get_service('OptionPro')->getWhiteLabelListWebsite())) {
-                $data['wp-seopress/seopress.php']['AuthorURI'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListWebsite();
+                $data['webseo/webseo.php']['AuthorURI'] = seopress_pro_get_service('OptionPro')->getWhiteLabelListWebsite();
             }
         }
 
@@ -189,7 +189,7 @@ if (!empty(seopress_pro_get_service('OptionPro')->getWhiteLabelListViewDetails()
             return $links;
         }
 
-        if (false !== strpos($file, 'wp-seopress/seopress.php') || false !== strpos($file, 'wp-seopress-pro/seopress-pro.php')) {
+        if (false !== strpos($file, 'webseo/webseo.php') || false !== strpos($file, 'wp-seopress-pro/seopress-pro.php')) {
             unset($links[2]);
         }
 
@@ -203,8 +203,8 @@ if (!empty(seopress_pro_get_service('OptionPro')->getWhiteLabelListViewDetails()
             return $value;
         }
 
-        if (isset($value->response['wp-seopress/seopress.php']) || isset($value->response['wp-seopress-pro/seopress-pro.php'])) {
-            unset($value->response['wp-seopress/seopress.php']);
+        if (isset($value->response['webseo/webseo.php']) || isset($value->response['wp-seopress-pro/seopress-pro.php'])) {
+            unset($value->response['webseo/webseo.php']);
             unset($value->response['wp-seopress-pro/seopress-pro.php']);
         }
         return $value;

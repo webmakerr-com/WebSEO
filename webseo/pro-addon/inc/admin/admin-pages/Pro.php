@@ -8,7 +8,7 @@ if (is_network_admin() && is_multisite()) {
     $this->options = get_option('seopress_pro_option_name');
 }
 
-if (is_plugin_active('wp-seopress/seopress.php')) {
+if (is_plugin_active('webseo/webseo.php')) {
     if (function_exists('seopress_admin_header')) {
         echo seopress_admin_header();
     }

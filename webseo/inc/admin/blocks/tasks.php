@@ -42,7 +42,7 @@ if ( defined( 'SEOPRESS_WL_ADMIN_HEADER' ) && SEOPRESS_WL_ADMIN_HEADER === false
 		<div class="seopress-card-content">
 		<?php
 			$products = array(
-				'wp-seopress/seopress.php'         => array(
+				'webseo/webseo.php'         => array(
 					'title' => 'SEOPress Free',
 					'logo'  => SEOPRESS_URL_ASSETS . '/img/logo-seopress-free.svg',
 					'url'   => $docs['pricing'],
