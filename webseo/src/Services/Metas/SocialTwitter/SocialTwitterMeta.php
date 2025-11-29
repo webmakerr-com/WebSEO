@@ -1,8 +1,8 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialTwitter;
+namespace WebSEO\Services\Metas\SocialTwitter;
 
-use SEOPress\Helpers\Metas\SocialSettings;
+use WebSEO\Helpers\Metas\SocialSettings;
 
 /**
  * SocialTwitterMeta

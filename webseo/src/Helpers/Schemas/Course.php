@@ -1,6 +1,6 @@
 <?php
 
-namespace SEOPress\Helpers\Schemas;
+namespace WebSEO\Helpers\Schemas;
 
 defined( 'ABSPATH' ) or exit( 'Cheatin&#8217; uh?' );
 

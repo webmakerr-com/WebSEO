@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Api\Options;
+namespace WebSEO\Actions\Api\Options;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooks;
 
 /**
  * Analytics Settings

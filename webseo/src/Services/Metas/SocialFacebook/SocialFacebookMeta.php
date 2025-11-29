@@ -1,8 +1,8 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialFacebook;
+namespace WebSEO\Services\Metas\SocialFacebook;
 
-use SEOPress\Helpers\Metas\SocialSettings;
+use WebSEO\Helpers\Metas\SocialSettings;
 
 /**
  * SocialFacebookMeta

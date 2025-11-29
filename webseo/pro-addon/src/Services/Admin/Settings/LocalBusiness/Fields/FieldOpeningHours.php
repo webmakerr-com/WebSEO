@@ -4,7 +4,7 @@ namespace SEOPressPro\Services\Admin\Settings\LocalBusiness\Fields;
 
 defined('ABSPATH') or exit('Cheatin&#8217; uh?');
 
-use SEOPress\Helpers\OpeningHoursHelper;
+use WebSEO\Helpers\OpeningHoursHelper;
 
 trait FieldOpeningHours {
     /**

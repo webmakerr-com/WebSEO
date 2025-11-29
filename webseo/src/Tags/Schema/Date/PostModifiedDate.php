@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Tags\Schema\Date;
+namespace WebSEO\Tags\Schema\Date;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\GetTagValue;
 
 /**
  * Schema Post Modified Date

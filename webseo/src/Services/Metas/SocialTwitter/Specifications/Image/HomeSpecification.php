@@ -1,8 +1,8 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialTwitter\Specifications\Image;
+namespace WebSEO\Services\Metas\SocialTwitter\Specifications\Image;
 
-use SEOPress\Services\Metas\SocialTwitter\Specifications\Image\AbstractImageSpecification;
+use WebSEO\Services\Metas\SocialTwitter\Specifications\Image\AbstractImageSpecification;
 
 /**
  * HomeSpecification

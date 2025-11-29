@@ -790,7 +790,7 @@ function seopress_404_send_alert()
 
     if (!empty($content)) {
         // Use the new EmailService
-        $email_service = \SEOPress\Services\Email\EmailService::get_instance();
+        $email_service = \WebSEO\Services\Email\EmailService::get_instance();
         
         // Prepare email arguments
         $email_args = [
@@ -1040,7 +1040,7 @@ function seopress_send_alerts_cron()
             ) . '</p>';
 
             // Use the new EmailService
-            $email_service = \SEOPress\Services\Email\EmailService::get_instance();
+            $email_service = \WebSEO\Services\Email\EmailService::get_instance();
             
             // Prepare email arguments
             $email_args = [
@@ -1333,7 +1333,7 @@ function seopress_site_audit_send_email() {
     $content .= '<p><a href="' . esc_url(admin_url('admin.php?page=seopress-bot-batch#tab=tab_seopress_audit')) . '" title="' . esc_html__('Read the audit', 'wp-seopress-pro') . '">' . esc_html__('Read the site audit', 'wp-seopress-pro') . '</a></p>';
 
     // Use the new EmailService
-    $email_service = \SEOPress\Services\Email\EmailService::get_instance();
+    $email_service = \WebSEO\Services\Email\EmailService::get_instance();
     
     // Prepare email arguments
     $email_args = [

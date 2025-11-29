@@ -6,9 +6,9 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Helpers\RichSnippetType;
-use SEOPress\JsonSchemas\Organization;
-use SEOPress\Models\GetJsonData;
+use WebSEO\Helpers\RichSnippetType;
+use WebSEO\JsonSchemas\Organization;
+use WebSEO\Models\GetJsonData;
 use SEOPressPro\Models\JsonSchemaValue;
 
 class Job extends JsonSchemaValue implements GetJsonData {

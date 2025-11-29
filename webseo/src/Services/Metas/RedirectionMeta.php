@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas;
+namespace WebSEO\Services\Metas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Helpers\Metas\RedirectionSettings;
+use WebSEO\Helpers\Metas\RedirectionSettings;
 
 /**
  * RedirectionMeta

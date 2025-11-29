@@ -12,7 +12,7 @@ namespace SEOPressPro\Actions\Ajax;
 
 defined( 'ABSPATH' ) || exit( 'Cheatin&#8217; uh?' );
 
-use SEOPress\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooks;
 
 /**
  * Bot Search Console class.

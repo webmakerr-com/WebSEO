@@ -1,21 +1,21 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Constants;
+namespace WebSEO\Constants;
 
-use SEOPress\Helpers\TagCompose;
-use SEOPress\Tags\PostTitle;
-use SEOPress\Tags\SiteTagline;
-use SEOPress\Tags\CategoryTitle;
-use SEOPress\Tags\CurrentPagination;
-use SEOPress\Tags\SiteTitle;
-use SEOPress\Tags\TagTitle;
-use SEOPress\Tags\TermTitle;
-use SEOPress\Tags\CategoryDescription;
-use SEOPress\Tags\TagDescription;
-use SEOPress\Tags\TermDescription;
-use SEOPress\Tags\PostAuthor;
-use SEOPress\Tags\Date\ArchiveDate;
-use SEOPress\Tags\CustomPostTypePlural;
+use WebSEO\Helpers\TagCompose;
+use WebSEO\Tags\PostTitle;
+use WebSEO\Tags\SiteTagline;
+use WebSEO\Tags\CategoryTitle;
+use WebSEO\Tags\CurrentPagination;
+use WebSEO\Tags\SiteTitle;
+use WebSEO\Tags\TagTitle;
+use WebSEO\Tags\TermTitle;
+use WebSEO\Tags\CategoryDescription;
+use WebSEO\Tags\TagDescription;
+use WebSEO\Tags\TermDescription;
+use WebSEO\Tags\PostAuthor;
+use WebSEO\Tags\Date\ArchiveDate;
+use WebSEO\Tags\CustomPostTypePlural;
 
 /**
  * MetasDefaultValues

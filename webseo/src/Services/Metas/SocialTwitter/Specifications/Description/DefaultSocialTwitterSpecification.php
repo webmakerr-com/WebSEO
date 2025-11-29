@@ -1,9 +1,9 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialTwitter\Specifications\Description;
+namespace WebSEO\Services\Metas\SocialTwitter\Specifications\Description;
 
-use SEOPress\Helpers\Metas\SocialSettings;
-use SEOPress\Services\Metas\SocialTwitter\Specifications\Description\AbstractDescriptionSpecification;
+use WebSEO\Helpers\Metas\SocialSettings;
+use WebSEO\Services\Metas\SocialTwitter\Specifications\Description\AbstractDescriptionSpecification;
 
 /**
  * DefaultSocialTwitterSpecification

@@ -1,10 +1,10 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Thirds\AIO;
+namespace WebSEO\Thirds\AIO;
 
 defined( 'ABSPATH' ) || exit( 'Cheatin&#8217; uh?' );
 
-use SEOPress\Helpers\TagCompose;
+use WebSEO\Helpers\TagCompose;
 
 /**
  * Tags

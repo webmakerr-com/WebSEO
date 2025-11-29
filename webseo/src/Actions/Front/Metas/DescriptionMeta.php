@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Front\Metas;
+namespace WebSEO\Actions\Front\Metas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooksFrontend;
+use WebSEO\Core\Hooks\ExecuteHooksFrontend;
 
 /**
  * Description Meta

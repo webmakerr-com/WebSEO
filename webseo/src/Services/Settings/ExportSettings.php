@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Settings;
+namespace WebSEO\Services\Settings;
 
 /**
  * ExportSettings

@@ -3,7 +3,7 @@
 namespace SEOPressPro\Actions;
 
 
-use SEOPress\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooks;
 use WP_CLI;
 
 class Commands implements ExecuteHooks {

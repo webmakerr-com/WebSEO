@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\Description\Specifications;
+namespace WebSEO\Services\Metas\Description\Specifications;
 
 /**
  * DateSpecification

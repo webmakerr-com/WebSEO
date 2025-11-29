@@ -367,7 +367,7 @@ if ( '1' == seopress_get_toggle_option( 'xml-sitemap' ) ) { // phpcs:ignore -- T
 	 */
 	function seopress_load_sitemap() {
 		if ( '1' === seopress_get_service( 'SitemapOption' )->getHtmlEnable() ) {
-			$html_sitemap_service = new \SEOPress\Services\HTMLSitemap\HTMLSitemapService( seopress_get_service( 'SitemapOption' ) );
+			$html_sitemap_service = new \WebSEO\Services\HTMLSitemap\HTMLSitemapService( seopress_get_service( 'SitemapOption' ) );
 			$html_sitemap_service->init();
 		}
 	}

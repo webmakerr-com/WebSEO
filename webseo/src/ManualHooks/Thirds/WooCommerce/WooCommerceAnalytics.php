@@ -1,8 +1,8 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\ManualHooks\Thirds\WooCommerce;
+namespace WebSEO\ManualHooks\Thirds\WooCommerce;
 
-use SEOPress\Thirds\WooCommerce\WooCommerceAnalyticsService;
+use WebSEO\Thirds\WooCommerce\WooCommerceAnalyticsService;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

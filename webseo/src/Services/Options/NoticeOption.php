@@ -1,11 +1,11 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Options;
+namespace WebSEO\Services\Options;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-use SEOPress\Constants\Options;
+use WebSEO\Constants\Options;
 
 /**
  * NoticeOption

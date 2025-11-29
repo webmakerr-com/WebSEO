@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Thanks :)' );
 
-use SEOPress\Core\Kernel;
+use WebSEO\Core\Kernel;
 
 /**
  * Get a service.

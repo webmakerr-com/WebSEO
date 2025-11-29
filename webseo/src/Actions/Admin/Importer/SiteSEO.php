@@ -1,10 +1,10 @@
 <?php
 
-namespace SEOPress\Actions\Admin\Importer;
+namespace WebSEO\Actions\Admin\Importer;
 
 defined( 'ABSPATH' ) || exit( 'Cheatin&#8217; uh?' );
 
-use SEOPress\Core\Hooks\ExecuteHooksBackend;
+use WebSEO\Core\Hooks\ExecuteHooksBackend;
 
 /**
  * SiteSEO importer

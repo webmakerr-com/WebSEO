@@ -6,8 +6,8 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooksFrontend;
-use SEOPress\Helpers\RichSnippetType;
+use WebSEO\Core\Hooks\ExecuteHooksFrontend;
+use WebSEO\Helpers\RichSnippetType;
 
 class PrintRichSnippets implements ExecuteHooksFrontend {
     public function hooks() {

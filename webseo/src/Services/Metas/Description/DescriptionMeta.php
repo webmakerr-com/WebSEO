@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\Description;
+namespace WebSEO\Services\Metas\Description;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

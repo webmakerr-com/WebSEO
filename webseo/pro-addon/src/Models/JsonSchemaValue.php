@@ -6,8 +6,8 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Helpers\RichSnippetType;
-use SEOPress\Models\JsonSchemaValue as JsonSchemaValueBase;
+use WebSEO\Helpers\RichSnippetType;
+use WebSEO\Models\JsonSchemaValue as JsonSchemaValueBase;
 
 /**
  * @abstract

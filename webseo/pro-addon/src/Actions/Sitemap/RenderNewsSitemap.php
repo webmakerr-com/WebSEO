@@ -4,7 +4,7 @@ namespace SEOPressPro\Actions\Sitemap;
 
 defined('ABSPATH') or exit('Cheatin&#8217; uh?');
 
-use SEOPress\Core\Hooks\ExecuteHooksFrontend;
+use WebSEO\Core\Hooks\ExecuteHooksFrontend;
 
 class RenderNewsSitemap implements ExecuteHooksFrontend {
     /**

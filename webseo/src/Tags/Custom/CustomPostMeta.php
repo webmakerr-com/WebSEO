@@ -1,13 +1,13 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Tags\Custom;
+namespace WebSEO\Tags\Custom;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Models\AbstractCustomTagValue;
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\AbstractCustomTagValue;
+use WebSEO\Models\GetTagValue;
 
 /**
  * Custom Post Meta

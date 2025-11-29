@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Models;
+namespace WebSEO\Models;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

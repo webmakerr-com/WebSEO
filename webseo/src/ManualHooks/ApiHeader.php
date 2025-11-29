@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\ManualHooks;
+namespace WebSEO\ManualHooks;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

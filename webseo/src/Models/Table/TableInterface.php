@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Models\Table;
+namespace WebSEO\Models\Table;
 
 defined( 'ABSPATH' ) || exit;
 

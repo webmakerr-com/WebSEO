@@ -1,14 +1,14 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Table;
+namespace WebSEO\Services\Table;
 
 defined( 'ABSPATH' ) || exit;
 
-use SEOPress\Models\Table\TableInterface;
-use SEOPress\Core\Table\TableFactory;
-use SEOPress\Models\Table\TableStructure;
-use SEOPress\Models\Table\TableColumn;
-use SEOPress\Models\Table\Table;
+use WebSEO\Models\Table\TableInterface;
+use WebSEO\Core\Table\TableFactory;
+use WebSEO\Models\Table\TableStructure;
+use WebSEO\Models\Table\TableColumn;
+use WebSEO\Models\Table\Table;
 
 /**
  * TableList

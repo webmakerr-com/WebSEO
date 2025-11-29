@@ -6,9 +6,9 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Helpers\RichSnippetType;
-use SEOPress\JsonSchemas\Image;
-use SEOPress\Models\GetJsonData;
+use WebSEO\Helpers\RichSnippetType;
+use WebSEO\JsonSchemas\Image;
+use WebSEO\Models\GetJsonData;
 use SEOPressPro\Models\JsonSchemaValue;
 
 class Review extends JsonSchemaValue implements GetJsonData {

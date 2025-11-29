@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Thanks :)' );
 
-use SEOPress\Helpers\PagesAdmin;
+use WebSEO\Helpers\PagesAdmin;
 
 /**
  * SEOPress options

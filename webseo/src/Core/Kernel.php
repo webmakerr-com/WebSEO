@@ -1,17 +1,17 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Core;
+namespace WebSEO\Core;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Container\ContainerSeopress;
-use SEOPress\Core\Hooks\ActivationHook;
-use SEOPress\Core\Hooks\DeactivationHook;
-use SEOPress\Core\Hooks\ExecuteHooks;
-use SEOPress\Core\Hooks\ExecuteHooksBackend;
-use SEOPress\Core\Hooks\ExecuteHooksFrontend;
+use WebSEO\Core\Container\ContainerSeopress;
+use WebSEO\Core\Hooks\ActivationHook;
+use WebSEO\Core\Hooks\DeactivationHook;
+use WebSEO\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooksBackend;
+use WebSEO\Core\Hooks\ExecuteHooksFrontend;
 
 /**
  * Kernel
@@ -173,7 +173,7 @@ abstract class Kernel {
 					continue;
 				}
 
-				$data = '\\SEOPress\\' . $namespace . str_replace( '.php', '', $filename );
+				$data = '\\WebSEO\\' . $namespace . str_replace( '.php', '', $filename );
 
 				switch ( $type ) {
 					case 'services':

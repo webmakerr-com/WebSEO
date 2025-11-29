@@ -6,7 +6,7 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\GetTagValue;
 
 class AddressPostalCode implements GetTagValue {
     const NAME = 'local_business_address_postal_code';

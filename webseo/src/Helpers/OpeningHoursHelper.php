@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Helpers;
+namespace WebSEO\Helpers;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

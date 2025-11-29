@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\HTMLSitemap;
+namespace WebSEO\Services\HTMLSitemap;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Services\Options\SitemapOption;
+use WebSEO\Services\Options\SitemapOption;
 
 /**
  * HTMLSitemapTemplate

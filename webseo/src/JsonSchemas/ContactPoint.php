@@ -1,13 +1,13 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\JsonSchemas;
+namespace WebSEO\JsonSchemas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Models\GetJsonData;
-use SEOPress\Models\JsonSchemaValue;
+use WebSEO\Models\GetJsonData;
+use WebSEO\Models\JsonSchemaValue;
 
 /**
  * ContactPoint

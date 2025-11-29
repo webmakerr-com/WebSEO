@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\Title;
+namespace WebSEO\Services\Metas\Title;
 
 /**
  * TitleMeta

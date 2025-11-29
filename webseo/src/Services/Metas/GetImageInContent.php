@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas;
+namespace WebSEO\Services\Metas;
 
 /**
  * GetImageInContent

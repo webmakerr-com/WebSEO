@@ -1,5 +1,5 @@
 <?php
-namespace SEOPress\Services\Email;
+namespace WebSEO\Services\Email;
 
 if (! defined('ABSPATH')) {
     exit;

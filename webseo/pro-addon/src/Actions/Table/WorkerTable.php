@@ -4,8 +4,8 @@ namespace SEOPressPro\Actions\Table;
 
 defined('ABSPATH') or exit('Cheatin&#8217; uh?');
 
-use SEOPress\Core\Hooks\ExecuteHooks;
-use SEOPress\Core\Hooks\ActivationHook;
+use WebSEO\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ActivationHook;
 
 class WorkerTable implements ExecuteHooks, ActivationHook {
     public function hooks() {

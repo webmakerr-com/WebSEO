@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\ContentAnalysis;
+namespace WebSEO\Services\ContentAnalysis;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

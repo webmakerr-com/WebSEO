@@ -4,12 +4,12 @@ namespace SEOPressPro\Core;
 
 defined('ABSPATH') or exit('Cheatin&#8217; uh?');
 
-use SEOPress\Core\Container\ContainerSeopress;
-use SEOPress\Core\Hooks\ActivationHook;
-use SEOPress\Core\Hooks\DeactivationHook;
-use SEOPress\Core\Hooks\ExecuteHooks;
-use SEOPress\Core\Hooks\ExecuteHooksBackend;
-use SEOPress\Core\Hooks\ExecuteHooksFrontend;
+use WebSEO\Core\Container\ContainerSeopress;
+use WebSEO\Core\Hooks\ActivationHook;
+use WebSEO\Core\Hooks\DeactivationHook;
+use WebSEO\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooksBackend;
+use WebSEO\Core\Hooks\ExecuteHooksFrontend;
 
 abstract class Kernel
 {

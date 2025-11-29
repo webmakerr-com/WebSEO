@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Table;
+namespace WebSEO\Services\Table;
 
 defined( 'ABSPATH' ) || exit;
 
-use SEOPress\Models\Table\TableInterface;
-use SEOPress\Core\Table\QueryCreateTable;
-use SEOPress\Core\Table\QueryExistTable;
+use WebSEO\Models\Table\TableInterface;
+use WebSEO\Core\Table\QueryCreateTable;
+use WebSEO\Core\Table\QueryExistTable;
 
 
 /**

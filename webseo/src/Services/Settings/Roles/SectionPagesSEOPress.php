@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Settings\Roles;
+namespace WebSEO\Services\Settings\Roles;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

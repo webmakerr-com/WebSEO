@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialFacebook\Specifications\Image;
+namespace WebSEO\Services\Metas\SocialFacebook\Specifications\Image;
 
 /**
  * AbstractImageSpecification

@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Sitemap;
+namespace WebSEO\Services\Sitemap;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

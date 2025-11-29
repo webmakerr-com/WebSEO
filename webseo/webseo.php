@@ -90,7 +90,7 @@ foreach ( $legacy_constants as $legacy_constant => $new_constant ) {
 /**
  * Kernel
  */
-use SEOPress\Core\Kernel;
+use WebSEO\Core\Kernel;
 require_once WEBSEO_PLUGIN_DIR_PATH . 'seopress-autoload.php';
 
 if ( file_exists( WEBSEO_PLUGIN_DIR_PATH . 'vendor/autoload.php' ) ) {
@@ -245,7 +245,7 @@ function seopress_dyn_variables_init( $variables, $post = '', $is_oembed = false
 	}
 
 	// Use memoized function for dynamic variable retrieval.
-	return SEOPress\Helpers\CachedMemoizeFunctions::memoize( 'seopress_get_dynamic_variables' )( $variables, $post, $is_oembed );
+	return WebSEO\Helpers\CachedMemoizeFunctions::memoize( 'seopress_get_dynamic_variables' )( $variables, $post, $is_oembed );
 }
 add_filter( 'seopress_dyn_variables_fn', 'seopress_dyn_variables_init', 10, 3 );
 

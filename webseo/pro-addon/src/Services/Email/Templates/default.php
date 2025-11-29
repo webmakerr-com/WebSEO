@@ -6,7 +6,7 @@ defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks 
  *
  * This template can be overridden by copying it to yourtheme/seopress/emails/default.php
  *
- * @package SEOPress\Templates
+ * @package WebSEO\Templates
  * @version 1.0.0
  */
 

@@ -6,7 +6,7 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\GetTagValue;
 
 class StreetAddress implements GetTagValue {
     const NAME = 'local_business_street_address';

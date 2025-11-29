@@ -20,9 +20,9 @@ class ComposerStaticInit303c06f6dc8f80594e3f972f929a39ce
         array (
             'phpseclib3\\' => 11,
         ),
-        'S' => 
+        'W' =>
         array (
-            'SEOPress\\' => 9,
+            'WebSEO\\' => 7,
         ),
         'P' => 
         array (
@@ -58,7 +58,7 @@ class ComposerStaticInit303c06f6dc8f80594e3f972f929a39ce
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
         ),
-        'SEOPress\\' => 
+        'WebSEO\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

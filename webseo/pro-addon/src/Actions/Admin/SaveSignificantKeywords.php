@@ -4,7 +4,7 @@ namespace SEOPressPro\Actions\Admin;
 
 defined('ABSPATH') or exit('Cheatin&#8217; uh?');
 
-use SEOPress\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooks;
 
 class SaveSignificantKeywords implements ExecuteHooks
 {

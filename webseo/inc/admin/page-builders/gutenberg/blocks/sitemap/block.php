@@ -21,7 +21,7 @@ function seopress_sitemap_block( $attributes, $content, $block ) {
 	$html = '';
 	if ( '1' == seopress_get_toggle_option( 'xml-sitemap' ) && '1' === seopress_get_service( 'SitemapOption' )->getHtmlEnable() ) { // phpcs:ignore -- TODO: null comparison check.
 		$atts                 = ! empty( $attributes['postTypes'] ) ? array( 'cpt' => join( ',', $attributes['postTypes'] ) ) : array();
-		$html_sitemap_service = new \SEOPress\Services\HTMLSitemap\HTMLSitemapService( seopress_get_service( 'SitemapOption' ) );
+		$html_sitemap_service = new \WebSEO\Services\HTMLSitemap\HTMLSitemapService( seopress_get_service( 'SitemapOption' ) );
 		$html                 = sprintf( '<div %s>%s</div>', $attr, $html_sitemap_service->renderSitemap( $atts ) );
 	}
 	return $html;

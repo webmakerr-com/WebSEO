@@ -1,9 +1,9 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialFacebook\Specifications\Title;
+namespace WebSEO\Services\Metas\SocialFacebook\Specifications\Title;
 
-use SEOPress\Helpers\Metas\SocialSettings;
-use SEOPress\Services\Metas\SocialFacebook\Specifications\Title\AbstractTitleSpecification;
+use WebSEO\Helpers\Metas\SocialSettings;
+use WebSEO\Services\Metas\SocialFacebook\Specifications\Title\AbstractTitleSpecification;
 
 /**
  * DefaultSocialFacebookSpecification
