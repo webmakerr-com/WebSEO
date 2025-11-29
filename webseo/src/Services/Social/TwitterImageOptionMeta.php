@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Social;
+namespace WebSEO\Services\Social;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

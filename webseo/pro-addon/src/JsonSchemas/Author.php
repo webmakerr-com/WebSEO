@@ -6,7 +6,7 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Models\GetJsonData;
+use WebSEO\Models\GetJsonData;
 use SEOPressPro\Models\JsonSchemaValue;
 
 class Author extends JsonSchemaValue implements GetJsonData {

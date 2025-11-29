@@ -1,17 +1,17 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Options;
+namespace WebSEO\Actions\Options;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ActivationHook;
-use SEOPress\Helpers\TagCompose;
-use SEOPress\Tags\PostTitle;
-use SEOPress\Tags\SiteTagline;
-use SEOPress\Tags\SiteTitle;
-use SEOPress\Constants\MetasDefaultValues;
+use WebSEO\Core\Hooks\ActivationHook;
+use WebSEO\Helpers\TagCompose;
+use WebSEO\Tags\PostTitle;
+use WebSEO\Tags\SiteTagline;
+use WebSEO\Tags\SiteTitle;
+use WebSEO\Constants\MetasDefaultValues;
 
 /**
  * Init

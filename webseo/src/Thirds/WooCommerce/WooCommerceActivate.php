@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Thirds\WooCommerce;
+namespace WebSEO\Thirds\WooCommerce;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

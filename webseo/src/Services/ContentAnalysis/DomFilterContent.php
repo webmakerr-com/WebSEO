@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\ContentAnalysis;
+namespace WebSEO\Services\ContentAnalysis;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -39,103 +39,103 @@ class DomFilterContent {
 
 		$data = array(
 			'title'               => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Title',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Title',
 				'value' => '',
 			),
 			'description'         => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Description',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Description',
 				'value' => '',
 			),
 			'og:title'            => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\OG\Title',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\OG\Title',
 				'value' => '',
 			),
 			'og:description'      => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\OG\Description',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\OG\Description',
 				'value' => '',
 			),
 			'og:image'            => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\OG\Image',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\OG\Image',
 				'value' => '',
 			),
 			'og:url'              => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\OG\Url',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\OG\Url',
 				'value' => '',
 			),
 			'og:site_name'        => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\OG\Sitename',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\OG\Sitename',
 				'value' => '',
 			),
 			'twitter:title'       => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Twitter\Title',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Twitter\Title',
 				'value' => '',
 			),
 			'twitter:description' => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Twitter\Description',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Twitter\Description',
 				'value' => '',
 			),
 			'twitter:image'       => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Twitter\Image',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Twitter\Image',
 				'value' => '',
 			),
 			'twitter:image:src'   => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Twitter\ImageSrc',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Twitter\ImageSrc',
 				'value' => '',
 			),
 			'canonical'           => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Canonical',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Canonical',
 				'value' => '',
 			),
 			'h1'                  => array(
-				'class'   => '\SEOPress\Services\ContentAnalysis\GetContent\Hn',
+				'class'   => '\WebSEO\Services\ContentAnalysis\GetContent\Hn',
 				'value'   => '',
 				'options' => array(
 					'hn' => 'h1',
 				),
 			),
 			'h2'                  => array(
-				'class'   => '\SEOPress\Services\ContentAnalysis\GetContent\Hn',
+				'class'   => '\WebSEO\Services\ContentAnalysis\GetContent\Hn',
 				'value'   => '',
 				'options' => array(
 					'hn' => 'h2',
 				),
 			),
 			'h3'                  => array(
-				'class'   => '\SEOPress\Services\ContentAnalysis\GetContent\Hn',
+				'class'   => '\WebSEO\Services\ContentAnalysis\GetContent\Hn',
 				'value'   => '',
 				'options' => array(
 					'hn' => 'h3',
 				),
 			),
 			'images'              => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Image',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Image',
 				'value' => '',
 			),
 			'meta_robots'         => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Metas\Robot',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Metas\Robot',
 				'value' => '',
 			),
 			'meta_google'         => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Metas\Google',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Metas\Google',
 				'value' => '',
 			),
 			'links_no_follow'     => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\LinkNoFollow',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\LinkNoFollow',
 				'value' => '',
 			),
 			'outbound_links'      => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\OutboundLinks',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\OutboundLinks',
 				'value' => '',
 			),
 			'internal_links'      => array(
-				'class'   => '\SEOPress\Services\ContentAnalysis\GetContent\InternalLinks',
+				'class'   => '\WebSEO\Services\ContentAnalysis\GetContent\InternalLinks',
 				'value'   => '',
 				'options' => array(
 					'id' => $id,
 				),
 			),
 			'schemas'             => array(
-				'class' => '\SEOPress\Services\ContentAnalysis\GetContent\Schema',
+				'class' => '\WebSEO\Services\ContentAnalysis\GetContent\Schema',
 				'value' => '',
 			),
 		);

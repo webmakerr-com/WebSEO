@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Sitemap;
+namespace WebSEO\Actions\Sitemap;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooks;
 
 /**
  * Default WPSitemap

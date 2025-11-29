@@ -6,7 +6,7 @@ if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooksBackend;
+use WebSEO\Core\Hooks\ExecuteHooksBackend;
 
 class AddSettingsAdvancedSecurity implements ExecuteHooksBackend {
     /**

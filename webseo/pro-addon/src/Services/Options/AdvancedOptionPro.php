@@ -4,7 +4,7 @@ namespace SEOPressPro\Services\Options;
 
 defined('ABSPATH') or exit('Cheatin&#8217; uh?');
 
-use SEOPress\Services\Options\AdvancedOption;
+use WebSEO\Services\Options\AdvancedOption;
 
 class AdvancedOptionPro extends AdvancedOption {
     /**

@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialTwitter\Specifications\Title;
+namespace WebSEO\Services\Metas\SocialTwitter\Specifications\Title;
 
 /**
  * AbstractTitleSpecification

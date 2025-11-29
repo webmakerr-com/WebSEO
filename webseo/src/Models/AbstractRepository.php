@@ -1,8 +1,8 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Models;
+namespace WebSEO\Models;
 
-use SEOPress\Models\Table\Table;
+use WebSEO\Models\Table\Table;
 
 /**
  * AbstractRepository

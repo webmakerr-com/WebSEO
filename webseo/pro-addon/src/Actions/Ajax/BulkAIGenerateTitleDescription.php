@@ -4,7 +4,7 @@ namespace SEOPressPro\Actions\Ajax;
 
 defined('ABSPATH') or exit('Cheatin&#8217; uh?');
 
-use SEOPress\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooks;
 
 class BulkAIGenerateTitleDescription implements ExecuteHooks
 {

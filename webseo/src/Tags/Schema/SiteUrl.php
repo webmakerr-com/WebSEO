@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Tags\Schema;
+namespace WebSEO\Tags\Schema;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\GetTagValue;
 
 /**
  * Schema Site URL

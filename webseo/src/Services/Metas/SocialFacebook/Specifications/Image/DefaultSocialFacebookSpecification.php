@@ -1,9 +1,9 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialFacebook\Specifications\Image;
+namespace WebSEO\Services\Metas\SocialFacebook\Specifications\Image;
 
-use SEOPress\Helpers\Metas\SocialSettings;
-use SEOPress\Services\Metas\SocialFacebook\Specifications\Image\AbstractImageSpecification;
+use WebSEO\Helpers\Metas\SocialSettings;
+use WebSEO\Services\Metas\SocialFacebook\Specifications\Image\AbstractImageSpecification;
 
 /**
  * DefaultSocialFacebookSpecification

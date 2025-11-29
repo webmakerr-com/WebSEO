@@ -1,13 +1,13 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Table;
+namespace WebSEO\Actions\Table;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooks;
-use SEOPress\Core\Hooks\ActivationHook;
+use WebSEO\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ActivationHook;
 
 /**
  * CreateTable

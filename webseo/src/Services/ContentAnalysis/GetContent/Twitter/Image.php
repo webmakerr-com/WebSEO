@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\ContentAnalysis\GetContent\Twitter;
+namespace WebSEO\Services\ContentAnalysis\GetContent\Twitter;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

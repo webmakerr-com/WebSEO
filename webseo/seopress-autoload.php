@@ -4,8 +4,8 @@ defined( 'ABSPATH' ) || exit( 'Please don&rsquo;t call the plugin directly. Than
 
 spl_autoload_register(
 	function ( $class ) {
-		// project-specific namespace prefix
-		$prefix = 'SEOPress\\';
+// project-specific namespace prefix
+$prefix = 'WebSEO\\';
 
 		// base directory for the namespace prefix
 		$base_dir = __DIR__ . '/src/';

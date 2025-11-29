@@ -1,5 +1,5 @@
 <?php
-use SEOPress\Helpers\PagesAdmin;
+use WebSEO\Helpers\PagesAdmin;
 defined('ABSPATH') or exit('Please don&rsquo;t call the plugin directly. Thanks :)');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

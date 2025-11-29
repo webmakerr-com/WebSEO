@@ -1,13 +1,13 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Admin;
+namespace WebSEO\Actions\Admin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooksBackend;
-use SEOPress\Services\TagsToString;
+use WebSEO\Core\Hooks\ExecuteHooksBackend;
+use WebSEO\Services\TagsToString;
 
 /**
  * Manage column

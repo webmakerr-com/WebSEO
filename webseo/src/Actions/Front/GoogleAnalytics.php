@@ -1,13 +1,13 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Front;
+namespace WebSEO\Actions\Front;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooksFrontend;
-use SEOPress\ManualHooks\Thirds\WooCommerce\WooCommerceAnalytics;
+use WebSEO\Core\Hooks\ExecuteHooksFrontend;
+use WebSEO\ManualHooks\Thirds\WooCommerce\WooCommerceAnalytics;
 
 /**
  * Google Analytics

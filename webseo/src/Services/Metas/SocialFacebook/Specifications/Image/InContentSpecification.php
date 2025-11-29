@@ -1,9 +1,9 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialFacebook\Specifications\Image;
+namespace WebSEO\Services\Metas\SocialFacebook\Specifications\Image;
 
-use SEOPress\Services\Metas\SocialFacebook\Specifications\Image\AbstractImageSpecification;
-use SEOPress\Services\Metas\GetImageInContent;
+use WebSEO\Services\Metas\SocialFacebook\Specifications\Image\AbstractImageSpecification;
+use WebSEO\Services\Metas\GetImageInContent;
 
 /**
  * InContentSpecification

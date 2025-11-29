@@ -1,8 +1,8 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\Description\Specifications;
+namespace WebSEO\Services\Metas\Description\Specifications;
 
-use SEOPress\Constants\MetasDefaultValues;
+use WebSEO\Constants\MetasDefaultValues;
 
 /**
  * SingularSpecification

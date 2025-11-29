@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Front\Schemas;
+namespace WebSEO\Actions\Front\Schemas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooksFrontend;
+use WebSEO\Core\Hooks\ExecuteHooksFrontend;
 
 /**
  * Print Head Json Schema

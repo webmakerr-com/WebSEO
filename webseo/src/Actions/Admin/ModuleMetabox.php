@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Admin;
+namespace WebSEO\Actions\Admin;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooks;
+use WebSEO\Core\Hooks\ExecuteHooks;
 
 /**
  * Module metabox
@@ -84,11 +84,11 @@ class ModuleMetabox implements ExecuteHooks {
 		$tags = seopress_get_service( 'TagsToString' )->getTagsAvailable(
 			array(
 				'without_classes'     => array(
-					'\SEOPress\Tags\PostThumbnailUrlHeight',
-					'\SEOPress\Tags\PostThumbnailUrlWidth',
+					'\WebSEO\Tags\PostThumbnailUrlHeight',
+					'\WebSEO\Tags\PostThumbnailUrlWidth',
 
 				),
-				'without_classes_pos' => array( '\SEOPress\Tags\Schema', '\SEOPressPro\Tags\Schema' ),
+				'without_classes_pos' => array( '\WebSEO\Tags\Schema', '\SEOPressPro\Tags\Schema' ),
 			)
 		);
 

@@ -1,9 +1,9 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services;
+namespace WebSEO\Services;
 
-use SEOPress\Helpers\Currencies;
-use SEOPress\Helpers\Schemas\Course;
+use WebSEO\Helpers\Currencies;
+use WebSEO\Helpers\Schemas\Course;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

@@ -1,11 +1,11 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Repository;
+namespace WebSEO\Services\Repository;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-use SEOPress\Models\AbstractRepository;
+use WebSEO\Models\AbstractRepository;
 
 /**
  * ContentAnalysisRepository

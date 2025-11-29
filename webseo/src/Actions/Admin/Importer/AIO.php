@@ -1,11 +1,11 @@
 <?php
 
-namespace SEOPress\Actions\Admin\Importer;
+namespace WebSEO\Actions\Admin\Importer;
 
 defined( 'ABSPATH' ) || exit( 'Cheatin&#8217; uh?' );
 
-use SEOPress\Core\Hooks\ExecuteHooksBackend;
-use SEOPress\Thirds\AIO\Tags;
+use WebSEO\Core\Hooks\ExecuteHooksBackend;
+use WebSEO\Thirds\AIO\Tags;
 
 /**
  * AIO importer

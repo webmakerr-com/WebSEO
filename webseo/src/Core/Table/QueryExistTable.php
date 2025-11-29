@@ -1,10 +1,10 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Core\Table;
+namespace WebSEO\Core\Table;
 
 defined( 'ABSPATH' ) || exit;
 
-use SEOPress\Models\Table\TableInterface;
+use WebSEO\Models\Table\TableInterface;
 
 /**
  * QueryExistTable

@@ -4,7 +4,7 @@ namespace SEOPressPro\Services\Repository;
 
 defined( 'ABSPATH' ) || exit;
 
-use SEOPress\Models\AbstractRepository;
+use WebSEO\Models\AbstractRepository;
 
 class SEOIssuesRepository extends AbstractRepository {
 

@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\ContentAnalysis;
+namespace WebSEO\Services\ContentAnalysis;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Helpers\ContentAnalysis;
+use WebSEO\Helpers\ContentAnalysis;
 use SEOPressPro\Services\Audit;
 
 /**

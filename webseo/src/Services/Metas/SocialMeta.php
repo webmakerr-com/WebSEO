@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas;
+namespace WebSEO\Services\Metas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Helpers\Metas\SocialSettings;
+use WebSEO\Helpers\Metas\SocialSettings;
 
 /**
  * SocialMeta

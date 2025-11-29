@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Tags;
+namespace WebSEO\Tags;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\GetTagValue;
 
 /**
  * Post Content

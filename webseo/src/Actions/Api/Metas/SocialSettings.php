@@ -1,13 +1,13 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Api\Metas;
+namespace WebSEO\Actions\Api\Metas;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooks;
-use SEOPress\Helpers\Metas\SocialSettings as SocialSettingsHelper;
+use WebSEO\Core\Hooks\ExecuteHooks;
+use WebSEO\Helpers\Metas\SocialSettings as SocialSettingsHelper;
 
 /**
  * Social Settings

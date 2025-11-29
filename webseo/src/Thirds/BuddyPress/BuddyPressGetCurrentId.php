@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Thirds\BuddyPress;
+namespace WebSEO\Thirds\BuddyPress;
 
 defined( 'ABSPATH' ) || exit( 'Cheatin&#8217; uh?' );
 

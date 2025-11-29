@@ -1,9 +1,9 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Compose;
+namespace WebSEO\Compose;
 
-use SEOPress\Helpers\TagCompose;
-use SEOPress\Models\GetTagValue;
+use WebSEO\Helpers\TagCompose;
+use WebSEO\Models\GetTagValue;
 
 /**
  * UseTags
@@ -131,7 +131,7 @@ trait UseTags {
 				$tags[ $name ] = array(
 					'class'       => $class_file,
 					'name'        => $name,
-					'schema'      => 0 === strpos( $class_file, '\SEOPress\Tags\Schema\\' ) ? true : false,
+					'schema'      => 0 === strpos( $class_file, '\WebSEO\Tags\Schema\\' ) ? true : false,
 					'alias'       => defined( $class_file . '::ALIAS' ) ? $class_file::ALIAS : array(),
 					'custom'      => defined( $class_file . '::CUSTOM_FORMAT' ) ? $class_file::CUSTOM_FORMAT : null,
 					'input'       => TagCompose::getValueWithTag( $name ),
@@ -162,7 +162,7 @@ trait UseTags {
 		$tags = $this->buildTags(
 			SEOPRESS_PLUGIN_DIR_PATH . 'src/Tags',
 			array(
-				'root'         => '\\SEOPress\\Tags\\%s%s',
+				'root'         => '\\WebSEO\\Tags\\%s%s',
 				'subNamespace' => '',
 			)
 		);

@@ -1,12 +1,12 @@
 <?php
 
-namespace SEOPress\Tags\WooCommerce;
+namespace WebSEO\Tags\WooCommerce;
 
 if ( ! defined('ABSPATH')) {
     exit;
 }
 
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\GetTagValue;
 
 /**
  * Get WooCommerce product regular price tag

@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services;
+namespace WebSEO\Services;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Compose\UseTags;
+use WebSEO\Compose\UseTags;
 
 /**
  * TagsToString

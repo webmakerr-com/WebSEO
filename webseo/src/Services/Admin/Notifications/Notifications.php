@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Admin\Notifications;
+namespace WebSEO\Services\Admin\Notifications;
 
 defined( 'ABSPATH' ) || exit;
 

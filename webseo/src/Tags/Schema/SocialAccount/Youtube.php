@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Tags\Schema\SocialAccount;
+namespace WebSEO\Tags\Schema\SocialAccount;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Models\GetTagValue;
+use WebSEO\Models\GetTagValue;
 
 /**
  * Schema YouTube URL

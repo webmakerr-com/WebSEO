@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Services\Metas\SocialTwitter\Specifications\Image;
+namespace WebSEO\Services\Metas\SocialTwitter\Specifications\Image;
 
 /**
  * AbstractImageSpecification

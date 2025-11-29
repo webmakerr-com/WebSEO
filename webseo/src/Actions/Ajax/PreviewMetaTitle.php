@@ -1,12 +1,12 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Actions\Ajax;
+namespace WebSEO\Actions\Ajax;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use SEOPress\Core\Hooks\ExecuteHooksBackend;
+use WebSEO\Core\Hooks\ExecuteHooksBackend;
 
 /**
  * Preview Meta Title

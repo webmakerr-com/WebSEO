@@ -1,6 +1,6 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Thirds\WPML;
+namespace WebSEO\Thirds\WPML;
 
 defined( 'ABSPATH' ) || exit( 'Cheatin&#8217; uh?' );
 

@@ -1,8 +1,8 @@
 <?php // phpcs:ignore
 
-namespace SEOPress\Compose;
+namespace WebSEO\Compose;
 
-use SEOPress\Models\GetJsonFromFile;
+use WebSEO\Models\GetJsonFromFile;
 
 /**
  * UseJsonSchema
@@ -96,7 +96,7 @@ trait UseJsonSchema {
 		$directory,
 		$schemas = array(),
 		$namespaces_option = array(
-			'root'         => '\\SEOPress\\JsonSchemas\\%s%s',
+			'root'         => '\\WebSEO\\JsonSchemas\\%s%s',
 			'subNamespace' => '',
 		)
 	) {
