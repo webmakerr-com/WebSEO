@@ -47,8 +47,15 @@ define( 'STORE_URL_SEOPRESS', 'https://www.seopress.org' );
 define( 'ITEM_ID_SEOPRESS', 113 );
 define( 'ITEM_NAME_SEOPRESS', 'SEOPress PRO' );
 define( 'SEOPRESS_LICENSE_PAGE', 'seopress-license' );
-define( 'SEOPRESS_PRO_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
-define( 'SEOPRESS_PRO_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
+
+if ( ! defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH' ) ) {
+        define( 'SEOPRESS_PRO_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
+}
+
+if ( ! defined( 'SEOPRESS_PRO_PLUGIN_DIR_URL' ) ) {
+        define( 'SEOPRESS_PRO_PLUGIN_DIR_URL', plugin_dir_url( __FILE__ ) );
+}
+
 define( 'SEOPRESS_PRO_ASSETS_DIR', SEOPRESS_PRO_PLUGIN_DIR_URL . 'assets' );
 define( 'SEOPRESS_PRO_PUBLIC_URL', SEOPRESS_PRO_PLUGIN_DIR_URL . 'public' );
 define( 'SEOPRESS_PRO_PUBLIC_PATH', SEOPRESS_PRO_PLUGIN_DIR_PATH . 'public' );
