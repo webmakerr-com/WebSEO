@@ -144,9 +144,9 @@ trait UseJsonSchema {
 
 		$schemas = $this->buildSchemas( SEOPRESS_PLUGIN_DIR_PATH . 'src/JsonSchemas' );
 
-		if ( defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH' ) && file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/JsonSchemas' ) && is_dir( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/JsonSchemas' ) ) {
-			$schemas = $this->buildSchemas(
-				SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/JsonSchemas',
+if ( \seopress_is_pro_license_active() && defined( 'SEOPRESS_PRO_PLUGIN_DIR_PATH' ) && file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/JsonSchemas' ) && is_dir( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/JsonSchemas' ) ) {
+$schemas = $this->buildSchemas(
+SEOPRESS_PRO_PLUGIN_DIR_PATH . 'src/JsonSchemas',
 				$schemas,
 				array(
 					'root'         => '\\SEOPressPro\\JsonSchemas\\%s%s',

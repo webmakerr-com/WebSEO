@@ -137,12 +137,19 @@ class Render implements ExecuteHooksFrontend {
                         }
                 }
 
-		if ( 'template-xml-sitemaps-video-xsl.php' === $filename ) {
-			include SEOPRESS_PRO_PLUGIN_DIR_PATH . 'inc/functions/video-sitemap/' . $filename;
-			exit();
-		} elseif ( null !== $filename && file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'inc/functions/sitemap/' . $filename ) ) {
-			include SEOPRESS_PLUGIN_DIR_PATH . 'inc/functions/sitemap/' . $filename;
-			exit();
+if ( 'template-xml-sitemaps-video-xsl.php' === $filename ) {
+if ( \seopress_is_pro_license_active() && file_exists( SEOPRESS_PRO_PLUGIN_DIR_PATH . 'inc/functions/video-sitemap/' . $filename ) ) {
+include SEOPRESS_PRO_PLUGIN_DIR_PATH . 'inc/functions/video-sitemap/' . $filename;
+exit();
+}
+
+global $wp_query;
+$wp_query->set_404();
+status_header( 404 );
+return;
+} elseif ( null !== $filename && file_exists( SEOPRESS_PLUGIN_DIR_PATH . 'inc/functions/sitemap/' . $filename ) ) {
+include SEOPRESS_PLUGIN_DIR_PATH . 'inc/functions/sitemap/' . $filename;
+exit();
 		}
 	}
 

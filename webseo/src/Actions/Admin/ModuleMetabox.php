@@ -117,11 +117,11 @@ class ModuleMetabox implements ExecuteHooks {
 			$post_id   = $data_path[ count( $data_path ) - 1 ];
 		}
 
-		$args = array_merge(
-			array(
-				'SEOPRESS_URL_PUBLIC'       => SEOPRESS_URL_PUBLIC,
-				'WEBSEO_URL_ASSETS'       => WEBSEO_URL_ASSETS,
-				'SEOPRESS_PRO_IS_ACTIVATED' => is_plugin_active( 'wp-seopress-pro/seopress-pro.php' ) ? true : false,
+$args = array_merge(
+array(
+'SEOPRESS_URL_PUBLIC'       => SEOPRESS_URL_PUBLIC,
+'WEBSEO_URL_ASSETS'       => WEBSEO_URL_ASSETS,
+'SEOPRESS_PRO_IS_ACTIVATED' => \seopress_is_pro_license_active(),
 				'SITENAME'                  => get_bloginfo( 'name' ),
 				'SITEURL'                   => site_url(),
 				'ADMIN_URL_TITLES'          => admin_url( 'admin.php?page=seopress-titles#tab=tab_seopress_titles_single' ),
