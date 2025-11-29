@@ -19,7 +19,14 @@ class Table implements TableInterface {
     public function __construct($name, TableStructureInterface $structure, $options = []){
         $this->name = $name;
         $this->structure = $structure;
-        $this->alias = isset($options['alias']) ? $options['alias'] : substr($name, 9,3);
+        $defaultAliasSource = $name;
+        $underscorePosition = strpos($name, '_');
+
+        if ($underscorePosition !== false && strlen($name) > $underscorePosition + 1) {
+            $defaultAliasSource = substr($name, $underscorePosition + 1);
+        }
+
+        $this->alias = isset($options['alias']) ? $options['alias'] : substr($defaultAliasSource, 0,3);
         $this->version = isset($options['version']) ? (int) $options['version'] : 1;
     }
 

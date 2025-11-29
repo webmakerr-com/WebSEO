@@ -14,7 +14,7 @@ class GetPageSpeedReport implements ExecuteHooks {
     }
 
     public function register() {
-        register_rest_route('seopress/v1', '/page-speed', [
+        webseo_register_rest_route( '/page-speed', [
             'methods' => 'GET',
             'callback' => [$this, 'processGet'],
             'args' => [

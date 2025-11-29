@@ -904,6 +904,7 @@ if ('1' === seopress_pro_get_service('OptionPro')->getBreadcrumbsEnable() || '1'
         return seopress_display_breadcrumbs(false);
     }
     if ('1' === seopress_pro_get_service('OptionPro')->getBreadcrumbsEnable()) {
+        add_shortcode('webseo_breadcrumbs', 'seopress_shortcode_breadcrumbs');
         add_shortcode('seopress_breadcrumbs', 'seopress_shortcode_breadcrumbs');
     }
 

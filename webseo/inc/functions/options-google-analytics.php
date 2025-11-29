@@ -79,16 +79,20 @@ function seopress_cookies_user_consent_scripts() {
 function seopress_cookies_user_consent_html() {
 	if ( ! empty( seopress_get_service( 'GoogleAnalyticsOption' )->getOptOutMsg() ) ) {
 		$msg = seopress_get_service( 'GoogleAnalyticsOption' )->getOptOutMsg();
-	} elseif ( get_option( 'wp_page_for_privacy_policy' ) ) {
-		$msg = __( 'This site uses cookies for analytics and to improve your experience. By clicking Accept, you consent to our use of cookies. Learn more in our <a href="[seopress_privacy_page]">privacy policy</a>.', 'webseo' );
-	} else {
-		$msg = __( 'This site uses cookies for analytics and to improve your experience. By clicking Accept, you consent to our use of cookies.', 'webseo' );
-	}
+        } elseif ( get_option( 'wp_page_for_privacy_policy' ) ) {
+                $msg = __( 'This site uses cookies for analytics and to improve your experience. By clicking Accept, you consent to our use of cookies. Learn more in our <a href="[webseo_privacy_page]">privacy policy</a>.', 'webseo' );
+        } else {
+                $msg = __( 'This site uses cookies for analytics and to improve your experience. By clicking Accept, you consent to our use of cookies.', 'webseo' );
+        }
 
-	if ( get_option( 'wp_page_for_privacy_policy' ) && '' !== $msg ) {
-		$seopress_privacy_page = esc_url( get_permalink( get_option( 'wp_page_for_privacy_policy' ) ) );
-		$msg                   = str_replace( '[seopress_privacy_page]', $seopress_privacy_page, $msg );
-	}
+        if ( get_option( 'wp_page_for_privacy_policy' ) && '' !== $msg ) {
+                $seopress_privacy_page = esc_url( get_permalink( get_option( 'wp_page_for_privacy_policy' ) ) );
+                $msg                   = str_replace(
+                        array( '[webseo_privacy_page]', '[seopress_privacy_page]' ),
+                        $seopress_privacy_page,
+                        $msg
+                );
+        }
 
 	$msg = apply_filters( 'seopress_rgpd_message', $msg );
 

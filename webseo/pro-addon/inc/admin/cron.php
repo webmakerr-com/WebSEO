@@ -74,7 +74,7 @@ function seopress_request_page_speed_insights_cron()
 {
     seopress_request_page_speed_fn(true);
 }
-add_action('seopress_page_speed_insights_cron', 'seopress_request_page_speed_insights_cron');
+webseo_add_action_compat('webseo_page_speed_insights_cron', 'seopress_page_speed_insights_cron', 'seopress_request_page_speed_insights_cron');
 
 function seopress_request_page_speed()
 {
@@ -419,7 +419,7 @@ function seopress_request_google_analytics_cron()
         seopress_request_google_analytics_fn(true);
     }
 }
-add_action('seopress_google_analytics_cron', 'seopress_request_google_analytics_cron');
+webseo_add_action_compat('webseo_google_analytics_cron', 'seopress_google_analytics_cron', 'seopress_request_google_analytics_cron');
 
 function seopress_request_google_analytics()
 {
@@ -682,7 +682,7 @@ function seopress_request_matomo_analytics_cron()
         seopress_request_matomo_analytics_fn(true);
     }
 }
-add_action('seopress_matomo_analytics_cron', 'seopress_request_matomo_analytics_cron');
+webseo_add_action_compat('webseo_matomo_analytics_cron', 'seopress_matomo_analytics_cron', 'seopress_request_matomo_analytics_cron');
 
 function seopress_request_matomo_analytics()
 {
@@ -825,7 +825,7 @@ function seopress_404_send_alert_cron()
         seopress_404_send_alert();
     }
 }
-add_action('seopress_404_email_alerts_cron', 'seopress_404_send_alert_cron');
+webseo_add_action_compat('webseo_404_email_alerts_cron', 'seopress_404_email_alerts_cron', 'seopress_404_send_alert_cron');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // 404 Cleaning CRON
@@ -862,7 +862,7 @@ function seopress_404_cron_cleaning_action($force = false)
         }
     }
 }
-add_action('seopress_404_cron_cleaning', 'seopress_404_cron_cleaning_action', 10, 1);
+webseo_add_action_compat('webseo_404_cron_cleaning', 'seopress_404_cron_cleaning', 'seopress_404_cron_cleaning_action', 10, 1);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //Daily Get Insights from Google Search Console
@@ -897,7 +897,7 @@ function seopress_get_insights_gsc_cron()
         // No need to do anything here
     }
 }
-add_action('seopress_insights_gsc_cron', 'seopress_get_insights_gsc_cron');
+webseo_add_action_compat('webseo_insights_gsc_cron', 'seopress_insights_gsc_cron', 'seopress_get_insights_gsc_cron');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //Twice Daily send emails / Slack SEO alerts
@@ -1123,7 +1123,7 @@ function seopress_send_alerts_cron()
         }
     }
 }
-add_action('seopress_alerts_cron', 'seopress_send_alerts_cron');
+webseo_add_action_compat('webseo_alerts_cron', 'seopress_alerts_cron', 'seopress_send_alerts_cron');
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Site Audit - Run Task
@@ -1269,7 +1269,7 @@ function seopress_site_audit_run_task_fn($offset = 0, $new = false) {
 
         if ((int)get_option('seopress_pro_site_audit_running', 1) === 1) {
             // Schedule the next batch with a slight delay (e.g., 5 seconds)
-            wp_schedule_single_event(time() + 5, 'seopress_site_audit_run_task_cron', [$new_offset]);
+            wp_schedule_single_event(time() + 5, 'webseo_site_audit_run_task_cron', [$new_offset]);
         } else {
             wp_send_json_success('Site audit task canceled.');
         }
@@ -1307,7 +1307,7 @@ function seopress_site_audit_run_task() {
 }
 
 // Hook the cron event
-add_action('seopress_site_audit_run_task_cron', 'seopress_site_audit_run_task_fn', 10, 1);
+webseo_add_action_compat('webseo_site_audit_run_task_cron', 'seopress_site_audit_run_task_cron', 'seopress_site_audit_run_task_fn', 10, 1);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Site Audit - Email notification
@@ -1381,14 +1381,18 @@ function seopress_site_audit_cancel_task() {
         $hooks_cleared = 0;
         $total_hooks = 0;
 
+        $audit_hooks = ['webseo_site_audit_run_task_cron', 'seopress_site_audit_run_task_cron'];
+
         if (!empty($crons)) {
             foreach ($crons as $timestamp => $cron) {
-                if (isset($cron['seopress_site_audit_run_task_cron'])) {
-                    foreach ($cron['seopress_site_audit_run_task_cron'] as $hook => $details) {
-                        $total_hooks++;
-                        $unscheduled = wp_unschedule_event($timestamp, 'seopress_site_audit_run_task_cron', $details['args']);
-                        if ($unscheduled) {
-                            $hooks_cleared++;
+                foreach ($audit_hooks as $audit_hook) {
+                    if (isset($cron[$audit_hook])) {
+                        foreach ($cron[$audit_hook] as $hook => $details) {
+                            $total_hooks++;
+                            $unscheduled = wp_unschedule_event($timestamp, $audit_hook, $details['args']);
+                            if ($unscheduled) {
+                                $hooks_cleared++;
+                            }
                         }
                     }
                 }
@@ -1396,7 +1400,9 @@ function seopress_site_audit_cancel_task() {
         }
 
         // Clear any remaining scheduled events for this hook
-        wp_clear_scheduled_hook('seopress_site_audit_run_task_cron');
+        foreach ($audit_hooks as $audit_hook) {
+            wp_clear_scheduled_hook($audit_hook);
+        }
 
         // Clear any transients or options related to the audit
         delete_transient('seopress_site_audit_progress');

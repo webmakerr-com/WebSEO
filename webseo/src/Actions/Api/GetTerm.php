@@ -30,8 +30,7 @@ class GetTerm implements ExecuteHooks {
 	 * @return void
 	 */
 	public function register() {
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/terms/(?P<id>\d+)',
 			array(
 				'methods'             => 'GET',

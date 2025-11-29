@@ -1400,7 +1400,7 @@ msgid "HTML tags allowed: strong, em, br, a href / target"
 msgstr ""
 
 #: inc/admin/callbacks/Analytics.php:171
-msgid "Shortcode allowed to get the privacy page set in WordPress settings: [seopress_privacy_page]"
+msgid "Shortcode allowed to get the privacy page set in WordPress settings: [webseo_privacy_page]"
 msgstr ""
 
 #: inc/admin/callbacks/Analytics.php:182
@@ -5166,7 +5166,7 @@ msgid "The description is not prominent by default; however, some themes may sho
 msgstr ""
 
 #: inc/functions/options-google-analytics.php:69
-msgid "By visiting our site, you agree to our <a href=\"[seopress_privacy_page]\">privacy policy</a> regarding cookies, tracking statistics, etc."
+msgid "By visiting our site, you agree to our <a href=\"[webseo_privacy_page]\">privacy policy</a> regarding cookies, tracking statistics, etc."
 msgstr ""
 
 #: inc/functions/options-google-analytics.php:71

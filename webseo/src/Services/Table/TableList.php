@@ -198,7 +198,7 @@ class TableList {
 			)
 		);
 
-		return new Table( 'seopress_content_analysis', $table_structure, 1 );
+            return new Table( 'webseo_content_analysis', $table_structure, 1 );
 	}
 
 	/**
@@ -207,8 +207,8 @@ class TableList {
 	 * @return array
 	 */
 	public function getTables() { // phpcs:ignore -- TODO: check if method is outside this class before renaming.
-		return array(
-			'seopress_content_analysis' => $this->getTableContentAnalysis(),
-		);
-	}
+            return array(
+                    'webseo_content_analysis' => $this->getTableContentAnalysis(),
+            );
+    }
 }

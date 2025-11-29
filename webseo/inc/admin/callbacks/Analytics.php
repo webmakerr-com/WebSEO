@@ -227,7 +227,7 @@ function seopress_google_analytics_opt_out_msg_callback() {
 	<?php esc_attr_e( 'HTML tags allowed: strong, em, br, a href / target', 'webseo' ); ?>
 </p>
 <p class="description">
-	<?php esc_attr_e( 'Shortcode allowed to get the privacy page set in WordPress settings: [seopress_privacy_page]', 'webseo' ); ?>
+    <?php esc_attr_e( 'Shortcode allowed to get the privacy page set in WordPress settings: [webseo_privacy_page]', 'webseo' ); ?>
 </p>
 	<?php
 }

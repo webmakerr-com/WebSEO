@@ -38,8 +38,7 @@ class TargetKeywords implements ExecuteHooks {
 	 * @return void
 	 */
 	public function register() {
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/posts/(?P<id>\d+)/target-keywords',
 			array(
 				'methods'             => 'GET',
@@ -64,8 +63,7 @@ class TargetKeywords implements ExecuteHooks {
 			)
 		);
 
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/posts/(?P<id>\d+)/target-keywords',
 			array(
 				'methods'             => 'PUT',

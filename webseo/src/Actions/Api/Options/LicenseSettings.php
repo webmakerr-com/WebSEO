@@ -60,8 +60,7 @@ class LicenseSettings implements ExecuteHooks {
 	 * @return void
 	 */
 	public function register() {
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/options/license-settings',
 			array(
 				'methods'             => 'GET',

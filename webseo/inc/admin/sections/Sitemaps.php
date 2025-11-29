@@ -163,7 +163,7 @@ function seopress_print_section_info_html_sitemap() {
 		<h4><?php esc_attr_e( 'Shortcode', 'webseo' ); ?></h4>
 
 		<p><?php esc_attr_e( 'You can also use this shortcode in your content (post, page, post type...):', 'webseo' ); ?></p>
-		<pre>[seopress_html_sitemap]</pre>
+            <pre>[webseo_html_sitemap]</pre>
 
 		<p><?php esc_attr_e( 'To include specific custom post types, use the CPT attribute:', 'webseo' ); ?></p>
 		<pre>[seopress_html_sitemap cpt="post,product"]</pre>

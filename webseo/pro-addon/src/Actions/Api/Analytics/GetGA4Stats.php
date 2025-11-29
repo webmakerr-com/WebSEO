@@ -14,7 +14,7 @@ class GetGA4Stats implements ExecuteHooks {
     }
 
     public function register() {
-        register_rest_route('seopress/v1', '/ga4', [
+        webseo_register_rest_route( '/ga4', [
             'methods' => 'GET',
             'callback' => [$this, 'processGet'],
             'permission_callback' => function ($request) {

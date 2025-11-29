@@ -30,8 +30,7 @@ class GetPost implements ExecuteHooks {
 	 * @return void
 	 */
 	public function register() {
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/posts/(?P<id>\d+)',
 			array(
 				'methods'             => 'GET',
@@ -47,8 +46,7 @@ class GetPost implements ExecuteHooks {
 			)
 		);
 
-		register_rest_route(
-			'seopress/v1',
+		webseo_register_rest_route(
 			'/posts/by-url',
 			array(
 				'methods'             => 'GET',

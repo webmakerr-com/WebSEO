@@ -46,12 +46,19 @@ class Table implements TableInterface {
 	 * @param TableStructureInterface $structure The structure.
 	 * @param array                   $options The options.
 	 */
-	public function __construct( $name, TableStructureInterface $structure, $options = array() ) {
-		$this->name      = $name;
-		$this->structure = $structure;
-		$this->alias     = isset( $options['alias'] ) ? $options['alias'] : substr( $name, 9, 3 );
-		$this->version   = isset( $options['version'] ) ? (int) $options['version'] : 1;
-	}
+        public function __construct( $name, TableStructureInterface $structure, $options = array() ) {
+                $this->name      = $name;
+                $this->structure = $structure;
+                $alias_source    = $name;
+                $underscore_pos  = strpos( $name, '_' );
+
+                if ( false !== $underscore_pos && strlen( $name ) > ( $underscore_pos + 1 ) ) {
+                        $alias_source = substr( $name, $underscore_pos + 1 );
+                }
+
+                $this->alias   = isset( $options['alias'] ) ? $options['alias'] : substr( $alias_source, 0, 3 );
+                $this->version   = isset( $options['version'] ) ? (int) $options['version'] : 1;
+        }
 
 	/**
 	 * The getName function.

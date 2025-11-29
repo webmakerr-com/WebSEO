@@ -116,24 +116,26 @@ class SEOPRESS_Uninstall {
 		delete_transient( 'seopress_results_matomo' );
 		delete_transient( 'seopress_prevent_title_redirection_already_exist' );
 
-		// Delete custom tables.
-		//phpcs:ignore
-		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_significant_keywords" );
-		//phpcs:ignore
-		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_content_analysis" );
-		//phpcs:ignore
-		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_seo_issues" );
+                // Delete custom tables.
+                //phpcs:ignore
+                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_significant_keywords" );
+                //phpcs:ignore
+                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}webseo_significant_keywords" );
+                //phpcs:ignore
+                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_content_analysis" );
+                //phpcs:ignore
+                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}webseo_content_analysis" );
+                //phpcs:ignore
+                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}seopress_seo_issues" );
+                //phpcs:ignore
+                $wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}webseo_seo_issues" );
 
-		// Clear CRON.
-		wp_clear_scheduled_hook( 'seopress_xml_sitemaps_ping_cron' );
-		wp_clear_scheduled_hook( 'seopress_404_cron_cleaning' );
-		wp_clear_scheduled_hook( 'seopress_google_analytics_cron' );
-		wp_clear_scheduled_hook( 'seopress_page_speed_insights_cron' );
-		wp_clear_scheduled_hook( 'seopress_404_email_alerts_cron' );
-		wp_clear_scheduled_hook( 'seopress_insights_gsc_cron' );
-		wp_clear_scheduled_hook( 'seopress_matomo_analytics_cron' );
-		wp_clear_scheduled_hook( 'seopress_alerts_cron' );
-	}
+                // Clear CRON.
+                foreach ( webseo_get_cron_event_mappings() as $legacy_hook => $new_hook ) {
+                        wp_clear_scheduled_hook( $legacy_hook );
+                        wp_clear_scheduled_hook( $new_hook );
+                }
+        }
 }
 
 new SEOPRESS_Uninstall();

@@ -23,7 +23,7 @@ class SchemaManual implements ExecuteHooks
 
     public function register()
     {
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/schemas-manual', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/schemas-manual', [
             'methods' => 'GET',
             'callback' => [$this, 'processGet'],
             'args' => [
@@ -44,7 +44,7 @@ class SchemaManual implements ExecuteHooks
                 return true;
             },
         ]);
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/schemas-manual', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/schemas-manual', [
             'methods' => 'PUT',
             'callback' => [$this, 'processPut'],
             'args' => [

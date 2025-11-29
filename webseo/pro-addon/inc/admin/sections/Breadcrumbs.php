@@ -21,7 +21,7 @@ function seopress_print_section_info_breadcrumbs()
 				<h4><?php esc_html_e('Shortcode', 'wp-seopress-pro'); ?></h4>
 				<p><?php esc_html_e('You can also use this shortcode in your content (post, page, post type...):', 'wp-seopress-pro'); ?></p>
 
-				<pre>[seopress_breadcrumbs]</pre>
+                                <pre>[webseo_breadcrumbs]</pre>
 			</div>
 
 			<div>

@@ -25,7 +25,7 @@ class VideoSitemap implements ExecuteHooks {
      * @return void
      */
     public function register() {
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/video-sitemap', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/video-sitemap', [
             'methods'             => 'GET',
             'callback'            => [$this, 'processGet'],
             'args'                => [
@@ -47,7 +47,7 @@ class VideoSitemap implements ExecuteHooks {
             },
         ]);
 
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/video-sitemap', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/video-sitemap', [
             'methods'             => 'PUT',
             'callback'            => [$this, 'processPut'],
             'args'                => [

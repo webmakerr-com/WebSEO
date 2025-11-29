@@ -25,7 +25,7 @@ class GetSignificantKeywords implements ExecuteHooks {
      * @return void
      */
     public function register() {
-        register_rest_route('seopress/v1', '/posts/(?P<id>\d+)/significant-keywords', [
+        webseo_register_rest_route( '/posts/(?P<id>\d+)/significant-keywords', [
             'methods'             => 'GET',
             'callback'            => [$this, 'processGet'],
             'args'                => [
