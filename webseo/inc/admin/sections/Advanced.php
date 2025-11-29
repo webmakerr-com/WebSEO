@@ -178,7 +178,7 @@ function seopress_print_section_info_advanced_appearance_metabox() {
 
 	<?php if ( method_exists( seopress_get_service( 'ToggleOption' ), 'getToggleWhiteLabel' ) && '1' !== seopress_get_service( 'ToggleOption' )->getToggleWhiteLabel() ) { ?>
 		<a class="wrap-yt-embed" href="https://www.youtube.com/watch?v=sf0ocG7vQMM" target="_blank" title="<?php esc_attr_e( 'Watch the universal SEO metabox overview video - Open in a new window', 'wp-seopress' ); ?>">
-			<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/yt-universal-metabox.webp' ); ?>" alt="<?php esc_attr_e( 'Universal SEO metabox video thumbnail', 'wp-seopress' ); ?>" width="500" />
+			<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/yt-universal-metabox.webp' ); ?>" alt="<?php esc_attr_e( 'Universal SEO metabox video thumbnail', 'wp-seopress' ); ?>" width="500" />
 		</a>
 		<?php
 	}

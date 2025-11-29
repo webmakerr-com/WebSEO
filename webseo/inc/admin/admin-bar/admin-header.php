@@ -94,7 +94,7 @@ function seopress_admin_header( $context = '' ) {
 								<li class="seopress-item">
 									<?php if ( ! empty( $value['link'] ) && $value['title'] && $value['desc'] && $value['ico'] ) { ?>
 										<a href="<?php echo esc_url( $value['link'] ); ?>" class="seopress-item-inner has-action" aria-disabled="false" tabindex="0" role="menuitem" target="_blank" data-link-type="external">
-											<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/' . $value['ico'] . '.svg' ); ?>" width="48" height="48" alt="" class="seopress-item-ico"/>
+											<img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/' . $value['ico'] . '.svg' ); ?>" width="48" height="48" alt="" class="seopress-item-ico"/>
 											<h3 class="seopress-item-title">
 												<?php echo esc_html( $value['title'] ); ?>
 											</h3>
@@ -114,15 +114,15 @@ function seopress_admin_header( $context = '' ) {
 						<h2><?php esc_html_e( 'By product', 'wp-seopress' ); ?></h2>
 						<p><?php esc_html_e( 'Quickly filter our documentation by a specific plugin.', 'wp-seopress' ); ?></p>
 						<div class="seopress-products">
-							<a href="<?php echo esc_url( $docs['support-free'] ); ?>" title="<?php esc_html_e( 'SEOPress Free documentation (new window)', 'wp-seopress' ); ?>" target="_blank">
-								<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/support-seopress-free.svg' ); ?>" width="291" height="81" alt="SEOPress Free"/>
-							</a>
-							<a href="<?php echo esc_url( $docs['support-pro'] ); ?>" title="<?php esc_html_e( 'SEOPress PRO documentation (new window)', 'wp-seopress' ); ?>" target="_blank">
-								<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/support-seopress-pro.svg' ); ?>" width="291" height="81" alt="SEOPress PRO"/>
-							</a>
-							<a href="<?php echo esc_url( $docs['support-insights'] ); ?>" title="<?php esc_html_e( 'SEOPress Insights documentation (new window)', 'wp-seopress' ); ?>" target="_blank">
-								<img src="<?php echo esc_url( SEOPRESS_ASSETS_DIR . '/img/support-seopress-insights.svg' ); ?>" width="291" height="81" alt="SEOPress Insights"/>
-							</a>
+                                                        <a href="<?php echo esc_url( $docs['support-free'] ); ?>" title="<?php esc_html_e( 'SEOPress Free documentation (new window)', 'wp-seopress' ); ?>" target="_blank">
+                                                                <img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/support-webseo-free.svg' ); ?>" width="291" height="81" alt="SEOPress Free"/>
+                                                        </a>
+                                                        <a href="<?php echo esc_url( $docs['support-pro'] ); ?>" title="<?php esc_html_e( 'SEOPress PRO documentation (new window)', 'wp-seopress' ); ?>" target="_blank">
+                                                                <img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/support-webseo-pro.svg' ); ?>" width="291" height="81" alt="SEOPress PRO"/>
+                                                        </a>
+                                                        <a href="<?php echo esc_url( $docs['support-insights'] ); ?>" title="<?php esc_html_e( 'SEOPress Insights documentation (new window)', 'wp-seopress' ); ?>" target="_blank">
+                                                                <img src="<?php echo esc_url( WEBSEO_ASSETS_DIR . '/img/support-webseo-insights.svg' ); ?>" width="291" height="81" alt="SEOPress Insights"/>
+                                                        </a>
 						</div>
 					</div>
 

@@ -149,10 +149,10 @@ if ( '1' == seopress_get_toggle_option( 'google-analytics' ) && ! isset( $_GET['
 	 */
 	function seopress_google_analytics_cookies_js() {
 		$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		wp_register_script( 'seopress-cookies', plugins_url( 'assets/js/seopress-cookies' . $prefix . '.js', dirname( __DIR__ ) ), array(), SEOPRESS_VERSION, true );
-		wp_enqueue_script( 'seopress-cookies' );
+                wp_register_script( 'webseo-cookies', plugins_url( 'assets/js/webseo-cookies' . $prefix . '.js', dirname( __DIR__ ) ), array(), WEBSEO_VERSION, true );
+                wp_enqueue_script( 'webseo-cookies' );
 
-		wp_enqueue_script( 'seopress-cookies-ajax', plugins_url( 'assets/js/seopress-cookies-ajax' . $prefix . '.js', dirname( __DIR__ ) ), array( 'seopress-cookies' ), SEOPRESS_VERSION, true );
+                wp_enqueue_script( 'webseo-cookies-ajax', plugins_url( 'assets/js/webseo-cookies-ajax' . $prefix . '.js', dirname( __DIR__ ) ), array( 'webseo-cookies' ), WEBSEO_VERSION, true );
 
 		$days = 30;
 
@@ -166,7 +166,7 @@ if ( '1' == seopress_get_toggle_option( 'google-analytics' ) && ! isset( $_GET['
 			'seopress_cookies_user_consent'    => admin_url( 'admin-ajax.php' ),
 			'seopress_cookies_expiration_days' => $days,
 		);
-		wp_localize_script( 'seopress-cookies-ajax', 'seopressAjaxGAUserConsent', $seopress_cookies_user_consent );
+                wp_localize_script( 'webseo-cookies-ajax', 'seopressAjaxGAUserConsent', $seopress_cookies_user_consent );
 	}
 
 	/**
@@ -174,13 +174,13 @@ if ( '1' == seopress_get_toggle_option( 'google-analytics' ) && ! isset( $_GET['
 	 */
 	function seopress_google_analytics_ecommerce_js() {
 		$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'seopress-analytics', plugins_url( 'assets/js/seopress-analytics' . $prefix . '.js', dirname( __DIR__ ) ), array(), SEOPRESS_VERSION, true );
+                wp_enqueue_script( 'webseo-analytics', plugins_url( 'assets/js/webseo-analytics' . $prefix . '.js', dirname( __DIR__ ) ), array(), WEBSEO_VERSION, true );
 
 		$seopress_analytics = array(
 			'seopress_nonce'     => wp_create_nonce( 'seopress_analytics_nonce' ),
 			'seopress_analytics' => admin_url( 'admin-ajax.php' ),
 		);
-		wp_localize_script( 'seopress-analytics', 'seopressAjaxAnalytics', $seopress_analytics );
+                wp_localize_script( 'webseo-analytics', 'seopressAjaxAnalytics', $seopress_analytics );
 	}
 
 	/**

@@ -375,8 +375,8 @@ function seopress_add_admin_options_scripts( $hook ) {
 	$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	// Register stylesheets.
-	wp_register_style( 'seopress-admin', plugins_url( 'assets/css/seopress' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
-	wp_enqueue_style( 'seopress-admin' );
+    wp_register_style( 'webseo-admin', plugins_url( 'assets/css/webseo' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
+    wp_enqueue_style( 'webseo-admin' );
 
 	// Early return if no page query var.
 	if ( ! isset( $_GET['page'] ) ) {
@@ -388,9 +388,9 @@ function seopress_add_admin_options_scripts( $hook ) {
 	$scripts = array();
 
 	// Network options page.
-	if ( 'seopress-network-option' === $page ) {
-		$scripts[] = 'seopress-network-tabs';
-	}
+    if ( 'seopress-network-option' === $page ) {
+            $scripts[] = 'webseo-network-tabs';
+    }
 
 	// Pages needing Toggle / Notices JS.
 	$pages_with_toggle_js = array_map(
@@ -420,28 +420,28 @@ function seopress_add_admin_options_scripts( $hook ) {
 		)
 	);
 
-	if ( in_array( $page, $pages_with_toggle_js, true ) ) {
-		$scripts[] = 'seopress-dashboard';
-	}
+        if ( in_array( $page, $pages_with_toggle_js, true ) ) {
+                $scripts[] = 'webseo-dashboard';
+        }
 
-	// Setup Wizard page.
-	if ( 'seopress-setup' === $page ) {
-		wp_enqueue_style( 'seopress-setup', plugins_url( 'assets/css/seopress-setup' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
-		wp_enqueue_script( 'seopress-migrate', plugins_url( 'assets/js/seopress-migrate' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
-		wp_enqueue_media();
-		wp_enqueue_script( 'seopress-media-uploader', plugins_url( 'assets/js/seopress-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
-	}
+        // Setup Wizard page.
+        if ( 'seopress-setup' === $page ) {
+                wp_enqueue_style( 'webseo-setup', plugins_url( 'assets/css/webseo-setup' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
+                wp_enqueue_script( 'webseo-migrate', plugins_url( 'assets/js/webseo-migrate' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
+                wp_enqueue_media();
+                wp_enqueue_script( 'webseo-media-uploader', plugins_url( 'assets/js/webseo-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
+        }
 
 	// Dashboard page styles.
 	if ( 'seopress-option' === $page ) {
-		wp_register_style( 'seopress-admin-dashboard', plugins_url( 'assets/css/seopress-admin-dashboard' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
-		wp_enqueue_style( 'seopress-admin-dashboard' );
-	}
+                wp_register_style( 'webseo-admin-dashboard', plugins_url( 'assets/css/webseo-admin-dashboard' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
+                wp_enqueue_style( 'webseo-admin-dashboard' );
+        }
 
 	// Load common migration scripts for multiple pages.
 	if ( in_array( $page, array( 'seopress-option', 'seopress-import-export' ), true ) ) {
-		$scripts[] = 'seopress-migrate';
-	}
+                $scripts[] = 'webseo-migrate';
+        }
 
 	// Tabs script.
 	$pages_with_tabs = array_map(
@@ -466,13 +466,13 @@ function seopress_add_admin_options_scripts( $hook ) {
 	);
 
 	if ( in_array( $page, $pages_with_tabs, true ) ) {
-		$scripts[] = 'seopress-tabs';
-	}
+                $scripts[] = 'webseo-tabs';
+        }
 
 	// Load scripts conditionally.
 	foreach ( $scripts as $script ) {
-		wp_enqueue_script( $script, plugins_url( 'assets/js/' . $script . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
-	}
+                wp_enqueue_script( $script, plugins_url( 'assets/js/' . $script . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
+        }
 
 	if ( in_array( $page, $pages_with_toggle_js, true ) ) {
 		// Features.
@@ -481,14 +481,14 @@ function seopress_add_admin_options_scripts( $hook ) {
 			'seopress_toggle_features' => admin_url( 'admin-ajax.php' ),
 			'i18n'                     => __( 'has been successfully updated!', 'webseo' ),
 		);
-		wp_localize_script( 'seopress-dashboard', 'seopressAjaxToggleFeatures', $seopress_toggle_features );
+                wp_localize_script( 'webseo-dashboard', 'seopressAjaxToggleFeatures', $seopress_toggle_features );
 
 		// Notices.
 		$seopress_hide_notices = array(
 			'seopress_nonce'        => wp_create_nonce( 'seopress_hide_notices_nonce' ),
 			'seopress_hide_notices' => admin_url( 'admin-ajax.php' ),
 		);
-		wp_localize_script( 'seopress-dashboard', 'seopressAjaxHideNotices', $seopress_hide_notices );
+                wp_localize_script( 'webseo-dashboard', 'seopressAjaxHideNotices', $seopress_hide_notices );
 
 		if ( 'seopress-option' === $page ) {
 			// Simple View.
@@ -496,21 +496,21 @@ function seopress_add_admin_options_scripts( $hook ) {
 				'seopress_nonce'       => wp_create_nonce( 'seopress_switch_view_nonce' ),
 				'seopress_switch_view' => admin_url( 'admin-ajax.php' ),
 			);
-			wp_localize_script( 'seopress-dashboard', 'seopressAjaxSwitchView', $seopress_switch_view );
+                        wp_localize_script( 'webseo-dashboard', 'seopressAjaxSwitchView', $seopress_switch_view );
 
 			// News panel.
 			$seopress_news = array(
 				'seopress_nonce' => wp_create_nonce( 'seopress_news_nonce' ),
 				'seopress_news'  => admin_url( 'admin-ajax.php' ),
 			);
-			wp_localize_script( 'seopress-dashboard', 'seopressAjaxNews', $seopress_news );
+                        wp_localize_script( 'webseo-dashboard', 'seopressAjaxNews', $seopress_news );
 
 			// Display panel.
 			$seopress_display = array(
 				'seopress_nonce'   => wp_create_nonce( 'seopress_display_nonce' ),
 				'seopress_display' => admin_url( 'admin-ajax.php' ),
 			);
-			wp_localize_script( 'seopress-dashboard', 'seopressAjaxDisplay', $seopress_display );
+                        wp_localize_script( 'webseo-dashboard', 'seopressAjaxDisplay', $seopress_display );
 		}
 	}
 
@@ -561,9 +561,9 @@ function seopress_add_admin_options_scripts( $hook ) {
 	}
 
 	// Localize migration data once for all migration pages.
-	if ( in_array( $page, array( 'seopress-option', 'seopress-import-export', 'seopress-setup' ), true ) ) {
-		$seopress_migrate = array(
-			'seopress_aio_migrate'              => array(
+        if ( in_array( $page, array( 'seopress-option', 'seopress-import-export', 'seopress-setup' ), true ) ) {
+                $seopress_migrate = array(
+                        'seopress_aio_migrate'              => array(
 				'seopress_nonce'         => wp_create_nonce( 'seopress_aio_migrate_nonce' ),
 				'seopress_aio_migration' => admin_url( 'admin-ajax.php' ),
 			),
@@ -619,13 +619,13 @@ function seopress_add_admin_options_scripts( $hook ) {
 				'migration' => __( 'Migration completed!', 'webseo' ),
 				'export'    => __( 'Export completed!', 'webseo' ),
 			),
-		);
-		wp_localize_script( 'seopress-migrate', 'seopressAjaxMigrate', $seopress_migrate );
-	}
+                );
+                wp_localize_script( 'webseo-migrate', 'seopressAjaxMigrate', $seopress_migrate );
+        }
 
 	// Media uploader for social page.
 	if ( 'seopress-social' === $page ) {
-		wp_enqueue_script( 'seopress-media-uploader', plugins_url( 'assets/js/seopress-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, false );
+            wp_enqueue_script( 'webseo-media-uploader', plugins_url( 'assets/js/webseo-media-uploader' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, false );
 		wp_enqueue_media();
 	}
 
@@ -635,13 +635,13 @@ function seopress_add_admin_options_scripts( $hook ) {
 			'seopress_nonce'                 => wp_create_nonce( 'seopress_instant_indexing_post_nonce' ),
 			'seopress_instant_indexing_post' => admin_url( 'admin-ajax.php' ),
 		);
-		wp_localize_script( 'seopress-dashboard', 'seopressAjaxInstantIndexingPost', $seopress_instant_indexing_post );
+            wp_localize_script( 'webseo-dashboard', 'seopressAjaxInstantIndexingPost', $seopress_instant_indexing_post );
 
 		$seopress_instant_indexing_generate_api_key = array(
 			'seopress_nonce'                             => wp_create_nonce( 'seopress_instant_indexing_generate_api_key_nonce' ),
 			'seopress_instant_indexing_generate_api_key' => admin_url( 'admin-ajax.php' ),
 		);
-		wp_localize_script( 'seopress-dashboard', 'seopressAjaxInstantIndexingApiKey', $seopress_instant_indexing_generate_api_key );
+                wp_localize_script( 'webseo-dashboard', 'seopressAjaxInstantIndexingApiKey', $seopress_instant_indexing_generate_api_key );
 
 		$settings = wp_enqueue_code_editor( array( 'type' => 'application/json' ) );
 
@@ -671,7 +671,7 @@ function seopress_add_admin_options_scripts( $hook ) {
 
 	// CSV Importer.
 	if ( 'seopress_csv_importer' === $_GET['page'] ) {
-		wp_enqueue_style( 'seopress-setup', plugins_url( 'assets/css/seopress-setup' . $prefix . '.css', __FILE__ ), array( 'dashicons' ), WEBSEO_VERSION );
+        wp_enqueue_style( 'webseo-setup', plugins_url( 'assets/css/webseo-setup' . $prefix . '.css', __FILE__ ), array( 'dashicons' ), WEBSEO_VERSION );
 	}
 }
 add_action( 'admin_enqueue_scripts', 'seopress_add_admin_options_scripts', 10, 1 );
@@ -690,7 +690,7 @@ function seopress_admin_bar_css() {
 		// Enqueue the style only if the appearance option is not '1'.
 		if ( '1' !== $appearance_option ) {
 			$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-			wp_enqueue_style( 'seopress-admin-bar', plugins_url( 'assets/css/seopress-admin-bar' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
+                        wp_enqueue_style( 'webseo-admin-bar', plugins_url( 'assets/css/webseo-admin-bar' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
 		}
 	}
 }
@@ -712,9 +712,9 @@ function seopress_add_admin_options_scripts_quick_edit() {
 	}
 
 	$prefix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	$script_url = plugins_url( 'assets/js/seopress-quick-edit' . $prefix . '.js', __FILE__ );
+    $script_url = plugins_url( 'assets/js/webseo-quick-edit' . $prefix . '.js', __FILE__ );
 
-	wp_enqueue_script( 'seopress-quick-edit', $script_url, array( 'jquery', 'inline-edit-post' ), WEBSEO_VERSION, true );
+    wp_enqueue_script( 'webseo-quick-edit', $script_url, array( 'jquery', 'inline-edit-post' ), WEBSEO_VERSION, true );
 }
 add_action( 'admin_print_scripts-edit.php', 'seopress_add_admin_options_scripts_quick_edit' );
 

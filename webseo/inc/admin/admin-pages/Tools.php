@@ -124,77 +124,77 @@ if ( function_exists( 'seopress_admin_header' ) ) {
 						'wordpress-seo-premium/wp-seo-premium.php',
 					),
 					'name' => 'Yoast SEO',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/yoast.png',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/yoast.png',
 				),
 				'aio'              => array(
 					'slug' => array(
 						'all-in-one-seo-pack/all_in_one_seo_pack.php',
 					),
 					'name' => 'All In One SEO',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/aio.svg',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/aio.svg',
 				),
 				'seo-framework'    => array(
 					'slug' => array(
 						'autodescription/autodescription.php',
 					),
 					'name' => 'The SEO Framework',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/seo-framework.svg',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/seo-framework.svg',
 				),
 				'rk'               => array(
 					'slug' => array(
 						'seo-by-rank-math/rank-math.php',
 					),
 					'name' => 'Rank Math',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/rk.svg',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/rk.svg',
 				),
 				'squirrly'         => array(
 					'slug' => array(
 						'squirrly-seo/squirrly.php',
 					),
 					'name' => 'Squirrly SEO',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/squirrly.png',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/squirrly.png',
 				),
 				'seo-ultimate'     => array(
 					'slug' => array(
 						'seo-ultimate/seo-ultimate.php',
 					),
 					'name' => 'SEO Ultimate',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/seo-ultimate.svg',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/seo-ultimate.svg',
 				),
 				'wp-meta-seo'      => array(
 					'slug' => array(
 						'wp-meta-seo/wp-meta-seo.php',
 					),
 					'name' => 'WP Meta SEO',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/wp-meta-seo.png',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/wp-meta-seo.png',
 				),
 				'premium-seo-pack' => array(
 					'slug' => array(
 						'premium-seo-pack/plugin.php',
 					),
 					'name' => 'Premium SEO Pack',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/premium-seo-pack.png',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/premium-seo-pack.png',
 				),
 				'siteseo'          => array(
 					'slug' => array(
 						'siteseo/siteseo.php',
 					),
 					'name' => 'SiteSEO',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/siteseo.png',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/siteseo.png',
 				),
 				'smart-crawl'      => array(
 					'slug' => array(
 						'smartcrawl-seo/wpmu-dev-seo.php',
 					),
 					'name' => 'SmartCrawl',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/smart-crawl.png',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/smart-crawl.png',
 				),
 				'slim-seo'         => array(
 					'slug' => array(
 						'slim-seo/slim-seo.php',
 					),
 					'name' => 'Slim SEO',
-					'img'  => SEOPRESS_URL_ASSETS . '/img/import/slim-seo.svg',
+					'img'  => WEBSEO_URL_ASSETS . '/img/import/slim-seo.svg',
 				),
 			);
 
