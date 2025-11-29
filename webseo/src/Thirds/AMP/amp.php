@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 require_once ABSPATH . 'wp-admin/includes/plugin.php';
-if ( \seopress_is_pro_license_active() && defined( 'SEOPRESS_PRO_VERSION' ) && version_compare( SEOPRESS_PRO_VERSION, '5.4', '<' ) ) { // Quick fix to prevent fatal error for SEOPress < 5.4
+if ( defined( 'SEOPRESS_PRO_VERSION' ) && version_compare( SEOPRESS_PRO_VERSION, '5.4', '<' ) ) { // Quick fix to prevent fatal error for SEOPress < 5.4
 	// do nothing.
 } else {
 	add_action( 'wp', 'seopress_amp_compatibility_wp', 0 );
