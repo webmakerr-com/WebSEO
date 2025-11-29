@@ -676,7 +676,7 @@ function seopress_pro_add_admin_options_scripts( $hook ) {
 	}
 
 	// License.
-	if ( isset( $_GET['page'] ) && 'seopress-license' === $_GET['page'] ) {
+        if ( isset( $_GET['page'] ) && in_array( $_GET['page'], array( 'seopress-license', 'webseo-license' ), true ) ) {
 		wp_enqueue_script( 'seopress-license', plugins_url( 'assets/js/seopress-pro-license' . $prefix . '.js', __FILE__ ), array( 'jquery' ), SEOPRESS_PRO_VERSION, true );
 
 		$seopress_request_reset_license = array(
