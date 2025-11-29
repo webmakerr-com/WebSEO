@@ -502,49 +502,74 @@ function seopress_add_admin_options_scripts( $hook ) {
 		return;
 	}
 
-	// Preload scripts that are required for specific pages.
-	$page    = sanitize_text_field( wp_unslash( $_GET['page'] ) );
-	$scripts = array();
+        // Preload scripts that are required for specific pages.
+        $page    = sanitize_text_field( wp_unslash( $_GET['page'] ) );
+        $scripts = array();
+
+        $page_aliases = array(
+                'webseo-option'           => 'seopress-option',
+                'webseo-network-option'   => 'seopress-network-option',
+                'webseo-titles'           => 'seopress-titles',
+                'webseo-xml-sitemap'      => 'seopress-xml-sitemap',
+                'webseo-social'           => 'seopress-social',
+                'webseo-google-analytics' => 'seopress-google-analytics',
+                'webseo-instant-indexing' => 'seopress-instant-indexing',
+                'webseo-advanced'         => 'seopress-advanced',
+                'webseo-import-export'    => 'seopress-import-export',
+                'webseo-bot-batch'        => 'seopress-bot-batch',
+                'webseo-license'          => 'seopress-license',
+                'webseo-pro-page'         => 'seopress-pro-page',
+                'webseo-setup'            => 'seopress-setup',
+        );
+
+        if ( ! isset( $page_aliases[ $page ] ) ) {
+                $reverse_alias = array_search( $page, $page_aliases, true );
+                if ( false !== $reverse_alias ) {
+                        $page = $reverse_alias;
+                }
+        }
 
 	// Network options page.
-    if ( 'seopress-network-option' === $page ) {
+    if ( in_array( $page, array( 'webseo-network-option', 'seopress-network-option' ), true ) ) {
             $scripts[] = 'webseo-network-tabs';
     }
 
 	// Pages needing Toggle / Notices JS.
-	$pages_with_toggle_js = array_map(
-		/**
-		 * Get the page name.
-		 *
-		 * @param string $page
-		 * @return string
-		 */
-		function ( $page ) {
-			return 'seopress-' . $page;
-		},
-		array(
-			'setup',
-			'option',
-			'network-option',
-			'titles',
-			'xml-sitemap',
-			'social',
-			'google-analytics',
-			'pro-page',
-			'instant-indexing',
-			'advanced',
-			'import-export',
-			'bot-batch',
-			'license',
-		)
-	);
+        $pages_with_toggle_js = array(
+                'webseo-setup',
+                'seopress-setup',
+                'webseo-option',
+                'seopress-option',
+                'webseo-network-option',
+                'seopress-network-option',
+                'webseo-titles',
+                'seopress-titles',
+                'webseo-xml-sitemap',
+                'seopress-xml-sitemap',
+                'webseo-social',
+                'seopress-social',
+                'webseo-google-analytics',
+                'seopress-google-analytics',
+                'webseo-pro-page',
+                'seopress-pro-page',
+                'webseo-instant-indexing',
+                'seopress-instant-indexing',
+                'webseo-advanced',
+                'seopress-advanced',
+                'webseo-import-export',
+                'seopress-import-export',
+                'webseo-bot-batch',
+                'seopress-bot-batch',
+                'webseo-license',
+                'seopress-license',
+        );
 
         if ( in_array( $page, $pages_with_toggle_js, true ) ) {
                 $scripts[] = 'webseo-dashboard';
         }
 
         // Setup Wizard page.
-        if ( 'seopress-setup' === $page ) {
+        if ( in_array( $page, array( 'webseo-setup', 'seopress-setup' ), true ) ) {
                 wp_enqueue_style( 'webseo-setup', plugins_url( 'assets/css/webseo-setup' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
                 wp_enqueue_script( 'webseo-migrate', plugins_url( 'assets/js/webseo-migrate' . $prefix . '.js', __FILE__ ), array( 'jquery' ), WEBSEO_VERSION, true );
                 wp_enqueue_media();
@@ -552,37 +577,33 @@ function seopress_add_admin_options_scripts( $hook ) {
         }
 
 	// Dashboard page styles.
-	if ( 'seopress-option' === $page ) {
+        if ( in_array( $page, array( 'webseo-option', 'seopress-option' ), true ) ) {
                 wp_register_style( 'webseo-admin-dashboard', plugins_url( 'assets/css/webseo-admin-dashboard' . $prefix . '.css', __FILE__ ), array(), WEBSEO_VERSION );
                 wp_enqueue_style( 'webseo-admin-dashboard' );
         }
 
 	// Load common migration scripts for multiple pages.
-	if ( in_array( $page, array( 'seopress-option', 'seopress-import-export' ), true ) ) {
+        if ( in_array( $page, array( 'webseo-option', 'seopress-option', 'webseo-import-export', 'seopress-import-export' ), true ) ) {
                 $scripts[] = 'webseo-migrate';
         }
 
 	// Tabs script.
-	$pages_with_tabs = array_map(
-		/**
-		 * Get the page name.
-		 *
-		 * @param string $page
-		 * @return string
-		 */
-		function ( $page ) {
-			return 'seopress-' . $page;
-		},
-		array(
-			'titles',
-			'xml-sitemap',
-			'social',
-			'google-analytics',
-			'advanced',
-			'import-export',
-			'instant-indexing',
-		)
-	);
+        $pages_with_tabs = array(
+                'webseo-titles',
+                'seopress-titles',
+                'webseo-xml-sitemap',
+                'seopress-xml-sitemap',
+                'webseo-social',
+                'seopress-social',
+                'webseo-google-analytics',
+                'seopress-google-analytics',
+                'webseo-advanced',
+                'seopress-advanced',
+                'webseo-import-export',
+                'seopress-import-export',
+                'webseo-instant-indexing',
+                'seopress-instant-indexing',
+        );
 
 	if ( in_array( $page, $pages_with_tabs, true ) ) {
                 $scripts[] = 'webseo-tabs';
@@ -634,10 +655,10 @@ function seopress_add_admin_options_scripts( $hook ) {
 	}
 
 	// Google Analytics color picker.
-	if ( 'seopress-google-analytics' === $page ) {
-		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'wp-color-picker-alpha', plugins_url( 'assets/js/wp-color-picker-alpha' . $prefix . '.js', __FILE__ ), array( 'wp-color-picker' ), WEBSEO_VERSION, true );
-		wp_localize_script(
+        if ( in_array( $page, array( 'webseo-google-analytics', 'seopress-google-analytics' ), true ) ) {
+                wp_enqueue_style( 'wp-color-picker' );
+                wp_enqueue_script( 'wp-color-picker-alpha', plugins_url( 'assets/js/wp-color-picker-alpha' . $prefix . '.js', __FILE__ ), array( 'wp-color-picker' ), WEBSEO_VERSION, true );
+                wp_localize_script(
 			'wp-color-picker-alpha',
 			'wpColorPickerL10n',
 			array(
@@ -680,7 +701,7 @@ function seopress_add_admin_options_scripts( $hook ) {
 	}
 
 	// Localize migration data once for all migration pages.
-        if ( in_array( $page, array( 'seopress-option', 'seopress-import-export', 'seopress-setup' ), true ) ) {
+        if ( in_array( $page, array( 'webseo-option', 'seopress-option', 'webseo-import-export', 'seopress-import-export', 'webseo-setup', 'seopress-setup' ), true ) ) {
                 $seopress_migrate = array(
                         'seopress_aio_migrate'              => array(
 				'seopress_nonce'         => wp_create_nonce( 'seopress_aio_migrate_nonce' ),
@@ -849,22 +870,35 @@ function seopress_admin_body_class( $classes ) {
 	}
 
 	// List of pages to apply classes.
-	$seopress_pages = array(
-		'seopress_csv_importer',
-		'seopress-setup',
-		'seopress-option',
-		'seopress-network-option',
-		'seopress-titles',
-		'seopress-xml-sitemap',
-		'seopress-social',
-		'seopress-google-analytics',
-		'seopress-advanced',
-		'seopress-import-export',
-		'seopress-pro-page',
-		'seopress-instant-indexing',
-		'seopress-bot-batch',
-		'seopress-license',
-	);
+        $seopress_pages = array(
+                'seopress_csv_importer',
+                'seopress-setup',
+                'webseo-setup',
+                'seopress-option',
+                'webseo-option',
+                'seopress-network-option',
+                'webseo-network-option',
+                'seopress-titles',
+                'webseo-titles',
+                'seopress-xml-sitemap',
+                'webseo-xml-sitemap',
+                'seopress-social',
+                'webseo-social',
+                'seopress-google-analytics',
+                'webseo-google-analytics',
+                'seopress-advanced',
+                'webseo-advanced',
+                'seopress-import-export',
+                'webseo-import-export',
+                'seopress-pro-page',
+                'webseo-pro-page',
+                'seopress-instant-indexing',
+                'webseo-instant-indexing',
+                'seopress-bot-batch',
+                'webseo-bot-batch',
+                'seopress-license',
+                'webseo-license',
+        );
 
 	$current_page = sanitize_text_field( wp_unslash( $_GET['page'] ) );
 
@@ -873,11 +907,11 @@ function seopress_admin_body_class( $classes ) {
 		$classes .= ' seopress-styles';
 
 		// Additional class for specific pages.
-		if ( 'seopress-option' === $current_page ) {
-			$classes .= ' seopress-dashboard';
-		} elseif ( in_array( $current_page, array( 'seopress_csv_importer', 'seopress-setup' ), true ) ) {
-			$classes .= ' seopress-setup';
-		}
+                if ( in_array( $current_page, array( 'seopress-option', 'webseo-option' ), true ) ) {
+                        $classes .= ' seopress-dashboard';
+                } elseif ( in_array( $current_page, array( 'seopress_csv_importer', 'seopress-setup', 'webseo-setup' ), true ) ) {
+                        $classes .= ' seopress-setup';
+                }
 	}
 
 	// Add white-label class if applicable.
@@ -911,7 +945,7 @@ function seopress_plugin_action_links( $links, $file ) {
 
 	if ( $file === $this_plugin ) {
 		// Define action links.
-		$settings_link = '<a href="' . admin_url( 'admin.php?page=seopress-option' ) . '">' . __( 'Settings', 'webseo' ) . '</a>';
+                $settings_link = '<a href="' . admin_url( 'admin.php?page=webseo-option' ) . '">' . __( 'Settings', 'webseo' ) . '</a>';
             $wizard_link   = '<a href="' . admin_url( 'admin.php?page=webseo-setup&step=welcome&parent=welcome' ) . '">' . __( 'Configuration Wizard', 'webseo' ) . '</a>';
 		$website_link  = '<a href="https://www.webseo.com/support/" target="_blank">' . __( 'Docs', 'webseo' ) . '</a>';
 
